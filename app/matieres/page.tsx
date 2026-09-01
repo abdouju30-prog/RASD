@@ -1,0 +1,73 @@
+import Link from "next/link";
+import { RiskBadge } from "@/components/RiskBadge";
+import { portefeuilleClasse } from "@/lib/logic";
+import { MATIERES } from "@/lib/data";
+
+export default function MatieresPage() {
+  const classe = portefeuilleClasse();
+
+  return (
+    <>
+      <div className="eyebrow">Matières actives</div>
+      <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>
+        Les {classe.length} molécules du portefeuille
+      </h1>
+      <p style={{ color: "var(--muted)", maxWidth: 700, lineHeight: 1.6, marginTop: 0 }}>
+        Extraites de l&apos;index ONSSA, classées par risque réglementaire. L&apos;index complet compte{" "}
+        {MATIERES.length} matières actives — les autres se prospectent depuis l&apos;écran{" "}
+        <Link href="/sourcing" className="link-accent">
+          Prospection
+        </Link>
+        .
+      </p>
+
+      <div className="card" style={{ marginTop: 24, overflow: "hidden" }}>
+        <table className="tbl">
+          <thead>
+            <tr>
+              <th>Matière active</th>
+              <th>Catégorie</th>
+              <th>Vos produits</th>
+              <th>Usages</th>
+              <th>Concurrents</th>
+              <th>Statut UE</th>
+              <th>Risque</th>
+            </tr>
+          </thead>
+          <tbody>
+            {classe.map(({ ma, risque, expo }) => (
+              <tr key={ma.id}>
+                <td>
+                  <Link href={`/matieres/${ma.id}`} className="link-accent">
+                    {ma.nom}
+                  </Link>
+                  <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 3 }}>
+                    {ma.produitsDetenteur.map((p) => p.nomCommercial).join(" · ")}
+                  </div>
+                </td>
+                <td style={{ color: "var(--muted)", fontSize: 13 }}>{ma.categorie ?? "—"}</td>
+                <td className="mono">{expo.produits}</td>
+                <td className="mono">{expo.usages}</td>
+                <td className="mono" style={{ color: "var(--muted)" }}>
+                  {Math.max(0, ma.detenteurs.length - 1)}
+                </td>
+                <td style={{ fontSize: 13, color: "var(--muted)" }}>
+                  {ma.fiche && ma.fiche.statutUE !== "inconnu"
+                    ? ma.fiche.statutUE.replace(/_/g, " ")
+                    : "non renseigné"}
+                </td>
+                <td>
+                  {risque ? (
+                    <RiskBadge niveau={risque.niveau} score={risque.score} />
+                  ) : (
+                    <span style={{ color: "var(--muted-2)", fontSize: 12.5 }}>—</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+}

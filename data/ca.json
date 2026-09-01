@@ -1,0 +1,12 @@
+{
+  "_lisezmoi": [
+    "Chiffre d'affaires annuel par produit, en dirhams (MAD).",
+    "Cette donnée n'existe PAS dans l'index ONSSA : elle doit être saisie ici.",
+    "Clé = identifiant du produit (voir data/onssa.json > portefeuille[].id).",
+    "Tant qu'un produit est absent de ce fichier, l'application mesure son",
+    "exposition en nombre d'usages et d'homologations, jamais en CA inventé."
+  ],
+  "devise": "MAD",
+  "exercice": null,
+  "ca": {}
+}
