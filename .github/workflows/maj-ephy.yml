@@ -1,0 +1,86 @@
+name: Mise à jour E-Phy (Anses)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# L'Anses republie le catalogue E-Phy chaque nuit de mardi à mercredi.
+# Ce workflow le récupère le jeudi matin, régénère data/ephy.json, et ne
+# commite QUE si un statut a réellement changé.
+#
+# Pourquoi passer par un commit plutôt que par une écriture à l'exécution :
+#   • le système de fichiers est en lecture seule sur Vercel ;
+#   • le commit déclenche un redéploiement, donc la mise en ligne est acquise ;
+#   • surtout, l'historique git devient le JOURNAL DE LA VEILLE : chaque semaine
+#     où quelque chose bouge laisse une trace datée, lisible et opposable.
+#     C'est exactement ce qu'un outil réglementaire doit pouvoir produire.
+#
+# Prérequis : dépôt GitHub relié à Vercel (Vercel redéploie tout seul au push).
+# Aucun secret à configurer : le GITHUB_TOKEN par défaut suffit.
+# ─────────────────────────────────────────────────────────────────────────────
+
+on:
+  schedule:
+    - cron: "0 6 * * 4" # jeudi 06:00 UTC (07:00 à Casablanca)
+  workflow_dispatch: # déclenchement manuel depuis l'onglet Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: maj-ephy
+  cancel-in-progress: false
+
+jobs:
+  actualiser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Récupérer le catalogue E-Phy
+        run: python scripts/import_ephy.py | tee sortie-import.txt
+
+      - name: Y a-t-il eu un changement ?
+        id: diff
+        run: |
+          if git diff --quiet -- data/ephy.json; then
+            echo "change=non" >> "$GITHUB_OUTPUT"
+            echo "Aucune évolution du catalogue — rien à commiter."
+          else
+            echo "change=oui" >> "$GITHUB_OUTPUT"
+            python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          d = json.load(open("data/ephy.json", encoding="utf-8"))
+          diff = d.get("diff", {})
+          maj = d["meta"].get("majDonnees") or "date inconnue"
+          lignes = [
+              f"{c['nom']} : {c['avant'] or '—'} -> {c['apres'] or '—'}"
+              for c in diff.get("changements", [])[:20]
+          ]
+          corps = "\n".join(f"- {l}" for l in lignes) or "- aucun changement de statut"
+          print("resume<<EOF")
+          print(f"Catalogue E-Phy du {maj} — {diff.get('nbChangements', 0)} changement(s) de statut")
+          print()
+          print(corps)
+          if diff.get("nbChangements", 0) > 20:
+              print(f"- … et {diff['nbChangements'] - 20} autres")
+          print()
+          print("Données E-Phy - Anses, Licence Ouverte.")
+          print("EOF")
+          PY
+          fi
+
+      - name: Commiter la mise à jour
+        if: steps.diff.outputs.change == 'oui'
+        env:
+          RESUME: ${{ steps.diff.outputs.resume }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ephy.json
+          git commit -m "Veille E-Phy — actualisation du catalogue Anses" -m "$RESUME"
+          git push
+
+      - name: Récapitulatif
+        run: cat sortie-import.txt >> "$GITHUB_STEP_SUMMARY"

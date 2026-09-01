@@ -204,6 +204,80 @@ Variables d'environnement (Vercel → Settings → Environment Variables) :
 En développement local, l'accès reste libre tant que `HOMOLOGA_PASSWORD` n'est pas
 défini.
 
+### Première mise en ligne
+
+```bash
+vercel login
+vercel link          # créer le projet « homologa »
+vercel env add HOMOLOGA_PASSWORD production
+vercel env add HOMOLOGA_USER production      # optionnel
+vercel --prod
+```
+
+> ⚠️ `data/onssa.json` contient le portefeuille commercial du détenteur : AMM,
+> fournisseurs, usages, échéances. **Garder le dépôt privé** et ne jamais
+> déployer sans `HOMOLOGA_PASSWORD`. Le middleware refuse de servir
+> l'application si la variable est absente en production — c'est volontaire.
+
+---
+
+## Mise à jour automatique de la veille
+
+L'Anses republie E-Phy chaque nuit de mardi à mercredi. Le workflow
+[`.github/workflows/maj-ephy.yml`](.github/workflows/maj-ephy.yml) le récupère
+le jeudi matin, régénère `data/ephy.json`, et **ne commite que si un statut a
+réellement changé**. Le push déclenche le redéploiement Vercel.
+
+```
+jeudi 07h00  ->  import E-Phy  ->  diff vs semaine précédente
+                                        |
+                      aucun changement --+-- changement détecté
+                              |                     |
+                        rien à faire         commit + push
+                                                    |
+                                            redéploiement Vercel
+```
+
+Pourquoi un commit plutôt qu'une écriture à l'exécution :
+
+- le système de fichiers est en **lecture seule** sur Vercel ;
+- le commit garantit la mise en ligne, sans base de données ni add-on ;
+- surtout, **l'historique git devient le journal de la veille**. Chaque semaine
+  où un statut bouge laisse une trace datée, lisible et opposable. C'est
+  précisément ce qu'un outil réglementaire doit pouvoir produire — et c'est
+  gratuit.
+
+Le message de commit liste les molécules concernées :
+
+```
+Veille E-Phy — actualisation du catalogue Anses
+
+Catalogue E-Phy du 2026-09-02 — 3 changement(s) de statut
+
+- Metiram : autorisée -> retirée
+- Fenpyroximate : autorisée -> sans produit autorisé
+- Bacillus subtilis : nouvelle -> autorisée
+```
+
+**Prérequis** : dépôt GitHub relié à Vercel. Aucun secret à configurer, le
+`GITHUB_TOKEN` par défaut suffit. Sans GitHub, `npm run import:ephy` fait le
+même travail à la main.
+
+### Ce que l'application dit d'elle-même
+
+Un outil de veille qui affiche des statuts sans dire de quand ils datent est plus
+dangereux qu'utile. Le composant `FraicheurEphy` affiche donc en permanence
+l'âge de la source, en pastille dans la barre latérale et en bandeau sur
+`/veille` :
+
+| Âge | État | Message |
+|---|---|---|
+| <= 10 jours | à jour | catalogue courant |
+| 11 à 21 jours | à rafraîchir | une publication manquée |
+| > 21 jours | **périmée** | les statuts ne reflètent peut-être plus la réalité |
+
+Le bandeau liste aussi les changements de statut relevés au dernier import.
+
 ---
 
 ## Architecture

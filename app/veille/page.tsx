@@ -6,6 +6,7 @@ import { fmtDate } from "@/lib/logic";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { META } from "@/lib/data";
 import { STATS_EPHY } from "@/lib/ephy";
+import { FraicheurEphy } from "@/components/FraicheurEphy";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
   anses_retrait: ShieldAlert,
@@ -67,11 +68,15 @@ export default function VeillePage() {
         <span className="pill">{st.produitsTouches} produit(s) concerné(s)</span>
       </div>
 
+      <div style={{ margin: "14px 0 12px" }}>
+        <FraicheurEphy />
+      </div>
+
       <div
         className="card"
         style={{
           padding: "13px 17px",
-          margin: "14px 0 22px",
+          margin: "0 0 22px",
           display: "flex",
           gap: 11,
           alignItems: "flex-start",

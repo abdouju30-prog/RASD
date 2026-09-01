@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
 import { META } from "@/lib/data";
+import { FraicheurEphy } from "@/components/FraicheurEphy";
 
 export const metadata: Metadata = {
   title: "Homologa — Tour de contrôle réglementaire",
@@ -21,7 +22,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <div className="app">
-          <Sidebar detenteur={META.detenteur} source={META.source} />
+          <Sidebar
+            detenteur={META.detenteur}
+            source={META.source}
+            fraicheur={<FraicheurEphy compact />}
+          />
           <main className="main">{children}</main>
         </div>
       </body>

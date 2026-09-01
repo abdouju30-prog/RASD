@@ -110,6 +110,69 @@ def lire_csv(zf, motif):
 RE_SUBSTANCE = re.compile(r"^(.*?)\s*\(([^)]+)\)")
 
 
+def situation(s):
+    """Réduit une substance à ce qui compte pour la veille."""
+    if s["etat"] == "NON_INSCRITE":
+        return "retirée"
+    if s["nbProduitsAutorises"] == 0 and s["nbProduitsRetires"] > 0:
+        return "sans produit autorisé"
+    if s["nbProduitsAutorises"] > 0:
+        return "autorisée"
+    return "indéterminée"
+
+
+def comparer(chemin_precedent, nouvelles):
+    """
+    Compare le nouvel import au précédent et liste ce qui a bougé.
+
+    Sans ce diff, une mise à jour automatique écraserait les données en
+    silence : on saurait que le fichier a changé, pas ce que ça implique pour
+    le portefeuille. C'est précisément l'information que la veille doit livrer.
+    """
+    if not chemin_precedent.exists():
+        return {"premiereImport": True, "nbChangements": 0, "changements": []}
+    try:
+        avant = json.loads(chemin_precedent.read_text(encoding="utf-8"))
+    except Exception:
+        return {"premiereImport": True, "nbChangements": 0, "changements": []}
+
+    par_id = {s["id"]: s for s in avant.get("substances", [])}
+    out = []
+    for s in nouvelles:
+        a = par_id.get(s["id"])
+        if a is None:
+            out.append({
+                "id": s["id"], "nom": s["nom"], "type": "nouvelle",
+                "avant": None, "apres": situation(s),
+            })
+            continue
+        sa, sn = situation(a), situation(s)
+        if sa != sn:
+            out.append({
+                "id": s["id"], "nom": s["nom"], "type": "statut",
+                "avant": sa, "apres": sn,
+                "dernierRetrait": s.get("dernierRetrait"),
+            })
+
+    ids_neufs = {s["id"] for s in nouvelles}
+    for a in avant.get("substances", []):
+        if a["id"] not in ids_neufs:
+            out.append({
+                "id": a["id"], "nom": a["nom"], "type": "disparue",
+                "avant": situation(a), "apres": None,
+            })
+
+    # Les dégradations d'abord : ce sont elles qui appellent une décision.
+    rang = {"retirée": 0, "sans produit autorisé": 1, "autorisée": 2, "indéterminée": 3}
+    out.sort(key=lambda c: (rang.get(c["apres"] or "indéterminée", 9), c["nom"]))
+    return {
+        "premiereImport": False,
+        "nbChangements": len(out),
+        "dateComparaison": (avant.get("meta") or {}).get("majDonnees"),
+        "changements": out[:200],
+    }
+
+
 def substances_du_produit(champ):
     out = []
     for bloc in (champ or "").split("|"):
@@ -185,6 +248,12 @@ def main():
 
     sortie.sort(key=lambda x: x["nom"])
 
+    # ── Diff avec l'import précédent ─────────────────────────────────────────
+    # C'est le cœur de la veille : ce qui a CHANGÉ depuis la semaine dernière.
+    # Sans ce calcul, une mise à jour automatique remplacerait silencieusement
+    # les données sans que personne ne sache ce qui a bougé.
+    changements = comparer(SORTIE, sortie)
+
     payload = {
         "meta": {
             "source": ATTRIBUTION,
@@ -200,6 +269,7 @@ def main():
                 "statut marocain — il ne s'y substitue pas."
             ),
         },
+        "diff": changements,
         "substances": sortie,
     }
 
@@ -213,6 +283,18 @@ def main():
     print(f"  {len(sortie)} substances : {ins} inscrites, {ni} non inscrites")
     print(f"  {orphelines} sans produit PPP rattaché")
     print(f"  données Anses du {maj or '?'}")
+
+    if changements["premiereImport"]:
+        print("  premier import — pas de comparaison possible")
+    elif changements["nbChangements"] == 0:
+        print("  aucun changement de statut depuis l'import précédent")
+    else:
+        print(f"\n  {changements['nbChangements']} CHANGEMENT(S) DE STATUT :")
+        for c in changements["changements"][:25]:
+            fleche = f"{c['avant'] or '—'} -> {c['apres'] or '—'}"
+            print(f"    {c['nom'][:44]:46} {fleche}")
+        if changements["nbChangements"] > 25:
+            print(f"    … et {changements['nbChangements'] - 25} autres")
 
 
 if __name__ == "__main__":

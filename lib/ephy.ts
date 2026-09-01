@@ -29,6 +29,15 @@ export interface SubstanceEphy {
   dernierRetrait: string | null;
 }
 
+export interface ChangementEphy {
+  id: string;
+  nom: string;
+  type: "statut" | "nouvelle" | "disparue";
+  avant: string | null;
+  apres: string | null;
+  dernierRetrait?: string | null;
+}
+
 interface FichierEphy {
   meta: {
     source: string;
@@ -40,6 +49,12 @@ interface FichierEphy {
     nbSubstances: number;
     nbProduitsPPP: number;
     avertissement: string;
+  };
+  diff?: {
+    premiereImport: boolean;
+    nbChangements: number;
+    dateComparaison?: string | null;
+    changements: ChangementEphy[];
   };
   substances: SubstanceEphy[];
 }
@@ -193,3 +208,28 @@ export const STATS_EPHY = {
   maj: META_EPHY.majDonnees,
   attribution: META_EPHY.attribution,
 };
+
+/** Changements de statut relevés lors du dernier import. */
+export const CHANGEMENTS_EPHY: ChangementEphy[] = EPHY.diff?.changements ?? [];
+export const NB_CHANGEMENTS_EPHY = EPHY.diff?.nbChangements ?? 0;
+
+// ── Fraîcheur des données ───────────────────────────────────────────────────
+// L'Anses republie E-Phy chaque nuit de mardi à mercredi. Au-delà de deux
+// publications manquées, l'outil doit le dire plutôt que d'afficher un statut
+// périmé avec l'assurance d'une donnée à jour.
+
+export type Fraicheur = "à jour" | "à rafraîchir" | "périmée" | "inconnue";
+
+export function fraicheurEphy(ref = new Date()): {
+  etat: Fraicheur;
+  jours: number | null;
+  maj: string | null;
+} {
+  const maj = META_EPHY.majDonnees;
+  if (!maj) return { etat: "inconnue", jours: null, maj: null };
+  const d = new Date(maj);
+  if (Number.isNaN(d.getTime())) return { etat: "inconnue", jours: null, maj };
+  const jours = Math.floor((ref.getTime() - d.getTime()) / 86_400_000);
+  const etat: Fraicheur = jours <= 10 ? "à jour" : jours <= 21 ? "à rafraîchir" : "périmée";
+  return { etat, jours, maj };
+}

@@ -13,7 +13,15 @@ const NAV = [
   { href: "/dossiers", label: "Atelier dossiers", icon: FolderCheck },
 ];
 
-export function Sidebar({ detenteur, source }: { detenteur: string; source: string }) {
+export function Sidebar({
+  detenteur,
+  source,
+  fraicheur,
+}: {
+  detenteur: string;
+  source: string;
+  fraicheur?: React.ReactNode;
+}) {
   const path = usePathname();
   return (
     <aside className="sidebar">
@@ -67,6 +75,7 @@ export function Sidebar({ detenteur, source }: { detenteur: string; source: stri
         Index ONSSA importé de <span className="mono">{source}</span>.
         <br />
         Statuts UE : PPDB / AERU, à recouper avant décision.
+        <div style={{ marginTop: 9 }}>{fraicheur}</div>
       </div>
     </aside>
   );
