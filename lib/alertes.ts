@@ -13,6 +13,7 @@ import type { MatiereActive, NiveauRisque, ProduitPortefeuille } from "./types";
 // ────────────────────────────────────────────────────────────────────────────
 
 export type TypeAlerte =
+  | "anses_retrait"
   | "amm_expiree"
   | "amm_echeance"
   | "ue_non_renouvelee"
@@ -34,6 +35,7 @@ export interface Alerte {
 }
 
 const NIV: Record<TypeAlerte, NiveauRisque> = {
+  anses_retrait: "critique",
   amm_expiree: "critique",
   ue_non_renouvelee: "critique",
   ue_echeance_depassee: "élevé",
@@ -43,6 +45,21 @@ const NIV: Record<TypeAlerte, NiveauRisque> = {
 };
 
 const ORDRE: Record<NiveauRisque, number> = { critique: 0, élevé: 1, modéré: 2, faible: 3 };
+
+/**
+ * Priorité de type, à niveau de gravité égal. Le retrait ANSES passe devant :
+ * c'est le signal le plus en avance sur la décision de l'ONSSA, alors qu'une
+ * AMM expirée est un fait déjà consommé.
+ */
+const ORDRE_TYPE: Record<TypeAlerte, number> = {
+  anses_retrait: 0,
+  amm_expiree: 1,
+  ue_non_renouvelee: 2,
+  ue_echeance_depassee: 3,
+  amm_echeance: 4,
+  ue_echeance_proche: 5,
+  candidate_substitution: 6,
+};
 
 function nbUsages(prods: ProduitPortefeuille[]): number {
   return prods.reduce((s, p) => s + p.usages.length, 0);
@@ -95,12 +112,36 @@ export function alertes(): Alerte[] {
     }
   }
 
-  // 2) Statut UE des matières actives réellement détenues.
+  // 2) Statut ANSES et statut UE des matières actives réellement détenues.
   for (const ma of MATIERES_PORTEFEUILLE) {
     const f = ma.fiche;
-    if (!f || f.statutUE === "inconnu") continue;
+    if (!f) continue;
     const prods = produitsDe(ma);
     if (prods.length === 0) continue;
+
+    // Signal de tête : l'ONSSA s'aligne sur l'ANSES.
+    if (f.anses?.statut === "retirée" || f.anses?.statut === "en_retrait") {
+      const retiree = f.anses.statut === "retirée";
+      out.push({
+        id: `anses-${ma.id}`,
+        type: "anses_retrait",
+        niveau: "critique",
+        titre: `${retiree ? "Retirée" : "En retrait"} en France · ${ma.molecule}`,
+        detail:
+          (f.anses.deduit
+            ? "Retrait ANSES déduit : la substance n'est pas approuvée au niveau UE, elle ne peut donc pas être autorisée en France. "
+            : `Retrait prononcé par l'ANSES${f.anses.dateRetrait ? ` le ${fmtDate(f.anses.dateRetrait)}` : ""}. `) +
+          "L'ONSSA s'alignant sur l'ANSES, le retrait marocain est à considérer comme acquis à terme — c'est le signal le plus en avance dont vous disposez.",
+        matiere: ma,
+        produits: prods,
+        usages: nbUsages(prods),
+        action:
+          "Traiter en priorité absolue : sécuriser une alternative homologable avant l'alignement de l'ONSSA.",
+        echeance: f.anses.finEcoulement ?? f.anses.dateRetrait ?? null,
+      });
+    }
+
+    if (f.statutUE === "inconnu") continue;
 
     if (f.statutUE === "non_renouvelée" || f.statutUE === "retirée") {
       out.push({
@@ -164,8 +205,10 @@ export function alertes(): Alerte[] {
   }
 
   return out.sort((a, b) => {
-    const d = ORDRE[a.niveau] - ORDRE[b.niveau];
-    if (d !== 0) return d;
+    const n = ORDRE[a.niveau] - ORDRE[b.niveau];
+    if (n !== 0) return n;
+    const t = ORDRE_TYPE[a.type] - ORDRE_TYPE[b.type];
+    if (t !== 0) return t;
     return (a.echeance ?? "9999").localeCompare(b.echeance ?? "9999");
   });
 }
@@ -181,7 +224,12 @@ export function statsAlertes() {
   };
 }
 
-/** Matières actives du portefeuille pour lesquelles aucune fiche n'existe. */
+/** Matières actives du portefeuille sans aucun statut exploitable (ni UE, ni ANSES). */
 export function anglesMorts(): MatiereActive[] {
-  return MATIERES_PORTEFEUILLE.filter((m) => !m.fiche || m.fiche.statutUE === "inconnu");
+  return MATIERES_PORTEFEUILLE.filter(
+    (m) =>
+      !m.fiche ||
+      (m.fiche.statutUE === "inconnu" &&
+        (!m.fiche.anses || m.fiche.anses.statut === "inconnu"))
+  );
 }

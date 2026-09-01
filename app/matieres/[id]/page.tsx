@@ -167,6 +167,21 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
             <div className="card" style={{ padding: "18px 20px" }}>
               <div className="h-title">Statut réglementaire</div>
               <div style={{ display: "grid", gap: 11, marginTop: 13, fontSize: 13.5 }}>
+                <Ligne
+                  label="France · ANSES"
+                  value={
+                    f.anses && f.anses.statut !== "inconnu" ? (
+                      <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                        <StatusPill value={f.anses.statut === "retirée" ? "retirée" : "en_cours"} />
+                        {f.anses.deduit && (
+                          <span style={{ fontSize: 10.5, color: "var(--muted-2)" }}>déduit</span>
+                        )}
+                      </span>
+                    ) : (
+                      <span style={{ color: "var(--muted-2)", fontSize: 12.5 }}>non renseigné</span>
+                    )
+                  }
+                />
                 <Ligne label="Union européenne" value={<StatusPill value={f.statutUE} />} />
                 {f.echeanceUE && (
                   <Ligne

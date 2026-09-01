@@ -295,7 +295,39 @@ export const FICHES: FicheReglementaire[] = [
   },
 ];
 
-const PAR_MOLECULE = new Map(FICHES.map((f) => [norm(f.molecule), f]));
+// ── Alignement ANSES → ONSSA ────────────────────────────────────────────────
+//
+// L'ONSSA s'aligne sur l'ANSES : une matière active retirée en France finit par
+// être retirée au Maroc. Le statut ANSES est donc le signal le plus prédictif
+// dont dispose l'outil.
+//
+// Deux façons de le renseigner :
+//   1. Lu dans le catalogue E-Phy (à brancher — voir scripts/import_ephy.py)
+//   2. DÉDUIT, quand la fiche ne le porte pas : une substance non approuvée au
+//      niveau UE ne peut être autorisée dans aucun État membre, donc pas en
+//      France non plus. Le retrait ANSES en découle nécessairement.
+//
+// La déduction est signalée (`deduit: true`) pour ne jamais la faire passer
+// pour une lecture de source.
+
+function avecAnses(f: FicheReglementaire): FicheReglementaire {
+  if (f.anses) return f;
+  if (f.statutUE === "non_renouvelée" || f.statutUE === "retirée") {
+    return {
+      ...f,
+      anses: {
+        statut: "retirée",
+        deduit: true,
+        source: "Déduit — substance non approuvée en UE, donc non autorisable en France",
+      },
+    };
+  }
+  return { ...f, anses: { statut: "inconnu" } };
+}
+
+const FICHES_COMPLETES: FicheReglementaire[] = FICHES.map(avecAnses);
+
+const PAR_MOLECULE = new Map(FICHES_COMPLETES.map((f) => [norm(f.molecule), f]));
 
 function norm(s: string): string {
   return s
@@ -324,8 +356,11 @@ export function ficheDe(nomOuMolecule: string): FicheReglementaire | null {
 }
 
 export const COUVERTURE = {
-  nbFiches: FICHES.length,
-  nbVerifiees: FICHES.filter((f) => f.verifie).length,
+  nbFiches: FICHES_COMPLETES.length,
+  nbVerifiees: FICHES_COMPLETES.filter((f) => f.verifie).length,
+  nbAnsesRenseigne: FICHES_COMPLETES.filter((f) => f.anses && f.anses.statut !== "inconnu").length,
+  nbAnsesDeduit: FICHES_COMPLETES.filter((f) => f.anses?.deduit).length,
   source: SRC.source,
   date: SRC.date,
+  sourceAnses: "Catalogue E-Phy — Anses (non branché : statuts déduits ou saisis)",
 };

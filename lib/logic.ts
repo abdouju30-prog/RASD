@@ -41,7 +41,10 @@ export interface DetailRisque {
 
 export function detailRisque(ma: MatiereActive): DetailRisque | null {
   const f = ma.fiche;
-  if (!f || f.statutUE === "inconnu") return null;
+  const ansesConnu = f?.anses && f.anses.statut !== "inconnu";
+  // Un statut ANSES connu suffit à évaluer le risque, même sans statut UE :
+  // c'est le signal qui gouverne l'ONSSA.
+  if (!f || (f.statutUE === "inconnu" && !ansesConnu)) return null;
 
   const fa: { libelle: string; points: number }[] = [];
   const add = (libelle: string, points: number) => {
@@ -54,6 +57,19 @@ export function detailRisque(ma: MatiereActive): DetailRisque | null {
       niveau: "critique",
       facteurs: [{ libelle: "Retirée au Maroc", points: 100 }],
     };
+  }
+
+  // Signal de tête : l'ONSSA s'aligne sur l'ANSES. Un retrait français
+  // annonce le retrait marocain, il pèse donc plus lourd que le statut UE.
+  if (f.anses?.statut === "retirée") {
+    add(
+      f.anses.deduit
+        ? "Retrait ANSES déduit (non approuvée UE) — retrait ONSSA attendu"
+        : "Retirée par l'ANSES — retrait ONSSA attendu",
+      55
+    );
+  } else if (f.anses?.statut === "en_retrait") {
+    add("Retrait ANSES engagé — retrait ONSSA attendu", 40);
   }
 
   if (f.statutUE === "retirée") add("Approbation UE retirée", 45);

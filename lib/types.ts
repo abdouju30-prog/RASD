@@ -17,6 +17,30 @@ export type StatutMaroc = "homologuée" | "en_cours" | "non_homologuée" | "reti
 export type NiveauRisque = "faible" | "modéré" | "élevé" | "critique";
 export type StatutVoisin = "autorisée" | "restreinte" | "interdite";
 
+/**
+ * Statut ANSES (France, catalogue E-Phy).
+ *
+ * L'ONSSA s'aligne sur l'ANSES : le retrait d'une matière active en France
+ * anticipe son retrait au Maroc. C'est donc le signal le plus prédictif dont
+ * dispose l'outil — plus que le statut UE, qui est en amont et plus lent.
+ */
+export type StatutAnses = "autorisée" | "en_retrait" | "retirée" | "inconnu";
+
+export interface FicheAnses {
+  statut: StatutAnses;
+  /** Date de la décision de retrait, si connue. */
+  dateRetrait?: string;
+  /** Fin de la période d'écoulement des stocks, si connue. */
+  finEcoulement?: string;
+  /**
+   * true = statut déduit d'une règle, pas lu dans E-Phy.
+   * Une substance non approuvée en UE ne peut être autorisée dans aucun État
+   * membre : le retrait ANSES en découle nécessairement.
+   */
+  deduit?: boolean;
+  source?: string;
+}
+
 // ── Couche IMPORTÉE ─────────────────────────────────────────────────────────
 
 export interface Fournisseur {
@@ -96,6 +120,8 @@ export interface FicheReglementaire {
   modeAction: string;
   statutUE: StatutUE;
   echeanceUE?: string;
+  /** Statut France / ANSES — signal de tête pour anticiper l'ONSSA. */
+  anses?: FicheAnses;
   statutMaroc: StatutMaroc;
   statutVoisins: { pays: string; statut: StatutVoisin }[];
   drapeaux: string[];
@@ -146,11 +172,24 @@ export interface CandidatSourcing {
 export type StatutPiece = "manquante" | "en_cours" | "présente" | "validée";
 
 export interface PieceDossier {
+  /** Libellé complet, préfixé du code Annexe 3-B. */
   rubrique: string;
+  /** Code de la ligne au formulaire ONSSA, ex. « 2.8.1 ». */
+  code?: string;
+  /** Partie du formulaire : I (préparation commerciale) ou II (matière active). */
+  partie?: "I" | "II";
+  /** Titre de la section du formulaire. */
+  section?: string;
+  /** Libellé seul, sans code. */
+  libelle?: string;
   statut: StatutPiece;
   poids: number;
   /** Qui doit fournir la pièce. */
   responsable?: "fournisseur" | "phytobeht" | "laboratoire";
+  /** Le formulaire exige un laboratoire accrédité BPL pour cette ligne. */
+  glp?: boolean;
+  /** Reprenable par référence à une homologation marocaine existante. */
+  allegeable?: boolean;
   /** Contenu pré-rempli déduit de l'index (précédent réglementaire). */
   prerempli?: string;
   source?: string;

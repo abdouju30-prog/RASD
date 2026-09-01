@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarClock, Ban, Flag, Timer, RefreshCw, Info } from "lucide-react";
+import { CalendarClock, Ban, Flag, Timer, RefreshCw, Info, ShieldAlert } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { alertes, statsAlertes, type TypeAlerte } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
@@ -7,6 +7,7 @@ import { COUVERTURE } from "@/lib/reglementaire";
 import { META } from "@/lib/data";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
+  anses_retrait: ShieldAlert,
   amm_expiree: Ban,
   amm_echeance: CalendarClock,
   ue_non_renouvelee: Ban,
@@ -16,6 +17,7 @@ const ICONE: Record<TypeAlerte, typeof Ban> = {
 };
 
 const LIBELLE: Record<TypeAlerte, string> = {
+  anses_retrait: "Retrait ANSES — l'ONSSA suivra",
   amm_expiree: "AMM expirée",
   amm_echeance: "Échéance AMM",
   ue_non_renouvelee: "Approbation UE perdue",
@@ -33,8 +35,8 @@ export default function VeillePage() {
       <div className="eyebrow">Veille réglementaire</div>
       <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>Flux d&apos;alertes</h1>
       <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
-        Les alertes sont recalculées à chaque affichage à partir des dates d&apos;AMM de l&apos;index ONSSA
-        et des statuts UE vérifiés. Rien n&apos;est stocké : l&apos;écran ne peut pas afficher un état périmé.
+        Recalculées à chaque affichage à partir des dates d&apos;AMM de l&apos;index ONSSA, du statut
+        ANSES et du statut UE. Rien n&apos;est stocké : l&apos;écran ne peut pas afficher un état périmé.
       </p>
 
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap", margin: "20px 0 8px" }}>
@@ -76,12 +78,16 @@ export default function VeillePage() {
       >
         <Info size={16} color="var(--info)" style={{ flexShrink: 0, marginTop: 1 }} />
         <div style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6 }}>
-          <strong style={{ color: "var(--fg)" }}>Périmètre de la veille.</strong> Les dates
-          d&apos;expiration d&apos;approbation UE proviennent de la {COUVERTURE.source} (consultée le{" "}
-          {fmtDate(COUVERTURE.date)}). La Commission européenne prolonge fréquemment ces dates par
-          règlement d&apos;exécution : une échéance dépassée signifie « à recouper d&apos;urgence », pas
-          « substance interdite ». L&apos;actualisation reste une opération humaine — réimporter
-          l&apos;index ONSSA et mettre à jour les fiches.
+          <strong style={{ color: "var(--fg)" }}>Hiérarchie des signaux.</strong> L&apos;ONSSA
+          s&apos;aligne sur l&apos;ANSES : un retrait français annonce le retrait marocain. Les alertes
+          « retrait ANSES » passent donc en tête, avant le statut UE qui est en amont et plus lent.{" "}
+          {COUVERTURE.nbAnsesDeduit} statut(s) ANSES sont <em>déduits</em> — une substance non approuvée
+          en UE ne peut être autorisée en France — et non lus dans E-Phy, faute de connecteur.
+          <br />
+          <strong style={{ color: "var(--fg)" }}>Réserve UE.</strong> Les dates d&apos;expiration
+          d&apos;approbation viennent de la {COUVERTURE.source} (consultée le {fmtDate(COUVERTURE.date)}).
+          La Commission prolonge fréquemment ces dates par règlement d&apos;exécution : une échéance
+          dépassée signifie « à recouper d&apos;urgence », pas « substance interdite ».
         </div>
       </div>
 

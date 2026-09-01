@@ -45,6 +45,7 @@ npm run import
 |---|---|---|---|
 | **Importée** | Index ONSSA : 4 852 lignes, 1 413 produits, 76 détenteurs, 653 matières actives, 211 fournisseurs. Portefeuille du détenteur : AMM, dates, usages, doses, DAR. | `scripts/import_onssa.py` depuis *FICHIERS PHYTO.xlsx* | Reproductible, daté, aucune saisie |
 | **Expertise** | Statuts d'approbation UE, échéances, drapeaux de danger (CMR, perturbateur endocrinien, toxicité abeilles…). | `lib/reglementaire.ts`, saisie manuelle | À valider — voir réserve ci-dessous |
+| **Formulaire** | Checklist ONSSA Annexe 3-B : 2 parties, 11 sections, 78 lignes. | `lib/checklist-onssa.ts`, transcription du formulaire officiel | Fidèle au document |
 
 Ce que l'application **n'invente pas** :
 
@@ -55,6 +56,25 @@ Ce que l'application **n'invente pas** :
   par *accessibilité* (nombre de génériques en concurrence), pas par prix.
 - **Un score de risque sans fiche.** Une molécule sans statut UE vérifié affiche
   « risque non évalué », pas un score inventé.
+
+### La hiérarchie des signaux : ANSES d'abord
+
+**L'ONSSA s'aligne sur l'ANSES.** Le retrait d'une matière active en France
+anticipe son retrait au Maroc. C'est donc le signal le plus prédictif dont
+dispose l'outil — plus que le statut UE, qui est en amont et plus lent.
+
+Le statut ANSES pèse `+55` au score de risque, devant le retrait d'approbation
+UE (`+45`), et les alertes « retrait ANSES » passent en tête du flux.
+
+Deux façons de le renseigner :
+
+1. **Lu dans le catalogue E-Phy** (Anses) — connecteur non encore branché.
+2. **Déduit**, et signalé comme tel : une substance non approuvée au niveau UE
+   ne peut être autorisée dans aucun État membre, donc pas en France non plus.
+   Le retrait ANSES en découle nécessairement.
+
+Aujourd'hui 2 matières actives du portefeuille sont en retrait ANSES déduit :
+**alpha-cyperméthrine** et **imidaclopride**.
 
 ### ⚠️ Réserve sur les échéances UE
 
@@ -77,13 +97,13 @@ du portefeuille sans fiche sont listées comme « angles morts » sur le radar.
 | Route | Rôle |
 |---|---|
 | `/` | **Radar** — matrice risque × exposition, AMM expirées, actions recommandées, angles morts |
-| `/veille` | **Alertes** — recalculées à chaque affichage depuis les dates d'AMM et les statuts UE. Rien n'est stocké, aucun cron |
+| `/veille` | **Alertes** — recalculées à chaque affichage depuis les dates d'AMM, le statut ANSES et le statut UE. Rien n'est stocké, aucun cron |
 | `/sourcing` | **Prospection** — matières actives à importer, filtrables par pays fournisseur, catégorie et concurrence acceptée |
 | `/sourcing/[id]` | Fiche cible : décomposition du score, fournisseurs référencés ONSSA avec pays, usages revendicables |
 | `/matieres`, `/matieres/[id]` | Molécules du portefeuille : décomposition du risque, produits porteurs, alternatives homologables |
 | `/produits` | Portefeuille classé par échéance d'AMM |
 | `/dossiers` | **Atelier** — trois files : renouveler, substituer, homologuer |
-| `/dossiers/generer/[id]` | **Dossier ONSSA pré-rempli** |
+| `/dossiers/generer/[id]` | **Dossier ONSSA pré-rempli** — les 78 lignes de l'Annexe 3-B |
 
 ---
 
@@ -97,7 +117,7 @@ conditions, toutes lisibles dans l'index ONSSA :
 3. **Sourcing possible** — au moins un fournisseur générique (Inde, Chine,
    Russie, Mexique, Colombie, Turquie…) **déjà référencé à l'ONSSA** sur cette
    matière active
-4. **Avenir dégagé** — pas de statut UE dégradé qui condamnerait la molécule
+4. **Avenir dégagé** — ni retrait ANSES, ni statut UE dégradé qui condamnerait la molécule
 
 La condition 3 est la plus importante et la moins évidente : un fournisseur déjà
 référencé à l'ONSSA a, par définition, déjà constitué le dossier technique accepté
@@ -113,12 +133,26 @@ identifiés). Un « ? » signale une déduction faite sur le seul suffixe juridi
 
 ---
 
+## L'usine à dossiers suit l'Annexe 3-B
+
+Le dossier généré reprend **ligne à ligne le formulaire officiel de l'ONSSA**
+(« CHECK LIST SC — requirements registration Morocco »), transcrit dans
+`lib/checklist-onssa.ts` : 2 parties, 11 sections, **78 lignes**.
+
+| | Partie I — préparation commerciale | Partie II — matière active |
+|---|---|---|
+| Sections | Identité, physico-chimie*, toxicologie*, méthodes d'analyse, données d'emploi, dossier biologique, classification | Identité, physico-chimie*, méthodes d'analyse, classification |
+| Lignes | 50 | 28 |
+
+\* sections exigeant un laboratoire accrédité **BPL** — 46 lignes au total.
+
 ## Ce que produit l'usine à dossiers
 
 `/dossiers/generer/[id]` produit :
 
-- la structure des rubriques ONSSA et **qui fournit quoi** (fournisseur /
+- les 78 lignes du formulaire et **qui détient la donnée** (fournisseur /
   laboratoire / détenteur) ;
+- les lignes exigeant un **laboratoire accrédité BPL** ;
 - la **part allégeable** par référence à une homologation marocaine existante ;
 - les **usages revendicables** avec leur précédent réglementaire — dose et DAR
   déjà acceptés par l'ONSSA chez un autre détenteur ;
@@ -161,6 +195,7 @@ data/ca.json              chiffre d'affaires optionnel (saisie manuelle)
 lib/types.ts              modèle, séparant couche importée et couche expertise
 lib/data.ts               chargement + jointure, aucune donnée en dur
 lib/reglementaire.ts      fiches UE saisies à la main, avec source et date
+lib/checklist-onssa.ts    formulaire ONSSA Annexe 3-B, transcrit ligne à ligne
 lib/logic.ts              risque, exposition, état des AMM — heuristiques lisibles
 lib/alertes.ts            flux d'alertes recalculé, sans persistance
 lib/sourcing.ts           scoring des cibles de prospection
@@ -176,12 +211,14 @@ dans les fichiers versionnés.
 
 ## Reste à faire
 
-1. **Compléter les fiches réglementaires** — 5 matières actives du portefeuille
+1. **Brancher le connecteur E-Phy (Anses)** — le catalogue est en open data sur
+   data.gouv.fr, mis à jour chaque semaine, et contient les substances retirées.
+   C'est ce qui rendrait la veille réellement automatique, sur la source qui
+   gouverne l'ONSSA. Attribution obligatoire : « Données E-Phy - Anses ».
+2. **Compléter les fiches réglementaires** — 5 matières actives du portefeuille
    sans statut UE, et 630 molécules de l'index non couvertes (elles apparaissent
    en « risque non évalué » dans la prospection).
-2. **Renseigner `data/ca.json`** pour pondérer le radar par chiffre d'affaires.
-3. **Automatiser la veille** — brancher un connecteur EU Pesticides Database pour
-   remplacer la saisie manuelle de `lib/reglementaire.ts`.
+3. **Renseigner `data/ca.json`** pour pondérer le radar par chiffre d'affaires.
 4. **Multi-détenteur** — `DETENTEUR_CIBLE` est figé dans le script d'import ;
    le paramétrer pour vendre l'outil à plusieurs sociétés.
 5. **Édition des dossiers** — les dossiers sont générés à la volée, en lecture
