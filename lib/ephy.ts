@@ -139,6 +139,20 @@ export function apparier(nomONSSA: string): Appariement | null {
     if (cle.length < 6) continue;
     if (cible.startsWith(cle) || cle.startsWith(cible)) candidats.push({ cle, s });
   }
+
+  // Dernier recours : tolérer les variantes d'orthographe y/i, fréquentes en
+  // nomenclature chimique entre le français et l'ISO anglais — l'ONSSA écrit
+  // « Pyrimicarbe », E-Phy « Pirimicarb ». Cette passe vient APRÈS les autres :
+  // elle ne peut donc jamais supplanter un appariement exact.
+  if (candidats.length === 0) {
+    const pivot = cible.replace(/y/g, "i");
+    for (const [cle, s] of PAR_CLE) {
+      if (cle.length < 6) continue;
+      const k = cle.replace(/y/g, "i");
+      if (pivot.startsWith(k) || k.startsWith(pivot)) candidats.push({ cle, s });
+    }
+  }
+
   if (candidats.length === 0) return null;
 
   candidats.sort((a, b) => {
