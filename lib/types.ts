@@ -133,6 +133,14 @@ export interface FicheReglementaire {
 /** Matière active vue par l'application : marché importé + fiche d'expertise. */
 export interface MatiereActive extends MatiereMarche {
   fiche: FicheReglementaire | null;
+  /**
+   * Statut France, lu dans E-Phy pour TOUTE matière active appariable — pas
+   * seulement celles disposant d'une fiche d'expertise. C'est ce qui donne au
+   * radar et à la prospection une couverture réglementaire quasi complète.
+   */
+  anses: FicheAnses | null;
+  /** Substance E-Phy appariée et méthode d'appariement, pour vérification. */
+  ansesAppariement: { substance: string; methode: string } | null;
   produitsDetenteur: ProduitPortefeuille[];
 }
 
@@ -162,9 +170,13 @@ export interface CandidatSourcing {
   /** Détail du score, affiché tel quel dans l'UI pour être auditable. */
   score: number;
   facteurs: { libelle: string; points: number }[];
-  /** Risque réglementaire de la molécule, si une fiche existe. */
+  /** Risque réglementaire de la molécule, si évaluable. */
   risque: NiveauRisque | null;
   scoreRisque: number | null;
+  /** Statut France lu dans E-Phy — gouverne l'ONSSA. */
+  statutAnses: StatutAnses | null;
+  /** Retirée en France : disqualifie la cible quel que soit son score. */
+  ansesRetiree: boolean;
 }
 
 // ── Dossiers ────────────────────────────────────────────────────────────────

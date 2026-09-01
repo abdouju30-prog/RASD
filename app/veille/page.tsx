@@ -5,6 +5,7 @@ import { alertes, statsAlertes, type TypeAlerte } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { META } from "@/lib/data";
+import { STATS_EPHY } from "@/lib/ephy";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
   anses_retrait: ShieldAlert,
@@ -80,9 +81,9 @@ export default function VeillePage() {
         <div style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6 }}>
           <strong style={{ color: "var(--fg)" }}>Hiérarchie des signaux.</strong> L&apos;ONSSA
           s&apos;aligne sur l&apos;ANSES : un retrait français annonce le retrait marocain. Les alertes
-          « retrait ANSES » passent donc en tête, avant le statut UE qui est en amont et plus lent.{" "}
-          {COUVERTURE.nbAnsesDeduit} statut(s) ANSES sont <em>déduits</em> — une substance non approuvée
-          en UE ne peut être autorisée en France — et non lus dans E-Phy, faute de connecteur.
+          « retrait ANSES » passent donc en tête, avant le statut UE qui est en amont et plus lent. Le
+          statut français est lu dans le catalogue E-Phy — {STATS_EPHY.attribution}, {STATS_EPHY.nbSubstances}{" "}
+          substances{COUVERTURE.nbAnsesDeduit > 0 ? `, ${COUVERTURE.nbAnsesDeduit} statut(s) déduits faute d'appariement` : ""}.
           <br />
           <strong style={{ color: "var(--fg)" }}>Réserve UE.</strong> Les dates d&apos;expiration
           d&apos;approbation viennent de la {COUVERTURE.source} (consultée le {fmtDate(COUVERTURE.date)}).

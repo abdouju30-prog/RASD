@@ -1,7 +1,9 @@
 import indexONSSA from "../data/onssa.json";
 import caFile from "../data/ca.json";
 import { ficheDe } from "./reglementaire";
+import { ansesPour } from "./ephy";
 import type {
+  FicheAnses,
   Fournisseur,
   IndexONSSA,
   MatiereActive,
@@ -42,12 +44,32 @@ for (const p of PORTEFEUILLE) {
   }
 }
 
-/** Toutes les matières actives de l'index ONSSA, enrichies de leur fiche. */
-export const MATIERES: MatiereActive[] = IDX.matieres.map((m: MatiereMarche) => ({
-  ...m,
-  fiche: ficheDe(m.nom),
-  produitsDetenteur: PRODUITS_PAR_MA.get(m.id) ?? [],
-}));
+/**
+ * Toutes les matières actives de l'index ONSSA, enrichies de :
+ *  • leur fiche d'expertise (statut UE), quand elle existe — 23 molécules ;
+ *  • leur statut ANSES lu dans E-Phy, pour toute molécule appariable.
+ *
+ * L'appariement E-Phy se fait sur le nom complet ONSSA plutôt que sur la
+ * molécule de la fiche : il couvre ainsi l'index entier, pas seulement le
+ * périmètre déjà documenté à la main.
+ */
+export const MATIERES: MatiereActive[] = IDX.matieres.map((m: MatiereMarche) => {
+  const fiche = ficheDe(m.nom);
+  const lu = ansesPour(m.nom);
+  const anses: FicheAnses | null =
+    lu && lu.statut !== "inconnu"
+      ? { statut: lu.statut, dateRetrait: lu.dateRetrait, deduit: false, source: lu.source }
+      : fiche?.anses && fiche.anses.statut !== "inconnu"
+      ? fiche.anses
+      : null;
+  return {
+    ...m,
+    fiche,
+    anses,
+    ansesAppariement: lu ? { substance: lu.substance, methode: lu.methode } : null,
+    produitsDetenteur: PRODUITS_PAR_MA.get(m.id) ?? [],
+  };
+});
 
 const MATIERE_PAR_ID = new Map(MATIERES.map((m) => [m.id, m]));
 export function getMatiere(id: string): MatiereActive | undefined {

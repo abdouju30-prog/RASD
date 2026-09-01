@@ -33,6 +33,13 @@ Réimporter l'index ONSSA après mise à jour du fichier source :
 npm run import
 ```
 
+Rafraîchir le statut français des matières actives (catalogue E-Phy de l'Anses,
+mis à jour chaque mercredi) :
+
+```bash
+npm run import:ephy
+```
+
 > Le script d'import est en Python et nécessite `openpyxl`
 > (`pip install openpyxl`). Il lit l'Excel et écrit `data/onssa.json` ;
 > le reste de l'application ne lit que ce JSON.
@@ -46,6 +53,7 @@ npm run import
 | **Importée** | Index ONSSA : 4 852 lignes, 1 413 produits, 76 détenteurs, 653 matières actives, 211 fournisseurs. Portefeuille du détenteur : AMM, dates, usages, doses, DAR. | `scripts/import_onssa.py` depuis *FICHIERS PHYTO.xlsx* | Reproductible, daté, aucune saisie |
 | **Expertise** | Statuts d'approbation UE, échéances, drapeaux de danger (CMR, perturbateur endocrinien, toxicité abeilles…). | `lib/reglementaire.ts`, saisie manuelle | À valider — voir réserve ci-dessous |
 | **Formulaire** | Checklist ONSSA Annexe 3-B : 2 parties, 11 sections, 78 lignes. | `lib/checklist-onssa.ts`, transcription du formulaire officiel | Fidèle au document |
+| **ANSES** | Statut français de 1 337 substances : inscription au règlement, produits autorisés et retirés, date du dernier retrait. | `scripts/import_ephy.py` depuis le catalogue E-Phy | Source officielle, hebdomadaire |
 
 Ce que l'application **n'invente pas** :
 
@@ -66,15 +74,27 @@ dispose l'outil — plus que le statut UE, qui est en amont et plus lent.
 Le statut ANSES pèse `+55` au score de risque, devant le retrait d'approbation
 UE (`+45`), et les alertes « retrait ANSES » passent en tête du flux.
 
-Deux façons de le renseigner :
+Le statut est **lu dans le catalogue E-Phy de l'Anses**, apparié aux matières
+actives de l'index ONSSA. Couverture : **89 % des 653 molécules** de l'index
+(490 autorisées, 62 retirées, 31 sans produit autorisé). Quand l'appariement
+échoue, l'outil retombe sur une déduction — une substance non approuvée en UE ne
+peut être autorisée dans aucun État membre — toujours signalée comme telle.
 
-1. **Lu dans le catalogue E-Phy** (Anses) — connecteur non encore branché.
-2. **Déduit**, et signalé comme tel : une substance non approuvée au niveau UE
-   ne peut être autorisée dans aucun État membre, donc pas en France non plus.
-   Le retrait ANSES en découle nécessairement.
+Trois statuts, qui ne pèsent pas pareil :
 
-Aujourd'hui 2 matières actives du portefeuille sont en retrait ANSES déduit :
-**alpha-cyperméthrine** et **imidaclopride**.
+| Statut | Signification | Poids |
+|---|---|---|
+| **retirée** | Non inscrite au règlement : plus autorisable en France | +55, et **écarte d'office** la cible en prospection |
+| **en_retrait** | Inscrite, mais plus aucun produit autorisé — retrait commercial | +30 |
+| **autorisée** | Produits toujours autorisés en France | +6 au score de prospection |
+
+Sur le portefeuille PHYTO BEHT, cinq produits sont concernés :
+**alpha-cyperméthrine** (AL-KATIL, ATLANTIC) et **imidaclopride** (BRIGHT SC,
+SOLTAN 500 SC) sont retirées ; **oxyfluorfène** (DRON TOP, TWIN-PRO) et
+**huile minérale paraffinique** (ALDO GOLD) n'ont plus de produit autorisé.
+
+> Attribution obligatoire (Licence Ouverte) : **Données E-Phy - Anses**, avec la
+> date de mise à jour. Elle est affichée dans l'application.
 
 ### ⚠️ Réserve sur les échéances UE
 
@@ -189,13 +209,16 @@ défini.
 ## Architecture
 
 ```
-scripts/import_onssa.py   Excel ONSSA -> data/onssa.json (seule étape d'import)
+scripts/import_onssa.py   Excel ONSSA -> data/onssa.json
+scripts/import_ephy.py    catalogue E-Phy (Anses) -> data/ephy.json
 data/onssa.json           index + portefeuille (généré, versionné)
+data/ephy.json            statut français des substances (généré, versionné)
 data/ca.json              chiffre d'affaires optionnel (saisie manuelle)
 lib/types.ts              modèle, séparant couche importée et couche expertise
 lib/data.ts               chargement + jointure, aucune donnée en dur
 lib/reglementaire.ts      fiches UE saisies à la main, avec source et date
 lib/checklist-onssa.ts    formulaire ONSSA Annexe 3-B, transcrit ligne à ligne
+lib/ephy.ts               appariement index ONSSA <-> catalogue E-Phy (Anses)
 lib/logic.ts              risque, exposition, état des AMM — heuristiques lisibles
 lib/alertes.ts            flux d'alertes recalculé, sans persistance
 lib/sourcing.ts           scoring des cibles de prospection
@@ -211,14 +234,11 @@ dans les fichiers versionnés.
 
 ## Reste à faire
 
-1. **Brancher le connecteur E-Phy (Anses)** — le catalogue est en open data sur
-   data.gouv.fr, mis à jour chaque semaine, et contient les substances retirées.
-   C'est ce qui rendrait la veille réellement automatique, sur la source qui
-   gouverne l'ONSSA. Attribution obligatoire : « Données E-Phy - Anses ».
-2. **Compléter les fiches réglementaires** — 5 matières actives du portefeuille
+1. **Compléter les fiches réglementaires** — 5 matières actives du portefeuille
    sans statut UE, et 630 molécules de l'index non couvertes (elles apparaissent
-   en « risque non évalué » dans la prospection).
-3. **Renseigner `data/ca.json`** pour pondérer le radar par chiffre d'affaires.
+   en « risque non évalué » dans la prospection). E-Phy couvre déjà le statut
+   français ; ce qui manque est le statut UE et les drapeaux de danger.
+2. **Renseigner `data/ca.json`** pour pondérer le radar par chiffre d'affaires.
 4. **Multi-détenteur** — `DETENTEUR_CIBLE` est figé dans le script d'import ;
    le paramétrer pour vendre l'outil à plusieurs sociétés.
 5. **Édition des dossiers** — les dossiers sont générés à la volée, en lecture

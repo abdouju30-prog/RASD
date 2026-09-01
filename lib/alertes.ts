@@ -115,40 +115,41 @@ export function alertes(): Alerte[] {
   // 2) Statut ANSES et statut UE des matières actives réellement détenues.
   for (const ma of MATIERES_PORTEFEUILLE) {
     const f = ma.fiche;
-    if (!f) continue;
     const prods = produitsDe(ma);
     if (prods.length === 0) continue;
 
     // Signal de tête : l'ONSSA s'aligne sur l'ANSES.
-    if (f.anses?.statut === "retirée" || f.anses?.statut === "en_retrait") {
-      const retiree = f.anses.statut === "retirée";
+    const an = ma.anses;
+    if (an?.statut === "retirée" || an?.statut === "en_retrait") {
+      const retiree = an.statut === "retirée";
       out.push({
         id: `anses-${ma.id}`,
         type: "anses_retrait",
-        niveau: "critique",
-        titre: `${retiree ? "Retirée" : "En retrait"} en France · ${ma.molecule}`,
+        niveau: retiree ? "critique" : "élevé",
+        titre: `${retiree ? "Plus autorisée" : "Aucun produit autorisé"} en France · ${ma.nom}`,
         detail:
-          (f.anses.deduit
-            ? "Retrait ANSES déduit : la substance n'est pas approuvée au niveau UE, elle ne peut donc pas être autorisée en France. "
-            : `Retrait prononcé par l'ANSES${f.anses.dateRetrait ? ` le ${fmtDate(f.anses.dateRetrait)}` : ""}. `) +
+          (an.deduit
+            ? "Statut déduit : la substance n'est pas approuvée au niveau UE, elle ne peut donc pas être autorisée en France. "
+            : `${an.source ?? ""} `) +
           "L'ONSSA s'alignant sur l'ANSES, le retrait marocain est à considérer comme acquis à terme — c'est le signal le plus en avance dont vous disposez.",
         matiere: ma,
         produits: prods,
         usages: nbUsages(prods),
-        action:
-          "Traiter en priorité absolue : sécuriser une alternative homologable avant l'alignement de l'ONSSA.",
-        echeance: f.anses.finEcoulement ?? f.anses.dateRetrait ?? null,
+        action: retiree
+          ? "Traiter en priorité absolue : sécuriser une alternative homologable avant l'alignement de l'ONSSA."
+          : "Surveiller : retrait commercial en France, pas encore réglementaire. Préparer une alternative.",
+        echeance: an.finEcoulement ?? an.dateRetrait ?? null,
       });
     }
 
-    if (f.statutUE === "inconnu") continue;
+    if (!f || f.statutUE === "inconnu") continue;
 
     if (f.statutUE === "non_renouvelée" || f.statutUE === "retirée") {
       out.push({
         id: `ue-nr-${ma.id}`,
         type: "ue_non_renouvelee",
         niveau: "critique",
-        titre: `Approbation UE perdue · ${ma.molecule}`,
+        titre: `Approbation UE perdue · ${ma.nom}`,
         detail: `${f.statutUE === "retirée" ? "Approbation retirée" : "Approbation non renouvelée"} en UE. ${f.note ?? ""}`.trim(),
         matiere: ma,
         produits: prods,
@@ -165,7 +166,7 @@ export function alertes(): Alerte[] {
         id: `ue-dep-${ma.id}`,
         type: "ue_echeance_depassee",
         niveau: "élevé",
-        titre: `Échéance UE dépassée · ${ma.molecule}`,
+        titre: `Échéance UE dépassée · ${ma.nom}`,
         detail: `Date d'expiration d'approbation au ${fmtDate(f.echeanceUE)} selon la PPDB. La Commission prolonge fréquemment ces dates par règlement d'exécution : à recouper contre la EU Pesticides Database avant toute décision.`,
         matiere: ma,
         produits: prods,
@@ -178,7 +179,7 @@ export function alertes(): Alerte[] {
         id: `ue-proche-${ma.id}`,
         type: "ue_echeance_proche",
         niveau: "modéré",
-        titre: `Échéance UE proche · ${ma.molecule}`,
+        titre: `Échéance UE proche · ${ma.nom}`,
         detail: `Approbation UE jusqu'au ${fmtDate(f.echeanceUE)} — ${m} mois. Issue du renouvellement à surveiller.`,
         matiere: ma,
         produits: prods,
@@ -193,7 +194,7 @@ export function alertes(): Alerte[] {
         id: `ue-cfs-${ma.id}`,
         type: "candidate_substitution",
         niveau: "modéré",
-        titre: `Candidate à la substitution · ${ma.molecule}`,
+        titre: `Candidate à la substitution · ${ma.nom}`,
         detail: `Inscrite sur la liste UE des candidates à la substitution. Les États membres doivent examiner s'il existe une alternative moins préoccupante — signal avancé de retrait.`,
         matiere: ma,
         produits: prods,
@@ -228,8 +229,7 @@ export function statsAlertes() {
 export function anglesMorts(): MatiereActive[] {
   return MATIERES_PORTEFEUILLE.filter(
     (m) =>
-      !m.fiche ||
-      (m.fiche.statutUE === "inconnu" &&
-        (!m.fiche.anses || m.fiche.anses.statut === "inconnu"))
+      (!m.anses || m.anses.statut === "inconnu") &&
+      (!m.fiche || m.fiche.statutUE === "inconnu")
   );
 }

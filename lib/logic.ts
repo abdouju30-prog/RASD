@@ -41,17 +41,19 @@ export interface DetailRisque {
 
 export function detailRisque(ma: MatiereActive): DetailRisque | null {
   const f = ma.fiche;
-  const ansesConnu = f?.anses && f.anses.statut !== "inconnu";
-  // Un statut ANSES connu suffit à évaluer le risque, même sans statut UE :
-  // c'est le signal qui gouverne l'ONSSA.
-  if (!f || (f.statutUE === "inconnu" && !ansesConnu)) return null;
+  const anses = ma.anses;
+  const ansesConnu = anses && anses.statut !== "inconnu";
+  // Un statut ANSES connu suffit à évaluer le risque, même sans fiche UE :
+  // c'est le signal qui gouverne l'ONSSA. Il est lu dans E-Phy pour toute
+  // molécule appariable, donc pour la quasi-totalité de l'index.
+  if (!ansesConnu && (!f || f.statutUE === "inconnu")) return null;
 
   const fa: { libelle: string; points: number }[] = [];
   const add = (libelle: string, points: number) => {
     if (points > 0) fa.push({ libelle, points });
   };
 
-  if (f.statutMaroc === "retirée") {
+  if (f?.statutMaroc === "retirée") {
     return {
       score: 100,
       niveau: "critique",
@@ -61,15 +63,23 @@ export function detailRisque(ma: MatiereActive): DetailRisque | null {
 
   // Signal de tête : l'ONSSA s'aligne sur l'ANSES. Un retrait français
   // annonce le retrait marocain, il pèse donc plus lourd que le statut UE.
-  if (f.anses?.statut === "retirée") {
+  if (anses?.statut === "retirée") {
     add(
-      f.anses.deduit
+      anses.deduit
         ? "Retrait ANSES déduit (non approuvée UE) — retrait ONSSA attendu"
-        : "Retirée par l'ANSES — retrait ONSSA attendu",
+        : "Plus autorisée en France (E-Phy) — retrait ONSSA attendu",
       55
     );
-  } else if (f.anses?.statut === "en_retrait") {
-    add("Retrait ANSES engagé — retrait ONSSA attendu", 40);
+  } else if (anses?.statut === "en_retrait") {
+    // Retrait commercial : la substance reste inscrite mais aucun produit
+    // français n'est autorisé. Signal réel, mais l'ONSSA ne suit pas
+    // mécaniquement un retrait commercial — pondération plus basse.
+    add("Aucun produit autorisé en France (retrait commercial)", 30);
+  }
+
+  if (!f) {
+    const score0 = Math.min(100, fa.reduce((s, x) => s + x.points, 0));
+    return { score: score0, niveau: niveauRisque(score0), facteurs: fa };
   }
 
   if (f.statutUE === "retirée") add("Approbation UE retirée", 45);

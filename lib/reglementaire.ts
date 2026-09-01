@@ -1,3 +1,4 @@
+import { ansesPour } from "./ephy";
 import type { FicheReglementaire } from "./types";
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -312,6 +313,15 @@ export const FICHES: FicheReglementaire[] = [
 
 function avecAnses(f: FicheReglementaire): FicheReglementaire {
   if (f.anses) return f;
+
+  // 1. Lecture du catalogue E-Phy — source de référence.
+  const lu = ansesPour(f.molecule);
+  if (lu && lu.statut !== "inconnu") {
+    return { ...f, anses: { statut: lu.statut, dateRetrait: lu.dateRetrait, deduit: false, source: lu.source } };
+  }
+
+  // 2. À défaut, déduction : une substance non approuvée en UE ne peut être
+  //    autorisée dans aucun État membre, donc pas en France.
   if (f.statutUE === "non_renouvelée" || f.statutUE === "retirée") {
     return {
       ...f,

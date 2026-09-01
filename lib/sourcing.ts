@@ -13,7 +13,9 @@ import type { CandidatSourcing, Fournisseur, MatiereActive, VoieReglementaire } 
 //   3. Sourcing possible — au moins un fournisseur générique (Inde, Chine,
 //                          Russie, Mexique, Colombie, Turquie…) DÉJÀ référencé
 //                          à l'ONSSA sur cette M.A.
-//   4. Avenir dégagé     — pas de statut UE dégradé qui condamnerait la molécule
+//   4. Avenir dégagé     — toujours autorisée en France. L'ONSSA s'alignant sur
+//                          l'ANSES, une molécule retirée en France est écartée
+//                          d'office : le dossier serait condamné d'avance.
 //
 // La condition 3 est la plus importante et la moins évidente : un fournisseur
 // déjà référencé à l'ONSSA a, par définition, déjà constitué le dossier
@@ -46,7 +48,8 @@ export interface FiltresSourcing {
   pays?: string[];
   /** Catégorie ONSSA (Insecticide, Fongicide, Herbicide…). */
   categorie?: string | null;
-  /** Exclure les molécules dont le risque réglementaire dépasse ce score. */
+  /** Exclure les molécules dont le risque réglementaire dépasse ce score.
+   *  Indépendant du retrait ANSES, qui écarte la cible quel que soit le score. */
   risqueMax?: number;
   /** Exclure les M.A. déjà présentes au portefeuille du détenteur. */
   exclurePortefeuille?: boolean;
@@ -101,6 +104,14 @@ export function candidat(ma: MatiereActive): CandidatSourcing {
     add("Aucun fournisseur identifié à l'index", -8);
   }
 
+  if (ma.anses?.statut === "retirée") {
+    add("Retirée en France — l'ONSSA suivra", -50);
+  } else if (ma.anses?.statut === "en_retrait") {
+    add("Aucun produit autorisé en France", -20);
+  } else if (ma.anses?.statut === "autorisée") {
+    add("Toujours autorisée en France", 6);
+  }
+
   if (risque) {
     if (risque.niveau === "critique") add("Molécule en risque réglementaire critique", -40);
     else if (risque.niveau === "élevé") add("Molécule en risque réglementaire élevé", -25);
@@ -130,6 +141,8 @@ export function candidat(ma: MatiereActive): CandidatSourcing {
     facteurs: facteurs.sort((a, b) => Math.abs(b.points) - Math.abs(a.points)),
     risque: risque?.niveau ?? null,
     scoreRisque: risque?.score ?? null,
+    statutAnses: ma.anses?.statut ?? null,
+    ansesRetiree: ma.anses?.statut === "retirée",
   };
 }
 
@@ -152,6 +165,10 @@ export function candidats(f: FiltresSourcing = {}): CandidatSourcing[] {
     .filter((c) => {
       if (c.fournisseursCoutFaible.length === 0) return false;
       if (pays && pays.length && !c.paysSourcing.some((p) => pays.includes(p))) return false;
+      // Disqualification catégorique, pas affaire de seuil : l'ONSSA s'alignant
+      // sur l'ANSES, importer une molécule déjà retirée en France revient à
+      // monter un dossier condamné d'avance.
+      if (c.ansesRetiree) return false;
       if (c.scoreRisque !== null && c.scoreRisque > risqueMax) return false;
       return true;
     })

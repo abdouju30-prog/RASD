@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Globe2, Factory, ShieldCheck, Info } from "lucide-react";
+import { Globe2, Factory, ShieldCheck, Info, Flag } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { RiskBadge } from "@/components/RiskBadge";
 import {
@@ -8,6 +8,7 @@ import {
   categoriesDisponibles,
   statsSourcing,
 } from "@/lib/sourcing";
+import { STATS_EPHY } from "@/lib/ephy";
 
 export const dynamic = "force-dynamic";
 
@@ -150,9 +151,12 @@ export default async function SourcingPage({
           fournisseurs génériques en concurrence sur la molécule, ce qui détermine votre pouvoir de
           négociation. Les prix se relèvent en consultation, après avoir retenu une cible.
           <br />
-          <strong style={{ color: "var(--mod)" }}>« Risque non évalué »</strong> signale une molécule
-          sans fiche réglementaire vérifiée : son statut UE est inconnu, le filtre de risque ne
-          s&apos;y applique donc pas. Vérifier avant toute consultation fournisseur.
+          <strong style={{ color: "var(--fg)" }}>Les molécules retirées en France sont écartées
+          d&apos;office</strong> — l&apos;ONSSA s&apos;alignant sur l&apos;ANSES, leur dossier serait
+          condamné d&apos;avance. Statut lu dans le catalogue E-Phy ({STATS_EPHY.attribution}).{" "}
+          <strong style={{ color: "var(--mod)" }}>« Risque non évalué »</strong> signale les rares
+          molécules non appariables à E-Phy et sans fiche : à vérifier avant toute consultation
+          fournisseur.
         </div>
       </div>
 
@@ -228,6 +232,27 @@ export default async function SourcingPage({
               <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
                 <Globe2 size={13} />
                 {c.paysSourcing.join(", ")}
+              </span>
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  color:
+                    c.statutAnses === "autorisée"
+                      ? "var(--low)"
+                      : c.statutAnses === "en_retrait"
+                      ? "var(--high)"
+                      : "var(--muted-2)",
+                }}
+              >
+                <Flag size={13} />
+                France :{" "}
+                {c.statutAnses === "autorisée"
+                  ? "autorisée"
+                  : c.statutAnses === "en_retrait"
+                  ? "plus de produit autorisé"
+                  : "statut inconnu"}
               </span>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
                 <Factory size={13} />

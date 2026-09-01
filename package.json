@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "import": "python scripts/import_onssa.py \"C:/Users/DellVostro/Desktop/FICHIERS PHYTO.xlsx\""
+    "import": "python scripts/import_onssa.py \"C:/Users/DellVostro/Desktop/FICHIERS PHYTO.xlsx\"",
+    "import:ephy": "python scripts/import_ephy.py"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",
