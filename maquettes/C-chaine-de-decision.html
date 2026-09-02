@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Maquette C — Chaîne de décision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f6f8; --carte:#fff; --bord:#dde3e9; --fg:#111a22; --mid:#4d5a66; --pale:#75828e;
+  --acc:#0d5c73; --acc2:#0a7ea4;
+  --low:#0e6b47; --mod:#8f5106; --high:#b0430b; --crit:#ad0f36;
+  --sans:"Inter",system-ui,sans-serif; --tete:"Space Grotesk",system-ui,sans-serif; --mono:"Roboto Mono",monospace;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:13.5px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+header{background:var(--carte);border-bottom:1px solid var(--bord);padding:13px 26px 0}
+.marque{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.marque .logo{width:29px;height:29px;border-radius:8px;background:var(--acc);color:#fff;display:grid;place-items:center;
+  font-family:var(--tete);font-weight:700;font-size:15px}
+.marque b{font-family:var(--tete);font-size:16.5px;letter-spacing:-.01em}
+.marque span{color:var(--pale);font-size:11.5px;margin-left:2px}
+.marque .maj{margin-left:auto;font-size:11px;color:var(--pale);display:flex;align-items:center;gap:7px}
+.pastille{width:7px;height:7px;border-radius:50%;background:var(--low)}
+
+/* Ruban de chaîne — la signature : les écrans sont les stations d'une boucle */
+.chaine{display:flex;align-items:stretch;gap:0;overflow-x:auto}
+.station{position:relative;padding:11px 26px 13px 30px;min-width:172px;text-decoration:none;color:var(--mid);
+  border-bottom:3px solid transparent;flex:1}
+.station:first-child{padding-left:2px}
+.station::before{content:"";position:absolute;left:8px;top:50%;width:9px;height:9px;transform:translateY(-50%) rotate(45deg);
+  border-top:2px solid var(--bord);border-right:2px solid var(--bord)}
+.station:first-child::before{display:none}
+.station .etape{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;color:var(--pale);text-transform:uppercase}
+.station .nom{font-family:var(--tete);font-size:13.5px;font-weight:600;margin-top:3px;display:block}
+.station .cpt{font-family:var(--mono);font-size:11px;color:var(--pale);margin-top:2px;display:block}
+.station.on{color:var(--acc);border-bottom-color:var(--acc);background:linear-gradient(180deg,transparent,#eef6f9)}
+.station.on .cpt{color:var(--acc);font-weight:500}
+.station .alerte{display:inline-block;background:var(--crit);color:#fff;font-family:var(--mono);font-size:9.5px;
+  padding:1px 5px;border-radius:9px;margin-left:5px;vertical-align:1px}
+
+main{padding:24px 26px 60px}
+.fil{font-size:11px;color:var(--pale);font-family:var(--mono);letter-spacing:.05em;margin-bottom:7px}
+h1{font-family:var(--tete);font-size:27px;margin:0 0 6px;font-weight:600;letter-spacing:-.02em}
+.sous{color:var(--mid);font-size:13.5px;margin:0 0 22px;max-width:74ch;line-height:1.6}
+
+/* Chaque bloc = une station, avec sa sortie explicite vers la suivante */
+.rangs{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;align-items:start}
+.carte{background:var(--carte);border:1px solid var(--bord);border-radius:12px;overflow:hidden}
+.carte > header{background:transparent;border:0;border-bottom:1px solid var(--bord);padding:13px 17px;
+  display:flex;align-items:center;justify-content:space-between}
+.carte h2{font-family:var(--tete);font-size:14px;margin:0;font-weight:600}
+.carte .corps{padding:4px 17px 14px}
+
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--pale);font-weight:600;padding:9px 10px 8px 0;border-bottom:1px solid var(--bord)}
+td{padding:10px 10px 10px 0;border-bottom:1px solid #eef1f4;font-size:13px}
+td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+tr:hover td{background:#f7fafb}
+
+.puce{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:20px;
+  border:1px solid currentColor}
+.p-c{color:var(--crit);background:#fdf1f4} .p-h{color:var(--high);background:#fdf3ee}
+.p-m{color:var(--mod);background:#fdf7ec} .p-l{color:var(--low);background:#eef7f2}
+
+/* Le maillon : ce que ce signal déclenche en aval */
+.maillon{border-left:3px solid var(--crit);background:#fdf1f4;border-radius:0 10px 10px 0;padding:12px 15px;margin-bottom:10px}
+.maillon b{font-size:13px;display:block;margin-bottom:4px}
+.maillon p{margin:0;font-size:12px;color:var(--mid);line-height:1.55}
+.maillon .suite{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:9px;border-top:1px solid #f3d9e0;
+  font-size:12px;font-weight:600;color:var(--acc)}
+.maillon .suite::before{content:"→";font-family:var(--mono)}
+.maillon.h{border-left-color:var(--high);background:#fdf3ee}
+.maillon.h .suite{border-top-color:#f5ddcd}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="marque">
+    <div class="logo">H</div>
+    <b>Homologa</b><span>PHYTO BEHT · index ONSSA 01/09/2026</span>
+    <div class="maj"><span class="pastille"></span> Source ANSES à jour — E-Phy 25/08/2026</div>
+  </div>
+
+  <nav class="chaine">
+    <a href="#" class="station on">
+      <span class="etape">Étape 1</span><span class="nom">Signal</span>
+      <span class="cpt">26 détections <span class="alerte">8</span></span>
+    </a>
+    <a href="#" class="station">
+      <span class="etape">Étape 2</span><span class="nom">Matière active</span>
+      <span class="cpt">25 au portefeuille</span>
+    </a>
+    <a href="#" class="station">
+      <span class="etape">Étape 3</span><span class="nom">Produits touchés</span>
+      <span class="cpt">24 / 38 · 9 usages</span>
+    </a>
+    <a href="#" class="station">
+      <span class="etape">Étape 4</span><span class="nom">Alternative</span>
+      <span class="cpt">112 cibles d'import</span>
+    </a>
+    <a href="#" class="station">
+      <span class="etape">Étape 5</span><span class="nom">Fournisseur</span>
+      <span class="cpt">58 génériques · 10 pays</span>
+    </a>
+    <a href="#" class="station">
+      <span class="etape">Étape 6</span><span class="nom">Dossier ONSSA</span>
+      <span class="cpt">78 lignes · Annexe 3-B</span>
+    </a>
+  </nav>
+</header>
+
+<main>
+  <div class="fil">ÉTAPE 1 — SIGNAL RÉGLEMENTAIRE</div>
+  <h1>Ce qui a bougé, et ce que ça déclenche</h1>
+  <p class="sous">Chaque signal ouvre une chaîne : la matière active concernée, les produits qui la portent, l'alternative homologable, le fournisseur qui détient les études, le dossier à déposer. Le ruban du haut suit votre position dans cette boucle.</p>
+
+  <div class="rangs">
+    <div class="carte">
+      <header><h2>Signaux ouverts</h2><span class="mono" style="font-size:11px;color:var(--pale)">recalculés à l'affichage</span></header>
+      <div class="corps">
+
+        <div class="maillon">
+          <b>Imidaclopride — plus autorisée en France</b>
+          <p>Non inscrite au règlement, 27 produits retirés. L'ONSSA s'alignant sur l'ANSES, le retrait marocain est acquis à terme.</p>
+          <div class="suite">2 produits · BRIGHT SC, SOLTAN 500 SC — 3 usages à re-couvrir</div>
+        </div>
+
+        <div class="maillon">
+          <b>Alpha-cyperméthrine — plus autorisée en France</b>
+          <p>Non inscrite au règlement, 36 produits retirés. Les deux spécialités portent en plus des AMM échues.</p>
+          <div class="suite">2 produits · AL-KATIL, ATLANTIC — cumul perte d'AMM + perte de statut</div>
+        </div>
+
+        <div class="maillon h">
+          <b>Oxyfluorfène — aucun produit autorisé en France</b>
+          <p>Inscrite au règlement mais 33 produits retirés, aucun autorisé depuis mars 2020. Retrait commercial, pas réglementaire.</p>
+          <div class="suite">2 produits · DRON TOP, TWIN-PRO — surveiller, ne pas engager d'études</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display:grid;gap:16px">
+      <div class="carte">
+        <header><h2>Étape suivante — alternatives</h2></header>
+        <div class="corps">
+          <table>
+            <thead><tr><th>Cible d'import</th><th>Sourçable</th><th class="n">Score</th></tr></thead>
+            <tbody>
+              <tr><td>Pyrimicarbe(50%)<br><span style="font-size:11px;color:var(--pale)">Pucerons · 25 usages</span></td><td style="font-size:12px">Inde<br><span class="puce p-l">France : autorisée</span></td><td class="n" style="color:var(--acc);font-weight:600">91</td></tr>
+              <tr><td>Spirotétramate(100 g/l)<br><span style="font-size:11px;color:var(--pale)">Mouche blanche · 20 usages</span></td><td style="font-size:12px">Chine<br><span class="puce p-l">France : autorisée</span></td><td class="n" style="color:var(--acc);font-weight:600">68</td></tr>
+              <tr><td>Flonicamid(50%)<br><span style="font-size:11px;color:var(--pale)">Pucerons · 12 usages</span></td><td style="font-size:12px">Inde<br><span class="puce p-l">France : autorisée</span></td><td class="n" style="color:var(--acc);font-weight:600">54</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="carte">
+        <header><h2>Fin de chaîne — dossier</h2></header>
+        <div class="corps" style="padding-top:13px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+            <span style="font-size:12.5px;color:var(--mid)">Pyrimicarbe — voie me-too</span>
+            <span class="mono" style="font-weight:600;color:var(--acc);font-size:15px">89 %</span>
+          </div>
+          <div style="height:7px;border-radius:20px;background:var(--bord);overflow:hidden">
+            <span style="display:block;height:100%;width:89%;background:var(--acc)"></span>
+          </div>
+          <p style="font-size:12px;color:var(--mid);margin:11px 0 0;line-height:1.55">
+            65 lignes allégeables par référence, 13 à produire, 46 études BPL.
+            Fournisseur pressenti : SHARDA CROPCHEM (Inde, 309 réf. ONSSA) —
+            <b style="color:var(--acc)">43 / 64</b> lignes couvertes par ses agréments déclarés.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

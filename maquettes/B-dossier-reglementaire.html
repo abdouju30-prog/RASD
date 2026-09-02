@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Maquette B — Dossier réglementaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#faf8f4; --blanc:#fff; --encre:#1a1714; --gris:#5c554d; --pale:#8b8279;
+  --filet:#e0d9ce; --filet-fort:#c4b9a8;
+  --sceau:#1f4d3d; --crit:#96162f; --high:#a8480d; --mod:#8a5a08; --low:#1f4d3d;
+  --serif:"Newsreader",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--papier);color:var(--encre);font-family:var(--sans);font-size:13.5px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+.page{display:flex;min-height:100vh}
+
+/* Rail d'index numéroté — la signature : l'app se lit comme un dossier officiel */
+.rail{width:250px;flex-shrink:0;background:var(--blanc);border-right:1px solid var(--filet);padding:26px 0 0}
+.rail .tete{padding:0 24px 22px;border-bottom:2px solid var(--sceau);margin-bottom:4px}
+.rail .tete h2{font-family:var(--serif);font-size:23px;margin:0;font-weight:600;letter-spacing:-.01em}
+.rail .tete p{margin:5px 0 0;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--pale)}
+.rail a{display:flex;gap:13px;padding:11px 24px;color:var(--gris);text-decoration:none;font-size:13px;align-items:baseline}
+.rail a i{font-family:var(--mono);font-size:10.5px;color:var(--filet-fort);font-style:normal;width:16px}
+.rail a.on{color:var(--sceau);font-weight:600;background:#f4f7f5}
+.rail a.on i{color:var(--sceau)}
+.rail .pied{margin-top:26px;padding:16px 24px;border-top:1px solid var(--filet);font-size:10.5px;color:var(--pale);line-height:1.65}
+
+main{flex:1;min-width:0;padding:44px 52px 70px;max-width:none}
+.entete{border-bottom:1px solid var(--filet-fort);padding-bottom:22px;margin-bottom:30px}
+.ref{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--pale)}
+h1{font-family:var(--serif);font-size:40px;line-height:1.1;margin:11px 0 12px;font-weight:600;letter-spacing:-.02em}
+.chapeau{font-family:var(--serif);font-size:17px;line-height:1.6;color:var(--gris);max-width:62ch;margin:0}
+
+/* Synthèse en tête, à la manière d'un résumé de rapport */
+.synthese{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--filet-fort);
+  border-bottom:1px solid var(--filet-fort);margin:0 0 34px}
+.synthese div{padding:17px 20px 17px 0}
+.synthese div + div{border-left:1px solid var(--filet);padding-left:20px}
+.synthese span{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--pale);margin-bottom:7px}
+.synthese strong{font-family:var(--serif);font-size:33px;font-weight:600;line-height:1;display:block}
+.synthese em{font-style:normal;font-size:11.5px;color:var(--gris);display:block;margin-top:6px;line-height:1.45}
+
+h2{font-family:var(--serif);font-size:22px;margin:0 0 4px;font-weight:600}
+h2 i{font-family:var(--mono);font-size:12px;font-style:normal;color:var(--filet-fort);margin-right:11px}
+.intro{color:var(--gris);font-size:13px;margin:0 0 16px;max-width:74ch;line-height:1.6}
+section{margin-bottom:40px}
+
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--pale);font-weight:600;
+  padding:0 12px 9px 0;border-bottom:1px solid var(--filet-fort)}
+td{padding:11px 12px 11px 0;border-bottom:1px solid var(--filet);font-size:13.5px;vertical-align:top}
+td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.mention{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase}
+
+/* Les constats se lisent comme des articles numérotés, pas comme des cartes */
+.constat{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:19px 0;border-bottom:1px solid var(--filet)}
+.constat .num{font-family:var(--mono);font-size:11px;color:var(--pale);padding-top:3px}
+.constat h3{font-family:var(--serif);font-size:17.5px;margin:0 0 6px;font-weight:600}
+.constat p{margin:0;font-size:13px;color:var(--gris);line-height:1.65;max-width:88ch}
+.constat .visa{margin-top:9px;font-size:11.5px;color:var(--sceau);font-weight:500}
+.tag{display:inline-block;border:1px solid var(--filet-fort);padding:2px 8px;font-size:10px;
+  letter-spacing:.06em;text-transform:uppercase;margin-right:6px;color:var(--gris)}
+.tag.c{border-color:var(--crit);color:var(--crit)} .tag.h{border-color:var(--high);color:var(--high)}
+</style>
+</head>
+<body>
+<div class="page">
+  <aside class="rail">
+    <div class="tete"><h2>Homologa</h2><p>PHYTO BEHT</p></div>
+    <a href="#" class="on"><i>I</i> Radar réglementaire</a>
+    <a href="#"><i>II</i> Veille &amp; alertes</a>
+    <a href="#"><i>III</i> Prospection &amp; sourcing</a>
+    <a href="#"><i>IV</i> Matières actives</a>
+    <a href="#"><i>V</i> Portefeuille produits</a>
+    <a href="#"><i>VI</i> Atelier dossiers</a>
+    <div class="pied">
+      Index ONSSA du 01/09/2026<br>
+      Données E-Phy — Anses, 25/08/2026<br>
+      Statuts UE : PPDB / AERU, à recouper.
+    </div>
+  </aside>
+
+  <main>
+    <div class="entete">
+      <div class="ref">Rapport de situation · 1<sup>er</sup> septembre 2026 · PHYTO BEHT</div>
+      <h1>Tour de contrôle réglementaire</h1>
+      <p class="chapeau">Vingt-six détections sur le portefeuille, dont huit critiques touchant vingt-quatre des trente-huit produits. Deux autorisations de mise sur le marché sont échues et ne couvrent plus la commercialisation.</p>
+    </div>
+
+    <div class="synthese">
+      <div><span>AMM expirées</span><strong style="color:var(--crit)">2</strong><em>AL-KATIL, ATLANTIC</em></div>
+      <div><span>Alertes critiques</span><strong style="color:var(--crit)">8</strong><em>sur 26 détections</em></div>
+      <div><span>Usages exposés</span><strong style="color:var(--high)">9</strong><em>sur 68 homologués</em></div>
+      <div><span>Matières actives</span><strong>25</strong><em>au portefeuille</em></div>
+      <div><span>Cibles d'import</span><strong style="color:var(--sceau)">112</strong><em>voie me-too</em></div>
+    </div>
+
+    <section>
+      <h2><i>1</i> Constats appelant une décision</h2>
+      <p class="intro">Classés par antériorité du signal. Le statut français précède le statut marocain : l'ONSSA s'aligne sur l'ANSES.</p>
+
+      <div class="constat">
+        <div class="num">1.1</div>
+        <div>
+          <h3>Imidaclopride — plus autorisée en France</h3>
+          <p>Substance non inscrite au règlement français ; vingt-sept produits retirés, aucun autorisé. L'ONSSA s'alignant sur l'ANSES, le retrait marocain doit être considéré comme acquis à terme. Deux produits du portefeuille reposent sur cette matière active.</p>
+          <div class="visa">→ Sécuriser une alternative homologable avant l'alignement de l'ONSSA.</div>
+          <div style="margin-top:9px"><span class="tag c">critique</span><span class="tag">BRIGHT SC</span><span class="tag">SOLTAN 500 SC</span></div>
+        </div>
+      </div>
+
+      <div class="constat">
+        <div class="num">1.2</div>
+        <div>
+          <h3>Alpha-cyperméthrine — plus autorisée en France</h3>
+          <p>Non inscrite au règlement, trente-six produits retirés. Les deux spécialités concernées portent par ailleurs des autorisations échues, ce qui fait converger deux motifs de retrait sur la même molécule.</p>
+          <div class="visa">→ Priorité absolue : ces produits cumulent perte d'AMM et perte de statut.</div>
+          <div style="margin-top:9px"><span class="tag c">critique</span><span class="tag">AL-KATIL</span><span class="tag">ATLANTIC</span></div>
+        </div>
+      </div>
+
+      <div class="constat">
+        <div class="num">1.3</div>
+        <div>
+          <h3>Oxyfluorfène — aucun produit autorisé en France</h3>
+          <p>La substance demeure inscrite au règlement, mais les trente-trois produits français ont été retirés, le dernier en mars 2020. Il s'agit d'un retrait commercial et non réglementaire : l'ONSSA ne le suit pas mécaniquement, la vigilance reste néanmoins justifiée.</p>
+          <div class="visa">→ Surveiller ; préparer une alternative sans engager d'études.</div>
+          <div style="margin-top:9px"><span class="tag h">élevé</span><span class="tag">DRON TOP</span><span class="tag">TWIN-PRO</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><i>2</i> Matières actives du portefeuille</h2>
+      <p class="intro">Vingt-cinq molécules, classées par score de risque réglementaire. Le score se décompose ligne à ligne sur la fiche de chaque matière active.</p>
+      <table>
+        <thead><tr><th>Matière active</th><th>Catégorie</th><th style="text-align:right">Produits</th><th style="text-align:right">Usages</th><th>Statut France</th><th>Statut UE</th><th style="text-align:right">Risque</th></tr></thead>
+        <tbody>
+          <tr><td>Imidaclopride(500 g/l)</td><td>Insecticide</td><td class="n">1</td><td class="n">1</td><td class="mention" style="color:var(--crit)">retirée</td><td class="mention">non renouvelée</td><td class="n" style="color:var(--crit)">86</td></tr>
+          <tr><td>Alpha-cyperméthrine(250 g/l)</td><td>Insecticide</td><td class="n">2</td><td class="n">2</td><td class="mention" style="color:var(--crit)">retirée</td><td class="mention">non renouvelée</td><td class="n" style="color:var(--crit)">83</td></tr>
+          <tr><td>Oxyfluorfène(240 g/l)</td><td>Herbicide</td><td class="n">2</td><td class="n">2</td><td class="mention" style="color:var(--high)">0 produit</td><td class="mention">approuvée</td><td class="n" style="color:var(--high)">64</td></tr>
+          <tr><td>Difénoconazole(250 g/l)</td><td>Fongicide</td><td class="n">1</td><td class="n">1</td><td class="mention" style="color:var(--low)">autorisée</td><td class="mention">échéance dépassée</td><td class="n" style="color:var(--high)">58</td></tr>
+          <tr><td>Cuivre — oxychlorure(50%)</td><td>Fongicide</td><td class="n">1</td><td class="n">12</td><td class="mention" style="color:var(--low)">autorisée</td><td class="mention">candidate subst.</td><td class="n" style="color:var(--mod)">39</td></tr>
+          <tr><td>Glyphosate(450 g/l)</td><td>Herbicide</td><td class="n">3</td><td class="n">6</td><td class="mention" style="color:var(--low)">autorisée</td><td class="mention">approuvée 2033</td><td class="n" style="color:var(--low)">22</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+</body>
+</html>

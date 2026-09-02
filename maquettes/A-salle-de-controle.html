@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Maquette A — Salle de contrôle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1ef; --panel:#fff; --rule:#d3dad6; --rule-fort:#aab5b0;
+  --fg:#0d1512; --mid:#4a5852; --dim:#6d7d76;
+  --acc:#046b4e; --low:#046b4e; --mod:#9a4708; --high:#b23a0a; --crit:#a80f35;
+  --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",monospace;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:13px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* Bandeau instrument permanent — la signature de cette direction */
+.instrument{position:sticky;top:0;z-index:10;background:var(--fg);color:#e8efec;
+  display:flex;align-items:stretch;border-bottom:2px solid var(--acc)}
+.instrument .marque{padding:0 18px;display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:-.01em;
+  border-right:1px solid #26332e;font-size:15px}
+.instrument .marque b{color:var(--acc);font-family:var(--mono)}
+.jauge{padding:9px 18px;border-right:1px solid #26332e;display:flex;flex-direction:column;gap:2px;min-width:118px}
+.jauge span{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fa39b}
+.jauge strong{font-family:var(--mono);font-size:21px;font-weight:600;line-height:1.05}
+.jauge.crit strong{color:#ff6b8a} .jauge.high strong{color:#ff9d5c} .jauge.ok strong{color:#4ade9f}
+.instrument .fin{margin-left:auto;display:flex;align-items:center;gap:14px;padding:0 18px;font-size:11px;color:#8fa39b}
+.led{width:7px;height:7px;border-radius:50%;background:#4ade9f;box-shadow:0 0 7px #4ade9f}
+
+.corps{display:flex;min-height:calc(100vh - 58px)}
+nav{width:186px;flex-shrink:0;background:var(--panel);border-right:1px solid var(--rule);padding:12px 0}
+nav a{display:block;padding:8px 18px;color:var(--mid);text-decoration:none;font-size:12.5px;font-weight:500;border-left:3px solid transparent}
+nav a.on{border-left-color:var(--acc);color:var(--acc);background:#f2f7f5;font-weight:600}
+nav .grp{padding:14px 18px 5px;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);font-weight:600}
+
+main{flex:1;min-width:0;padding:16px 20px 40px}
+h1{font-size:19px;margin:0 0 3px;font-weight:600;letter-spacing:-.015em}
+.sub{color:var(--dim);font-size:11.5px;margin-bottom:14px}
+
+/* Pas de cartes : des blocs séparés par des filets. Densité maximale. */
+.grille{display:grid;grid-template-columns:1.35fr 1fr;gap:0;background:var(--rule);border:1px solid var(--rule)}
+.bloc{background:var(--panel);padding:13px 16px}
+.bloc + .bloc{border-left:1px solid var(--rule)}
+.titre{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);font-weight:700;
+  padding-bottom:7px;border-bottom:1px solid var(--rule);margin-bottom:10px;display:flex;justify-content:space-between}
+
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);font-weight:600;
+  padding:5px 8px 5px 0;border-bottom:1px solid var(--rule)}
+td{padding:6px 8px 6px 0;border-bottom:1px solid #eef1f0;font-size:12.5px}
+tr:hover td{background:#f5f8f7}
+.sev{display:inline-block;width:3px;height:13px;vertical-align:-2px;margin-right:7px;border-radius:1px}
+.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+
+.flux{display:grid;gap:0}
+.evt{display:grid;grid-template-columns:3px 1fr auto;gap:11px;padding:9px 0;border-bottom:1px solid #eef1f0;align-items:start}
+.evt .bar{align-self:stretch;border-radius:1px}
+.evt b{font-weight:600;font-size:12.5px;display:block}
+.evt small{color:var(--dim);font-size:11px;line-height:1.45;display:block;margin-top:2px}
+.evt .q{font-family:var(--mono);font-size:10.5px;color:var(--dim);white-space:nowrap}
+
+.strip{display:flex;gap:0;border:1px solid var(--rule);background:var(--rule);margin-bottom:14px}
+.strip div{flex:1;background:var(--panel);padding:9px 13px}
+.strip span{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:block}
+.strip strong{font-family:var(--mono);font-size:17px;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="instrument">
+  <div class="marque">HOMOLOGA <b>/</b> PHYTO BEHT</div>
+  <div class="jauge crit"><span>Critiques</span><strong>8</strong></div>
+  <div class="jauge high"><span>Élevées</span><strong>4</strong></div>
+  <div class="jauge"><span>Détections</span><strong>26</strong></div>
+  <div class="jauge crit"><span>AMM expirées</span><strong>2</strong></div>
+  <div class="jauge"><span>Produits touchés</span><strong>24<small style="font-size:11px;color:#8fa39b">/38</small></strong></div>
+  <div class="jauge ok"><span>Source ANSES</span><strong style="font-size:14px;padding-top:4px">25/08</strong></div>
+  <div class="fin"><span class="led"></span> flux actif · recalcul à l'affichage</div>
+</div>
+
+<div class="corps">
+  <nav>
+    <div class="grp">Surveiller</div>
+    <a href="#" class="on">Radar réglementaire</a>
+    <a href="#">Veille &amp; alertes</a>
+    <div class="grp">Développer</div>
+    <a href="#">Prospection &amp; sourcing</a>
+    <a href="#">Matières actives</a>
+    <a href="#">Portefeuille produits</a>
+    <div class="grp">Produire</div>
+    <a href="#">Atelier dossiers</a>
+  </nav>
+
+  <main>
+    <h1>Tour de contrôle</h1>
+    <div class="sub">Index ONSSA du 01/09/2026 · 4 852 lignes · 653 matières actives · 211 fournisseurs</div>
+
+    <div class="strip">
+      <div><span>Usages à risque</span><strong>9</strong> <small style="color:var(--dim)">/ 68</small></div>
+      <div><span>AMM &lt; 18 mois</span><strong style="color:var(--high)">2</strong></div>
+      <div><span>M.A. portefeuille</span><strong>25</strong></div>
+      <div><span>Fiches UE vérifiées</span><strong>20</strong> <small style="color:var(--dim)">/ 23</small></div>
+      <div><span>Cibles prospection</span><strong style="color:var(--acc)">112</strong></div>
+    </div>
+
+    <div class="grille">
+      <div class="bloc">
+        <div class="titre"><span>Matières actives du portefeuille</span><span class="mono" style="color:var(--dim)">25</span></div>
+        <table>
+          <thead><tr><th>Matière active</th><th>Cat.</th><th class="n">Prod.</th><th class="n">Usages</th><th>France</th><th class="n">Risque</th></tr></thead>
+          <tbody>
+            <tr><td><span class="sev" style="background:var(--crit)"></span>Imidaclopride(500 g/l)</td><td>Insecticide</td><td class="n">1</td><td class="n">1</td><td style="color:var(--crit)">retirée</td><td class="n" style="color:var(--crit);font-weight:600">86</td></tr>
+            <tr><td><span class="sev" style="background:var(--crit)"></span>Alpha-cyperméthrine(250 g/l)</td><td>Insecticide</td><td class="n">2</td><td class="n">2</td><td style="color:var(--crit)">retirée</td><td class="n" style="color:var(--crit);font-weight:600">83</td></tr>
+            <tr><td><span class="sev" style="background:var(--high)"></span>Oxyfluorfène(240 g/l)</td><td>Herbicide</td><td class="n">2</td><td class="n">2</td><td style="color:var(--high)">0 produit</td><td class="n" style="color:var(--high);font-weight:600">64</td></tr>
+            <tr><td><span class="sev" style="background:var(--high)"></span>Difénoconazole(250 g/l)</td><td>Fongicide</td><td class="n">1</td><td class="n">1</td><td style="color:var(--low)">autorisée</td><td class="n" style="color:var(--high);font-weight:600">58</td></tr>
+            <tr><td><span class="sev" style="background:var(--mod)"></span>Huile min. paraffinique(790 g/l)</td><td>Insecticide</td><td class="n">1</td><td class="n">1</td><td style="color:var(--high)">0 produit</td><td class="n" style="color:var(--mod);font-weight:600">42</td></tr>
+            <tr><td><span class="sev" style="background:var(--mod)"></span>Cuivre - oxychlorure(50%)</td><td>Fongicide</td><td class="n">1</td><td class="n">12</td><td style="color:var(--low)">autorisée</td><td class="n" style="color:var(--mod);font-weight:600">39</td></tr>
+            <tr><td><span class="sev" style="background:var(--low)"></span>Glyphosate(450 g/l)</td><td>Herbicide</td><td class="n">3</td><td class="n">6</td><td style="color:var(--low)">autorisée</td><td class="n" style="color:var(--low);font-weight:600">22</td></tr>
+            <tr><td><span class="sev" style="background:var(--low)"></span>Azoxystrobine(250 g/l)</td><td>Fongicide</td><td class="n">2</td><td class="n">8</td><td style="color:var(--low)">autorisée</td><td class="n" style="color:var(--low);font-weight:600">18</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bloc">
+        <div class="titre"><span>Flux d'alertes</span><span class="mono" style="color:var(--crit)">8 critiques</span></div>
+        <div class="flux">
+          <div class="evt"><i class="bar" style="background:var(--crit)"></i>
+            <div><b>Plus autorisée en France · Imidaclopride(500 g/l)</b>
+            <small>Substance non inscrite au règlement, 27 produits retirés. L'ONSSA s'alignant sur l'ANSES, le retrait marocain est acquis à terme.</small></div>
+            <div class="q">SOLTAN 500 SC</div></div>
+
+          <div class="evt"><i class="bar" style="background:var(--crit)"></i>
+            <div><b>AMM expirée · AL-KATIL</b>
+            <small>Homologation F06-1-028 échue le 25/07/2026. La commercialisation n'est plus couverte.</small></div>
+            <div class="q">25/07/2026</div></div>
+
+          <div class="evt"><i class="bar" style="background:var(--crit)"></i>
+            <div><b>AMM expirée · ATLANTIC</b>
+            <small>Homologation F06-6-013 échue le 09/08/2026.</small></div>
+            <div class="q">09/08/2026</div></div>
+
+          <div class="evt"><i class="bar" style="background:var(--high)"></i>
+            <div><b>Aucun produit autorisé en France · Oxyfluorfène</b>
+            <small>Inscrite au règlement mais 33 produits retirés, aucun autorisé depuis mars 2020.</small></div>
+            <div class="q">DRON TOP · TWIN-PRO</div></div>
+
+          <div class="evt"><i class="bar" style="background:var(--high)"></i>
+            <div><b>Échéance UE dépassée · Difénoconazole</b>
+            <small>Expiration PPDB au 15/03/2026 — à recouper contre la EU Pesticides Database.</small></div>
+            <div class="q">15/03/2026</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -8,3 +8,6 @@
 .env
 
 .vercel
+
+# Copies servies des maquettes (source dans maquettes/)
+/public/maquettes
