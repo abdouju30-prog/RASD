@@ -4,6 +4,7 @@ import { FOURNISSEURS, MATIERES } from "@/lib/data";
 import { PAYS_CIBLES, statsSourcing } from "@/lib/sourcing";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { PastillesPacks } from "@/components/PacksFournisseur";
+import { Aide } from "@/components/Aide";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -68,9 +69,8 @@ export default async function FournisseursPage({
       <div className="fil">Étape 5 — fournisseur</div>
       <h1>Qui peut porter le dossier</h1>
       <p style={{ color: "var(--muted)", maxWidth: "88ch", lineHeight: 1.55, margin: "0 0 16px" }}>
-        Les {FOURNISSEURS.length} sociétés référencées à l&apos;index ONSSA. Un fournisseur ne se
-        choisit pas que sur le pays : il doit détenir les études qui remplissent l&apos;Annexe 3-B.
-        La colonne « agréments » dit ce qu&apos;il déclare avoir.
+        Les {FOURNISSEURS.length} sociétés de l&apos;index. Un fournisseur ne se choisit pas que sur
+        le pays : il doit détenir les études qui remplissent l&apos;Annexe 3-B.
       </p>
 
       <div className="strip" style={{ marginBottom: 14 }}>
@@ -124,15 +124,18 @@ export default async function FournisseursPage({
         </div>
       </div>
 
-      <div className="card" style={{ padding: "11px 15px", marginBottom: 14, display: "flex", gap: 10 }}>
-        <Info size={15} color="var(--info)" style={{ flexShrink: 0, marginTop: 1 }} />
-        <div style={{ fontSize: 12, color: "var(--muted)", lineHeight: 1.55 }}>
-          Le pays est <strong>inféré</strong> du nom de la société ; « ? » signale une déduction faite
-          sur le seul suffixe juridique. Les agréments sont <strong>déclaratifs</strong> — ce que le
-          fournisseur affirme détenir, à saisir dans{" "}
-          <span className="mono">data/fournisseurs-packs.json</span> avec sa source. Ni l&apos;un ni
-          l&apos;autre ne remplace une vérification avant engagement.
-        </div>
+      <div style={{ marginBottom: 14 }}>
+        <Aide titre="Fiabilité du pays et des agréments">
+          <p>
+            Le pays est <strong>inféré</strong> du nom de la société ; « ? » signale une déduction
+            faite sur le seul suffixe juridique.
+          </p>
+          <p>
+            Les agréments sont <strong>déclaratifs</strong> — ce que le fournisseur affirme détenir,
+            à saisir dans <span className="mono">data/fournisseurs-packs.json</span> avec sa source.
+            Ni l&apos;un ni l&apos;autre ne remplace une vérification avant engagement.
+          </p>
+        </Aide>
       </div>
 
       <div className="grille">

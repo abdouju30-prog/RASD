@@ -44,8 +44,7 @@ export default function RadarPage() {
       </div>
       <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>Tour de contrôle</h1>
       <p style={{ color: "var(--muted)", maxWidth: 660, lineHeight: 1.6, marginTop: 0 }}>
-        Chaque signal réglementaire est relié aux produits concernés, à leurs usages homologués et à
-        l&apos;alternative à homologuer. Le radar désigne l&apos;atelier produit.
+        Chaque signal est relié aux produits concernés et à l&apos;alternative à homologuer.
       </p>
 
       {st.critiques > 0 && (

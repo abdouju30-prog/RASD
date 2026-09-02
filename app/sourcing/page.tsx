@@ -9,6 +9,7 @@ import {
   statsSourcing,
 } from "@/lib/sourcing";
 import { STATS_EPHY } from "@/lib/ephy";
+import { Aide } from "@/components/Aide";
 
 export const dynamic = "force-dynamic";
 
@@ -69,9 +70,9 @@ export default async function SourcingPage({
         Matières actives à importer
       </h1>
       <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
-        Molécules à fort marché, faiblement détenues au Maroc, et sourçables auprès d&apos;un
-        fournisseur générique <strong>déjà référencé à l&apos;ONSSA</strong> — c&apos;est ce dernier point
-        qui transforme une homologation longue en dossier par référence.
+        Fort marché, peu de détenteurs, et un fournisseur générique{" "}
+        <strong>déjà référencé à l&apos;ONSSA</strong> — c&apos;est ce dernier point qui ouvre la voie
+        me-too.
       </p>
 
       <div
@@ -140,24 +141,20 @@ export default async function SourcingPage({
         </div>
       </div>
 
-      <div
-        className="card"
-        style={{ padding: "13px 17px", marginBottom: 18, display: "flex", gap: 11 }}
-      >
-        <Info size={16} color="var(--info)" style={{ flexShrink: 0, marginTop: 1 }} />
-        <div style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6 }}>
-          <strong style={{ color: "var(--fg)" }}>Aucun prix dans cet écran.</strong> L&apos;index ONSSA
-          n&apos;en contient pas. Le classement mesure l&apos;<em>accessibilité</em> : nombre de
-          fournisseurs génériques en concurrence sur la molécule, ce qui détermine votre pouvoir de
-          négociation. Les prix se relèvent en consultation, après avoir retenu une cible.
-          <br />
-          <strong style={{ color: "var(--fg)" }}>Les molécules retirées en France sont écartées
-          d&apos;office</strong> — l&apos;ONSSA s&apos;alignant sur l&apos;ANSES, leur dossier serait
-          condamné d&apos;avance. Statut lu dans le catalogue E-Phy ({STATS_EPHY.attribution}).{" "}
-          <strong style={{ color: "var(--mod)" }}>« Risque non évalué »</strong> signale les rares
-          molécules non appariables à E-Phy et sans fiche : à vérifier avant toute consultation
-          fournisseur.
-        </div>
+      <div style={{ margin: "0 0 16px" }}>
+        <Aide titre="Comment lire ce classement">
+          <p>
+            <strong>Aucun prix ici</strong> — l&apos;index ONSSA n&apos;en contient pas. Le score
+            mesure l&apos;<em>accessibilité</em> : le nombre de fournisseurs génériques en concurrence
+            sur la molécule, donc votre pouvoir de négociation.
+          </p>
+          <p>
+            Les molécules retirées en France sont <strong>écartées d&apos;office</strong> : l&apos;ONSSA
+            s&apos;alignant sur l&apos;ANSES, leur dossier serait condamné d&apos;avance. Statut lu dans
+            E-Phy ({STATS_EPHY.attribution}). « Risque non évalué » signale les rares molécules ni
+            appariables ni documentées.
+          </p>
+        </Aide>
       </div>
 
       <div style={{ display: "grid", gap: 12 }}>

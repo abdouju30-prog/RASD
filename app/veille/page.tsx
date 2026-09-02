@@ -7,6 +7,7 @@ import { COUVERTURE } from "@/lib/reglementaire";
 import { META } from "@/lib/data";
 import { STATS_EPHY } from "@/lib/ephy";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
+import { Aide } from "@/components/Aide";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
   anses_retrait: ShieldAlert,
@@ -37,8 +38,7 @@ export default function VeillePage() {
       <div className="eyebrow">Veille réglementaire</div>
       <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>Flux d&apos;alertes</h1>
       <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
-        Recalculées à chaque affichage à partir des dates d&apos;AMM de l&apos;index ONSSA, du statut
-        ANSES et du statut UE. Rien n&apos;est stocké : l&apos;écran ne peut pas afficher un état périmé.
+        Recalculées à chaque affichage. Rien n&apos;est stocké.
       </p>
 
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap", margin: "20px 0 8px" }}>
@@ -72,29 +72,20 @@ export default function VeillePage() {
         <FraicheurEphy />
       </div>
 
-      <div
-        className="card"
-        style={{
-          padding: "13px 17px",
-          margin: "0 0 22px",
-          display: "flex",
-          gap: 11,
-          alignItems: "flex-start",
-        }}
-      >
-        <Info size={16} color="var(--info)" style={{ flexShrink: 0, marginTop: 1 }} />
-        <div style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6 }}>
-          <strong style={{ color: "var(--fg)" }}>Hiérarchie des signaux.</strong> L&apos;ONSSA
-          s&apos;aligne sur l&apos;ANSES : un retrait français annonce le retrait marocain. Les alertes
-          « retrait ANSES » passent donc en tête, avant le statut UE qui est en amont et plus lent. Le
-          statut français est lu dans le catalogue E-Phy — {STATS_EPHY.attribution}, {STATS_EPHY.nbSubstances}{" "}
-          substances{COUVERTURE.nbAnsesDeduit > 0 ? `, ${COUVERTURE.nbAnsesDeduit} statut(s) déduits faute d'appariement` : ""}.
-          <br />
-          <strong style={{ color: "var(--fg)" }}>Réserve UE.</strong> Les dates d&apos;expiration
-          d&apos;approbation viennent de la {COUVERTURE.source} (consultée le {fmtDate(COUVERTURE.date)}).
-          La Commission prolonge fréquemment ces dates par règlement d&apos;exécution : une échéance
-          dépassée signifie « à recouper d&apos;urgence », pas « substance interdite ».
-        </div>
+      <div style={{ margin: "0 0 16px" }}>
+        <Aide titre="Hiérarchie des signaux, et réserve sur les échéances UE">
+          <p>
+            L&apos;ONSSA s&apos;aligne sur l&apos;ANSES : un retrait français annonce le retrait
+            marocain. Les alertes « retrait ANSES » passent donc en tête, avant le statut UE qui est
+            en amont et plus lent. Statut français lu dans E-Phy — {STATS_EPHY.attribution}.
+          </p>
+          <p>
+            Les échéances UE viennent de la {COUVERTURE.source} (consultée le{" "}
+            {fmtDate(COUVERTURE.date)}). La Commission les prolonge fréquemment par règlement
+            d&apos;exécution : <strong>une échéance dépassée signifie « à recouper d&apos;urgence »,
+            pas « substance interdite »</strong>.
+          </p>
+        </Aide>
       </div>
 
       <div style={{ display: "grid", gap: 12 }}>

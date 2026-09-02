@@ -22,6 +22,8 @@ import {
 import { ENTETE_FORMULAIRE, MENTIONS_FORMULAIRE, STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { FicheAgrements } from "@/components/PacksFournisseur";
+import { Aide, Figure } from "@/components/Aide";
+import { SchemaDossier } from "@/components/Schemas";
 import type { TypeDossier } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -126,27 +128,23 @@ export default async function GenererPage({
         </div>
       )}
 
-      <div
-        className="card"
-        style={{
-          padding: "14px 18px",
-          margin: "18px 0",
-          display: "flex",
-          gap: 12,
-          alignItems: "flex-start",
-          borderColor: "color-mix(in srgb, var(--info) 30%, transparent)",
-        }}
-      >
-        <Info size={17} color="var(--info)" style={{ flexShrink: 0, marginTop: 1 }} />
-        <div style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.65 }}>
-          <strong style={{ color: "var(--fg)" }}>Ce que produit cet écran.</strong> Les{" "}
-          {STATS_CHECKLIST.nbItems} lignes du formulaire officiel, avec pour chacune : qui détient la
-          donnée, si une accréditation BPL est exigée, si elle est allégeable par référence, et ce que
-          l&apos;index ONSSA permet de pré-remplir.{" "}
-          <strong style={{ color: "var(--fg)" }}>Ce qu&apos;il ne produit pas :</strong> les études
-          elles-mêmes, qui appartiennent au fournisseur ou relèvent d&apos;un laboratoire accrédité. Le
-          dossier est prêt à être <em>constitué</em>, pas encore à être déposé.
-        </div>
+      <div style={{ margin: "16px 0", display: "grid", gap: 10 }}>
+        <Figure titre="Structure du formulaire" legende={`Annexe 3-B · ${STATS_CHECKLIST.nbItems} lignes`}>
+          <SchemaDossier />
+        </Figure>
+        <Aide titre="Ce que cet écran produit — et ce qu'il ne produit pas">
+          <p>
+            Il produit les {STATS_CHECKLIST.nbItems} lignes du formulaire officiel, avec pour chacune :
+            qui détient la donnée, si une accréditation BPL est exigée, si elle est allégeable par
+            référence, et ce que l&apos;index ONSSA permet de pré-remplir.
+          </p>
+          <p>
+            Il ne produit <strong>pas</strong> les études elles-mêmes : elles appartiennent au
+            fournisseur ou relèvent d&apos;un laboratoire accrédité. Le dossier est prêt à être{" "}
+            <em>constitué</em>, pas encore à être déposé. Les délais affichés sont des ordres de
+            grandeur à confirmer auprès de l&apos;ONSSA.
+          </p>
+        </Aide>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1.45fr 1fr", gap: 16, alignItems: "start" }}>

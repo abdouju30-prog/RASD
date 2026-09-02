@@ -447,3 +447,81 @@ a.card:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Aide repliable ──────────────────────────────────────────────────────────
+   Les réserves de méthode restent accessibles sans occuper l'écran. */
+.aide {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+.aide > summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted-2);
+  list-style: none;
+  user-select: none;
+}
+.aide > summary::-webkit-details-marker { display: none; }
+.aide > summary:hover { color: var(--accent); }
+.aide[open] > summary {
+  border-bottom: 1px solid var(--border);
+  color: var(--fg);
+}
+.aide-corps {
+  padding: 10px 12px 12px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.aide-corps p { margin: 0 0 8px; }
+.aide-corps p:last-child { margin-bottom: 0; }
+.aide-corps strong { color: var(--fg); }
+
+/* ── Figure : un schéma, un titre court, rien d'autre ─────────────────────── */
+.figure {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  padding: 12px 16px 8px;
+}
+.figure figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.figure-legende {
+  font-size: 11px;
+  color: var(--muted-2);
+}
+/* Un schéma n'a pas à s'étirer avec l'écran : au-delà, le texte devient
+   disproportionné et la lecture y perd. */
+.figure svg {
+  display: block;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ── Rythme de page : moins de prose, plus d'espace structurant ──────────── */
+.chapeau {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  max-width: 92ch;
+}
+.section {
+  margin-top: 20px;
+}
+.section > .h-title {
+  display: block;
+  margin-bottom: 9px;
+}
