@@ -235,3 +235,51 @@ export function SchemaSourcing() {
     </svg>
   );
 }
+
+/**
+ * Les deux gisements de fournisseurs, et ce qu'ils ouvrent.
+ *
+ * Le point à faire passer : seul l'index marocain ouvre la voie « me-too ».
+ * Le registre australien élargit le choix de fabricants, il ne raccourcit
+ * aucun délai.
+ */
+export function SchemaGisements() {
+  return (
+    <svg viewBox="0 0 640 210" width="100%" role="img" aria-label="Index ONSSA et registre australien : deux gisements de fournisseurs">
+      <defs>
+        <Fleche id="g-acc" couleur={T.acc} />
+        <Fleche id="g-info" couleur={T.info} />
+      </defs>
+
+      {/* Index ONSSA */}
+      <rect x="14" y="16" width="212" height="66" rx="8" fill="var(--accent-fond)" stroke={T.acc} strokeWidth="1.5" />
+      <text x="120" y="40" textAnchor="middle" fontSize="13" fontWeight="700" fill={T.acc}>Index ONSSA</text>
+      <text x="120" y="57" textAnchor="middle" fontSize="10.5" fill={T.acc}>fournisseurs déjà au Maroc</text>
+      <text x="120" y="72" textAnchor="middle" fontSize="10" fill={T.mid}>dossier technique déjà accepté</text>
+
+      {/* Registre australien */}
+      <rect x="14" y="122" width="212" height="66" rx="8" fill="none" stroke={T.info} strokeWidth="1.5" strokeDasharray="4 3" />
+      <text x="120" y="146" textAnchor="middle" fontSize="13" fontWeight="700" fill={T.info}>Registre APVMA</text>
+      <text x="120" y="163" textAnchor="middle" fontSize="10.5" fill={T.info}>détenteurs australiens</text>
+      <text x="120" y="178" textAnchor="middle" fontSize="10" fill={T.mid}>fabricants inconnus au Maroc</text>
+
+      <line x1="230" y1="49" x2="366" y2="49" stroke={T.acc} strokeWidth="1.5" markerEnd="url(#g-acc)" />
+      <line x1="230" y1="155" x2="366" y2="155" stroke={T.info} strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#g-info)" />
+
+      {/* Ce que chaque voie ouvre */}
+      <rect x="372" y="16" width="254" height="66" rx="8" fill={T.carte} stroke={T.fg} strokeWidth="1.5" />
+      <text x="499" y="40" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.fg}>Voie me-too</text>
+      <text x="499" y="57" textAnchor="middle" fontSize="10.5" fill={T.mid}>dossier par référence</text>
+      <text x="499" y="72" textAnchor="middle" fontSize="10" fill={T.pale}>délai réduit</text>
+
+      <rect x="372" y="122" width="254" height="66" rx="8" fill="none" stroke={T.bord} />
+      <text x="499" y="146" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.mid}>Dossier complet</text>
+      <text x="499" y="163" textAnchor="middle" fontSize="10.5" fill={T.mid}>études à fournir intégralement</text>
+      <text x="499" y="178" textAnchor="middle" fontSize="10" fill={T.pale}>plus de choix, pas moins de travail</text>
+
+      <text x="298" y="105" textAnchor="middle" fontSize="10" fill={T.pale}>
+        une homologation australienne ne vaut rien devant l&rsquo;ONSSA
+      </text>
+    </svg>
+  );
+}

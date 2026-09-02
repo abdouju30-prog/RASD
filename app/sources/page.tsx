@@ -6,6 +6,7 @@ import { META, MATIERES, FOURNISSEURS, PRODUITS, DETENTEURS } from "@/lib/data";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
 import { STATS_APVMA, fraicheurApvma } from "@/lib/apvma";
+import { STATS_PISTES } from "@/lib/pistes";
 import { RefreshCw } from "lucide-react";
 import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
@@ -194,12 +195,12 @@ export default function SourcesPage() {
           <Compartiment
             icone={<Globe size={15} color="var(--info)" />}
             nom="APVMA · Australie"
-            role="Recoupe — argument, pas prédiction"
-            contenu={`${STATS_APVMA.nbConstituants} constituants, dont ${STATS_APVMA.nbAutorisees} autorisés en agriculture. Sert à contester ou confirmer une décision européenne hors du référentiel européen. N'entre pas dans le score de risque.`}
+            role="Recoupe un statut, et nomme des fabricants"
+            contenu={`${STATS_APVMA.nbConstituants} constituants, dont ${STATS_APVMA.nbAutorisees} autorisés en agriculture. Deux usages : contester ou confirmer une décision européenne hors du référentiel européen, et lire les ${STATS_PISTES.nbSocietes} sociétés détentrices — dont ${STATS_PISTES.nbNouvelles} génériqueurs absents de l'index marocain. N'entre pas dans le score de risque.`}
             origine={STATS_APVMA.attribution}
             maj={STATS_APVMA.licence}
             fiabilite="source"
-            reserve="Registre de l'état courant, sans historique : « absente » peut vouloir dire « jamais homologuée »."
+            reserve="Registre de l'état courant, sans historique : « absente » peut vouloir dire « jamais homologuée ». Et une homologation australienne n'ouvre aucun droit devant l'ONSSA."
           />
 
           <Compartiment
@@ -233,6 +234,7 @@ export default function SourcesPage() {
             ["Le chiffre d'affaires", "Absent de l'index. Optionnel dans data/ca.json. Sans lui, l'exposition se mesure en produits et usages."],
             ["Les prix fournisseurs", "Absents de l'index. Le classement mesure l'accessibilité — le nombre de génériques en concurrence."],
             ["Un score sans fiche", "Une molécule sans statut vérifié affiche « risque non évalué », jamais une estimation."],
+            ["Un fournisseur « nouveau »", "Le rattachement à l'index se fait sur le nom : « absente » veut dire absente sous ce nom-là. Une parenté probable est signalée « groupe probable », jamais tranchée."],
           ].map(([t, d]) => (
             <div key={t} className="bloc">
               <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 5 }}>{t}</div>

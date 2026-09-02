@@ -24,6 +24,18 @@ import type { StatutAnses } from "./types";
 
 export type StatutApvma = "autorisée" | "absente" | "vétérinaire seulement";
 
+/** Société détenant une homologation australienne. Pays inféré du nom. */
+export interface SocieteApvma {
+  nom: string;
+  pays: string | null;
+  paysFiable: boolean;
+  coutFaible: boolean;
+  multinationale: boolean;
+  /** Entité australienne d'un groupe étranger — « SHARDA AUSTRALIA PTY LTD ». */
+  filialeLocale: boolean;
+  nbProduits: number;
+}
+
 export interface ConstituantApvma {
   id: string;
   code: string;
@@ -34,6 +46,13 @@ export interface ConstituantApvma {
   nbProduitsEchus: number;
   matiereActiveApprouvee: boolean;
   derniereExpiration: string | null;
+  /**
+   * Sociétés détenant une homologation agricole australienne active sur ce
+   * constituant. C'est le seul registre ouvert de l'outil qui nomme le
+   * détenteur produit par produit — donc la seule source de fournisseurs
+   * qu'on n'a pas déjà par l'index marocain. Exploité par lib/pistes.ts.
+   */
+  societes: SocieteApvma[];
 }
 
 interface FichierApvma {

@@ -45,6 +45,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _reseau import telecharger  # noqa: E402
+from _pays import (  # noqa: E402
+    PAYS_COUT_FAIBLE,
+    est_filiale_australienne,
+    est_multinationale,
+    pays_societe,
+)
 
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "apvma.json"
@@ -123,6 +129,7 @@ def main():
         t = (p.get("prodtype") or "").strip()
         exp = parse_date(p.get("expdate"))
         info[(p.get("pcode") or "").strip()] = {
+            "societe": (p.get("sname") or "").strip() or None,
             "type": t,
             "agricole": t.startswith(PREFIXES_AGRICOLES) and t != TYPE_MATIERE_ACTIVE,
             "matiereActive": t == TYPE_MATIERE_ACTIVE,
@@ -132,6 +139,11 @@ def main():
         }
 
     # ── Rattachement constituant -> produits ────────────────────────────────
+    # Les sociétés détentrices australiennes sont le vrai apport du registre
+    # pour la prospection : un fabricant indien ou chinois qui détient des
+    # homologations en Australie a passé un régulateur exigeant. C'est une
+    # piste de fournisseur que l'index ONSSA seul ne donne pas.
+    societes_par_code = defaultdict(Counter)
     agri_actifs = defaultdict(int)
     agri_echus = defaultdict(int)
     ma_approuvee = defaultdict(int)
@@ -152,6 +164,8 @@ def main():
             continue
         if pi["actif"]:
             agri_actifs[cc] += 1
+            if pi["societe"]:
+                societes_par_code[cc][pi["societe"]] += 1
         else:
             agri_echus[cc] += 1
             e = pi["expiration"]
@@ -183,6 +197,30 @@ def main():
         if ts and not any(t.startswith(PREFIXES_AGRICOLES) and t != TYPE_MATIERE_ACTIVE for t in ts)
         and any(t.startswith("V") for t in ts)
     }
+
+    def societes(cc):
+        """Sociétés détenant une homologation agricole australienne active.
+
+        Aucun plafond : sur les molécules à gros marché, les premières places
+        vont aux distributeurs australiens, et tronquer la liste ferait
+        disparaître précisément les fabricants génériques qu'on cherche.
+        """
+        out = []
+        for nom, n in societes_par_code.get(cc, Counter()).most_common():
+            pays, fiable = pays_societe(nom)
+            out.append({
+                "nom": nom,
+                "pays": pays,
+                "paysFiable": fiable,
+                "coutFaible": bool(pays and pays in PAYS_COUT_FAIBLE),
+                "multinationale": est_multinationale(nom),
+                # « SHARDA AUSTRALIA PTY LTD » : entité australienne, groupe
+                # indien. C'est le groupe qu'on source, mais le dire évite de
+                # présenter une filiale locale comme la maison mère.
+                "filialeLocale": est_filiale_australienne(nom),
+                "nbProduits": n,
+            })
+        return out
 
     sortie = []
     vus = set()
@@ -226,6 +264,7 @@ def main():
             "nbProduitsEchus": echus,
             "matiereActiveApprouvee": appro > 0,
             "derniereExpiration": derniere_exp[cc].isoformat() if cc in derniere_exp else None,
+            "societes": societes(cc),
         })
 
     sortie.sort(key=lambda x: x["nom"])
@@ -256,11 +295,18 @@ def main():
     SORTIE.parent.mkdir(parents=True, exist_ok=True)
     SORTIE.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
 
+    toutes = Counter()
+    for x in sortie:
+        for so in x["societes"]:
+            toutes[so["nom"]] += 1
+    generiques = {so["nom"] for x in sortie for so in x["societes"] if so["coutFaible"]}
+
     c = Counter(s["statut"] for s in sortie)
     print(f"\nOK -> {SORTIE}")
     print(f"  {len(sortie)} constituants actifs")
     for k, v in c.most_common():
         print(f"    {v:5}  {k}")
+    print(f"  {len(toutes)} sociétés détentrices, dont {len(generiques)} en pays de sourcing générique")
     print(f"  données APVMA du {maj or '?'}")
 
 

@@ -11,3 +11,7 @@
 
 # Copies servies des maquettes (source dans maquettes/)
 /public/maquettes
+
+# Caches Python des scripts d'import
+__pycache__/
+*.pyc

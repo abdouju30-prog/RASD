@@ -21,6 +21,8 @@ from pathlib import Path
 
 import openpyxl
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 # Détenteur mis en avant par défaut au premier chargement. L'outil couvre
 # désormais TOUS les détenteurs de l'index : celui-ci n'est qu'un point
 # d'entrée, changeable à l'écran.
@@ -31,115 +33,15 @@ DETENTEUR_DEFAUT = "PHYTO BEHT"
 # Passe 2 : suffixe juridique générique (indice faible -> paysFiable=false).
 # Les pays de « sourcing économique » sont marqués coutFaible.
 
-# Pays où le sourcing générique est compétitif (cible de prospection).
-PAYS_COUT_FAIBLE = {
-    "Inde", "Chine", "Russie", "Mexique", "Colombie", "Turquie", "Brésil",
-    "Taïwan", "Jordanie", "Chili", "Argentine", "Singapour",
-}
+from _pays import (  # noqa: E402
+    PAYS_COUT_FAIBLE,
+    est_multinationale,
+    pays_societe,
+)
 
-# Passe 1 — sociétés identifiées. Le Japon passe AVANT la Chine : plusieurs
-# sociétés japonaises portent un suffixe « Co., Ltd » qui, seul, évoque la Chine.
-REGLES_PAYS = [
-    ("Japon", [
-        "MITSUI", "OAT AGRIO", "NIPPON SODA", "KUMIAI", "SUMITOMO CHEMICAL CO",
-        "ISHIHARA SANGYO", "AGRO KANESHO", "KANESHO", "NIHON NOHYAKU", "NICHINO",
-        "SUMI AGRO", "HOKKO", "SDS BIOTECH",
-    ]),
-    ("Inde", [
-        "SHARDA", "SHYAM", "GHARDA", "MEGHMANI", "RALLIS", "KRISHI", "UPL LIMITED",
-        "INSECTICIDES (INDIA)", "COROMANDEL", "HERANBA", "TAGROS", "BHARAT",
-        "NAGARJUNA", "PI INDUSTRIES", "DHANUKA", "WILLOWOOD", "BEST AGROLIFE",
-        "AIMCO", "SULPHUR MILLS", "INDOFIL", "GSP CROP", "ATUL", "PARIJAT",
-        "CRYSTAL CROP", "EXCEL INDUSTRIES", "SUMMIT AGRO INDIA", "KILPEST",
-        "DEVIDAYAL", "NACL INDUSTRIES", "SUMITOMO CHEMICAL INDIA", "PARIKH",
-        "CROPNOSYS INDIA", "AGRICH CROP", "INDIA LIMITED", "INDIA PRIVATE",
-        "INDIA PESTICIDE", "INDIA PESTICIDES",
-    ]),
-    ("Chine", [
-        "NANJING", "SHANDONG", "NINGBO", "JIANGSU", "ZHEJIANG", "HEBEI", "ANHUI",
-        "SHANGHAI", "BEIJING", "SICHUAN", "HUBEI", "HUNAN", "JIANGXI", "GUANGDONG",
-        "PILARQUIM", "ROTAM", "NGC AGROSCIENCES", "RAINBOW", "LIMIN", "BINNONG",
-        "SINOCHEM", "HAILIR", "KINGQUENSON", "WYNCA", "YONGNONG", "XINGFA",
-        "LIER CHEMICAL", "HUIFENG", "WEIFANG", "NUTRICHEM", "E-TONG CHEMICAL",
-        "CAC NANTONG", "SUNJOY", "AGROPHARM CHINA",
-    ]),
-    ("Russie", ["AUGUST", "AVGUST", "SHCHELKOVO", "JOINT STOCK COMPANY", "JSC "]),
-    ("Mexique", ["ALBAUGH MEXICO", "VELSIMEX", "TEKCHEM", "AGRICULTURA NACIONAL", "DRAGON"]),
-    ("Colombie", ["BEQUISA", "BERNARDO QUIMICA", "INVESA", "COLJAP", "AGROSAVIA"]),
-    ("Turquie", ["TARKIM", "HEKTAS", "SAFA TARIM", "AGROBEST", "DOKTOR TARSA"]),
-    ("Brésil", ["OURO FINO", "ADAMA BRASIL", "NORTOX", "IHARABRAS"]),
-    ("Taïwan", ["SINON", "TAIWAN"]),
-    ("Jordanie", ["VAPCO"]),
-    ("Chili", ["QUIMETAL"]),
-    ("Singapour", ["PTE., LTD", "PTE. LTD", "PTE LTD"]),
-    ("Espagne", [
-        "INDUSTRIAS QUIMICAS DEL VALLES", "IQV", "SEIPASA", "LAINCO", "SIPCAM INAGRA",
-        "INDUSTRIAL QUIMICA KEY", "IQK", "FUTURECO", "PROBELTE", "MASSO", "AFRASA",
-        "KENOGARD", "TRADECORP", "SARABIA", "ORSANI", "ALMANDINE", "QEMETICA",
-        "INGENIERIA INDUSTRIAL", "VIVAGRO", "PALLARES", "TRIS HISPANIA",
-        "ADAMA AGRICULTURE ESPANA", "PROTEKTING", "AGROFINA", "CEV, SA",
-    ]),
-    ("Allemagne", [
-        "BAYER AG", "BAYER CROPSCIENCE", "BASF SE", "BASF AGRICULTURAL", "COSACO",
-        "NISSO CHEMICAL EUROPE", "DVA AGRO", "ALZCHEM", "EVONIK", "SAN AGROW",
-        "AGROSTULIN", "CHEMINOVA DEUTSCHLAND",
-    ]),
-    ("Suisse", ["SYNGENTA CROP PROTECTION AG", "CORTEVA AGRISCIENCE INTERNATIONAL",
-                "FMC IP TECHNOLOGY", "ANDERMATT BIOCONTROL"]),
-    ("France", ["NUFARM SAS", "SUMITOMO CHEMICALS AGRO EUROPE", "DE SANGOSSE",
-                "ACTION PIN", "AGRAUXINE", "TOTALENERGIES", "AGROFRESH HOLDING FRANCE",
-                "ENVIRONMENTAL SCIENCE FR"]),
-    ("Italie", ["CBC EUROPE", "MANICA", "SIPCAM ITALIA", "ISAGRO", "FINCHIMICA",
-                "ICA INTERNATIONAL CHEMICALS", "DIACHEM", "TRIS INTERNATIONAL"]),
-    ("Belgique", ["GLOBACHEM", "CERTIS BELCHIM", "BELCHIM", "TAMINCO", "BIOBEST",
-                  "JANSSEN PHARMACEUTICA", "ARYSTA LIFESCIENCE BENELUX",
-                  "FMC CHEMICAL SPRL", "EUROBROM", "MEBROM"]),
-    ("Pays-Bas", ["AAKO", "BASF AGRO BV", "CERADIS", "ADAMA CELSIUS"]),
-    ("Portugal", ["ASCENZA"]),
-    ("Irlande", ["BARCLAY CHEMICALS"]),
-    ("Danemark", ["CHEMINOVA", "FMC AGRICULTURE SOLUTION AS"]),
-    ("Royaume-Uni", ["AGRICHEM UK", "FINE AGROCHEMICAL", "INTERFARM"]),
-    ("États-Unis", ["CERTIS USA", "ALBAUGH LLC", "AMVAC", "GOWAN CROP", "VALENT",
-                    "BRANDT CONSOLIDATED", "MARRONE BIO", "JH BIOTECH", "AGROFRESH FRUIT"]),
-    ("Slovénie", ["ALBAUGH TKI"]),
-    ("Tchéquie", ["BIOPREPARATY"]),
-    ("Bulgarie", ["AGRIA SA"]),
-    ("Maroc", ["CPCM", "COMPTOIR COMMERCIAL DES LUBRIFIANTS"]),
-]
-
-# Passe 2 — suffixes juridiques seuls. Indice faible : paysFiable=false.
-SUFFIXES = [
-    ("Inde", ["PVT LTD", "PRIVATE LIMITED"]),
-    ("Chine", ["CO.,LTD", "CO., LTD", "CO. LTD", "CO.; LTD"]),
-    ("Allemagne", ["GMBH"]),
-    ("France", [" SAS", " SARL"]),
-    ("Italie", [" SRL", " S.P.A", " SPA"]),
-    ("Belgique", [" N.V", " NV", " SPRL"]),
-    ("Pays-Bas", [" B.V", " BV"]),
-    ("Espagne", [" S.L", " SL"]),
-]
-
-MULTINATIONALES = ["SYNGENTA", "BAYER", "BASF", "CORTEVA", "FMC ", "UPL LIMITED",
-                   "SUMITOMO", "NUFARM", "ADAMA", "MITSUI"]
-
-
-def pays_fournisseur(nom):
-    """Infère le pays d'un fournisseur. Retourne (pays|None, fiable: bool)."""
-    if not nom:
-        return None, False
-    u = nom.upper()
-    for pays, motifs in REGLES_PAYS:
-        if any(m in u for m in motifs):
-            return pays, True
-    for pays, motifs in SUFFIXES:
-        if any(m in u for m in motifs):
-            return pays, False
-    return None, False
-
-
-def est_multinationale(nom):
-    u = (nom or "").upper()
-    return any(m in u for m in MULTINATIONALES)
+# L'inférence de pays est la même pour un fournisseur ONSSA et pour une société
+# australienne : c'est le nom qui parle, pas le registre qui l'héberge.
+pays_fournisseur = pays_societe
 
 
 # --- Normalisation ---------------------------------------------------------

@@ -1,10 +1,13 @@
 import Link from "next/link";
-import { Info } from "lucide-react";
+import { Compass, Info } from "lucide-react";
 import { FOURNISSEURS, MATIERES } from "@/lib/data";
 import { PAYS_CIBLES, statsSourcing } from "@/lib/sourcing";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { PastillesPacks } from "@/components/PacksFournisseur";
-import { Aide } from "@/components/Aide";
+import { Aide, Figure } from "@/components/Aide";
+import { SchemaGisements } from "@/components/Schemas";
+import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
+import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -95,6 +98,12 @@ export default async function FournisseursPage({
             style={{ fontSize: 17, fontWeight: 600, color: nbFiches ? "var(--low)" : "var(--mod)" }}
           >
             {nbFiches}
+          </strong>
+        </div>
+        <div>
+          <span className="eyebrow">Pistes hors index</span>
+          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
+            {STATS_PISTES.nbNouvelles}
           </strong>
         </div>
         <div>
@@ -221,6 +230,99 @@ export default async function FournisseursPage({
               Aucun fournisseur ne correspond à ces filtres.
             </p>
           )}
+        </div>
+      </div>
+
+      <div className="section">
+        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Compass size={14} color="var(--info)" /> Pistes hors index — détenteurs australiens
+        </span>
+        <p style={{ color: "var(--muted)", fontSize: 13, maxWidth: "88ch", lineHeight: 1.6, margin: "8px 0 0" }}>
+          L&apos;index marocain ne nomme que les sociétés déjà entrées au Maroc. Le registre APVMA
+          publie le détenteur de chaque homologation australienne : on y trouve{" "}
+          <strong style={{ color: "var(--fg)" }}>{STATS_PISTES.nbNouvelles} génériqueurs</strong>{" "}
+          ({STATS_PISTES.nbAbsentes} sans aucun rapprochement, {STATS_PISTES.nbHomonymes} homonymes
+          d&apos;un fournisseur de l&apos;index) que la seule lecture de l&apos;index ne peut pas
+          révéler.
+        </p>
+
+        <Figure
+          titre="Deux gisements, deux voies"
+          legende="seul l'index marocain raccourcit le dossier"
+        >
+          <SchemaGisements />
+        </Figure>
+
+        <div className="bloc" style={{ marginTop: 14 }}>
+          <div className="titre">
+            <span>Fabricants à qualifier</span>
+            <span className="mono">{PISTES_NOUVELLES.length}</span>
+          </div>
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Société</th>
+                <th>Pays présumé</th>
+                <th style={{ textAlign: "right" }}>M.A. en AU</th>
+                <th style={{ textAlign: "right" }}>dont homologuées au Maroc</th>
+                <th>Matières actives du terrain commun</th>
+                <th>Index ONSSA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {PISTES_NOUVELLES.map((p) => (
+                <tr key={p.id}>
+                  <td style={{ fontWeight: 500 }}>{p.nom}</td>
+                  <td style={{ color: "var(--muted)" }}>
+                    {p.pays ?? "à préciser"}
+                    {p.pays && !p.paysFiable && (
+                      <span style={{ color: "var(--mod)", fontSize: 11 }}> ?</span>
+                    )}
+                    {p.filialeLocale && (
+                      <span
+                        style={{ color: "var(--muted-2)", fontSize: 11 }}
+                        title="Entité australienne d'un groupe étranger — le pays indiqué est celui du groupe."
+                      >
+                        {" "}
+                        · filiale AU
+                      </span>
+                    )}
+                  </td>
+                  <td className="mono" style={{ textAlign: "right" }}>{p.matieres.length}</td>
+                  <td
+                    className="mono"
+                    style={{
+                      textAlign: "right",
+                      color: p.matieresMaroc.length ? "var(--accent)" : "var(--muted-2)",
+                      fontWeight: p.matieresMaroc.length ? 600 : 400,
+                    }}
+                  >
+                    {p.matieresMaroc.length}
+                  </td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
+                    {p.matieresMaroc.slice(0, 4).join(" · ") || (
+                      <span style={{ color: "var(--muted-2)" }}>aucune</span>
+                    )}
+                    {p.matieresMaroc.length > 4 && (
+                      <span className="mono" style={{ color: "var(--muted-2)" }}>
+                        {" "}
+                        +{p.matieresMaroc.length - 4}
+                      </span>
+                    )}
+                  </td>
+                  <td>
+                    <EtiquetteLien lien={p.lien} />
+                    {p.fournisseurOnssa && (
+                      <div style={{ color: "var(--muted-2)", fontSize: 11, marginTop: 3 }}>
+                        {p.fournisseurOnssa}
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <ReservePistes source={STATS_PISTES.source} />
         </div>
       </div>
 

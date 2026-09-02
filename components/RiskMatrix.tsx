@@ -130,9 +130,8 @@ export function RiskMatrix({
         const et = etiquettes.get(p.id);
         return (
           <a key={p.id} href={`/matieres/${p.id}`}>
-            <title>
-              {p.nom} — risque {p.score}, {p.expo} usage(s)
-            </title>
+            {/* Une seule chaîne : React refuse un tableau d'enfants dans <title>. */}
+            <title>{`${p.nom} — risque ${p.score}, ${p.expo} usage(s)`}</title>
             <circle cx={cx} cy={cy} r={r(p.expo)} fill={c} opacity={0.22} stroke={c} strokeWidth={1.5} />
             {et && (
               <text

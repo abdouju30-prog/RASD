@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Globe2, FileText, TriangleAlert, Building2 } from "lucide-react";
+import { ArrowLeft, Globe2, FileText, TriangleAlert, Building2, Compass } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { candidatParId, candidats } from "@/lib/sourcing";
 import { getMatiere } from "@/lib/data";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { FicheAgrements, PastillesPacks } from "@/components/PacksFournisseur";
+import { STATS_PISTES, pistesPour } from "@/lib/pistes";
+import { ReservePistes, TablePistes } from "@/components/PistesFournisseur";
 
 export async function generateStaticParams() {
   return candidats({ maxDetenteurs: 8 })
@@ -18,6 +20,8 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
   const c = candidatParId(id);
   const ma = getMatiere(id);
   if (!c || !ma) notFound();
+
+  const pistes = pistesPour(ma.nom);
 
   return (
     <>
@@ -167,6 +171,39 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
               Le pays est déduit du nom de la société ; « ? » signale une déduction faite sur le seul
               suffixe juridique. À confirmer avant toute prise de contact.
             </p>
+          </div>
+
+          <div className="card" style={{ padding: "18px 20px" }}>
+            <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <Compass size={14} /> Fabricants hors Maroc — registre australien
+            </div>
+            {!pistes.apparie ? (
+              <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "9px 0 0", lineHeight: 1.6 }}>
+                Cette matière active n&apos;a pas pu être appariée au registre PUBCRIS : aucune piste
+                à en tirer.
+              </p>
+            ) : (
+              <>
+                <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px", lineHeight: 1.6 }}>
+                  {pistes.toutes.length} société(s) détiennent une homologation australienne sur{" "}
+                  <span className="mono">{pistes.nomAustralien}</span>.{" "}
+                  {pistes.nouvelles.length > 0 ? (
+                    <>
+                      <strong style={{ color: "var(--fg)" }}>
+                        {pistes.nouvelles.length} sont des génériqueurs absents de l&apos;index
+                        marocain
+                      </strong>{" "}
+                      — des fabricants que la seule lecture de l&apos;index ONSSA ne peut pas
+                      révéler.
+                    </>
+                  ) : (
+                    <>Aucune n&apos;est un génériqueur nouveau : l&apos;index marocain les couvre déjà.</>
+                  )}
+                </p>
+                {pistes.nouvelles.length > 0 && <TablePistes pistes={pistes.nouvelles} />}
+                <ReservePistes source={STATS_PISTES.source} />
+              </>
+            )}
           </div>
 
           <div className="card" style={{ padding: "18px 20px" }}>
