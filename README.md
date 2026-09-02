@@ -261,9 +261,12 @@ Catalogue E-Phy du 2026-09-02 — 3 changement(s) de statut
 - Bacillus subtilis : nouvelle -> autorisée
 ```
 
-**Prérequis** : dépôt GitHub relié à Vercel. Aucun secret à configurer, le
-`GITHUB_TOKEN` par défaut suffit. Sans GitHub, `npm run import:ephy` fait le
-même travail à la main.
+**Chaîne active depuis le 2026-09-02.** Le dépôt `abdouju30-prog/homologa` est
+relié à Vercel, branche de production `master` : tout push déclenche un
+déploiement. Aucun secret à configurer, le `GITHUB_TOKEN` par défaut suffit.
+
+À la main, sans attendre le jeudi : `npm run maj` rafraîchit les deux
+catalogues, ne commite que si un statut a changé, pousse et déploie.
 
 ### Ce que l'application dit d'elle-même
 
