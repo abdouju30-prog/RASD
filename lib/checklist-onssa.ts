@@ -225,8 +225,25 @@ export const CHECKLIST_ONSSA: PartieChecklist[] = [
   },
 ];
 
-export const TOUS_ITEMS: ItemChecklist[] = CHECKLIST_ONSSA.flatMap((p) =>
-  p.sections.flatMap((s) => s.items)
+/**
+ * Toutes les lignes du formulaire, chacune portant sa partie.
+ *
+ * La partie est indispensable : les deux parties réutilisent les mêmes
+ * numéros de section. « 1.8 » désigne « Formulation » en partie I et
+ * « Identity of significant impurities » en partie II — comparer les codes
+ * sans la partie confondrait les deux.
+ */
+export interface ItemLocalise extends ItemChecklist {
+  partie: "I" | "II";
+  section: string;
+  /** Clé unique dans le formulaire, ex. « II.1.8 ». */
+  cle: string;
+}
+
+export const TOUS_ITEMS: ItemLocalise[] = CHECKLIST_ONSSA.flatMap((p) =>
+  p.sections.flatMap((s) =>
+    s.items.map((i) => ({ ...i, partie: p.code, section: s.titre, cle: `${p.code}.${i.code}` }))
+  )
 );
 
 export const STATS_CHECKLIST = {

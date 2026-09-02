@@ -99,10 +99,20 @@ a {
   top: 0;
   height: 100vh;
 }
+/* Pleine largeur : l'écran est un poste de travail, pas une page de lecture.
+   Les tableaux ONSSA ont beaucoup de colonnes, ils prennent toute la place
+   disponible. Les marges latérales s'élargissent sur très grands écrans pour
+   que le texte ne colle pas au bord. */
 .main {
   flex: 1;
+  min-width: 0; /* sans ça, une table large fait déborder le conteneur flex */
   padding: 30px 40px 80px;
-  max-width: 1240px;
+}
+@media (min-width: 1800px) {
+  .main {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
 }
 .navlink {
   display: flex;

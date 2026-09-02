@@ -1,0 +1,44 @@
+{
+  "_lisezmoi": [
+    "Agréments et paquets d'études déclarés par les fournisseurs de matières actives.",
+    "Cette donnée n'existe PAS dans l'index ONSSA : elle se saisit ici, à partir",
+    "des brochures, fiches techniques et réponses aux consultations.",
+    "",
+    "IMPORTANT — le contenu est DÉCLARATIF : ce que le fournisseur affirme détenir.",
+    "Ce n'est pas une vérification. Renseigner systématiquement 'source' et 'date'",
+    "pour savoir d'où vient l'information et quand elle a été recueillie.",
+    "",
+    "Clé = identifiant du fournisseur tel que produit par l'import ONSSA",
+    "(voir data/onssa.json > fournisseurs[].id). Pour un fournisseur non encore",
+    "référencé au Maroc, utiliser un identifiant en kebab-case et renseigner",
+    "'referenceOnssa': false.",
+    "",
+    "Paquets reconnus : glp, acute_tox_6, phys_chem, eco_tox, batch_5",
+    "(voir lib/packs-fournisseur.ts pour ce que chacun couvre au formulaire)."
+  ],
+  "fournisseurs": {
+    "india-pesticide-ltd": {
+      "nom": "INDIA PESTICIDES LIMITED",
+      "pays": "Inde",
+      "referenceOnssa": true,
+      "packs": ["glp", "acute_tox_6", "phys_chem", "eco_tox", "batch_5"],
+      "matieresProposees": [
+        "Thiophanate méthyl 70% WP",
+        "Tricyclazole technique 98% min.",
+        "Tricyclazole 75% WP",
+        "Tembotrione technique",
+        "Bentazone technique",
+        "Flonicamid technique"
+      ],
+      "contact": {
+        "adresse": "Water Works Road, Aishbagh, Lucknow - 226004, Inde",
+        "telephone": "+91 522 2653602 / +91 522 2653603",
+        "email": "info@indiapesticideslimited.com",
+        "site": "www.indiapesticideslimited.com"
+      },
+      "source": "Brochure commerciale transmise par le détenteur",
+      "date": "2026-09-01",
+      "note": "Une seule ligne à l'index ONSSA : présence marocaine quasi nulle, donc peu de précédent réglementaire à invoquer. Thiophanate méthyl et tricyclazole sont absents de l'index — ce seraient des homologations de substance nouvelle, pas des dossiers me-too."
+    }
+  }
+}

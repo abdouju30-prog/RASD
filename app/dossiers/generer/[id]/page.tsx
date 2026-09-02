@@ -20,6 +20,8 @@ import {
   statsDossier,
 } from "@/lib/dossier";
 import { ENTETE_FORMULAIRE, MENTIONS_FORMULAIRE, STATS_CHECKLIST } from "@/lib/checklist-onssa";
+import { ficheFournisseur } from "@/lib/packs-fournisseur";
+import { FicheAgrements } from "@/components/PacksFournisseur";
 import type { TypeDossier } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -371,6 +373,10 @@ export default async function GenererPage({
                 lui incombent — les lui réclamer en un seul envoi.
               </div>
             </div>
+          )}
+
+          {d.fournisseur && ficheFournisseur(d.fournisseur.id) && (
+            <FicheAgrements fiche={ficheFournisseur(d.fournisseur.id)!} />
           )}
 
           <div

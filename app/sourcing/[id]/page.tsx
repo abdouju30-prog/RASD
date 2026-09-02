@@ -4,6 +4,8 @@ import { ArrowLeft, Globe2, FileText, TriangleAlert, Building2 } from "lucide-re
 import { RiskBadge } from "@/components/RiskBadge";
 import { candidatParId, candidats } from "@/lib/sourcing";
 import { getMatiere } from "@/lib/data";
+import { ficheFournisseur } from "@/lib/packs-fournisseur";
+import { FicheAgrements, PastillesPacks } from "@/components/PacksFournisseur";
 
 export async function generateStaticParams() {
   return candidats({ maxDetenteurs: 8 })
@@ -122,6 +124,7 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
                   <th>Pays</th>
                   <th>Réf. Maroc</th>
                   <th>Profil</th>
+                  <th>Agréments déclarés</th>
                 </tr>
               </thead>
               <tbody>
@@ -152,6 +155,9 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
                       ) : (
                         <span className="pill">autre</span>
                       )}
+                    </td>
+                    <td>
+                      <PastillesPacks packs={ficheFournisseur(f.id)?.packs ?? []} />
                     </td>
                   </tr>
                 ))}
@@ -201,6 +207,13 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
               Générer le dossier →
             </Link>
           </div>
+
+          {(() => {
+            const avecFiche = c.fournisseurs
+              .map((f) => ficheFournisseur(f.id))
+              .filter((f): f is NonNullable<typeof f> => Boolean(f));
+            return avecFiche.map((f) => <FicheAgrements key={f.nom} fiche={f} />);
+          })()}
 
           <div className="card" style={{ padding: "18px 20px" }}>
             <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
