@@ -3,7 +3,9 @@
 **Tour de contrôle réglementaire, prospection de matières actives et usine à
 dossiers** pour la commercialisation de produits phytosanitaires au Maroc.
 
-Détenteur configuré : **PHYTO BEHT** — 38 produits, 68 usages homologués.
+**Les 75 détenteurs de l'index ONSSA**, sélectionnables à l'écran. Changer de
+société recalcule tout : portefeuille, alertes, cibles de prospection.
+PHYTO BEHT est le détenteur affiché par défaut.
 
 La boucle est fermée autour de la matière active :
 

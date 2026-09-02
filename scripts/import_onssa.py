@@ -21,7 +21,10 @@ from pathlib import Path
 
 import openpyxl
 
-DETENTEUR_CIBLE = "PHYTO BEHT"
+# Détenteur mis en avant par défaut au premier chargement. L'outil couvre
+# désormais TOUS les détenteurs de l'index : celui-ci n'est qu'un point
+# d'entrée, changeable à l'écran.
+DETENTEUR_DEFAUT = "PHYTO BEHT"
 
 # --- Pays fournisseur : inférence en deux passes ----------------------------
 # Passe 1 : mots-clés propres à une société (indice fiable).
@@ -280,16 +283,24 @@ def main():
         })
     matieres.sort(key=lambda m: m["nom"])
 
-    # ---------- Portefeuille du détenteur cible ----------
+    # ---------- Portefeuilles de TOUS les détenteurs ----------
+    # L'outil couvrait un seul détenteur ; il couvre maintenant les 76 de
+    # l'index. Cela sert deux choses : le vendre à n'importe lequel d'entre
+    # eux, et lire l'exposition d'un concurrent — une AMM qui expire en face
+    # est un signal commercial.
     pf = defaultdict(lambda: {
+        "detenteur": None,
         "fournisseurs": set(), "ma": set(), "usages": [],
         "amm": None, "expiration": None, "tox": None,
         "categorie": None, "formulation": None,
     })
     for l in lignes:
-        if l["detenteur"] != DETENTEUR_CIBLE:
+        if not l["detenteur"] or not l["produit"]:
             continue
-        p = pf[l["produit"]]
+        # Un même nom commercial peut exister chez deux détenteurs : la clé
+        # doit donc porter les deux, sinon les portefeuilles fusionnent.
+        p = pf[(l["detenteur"], l["produit"])]
+        p["detenteur"] = l["detenteur"]
         if l["fournisseur"]:
             p["fournisseurs"].add(l["fournisseur"])
         if l["ma"]:
@@ -305,9 +316,12 @@ def main():
         })
 
     produits = []
-    for nom, p in pf.items():
+    for (det, nom), p in pf.items():
         produits.append({
-            "id": slug(nom), "nomCommercial": nom,
+            "id": slug(f"{det}--{nom}"),
+            "detenteur": det,
+            "detenteurId": slug(det),
+            "nomCommercial": nom,
             "categorie": p["categorie"], "formulation": p["formulation"],
             "tox": p["tox"], "amm": p["amm"], "expiration": p["expiration"],
             "matieresActives": sorted(p["ma"]),
@@ -315,13 +329,37 @@ def main():
             "fournisseurs": sorted(p["fournisseurs"]),
             "usages": p["usages"],
         })
-    produits.sort(key=lambda x: x["nomCommercial"])
+    produits.sort(key=lambda x: (x["detenteur"], x["nomCommercial"]))
+
+    # ---------- Détenteurs ----------
+    det_agg = defaultdict(lambda: {"produits": 0, "usages": 0, "ma": set(), "categories": set()})
+    for pr in produits:
+        d = det_agg[pr["detenteur"]]
+        d["produits"] += 1
+        d["usages"] += len(pr["usages"])
+        d["ma"].update(pr["matieresActives"])
+        if pr["categorie"]:
+            d["categories"].add(pr["categorie"])
+
+    detenteurs = [
+        {
+            "id": slug(nom),
+            "nom": nom,
+            "nbProduits": a["produits"],
+            "nbUsages": a["usages"],
+            "nbMatieresActives": len(a["ma"]),
+            "categories": sorted(a["categories"]),
+        }
+        for nom, a in det_agg.items()
+    ]
+    detenteurs.sort(key=lambda d: -d["nbProduits"])
 
     payload = {
         "meta": {
             "source": src.name,
             "genere": datetime.now().isoformat(timespec="seconds"),
-            "detenteur": DETENTEUR_CIBLE,
+            "detenteurDefaut": DETENTEUR_DEFAUT,
+            "nbDetenteursCouverts": len(detenteurs),
             "nbLignesIndex": len(lignes),
             "nbProduitsIndex": len({l["produit"] for l in lignes if l["produit"]}),
             "nbDetenteurs": len({l["detenteur"] for l in lignes if l["detenteur"]}),
@@ -333,6 +371,7 @@ def main():
         },
         "fournisseurs": fournisseurs,
         "matieres": matieres,
+        "detenteurs": detenteurs,
         "portefeuille": produits,
     }
 
@@ -345,7 +384,9 @@ def main():
           f"/ {payload['meta']['nbDetenteurs']} détenteurs")
     print(f"  matieres   : {len(matieres)}")
     print(f"  fournisseurs: {len(fournisseurs)} ({len(ko)} sans pays inféré)")
-    print(f"  {DETENTEUR_CIBLE} : {len(produits)} produits")
+    print(f"  detenteurs : {len(detenteurs)} · {len(produits)} produits au total")
+    for d in detenteurs[:5]:
+        print(f"     {d['nbProduits']:4} produits  {d['nom']}")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { PORTEFEUILLE, META } from "@/lib/data";
+import { produitsDe, META } from "@/lib/data";
+import { detenteurActuel } from "@/lib/detenteur";
 import { CA_DISPONIBLE, etatAMM, fmtDate, fmtMAD, usagesTotal } from "@/lib/logic";
 import { StatCard } from "@/components/StatCard";
 
@@ -11,8 +12,10 @@ const COULEUR = {
   inconnue: "var(--muted)",
 } as const;
 
-export default function ProduitsPage() {
-  const list = [...PORTEFEUILLE].sort((a, b) =>
+export default async function ProduitsPage() {
+  const d = await detenteurActuel();
+  const portefeuille = produitsDe(d.id);
+  const list = [...portefeuille].sort((a, b) =>
     (a.expiration ?? "9999").localeCompare(b.expiration ?? "9999")
   );
   const expirees = list.filter((p) => etatAMM(p).etat === "expirée").length;
@@ -20,9 +23,9 @@ export default function ProduitsPage() {
 
   return (
     <>
-      <div className="eyebrow">Portefeuille · {META.detenteur}</div>
+      <div className="eyebrow">Portefeuille · {d.nom}</div>
       <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>
-        {PORTEFEUILLE.length} produits homologués
+        {portefeuille.length} produits homologués
       </h1>
       <p style={{ color: "var(--muted)", maxWidth: 700, lineHeight: 1.6, marginTop: 0 }}>
         Classés par échéance d&apos;AMM, la plus proche en premier. Données extraites de l&apos;index
@@ -37,8 +40,8 @@ export default function ProduitsPage() {
           margin: "22px 0",
         }}
       >
-        <StatCard label="Produits" value={String(PORTEFEUILLE.length)} sub="détenus" />
-        <StatCard label="Usages homologués" value={String(usagesTotal())} sub="couples culture × cible" />
+        <StatCard label="Produits" value={String(portefeuille.length)} sub="détenus" />
+        <StatCard label="Usages homologués" value={String(usagesTotal(d.id))} sub="couples culture × cible" />
         <StatCard
           label="AMM expirées"
           value={String(expirees)}

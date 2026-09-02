@@ -1,4 +1,4 @@
-import { FOURNISSEURS, MATIERES, fournisseurParNom } from "./data";
+import { FOURNISSEURS, MATIERES, fournisseurParNom, matieresDe } from "./data";
 import { detailRisque } from "./logic";
 import type { CandidatSourcing, Fournisseur, MatiereActive, VoieReglementaire } from "./types";
 
@@ -51,8 +51,8 @@ export interface FiltresSourcing {
   /** Exclure les molécules dont le risque réglementaire dépasse ce score.
    *  Indépendant du retrait ANSES, qui écarte la cible quel que soit le score. */
   risqueMax?: number;
-  /** Exclure les M.A. déjà présentes au portefeuille du détenteur. */
-  exclurePortefeuille?: boolean;
+  /** Exclure les M.A. déjà présentes au portefeuille de ce détenteur. */
+  detenteurId?: string;
 }
 
 function fournisseursDe(ma: MatiereActive): Fournisseur[] {
@@ -147,16 +147,12 @@ export function candidat(ma: MatiereActive): CandidatSourcing {
 }
 
 export function candidats(f: FiltresSourcing = {}): CandidatSourcing[] {
-  const {
-    maxDetenteurs = 3,
-    pays,
-    categorie,
-    risqueMax = 55,
-    exclurePortefeuille = true,
-  } = f;
+  const { maxDetenteurs = 3, pays, categorie, risqueMax = 55, detenteurId } = f;
 
-  return MATIERES.filter((ma) => {
-    if (exclurePortefeuille && ma.produitsDetenteur.length > 0) return false;
+  const base = detenteurId ? matieresDe(detenteurId) : MATIERES;
+
+  return base.filter((ma) => {
+    if (detenteurId && ma.produitsDetenteur.length > 0) return false;
     if (ma.detenteurs.length > maxDetenteurs) return false;
     if (categorie && ma.categorie !== categorie) return false;
     return true;

@@ -10,7 +10,16 @@ export interface MatrixPoint {
 
 // Matrice risque réglementaire (X) × exposition du portefeuille (Y).
 // Le quadrant haut-droit = « substituer et homologuer une alternative en priorité ».
-export function RiskMatrix({ points, labelY }: { points: MatrixPoint[]; labelY: string }) {
+export function RiskMatrix({
+  points,
+  labelY,
+  maxEtiquettes = 12,
+}: {
+  points: MatrixPoint[];
+  labelY: string;
+  /** Au-delà, les bulles restent tracées mais ne portent plus de nom. */
+  maxEtiquettes?: number;
+}) {
   const W = 720;
   const H = 420;
   const ml = 58;
@@ -27,6 +36,17 @@ export function RiskMatrix({ points, labelY }: { points: MatrixPoint[]; labelY: 
 
   const seuilRisque = 55;
   const seuilExpo = maxE * 0.35;
+
+  // Un portefeuille de 65 molécules superpose les étiquettes jusqu'à
+  // l'illisibilité. On ne nomme donc que les points qui appellent une
+  // décision — risque le plus élevé, puis exposition — les autres restant
+  // tracés pour conserver la lecture d'ensemble.
+  const nommes = new Set(
+    [...points]
+      .sort((a, b) => b.score - a.score || b.expo - a.expo)
+      .slice(0, maxEtiquettes)
+      .map((p) => p.id)
+  );
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label="Matrice risque × exposition">
@@ -87,15 +107,17 @@ export function RiskMatrix({ points, labelY }: { points: MatrixPoint[]; labelY: 
         return (
           <a key={p.id} href={`/matieres/${p.id}`}>
             <circle cx={cx} cy={cy} r={r(p.expo)} fill={c} opacity={0.22} stroke={c} strokeWidth={1.5} />
-            <text
-              x={cx + r(p.expo) + 6}
-              y={cy + 4}
-              fill="var(--fg)"
-              fontSize={11.5}
-              style={{ pointerEvents: "none" }}
-            >
-              {p.nom}
-            </text>
+            {nommes.has(p.id) && (
+              <text
+                x={cx + r(p.expo) + 6}
+                y={cy + 4}
+                fill="var(--fg)"
+                fontSize={11.5}
+                style={{ pointerEvents: "none" }}
+              >
+                {p.nom}
+              </text>
+            )}
           </a>
         );
       })}

@@ -1,4 +1,4 @@
-import { CA_RENSEIGNE, MATIERES_PORTEFEUILLE, PORTEFEUILLE, usagesDetenteur } from "./data";
+import { CA_RENSEIGNE, matieresDuPortefeuille, produitsDe, usagesDetenteur } from "./data";
 import type { MatiereActive, NiveauRisque, ProduitPortefeuille } from "./types";
 
 /** Date de référence du système. Recalculée à chaque rendu. */
@@ -155,27 +155,31 @@ export interface Exposition {
   pctCA: number | null;
 }
 
-export function exposition(ma: MatiereActive): Exposition {
+/**
+ * `ma` doit provenir de matieresDe(detenteurId) : son champ produitsDetenteur
+ * est alors déjà limité au détenteur, et l'exposition se lit directement.
+ */
+export function exposition(ma: MatiereActive, detenteurId: string): Exposition {
   const prods = ma.produitsDetenteur;
   const ca = prods.reduce<number | null>((s, p) => {
     if (p.caAnnuel == null) return s;
     return (s ?? 0) + p.caAnnuel;
   }, null);
-  const total = caTotal();
+  const total = caTotal(detenteurId);
   return {
     produits: prods.length,
-    usages: usagesDetenteur(ma.id),
+    usages: prods.reduce((s, p) => s + p.usages.length, 0),
     ca,
     pctCA: ca != null && total ? Math.round((ca / total) * 100) : null,
   };
 }
 
-export function caTotal(): number {
-  return PORTEFEUILLE.reduce((s, p) => s + (p.caAnnuel ?? 0), 0);
+export function caTotal(detenteurId: string): number {
+  return produitsDe(detenteurId).reduce((s, p) => s + (p.caAnnuel ?? 0), 0);
 }
 
-export function usagesTotal(): number {
-  return PORTEFEUILLE.reduce((s, p) => s + p.usages.length, 0);
+export function usagesTotal(detenteurId: string): number {
+  return produitsDe(detenteurId).reduce((s, p) => s + p.usages.length, 0);
 }
 
 export function fmtMAD(v: number): string {
@@ -199,14 +203,14 @@ export function etatAMM(p: ProduitPortefeuille): { etat: EtatAMM; mois: number |
   return { etat: "valide", mois: m };
 }
 
-export function ammExpirees(): ProduitPortefeuille[] {
-  return PORTEFEUILLE.filter((p) => etatAMM(p).etat === "expirée").sort(
+export function ammExpirees(detenteurId: string): ProduitPortefeuille[] {
+  return produitsDe(detenteurId).filter((p) => etatAMM(p).etat === "expirée").sort(
     (a, b) => (a.expiration ?? "").localeCompare(b.expiration ?? "")
   );
 }
 
-export function ammEcheance(moisMax = 18): ProduitPortefeuille[] {
-  return PORTEFEUILLE.filter((p) => {
+export function ammEcheance(detenteurId: string, moisMax = 18): ProduitPortefeuille[] {
+  return produitsDe(detenteurId).filter((p) => {
     const { etat, mois } = etatAMM(p);
     return (etat === "critique" || etat === "proche") && mois !== null && mois <= moisMax;
   }).sort((a, b) => (a.expiration ?? "").localeCompare(b.expiration ?? ""));
@@ -220,11 +224,11 @@ export interface MatiereClassee {
   expo: Exposition;
 }
 
-export function portefeuilleClasse(): MatiereClassee[] {
-  return MATIERES_PORTEFEUILLE.map((ma) => ({
+export function portefeuilleClasse(detenteurId: string): MatiereClassee[] {
+  return matieresDuPortefeuille(detenteurId).map((ma) => ({
     ma,
     risque: detailRisque(ma),
-    expo: exposition(ma),
+    expo: exposition(ma, detenteurId),
   })).sort((a, b) => {
     const sa = a.risque?.score ?? -1;
     const sb = b.risque?.score ?? -1;

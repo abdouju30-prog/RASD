@@ -9,6 +9,7 @@ import {
   statsSourcing,
 } from "@/lib/sourcing";
 import { STATS_EPHY } from "@/lib/ephy";
+import { detenteurActuel } from "@/lib/detenteur";
 import { Aide } from "@/components/Aide";
 
 export const dynamic = "force-dynamic";
@@ -44,6 +45,7 @@ export default async function SourcingPage({
   searchParams: Promise<{ pays?: string; cat?: string; det?: string }>;
 }) {
   const sp = await searchParams;
+  const d = await detenteurActuel();
   const pays = sp.pays;
   const cat = sp.cat;
   const maxDetenteurs = sp.det ? Number(sp.det) : 3;
@@ -52,6 +54,7 @@ export default async function SourcingPage({
     pays: pays ? [pays] : undefined,
     categorie: cat ?? null,
     maxDetenteurs,
+    detenteurId: d.id,
   });
   const st = statsSourcing();
   const cats = categoriesDisponibles();

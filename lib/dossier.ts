@@ -242,6 +242,8 @@ function objections(ma: MatiereActive, voie: VoieReglementaire, type: TypeDossie
 }
 
 export interface OptionsDossier {
+  /** Détenteur pour lequel le dossier est monté. */
+  detenteurId?: string;
   type?: TypeDossier;
   fournisseur?: Fournisseur | null;
   produit?: ProduitPortefeuille | null;
@@ -251,7 +253,7 @@ export interface OptionsDossier {
 
 /** Génère un dossier ONSSA pré-rempli pour une matière active donnée. */
 export function genererDossier(maId: string, opts: OptionsDossier = {}): DossierGenere | null {
-  const ma = getMatiere(maId);
+  const ma = getMatiere(maId, opts.detenteurId);
   if (!ma) return null;
 
   const c = candidat(ma);

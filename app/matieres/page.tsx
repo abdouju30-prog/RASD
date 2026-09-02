@@ -2,9 +2,11 @@ import Link from "next/link";
 import { RiskBadge } from "@/components/RiskBadge";
 import { portefeuilleClasse } from "@/lib/logic";
 import { MATIERES } from "@/lib/data";
+import { detenteurActuel } from "@/lib/detenteur";
 
-export default function MatieresPage() {
-  const classe = portefeuilleClasse();
+export default async function MatieresPage() {
+  const d = await detenteurActuel();
+  const classe = portefeuilleClasse(d.id);
 
   return (
     <>

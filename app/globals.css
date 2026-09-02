@@ -525,3 +525,38 @@ a.card:hover {
   display: block;
   margin-bottom: 9px;
 }
+
+/* ── Sélecteur de détenteur ─────────────────────────────────────────────────
+   L'outil couvre 75 sociétés : la bascule doit être immédiate et discrète. */
+.selecteur {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  padding: 2px 8px 2px 9px;
+  background: var(--card);
+  color: var(--muted-2);
+}
+.selecteur:focus-within {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.selecteur select {
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--tete);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 3px 0;
+  max-width: 260px;
+  cursor: pointer;
+}
+.selecteur select:focus { outline: none; }
+.selecteur select:disabled { opacity: 0.5; }
+.selecteur-attente {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+}

@@ -3,6 +3,7 @@ import caFile from "../data/ca.json";
 import { ficheDe } from "./reglementaire";
 import { ansesPour } from "./ephy";
 import type {
+  Detenteur,
   FicheAnses,
   Fournisseur,
   IndexONSSA,
@@ -14,18 +15,24 @@ import type {
 // ────────────────────────────────────────────────────────────────────────────
 // Source unique de vérité : data/onssa.json, produit par
 //     python scripts/import_onssa.py "<FICHIERS PHYTO.xlsx>"
-// Rien n'est saisi en dur ici. Le chiffre d'affaires, absent de la source,
-// vient de data/ca.json et reste optionnel.
+//
+// L'outil couvre les 75 détenteurs de l'index, pas un seul. Tout ce qui dépend
+// du détenteur est donc une FONCTION de son identifiant, pas une constante :
+// le détenteur courant est choisi à l'écran et lu par requête.
+//
+// Le chiffre d'affaires, absent de la source, reste optionnel (data/ca.json).
 // ────────────────────────────────────────────────────────────────────────────
 
 const IDX = indexONSSA as unknown as IndexONSSA;
 
 export const META = IDX.meta;
 export const FOURNISSEURS: Fournisseur[] = IDX.fournisseurs;
+export const DETENTEURS: Detenteur[] = IDX.detenteurs;
 
 const CA: Record<string, number> = (caFile.ca ?? {}) as Record<string, number>;
 
-export const PORTEFEUILLE: ProduitPortefeuille[] = IDX.portefeuille.map((p) => ({
+/** Les 1 413 produits de l'index, tous détenteurs confondus. */
+export const PRODUITS: ProduitPortefeuille[] = IDX.portefeuille.map((p) => ({
   ...p,
   caAnnuel: CA[p.id] ?? null,
 }));
@@ -35,25 +42,39 @@ export function fournisseurParNom(nom: string): Fournisseur | undefined {
   return FOURNISSEUR_PAR_NOM.get(nom);
 }
 
-const PRODUITS_PAR_MA = new Map<string, ProduitPortefeuille[]>();
-for (const p of PORTEFEUILLE) {
-  for (const id of p.matieresActivesIds) {
-    const l = PRODUITS_PAR_MA.get(id) ?? [];
-    l.push(p);
-    PRODUITS_PAR_MA.set(id, l);
+const DETENTEUR_PAR_ID = new Map(DETENTEURS.map((d) => [d.id, d]));
+
+/** Détenteur par identifiant, ou celui par défaut si l'identifiant est inconnu. */
+export function detenteurParId(id: string | undefined | null): Detenteur {
+  if (id) {
+    const d = DETENTEUR_PAR_ID.get(id);
+    if (d) return d;
   }
+  return (
+    DETENTEURS.find((d) => d.nom === META.detenteurDefaut) ?? DETENTEURS[0]
+  );
 }
 
-/**
- * Toutes les matières actives de l'index ONSSA, enrichies de :
- *  • leur fiche d'expertise (statut UE), quand elle existe — 23 molécules ;
- *  • leur statut ANSES lu dans E-Phy, pour toute molécule appariable.
- *
- * L'appariement E-Phy se fait sur le nom complet ONSSA plutôt que sur la
- * molécule de la fiche : il couvre ainsi l'index entier, pas seulement le
- * périmètre déjà documenté à la main.
- */
-export const MATIERES: MatiereActive[] = IDX.matieres.map((m: MatiereMarche) => {
+// ── Index par détenteur ─────────────────────────────────────────────────────
+
+const PRODUITS_PAR_DETENTEUR = new Map<string, ProduitPortefeuille[]>();
+for (const p of PRODUITS) {
+  const l = PRODUITS_PAR_DETENTEUR.get(p.detenteurId) ?? [];
+  l.push(p);
+  PRODUITS_PAR_DETENTEUR.set(p.detenteurId, l);
+}
+
+export function produitsDe(detenteurId: string): ProduitPortefeuille[] {
+  return PRODUITS_PAR_DETENTEUR.get(detenteurId) ?? [];
+}
+
+// ── Matières actives ────────────────────────────────────────────────────────
+//
+// La partie coûteuse — fiche d'expertise et appariement E-Phy — ne dépend pas
+// du détenteur : elle est calculée une fois, au chargement du module. Seul le
+// rattachement aux produits est refait par détenteur, et mis en cache.
+
+const MATIERES_BASE = IDX.matieres.map((m: MatiereMarche) => {
   const fiche = ficheDe(m.nom);
   const lu = ansesPour(m.nom);
   const anses: FicheAnses | null =
@@ -67,25 +88,57 @@ export const MATIERES: MatiereActive[] = IDX.matieres.map((m: MatiereMarche) => 
     fiche,
     anses,
     ansesAppariement: lu ? { substance: lu.substance, methode: lu.methode } : null,
-    produitsDetenteur: PRODUITS_PAR_MA.get(m.id) ?? [],
   };
 });
 
+/** Toutes les matières actives de l'index, sans rattachement à un détenteur. */
+export const MATIERES: MatiereActive[] = MATIERES_BASE.map((m) => ({
+  ...m,
+  produitsDetenteur: [],
+}));
+
 const MATIERE_PAR_ID = new Map(MATIERES.map((m) => [m.id, m]));
-export function getMatiere(id: string): MatiereActive | undefined {
-  return MATIERE_PAR_ID.get(id);
+
+const CACHE_MATIERES = new Map<string, MatiereActive[]>();
+
+/** Matières actives vues depuis un détenteur : produitsDetenteur est rempli. */
+export function matieresDe(detenteurId: string): MatiereActive[] {
+  const cache = CACHE_MATIERES.get(detenteurId);
+  if (cache) return cache;
+
+  const parMa = new Map<string, ProduitPortefeuille[]>();
+  for (const p of produitsDe(detenteurId)) {
+    for (const id of p.matieresActivesIds) {
+      const l = parMa.get(id) ?? [];
+      l.push(p);
+      parMa.set(id, l);
+    }
+  }
+  const out = MATIERES_BASE.map((m) => ({
+    ...m,
+    produitsDetenteur: parMa.get(m.id) ?? [],
+  }));
+  CACHE_MATIERES.set(detenteurId, out);
+  return out;
+}
+
+/** Matière active enrichie du rattachement au détenteur courant. */
+export function getMatiere(id: string, detenteurId?: string): MatiereActive | undefined {
+  if (!detenteurId) return MATIERE_PAR_ID.get(id);
+  return matieresDe(detenteurId).find((m) => m.id === id);
 }
 
 /** Les seules matières actives que le détenteur exploite réellement. */
-export const MATIERES_PORTEFEUILLE: MatiereActive[] = MATIERES.filter(
-  (m) => m.produitsDetenteur.length > 0
-).sort((a, b) => a.nom.localeCompare(b.nom, "fr"));
+export function matieresDuPortefeuille(detenteurId: string): MatiereActive[] {
+  return matieresDe(detenteurId)
+    .filter((m) => m.produitsDetenteur.length > 0)
+    .sort((a, b) => a.nom.localeCompare(b.nom, "fr"));
+}
 
-export const PRODUIT_PAR_ID = new Map(PORTEFEUILLE.map((p) => [p.id, p]));
-
-/** Nombre d'usages détenus par le portefeuille pour une matière active. */
-export function usagesDetenteur(maId: string): number {
-  return (PRODUITS_PAR_MA.get(maId) ?? []).reduce((s, p) => s + p.usages.length, 0);
+/** Nombre d'usages détenus par un détenteur pour une matière active. */
+export function usagesDetenteur(maId: string, detenteurId: string): number {
+  const m = matieresDe(detenteurId).find((x) => x.id === maId);
+  return (m?.produitsDetenteur ?? []).reduce((s, p) => s + p.usages.length, 0);
 }
 
 export const CA_RENSEIGNE = Object.keys(CA).length > 0;

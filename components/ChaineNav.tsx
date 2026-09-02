@@ -32,16 +32,17 @@ export interface Jauge {
 }
 
 export function ChaineNav({
-  detenteur,
   contexte,
   stations,
   jauges,
+  selecteur,
   fraicheur,
 }: {
-  detenteur: string;
   contexte: string;
   stations: Station[];
   jauges: Jauge[];
+  /** Sélecteur de détenteur — l'outil couvre les 75 sociétés de l'index. */
+  selecteur?: React.ReactNode;
   fraicheur?: React.ReactNode;
 }) {
   const path = usePathname();
@@ -58,9 +59,8 @@ export function ChaineNav({
         <Link href="/" className="nom">
           Homologa
         </Link>
-        <span className="ctx">
-          {detenteur} · {contexte}
-        </span>
+        {selecteur}
+        <span className="ctx">{contexte}</span>
         <div className="droite">
           <Link
             href="/sources"

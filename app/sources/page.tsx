@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Database, PenLine, FileCheck2, Globe, ShieldAlert } from "lucide-react";
 import { Figure, Aide } from "@/components/Aide";
 import { SchemaSources, SchemaChaine, SchemaDossier, SchemaSourcing } from "@/components/Schemas";
-import { META, MATIERES, FOURNISSEURS, PORTEFEUILLE } from "@/lib/data";
+import { META, MATIERES, FOURNISSEURS, PRODUITS, DETENTEURS } from "@/lib/data";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
 import { STATS_APVMA } from "@/lib/apvma";
@@ -114,7 +114,7 @@ export default function SourcesPage() {
             icone={<Database size={15} color="var(--accent)" />}
             nom="Index ONSSA"
             role="Le socle — tout le reste s'y rattache"
-            contenu={`${META.nbLignesIndex.toLocaleString("fr")} lignes, ${META.nbProduitsIndex} produits, ${META.nbDetenteurs} détenteurs, ${MATIERES.length} matières actives, ${FOURNISSEURS.length} fournisseurs. Votre portefeuille : ${PORTEFEUILLE.length} produits avec AMM, dates, usages, doses et DAR.`}
+            contenu={`${META.nbLignesIndex.toLocaleString("fr")} lignes, ${META.nbProduitsIndex} produits, ${META.nbDetenteurs} détenteurs, ${MATIERES.length} matières actives, ${FOURNISSEURS.length} fournisseurs. ${DETENTEURS.length} détenteurs couverts, ${PRODUITS.length} produits avec AMM, dates, usages, doses et DAR.`}
             origine={META.source}
             maj={`importé le ${fmtDate(META.genere.slice(0, 10))}`}
             fiabilite="source"

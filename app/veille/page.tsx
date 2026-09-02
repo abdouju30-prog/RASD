@@ -5,6 +5,7 @@ import { alertes, statsAlertes, type TypeAlerte } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { META } from "@/lib/data";
+import { detenteurActuel } from "@/lib/detenteur";
 import { STATS_EPHY } from "@/lib/ephy";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
 import { Aide } from "@/components/Aide";
@@ -29,9 +30,10 @@ const LIBELLE: Record<TypeAlerte, string> = {
   candidate_substitution: "Candidate à la substitution",
 };
 
-export default function VeillePage() {
-  const list = alertes();
-  const st = statsAlertes();
+export default async function VeillePage() {
+  const d = await detenteurActuel();
+  const list = alertes(d.id);
+  const st = statsAlertes(d.id);
 
   return (
     <>

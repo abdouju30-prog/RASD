@@ -2,19 +2,21 @@ import Link from "next/link";
 import { RefreshCw, Replace, Sparkles, ArrowRight } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { StatCard } from "@/components/StatCard";
-import { PORTEFEUILLE } from "@/lib/data";
+import { produitsDe } from "@/lib/data";
+import { detenteurActuel } from "@/lib/detenteur";
 import { ammEcheance, ammExpirees, fmtDate, portefeuilleClasse } from "@/lib/logic";
 import { candidats } from "@/lib/sourcing";
 import { DELAIS_INDICATIFS } from "@/lib/dossier";
 
-export default function DossiersPage() {
-  const expirees = ammExpirees();
-  const proches = ammEcheance(18);
+export default async function DossiersPage() {
+  const d = await detenteurActuel();
+  const expirees = ammExpirees(d.id);
+  const proches = ammEcheance(d.id, 18);
   const aRenouveler = [...expirees, ...proches];
 
-  const aSubstituer = portefeuilleClasse().filter((c) => (c.risque?.score ?? 0) >= 55);
+  const aSubstituer = portefeuilleClasse(d.id).filter((c) => (c.risque?.score ?? 0) >= 55);
 
-  const opportunites = candidats({ maxDetenteurs: 2 }).slice(0, 4);
+  const opportunites = candidats({ maxDetenteurs: 2, detenteurId: d.id }).slice(0, 4);
 
   return (
     <>
@@ -53,7 +55,7 @@ export default function DossiersPage() {
         />
         <StatCard
           label="Portefeuille"
-          value={String(PORTEFEUILLE.length)}
+          value={String(produitsDe(d.id).length)}
           sub="produits couverts par une AMM"
         />
       </div>

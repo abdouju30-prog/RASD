@@ -3,7 +3,8 @@ import { AlertTriangle, ArrowRight, ShieldQuestion } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { RiskBadge } from "@/components/RiskBadge";
 import { RiskMatrix, type MatrixPoint } from "@/components/RiskMatrix";
-import { META, PORTEFEUILLE, MATIERES_PORTEFEUILLE } from "@/lib/data";
+import { META, matieresDuPortefeuille, produitsDe } from "@/lib/data";
+import { detenteurActuel } from "@/lib/detenteur";
 import { alertes, anglesMorts, statsAlertes } from "@/lib/alertes";
 import {
   CA_DISPONIBLE,
@@ -16,13 +17,15 @@ import {
 } from "@/lib/logic";
 import { COUVERTURE } from "@/lib/reglementaire";
 
-export default function RadarPage() {
-  const classe = portefeuilleClasse();
-  const st = statsAlertes();
-  const expirees = ammExpirees();
-  const proches = ammEcheance(18);
-  const morts = anglesMorts();
-  const top = alertes().slice(0, 5);
+export default async function RadarPage() {
+  const d = await detenteurActuel();
+  const classe = portefeuilleClasse(d.id);
+  const st = statsAlertes(d.id);
+  const expirees = ammExpirees(d.id);
+  const proches = ammEcheance(d.id, 18);
+  const morts = anglesMorts(d.id);
+  const top = alertes(d.id).slice(0, 5);
+  const produits = produitsDe(d.id);
 
   const points: MatrixPoint[] = classe
     .filter((c) => c.risque !== null)
@@ -40,7 +43,7 @@ export default function RadarPage() {
   return (
     <>
       <div className="eyebrow">
-        Radar réglementaire · {META.detenteur} · index du {fmtDate(META.genere.slice(0, 10))}
+        Radar réglementaire · {d.nom} · index du {fmtDate(META.genere.slice(0, 10))}
       </div>
       <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>Tour de contrôle</h1>
       <p style={{ color: "var(--muted)", maxWidth: 660, lineHeight: 1.6, marginTop: 0 }}>
@@ -83,7 +86,7 @@ export default function RadarPage() {
         <StatCard
           label="AMM expirées"
           value={String(expirees.length)}
-          unit={`/ ${PORTEFEUILLE.length}`}
+          unit={`/ ${produits.length}`}
           tone={expirees.length ? "crit" : "low"}
           sub={expirees.length ? expirees.map((p) => p.nomCommercial).join(" · ") : "aucune"}
         />
@@ -96,7 +99,7 @@ export default function RadarPage() {
         <StatCard
           label="Usages à risque élevé"
           value={String(usagesARisque)}
-          unit={`/ ${usagesTotal()}`}
+          unit={`/ ${usagesTotal(d.id)}`}
           tone={usagesARisque ? "high" : "low"}
           sub="usages portés par une M.A. en risque ≥ 55"
         />
@@ -109,7 +112,7 @@ export default function RadarPage() {
                     .filter((c) => (c.risque?.score ?? 0) >= 55)
                     .reduce((s, c) => s + (c.expo.ca ?? 0), 0)
                 )
-              : String(MATIERES_PORTEFEUILLE.length)
+              : String(matieresDuPortefeuille(d.id).length)
           }
           unit={CA_DISPONIBLE ? "MAD" : "au portefeuille"}
           tone="default"

@@ -3,23 +3,25 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, FileText, TriangleAlert, Globe } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { StatusPill } from "@/components/StatusPill";
-import { MATIERES_PORTEFEUILLE, getMatiere } from "@/lib/data";
+import { getMatiere } from "@/lib/data";
+import { detenteurActuel } from "@/lib/detenteur";
 import { detailRisque, etatAMM, exposition, fmtDate } from "@/lib/logic";
 import { alternativesPour } from "@/lib/dossier";
 import { candidat } from "@/lib/sourcing";
 import { lectureCroisee, STATS_APVMA } from "@/lib/apvma";
 
-export async function generateStaticParams() {
-  return MATIERES_PORTEFEUILLE.map((m) => ({ id: m.id }));
-}
+// Le contenu dépend du détenteur choisi, qui est lu dans un cookie : la page
+// ne peut donc pas être pré-générée.
+export const dynamic = "force-dynamic";
 
 export default async function MatierePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const ma = getMatiere(id);
+  const d = await detenteurActuel();
+  const ma = getMatiere(id, d.id);
   if (!ma) notFound();
 
   const risque = detailRisque(ma);
-  const expo = exposition(ma);
+  const expo = exposition(ma, d.id);
   const alts = alternativesPour(ma.id);
   const c = candidat(ma);
   const f = ma.fiche;

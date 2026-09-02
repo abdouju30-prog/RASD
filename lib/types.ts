@@ -81,8 +81,20 @@ export interface UsageProduit {
   nbAppl: string | null;
 }
 
+export interface Detenteur {
+  id: string;
+  nom: string;
+  nbProduits: number;
+  nbUsages: number;
+  nbMatieresActives: number;
+  categories: string[];
+}
+
 export interface ProduitPortefeuille {
   id: string;
+  /** Un même nom commercial peut exister chez deux détenteurs. */
+  detenteur: string;
+  detenteurId: string;
   nomCommercial: string;
   categorie: string | null;
   formulation: string | null;
@@ -100,7 +112,8 @@ export interface IndexONSSA {
   meta: {
     source: string;
     genere: string;
-    detenteur: string;
+    detenteurDefaut: string;
+    nbDetenteursCouverts: number;
     nbLignesIndex: number;
     nbProduitsIndex: number;
     nbDetenteurs: number;
@@ -108,6 +121,7 @@ export interface IndexONSSA {
   };
   fournisseurs: Fournisseur[];
   matieres: MatiereMarche[];
+  detenteurs: Detenteur[];
   portefeuille: ProduitPortefeuille[];
 }
 
@@ -141,6 +155,7 @@ export interface MatiereActive extends MatiereMarche {
   anses: FicheAnses | null;
   /** Substance E-Phy appariée et méthode d'appariement, pour vérification. */
   ansesAppariement: { substance: string; methode: string } | null;
+  /** Produits du détenteur COURANT portant cette matière active. */
   produitsDetenteur: ProduitPortefeuille[];
 }
 

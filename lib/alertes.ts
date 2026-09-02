@@ -1,4 +1,4 @@
-import { MATIERES_PORTEFEUILLE, PORTEFEUILLE, getMatiere } from "./data";
+import { getMatiere, matieresDuPortefeuille, produitsDe } from "./data";
 import { detailRisque, etatAMM, fmtDate, moisAvant } from "./logic";
 import type { MatiereActive, NiveauRisque, ProduitPortefeuille } from "./types";
 
@@ -65,17 +65,18 @@ function nbUsages(prods: ProduitPortefeuille[]): number {
   return prods.reduce((s, p) => s + p.usages.length, 0);
 }
 
-function produitsDe(ma: MatiereActive): ProduitPortefeuille[] {
+/** Produits du détenteur courant portant cette matière active. */
+function produitsPortant(ma: MatiereActive): ProduitPortefeuille[] {
   return ma.produitsDetenteur;
 }
 
-export function alertes(): Alerte[] {
+export function alertes(detenteurId: string): Alerte[] {
   const out: Alerte[] = [];
 
   // 1) AMM du portefeuille — expirées puis à échéance.
-  for (const p of PORTEFEUILLE) {
+  for (const p of produitsDe(detenteurId)) {
     const { etat, mois } = etatAMM(p);
-    const ma = p.matieresActivesIds.map(getMatiere).find(Boolean) ?? null;
+    const ma = p.matieresActivesIds.map((i) => getMatiere(i, detenteurId)).find(Boolean) ?? null;
 
     if (etat === "expirée") {
       out.push({
@@ -113,9 +114,9 @@ export function alertes(): Alerte[] {
   }
 
   // 2) Statut ANSES et statut UE des matières actives réellement détenues.
-  for (const ma of MATIERES_PORTEFEUILLE) {
+  for (const ma of matieresDuPortefeuille(detenteurId)) {
     const f = ma.fiche;
-    const prods = produitsDe(ma);
+    const prods = produitsPortant(ma);
     if (prods.length === 0) continue;
 
     // Signal de tête : l'ONSSA s'aligne sur l'ANSES.
@@ -214,8 +215,8 @@ export function alertes(): Alerte[] {
   });
 }
 
-export function statsAlertes() {
-  const a = alertes();
+export function statsAlertes(detenteurId: string) {
+  const a = alertes(detenteurId);
   return {
     total: a.length,
     critiques: a.filter((x) => x.niveau === "critique").length,
@@ -226,8 +227,8 @@ export function statsAlertes() {
 }
 
 /** Matières actives du portefeuille sans aucun statut exploitable (ni UE, ni ANSES). */
-export function anglesMorts(): MatiereActive[] {
-  return MATIERES_PORTEFEUILLE.filter(
+export function anglesMorts(detenteurId: string): MatiereActive[] {
+  return matieresDuPortefeuille(detenteurId).filter(
     (m) =>
       (!m.anses || m.anses.statut === "inconnu") &&
       (!m.fiche || m.fiche.statutUE === "inconnu")

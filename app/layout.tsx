@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ChaineNav, type Jauge, type Station } from "@/components/ChaineNav";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
-import { META, MATIERES_PORTEFEUILLE, PORTEFEUILLE } from "@/lib/data";
+import { SelecteurDetenteur } from "@/components/SelecteurDetenteur";
+import { choisirDetenteur } from "./actions";
+import { DETENTEURS, META, matieresDuPortefeuille, produitsDe } from "@/lib/data";
+import { detenteurActuel } from "@/lib/detenteur";
 import { statsAlertes } from "@/lib/alertes";
 import { fmtDate, usagesTotal } from "@/lib/logic";
 import { candidats, statsSourcing } from "@/lib/sourcing";
@@ -13,12 +16,13 @@ export const metadata: Metadata = {
   description: "Radar réglementaire, prospection de matières actives et usine à dossiers ONSSA",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Les compteurs du ruban sont calculés ici, une fois, et restent visibles
-  // sur tous les écrans : la chaîne dit en permanence où il y a du travail.
-  const st = statsAlertes();
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Tout le ruban est calculé pour le détenteur courant : changer de société
+  // recalcule les compteurs, pas seulement le contenu de la page.
+  const d = await detenteurActuel();
+  const st = statsAlertes(d.id);
   const so = statsSourcing();
-  const nbCibles = candidats().length;
+  const nbCibles = candidats({ detenteurId: d.id }).length;
 
   const stations: Station[] = [
     { href: "/", nom: "Radar", compteur: `${st.total} détections` },
@@ -33,20 +37,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       href: "/matieres",
       etape: "Étape 2",
       nom: "Matière active",
-      compteur: `${MATIERES_PORTEFEUILLE.length} au portefeuille`,
+      compteur: `${matieresDuPortefeuille(d.id).length} au portefeuille`,
     },
     {
       href: "/produits",
       etape: "Étape 3",
       nom: "Produits touchés",
-      compteur: `${st.produitsTouches} / ${PORTEFEUILLE.length} · ${usagesTotal()} usages`,
+      compteur: `${st.produitsTouches} / ${produitsDe(d.id).length} · ${usagesTotal(d.id)} usages`,
     },
-    {
-      href: "/sourcing",
-      etape: "Étape 4",
-      nom: "Alternative",
-      compteur: `${nbCibles} cibles`,
-    },
+    { href: "/sourcing", etape: "Étape 4", nom: "Alternative", compteur: `${nbCibles} cibles` },
     {
       href: "/fournisseurs",
       etape: "Étape 5",
@@ -79,10 +78,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ChaineNav
-          detenteur={META.detenteur}
           contexte={`index ONSSA ${fmtDate(META.genere.slice(0, 10))}`}
           stations={stations}
           jauges={jauges}
+          selecteur={
+            <SelecteurDetenteur
+              detenteurs={DETENTEURS}
+              courant={d.id}
+              action={choisirDetenteur}
+            />
+          }
           fraicheur={<FraicheurEphy compact />}
         />
         <main className="main">{children}</main>
