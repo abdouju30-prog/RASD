@@ -13,18 +13,18 @@ export interface MatrixPoint {
 export function RiskMatrix({
   points,
   labelY,
-  maxEtiquettes = 12,
+  maxEtiquettes = 16,
 }: {
   points: MatrixPoint[];
   labelY: string;
-  /** Au-delà, les bulles restent tracées mais ne portent plus de nom. */
+  /** Plafond d'étiquettes, avant même l'évitement des collisions. */
   maxEtiquettes?: number;
 }) {
-  const W = 720;
-  const H = 420;
-  const ml = 58;
-  const mr = 150;
-  const mt = 20;
+  const W = 1000;
+  const H = 430;
+  const ml = 62;
+  const mr = 30;
+  const mt = 24;
   const mb = 46;
   const pw = W - ml - mr;
   const ph = H - mt - mb;
@@ -32,21 +32,44 @@ export function RiskMatrix({
   const maxE = Math.max(...points.map((p) => p.expo), 1);
   const x = (score: number) => ml + (score / 100) * pw;
   const y = (e: number) => mt + ph - (e / maxE) * ph;
-  const r = (e: number) => 7 + (e / maxE) * 17;
+  const r = (e: number) => 6 + (e / maxE) * 16;
 
   const seuilRisque = 55;
   const seuilExpo = maxE * 0.35;
 
-  // Un portefeuille de 65 molécules superpose les étiquettes jusqu'à
-  // l'illisibilité. On ne nomme donc que les points qui appellent une
-  // décision — risque le plus élevé, puis exposition — les autres restant
-  // tracés pour conserver la lecture d'ensemble.
-  const nommes = new Set(
-    [...points]
-      .sort((a, b) => b.score - a.score || b.expo - a.expo)
-      .slice(0, maxEtiquettes)
-      .map((p) => p.id)
-  );
+  // ── Étiquetage ────────────────────────────────────────────────────────────
+  // Un portefeuille de 65 molécules empile les points en bas à gauche, là où
+  // le risque et l'exposition sont faibles. Plafonner le nombre d'étiquettes
+  // ne suffit pas : il faut aussi refuser celles qui recouvriraient une
+  // voisine. On sert d'abord les points qui appellent une décision — risque le
+  // plus élevé, puis exposition — et on saute les suivantes si la place est
+  // déjà prise. Les bulles restent tracées : la densité reste lisible.
+  const CH = 6.1; // largeur moyenne d'un caractère à 11,5 px
+  const HL = 13; // hauteur d'une étiquette
+  const places: { x1: number; y1: number; x2: number; y2: number }[] = [];
+  const etiquettes = new Map<string, { tx: number; ty: number }>();
+
+  for (const p of [...points].sort((a, b) => b.score - a.score || b.expo - a.expo)) {
+    if (etiquettes.size >= maxEtiquettes) break;
+    const rayon = r(p.expo);
+    const cx = x(p.score);
+    const cy = y(p.expo);
+    const largeur = p.nom.length * CH;
+
+    // À droite par défaut ; à gauche si l'étiquette sortirait du cadre.
+    const aGauche = cx + rayon + 6 + largeur > W - 4;
+    const tx = aGauche ? cx - rayon - 6 - largeur : cx + rayon + 6;
+    const ty = cy + 4;
+    const boite = { x1: tx - 2, y1: ty - HL + 3, x2: tx + largeur + 2, y2: ty + 4 };
+
+    const chevauche = places.some(
+      (b) => !(boite.x2 < b.x1 || boite.x1 > b.x2 || boite.y2 < b.y1 || boite.y1 > b.y2)
+    );
+    if (chevauche) continue;
+
+    places.push(boite);
+    etiquettes.set(p.id, { tx: aGauche ? tx + largeur : tx, ty });
+  }
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label="Matrice risque × exposition">
@@ -87,16 +110,16 @@ export function RiskMatrix({
         Score de risque réglementaire →
       </text>
       <text
-        x={16}
+        x={18}
         y={mt + ph / 2}
         fill="var(--muted)"
         fontSize={12}
         textAnchor="middle"
-        transform={`rotate(-90 16 ${mt + ph / 2})`}
+        transform={`rotate(-90 18 ${mt + ph / 2})`}
       >
         {labelY} →
       </text>
-      <text x={x(seuilRisque) + 8} y={mt + 16} fill="var(--crit)" fontSize={11} fontWeight={600}>
+      <text x={x(seuilRisque) + 8} y={mt + 14} fill="var(--crit)" fontSize={11} fontWeight={600}>
         Substituer + homologuer
       </text>
 
@@ -104,15 +127,20 @@ export function RiskMatrix({
         const c = riskColorVar(niveauRisque(p.score));
         const cx = x(p.score);
         const cy = y(p.expo);
+        const et = etiquettes.get(p.id);
         return (
           <a key={p.id} href={`/matieres/${p.id}`}>
+            <title>
+              {p.nom} — risque {p.score}, {p.expo} usage(s)
+            </title>
             <circle cx={cx} cy={cy} r={r(p.expo)} fill={c} opacity={0.22} stroke={c} strokeWidth={1.5} />
-            {nommes.has(p.id) && (
+            {et && (
               <text
-                x={cx + r(p.expo) + 6}
-                y={cy + 4}
+                x={et.tx}
+                y={et.ty}
                 fill="var(--fg)"
                 fontSize={11.5}
+                textAnchor={et.tx < cx ? "end" : "start"}
                 style={{ pointerEvents: "none" }}
               >
                 {p.nom}

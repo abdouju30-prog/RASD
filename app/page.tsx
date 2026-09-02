@@ -120,48 +120,67 @@ export default async function RadarPage() {
         />
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1.55fr 1fr", gap: 16, alignItems: "start" }}>
-        <div className="card" style={{ padding: "18px 20px 8px" }}>
-          <div className="h-title">Matrice risque × exposition</div>
-          <p style={{ color: "var(--muted)", fontSize: 13, margin: "6px 0 10px" }}>
+      {/* La matrice prend toute la largeur : c'est une carte de décision, elle
+          se lit d'autant mieux qu'elle respire. La légende passe à côté du
+          titre, les actions en dessous. */}
+      <div className="card" style={{ padding: "16px 20px 10px" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "baseline",
+            justifyContent: "space-between",
+            gap: 16,
+            flexWrap: "wrap",
+            marginBottom: 6,
+          }}
+        >
+          <span className="h-title">Matrice risque × exposition</span>
+          <span style={{ color: "var(--muted-2)", fontSize: 11.5 }}>
             Taille de bulle ={" "}
-            {CA_DISPONIBLE ? "chiffre d'affaires" : "nombre d'usages homologués détenus"}. Cliquez une
-            matière active pour l&apos;analyser.
-          </p>
-          {points.length ? (
-            <RiskMatrix points={points} labelY={CA_DISPONIBLE ? "Exposition CA" : "Usages détenus"} />
-          ) : (
-            <p style={{ color: "var(--muted)", fontSize: 13, padding: "30px 0" }}>
-              Aucune matière active du portefeuille ne dispose d&apos;une fiche réglementaire vérifiée.
-            </p>
-          )}
+            {CA_DISPONIBLE ? "chiffre d'affaires" : "usages homologués détenus"} · cliquez une bulle
+            pour analyser la matière active
+          </span>
         </div>
+        {points.length ? (
+          <RiskMatrix points={points} labelY={CA_DISPONIBLE ? "Exposition CA" : "Usages détenus"} />
+        ) : (
+          <p style={{ color: "var(--muted)", fontSize: 13, padding: "30px 0" }}>
+            Aucune matière active du portefeuille ne dispose d&apos;une fiche réglementaire vérifiée.
+          </p>
+        )}
+      </div>
 
-        <div className="card" style={{ padding: "18px 20px" }}>
-          <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <AlertTriangle size={14} color="var(--mod)" /> Actions recommandées
-          </div>
-          <div style={{ marginTop: 14, display: "grid", gap: 12 }}>
-            {top.map((a) => (
-              <Link
-                key={a.id}
-                href={a.matiere ? `/matieres/${a.matiere.id}` : "/veille"}
-                className="card"
-                style={{ padding: "12px 14px", background: "var(--card-2)", display: "block" }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
-                  <span style={{ fontWeight: 600, fontSize: 13.5 }}>{a.titre}</span>
-                  <RiskBadge niveau={a.niveau} />
-                </div>
-                <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 6 }}>
-                  {a.produits.length} produit(s) · {a.usages} usage(s)
-                </div>
-                <div className="link-accent" style={{ fontSize: 12.5, marginTop: 8 }}>
-                  {a.action}
-                </div>
-              </Link>
-            ))}
-          </div>
+      <div className="section">
+        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <AlertTriangle size={14} color="var(--mod)" /> Actions recommandées
+        </span>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: 12,
+            marginTop: 10,
+          }}
+        >
+          {top.map((a) => (
+            <Link
+              key={a.id}
+              href={a.matiere ? `/matieres/${a.matiere.id}` : "/veille"}
+              className="card"
+              style={{ padding: "12px 14px", display: "block" }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
+                <span style={{ fontWeight: 600, fontSize: 13.5 }}>{a.titre}</span>
+                <RiskBadge niveau={a.niveau} />
+              </div>
+              <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 6 }}>
+                {a.produits.length} produit(s) · {a.usages} usage(s)
+              </div>
+              <div className="link-accent" style={{ fontSize: 12.5, marginTop: 8 }}>
+                {a.action}
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
 
