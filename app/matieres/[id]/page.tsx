@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, FileText, TriangleAlert } from "lucide-react";
+import { ArrowLeft, FileText, TriangleAlert, Globe } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { StatusPill } from "@/components/StatusPill";
 import { MATIERES_PORTEFEUILLE, getMatiere } from "@/lib/data";
 import { detailRisque, etatAMM, exposition, fmtDate } from "@/lib/logic";
 import { alternativesPour } from "@/lib/dossier";
 import { candidat } from "@/lib/sourcing";
+import { lectureCroisee, STATS_APVMA } from "@/lib/apvma";
 
 export async function generateStaticParams() {
   return MATIERES_PORTEFEUILLE.map((m) => ({ id: m.id }));
@@ -22,6 +23,7 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
   const alts = alternativesPour(ma.id);
   const c = candidat(ma);
   const f = ma.fiche;
+  const au = lectureCroisee(ma.nom, ma.anses?.statut);
 
   return (
     <>
@@ -215,6 +217,36 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
               )}
             </div>
           )}
+
+          <div
+            className="card"
+            style={{
+              padding: "18px 20px",
+              borderColor:
+                au.convergence === "divergence"
+                  ? "color-mix(in srgb, var(--info) 40%, transparent)"
+                  : "var(--border)",
+            }}
+          >
+            <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <Globe size={14} color={au.convergence === "divergence" ? "var(--info)" : "var(--muted-2)"} />
+              Recoupement Australie
+            </div>
+            <div style={{ fontSize: 13.5, fontWeight: 600, marginTop: 11 }}>{au.titre}</div>
+            <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6, margin: "6px 0 0" }}>
+              {au.lecture}
+            </p>
+            {au.constituant && (
+              <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 10 }}>
+                Apparié à <span className="mono">{au.constituant.nom}</span>
+                {au.constituant.famille ? ` · ${au.constituant.famille}` : ""}
+              </div>
+            )}
+            <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 10, lineHeight: 1.5 }}>
+              {STATS_APVMA.attribution} · {STATS_APVMA.licence}. L&apos;APVMA ne gouverne pas
+              l&apos;ONSSA : ce statut ne pèse pas dans le score de risque, il sert d&apos;argument.
+            </p>
+          </div>
 
           <div className="card" style={{ padding: "18px 20px" }}>
             <div className="h-title">Position marché</div>
