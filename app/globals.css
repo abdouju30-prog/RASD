@@ -1,57 +1,57 @@
 @import "tailwindcss";
 
 /* ────────────────────────────────────────────────────────────────────────────
-   Thème clair — « Data-Dense Dashboard »
+   DIRECTION RETENUE — « Chaîne de décision, corps dense »
+   Maquette de référence : maquettes/D-retenue-chaine-dense.html
 
-   Toute la couleur passe par ces tokens : aucun composant ne contient de hex.
-   Changer de thème = changer ce bloc.
+   Structure : la navigation est un ruban de six stations qui matérialise la
+   boucle du produit — Signal → Matière active → Produits touchés →
+   Alternative → Fournisseur → Dossier. On sait toujours où l'on est dans le
+   raisonnement, et chaque station porte son compteur.
 
-   Contrastes vérifiés (WCAG AA, texte normal ≥ 4.5:1), mesurés à la fois sur
-   la carte blanche et sur le fond de page :
+   Corps : densité d'instrument. Des filets plutôt que des cartes empilées,
+   des chiffres en chasse fixe alignés, des lignes de tableau serrées. L'écran
+   est un poste de travail, pas une page de lecture.
 
-     --fg       17.80:1 / 16.22:1        --mod   5.02:1 / 4.57:1
-     --muted     7.05:1 /  6.43:1        --high  5.18:1 / 4.72:1
-     --muted-2   5.03:1 /  4.58:1        --crit  6.29:1 / 5.73:1
-     --accent    5.48:1 /  5.00:1        --info  6.70:1 / 6.11:1
+   Contrastes vérifiés (AA, texte normal ≥ 4.5:1), mesurés sur la carte
+   blanche, sur le fond de page ET sur le fond de station active :
 
-   Les couleurs de risque ne sont PAS les teintes vives du thème sombre
-   éclaircies : ce sont les variantes 700, seules lisibles en petit corps sur
-   fond clair. Le vert de marque a été assombri pour la même raison.
+     --fg      17.69 / 16.29        --low   6.54 / 6.02
+     --muted    7.16 /  6.59        --mod   6.27 / 5.78
+     --muted-2  5.46 /  5.03        --high  5.75 / 5.29
+     --accent   7.51 /  6.92        --crit  7.25 / 6.67
    ──────────────────────────────────────────────────────────────────────────── */
 
 :root {
-  /* Surfaces */
-  --bg: #f2f5f3; /* page — blanc cassé légèrement vert, garde l'identité */
-  --surface: #ffffff; /* barre latérale */
+  --bg: #f3f6f7;
+  --surface: #ffffff;
   --card: #ffffff;
-  --card-2: #f7f9f8; /* carte imbriquée, ligne survolée */
-  --border: #e2e8e5;
-  --border-strong: #cbd5d0;
+  --card-2: #f7fafb;
+  --border: #dde4e8;
+  --border-strong: #b9c5cb;
 
-  /* Texte — trois niveaux nettement distincts */
-  --fg: #0f1a16;
-  --muted: #4c5b55;
-  --muted-2: #61736c;
+  --fg: #0e1a20;
+  --muted: #4a5a63;
+  --muted-2: #5a6c77;
 
-  /* Marque */
-  --accent: #047857;
+  --accent: #0d5c73;
   --accent-fg: #ffffff;
+  --accent-fond: #eaf3f6;
 
-  /* Statuts. Ordre de gravité : low < mod < high < crit */
-  --low: #047857;
-  --mod: #b45309;
-  --high: #c2410c;
-  --crit: #be123c;
-  --info: #1d4ed8;
+  --low: #0e6b47;
+  --mod: #8f5106;
+  --high: #b0430b;
+  --crit: #ad0f36;
+  --info: #0d5c73;
 
-  /* Élévation — sur fond clair, la bordure seule aplatit tout */
-  --ombre-1: 0 1px 2px rgba(15, 26, 22, 0.04), 0 1px 3px rgba(15, 26, 22, 0.06);
-  --ombre-2: 0 2px 4px rgba(15, 26, 22, 0.05), 0 4px 12px rgba(15, 26, 22, 0.07);
+  --ombre-1: 0 1px 2px rgba(14, 26, 32, 0.04);
+  --ombre-2: 0 2px 4px rgba(14, 26, 32, 0.05), 0 6px 16px rgba(14, 26, 32, 0.07);
 
-  --sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --mono: "DM Mono", ui-monospace, "SF Mono", monospace;
+  --sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --tete: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --mono: "Roboto Mono", ui-monospace, "SF Mono", monospace;
 
-  --t: 180ms cubic-bezier(0.2, 0, 0.2, 1);
+  --t: 160ms cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 * {
@@ -66,6 +66,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--sans);
+  font-size: 13px;
   -webkit-font-smoothing: antialiased;
 }
 a {
@@ -74,76 +75,251 @@ a {
 }
 .mono {
   font-family: var(--mono);
-  font-variant-numeric: tabular-nums; /* colonnes de chiffres alignées */
+  font-variant-numeric: tabular-nums;
 }
-
-/* Focus clavier visible partout — jamais supprimé. */
 :where(a, button, [tabindex]):focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 6px;
 }
 
-/* Layout ------------------------------------------------------------------ */
-.app {
-  display: flex;
-  min-height: 100vh;
-}
-.sidebar {
-  width: 240px;
-  flex-shrink: 0;
-  border-right: 1px solid var(--border);
-  background: var(--surface);
-  padding: 22px 16px;
+/* ── En-tête : barre d'identité + jauges ─────────────────────────────────── */
+.entete {
   position: sticky;
   top: 0;
-  height: 100vh;
+  z-index: 20;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
 }
-/* Pleine largeur : l'écran est un poste de travail, pas une page de lecture.
-   Les tableaux ONSSA ont beaucoup de colonnes, ils prennent toute la place
-   disponible. Les marges latérales s'élargissent sur très grands écrans pour
-   que le texte ne colle pas au bord. */
-.main {
-  flex: 1;
-  min-width: 0; /* sans ça, une table large fait déborder le conteneur flex */
-  padding: 30px 40px 80px;
-}
-@media (min-width: 1800px) {
-  .main {
-    padding-left: 56px;
-    padding-right: 56px;
-  }
-}
-.navlink {
+.barre {
   display: flex;
   align-items: center;
   gap: 11px;
-  padding: 9px 12px;
-  border-radius: 10px;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 3px;
-  transition: background var(--t), color var(--t);
+  padding: 9px 22px;
+  border-bottom: 1px solid var(--border);
 }
-.navlink:hover {
-  background: var(--card-2);
+.barre .logo {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  display: grid;
+  place-items: center;
+  font-family: var(--tete);
+  font-weight: 700;
+  font-size: 14px;
+}
+.barre .nom {
+  font-family: var(--tete);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.barre .ctx {
+  color: var(--muted-2);
+  font-size: 11.5px;
+}
+.barre .droite {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+  color: var(--muted-2);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.jauge {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted-2);
+  white-space: nowrap;
+}
+.jauge b {
+  font-size: 13px;
+  font-weight: 600;
   color: var(--fg);
 }
-.navlink.active {
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+.jauge.c b {
+  color: var(--crit);
+}
+.jauge.h b {
+  color: var(--high);
+}
+
+/* ── Ruban de stations : la signature de la direction ────────────────────── */
+.chaine {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.station {
+  position: relative;
+  padding: 8px 20px 9px 26px;
+  min-width: 156px;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  flex: 1;
+  white-space: nowrap;
+  transition: background var(--t), color var(--t);
+}
+.station:first-child {
+  padding-left: 22px;
+}
+/* Le chevron matérialise l'enchaînement, pas une simple séparation. */
+.station::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  transform: translateY(-50%) rotate(45deg);
+  border-top: 2px solid var(--border-strong);
+  border-right: 2px solid var(--border-strong);
+}
+.station:first-child::before,
+.station.hors-chaine::before {
+  display: none;
+}
+/* Le radar est une vue d'ensemble, pas une étape : il précède la chaîne. */
+.station.hors-chaine {
+  border-right: 1px solid var(--border);
+  flex: 0 0 auto;
+  min-width: 0;
+}
+.station .e {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  display: block;
+}
+.station .n {
+  font-family: var(--tete);
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-top: 1px;
+}
+.station .k {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--muted-2);
+  display: block;
+  margin-top: 1px;
+}
+.station:hover {
+  background: var(--card-2);
+}
+.station.on {
   color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: var(--accent-fond);
+}
+.station.on .k,
+.station.on .e {
+  color: var(--accent);
+}
+.badge {
+  display: inline-block;
+  background: var(--crit);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 0 5px;
+  border-radius: 8px;
+  margin-left: 4px;
+  vertical-align: 1px;
   font-weight: 600;
 }
 
-/* Blocs ------------------------------------------------------------------- */
+/* ── Corps ───────────────────────────────────────────────────────────────── */
+.main {
+  padding: 18px 22px 60px;
+  min-width: 0;
+}
+@media (min-width: 1800px) {
+  .main {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+}
+.fil {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+}
+h1 {
+  font-family: var(--tete);
+  font-size: 24px;
+  margin: 6px 0 5px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+h2,
+h3 {
+  font-family: var(--tete);
+  letter-spacing: -0.01em;
+}
+
+/* Bande de compteurs — reprend la logique d'instrument. */
+.strip {
+  display: flex;
+  background: var(--border);
+  border: 1px solid var(--border);
+  gap: 1px;
+  flex-wrap: wrap;
+}
+.strip > div {
+  flex: 1 1 150px;
+  background: var(--card);
+  padding: 8px 14px;
+}
+/* Le libellé passe au-dessus de la valeur, sinon les deux se collent. */
+.strip > div > span:first-child,
+.strip .eyebrow {
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* Filets plutôt que cartes empilées : c'est la densité de la direction A. */
+.grille {
+  display: grid;
+  gap: 0;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.bloc {
+  background: var(--card);
+  padding: 12px 16px 14px;
+}
+.titre {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  font-weight: 700;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
+}
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 10px;
   box-shadow: var(--ombre-1);
 }
-/* Une carte cliquable se distingue au survol — sans décaler la mise en page. */
 a.card {
   transition: box-shadow var(--t), border-color var(--t);
 }
@@ -152,57 +328,57 @@ a.card:hover {
   border-color: var(--border-strong);
 }
 .eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--muted-2);
   font-weight: 600;
 }
 .h-title {
-  font-size: 13px;
-  letter-spacing: 0.02em;
+  font-size: 10px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 600;
+  color: var(--muted-2);
+  font-weight: 700;
 }
 .pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 9px;
+  gap: 5px;
+  padding: 2px 8px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   border: 1px solid var(--border-strong);
   background: var(--card);
   white-space: nowrap;
 }
 .dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-/* Tables ------------------------------------------------------------------ */
+/* ── Tableaux serrés ─────────────────────────────────────────────────────── */
 .tbl {
   width: 100%;
   border-collapse: collapse;
 }
 .tbl th {
   text-align: left;
-  font-size: 11px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
   color: var(--muted-2);
   font-weight: 600;
-  padding: 10px 14px;
+  padding: 8px 10px 6px 0;
   border-bottom: 1px solid var(--border);
 }
 .tbl td {
-  padding: 13px 14px;
-  border-bottom: 1px solid var(--border);
-  font-size: 14px;
+  padding: 7px 10px 7px 0;
+  border-bottom: 1px solid #eff3f5;
+  font-size: 12.5px;
   vertical-align: middle;
 }
 .tbl tbody tr:last-child td {
@@ -214,10 +390,18 @@ a.card:hover {
 .tbl tbody tr:hover td {
   background: var(--card-2);
 }
+/* Filet de gravité en tête de ligne — lecture au balayage. */
+.sev {
+  display: inline-block;
+  width: 3px;
+  height: 12px;
+  vertical-align: -2px;
+  margin-right: 8px;
+  border-radius: 1px;
+}
 
-/* Barres de progression --------------------------------------------------- */
 .bar {
-  height: 7px;
+  height: 6px;
   border-radius: 999px;
   background: var(--border);
   overflow: hidden;
@@ -237,7 +421,26 @@ a.card:hover {
   text-decoration: underline;
 }
 
-/* Le mouvement n'est jamais indispensable à la compréhension ici. */
+/* Le maillon : ce qu'un signal déclenche en aval. Repris de la direction C. */
+.maillon {
+  border-left: 3px solid var(--crit);
+  padding: 9px 0 9px 12px;
+  border-bottom: 1px solid #eff3f5;
+}
+.maillon.h {
+  border-left-color: var(--high);
+}
+.maillon.m {
+  border-left-color: var(--mod);
+}
+.maillon .suite {
+  margin-top: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: var(--mono);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

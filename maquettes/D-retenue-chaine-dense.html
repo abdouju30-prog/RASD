@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Maquette D — RETENUE : chaîne de décision, corps dense</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* DIRECTION RETENUE — structure de C (chaîne), densité de A (filets, monospace) */
+:root{
+  --bg:#f3f6f7; --carte:#fff; --bord:#dde4e8; --bord-fort:#b9c5cb;
+  --fg:#0e1a20; --mid:#4a5a63; --pale:#6f8089;
+  --acc:#0d5c73; --acc-fond:#eaf3f6;
+  --low:#0e6b47; --mod:#8f5106; --high:#b0430b; --crit:#ad0f36;
+  --sans:"Inter",system-ui,sans-serif; --tete:"Space Grotesk",system-ui,sans-serif; --mono:"Roboto Mono",monospace;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:13px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ── En-tête + ruban de chaîne (de C) ───────────────────────────────── */
+header{background:var(--carte);border-bottom:1px solid var(--bord);position:sticky;top:0;z-index:20}
+.barre{display:flex;align-items:center;gap:11px;padding:9px 22px;border-bottom:1px solid var(--bord)}
+.logo{width:26px;height:26px;border-radius:7px;background:var(--acc);color:#fff;display:grid;place-items:center;
+  font-family:var(--tete);font-weight:700;font-size:14px}
+.barre b{font-family:var(--tete);font-size:15px;letter-spacing:-.01em}
+.barre .ctx{color:var(--pale);font-size:11.5px}
+.barre .droite{margin-left:auto;display:flex;align-items:center;gap:16px;font-size:11px;color:var(--pale)}
+.pastille{width:6px;height:6px;border-radius:50%;background:var(--low)}
+.jauge{font-family:var(--mono);font-size:11px;color:var(--pale)}
+.jauge b{font-size:13px;font-weight:600}
+.jauge.c b{color:var(--crit)} .jauge.h b{color:var(--high)}
+
+.chaine{display:flex;overflow-x:auto}
+.station{position:relative;padding:8px 20px 9px 26px;min-width:158px;text-decoration:none;color:var(--mid);
+  border-bottom:3px solid transparent;flex:1;white-space:nowrap}
+.station:first-child{padding-left:22px}
+.station::before{content:"";position:absolute;left:7px;top:50%;width:7px;height:7px;
+  transform:translateY(-50%) rotate(45deg);border-top:2px solid var(--bord-fort);border-right:2px solid var(--bord-fort)}
+.station:first-child::before{display:none}
+.station .e{font-family:var(--mono);font-size:9px;letter-spacing:.09em;color:var(--pale);text-transform:uppercase}
+.station .n{font-family:var(--tete);font-size:13px;font-weight:600;display:block;margin-top:1px}
+.station .k{font-family:var(--mono);font-size:10.5px;color:var(--pale);display:block;margin-top:1px}
+.station.on{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-fond)}
+.station.on .k{color:var(--acc)}
+.badge{display:inline-block;background:var(--crit);color:#fff;font-family:var(--mono);font-size:9px;
+  padding:0 5px;border-radius:8px;margin-left:4px;vertical-align:1px;font-weight:600}
+
+main{padding:18px 22px 50px}
+.fil{font-family:var(--mono);font-size:10px;letter-spacing:.09em;color:var(--pale);text-transform:uppercase}
+h1{font-family:var(--tete);font-size:24px;margin:6px 0 5px;font-weight:600;letter-spacing:-.02em}
+.sous{color:var(--mid);font-size:13px;margin:0 0 18px;max-width:82ch;line-height:1.55}
+
+/* ── Corps dense (de A) : filets, pas de cartes empilées ─────────────── */
+.grille{display:grid;grid-template-columns:1.45fr 1fr;gap:0;background:var(--bord);border:1px solid var(--bord)}
+.bloc{background:var(--carte);padding:12px 16px 14px}
+.bloc + .bloc{border-left:1px solid var(--bord)}
+.titre{display:flex;justify-content:space-between;align-items:baseline;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--pale);font-weight:700;padding-bottom:7px;border-bottom:1px solid var(--bord);margin-bottom:2px}
+
+.strip{display:flex;background:var(--bord);border:1px solid var(--bord);margin-bottom:14px;gap:1px}
+.strip div{flex:1;background:var(--carte);padding:8px 14px}
+.strip span{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--pale);display:block}
+.strip strong{font-family:var(--mono);font-size:17px;font-weight:600}
+.strip small{font-family:var(--mono);font-size:11px;color:var(--pale)}
+
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--pale);font-weight:600;
+  padding:8px 9px 6px 0;border-bottom:1px solid var(--bord)}
+td{padding:6px 9px 6px 0;border-bottom:1px solid #eff3f5;font-size:12.5px}
+td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+tr:hover td{background:#f6f9fa}
+.sev{display:inline-block;width:3px;height:12px;vertical-align:-2px;margin-right:8px;border-radius:1px}
+.st{font-family:var(--mono);font-size:11px}
+
+/* Le maillon : ce que le signal déclenche en aval — signature de C, compacté */
+.maillon{border-left:3px solid var(--crit);padding:9px 0 9px 12px;border-bottom:1px solid #eff3f5}
+.maillon b{font-size:12.5px;display:block}
+.maillon p{margin:3px 0 0;font-size:11.5px;color:var(--mid);line-height:1.5}
+.maillon .suite{margin-top:6px;font-size:11.5px;font-weight:600;color:var(--acc);font-family:var(--mono)}
+.maillon.h{border-left-color:var(--high)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="barre">
+    <div class="logo">H</div><b>Homologa</b>
+    <span class="ctx">PHYTO BEHT · index ONSSA 01/09/2026</span>
+    <div class="droite">
+      <span class="jauge c">CRITIQUES <b>8</b></span>
+      <span class="jauge h">ÉLEVÉES <b>4</b></span>
+      <span class="jauge">DÉTECTIONS <b>26</b></span>
+      <span><span class="pastille"></span> E-Phy 25/08/2026</span>
+    </div>
+  </div>
+
+  <nav class="chaine">
+    <a href="#" class="station on"><span class="e">Étape 1</span><span class="n">Signal</span><span class="k">26 détections<span class="badge">8</span></span></a>
+    <a href="#" class="station"><span class="e">Étape 2</span><span class="n">Matière active</span><span class="k">25 au portefeuille</span></a>
+    <a href="#" class="station"><span class="e">Étape 3</span><span class="n">Produits touchés</span><span class="k">24 / 38 · 9 usages</span></a>
+    <a href="#" class="station"><span class="e">Étape 4</span><span class="n">Alternative</span><span class="k">112 cibles</span></a>
+    <a href="#" class="station"><span class="e">Étape 5</span><span class="n">Fournisseur</span><span class="k">58 génér. · 10 pays</span></a>
+    <a href="#" class="station"><span class="e">Étape 6</span><span class="n">Dossier</span><span class="k">78 lignes · 3-B</span></a>
+  </nav>
+</header>
+
+<main>
+  <div class="fil">Étape 1 — signal réglementaire</div>
+  <h1>Ce qui a bougé, et ce que ça déclenche</h1>
+  <p class="sous">Chaque signal ouvre une chaîne : la matière active, les produits qui la portent, l'alternative homologable, le fournisseur qui détient les études, le dossier à déposer. Le ruban suit votre position dans la boucle.</p>
+
+  <div class="strip">
+    <div><span>Usages à risque</span><strong>9</strong> <small>/ 68</small></div>
+    <div><span>AMM &lt; 18 mois</span><strong style="color:var(--high)">2</strong></div>
+    <div><span>M.A. portefeuille</span><strong>25</strong></div>
+    <div><span>Fiches UE vérifiées</span><strong>20</strong> <small>/ 23</small></div>
+    <div><span>Cibles prospection</span><strong style="color:var(--acc)">112</strong></div>
+    <div><span>Fournisseurs génériques</span><strong>58</strong> <small>/ 211</small></div>
+  </div>
+
+  <div class="grille">
+    <div class="bloc">
+      <div class="titre"><span>Matières actives du portefeuille</span><span class="mono">25</span></div>
+      <table>
+        <thead><tr><th>Matière active</th><th>Catégorie</th><th class="n">Prod.</th><th class="n">Usages</th><th>France</th><th>UE</th><th class="n">Risque</th></tr></thead>
+        <tbody>
+          <tr><td><span class="sev" style="background:var(--crit)"></span>Imidaclopride(500 g/l)</td><td>Insecticide</td><td class="n">1</td><td class="n">1</td><td class="st" style="color:var(--crit)">retirée</td><td class="st">non renouv.</td><td class="n" style="color:var(--crit);font-weight:600">86</td></tr>
+          <tr><td><span class="sev" style="background:var(--crit)"></span>Alpha-cyperméthrine(250 g/l)</td><td>Insecticide</td><td class="n">2</td><td class="n">2</td><td class="st" style="color:var(--crit)">retirée</td><td class="st">non renouv.</td><td class="n" style="color:var(--crit);font-weight:600">83</td></tr>
+          <tr><td><span class="sev" style="background:var(--high)"></span>Oxyfluorfène(240 g/l)</td><td>Herbicide</td><td class="n">2</td><td class="n">2</td><td class="st" style="color:var(--high)">0 produit</td><td class="st">approuvée</td><td class="n" style="color:var(--high);font-weight:600">64</td></tr>
+          <tr><td><span class="sev" style="background:var(--high)"></span>Difénoconazole(250 g/l)</td><td>Fongicide</td><td class="n">1</td><td class="n">1</td><td class="st" style="color:var(--low)">autorisée</td><td class="st" style="color:var(--high)">échéance dép.</td><td class="n" style="color:var(--high);font-weight:600">58</td></tr>
+          <tr><td><span class="sev" style="background:var(--mod)"></span>Huile min. paraffinique(790 g/l)</td><td>Insecticide</td><td class="n">1</td><td class="n">1</td><td class="st" style="color:var(--high)">0 produit</td><td class="st">inconnu</td><td class="n" style="color:var(--mod);font-weight:600">42</td></tr>
+          <tr><td><span class="sev" style="background:var(--mod)"></span>Cuivre - oxychlorure(50%)</td><td>Fongicide</td><td class="n">1</td><td class="n">12</td><td class="st" style="color:var(--low)">autorisée</td><td class="st">cand. subst.</td><td class="n" style="color:var(--mod);font-weight:600">39</td></tr>
+          <tr><td><span class="sev" style="background:var(--low)"></span>Glyphosate(450 g/l)</td><td>Herbicide</td><td class="n">3</td><td class="n">6</td><td class="st" style="color:var(--low)">autorisée</td><td class="st">appr. 2033</td><td class="n" style="color:var(--low);font-weight:600">22</td></tr>
+          <tr><td><span class="sev" style="background:var(--low)"></span>Azoxystrobine(250 g/l)</td><td>Fongicide</td><td class="n">2</td><td class="n">8</td><td class="st" style="color:var(--low)">autorisée</td><td class="st">appr. 2027</td><td class="n" style="color:var(--low);font-weight:600">18</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bloc">
+      <div class="titre"><span>Signaux ouverts</span><span class="mono" style="color:var(--crit)">8 critiques</span></div>
+      <div class="maillon">
+        <b>Imidaclopride — plus autorisée en France</b>
+        <p>Non inscrite au règlement, 27 produits retirés. L'ONSSA s'alignant sur l'ANSES, le retrait marocain est acquis à terme.</p>
+        <div class="suite">→ BRIGHT SC, SOLTAN 500 SC · 3 usages à re-couvrir</div>
+      </div>
+      <div class="maillon">
+        <b>Alpha-cyperméthrine — plus autorisée en France</b>
+        <p>Non inscrite au règlement, 36 produits retirés. Les deux spécialités portent en plus des AMM échues.</p>
+        <div class="suite">→ AL-KATIL, ATLANTIC · perte d'AMM + perte de statut</div>
+      </div>
+      <div class="maillon h">
+        <b>Aucun produit autorisé en France — Oxyfluorfène</b>
+        <p>Inscrite au règlement mais 33 produits retirés, aucun autorisé depuis mars 2020. Retrait commercial, pas réglementaire.</p>
+        <div class="suite">→ DRON TOP, TWIN-PRO · surveiller, ne pas engager d'études</div>
+      </div>
+      <div class="maillon h">
+        <b>Échéance UE dépassée — Difénoconazole</b>
+        <p>Expiration PPDB au 15/03/2026. La Commission prolonge souvent ces dates : à recouper avant toute décision.</p>
+        <div class="suite">→ SCANGOLD 250 · vérifier le règlement de prolongation</div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
