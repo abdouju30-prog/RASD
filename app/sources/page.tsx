@@ -5,7 +5,8 @@ import { SchemaSources, SchemaChaine, SchemaDossier, SchemaSourcing } from "@/co
 import { META, MATIERES, FOURNISSEURS, PRODUITS, DETENTEURS } from "@/lib/data";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
-import { STATS_APVMA } from "@/lib/apvma";
+import { STATS_APVMA, fraicheurApvma } from "@/lib/apvma";
+import { RefreshCw } from "lucide-react";
 import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
 import { fmtDate } from "@/lib/logic";
@@ -90,6 +91,8 @@ function Compartiment({
 
 export default function SourcesPage() {
   const f = fraicheurEphy();
+  const a = fraicheurApvma();
+  const aRafraichir = f.etat !== "à jour" || a.etat !== "à jour";
 
   return (
     <>
@@ -106,6 +109,64 @@ export default function SourcesPage() {
       >
         <SchemaSources />
       </Figure>
+
+      <div
+        className="card"
+        style={{
+          padding: "13px 17px",
+          marginTop: 16,
+          display: "flex",
+          gap: 12,
+          alignItems: "flex-start",
+          borderColor: aRafraichir
+            ? "color-mix(in srgb, var(--mod) 40%, transparent)"
+            : "color-mix(in srgb, var(--low) 32%, transparent)",
+        }}
+      >
+        <RefreshCw
+          size={16}
+          color={aRafraichir ? "var(--mod)" : "var(--low)"}
+          style={{ flexShrink: 0, marginTop: 2 }}
+        />
+        <div style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6, minWidth: 0 }}>
+          <div style={{ display: "flex", gap: 18, flexWrap: "wrap", marginBottom: 7 }}>
+            <span>
+              <strong style={{ color: "var(--fg)" }}>E-Phy</strong>{" "}
+              <span style={{ color: f.etat === "à jour" ? "var(--low)" : "var(--mod)" }}>
+                {f.etat}
+              </span>
+              {f.jours !== null && <span className="mono"> · {f.jours} j</span>}
+            </span>
+            <span>
+              <strong style={{ color: "var(--fg)" }}>APVMA</strong>{" "}
+              <span style={{ color: a.etat === "à jour" ? "var(--low)" : "var(--mod)" }}>
+                {a.etat}
+              </span>
+              {a.jours !== null && <span className="mono"> · {a.jours} j</span>}
+            </span>
+            <span>
+              <strong style={{ color: "var(--fg)" }}>Index ONSSA</strong>{" "}
+              <span className="mono">{fmtDate(META.genere.slice(0, 10))}</span>
+            </span>
+          </div>
+          {aRafraichir ? (
+            <>
+              Une source a pris du retard. Rafraîchir les deux catalogues, commiter ce qui a changé et
+              déployer, en une commande : <span className="mono">npm run maj</span>
+            </>
+          ) : (
+            <>
+              Les deux catalogues publics sont à jour. Pour les rafraîchir manuellement :{" "}
+              <span className="mono">npm run maj</span>
+            </>
+          )}
+          <div style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 7 }}>
+            La mise à jour ne peut pas se déclencher depuis l&apos;application déployée : le système
+            de fichiers y est en lecture seule, et l&apos;archive APVMA fait 23 Mo. Elle se fait sur
+            un poste, ou par le workflow GitHub du jeudi.
+          </div>
+        </div>
+      </div>
 
       <div className="section">
         <span className="h-title">Les cinq compartiments</span>

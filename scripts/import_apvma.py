@@ -37,11 +37,14 @@ import json
 import re
 import sys
 import unicodedata
-import urllib.request
 import zipfile
+
 from collections import Counter, defaultdict
 from datetime import date, datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _reseau import telecharger  # noqa: E402
 
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "apvma.json"
@@ -89,9 +92,7 @@ def charger(argv):
         dates = [datetime(*i.date_time).date().isoformat() for i in zf.infolist() if i.date_time]
         return zf, (max(dates) if dates else None)
     print(f"téléchargement : {URL_ZIP}")
-    req = urllib.request.Request(URL_ZIP, headers={"User-Agent": "Homologa/1.0"})
-    with urllib.request.urlopen(req, timeout=600) as r:
-        brut = r.read()
+    brut = telecharger(URL_ZIP)
     print(f"  {len(brut) / 1_048_576:.1f} Mo reçus")
     zf = zipfile.ZipFile(io.BytesIO(brut))
     dates = [datetime(*i.date_time).date().isoformat() for i in zf.infolist() if i.date_time]

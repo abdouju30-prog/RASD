@@ -1,4 +1,4 @@
-name: Mise à jour E-Phy (Anses)
+name: Mise à jour des catalogues (Anses, APVMA)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # L'Anses republie le catalogue E-Phy chaque nuit de mardi à mercredi.
@@ -41,10 +41,13 @@ jobs:
       - name: Récupérer le catalogue E-Phy
         run: python scripts/import_ephy.py | tee sortie-import.txt
 
+      - name: Récupérer le registre APVMA
+        run: python scripts/import_apvma.py | tee -a sortie-import.txt
+
       - name: Y a-t-il eu un changement ?
         id: diff
         run: |
-          if git diff --quiet -- data/ephy.json; then
+          if git diff --quiet -- data/ephy.json data/apvma.json; then
             echo "change=non" >> "$GITHUB_OUTPUT"
             echo "Aucune évolution du catalogue — rien à commiter."
           else
@@ -78,7 +81,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ephy.json
+          git add data/ephy.json data/apvma.json
           git commit -m "Veille E-Phy — actualisation du catalogue Anses" -m "$RESUME"
           git push
 

@@ -33,11 +33,14 @@ import json
 import re
 import sys
 import unicodedata
-import urllib.request
 import zipfile
+
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _reseau import telecharger  # noqa: E402
 
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "ephy.json"
@@ -71,8 +74,7 @@ def parse_date(s):
 
 def resoudre_url():
     """Trouve l'archive CSV UTF-8 la plus récente publiée sur data.gouv.fr."""
-    with urllib.request.urlopen(API_DATASET, timeout=60) as r:
-        d = json.load(r)
+    d = json.loads(telecharger(API_DATASET, timeout=120).decode("utf-8"))
     for res in d.get("resources", []):
         titre = (res.get("title") or "").lower()
         if "csv" in titre and "utf8" in titre and titre.endswith(".zip"):
@@ -91,8 +93,7 @@ def charger_archive(argv):
         return zf, (max(dates) if dates else None)
     url, maj = resoudre_url()
     print(f"téléchargement : {url}")
-    with urllib.request.urlopen(url, timeout=300) as r:
-        brut = r.read()
+    brut = telecharger(url)
     print(f"  {len(brut) / 1_048_576:.1f} Mo reçus")
     return zipfile.ZipFile(io.BytesIO(brut)), maj
 

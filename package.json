@@ -8,7 +8,8 @@
     "start": "next start",
     "import": "python scripts/import_onssa.py \"C:/Users/DellVostro/Desktop/FICHIERS PHYTO.xlsx\"",
     "import:ephy": "python scripts/import_ephy.py",
-    "import:apvma": "python scripts/import_apvma.py"
+    "import:apvma": "python scripts/import_apvma.py",
+    "maj": "python scripts/maj.py"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",

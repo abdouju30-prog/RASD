@@ -246,6 +246,28 @@ export function lectureCroisee(
   };
 }
 
+/**
+ * Fraîcheur du registre australien. L'APVMA republie chaque semaine ; au-delà
+ * de trois publications manquées, le statut affiché peut ne plus refléter la
+ * réalité et l'outil doit le dire.
+ */
+export function fraicheurApvma(ref = new Date()): {
+  etat: "à jour" | "à rafraîchir" | "périmée" | "inconnue";
+  jours: number | null;
+  maj: string | null;
+} {
+  const maj = META_APVMA.majDonnees;
+  if (!maj) return { etat: "inconnue", jours: null, maj: null };
+  const d = new Date(maj);
+  if (Number.isNaN(d.getTime())) return { etat: "inconnue", jours: null, maj };
+  const jours = Math.floor((ref.getTime() - d.getTime()) / 86_400_000);
+  return {
+    etat: jours <= 10 ? "à jour" : jours <= 24 ? "à rafraîchir" : "périmée",
+    jours,
+    maj,
+  };
+}
+
 export const STATS_APVMA = {
   nbConstituants: CONSTITUANTS_APVMA.length,
   nbAutorisees: CONSTITUANTS_APVMA.filter((c) => c.statut === "autorisée").length,
