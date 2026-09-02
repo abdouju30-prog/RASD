@@ -20,6 +20,7 @@ import shutil
 import ssl
 import subprocess
 import tempfile
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -64,3 +65,45 @@ def telecharger(url: str, timeout: int = 600) -> bytes:
         erreurs.append("curl : absent")
 
     raise RuntimeError("Téléchargement impossible.\n  " + "\n  ".join(erreurs))
+
+
+def poster(url: str, champs: dict, referer: str = None, timeout: int = 120) -> str:
+    """Poste un formulaire et rend la réponse décodée en UTF-8.
+
+    Même stratégie que `telecharger`, dans l'autre sens : urllib d'abord,
+    curl en secours. Les registres asiatiques n'exposent pas d'API — leurs
+    données ne s'obtiennent qu'en soumettant le formulaire de recherche.
+    """
+    corps = urllib.parse.urlencode(champs, encoding="utf-8").encode("ascii")
+    entetes = dict(ENTETES)
+    entetes["Content-Type"] = "application/x-www-form-urlencoded"
+    if referer:
+        entetes["Referer"] = referer
+
+    erreurs = []
+    for libelle, ctx in (("certifi", _contexte_certifi()), ("défaut", None)):
+        if libelle == "certifi" and ctx is None:
+            continue
+        try:
+            req = urllib.request.Request(url, data=corps, headers=entetes)
+            with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+                return r.read().decode("utf-8", "replace")
+        except Exception as e:
+            erreurs.append(f"urllib/{libelle} : {e}")
+
+    curl = shutil.which("curl")
+    if curl:
+        args = [curl, "-sSL", "--max-time", str(timeout), "-X", "POST",
+                "-A", ENTETES["User-Agent"],
+                "-H", "Content-Type: application/x-www-form-urlencoded"]
+        if referer:
+            args += ["-H", "Referer: " + referer]
+        args += ["--data", corps.decode("ascii"), url]
+        r = subprocess.run(args, capture_output=True)
+        if r.returncode == 0 and r.stdout:
+            return r.stdout.decode("utf-8", "replace")
+        erreurs.append(f"curl : {(r.stderr or b'').decode('utf-8', 'replace').strip() or f'code {r.returncode}'}")
+    else:
+        erreurs.append("curl : absent")
+
+    raise RuntimeError(f"POST impossible sur {url}\n  " + "\n  ".join(erreurs))

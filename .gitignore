@@ -15,3 +15,6 @@
 # Caches Python des scripts d'import
 __pycache__/
 *.pyc
+
+# Pont intermédiaire régénéré par import_icama.py
+/data/_iso.json

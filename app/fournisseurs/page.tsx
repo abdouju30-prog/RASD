@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Compass, Info } from "lucide-react";
+import { Compass, Factory, Info } from "lucide-react";
 import { FOURNISSEURS, MATIERES } from "@/lib/data";
 import { PAYS_CIBLES, statsSourcing } from "@/lib/sourcing";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
@@ -8,6 +8,7 @@ import { Aide, Figure } from "@/components/Aide";
 import { SchemaGisements } from "@/components/Schemas";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
+import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -104,6 +105,12 @@ export default async function FournisseursPage({
           <span className="eyebrow">Pistes hors index</span>
           <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
             {STATS_PISTES.nbNouvelles}
+          </strong>
+        </div>
+        <div>
+          <span className="eyebrow">Usines chinoises</span>
+          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
+            {STATS_ICAMA.nbFabricants}
           </strong>
         </div>
         <div>
@@ -247,7 +254,7 @@ export default async function FournisseursPage({
         </p>
 
         <Figure
-          titre="Deux gisements, deux voies"
+          titre="Trois gisements, deux voies"
           legende="seul l'index marocain raccourcit le dossier"
         >
           <SchemaGisements />
@@ -323,6 +330,68 @@ export default async function FournisseursPage({
             </tbody>
           </table>
           <ReservePistes source={STATS_PISTES.source} />
+        </div>
+      </div>
+
+      <div className="section">
+        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Factory size={14} color="var(--info)" /> Usines chinoises — les plus polyvalentes
+        </span>
+        <p style={{ color: "var(--muted)", fontSize: 13, maxWidth: "88ch", lineHeight: 1.6, margin: "8px 0 12px" }}>
+          Sociétés détenant à la fois une <strong style={{ color: "var(--fg)" }}>homologation
+          chinoise de matière active technique</strong> et une{" "}
+          <strong style={{ color: "var(--fg)" }}>licence de production</strong>, classées par nombre
+          de matières actives de l&apos;index marocain couvertes. C&apos;est la liste par laquelle
+          commencer une consultation — une seule société y couvre souvent plusieurs cibles.
+        </p>
+
+        <div className="bloc">
+          <div className="titre">
+            <span>Usines confirmées</span>
+            <span className="mono">{USINES_CHINE.length}</span>
+          </div>
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Société</th>
+                <th style={{ textAlign: "right" }}>M.A. de l&apos;index</th>
+                <th style={{ textAlign: "right" }}>Homolog. TC</th>
+                <th>Matières actives</th>
+                <th>Licence</th>
+              </tr>
+            </thead>
+            <tbody>
+              {USINES_CHINE.slice(0, 25).map((u) => (
+                <tr key={u.nom}>
+                  <td style={{ fontWeight: 500 }}>{u.nom}</td>
+                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>
+                    {u.matieres.length}
+                  </td>
+                  <td className="mono" style={{ textAlign: "right" }}>{u.nbHomologations}</td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 340 }}>
+                    {u.matieres.slice(0, 5).join(" · ")}
+                    {u.matieres.length > 5 && (
+                      <span className="mono" style={{ color: "var(--muted-2)" }}>
+                        {" "}
+                        +{u.matieres.length - 5}
+                      </span>
+                    )}
+                  </td>
+                  <td className="mono" style={{ fontSize: 11.5, color: "var(--low)" }}>
+                    {u.licenceProduction}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
+            Source <span className="mono">{STATS_ICAMA.attribution}</span>. Aucune valeur
+            réglementaire au Maroc : ni voie me-too, ni étude en moins. Ces sociétés ne sont pas
+            rapprochées de l&apos;index ONSSA — l&apos;ICAMA écrit les raisons sociales en
+            caractères chinois, l&apos;index en alphabet latin, et aucune règle automatique ne peut
+            établir qu&apos;il s&apos;agit de la même société. Le détail par matière active figure
+            sur chaque fiche de prospection.
+          </p>
         </div>
       </div>
 

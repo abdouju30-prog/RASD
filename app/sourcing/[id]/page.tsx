@@ -8,6 +8,8 @@ import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { FicheAgrements, PastillesPacks } from "@/components/PacksFournisseur";
 import { STATS_PISTES, pistesPour } from "@/lib/pistes";
 import { ReservePistes, TablePistes } from "@/components/PistesFournisseur";
+import { STATS_ICAMA, fabricantsChinois } from "@/lib/icama";
+import { FabricantsChinois } from "@/components/FabricantsChinois";
 
 export async function generateStaticParams() {
   return candidats({ maxDetenteurs: 8 })
@@ -22,6 +24,7 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
   if (!c || !ma) notFound();
 
   const pistes = pistesPour(ma.nom);
+  const chine = fabricantsChinois(ma.nom);
 
   return (
     <>
@@ -205,6 +208,8 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
               </>
             )}
           </div>
+
+          <FabricantsChinois m={chine} attribution={STATS_ICAMA.attribution} />
 
           <div className="card" style={{ padding: "18px 20px" }}>
             <div className="h-title">Usages homologués au Maroc — {c.nbUsages}</div>

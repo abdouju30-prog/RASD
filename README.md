@@ -149,9 +149,40 @@ par l'administration marocaine. C'est ce qui transforme une homologation longue 
 Le score est entièrement décomposé à l'écran — chaque facteur et sa contribution —
 pour être discutable plutôt que subi. Pondérations dans `lib/sourcing.ts`.
 
-Le pays des fournisseurs est **inféré** du nom de la société (168 sur 211
+Le pays des fournisseurs est **inféré** du nom de la société (169 sur 211
 identifiés). Un « ? » signale une déduction faite sur le seul suffixe juridique.
 À confirmer avant toute prise de contact.
+
+### Trouver un fournisseur que l'index marocain ne connaît pas
+
+L'index ONSSA ne nomme que les sociétés déjà entrées au Maroc : par construction,
+il ne peut pas révéler un fabricant que personne n'a encore fait venir. Deux
+registres étrangers le peuvent, et ils répondent à deux questions différentes.
+
+| Registre | Question à laquelle il répond | Ce qu'on en tire |
+|---|---|---|
+| **APVMA** (Australie) | Qui détient une homologation sur cette molécule hors du Maroc ? | 721 sociétés, dont **55 génériqueurs absents de l'index marocain** |
+| **ICAMA** (Chine) | Quelles **usines** fabriquent la matière active technique ? | Homologations 原药 croisées avec les licences de production |
+
+Le croisement chinois est ce qui a de la valeur : une homologation de matière
+active technique autorise à **vendre** la substance, une licence de production
+autorise à la **fabriquer**. Qui a les deux est une usine ; qui n'a que la
+première peut n'être qu'un négociant. La distinction est affichée, pas gommée.
+
+> ⚠️ **Ni l'une ni l'autre n'ouvre le moindre droit devant l'ONSSA.** Une
+> homologation australienne ou chinoise ne raccourcit aucun délai et ne remplace
+> aucune étude de l'Annexe 3-B — seul un fournisseur **déjà référencé à l'index
+> marocain** ouvre la voie me-too. Ces registres servent à trouver et qualifier
+> un fabricant, rien d'autre. Ni prix, ni capacité, ni audit qualité.
+
+Le rattachement à l'index se fait **sur le nom**, donc il s'affiche : chaque
+rapprochement montre le fournisseur ONSSA qui l'a déclenché, et une parenté
+probable est signalée « groupe probable » plutôt que tranchée. Côté chinois,
+aucun rapprochement n'est tenté — les raisons sociales sont en caractères
+chinois, et prétendre les apparier automatiquement serait inventer.
+
+    npm run import:apvma     # registre australien (zip 23 Mo)
+    npm run import:icama     # registre chinois (~200 requêtes, ~7 min)
 
 ---
 

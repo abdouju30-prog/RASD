@@ -4,6 +4,7 @@ Mise à jour complète des sources, en une commande.
     npm run maj              # rafraîchit, commite, pousse et déploie
     npm run maj -- --sec     # rafraîchit seulement, ne commite rien
     npm run maj -- --local   # commite et pousse, sans déployer
+    npm run maj -- --chine   # ajoute le relevé ICAMA (long, ~7 min)
 
 Pourquoi une commande et pas un bouton dans l'application : le système de
 fichiers de Vercel est en lecture seule. Un bouton pourrait télécharger E-Phy,
@@ -15,6 +16,11 @@ Ce que le script fait, dans l'ordre :
   2. APVMA (Australie) — recoupement hors UE, republié chaque semaine
   3. Diff : si aucun statut n'a changé, il s'arrête là et ne commite rien
   4. Commit décrivant ce qui a bougé, push, puis déploiement Vercel
+
+Le relevé ICAMA (Chine) n'est PAS dans la course hebdomadaire, et c'est
+délibéré : il se fait en interrogeant un formulaire ~200 fois, le registre
+bouge lentement, et il n'apporte aucun signal réglementaire — seulement des
+fournisseurs. Il se lance à la demande, avec --chine ou `npm run import:icama`.
 
 L'index ONSSA n'est PAS rafraîchi ici : il vient d'un fichier Excel que vous
 maîtrisez, pas d'une source publique. Utiliser `npm run import` après l'avoir
@@ -71,6 +77,11 @@ def main():
     if executer([sys.executable, "scripts/import_apvma.py"]).returncode != 0:
         sys.exit("Import APVMA en échec — rien n'a été commité.")
 
+    if "--chine" in args:
+        titre("2 bis · Registre ICAMA — Chine")
+        if executer([sys.executable, "scripts/import_icama.py"]).returncode != 0:
+            sys.exit("Import ICAMA en échec — rien n'a été commité.")
+
     titre("3 · Ce qui a changé")
     code, sortie = capturer(["git", "status", "--porcelain", "--", "data/"])
     modifies = [l[3:] for l in sortie.splitlines() if l.strip()]
@@ -106,7 +117,7 @@ def main():
         f"{len(changements)} changement(s) de statut\n\n{corps}\n\n"
         "Données E-Phy - Anses · APVMA PUBCRIS"
     )
-    executer(["git", "add", "data/ephy.json", "data/apvma.json"])
+    executer(["git", "add", "data/ephy.json", "data/apvma.json", "data/icama.json"])
     if executer(["git", "commit", "-m", message]).returncode != 0:
         print("  Rien à commiter.")
         return

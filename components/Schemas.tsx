@@ -237,48 +237,104 @@ export function SchemaSourcing() {
 }
 
 /**
- * Les deux gisements de fournisseurs, et ce qu'ils ouvrent.
+ * Les trois gisements de fournisseurs, et ce que chacun ouvre.
  *
  * Le point à faire passer : seul l'index marocain ouvre la voie « me-too ».
- * Le registre australien élargit le choix de fabricants, il ne raccourcit
- * aucun délai.
+ * Les deux registres étrangers élargissent le choix de fabricants, ils
+ * n'abrègent aucun délai.
  */
 export function SchemaGisements() {
+  const rangs = [
+    {
+      y: 12,
+      titre: "Index ONSSA",
+      s1: "fournisseurs déjà au Maroc",
+      s2: "dossier technique déjà accepté",
+      c: T.acc,
+      fond: "var(--accent-fond)",
+      tirets: undefined as string | undefined,
+    },
+    {
+      y: 92,
+      titre: "Registre APVMA",
+      s1: "détenteurs australiens",
+      s2: "fabricants inconnus au Maroc",
+      c: T.info,
+      fond: "none",
+      tirets: "4 3",
+    },
+    {
+      y: 172,
+      titre: "Registre ICAMA",
+      s1: "usines chinoises",
+      s2: "matière active technique",
+      c: T.info,
+      fond: "none",
+      tirets: "4 3",
+    },
+  ];
+
   return (
-    <svg viewBox="0 0 640 210" width="100%" role="img" aria-label="Index ONSSA et registre australien : deux gisements de fournisseurs">
+    <svg viewBox="0 0 640 268" width="100%" role="img" aria-label="Index ONSSA, registre australien et registre chinois : trois gisements de fournisseurs">
       <defs>
         <Fleche id="g-acc" couleur={T.acc} />
         <Fleche id="g-info" couleur={T.info} />
       </defs>
 
-      {/* Index ONSSA */}
-      <rect x="14" y="16" width="212" height="66" rx="8" fill="var(--accent-fond)" stroke={T.acc} strokeWidth="1.5" />
-      <text x="120" y="40" textAnchor="middle" fontSize="13" fontWeight="700" fill={T.acc}>Index ONSSA</text>
-      <text x="120" y="57" textAnchor="middle" fontSize="10.5" fill={T.acc}>fournisseurs déjà au Maroc</text>
-      <text x="120" y="72" textAnchor="middle" fontSize="10" fill={T.mid}>dossier technique déjà accepté</text>
+      {rangs.map((r) => (
+        <g key={r.titre}>
+          <rect
+            x="14"
+            y={r.y}
+            width="206"
+            height="60"
+            rx="8"
+            fill={r.fond}
+            stroke={r.c}
+            strokeWidth="1.5"
+            strokeDasharray={r.tirets}
+          />
+          <text x="117" y={r.y + 23} textAnchor="middle" fontSize="12.5" fontWeight="700" fill={r.c}>
+            {r.titre}
+          </text>
+          <text x="117" y={r.y + 39} textAnchor="middle" fontSize="10.5" fill={r.c}>
+            {r.s1}
+          </text>
+          <text x="117" y={r.y + 53} textAnchor="middle" fontSize="10" fill={T.mid}>
+            {r.s2}
+          </text>
+        </g>
+      ))}
 
-      {/* Registre australien */}
-      <rect x="14" y="122" width="212" height="66" rx="8" fill="none" stroke={T.info} strokeWidth="1.5" strokeDasharray="4 3" />
-      <text x="120" y="146" textAnchor="middle" fontSize="13" fontWeight="700" fill={T.info}>Registre APVMA</text>
-      <text x="120" y="163" textAnchor="middle" fontSize="10.5" fill={T.info}>détenteurs australiens</text>
-      <text x="120" y="178" textAnchor="middle" fontSize="10" fill={T.mid}>fabricants inconnus au Maroc</text>
+      <line x1="224" y1="42" x2="368" y2="42" stroke={T.acc} strokeWidth="1.5" markerEnd="url(#g-acc)" />
+      <path
+        d="M224,122 H300 V172 H368"
+        fill="none"
+        stroke={T.info}
+        strokeWidth="1.5"
+        strokeDasharray="4 3"
+        markerEnd="url(#g-info)"
+      />
+      <path
+        d="M224,202 H300 V172 H368"
+        fill="none"
+        stroke={T.info}
+        strokeWidth="1.5"
+        strokeDasharray="4 3"
+      />
 
-      <line x1="230" y1="49" x2="366" y2="49" stroke={T.acc} strokeWidth="1.5" markerEnd="url(#g-acc)" />
-      <line x1="230" y1="155" x2="366" y2="155" stroke={T.info} strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#g-info)" />
+      <rect x="374" y="12" width="252" height="60" rx="8" fill={T.carte} stroke={T.fg} strokeWidth="1.5" />
+      <text x="500" y="35" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.fg}>Voie me-too</text>
+      <text x="500" y="51" textAnchor="middle" fontSize="10.5" fill={T.mid}>dossier par référence</text>
+      <text x="500" y="65" textAnchor="middle" fontSize="10" fill={T.pale}>délai réduit</text>
 
-      {/* Ce que chaque voie ouvre */}
-      <rect x="372" y="16" width="254" height="66" rx="8" fill={T.carte} stroke={T.fg} strokeWidth="1.5" />
-      <text x="499" y="40" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.fg}>Voie me-too</text>
-      <text x="499" y="57" textAnchor="middle" fontSize="10.5" fill={T.mid}>dossier par référence</text>
-      <text x="499" y="72" textAnchor="middle" fontSize="10" fill={T.pale}>délai réduit</text>
+      <rect x="374" y="142" width="252" height="60" rx="8" fill="none" stroke={T.bord} />
+      <text x="500" y="165" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.mid}>Dossier complet</text>
+      <text x="500" y="181" textAnchor="middle" fontSize="10.5" fill={T.mid}>études à fournir intégralement</text>
+      <text x="500" y="195" textAnchor="middle" fontSize="10" fill={T.pale}>plus de choix, pas moins de travail</text>
 
-      <rect x="372" y="122" width="254" height="66" rx="8" fill="none" stroke={T.bord} />
-      <text x="499" y="146" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.mid}>Dossier complet</text>
-      <text x="499" y="163" textAnchor="middle" fontSize="10.5" fill={T.mid}>études à fournir intégralement</text>
-      <text x="499" y="178" textAnchor="middle" fontSize="10" fill={T.pale}>plus de choix, pas moins de travail</text>
-
-      <text x="298" y="105" textAnchor="middle" fontSize="10" fill={T.pale}>
-        une homologation australienne ne vaut rien devant l&rsquo;ONSSA
+      <text x="320" y="250" textAnchor="middle" fontSize="10" fill={T.pale}>
+        aucune homologation étrangère ne vaut de droit devant l&rsquo;ONSSA
       </text>
     </svg>
   );

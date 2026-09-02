@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Database, PenLine, FileCheck2, Globe, ShieldAlert } from "lucide-react";
+import { Database, PenLine, FileCheck2, Factory, Globe, ShieldAlert } from "lucide-react";
 import { Figure, Aide } from "@/components/Aide";
 import { SchemaSources, SchemaChaine, SchemaDossier, SchemaSourcing } from "@/components/Schemas";
 import { META, MATIERES, FOURNISSEURS, PRODUITS, DETENTEURS } from "@/lib/data";
@@ -7,6 +7,7 @@ import { COUVERTURE } from "@/lib/reglementaire";
 import { STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
 import { STATS_APVMA, fraicheurApvma } from "@/lib/apvma";
 import { STATS_PISTES } from "@/lib/pistes";
+import { STATS_ICAMA } from "@/lib/icama";
 import { RefreshCw } from "lucide-react";
 import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
@@ -100,7 +101,7 @@ export default function SourcesPage() {
       <div className="fil">Compartiments</div>
       <h1>D&apos;où vient chaque chiffre</h1>
       <p className="chapeau">
-        Cinq compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
+        Six compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
         plutôt que sur les écrans de travail.
       </p>
 
@@ -170,7 +171,7 @@ export default function SourcesPage() {
       </div>
 
       <div className="section">
-        <span className="h-title">Les cinq compartiments</span>
+        <span className="h-title">Les six compartiments</span>
         <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <Compartiment
             icone={<Database size={15} color="var(--accent)" />}
@@ -201,6 +202,17 @@ export default function SourcesPage() {
             maj={STATS_APVMA.licence}
             fiabilite="source"
             reserve="Registre de l'état courant, sans historique : « absente » peut vouloir dire « jamais homologuée ». Et une homologation australienne n'ouvre aucun droit devant l'ONSSA."
+          />
+
+          <Compartiment
+            icone={<Factory size={15} color="var(--info)" />}
+            nom="ICAMA · Chine"
+            role="Qui fabrique la matière active"
+            contenu={`${STATS_ICAMA.nbMatieres} matières actives relevées, ${STATS_ICAMA.nbSocietes} sociétés détenant une homologation chinoise de matière active technique (原药), dont ${STATS_ICAMA.nbFabricants} avec licence de production — les usines. Croisement de deux registres publics : homologation TC et licence de production.`}
+            origine={STATS_ICAMA.attribution}
+            maj={`${STATS_ICAMA.nbLicences} licences de production`}
+            fiabilite="source"
+            reserve="Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. Une licence n'est pas un audit — ni prix, ni capacité, ni qualité."
           />
 
           <Compartiment
