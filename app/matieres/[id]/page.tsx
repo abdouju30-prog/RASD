@@ -8,7 +8,8 @@ import { detenteurActuel } from "@/lib/detenteur";
 import { detailRisque, etatAMM, exposition, fmtDate } from "@/lib/logic";
 import { alternatives } from "@/lib/substitution";
 import { TableAlternatives } from "@/components/Alternatives";
-import { candidat } from "@/lib/sourcing";
+import { QuiLaFournit } from "@/components/Fournisseurs";
+import { consultation } from "@/lib/consultation";
 import { lectureCroisee, STATS_APVMA } from "@/lib/apvma";
 
 // Le contenu dépend du détenteur choisi, qui est lu dans un cookie : la page
@@ -24,7 +25,10 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
   const risque = detailRisque(ma);
   const expo = exposition(ma, d.id);
   const alts = alternatives(ma.id);
-  const c = candidat(ma);
+  // Les fournisseurs de la molécule, tous registres confondus. La fiche de
+  // consultation les assemble déjà : la fiche de matière active en montre le
+  // résumé plutôt que d'en refaire le calcul.
+  const cons = consultation(ma.id);
   const f = ma.fiche;
   const au = lectureCroisee(ma.nom, ma.anses?.statut);
 
@@ -151,6 +155,15 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
               </p>
             )}
           </div>
+
+          {cons && (
+            <QuiLaFournit
+              maId={ma.id}
+              route={cons.route}
+              meToo={cons.meToo}
+              autres={cons.autres}
+            />
+          )}
         </div>
 
         <div style={{ display: "grid", gap: 16 }}>
@@ -244,16 +257,7 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
               <Ligne label="Détenteurs" value={<span className="mono">{ma.detenteurs.length}</span>} />
               <Ligne label="Usages homologués" value={<span className="mono">{ma.usages.length}</span>} />
               <Ligne label="Cultures" value={<span className="mono">{ma.cultures.length}</span>} />
-              <Ligne
-                label="Fournisseurs génériques"
-                value={<span className="mono">{c.fournisseursCoutFaible.length}</span>}
-              />
             </div>
-            {c.paysSourcing.length > 0 && (
-              <p style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 12 }}>
-                Sourçable depuis : {c.paysSourcing.join(", ")}
-              </p>
-            )}
           </div>
 
           <div

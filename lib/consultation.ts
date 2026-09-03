@@ -74,6 +74,12 @@ export interface Candidat {
   pays: string | null;
   /** Ce qui, dans les registres, justifie de l'inscrire à la liste. */
   motif: string;
+  /**
+   * Nombre de lignes au Maroc, pour les seuls fournisseurs de l'index.
+   * C'est ce qui sépare un acteur installé d'une société à une référence —
+   * null partout ailleurs, aucun autre registre ne mesure la même chose.
+   */
+  lignesMaroc: number | null;
   /** Usines EPA retrouvées à ce nom, quand le nom est en alphabet latin. */
   usines: UsinesSociete | null;
   /** true = ouvre la voie me-too. Le seul avantage réglementaire qui existe. */
@@ -87,6 +93,7 @@ function depuisOnssa(f: Fournisseur): Candidat {
     origine: "onssa",
     pays: f.pays,
     motif: `${f.nbLignesMaroc} ligne(s) au Maroc sur cette matière active`,
+    lignesMaroc: f.nbLignesMaroc,
     usines: usinesDe(f.nom),
     meToo: true,
   };
@@ -102,6 +109,7 @@ function depuisAustralie(p: Piste): Candidat {
       p.lien === "homonyme"
         ? `${p.nbProduits} produit(s) · nom proche de « ${p.fournisseurOnssa} », à vérifier`
         : `${p.nbProduits} produit(s) homologué(s)`,
+    lignesMaroc: null,
     usines: usinesDe(p.nom),
     meToo: false,
   };
@@ -114,6 +122,7 @@ function depuisChine(s: SocieteChinoise): Candidat {
     origine: "chine",
     pays: "Chine",
     motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · licence ${s.licenceProduction}`,
+    lignesMaroc: null,
     // Les raisons sociales chinoises ne se rapprochent pas de l'alphabet latin.
     usines: null,
     meToo: false,
@@ -127,6 +136,7 @@ function depuisTurquie(s: SocieteTurque): Candidat {
     origine: "turquie",
     pays: "Turquie",
     motif: `${s.nbImal} homologation(s) fabriquée(s) en Turquie · ${s.matieresImal.length} M.A.`,
+    lignesMaroc: null,
     // Raisons sociales en alphabet latin : le registre EPA est interrogeable.
     usines: usinesDe(s.nom ?? ""),
     meToo: false,
