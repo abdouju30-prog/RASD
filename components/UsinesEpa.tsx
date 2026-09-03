@@ -94,13 +94,8 @@ export function TableUsines({ usines }: { usines: UsineSourcing[] }) {
 export function ReserveEpa({ attribution }: { attribution: string }) {
   return (
     <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-      Source <span className="mono">{attribution}</span>. Le registre dit{" "}
-      <strong style={{ color: "var(--muted)" }}>qui produit et où, jamais quoi</strong> : aucune
-      matière active n&apos;y figure. Il couvre aussi les «&nbsp;devices&nbsp;» — on y trouve des
-      fabricants d&apos;emballages, de cosmétiques ou de désinfectants, qu&apos;aucune colonne ne
-      distingue ; c&apos;est pourquoi seules les sociétés recoupées par un autre registre sont
-      présentées comme des usines phytosanitaires. Un enregistrement d&apos;établissement
-      n&apos;atteste d&apos;aucune conformité, et n&apos;ouvre aucun droit devant l&apos;ONSSA.
+      {attribution} · dit <strong style={{ color: "var(--muted)" }}>qui produit et où, jamais
+      quoi</strong>. N&apos;atteste d&apos;aucune conformité.
     </p>
   );
 }

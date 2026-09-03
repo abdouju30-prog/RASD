@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Compass, Factory, Info } from "lucide-react";
+import { Compass, Factory } from "lucide-react";
 import { FOURNISSEURS, MATIERES } from "@/lib/data";
-import { PAYS_CIBLES, statsSourcing } from "@/lib/sourcing";
+import { statsSourcing } from "@/lib/sourcing";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { PastillesPacks } from "@/components/PacksFournisseur";
-import { Aide, Figure } from "@/components/Aide";
+import { Figure } from "@/components/Aide";
 import { SchemaGisements } from "@/components/Schemas";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
@@ -90,9 +90,8 @@ export default async function FournisseursPage({
     <>
       <div className="fil">Étape 5 — fournisseur</div>
       <h1>Qui peut porter le dossier</h1>
-      <p style={{ color: "var(--muted)", maxWidth: "88ch", lineHeight: 1.55, margin: "0 0 16px" }}>
-        Les {FOURNISSEURS.length} sociétés de l&apos;index. Un fournisseur ne se choisit pas que sur
-        le pays : il doit détenir les études qui remplissent l&apos;Annexe 3-B.
+      <p className="chapeau">
+        Les {FOURNISSEURS.length} sociétés de l&apos;index, et les usines identifiées hors du Maroc.
       </p>
 
       {cherche && (
@@ -131,10 +130,6 @@ export default async function FournisseursPage({
           </strong>
         </div>
         <div>
-          <span className="eyebrow">Pays de sourcing</span>
-          <strong className="mono" style={{ fontSize: 17, fontWeight: 600 }}>{so.parPays.length}</strong>
-        </div>
-        <div>
           <span className="eyebrow">Agréments renseignés</span>
           <strong
             className="mono"
@@ -150,21 +145,9 @@ export default async function FournisseursPage({
           </strong>
         </div>
         <div>
-          <span className="eyebrow">Sites de production situés</span>
+          <span className="eyebrow">Usines situées</span>
           <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
             {STATS_EPA.nbFournisseursAvecUsine}
-          </strong>
-        </div>
-        <div>
-          <span className="eyebrow">Usines chinoises</span>
-          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
-            {STATS_ICAMA.nbFabricants}
-          </strong>
-        </div>
-        <div>
-          <span className="eyebrow">Pays non inféré</span>
-          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--mod)" }}>
-            {so.nbPaysInconnus}
           </strong>
         </div>
       </div>
@@ -188,19 +171,6 @@ export default async function FournisseursPage({
         </div>
       </div>
 
-      <div style={{ marginBottom: 14 }}>
-        <Aide titre="Fiabilité du pays et des agréments">
-          <p>
-            Le pays est <strong>inféré</strong> du nom de la société ; « ? » signale une déduction
-            faite sur le seul suffixe juridique.
-          </p>
-          <p>
-            Les agréments sont <strong>déclaratifs</strong> — ce que le fournisseur affirme détenir,
-            à saisir dans <span className="mono">data/fournisseurs-packs.json</span> avec sa source.
-            Ni l&apos;un ni l&apos;autre ne remplace une vérification avant engagement.
-          </p>
-        </Aide>
-      </div>
 
       <div className="grille">
         <div className="bloc">
@@ -295,15 +265,10 @@ export default async function FournisseursPage({
         <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <Compass size={14} color="var(--info)" /> Pistes hors index — détenteurs australiens
         </span>
-        <p style={{ color: "var(--muted)", fontSize: 13, maxWidth: "88ch", lineHeight: 1.6, margin: "8px 0 0" }}>
-          L&apos;index marocain ne nomme que les sociétés déjà entrées au Maroc. Le registre APVMA
-          publie le détenteur de chaque homologation australienne : on y trouve{" "}
-          <strong style={{ color: "var(--fg)" }}>{STATS_PISTES.nbNouvelles} génériqueurs</strong>{" "}
-          ({STATS_PISTES.nbAbsentes} sans aucun rapprochement, {STATS_PISTES.nbHomonymes} homonymes
-          d&apos;un fournisseur de l&apos;index) que la seule lecture de l&apos;index ne peut pas
-          révéler.
+        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
+          {STATS_PISTES.nbNouvelles} génériqueurs détenant une homologation australienne, absents de
+          l&apos;index marocain.
         </p>
-
         <Figure
           titre="Trois gisements, deux voies"
           legende="seul l'index marocain raccourcit le dossier"
@@ -386,19 +351,9 @@ export default async function FournisseursPage({
 
       <div className="section">
         <EnteteUsines titre="Usines à qualifier — registre EPA" nb={PISTES_EPA.length} />
-        <p style={{ color: "var(--muted)", fontSize: 13, maxWidth: "88ch", lineHeight: 1.6, margin: "8px 0 12px" }}>
-          Pour exporter un pesticide vers les États-Unis, le <strong style={{ color: "var(--fg)" }}>site
-          qui le produit</strong> doit être enregistré auprès de l&apos;EPA. Le registre donne donc
-          les usines du monde entier avec leur ville — {STATS_EPA.nbEtrangers.toLocaleString("fr")}{" "}
-          hors États-Unis, dans {STATS_EPA.nbPays} pays. C&apos;est la seule voie trouvée vers
-          l&apos;Inde et la Turquie, dont les registres nationaux sont fermés ou muets sur le
-          titulaire.
-        </p>
-        <p style={{ color: "var(--muted)", fontSize: 13, maxWidth: "88ch", lineHeight: 1.6, margin: "0 0 12px" }}>
-          Ne sont listées ici que les usines de pays de sourcing{" "}
-          <strong style={{ color: "var(--fg)" }}>absentes de l&apos;index marocain et confirmées
-          par une homologation australienne</strong> : le cumul des deux écarte le bruit du
-          registre, qui couvre aussi les emballages et les cosmétiques.
+        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
+          Sites de production enregistrés à l&apos;EPA, en pays de sourcing, absents de l&apos;index
+          marocain et confirmés par une homologation australienne.
         </p>
         <div className="bloc">
           <TableUsines usines={PISTES_EPA} />
@@ -410,14 +365,10 @@ export default async function FournisseursPage({
         <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <Factory size={14} color="var(--info)" /> Usines chinoises — les plus polyvalentes
         </span>
-        <p style={{ color: "var(--muted)", fontSize: 13, maxWidth: "88ch", lineHeight: 1.6, margin: "8px 0 12px" }}>
-          Sociétés détenant à la fois une <strong style={{ color: "var(--fg)" }}>homologation
-          chinoise de matière active technique</strong> et une{" "}
-          <strong style={{ color: "var(--fg)" }}>licence de production</strong>, classées par nombre
-          de matières actives de l&apos;index marocain couvertes. C&apos;est la liste par laquelle
-          commencer une consultation — une seule société y couvre souvent plusieurs cibles.
+        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
+          Homologation chinoise de matière active technique <em>et</em> licence de production,
+          classées par couverture de l&apos;index marocain.
         </p>
-
         <div className="bloc">
           <div className="titre">
             <span>Usines confirmées</span>
@@ -458,19 +409,13 @@ export default async function FournisseursPage({
             </tbody>
           </table>
           <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-            Source <span className="mono">{STATS_ICAMA.attribution}</span>. Aucune valeur
-            réglementaire au Maroc : ni voie me-too, ni étude en moins. Ces sociétés ne sont pas
-            rapprochées de l&apos;index ONSSA — l&apos;ICAMA écrit les raisons sociales en
-            caractères chinois, l&apos;index en alphabet latin, et aucune règle automatique ne peut
-            établir qu&apos;il s&apos;agit de la même société. Le détail par matière active figure
-            sur chaque fiche de prospection.
+            {STATS_ICAMA.attribution} · non rapprochées de l&apos;index, les raisons sociales étant
+            en caractères chinois. Détail par matière active sur chaque fiche de prospection.
           </p>
         </div>
       </div>
 
-      <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 14, lineHeight: 1.5 }}>
-        Pays cibles du sourcing générique : {PAYS_CIBLES.join(", ")}.
-      </p>
+
     </>
   );
 }

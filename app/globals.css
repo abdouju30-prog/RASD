@@ -257,10 +257,11 @@ a {
 }
 h1 {
   font-family: var(--tete);
-  font-size: 24px;
-  margin: 6px 0 5px;
+  font-size: 27px;
+  margin: 6px 0 6px;
   font-weight: 600;
   letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 h2,
 h3 {
@@ -304,14 +305,20 @@ h3 {
   justify-content: space-between;
   align-items: baseline;
   gap: 12px;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted-2);
-  font-weight: 700;
-  padding-bottom: 7px;
+  font-family: var(--tete);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+}
+/* Le compteur reste en retrait : c'est une précision, pas le titre. */
+.titre .mono {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--muted-2);
 }
 
 .card {
@@ -334,12 +341,17 @@ a.card:hover {
   color: var(--muted-2);
   font-weight: 600;
 }
+/* Un titre de bloc doit se voir de loin et se lire d'un coup : c'est lui qui
+   découpe la page. Il était en capitales grises de 10 px, indiscernable du
+   reste — donc invisible comme structure. */
 .h-title {
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted-2);
-  font-weight: 700;
+  font-family: var(--tete);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-transform: none;
+  color: var(--fg);
+  line-height: 1.25;
 }
 .pill {
   display: inline-flex;
@@ -496,7 +508,7 @@ a.card:hover {
   align-items: baseline;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .figure-legende {
   font-size: 11px;
@@ -518,12 +530,14 @@ a.card:hover {
   margin: 0 0 16px;
   max-width: 92ch;
 }
+/* De l'air entre les sections : c'est l'espace, pas le trait, qui fait lire
+   une page comme une succession d'étapes. */
 .section {
-  margin-top: 20px;
+  margin-top: 32px;
 }
 .section > .h-title {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 12px;
 }
 
 /* ── Sélecteur de détenteur ─────────────────────────────────────────────────

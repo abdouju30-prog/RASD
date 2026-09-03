@@ -83,7 +83,7 @@ export default async function GenererPage({
       <div className="eyebrow" style={{ marginTop: 16 }}>
         ONSSA · Annexe 3-B · {type.replace(/_/g, " ")}
       </div>
-      <h1 style={{ fontSize: 28, fontWeight: 700, margin: "9px 0 8px" }}>{d.produitNom}</h1>
+      <h1>{d.produitNom}</h1>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
         <span className="pill">{ma.nom}</span>
         <span className="pill">{ma.categorie ?? "—"}</span>

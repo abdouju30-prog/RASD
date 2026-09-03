@@ -36,7 +36,7 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
       </Link>
 
       <div style={{ display: "flex", justifyContent: "space-between", gap: 20, margin: "16px 0 6px" }}>
-        <h1 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>{c.nom}</h1>
+        <h1>{c.nom}</h1>
         <div style={{ textAlign: "right" }}>
           <div className="mono" style={{ fontSize: 30, fontWeight: 600, color: "var(--accent)", lineHeight: 1 }}>
             {c.score}
@@ -80,9 +80,6 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
         <div style={{ display: "grid", gap: 16 }}>
           <div className="card" style={{ padding: "18px 20px" }}>
             <div className="h-title">Décomposition du score</div>
-            <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px" }}>
-              Chaque facteur est affiché pour que le classement soit discutable, pas subi.
-            </p>
             <div style={{ display: "grid", gap: 8 }}>
               {c.facteurs.map((f) => (
                 <div
@@ -120,9 +117,8 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
             <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <Building2 size={14} /> Fournisseurs référencés à l&apos;ONSSA
             </div>
-            <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px", lineHeight: 1.6 }}>
-              Ces sociétés fournissent déjà cette matière active à des détenteurs marocains : leur
-              dossier technique a donc déjà passé l&apos;ONSSA. C&apos;est la liste à consulter en premier.
+            <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px" }}>
+              Leur dossier technique a déjà passé l&apos;ONSSA — voie me-too.
             </p>
             <table className="tbl">
               <thead>
@@ -170,10 +166,6 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
                 ))}
               </tbody>
             </table>
-            <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.5 }}>
-              Le pays est déduit du nom de la société ; « ? » signale une déduction faite sur le seul
-              suffixe juridique. À confirmer avant toute prise de contact.
-            </p>
           </div>
 
           <div className="card" style={{ padding: "18px 20px" }}>
@@ -181,26 +173,24 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
               <Compass size={14} /> Fabricants hors Maroc — registre australien
             </div>
             {!pistes.apparie ? (
-              <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "9px 0 0", lineHeight: 1.6 }}>
-                Cette matière active n&apos;a pas pu être appariée au registre PUBCRIS : aucune piste
-                à en tirer.
+              <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "9px 0 0" }}>
+                Non appariée au registre PUBCRIS.
               </p>
             ) : (
               <>
-                <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px", lineHeight: 1.6 }}>
-                  {pistes.toutes.length} société(s) détiennent une homologation australienne sur{" "}
-                  <span className="mono">{pistes.nomAustralien}</span>.{" "}
+                <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px", lineHeight: 1.55 }}>
+                  {pistes.toutes.length} sociétés sur{" "}
+                  <span className="mono">{pistes.nomAustralien}</span>
                   {pistes.nouvelles.length > 0 ? (
                     <>
+                      , dont{" "}
                       <strong style={{ color: "var(--fg)" }}>
-                        {pistes.nouvelles.length} sont des génériqueurs absents de l&apos;index
-                        marocain
-                      </strong>{" "}
-                      — des fabricants que la seule lecture de l&apos;index ONSSA ne peut pas
-                      révéler.
+                        {pistes.nouvelles.length} génériqueurs absents de l&apos;index marocain
+                      </strong>
+                      .
                     </>
                   ) : (
-                    <>Aucune n&apos;est un génériqueur nouveau : l&apos;index marocain les couvre déjà.</>
+                    <> — toutes déjà couvertes par l&apos;index marocain.</>
                   )}
                 </p>
                 {pistes.nouvelles.length > 0 && <TablePistes pistes={pistes.nouvelles} />}
@@ -213,9 +203,6 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
 
           <div className="card" style={{ padding: "18px 20px" }}>
             <div className="h-title">Usages homologués au Maroc — {c.nbUsages}</div>
-            <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px" }}>
-              Chacun est un précédent : dose et DAR déjà acceptés par l&apos;ONSSA chez un autre détenteur.
-            </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
               {c.usages.slice(0, 40).map((u) => (
                 <span key={u} className="pill" style={{ fontWeight: 500, fontSize: 11.5 }}>
@@ -241,17 +228,15 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
             <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <FileText size={14} color="var(--accent)" /> Passer au dossier
             </div>
-            <p style={{ fontSize: 13, color: "var(--muted)", margin: "9px 0 14px", lineHeight: 1.6 }}>
-              Génère la structure du dossier ONSSA pré-rempli : rubriques, répartition des
-              responsabilités, usages revendicables et objections prévisibles.
+            <p style={{ fontSize: 13, color: "var(--muted)", margin: "9px 0 12px", lineHeight: 1.55 }}>
+              Rubriques, responsabilités, usages revendicables et objections prévisibles.
             </p>
             <Link href={`/dossiers/generer/${c.id}`} className="link-accent" style={{ fontSize: 14 }}>
               Générer le dossier →
             </Link>
             <div style={{ borderTop: "1px solid var(--border)", margin: "14px 0 12px" }} />
-            <div style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.6, marginBottom: 10 }}>
-              Avant le dossier, il faut un fournisseur qualifié. La fiche de consultation assemble
-              la liste courte des quatre registres et le questionnaire technique à lui envoyer.
+            <div style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.55, marginBottom: 10 }}>
+              Liste courte des quatre registres et questionnaire technique à envoyer.
             </div>
             <Link href={`/consultation/${c.id}`} className="link-accent" style={{ fontSize: 14 }}>
               Préparer la consultation →
@@ -295,12 +280,10 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
               <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <TriangleAlert size={14} color="var(--mod)" /> Statut réglementaire inconnu
               </div>
-              <p style={{ fontSize: 13, color: "var(--muted)", marginTop: 11, lineHeight: 1.65 }}>
-                Aucune fiche vérifiée pour cette molécule : son statut d&apos;approbation UE n&apos;est
-                pas renseigné, et le filtre de risque ne s&apos;y est donc pas appliqué. Une molécule
-                attractive commercialement peut être interdite en UE — le vérifier sur la EU Pesticides
-                Database <strong style={{ color: "var(--fg)" }}>avant</strong> de consulter un
-                fournisseur, puis compléter <span className="mono">lib/reglementaire.ts</span>.
+              <p style={{ fontSize: 13, color: "var(--muted)", marginTop: 11, lineHeight: 1.6 }}>
+                Statut UE non renseigné : le filtre de risque ne s&apos;est pas appliqué. À vérifier
+                sur la EU Pesticides Database <strong style={{ color: "var(--fg)" }}>avant</strong>{" "}
+                de consulter un fournisseur.
               </p>
             </div>
           )}

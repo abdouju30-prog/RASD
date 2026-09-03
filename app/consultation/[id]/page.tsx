@@ -89,13 +89,11 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
       </Link>
 
       <div className="fil" style={{ marginTop: 14 }}>Étape 5 — consulter</div>
-      <h1 style={{ fontSize: 28, fontWeight: 700, margin: "6px 0 8px" }}>
+      <h1>
         Consultation fournisseur — {c.matiere.nom}
       </h1>
-      <p className="chapeau" style={{ maxWidth: "88ch" }}>
-        La liste courte, ce qu&apos;il faut demander, et dans quel ordre. Le prix vient en dernier :
-        un fournisseur moins cher qui ne détient pas les études coûte l&apos;étude manquante, sans
-        commune mesure avec l&apos;écart au kilo.
+      <p className="chapeau">
+        Qui consulter, quoi demander, dans quel ordre. Le prix vient en dernier.
       </p>
 
       {/* 1. La route — elle décide de tout le reste */}
@@ -135,11 +133,6 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
         <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <ClipboardList size={14} /> Liste courte — {c.meToo.length + c.autres.length} candidats
         </span>
-        <p style={{ color: "var(--muted)", fontSize: 12.5, margin: "8px 0 12px", maxWidth: "88ch", lineHeight: 1.6 }}>
-          Visez cinq à huit candidats sur au moins deux pays. Un seul pays vous expose à une rupture
-          réglementaire ou logistique, et vous prive de tout levier de négociation.
-        </p>
-
         {c.meToo.length > 0 && (
           <div className="bloc" style={{ marginBottom: 14 }}>
             <div className="titre">
@@ -152,7 +145,7 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
                   <th>Société</th>
                   <th>Pays</th>
                   <th>Registre</th>
-                  <th>Pourquoi elle est dans la liste</th>
+                  <th>Motif</th>
                 </tr>
               </thead>
               <tbody>
@@ -176,7 +169,7 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
                   <th>Société</th>
                   <th>Pays</th>
                   <th>Registre</th>
-                  <th>Pourquoi elle est dans la liste</th>
+                  <th>Motif</th>
                 </tr>
               </thead>
               <tbody>
@@ -191,9 +184,8 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
             </p>
           )}
           <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-            Seul l&apos;index ONSSA ouvre la voie me-too. Une homologation australienne ou chinoise
-            ne raccourcit aucun délai et ne remplace aucune étude — elle établit que la société
-            fabrique la molécule et a monté un dossier ailleurs.
+            Viser cinq à huit candidats sur au moins deux pays. Seul l&apos;index ONSSA ouvre la
+            voie me-too.
           </p>
         </div>
       </div>
@@ -222,12 +214,9 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
           <FlaskConical size={14} /> Questionnaire technique — {c.nbLignesFournisseur} lignes,
           dont {c.nbLignesGlp} sous BPL
         </span>
-        <p style={{ color: "var(--muted)", fontSize: 12.5, margin: "8px 0 12px", maxWidth: "88ch", lineHeight: 1.6 }}>
-          Ce sont exactement les lignes de l&apos;Annexe 3-B qui incombent au fournisseur — ni plus,
-          ni moins. Les lignes qui relèvent du détenteur ou d&apos;un laboratoire marocain n&apos;ont
-          rien à faire dans une consultation. La colonne de droite rappelle le nom commercial du
-          paquet d&apos;études : les brochures indiennes et chinoises parlent en «&nbsp;6 Pack Acute
-          Tox&nbsp;», pas en numéros de section marocains.
+        <p style={{ color: "var(--muted)", fontSize: 12.5, margin: "0 0 12px" }}>
+          Les lignes de l&apos;Annexe 3-B qui incombent au fournisseur, avec le nom commercial du
+          paquet d&apos;études.
         </p>
         <div className="bloc">
           <table className="tbl">
@@ -281,10 +270,9 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
             </>
           ) : (
             <>
-              Périmètre requis d&apos;après les cultures homologuées :{" "}
-              <strong style={{ color: "var(--fg)" }}>{c.essais.perimetres.join(" · ")}</strong>. Seuls
-              les organismes couvrant <em>tous</em> ces périmètres sont listés — un agrément pour les
-              légumes ne couvre pas l&apos;arboriculture.
+              Périmètre requis :{" "}
+              <strong style={{ color: "var(--fg)" }}>{c.essais.perimetres.join(" · ")}</strong>.
+              Seuls les organismes qui couvrent tout le périmètre sont listés.
             </>
           )}
         </p>
@@ -324,9 +312,7 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
             </tbody>
           </table>
           <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-            Source <span className="mono">{STATS_ESERVICE.attribution}</span>, registre mis à jour le{" "}
-            {STATS_ESERVICE.majSocietes}. Vérifiez la validité de l&apos;agrément avant de commander
-            une campagne d&apos;essais : un agrément expiré en cours d&apos;essai invalide les
+            {STATS_ESERVICE.attribution} · un agrément expiré en cours d&apos;essai invalide les
             résultats.
           </p>
         </div>
@@ -353,7 +339,7 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
           </div>
           <div className="bloc">
             <div className="titre"><span>Le seul calcul qui décide</span></div>
-            <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.65, marginTop: 10 }}>
+            <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>
               Coût rendu par kilo de <strong style={{ color: "var(--fg)" }}>matière active pure</strong> :
             </p>
             <div
@@ -370,15 +356,9 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
             >
               {FORMULE_COUT}
             </div>
-            <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.65 }}>
-              C&apos;est le dernier terme qui tranche. Deux offres à 5&nbsp;% d&apos;écart, dont
-              l&apos;une fournit l&apos;écotoxicologie et l&apos;autre non, ne sont pas dans la même
-              catégorie.
-            </p>
-            <p style={{ fontSize: 11.5, color: "var(--muted-2)", lineHeight: 1.6, marginTop: 10 }}>
-              <strong>Aucun prix ne figure dans l&apos;outil.</strong> Aucun registre public n&apos;en
-              publie, et rien ici n&apos;en estimera. Ils viennent de la consultation directe, seule
-              source qui engage.
+            <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6 }}>
+              C&apos;est le dernier terme qui tranche. Aucun prix ne figure dans l&apos;outil :
+              aucun registre public n&apos;en publie.
             </p>
           </div>
         </div>

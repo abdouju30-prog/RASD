@@ -61,17 +61,15 @@ export function FabricantsChinois({
 
       {!m ? (
         <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "9px 0 0", lineHeight: 1.6 }}>
-          Aucune homologation chinoise de matière active technique relevée pour cette molécule —
-          soit elle n&apos;y est pas produite, soit elle n&apos;a pas pu être appariée au registre.
+          Aucune homologation chinoise de matière active technique relevée.
         </p>
       ) : (
         <>
-          <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px", lineHeight: 1.6 }}>
-            <strong style={{ color: "var(--fg)" }}>{m.societes.length} sociétés</strong> détiennent une
-            homologation chinoise de matière active technique (原药) sur{" "}
-            <span className="mono">{m.nomsChinois.join(" · ")}</span>. Parmi elles,{" "}
-            <strong style={{ color: "var(--fg)" }}>{u.length}</strong> détiennent aussi une licence de
-            production : ce sont des usines, pas des intermédiaires.
+          <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px", lineHeight: 1.55 }}>
+            <strong style={{ color: "var(--fg)" }}>{m.societes.length} sociétés</strong> sur{" "}
+            <span className="mono">{m.nomsChinois.join(" · ")}</span>, dont{" "}
+            <strong style={{ color: "var(--fg)" }}>{u.length}</strong> avec licence de production —
+            des usines, pas des intermédiaires.
           </p>
 
           {u.length > 0 && (
@@ -105,11 +103,8 @@ export function FabricantsChinois({
       )}
 
       <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-        Source <span className="mono">{attribution}</span>. Une homologation chinoise n&apos;ouvre
-        aucun droit devant l&apos;ONSSA : ni voie me-too, ni étude en moins. Elle établit qu&apos;une
-        société est autorisée à vendre la matière active technique en Chine, et la licence
-        qu&apos;elle est autorisée à la fabriquer. Ni prix, ni capacité, ni audit qualité —
-        l&apos;échantillon et le certificat d&apos;analyse restent à demander.
+        {attribution} · n&apos;ouvre aucun droit devant l&apos;ONSSA. Ni prix, ni capacité, ni
+        audit qualité.
       </p>
     </div>
   );

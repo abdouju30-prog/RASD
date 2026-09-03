@@ -98,11 +98,8 @@ export function TablePistes({ pistes }: { pistes: Piste[] }) {
 export function ReservePistes({ source }: { source: string }) {
   return (
     <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-      Source <span className="mono">{source}</span>. Une homologation australienne ne vaut rien
-      devant l&apos;ONSSA : elle n&apos;ouvre pas la voie me-too et ne remplace aucune étude. Ce
-      qu&apos;elle prouve, c&apos;est que la société fabrique la molécule et a déjà constitué un
-      dossier complet devant un régulateur exigeant. Le pays est déduit du nom ; «&nbsp;?&nbsp;»
-      signale une déduction faite sur le seul suffixe juridique.
+      {source} · n&apos;ouvre pas la voie me-too. Pays déduit du nom ; «&nbsp;?&nbsp;» = déduction
+      sur le seul suffixe juridique.
     </p>
   );
 }

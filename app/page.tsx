@@ -45,10 +45,7 @@ export default async function RadarPage() {
       <div className="eyebrow">
         Radar réglementaire · {d.nom} · index du {fmtDate(META.genere.slice(0, 10))}
       </div>
-      <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>Tour de contrôle</h1>
-      <p style={{ color: "var(--muted)", maxWidth: 660, lineHeight: 1.6, marginTop: 0 }}>
-        Chaque signal est relié aux produits concernés et à l&apos;alternative à homologuer.
-      </p>
+      <h1>Tour de contrôle</h1>
 
       {st.critiques > 0 && (
         <Link
@@ -136,9 +133,7 @@ export default async function RadarPage() {
         >
           <span className="h-title">Matrice risque × exposition</span>
           <span style={{ color: "var(--muted-2)", fontSize: 11.5 }}>
-            Taille de bulle ={" "}
-            {CA_DISPONIBLE ? "chiffre d'affaires" : "usages homologués détenus"} · cliquez une bulle
-            pour analyser la matière active
+            Taille de bulle = {CA_DISPONIBLE ? "chiffre d'affaires" : "usages détenus"}
           </span>
         </div>
         {points.length ? (
@@ -241,11 +236,9 @@ export default async function RadarPage() {
         >
           <ShieldQuestion size={17} color="var(--muted)" style={{ flexShrink: 0, marginTop: 2 }} />
           <div style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.6 }}>
-            <strong style={{ color: "var(--fg)" }}>Angles morts — {morts.length} matière(s) active(s)</strong>{" "}
-            du portefeuille sans statut UE renseigné :{" "}
-            {morts.map((m) => m.molecule).join(", ")}. Elles n&apos;apparaissent ni dans la matrice ni dans
-            les alertes tant que leur fiche n&apos;est pas complétée dans{" "}
-            <span className="mono">lib/reglementaire.ts</span>.
+            <strong style={{ color: "var(--fg)" }}>Angles morts — {morts.length} matière(s)</strong>{" "}
+            sans statut UE, donc absentes de la matrice et des alertes :{" "}
+            {morts.map((m) => m.molecule).join(", ")}.
           </div>
         </div>
       )}

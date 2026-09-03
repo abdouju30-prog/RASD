@@ -46,19 +46,19 @@ const ROUTES: Record<Route, Etape> = {
     cle: "bloque",
     titre: "Ne pas consulter",
     lecture:
-      "La matière active n'est plus autorisée en France. L'ONSSA s'alignant sur l'ANSES, le dossier serait condamné avant d'être déposé. Aucune consultation ne se justifie tant que ce statut tient.",
+      "Retirée en France. L'ONSSA s'alignant sur l'ANSES, le dossier serait condamné d'avance.",
   },
   me_too: {
     cle: "me_too",
     titre: "Voie me-too — consultation restreinte",
     lecture:
-      "Des fournisseurs sont déjà référencés à l'ONSSA sur cette matière active : leur dossier technique a passé l'administration marocaine, et le vôtre s'y réfère. Consultez-les EN PREMIER, même à un prix supérieur — l'écart de délai et de coût de dossier dépasse presque toujours l'écart de prix au kilo.",
+      "Des fournisseurs sont déjà référencés à l'ONSSA : leur dossier a passé l'administration marocaine, le vôtre s'y réfère. À consulter en premier, même plus cher.",
   },
   dossier_complet: {
     cle: "dossier_complet",
     titre: "Dossier complet — consultation large",
     lecture:
-      "Aucun fournisseur de l'index ne porte cette matière active : le dossier devra être constitué intégralement. Le choix du fournisseur devient déterminant, puisque c'est lui qui fournira l'essentiel des études. Consultez large, et qualifiez avant de parler prix.",
+      "Aucun fournisseur de l'index ne porte cette matière active : dossier à constituer intégralement. Le fournisseur fournira l'essentiel des études — consulter large.",
   },
 };
 
@@ -85,7 +85,7 @@ function depuisOnssa(f: Fournisseur): Candidat {
     nom: f.nom,
     origine: "onssa",
     pays: f.pays,
-    motif: `Référencé à l'index ONSSA sur cette matière active — ${f.nbLignesMaroc} ligne(s) au Maroc`,
+    motif: `${f.nbLignesMaroc} ligne(s) au Maroc sur cette matière active`,
     usines: usinesDe(f.nom),
     meToo: true,
   };
@@ -99,8 +99,8 @@ function depuisAustralie(p: Piste): Candidat {
     pays: p.pays,
     motif:
       p.lien === "homonyme"
-        ? `Homologation australienne · nom proche de « ${p.fournisseurOnssa} » à l'index — parenté à vérifier`
-        : `Homologation australienne sur cette matière active — ${p.nbProduits} produit(s)`,
+        ? `${p.nbProduits} produit(s) · nom proche de « ${p.fournisseurOnssa} », à vérifier`
+        : `${p.nbProduits} produit(s) homologué(s)`,
     usines: usinesDe(p.nom),
     meToo: false,
   };
@@ -112,9 +112,7 @@ function depuisChine(s: SocieteChinoise): Candidat {
     nom: s.nom,
     origine: "chine",
     pays: "Chine",
-    motif: `Homologation chinoise de matière active technique${
-      s.teneurMax ? ` à ${s.teneurMax}` : ""
-    } et licence de production ${s.licenceProduction}`,
+    motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · licence ${s.licenceProduction}`,
     // Les raisons sociales chinoises ne se rapprochent pas de l'alphabet latin.
     usines: null,
     meToo: false,
@@ -161,27 +159,27 @@ export const EXIGENCES_PREALABLES = [
   {
     titre: "Lettre d'accès",
     detail:
-      "Autorisation écrite pour que l'ONSSA s'appuie sur son dossier. Beaucoup de fabricants détiennent les études mais refusent la lettre d'accès, ou la facturent à part. À obtenir par écrit avant toute négociation — sinon vous négociez avec quelqu'un qui ne pouvait pas vous servir.",
+      "Autorisation écrite pour que l'ONSSA s'appuie sur son dossier. Beaucoup la refusent ou la facturent à part : à obtenir avant toute négociation.",
   },
   {
     titre: "Analyse 5 lots sous BPL",
     detail:
-      "Teneur et impuretés sur cinq lots de fabrication. C'est la pièce qui établit la constance de la production, et l'ONSSA la compare au profil de la source de référence.",
+      "Teneur et impuretés sur cinq lots. Établit la constance de la production.",
   },
   {
     titre: "Profil d'impuretés, impuretés pertinentes nommées",
     detail:
-      "La comparaison d'équivalence se joue là. Un TC à la bonne teneur mais au profil d'impuretés différent n'est pas la même substance aux yeux de l'administration.",
+      "La comparaison d'équivalence se joue là : bonne teneur mais autre profil, autre substance.",
   },
   {
     titre: "Spécification FAO/WHO, ou justification de l'écart",
     detail:
-      "Référence internationale de la matière active technique. Un écart n'est pas rédhibitoire, mais il doit être expliqué et documenté.",
+      "Référence internationale. Un écart doit être expliqué et documenté.",
   },
   {
     titre: "Certificats BPL des laboratoires",
     detail:
-      "Pas l'affirmation que les études existent : les certificats des laboratoires qui les ont réalisées. Une étude hors BPL ne remplit pas une ligne marquée BPL.",
+      "Les certificats des laboratoires, pas l'affirmation que les études existent.",
   },
 ];
 

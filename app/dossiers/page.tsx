@@ -21,7 +21,7 @@ export default async function DossiersPage() {
   return (
     <>
       <div className="eyebrow">Usine à dossiers</div>
-      <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>Atelier dossiers</h1>
+      <h1>Atelier dossiers</h1>
       <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
         Trois files, toutes déduites des données : renouveler ce qui expire, substituer ce qui est
         menacé, homologuer ce qui rapporte. Chaque ligne génère un dossier ONSSA pré-rempli.

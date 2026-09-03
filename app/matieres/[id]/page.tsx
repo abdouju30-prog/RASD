@@ -38,7 +38,7 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
 
       <div style={{ display: "flex", justifyContent: "space-between", gap: 20, margin: "16px 0 8px" }}>
         <div>
-          <h1 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>{ma.nom}</h1>
+          <h1>{ma.nom}</h1>
           <div style={{ color: "var(--muted)", fontSize: 13.5, marginTop: 6 }}>
             {f ? `${f.famille} · ${f.modeAction}` : ma.categorie ?? "—"}
           </div>

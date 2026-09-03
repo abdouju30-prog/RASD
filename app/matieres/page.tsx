@@ -11,10 +11,10 @@ export default async function MatieresPage() {
   return (
     <>
       <div className="eyebrow">Matières actives</div>
-      <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>
+      <h1>
         Les {classe.length} molécules du portefeuille
       </h1>
-      <p style={{ color: "var(--muted)", maxWidth: 700, lineHeight: 1.6, marginTop: 0 }}>
+      <p className="chapeau">
         Extraites de l&apos;index ONSSA, classées par risque réglementaire. L&apos;index complet compte{" "}
         {MATIERES.length} matières actives — les autres se prospectent depuis l&apos;écran{" "}
         <Link href="/sourcing" className="link-accent">

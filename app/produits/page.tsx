@@ -83,7 +83,7 @@ export default async function ProduitsPage({
       )}
 
       <div className="eyebrow">Portefeuille · {d.nom}</div>
-      <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>
+      <h1>
         {portefeuille.length} produits homologués
       </h1>
       <p style={{ color: "var(--muted)", maxWidth: 700, lineHeight: 1.6, marginTop: 0 }}>
