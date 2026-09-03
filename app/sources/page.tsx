@@ -8,6 +8,7 @@ import { STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
 import { STATS_APVMA, fraicheurApvma } from "@/lib/apvma";
 import { STATS_PISTES } from "@/lib/pistes";
 import { STATS_ICAMA } from "@/lib/icama";
+import { STATS_EPA } from "@/lib/epa";
 import { RefreshCw } from "lucide-react";
 import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
@@ -101,7 +102,7 @@ export default function SourcesPage() {
       <div className="fil">Compartiments</div>
       <h1>D&apos;où vient chaque chiffre</h1>
       <p className="chapeau">
-        Six compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
+        Sept compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
         plutôt que sur les écrans de travail.
       </p>
 
@@ -171,7 +172,7 @@ export default function SourcesPage() {
       </div>
 
       <div className="section">
-        <span className="h-title">Les six compartiments</span>
+        <span className="h-title">Les sept compartiments</span>
         <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <Compartiment
             icone={<Database size={15} color="var(--accent)" />}
@@ -213,6 +214,17 @@ export default function SourcesPage() {
             maj={`${STATS_ICAMA.nbLicences} licences de production`}
             fiabilite="source"
             reserve="Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. Une licence n'est pas un audit — ni prix, ni capacité, ni qualité."
+          />
+
+          <Compartiment
+            icone={<Factory size={15} color="var(--info)" />}
+            nom="EPA · établissements"
+            role="Où sont les usines"
+            contenu={`${STATS_EPA.nbEtrangers.toLocaleString("fr")} sites de production hors États-Unis, dans ${STATS_EPA.nbPays} pays, avec adresse et ville. ${STATS_EPA.nbFournisseursAvecUsine} fournisseurs de l'index y sont retrouvés : un titulaire devient un producteur situé. Seule voie vers l'Inde et la Turquie.`}
+            origine={STATS_EPA.attribution}
+            maj="domaine public"
+            fiabilite="source"
+            reserve="Dit qui produit et où, jamais quoi : aucune matière active. Couvre aussi les « devices » — emballages, cosmétiques, désinfectants — sans colonne pour les distinguer."
           />
 
           <Compartiment

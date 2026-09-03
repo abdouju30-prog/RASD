@@ -1,6 +1,7 @@
 import { CONSTITUANTS_APVMA, META_APVMA, apparierApvma } from "./apvma";
 import type { SocieteApvma } from "./apvma";
 import { FOURNISSEURS, MATIERES } from "./data";
+import { IndexNoms, slug } from "./noms";
 
 // ────────────────────────────────────────────────────────────────────────────
 // PISTES FOURNISSEUR HORS INDEX ONSSA
@@ -43,122 +44,22 @@ export interface Piste extends SocieteApvma {
   fournisseurOnssa: string | null;
 }
 
-// ── Normalisation des raisons sociales ──────────────────────────────────────
-// Deux registres n'écrivent jamais une société de la même façon. On ramène le
-// nom à ses mots porteurs d'identité, en retirant ceux qui n'en portent aucune.
+// ── Rapprochement avec l'index ONSSA ────────────────────────────────────────
+// La règle de normalisation vit dans lib/noms.ts et sert aussi au registre de
+// l'EPA : une seule règle pour tout l'outil.
 
-// Forme juridique : aucune identité. « SHARDA CROPCHEM LIMITED » et « SHARDA
-// CROPCHEM LTD » sont la même société.
-const MOTS_JURIDIQUES = new Set(
-  ("PTY LTD LTDA LIMITED CO COMPANY INC CORP CORPORATION PVT PRIVATE PTE GMBH " +
-    "MBH KG AG SA SAS SARL SRL SPRL SL SAU NV BV BVBA AS APS OY AB SPA PLC LLC " +
-    "LLP DOO SRO OOO ZAO PJSC JSC BHD SDN GROUP GROUPE HOLDING"
-  ).split(" ")
-);
-
-// Mots de métier : ils comptent pour distinguer deux raisons sociales entières,
-// mais ne peuvent JAMAIS à eux seuls rapprocher deux sociétés. Sans cette
-// distinction, « ZHEJIANG HEBEN PESTICIDE » se rattacherait à « INDIA PESTICIDE
-// LTD » sur le seul mot « pesticide ».
-const MOTS_METIER = new Set(
-  ("INTERNATIONAL INTL INDUSTRIE INDUSTRY INDUSTRIAL CHEMICAL CHEMFERT " +
-    "AGROCHEMICAL AGROCHEM AGRO AGRI AGRICULTURE AGRICULTURAL AGROSCIENCE " +
-    "SCIENCE CROPSCIENCE CROP TECHNOLOGY TECHNOLOGIE TECH BIOTECH BIOSCIENCE " +
-    "BIOTECHNOLOGY BIOCHEMICAL BIO SOLUTION PRODUCT PESTICIDE PROTECTION PLANT " +
-    "UNION PHARMACEUTICAL LABORATORY LABORATORIE CENTRE CENTER ENVIRONMENTAL " +
-    "TRADING TRADE IMP EXP"
-  ).split(" ")
-);
-
-// Toponymes : ils situent, ils n'identifient pas. « SHANDONG » est partagé par
-// des dizaines de sociétés chinoises sans lien entre elles — s'en servir pour
-// rapprocher deux noms produirait des faux positifs en série. Ils restent
-// pourtant dans la clé exacte, où ils distinguent utilement deux entités.
-const TOPONYMES = new Set(
-  ("AUSTRALIA AUSTRALASIA INDIA CHINA CHINE SINGAPORE EUROPE EUROPEAN FRANCE " +
-    "ESPANA SPAIN DEUTSCHLAND GERMANY USA NETHERLANDS BENELUX ITALIA IBERICA " +
-    "BRASIL MEXICO MAROC AFRICA ASIA ASIATIC NANJING SHANDONG NINGBO JIANGSU " +
-    "ZHEJIANG HEBEI ANHUI SHANGHAI BEIJING SICHUAN HUBEI HUNAN JIANGXI " +
-    "GUANGDONG WEIFANG NANTONG RUDONG LESHAN CHENGWU ZHENJIANG JIANGNAN " +
-    "SHENZHEN QINGDAO TIANJIN GUANGZHOU"
-  ).split(" ")
-);
-
-/** « INDUSTRIES » et « INDUSTRIE » désignent la même chose des deux côtés. */
-function singulier(t: string): string {
-  return t.length >= 5 && t.endsWith("S") ? t.slice(0, -1) : t;
-}
-
-/** Mots porteurs de sens : forme juridique retirée, pluriels ramenés au singulier. */
-function mots(nom: string): string[] {
-  return nom
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toUpperCase()
-    .split(/[^A-Z0-9]+/)
-    .filter((t) => t.length > 1)
-    .map(singulier)
-    .filter((t) => !MOTS_JURIDIQUES.has(t));
-}
-
-/**
- * Clé d'identité. Pour une filiale australienne, le toponyme « AUSTRALIA » est
- * retiré : c'est le groupe qu'on cherche à reconnaître, pas l'entité locale.
- */
-function cle(nom: string, filiale = false): string {
-  const t = mots(nom);
-  return (filiale ? t.filter((m) => m !== "AUSTRALIA" && m !== "AUSTRALASIA") : t).join(" ");
-}
-
-function slug(nom: string): string {
-  return nom
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 70);
-}
-
-// ── Index de l'ONSSA ────────────────────────────────────────────────────────
-
-const ONSSA_PAR_CLE = new Map<string, string>();
-const ONSSA_PAR_MOT = new Map<string, string[]>();
-
-for (const f of FOURNISSEURS) {
-  const k = cle(f.nom);
-  if (k && !ONSSA_PAR_CLE.has(k)) ONSSA_PAR_CLE.set(k, f.nom);
-  for (const m of new Set(mots(f.nom))) {
-    const l = ONSSA_PAR_MOT.get(m) ?? [];
-    l.push(f.nom);
-    ONSSA_PAR_MOT.set(m, l);
-  }
-}
-
-/**
- * Un mot n'est distinctif que s'il désigne peu de sociétés. Le seuil se mesure
- * sur l'index lui-même plutôt qu'il ne se devine : un mot porté par trois
- * fournisseurs ou plus est un mot de métier, pas une marque.
- */
-function motDistinctif(m: string): boolean {
-  if (m.length < 4 || MOTS_METIER.has(m) || TOPONYMES.has(m)) return false;
-  const l = ONSSA_PAR_MOT.get(m);
-  return Boolean(l && l.length <= 2);
-}
+const INDEX_ONSSA = new IndexNoms(FOURNISSEURS.map((f) => ({ nom: f.nom, valeur: f.nom })));
 
 function rapprocher(
   nom: string,
   filiale: boolean
 ): { lien: LienOnssa; fournisseurOnssa: string | null } {
-  const k = cle(nom, filiale);
-  const exact = k ? ONSSA_PAR_CLE.get(k) : undefined;
+  const exact = INDEX_ONSSA.exact(nom, filiale);
   if (exact) return { lien: "referencee", fournisseurOnssa: exact };
 
-  for (const m of mots(nom)) {
-    if (!motDistinctif(m)) continue;
-    const l = ONSSA_PAR_MOT.get(m);
-    if (l && l.length) return { lien: "homonyme", fournisseurOnssa: l[0] };
-  }
+  const proches = INDEX_ONSSA.proches(nom, 1);
+  if (proches.length) return { lien: "homonyme", fournisseurOnssa: proches[0] };
+
   return { lien: "absente", fournisseurOnssa: null };
 }
 

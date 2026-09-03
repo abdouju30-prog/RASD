@@ -9,6 +9,8 @@ import { SchemaGisements } from "@/components/Schemas";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
+import { STATS_EPA, USINES_SOURCING, usinesDe } from "@/lib/epa";
+import { EnteteUsines, ReserveEpa, SiteProduction, TableUsines } from "@/components/UsinesEpa";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -68,6 +70,11 @@ export default async function FournisseursPage({
 
   const nbFiches = FOURNISSEURS.filter((f) => ficheFournisseur(f.id)).length;
 
+  // Le croisement le plus sélectif de l'outil : une usine localisée, un
+  // régulateur exigeant qui l'a homologuée, et personne au Maroc qui la fasse
+  // déjà entrer.
+  const PISTES_EPA = USINES_SOURCING.filter((u) => !u.lienOnssa && u.corroboreeApvma);
+
   return (
     <>
       <div className="fil">Étape 5 — fournisseur</div>
@@ -105,6 +112,12 @@ export default async function FournisseursPage({
           <span className="eyebrow">Pistes hors index</span>
           <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
             {STATS_PISTES.nbNouvelles}
+          </strong>
+        </div>
+        <div>
+          <span className="eyebrow">Sites de production situés</span>
+          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
+            {STATS_EPA.nbFournisseursAvecUsine}
           </strong>
         </div>
         <div>
@@ -177,7 +190,10 @@ export default async function FournisseursPage({
                 const mas = parMa.get(f.nom) ?? [];
                 return (
                   <tr key={f.id}>
-                    <td style={{ fontWeight: 500 }}>{f.nom}</td>
+                    <td style={{ fontWeight: 500 }}>
+                      {f.nom}
+                      <SiteProduction u={usinesDe(f.nom)} />
+                    </td>
                     <td style={{ color: "var(--muted)" }}>
                       {f.pays ?? "à préciser"}
                       {f.pays && !f.paysFiable && (
@@ -330,6 +346,28 @@ export default async function FournisseursPage({
             </tbody>
           </table>
           <ReservePistes source={STATS_PISTES.source} />
+        </div>
+      </div>
+
+      <div className="section">
+        <EnteteUsines titre="Usines à qualifier — registre EPA" nb={PISTES_EPA.length} />
+        <p style={{ color: "var(--muted)", fontSize: 13, maxWidth: "88ch", lineHeight: 1.6, margin: "8px 0 12px" }}>
+          Pour exporter un pesticide vers les États-Unis, le <strong style={{ color: "var(--fg)" }}>site
+          qui le produit</strong> doit être enregistré auprès de l&apos;EPA. Le registre donne donc
+          les usines du monde entier avec leur ville — {STATS_EPA.nbEtrangers.toLocaleString("fr")}{" "}
+          hors États-Unis, dans {STATS_EPA.nbPays} pays. C&apos;est la seule voie trouvée vers
+          l&apos;Inde et la Turquie, dont les registres nationaux sont fermés ou muets sur le
+          titulaire.
+        </p>
+        <p style={{ color: "var(--muted)", fontSize: 13, maxWidth: "88ch", lineHeight: 1.6, margin: "0 0 12px" }}>
+          Ne sont listées ici que les usines de pays de sourcing{" "}
+          <strong style={{ color: "var(--fg)" }}>absentes de l&apos;index marocain et confirmées
+          par une homologation australienne</strong> : le cumul des deux écarte le bruit du
+          registre, qui couvre aussi les emballages et les cosmétiques.
+        </p>
+        <div className="bloc">
+          <TableUsines usines={PISTES_EPA} />
+          <ReserveEpa attribution={STATS_EPA.attribution} />
         </div>
       </div>
 
