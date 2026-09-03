@@ -12,6 +12,9 @@ import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
 import { STATS_BKU, USINES_TURQUES } from "@/lib/bku";
 import { STATS_EPA, USINES_SOURCING, usinesDe } from "@/lib/epa";
 import { EnteteUsines, ReserveEpa, SiteProduction, TableUsines } from "@/components/UsinesEpa";
+import { CENSUS_PAYS, fichePays } from "@/lib/pays";
+import { BlocPays } from "@/components/FichePays";
+import { PRODUCTEURS_RUSSES, STATS_RUSSIE } from "@/lib/russie";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -87,6 +90,11 @@ export default async function FournisseursPage({
   const CHINE = USINES_CHINE.filter((u) => !cherche || contient(u.nom));
   const TURQUIE = USINES_TURQUES.filter((u) => !cherche || contient(u.nom ?? ""));
   const PISTES = PISTES_NOUVELLES.filter((p) => !cherche || contient(p.nom));
+  // Le nom cyrillique et sa translittération sont tous deux cherchables : on ne
+  // peut pas demander de taper « Щёлково » sur un clavier latin.
+  const RUSSIE = PRODUCTEURS_RUSSES.filter(
+    (s) => !cherche || contient(s.nom) || contient(s.latin)
+  );
 
   return (
     <>
@@ -155,12 +163,16 @@ export default async function FournisseursPage({
       </div>
 
       <div className="card" style={{ padding: "12px 15px", marginBottom: 14 }}>
-        <div className="eyebrow" style={{ marginBottom: 8 }}>Pays</div>
+        {/* ⚠️ Ces compteurs portent sur TOUS les registres, pas sur le seul
+            index ONSSA. Auparavant ils ne comptaient que les fournisseurs
+            marocains : l'Inde affichait 24 alors que l'outil en connaissait
+            plus de trois cents, assises dans le registre de l'EPA. */}
+        <div className="eyebrow" style={{ marginBottom: 8 }}>Pays — tous registres</div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
           <Chip href={q({ pays: undefined })} actif={!sp.pays}>Tous</Chip>
-          {so.parPays.map(([p, n]) => (
-            <Chip key={p} href={q({ pays: p })} actif={sp.pays === p}>
-              {p} <span className="mono" style={{ opacity: 0.65 }}>{n}</span>
+          {CENSUS_PAYS.slice(0, 22).map((c) => (
+            <Chip key={c.pays} href={q({ pays: c.pays })} actif={sp.pays === c.pays}>
+              {c.pays} <span className="mono" style={{ opacity: 0.65 }}>{c.total}</span>
             </Chip>
           ))}
         </div>
@@ -173,6 +185,12 @@ export default async function FournisseursPage({
         </div>
       </div>
 
+
+      {sp.pays && (
+        <div style={{ marginBottom: 16 }}>
+          <BlocPays fiche={fichePays(sp.pays)} />
+        </div>
+      )}
 
       <div className="grille">
         <div className="bloc">
@@ -471,7 +489,56 @@ export default async function FournisseursPage({
         </div>
       </div>
 
-
+      <div className="section">
+        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Factory size={14} color="var(--info)" /> Producteurs russes — catalogue d&apos;État
+        </span>
+        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
+          Sociétés immatriculées en Russie détenant au moins une homologation au catalogue
+          fédéral. L&apos;outil n&apos;en connaissait que deux par l&apos;index marocain.
+        </p>
+        <div className="bloc">
+          <div className="titre">
+            <span>Détenteurs russes</span>
+            <span className="mono">{RUSSIE.length}</span>
+          </div>
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Société</th>
+                <th>Translittération</th>
+                <th style={{ textAlign: "right" }}>Homologations</th>
+                <th>Produits homologués</th>
+              </tr>
+            </thead>
+            <tbody>
+              {RUSSIE.slice(0, 25).map((s) => (
+                <tr key={s.cle}>
+                  <td style={{ fontWeight: 500 }}>{s.nom}</td>
+                  <td className="mono" style={{ fontSize: 11.5, color: "var(--muted)" }}>
+                    {s.latin}
+                  </td>
+                  <td
+                    className="mono"
+                    style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}
+                  >
+                    {s.nbHomologations}
+                  </td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
+                    {s.produits.slice(0, 2).join(" · ").slice(0, 110) || "—"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
+            {STATS_RUSSIE.attribution}, via le miroir du {STATS_RUSSIE.miroir} — le site fédéral ne
+            répond pas depuis l&apos;étranger. Les raisons sociales sont en cyrillique : la
+            translittération sert à chercher, elle ne vaut pas identification. Édition datée —
+            elle sert à identifier des sociétés, pas à établir un statut réglementaire courant.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

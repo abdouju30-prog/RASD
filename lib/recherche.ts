@@ -2,6 +2,7 @@ import { DETENTEURS, FOURNISSEURS, MATIERES, PRODUITS } from "./data";
 import { ANNUAIRE_PISTES } from "./pistes";
 import { USINES_CHINE } from "./icama";
 import { USINES_TURQUES } from "./bku";
+import { PRODUCTEURS_RUSSES } from "./russie";
 import { USINES_SOURCING } from "./epa";
 import { ORGANISMES_BPE, SOCIETES_AGREEES, PRODUITS_EXPIRES } from "./onssa-eservice";
 
@@ -31,6 +32,7 @@ export type TypeEntree =
   | "piste"
   | "usine_chine"
   | "usine_turquie"
+  | "producteur_russe"
   | "usine_epa"
   | "societe_agreee"
   | "organisme_bpe"
@@ -56,6 +58,7 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   piste: "Piste australienne",
   usine_chine: "Usine chinoise",
   usine_turquie: "Usine turque",
+  producteur_russe: "Producteur russe",
   usine_epa: "Usine (registre EPA)",
   societe_agreee: "Société agréée ONSSA",
   organisme_bpe: "Organisme d'essai BPE",
@@ -77,6 +80,7 @@ const RANG: Record<TypeEntree, number> = {
   usine_epa: 6,
   usine_chine: 7,
   usine_turquie: 7,
+  producteur_russe: 7,
   organisme_bpe: 8,
   produit_expire: 9,
 };
@@ -181,6 +185,22 @@ function construire(): Indexee[] {
       type: "usine_turquie",
       href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
       poids: u.matieresMaroc.length,
+    });
+  }
+
+  // ⚠️ INDEXÉS SUR LA TRANSLITTÉRATION, pas sur le nom d'origine. La
+  // normalisation de cette recherche ne garde que [a-z0-9] : un nom cyrillique
+  // s'y réduirait à la chaîne vide et la société serait introuvable. Le
+  // libellé porte donc le latin, et le cyrillique passe en détail — visible,
+  // mais pas ce sur quoi on tape.
+  for (const s of PRODUCTEURS_RUSSES) {
+    out.push({
+      id: `ru-${s.cle}`,
+      libelle: s.latin,
+      detail: `Russie · ${s.nom} · ${s.nbHomologations} homologation(s)`,
+      type: "producteur_russe",
+      href: `/fournisseurs?pays=${encodeURIComponent("Russie")}`,
+      poids: s.nbHomologations,
     });
   }
 
