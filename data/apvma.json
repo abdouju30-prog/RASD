@@ -5,7 +5,7 @@
   "licence": "Creative Commons Attribution 3.0 Australia",
   "attribution": "APVMA PUBCRIS — mise à jour du 2026-09-02",
   "majDonnees": "2026-09-02",
-  "genere": "2026-09-02T14:02:50",
+  "genere": "2026-09-03T10:11:01",
   "nbConstituants": 2609,
   "nbProduitsAgricoles": 9398,
   "avertissement": "L'APVMA ne gouverne pas l'ONSSA : ce statut sert à recouper une décision européenne hors du référentiel européen, pas à prédire une décision marocaine. PUBCRIS ne conserve que l'état courant, sans historique de retrait : « absente » signifie « aucun produit agricole enregistré aujourd'hui », ce qui peut vouloir dire retirée AUSSI BIEN QUE jamais homologuée. Seul « autorisée » est une information solide."
@@ -12439,10 +12439,10 @@
    "nom": "BRODIFACOUM",
    "famille": "Chromenones",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 31,
-   "nbProduitsEchus": 18,
+   "nbProduitsAgricoles": 28,
+   "nbProduitsEchus": 21,
    "matiereActiveApprouvee": true,
-   "derniereExpiration": "2026-08-13",
+   "derniereExpiration": "2026-09-02",
    "societes": [
     {
      "nom": "PELGAR INTERNATIONAL (AUS) PTY LTD",
@@ -12508,15 +12508,6 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAINBRIDGE PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 2
-    },
-    {
      "nom": "RENTOKIL INITIAL PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -12532,15 +12523,6 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "IMTRADE AUSTRALIA PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
      "nbProduits": 1
     }
    ]
@@ -12691,10 +12673,10 @@
    "nom": "BROMADIOLONE",
    "famille": "Chromenones",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 17,
-   "nbProduitsEchus": 1,
+   "nbProduitsAgricoles": 13,
+   "nbProduitsEchus": 5,
    "matiereActiveApprouvee": true,
-   "derniereExpiration": "2026-05-25",
+   "derniereExpiration": "2026-09-02",
    "societes": [
     {
      "nom": "LIPHATECH S.A.S.",
@@ -12724,24 +12706,6 @@
      "nbProduits": 3
     },
     {
-     "nom": "DE SANGOSSE AUSTRALIA PTY. LTD.",
-     "pays": "France",
-     "paysFiable": true,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 2
-    },
-    {
-     "nom": "PCT HOLDINGS PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 2
-    },
-    {
      "nom": "RENTOKIL INITIAL PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -12751,12 +12715,12 @@
      "nbProduits": 1
     },
     {
-     "nom": "ANIMAL CONTROL TECHNOLOGIES (AUSTRALIA) PTY LTD",
+     "nom": "PCT HOLDINGS PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
      "multinationale": false,
-     "filialeLocale": true,
+     "filialeLocale": false,
      "nbProduits": 1
     }
    ]
