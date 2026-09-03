@@ -248,6 +248,14 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
             <Link href={`/dossiers/generer/${c.id}`} className="link-accent" style={{ fontSize: 14 }}>
               Générer le dossier →
             </Link>
+            <div style={{ borderTop: "1px solid var(--border)", margin: "14px 0 12px" }} />
+            <div style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.6, marginBottom: 10 }}>
+              Avant le dossier, il faut un fournisseur qualifié. La fiche de consultation assemble
+              la liste courte des quatre registres et le questionnaire technique à lui envoyer.
+            </div>
+            <Link href={`/consultation/${c.id}`} className="link-accent" style={{ fontSize: 14 }}>
+              Préparer la consultation →
+            </Link>
           </div>
 
           {(() => {
