@@ -16,6 +16,8 @@ import {
   usagesTotal,
 } from "@/lib/logic";
 import { COUVERTURE } from "@/lib/reglementaire";
+import { alternatives } from "@/lib/substitution";
+import { AlternativesCompactes } from "@/components/Alternatives";
 
 export default async function RadarPage() {
   const d = await detenteurActuel();
@@ -158,23 +160,24 @@ export default async function RadarPage() {
           }}
         >
           {top.map((a) => (
-            <Link
-              key={a.id}
-              href={a.matiere ? `/matieres/${a.matiere.id}` : "/veille"}
-              className="card"
-              style={{ padding: "12px 14px", display: "block" }}
-            >
+            // La carte n'est plus un lien : les remplaçants en contiennent, et
+            // un lien imbriqué dans un lien n'est pas du HTML valide.
+            <div key={a.id} className="card" style={{ padding: "12px 14px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
-                <span style={{ fontWeight: 600, fontSize: 13.5 }}>{a.titre}</span>
+                <Link
+                  href={a.matiere ? `/matieres/${a.matiere.id}` : "/veille"}
+                  className="link-accent"
+                  style={{ fontWeight: 600, fontSize: 13.5 }}
+                >
+                  {a.titre}
+                </Link>
                 <RiskBadge niveau={a.niveau} />
               </div>
               <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 6 }}>
                 {a.produits.length} produit(s) · {a.usages} usage(s)
               </div>
-              <div className="link-accent" style={{ fontSize: 12.5, marginTop: 8 }}>
-                {a.action}
-              </div>
-            </Link>
+              {a.matiere && <AlternativesCompactes alts={alternatives(a.matiere.id, 3)} />}
+            </div>
           ))}
         </div>
       </div>

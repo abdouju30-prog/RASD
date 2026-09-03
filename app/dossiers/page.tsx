@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { RefreshCw, Replace, Sparkles, ArrowRight } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
+import { AlternativesCompactes } from "@/components/Alternatives";
+import { alternatives } from "@/lib/substitution";
 import { StatCard } from "@/components/StatCard";
 import { produitsDe } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
@@ -105,6 +107,7 @@ export default async function DossiersPage() {
               ma.fiche?.statutUE.replace(/_/g, " ") ?? "statut inconnu"
             }`}
             droite={risque ? <RiskBadge niveau={risque.niveau} score={risque.score} /> : null}
+            dessous={<AlternativesCompactes alts={alternatives(ma.id)} />}
           />
         ))}
       </File>
@@ -178,35 +181,34 @@ function File({
   );
 }
 
+// La carte n'est plus elle-même un lien : le bloc « remplacer par » en contient,
+// et un lien imbriqué dans un lien n'est pas du HTML valide. C'est le titre qui
+// porte la destination.
 function Ligne({
   href,
   titre,
   sous,
   droite,
+  dessous,
 }: {
   href: string;
   titre: string;
   sous: string;
   droite: React.ReactNode;
+  dessous?: React.ReactNode;
 }) {
   return (
-    <Link
-      href={href}
-      className="card"
-      style={{
-        padding: "13px 15px",
-        background: "var(--card-2)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: 16,
-      }}
-    >
-      <div style={{ minWidth: 0 }}>
-        <div style={{ fontWeight: 600, fontSize: 14 }}>{titre}</div>
-        <div style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 4 }}>{sous}</div>
+    <div className="card" style={{ padding: "13px 15px", background: "var(--card-2)" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
+        <div style={{ minWidth: 0 }}>
+          <Link href={href} className="link-accent" style={{ fontWeight: 600, fontSize: 14 }}>
+            {titre}
+          </Link>
+          <div style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 4 }}>{sous}</div>
+        </div>
+        <div style={{ flexShrink: 0 }}>{droite}</div>
       </div>
-      <div style={{ flexShrink: 0 }}>{droite}</div>
-    </Link>
+      {dessous}
+    </div>
   );
 }

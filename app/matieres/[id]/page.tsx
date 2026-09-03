@@ -6,7 +6,8 @@ import { StatusPill } from "@/components/StatusPill";
 import { getMatiere } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { detailRisque, etatAMM, exposition, fmtDate } from "@/lib/logic";
-import { alternativesPour } from "@/lib/dossier";
+import { alternatives } from "@/lib/substitution";
+import { TableAlternatives } from "@/components/Alternatives";
 import { candidat } from "@/lib/sourcing";
 import { lectureCroisee, STATS_APVMA } from "@/lib/apvma";
 
@@ -22,7 +23,7 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
 
   const risque = detailRisque(ma);
   const expo = exposition(ma, d.id);
-  const alts = alternativesPour(ma.id);
+  const alts = alternatives(ma.id);
   const c = candidat(ma);
   const f = ma.fiche;
   const au = lectureCroisee(ma.nom, ma.anses?.statut);
@@ -137,33 +138,19 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
             </table>
           </div>
 
-          {alts.length > 0 && (
-            <div className="card" style={{ padding: "18px 20px" }}>
-              <div className="h-title">Alternatives homologables</div>
-              <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 12px" }}>
-                Même catégorie, cibles communes, risque réglementaire plus faible — toutes déjà
-                homologuées au Maroc.
-              </p>
-              <div style={{ display: "grid", gap: 10 }}>
-                {alts.map((a) => (
-                  <Link
-                    key={a.id}
-                    href={`/sourcing/${a.id}`}
-                    className="card"
-                    style={{ padding: "12px 14px", background: "var(--card-2)", display: "block" }}
-                  >
-                    <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
-                      <span style={{ fontWeight: 600, fontSize: 13.5 }}>{a.nom}</span>
-                      {a.risque && <RiskBadge niveau={a.risque} />}
-                    </div>
-                    <div style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 6 }}>
-                      {a.rationale}
-                    </div>
-                  </Link>
-                ))}
+          <div className="card" style={{ padding: "18px 20px" }}>
+            <div className="h-title">Par quoi la remplacer — {alts.length}</div>
+            {alts.length > 0 ? (
+              <div style={{ marginTop: 12 }}>
+                <TableAlternatives alts={alts} />
               </div>
-            </div>
-          )}
+            ) : (
+              <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "9px 0 0", lineHeight: 1.6 }}>
+                Aucune matière active de la même catégorie ne couvre une cible, un usage ou une
+                culture en commun avec un risque réglementaire plus faible.
+              </p>
+            )}
+          </div>
         </div>
 
         <div style={{ display: "grid", gap: 16 }}>

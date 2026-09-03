@@ -366,25 +366,5 @@ export function parSection(d: DossierGenere) {
 
 export const NB_LIGNES_CHECKLIST = TOUS_ITEMS.length;
 
-export function alternativesPour(maId: string, limite = 5) {
-  const ma = getMatiere(maId);
-  if (!ma) return [];
-  const cibles = new Set(ma.cibles);
-  return MATIERES.filter((m) => m.id !== ma.id && m.categorie === ma.categorie)
-    .map((m) => {
-      const communes = m.cibles.filter((c) => cibles.has(c)).length;
-      const r = detailRisque(m);
-      return { m, communes, r };
-    })
-    .filter((x) => x.communes >= 2 && (x.r === null || x.r.score < 40))
-    .sort((a, b) => b.communes - a.communes)
-    .slice(0, limite)
-    .map((x) => ({
-      id: x.m.id,
-      nom: x.m.nom,
-      molecule: x.m.molecule,
-      categorie: x.m.categorie,
-      risque: x.r?.niveau ?? null,
-      rationale: `${x.communes} cibles en commun · ${x.m.nbHomologations} AMM au Maroc · ${x.m.detenteurs.length} détenteur(s)`,
-    }));
-}
+// La recherche de remplaçants vit dans lib/substitution.ts : elle sert au
+// radar, au plan de dossiers et à la fiche d'une matière, pas seulement ici.
