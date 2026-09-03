@@ -48,13 +48,20 @@ function Chip({ href, actif, children }: { href: string; actif: boolean; childre
 export default async function FournisseursPage({
   searchParams,
 }: {
-  searchParams: Promise<{ pays?: string; profil?: string }>;
+  searchParams: Promise<{ pays?: string; profil?: string; q?: string }>;
 }) {
   const sp = await searchParams;
   const so = statsSourcing();
   const parMa = matieresPar();
 
+  // Le « q » vient de la recherche transverse : elle amène ici sur un nom
+  // précis, il faut donc que la liste s'y réduise plutôt que de laisser
+  // retrouver la ligne à la main.
+  const cherche = (sp.q ?? "").trim().toLowerCase();
+  const contient = (x: string) => x.toLowerCase().includes(cherche);
+
   let list: Fournisseur[] = [...FOURNISSEURS];
+  if (cherche) list = list.filter((f) => contient(f.nom));
   if (sp.pays) list = list.filter((f) => f.pays === sp.pays);
   if (sp.profil === "generique") list = list.filter((f) => f.coutFaible);
   if (sp.profil === "multinationale") list = list.filter((f) => f.multinationale);
@@ -63,7 +70,7 @@ export default async function FournisseursPage({
 
   const q = (o: Record<string, string | undefined>) => {
     const p = new URLSearchParams();
-    for (const [k, v] of Object.entries({ pays: sp.pays, profil: sp.profil, ...o })) if (v) p.set(k, v);
+    for (const [k, v] of Object.entries({ pays: sp.pays, profil: sp.profil, q: sp.q, ...o })) if (v) p.set(k, v);
     const s = p.toString();
     return s ? `/fournisseurs?${s}` : "/fournisseurs";
   };
@@ -73,7 +80,11 @@ export default async function FournisseursPage({
   // Le croisement le plus sélectif de l'outil : une usine localisée, un
   // régulateur exigeant qui l'a homologuée, et personne au Maroc qui la fasse
   // déjà entrer.
-  const PISTES_EPA = USINES_SOURCING.filter((u) => !u.lienOnssa && u.corroboreeApvma);
+  const PISTES_EPA = USINES_SOURCING.filter(
+    (u) => !u.lienOnssa && u.corroboreeApvma && (!cherche || contient(u.nom))
+  );
+  const CHINE = USINES_CHINE.filter((u) => !cherche || contient(u.nom));
+  const PISTES = PISTES_NOUVELLES.filter((p) => !cherche || contient(p.nom));
 
   return (
     <>
@@ -83,6 +94,30 @@ export default async function FournisseursPage({
         Les {FOURNISSEURS.length} sociétés de l&apos;index. Un fournisseur ne se choisit pas que sur
         le pays : il doit détenir les études qui remplissent l&apos;Annexe 3-B.
       </p>
+
+      {cherche && (
+        <div
+          className="card"
+          style={{
+            padding: "10px 15px",
+            marginBottom: 12,
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            fontSize: 13,
+            borderColor: "color-mix(in srgb, var(--accent) 38%, transparent)",
+            background: "var(--accent-fond)",
+          }}
+        >
+          <span style={{ color: "var(--muted)" }}>
+            Filtré sur <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> — {list.length}{" "}
+            fournisseur(s), {PISTES.length} piste(s), {CHINE.length} usine(s) chinoise(s).
+          </span>
+          <Link href={q({ q: undefined })} className="link-accent" style={{ marginLeft: "auto" }}>
+            Tout afficher
+          </Link>
+        </div>
+      )}
 
       <div className="strip" style={{ marginBottom: 14 }}>
         <div>
@@ -279,7 +314,7 @@ export default async function FournisseursPage({
         <div className="bloc" style={{ marginTop: 14 }}>
           <div className="titre">
             <span>Fabricants à qualifier</span>
-            <span className="mono">{PISTES_NOUVELLES.length}</span>
+            <span className="mono">{PISTES.length}</span>
           </div>
           <table className="tbl">
             <thead>
@@ -293,7 +328,7 @@ export default async function FournisseursPage({
               </tr>
             </thead>
             <tbody>
-              {PISTES_NOUVELLES.map((p) => (
+              {PISTES.map((p) => (
                 <tr key={p.id}>
                   <td style={{ fontWeight: 500 }}>{p.nom}</td>
                   <td style={{ color: "var(--muted)" }}>
@@ -386,7 +421,7 @@ export default async function FournisseursPage({
         <div className="bloc">
           <div className="titre">
             <span>Usines confirmées</span>
-            <span className="mono">{USINES_CHINE.length}</span>
+            <span className="mono">{CHINE.length}</span>
           </div>
           <table className="tbl">
             <thead>
@@ -399,7 +434,7 @@ export default async function FournisseursPage({
               </tr>
             </thead>
             <tbody>
-              {USINES_CHINE.slice(0, 25).map((u) => (
+              {CHINE.slice(0, 25).map((u) => (
                 <tr key={u.nom}>
                   <td style={{ fontWeight: 500 }}>{u.nom}</td>
                   <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>

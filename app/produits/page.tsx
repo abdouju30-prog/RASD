@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { produitsDe, META } from "@/lib/data";
+import { PRODUITS, produitsDe, META } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { CA_DISPONIBLE, etatAMM, fmtDate, fmtMAD, usagesTotal } from "@/lib/logic";
 import { StatCard } from "@/components/StatCard";
@@ -12,10 +12,28 @@ const COULEUR = {
   inconnue: "var(--muted)",
 } as const;
 
-export default async function ProduitsPage() {
+export default async function ProduitsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const sp = await searchParams;
   const d = await detenteurActuel();
   const portefeuille = produitsDe(d.id);
-  const list = [...portefeuille].sort((a, b) =>
+
+  // Le « q » vient de la recherche transverse. L'écran est celui du détenteur
+  // courant : un produit d'une autre société n'y figure pas, et il vaut mieux
+  // le dire que de laisser croire à une absence.
+  const cherche = (sp.q ?? "").trim().toLowerCase();
+  const trouveAilleurs =
+    cherche && !portefeuille.some((p) => p.nomCommercial.toLowerCase().includes(cherche))
+      ? PRODUITS.find((p) => p.nomCommercial.toLowerCase().includes(cherche)) ?? null
+      : null;
+
+  const filtre = cherche
+    ? portefeuille.filter((p) => p.nomCommercial.toLowerCase().includes(cherche))
+    : portefeuille;
+  const list = [...filtre].sort((a, b) =>
     (a.expiration ?? "9999").localeCompare(b.expiration ?? "9999")
   );
   const expirees = list.filter((p) => etatAMM(p).etat === "expirée").length;
@@ -23,6 +41,47 @@ export default async function ProduitsPage() {
 
   return (
     <>
+      {cherche && (
+        <div
+          className="card"
+          style={{
+            padding: "10px 15px",
+            marginBottom: 14,
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            fontSize: 13,
+            borderColor: trouveAilleurs
+              ? "color-mix(in srgb, var(--mod) 40%, transparent)"
+              : "color-mix(in srgb, var(--accent) 38%, transparent)",
+            background: trouveAilleurs
+              ? "color-mix(in srgb, var(--mod) 8%, transparent)"
+              : "var(--accent-fond)",
+          }}
+        >
+          <span style={{ color: "var(--muted)", lineHeight: 1.55 }}>
+            {trouveAilleurs ? (
+              <>
+                <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> n&apos;est pas au
+                portefeuille de {d.nom} — ce produit appartient à{" "}
+                <strong style={{ color: "var(--fg)" }}>{trouveAilleurs.detenteur}</strong>.{" "}
+                <Link href={`/detenteur/${trouveAilleurs.detenteurId}`} className="link-accent">
+                  Basculer sur cette société
+                </Link>
+              </>
+            ) : (
+              <>
+                Filtré sur <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> —{" "}
+                {list.length} produit(s).
+              </>
+            )}
+          </span>
+          <Link href="/produits" className="link-accent" style={{ marginLeft: "auto", whiteSpace: "nowrap" }}>
+            Tout afficher
+          </Link>
+        </div>
+      )}
+
       <div className="eyebrow">Portefeuille · {d.nom}</div>
       <h1 style={{ fontSize: 30, fontWeight: 700, margin: "10px 0 8px" }}>
         {portefeuille.length} produits homologués

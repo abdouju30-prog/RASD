@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Recherche } from "./Recherche";
 
 /**
  * Ruban de stations — la signature de la direction retenue.
@@ -60,6 +61,7 @@ export function ChaineNav({
           Homologa
         </Link>
         {selecteur}
+        <Recherche />
         <span className="ctx">{contexte}</span>
         <div className="droite">
           <Link
