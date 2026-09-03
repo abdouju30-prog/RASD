@@ -1,6 +1,7 @@
 import { DETENTEURS, FOURNISSEURS, MATIERES, PRODUITS } from "./data";
 import { ANNUAIRE_PISTES } from "./pistes";
 import { USINES_CHINE } from "./icama";
+import { USINES_TURQUES } from "./bku";
 import { USINES_SOURCING } from "./epa";
 import { ORGANISMES_BPE, SOCIETES_AGREEES, PRODUITS_EXPIRES } from "./onssa-eservice";
 
@@ -29,6 +30,7 @@ export type TypeEntree =
   | "detenteur"
   | "piste"
   | "usine_chine"
+  | "usine_turquie"
   | "usine_epa"
   | "societe_agreee"
   | "organisme_bpe"
@@ -53,6 +55,7 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   detenteur: "Détenteur",
   piste: "Piste australienne",
   usine_chine: "Usine chinoise",
+  usine_turquie: "Usine turque",
   usine_epa: "Usine (registre EPA)",
   societe_agreee: "Société agréée ONSSA",
   organisme_bpe: "Organisme d'essai BPE",
@@ -73,6 +76,7 @@ const RANG: Record<TypeEntree, number> = {
   piste: 5,
   usine_epa: 6,
   usine_chine: 7,
+  usine_turquie: 7,
   organisme_bpe: 8,
   produit_expire: 9,
 };
@@ -165,6 +169,18 @@ function construire(): Indexee[] {
       type: "usine_chine",
       href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
       poids: u.matieres.length,
+    });
+  }
+
+  for (const u of USINES_TURQUES) {
+    if (!u.nom) continue;
+    out.push({
+      id: `tr-${u.id}`,
+      libelle: u.nom,
+      detail: `Turquie · ${u.matieresMaroc.length} M.A. de l'index · ${u.nbImal} İMAL`,
+      type: "usine_turquie",
+      href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
+      poids: u.matieresMaroc.length,
     });
   }
 

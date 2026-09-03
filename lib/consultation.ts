@@ -4,6 +4,7 @@ import { TOUS_ITEMS, type ItemLocalise } from "./checklist-onssa";
 import { PACKS } from "./packs-fournisseur";
 import { pistesPour, type Piste } from "./pistes";
 import { fabricantsChinois, usines as usinesChinoises, type SocieteChinoise } from "./icama";
+import { fabricantsTurcs, type SocieteTurque } from "./bku";
 import { usinesDe, type UsinesSociete } from "./epa";
 import { organismesPour, type EssaisPourCulture } from "./onssa-eservice";
 import type { CandidatSourcing, Fournisseur, MatiereActive } from "./types";
@@ -64,7 +65,7 @@ const ROUTES: Record<Route, Etape> = {
 
 // ── Liste courte, les quatre couches ────────────────────────────────────────
 
-export type Origine = "onssa" | "australie" | "chine" | "usine";
+export type Origine = "onssa" | "australie" | "chine" | "turquie" | "usine";
 
 export interface Candidat {
   id: string;
@@ -115,6 +116,19 @@ function depuisChine(s: SocieteChinoise): Candidat {
     motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · licence ${s.licenceProduction}`,
     // Les raisons sociales chinoises ne se rapprochent pas de l'alphabet latin.
     usines: null,
+    meToo: false,
+  };
+}
+
+function depuisTurquie(s: SocieteTurque): Candidat {
+  return {
+    id: `tr-${s.id}`,
+    nom: s.nom ?? "",
+    origine: "turquie",
+    pays: "Turquie",
+    motif: `${s.nbImal} homologation(s) fabriquée(s) en Turquie · ${s.matieresImal.length} M.A.`,
+    // Raisons sociales en alphabet latin : le registre EPA est interrogeable.
+    usines: usinesDe(s.nom ?? ""),
     meToo: false,
   };
 }
@@ -232,6 +246,16 @@ export function consultation(maId: string): Consultation | null {
     autres.push(depuisAustralie(p));
   }
 
+  const tr = fabricantsTurcs(ma.nom);
+  if (tr) {
+    for (const s of tr.fabricants.slice(0, 8)) {
+      const n = (s.nom ?? "").toUpperCase();
+      if (!n || vus.has(n)) continue;
+      vus.add(n);
+      autres.push(depuisTurquie(s));
+    }
+  }
+
   const cn = fabricantsChinois(ma.nom);
   if (cn) {
     for (const s of usinesChinoises(cn).slice(0, 12)) {
@@ -257,5 +281,6 @@ export const LIBELLE_ORIGINE: Record<Origine, string> = {
   onssa: "index ONSSA",
   australie: "registre australien",
   chine: "registre chinois",
+  turquie: "registre turc",
   usine: "registre EPA",
 };

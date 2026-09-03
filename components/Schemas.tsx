@@ -237,103 +237,48 @@ export function SchemaSourcing() {
 }
 
 /**
- * Les trois gisements de fournisseurs, et ce que chacun ouvre.
+ * D'où viennent les fournisseurs, et ce que chaque gisement ouvre.
  *
- * Le point à faire passer : seul l'index marocain ouvre la voie « me-too ».
- * Les deux registres étrangers élargissent le choix de fabricants, ils
- * n'abrègent aucun délai.
+ * Le point à faire passer, et il est contre-intuitif : quatre registres
+ * étrangers élargissent le choix de fabricants, mais un seul gisement — l'index
+ * marocain — raccourcit le dossier. Les nommer un par un noierait ce fait ;
+ * ils sont donc réunis dans un seul bloc.
  */
 export function SchemaGisements() {
-  const rangs = [
-    {
-      y: 12,
-      titre: "Index ONSSA",
-      s1: "fournisseurs déjà au Maroc",
-      s2: "dossier technique déjà accepté",
-      c: T.acc,
-      fond: "var(--accent-fond)",
-      tirets: undefined as string | undefined,
-    },
-    {
-      y: 92,
-      titre: "Registre APVMA",
-      s1: "détenteurs australiens",
-      s2: "fabricants inconnus au Maroc",
-      c: T.info,
-      fond: "none",
-      tirets: "4 3",
-    },
-    {
-      y: 172,
-      titre: "Registre ICAMA",
-      s1: "usines chinoises",
-      s2: "matière active technique",
-      c: T.info,
-      fond: "none",
-      tirets: "4 3",
-    },
-  ];
-
+  const etrangers = ["APVMA · Australie", "ICAMA · Chine", "BKÜ · Turquie", "EPA · établissements"];
   return (
-    <svg viewBox="0 0 640 268" width="100%" role="img" aria-label="Index ONSSA, registre australien et registre chinois : trois gisements de fournisseurs">
+    <svg viewBox="0 0 640 214" width="100%" role="img" aria-label="Index marocain et registres étrangers : ce que chaque gisement ouvre">
       <defs>
         <Fleche id="g-acc" couleur={T.acc} />
         <Fleche id="g-info" couleur={T.info} />
       </defs>
 
-      {rangs.map((r) => (
-        <g key={r.titre}>
-          <rect
-            x="14"
-            y={r.y}
-            width="206"
-            height="60"
-            rx="8"
-            fill={r.fond}
-            stroke={r.c}
-            strokeWidth="1.5"
-            strokeDasharray={r.tirets}
-          />
-          <text x="117" y={r.y + 23} textAnchor="middle" fontSize="12.5" fontWeight="700" fill={r.c}>
-            {r.titre}
-          </text>
-          <text x="117" y={r.y + 39} textAnchor="middle" fontSize="10.5" fill={r.c}>
-            {r.s1}
-          </text>
-          <text x="117" y={r.y + 53} textAnchor="middle" fontSize="10" fill={T.mid}>
-            {r.s2}
-          </text>
-        </g>
+      <rect x="14" y="14" width="212" height="56" rx="8" fill="var(--accent-fond)" stroke={T.acc} strokeWidth="1.5" />
+      <text x="120" y="37" textAnchor="middle" fontSize="13" fontWeight="700" fill={T.acc}>Index ONSSA</text>
+      <text x="120" y="55" textAnchor="middle" fontSize="10.5" fill={T.acc}>fournisseurs déjà au Maroc</text>
+
+      <rect x="14" y="98" width="212" height="102" rx="8" fill="none" stroke={T.info} strokeWidth="1.5" strokeDasharray="4 3" />
+      <text x="120" y="119" textAnchor="middle" fontSize="13" fontWeight="700" fill={T.info}>
+        Registres étrangers
+      </text>
+      {etrangers.map((n, i) => (
+        <text key={n} x="120" y={137 + i * 15} textAnchor="middle" fontSize="10" fill={T.mid}>
+          {n}
+        </text>
       ))}
 
-      <line x1="224" y1="42" x2="368" y2="42" stroke={T.acc} strokeWidth="1.5" markerEnd="url(#g-acc)" />
-      <path
-        d="M224,122 H300 V172 H368"
-        fill="none"
-        stroke={T.info}
-        strokeWidth="1.5"
-        strokeDasharray="4 3"
-        markerEnd="url(#g-info)"
-      />
-      <path
-        d="M224,202 H300 V172 H368"
-        fill="none"
-        stroke={T.info}
-        strokeWidth="1.5"
-        strokeDasharray="4 3"
-      />
+      <line x1="230" y1="42" x2="368" y2="42" stroke={T.acc} strokeWidth="1.5" markerEnd="url(#g-acc)" />
+      <line x1="230" y1="149" x2="368" y2="149" stroke={T.info} strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#g-info)" />
 
-      <rect x="374" y="12" width="252" height="60" rx="8" fill={T.carte} stroke={T.fg} strokeWidth="1.5" />
-      <text x="500" y="35" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.fg}>Voie me-too</text>
-      <text x="500" y="51" textAnchor="middle" fontSize="10.5" fill={T.mid}>dossier par référence</text>
-      <text x="500" y="65" textAnchor="middle" fontSize="10" fill={T.pale}>délai réduit</text>
+      <rect x="374" y="14" width="252" height="56" rx="8" fill={T.carte} stroke={T.fg} strokeWidth="1.5" />
+      <text x="500" y="37" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.fg}>Voie me-too</text>
+      <text x="500" y="55" textAnchor="middle" fontSize="10.5" fill={T.mid}>dossier par référence, délai réduit</text>
 
-      <rect x="374" y="142" width="252" height="60" rx="8" fill="none" stroke={T.bord} />
-      <text x="500" y="165" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.mid}>Dossier complet</text>
-      <text x="500" y="181" textAnchor="middle" fontSize="10.5" fill={T.mid}>études à fournir intégralement</text>
-      <text x="500" y="195" textAnchor="middle" fontSize="10" fill={T.pale}>plus de choix, pas moins de travail</text>
+      <rect x="374" y="121" width="252" height="56" rx="8" fill="none" stroke={T.bord} />
+      <text x="500" y="144" textAnchor="middle" fontSize="12.5" fontWeight="700" fill={T.mid}>Dossier complet</text>
+      <text x="500" y="162" textAnchor="middle" fontSize="10.5" fill={T.mid}>plus de choix, pas moins de travail</text>
 
-      <text x="320" y="250" textAnchor="middle" fontSize="10" fill={T.pale}>
+      <text x="320" y="203" textAnchor="middle" fontSize="10" fill={T.pale}>
         aucune homologation étrangère ne vaut de droit devant l&rsquo;ONSSA
       </text>
     </svg>

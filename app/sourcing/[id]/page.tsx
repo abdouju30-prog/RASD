@@ -10,6 +10,8 @@ import { STATS_PISTES, pistesPour } from "@/lib/pistes";
 import { ReservePistes, TablePistes } from "@/components/PistesFournisseur";
 import { STATS_ICAMA, fabricantsChinois } from "@/lib/icama";
 import { FabricantsChinois } from "@/components/FabricantsChinois";
+import { STATS_BKU, fabricantsTurcs } from "@/lib/bku";
+import { FabricantsTurcs } from "@/components/FabricantsTurcs";
 
 export async function generateStaticParams() {
   return candidats({ maxDetenteurs: 8 })
@@ -25,6 +27,7 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
 
   const pistes = pistesPour(ma.nom);
   const chine = fabricantsChinois(ma.nom);
+  const turquie = fabricantsTurcs(ma.nom);
 
   return (
     <>
@@ -200,6 +203,8 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
           </div>
 
           <FabricantsChinois m={chine} attribution={STATS_ICAMA.attribution} />
+
+          <FabricantsTurcs d={turquie} attribution={STATS_BKU.attribution} />
 
           <div className="card" style={{ padding: "18px 20px" }}>
             <div className="h-title">Usages homologués au Maroc — {c.nbUsages}</div>

@@ -9,6 +9,7 @@ import { STATS_APVMA, fraicheurApvma } from "@/lib/apvma";
 import { STATS_PISTES } from "@/lib/pistes";
 import { STATS_ICAMA } from "@/lib/icama";
 import { STATS_EPA } from "@/lib/epa";
+import { STATS_BKU } from "@/lib/bku";
 import { RefreshCw } from "lucide-react";
 import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
@@ -102,7 +103,7 @@ export default function SourcesPage() {
       <div className="fil">Compartiments</div>
       <h1>D&apos;où vient chaque chiffre</h1>
       <p className="chapeau">
-        Sept compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
+        Huit compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
         plutôt que sur les écrans de travail.
       </p>
 
@@ -172,7 +173,7 @@ export default function SourcesPage() {
       </div>
 
       <div className="section">
-        <span className="h-title">Les sept compartiments</span>
+        <span className="h-title">Les huit compartiments</span>
         <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <Compartiment
             icone={<Database size={15} color="var(--accent)" />}
@@ -214,6 +215,17 @@ export default function SourcesPage() {
             maj={`${STATS_ICAMA.nbLicences} licences de production`}
             fiabilite="source"
             reserve="Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. Une licence n'est pas un audit — ni prix, ni capacité, ni qualité."
+          />
+
+          <Compartiment
+            icone={<Factory size={15} color="var(--info)" />}
+            nom="BKÜ · Turquie"
+            role="Qui fabrique sur place"
+            contenu={`${STATS_BKU.nbProduits.toLocaleString("fr")} homologations turques, ${STATS_BKU.nbImal.toLocaleString("fr")} fabriquées en Turquie (İMAL) contre ${STATS_BKU.nbIthal.toLocaleString("fr")} importées (İTHAL). ${STATS_BKU.nbFabricants} sociétés fabriquent sur place, sur ${STATS_BKU.nbMatieresMaroc} matières actives de l'index marocain.`}
+            origine={STATS_BKU.attribution}
+            maj={`${STATS_BKU.nbSocietes} sociétés`}
+            fiabilite="source"
+            reserve="İMAL désigne une fabrication en Turquie, pas nécessairement la synthèse de la matière active : une formulation locale à partir d'un technique importé porte la même mention."
           />
 
           <Compartiment

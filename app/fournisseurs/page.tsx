@@ -9,6 +9,7 @@ import { SchemaGisements } from "@/components/Schemas";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
+import { STATS_BKU, USINES_TURQUES } from "@/lib/bku";
 import { STATS_EPA, USINES_SOURCING, usinesDe } from "@/lib/epa";
 import { EnteteUsines, ReserveEpa, SiteProduction, TableUsines } from "@/components/UsinesEpa";
 import type { Fournisseur } from "@/lib/types";
@@ -84,6 +85,7 @@ export default async function FournisseursPage({
     (u) => !u.lienOnssa && u.corroboreeApvma && (!cherche || contient(u.nom))
   );
   const CHINE = USINES_CHINE.filter((u) => !cherche || contient(u.nom));
+  const TURQUIE = USINES_TURQUES.filter((u) => !cherche || contient(u.nom ?? ""));
   const PISTES = PISTES_NOUVELLES.filter((p) => !cherche || contient(p.nom));
 
   return (
@@ -270,7 +272,7 @@ export default async function FournisseursPage({
           l&apos;index marocain.
         </p>
         <Figure
-          titre="Trois gisements, deux voies"
+          titre="Deux gisements, deux voies"
           legende="seul l'index marocain raccourcit le dossier"
         >
           <SchemaGisements />
@@ -358,6 +360,60 @@ export default async function FournisseursPage({
         <div className="bloc">
           <TableUsines usines={PISTES_EPA} />
           <ReserveEpa attribution={STATS_EPA.attribution} />
+        </div>
+      </div>
+
+      <div className="section">
+        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Factory size={14} color="var(--info)" /> Usines turques — fabrication locale
+        </span>
+        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
+          Sociétés détenant au moins une homologation <span className="mono">İMAL</span> —
+          fabriquée en Turquie, par opposition à <span className="mono">İTHAL</span>, importée.
+        </p>
+        <div className="bloc">
+          <div className="titre">
+            <span>Fabricants turcs</span>
+            <span className="mono">{TURQUIE.length}</span>
+          </div>
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Société</th>
+                <th style={{ textAlign: "right" }}>M.A. de l&apos;index</th>
+                <th style={{ textAlign: "right" }}>İMAL</th>
+                <th>Matières actives</th>
+                <th>Index ONSSA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {TURQUIE.slice(0, 20).map((u) => (
+                <tr key={u.id}>
+                  <td style={{ fontWeight: 500 }}>{u.nom}</td>
+                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>
+                    {u.matieresMaroc.length}
+                  </td>
+                  <td className="mono" style={{ textAlign: "right" }}>{u.nbImal}</td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
+                    {u.matieresMaroc.slice(0, 4).join(" · ")}
+                    {u.matieresMaroc.length > 4 && (
+                      <span className="mono" style={{ color: "var(--muted-2)" }}>
+                        {" "}
+                        +{u.matieresMaroc.length - 4}
+                      </span>
+                    )}
+                  </td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted-2)" }}>
+                    {u.fournisseurOnssa ?? "—"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
+            {STATS_BKU.attribution} · İMAL désigne une fabrication en Turquie, pas nécessairement la
+            synthèse de la matière active.
+          </p>
         </div>
       </div>
 
