@@ -6,6 +6,7 @@ import { pistesPour, type Piste } from "./pistes";
 import { fabricantsChinois, usines as usinesChinoises, type SocieteChinoise } from "./icama";
 import { fabricantsTurcs, type SocieteTurque } from "./bku";
 import { fabricantsRusses, type SocieteRusse } from "./russie";
+import { fabricantsBresiliens, type UsineBresil } from "./bresil";
 import { usinesDe, type UsinesSociete } from "./epa";
 import { organismesPour, type EssaisPourCulture } from "./onssa-eservice";
 import type { CandidatSourcing, Fournisseur, MatiereActive } from "./types";
@@ -66,7 +67,8 @@ const ROUTES: Record<Route, Etape> = {
 
 // ── Liste courte, les quatre couches ────────────────────────────────────────
 
-export type Origine = "onssa" | "australie" | "chine" | "turquie" | "russie" | "usine";
+export type Origine =
+  | "onssa" | "australie" | "chine" | "turquie" | "russie" | "bresil" | "usine";
 
 export interface Candidat {
   id: string;
@@ -133,6 +135,21 @@ function depuisAustralie(p: Piste): Candidat {
     lignesMaroc: null,
     usines: u,
     adresse: adresseEpa(u),
+    meToo: false,
+  };
+}
+
+function depuisBresil(u: UsineBresil): Candidat {
+  return {
+    id: `br-${u.id}`,
+    nom: u.nom,
+    origine: "bresil",
+    pays: u.pays ?? u.paysBrut,
+    motif: `${u.nbHomologations} technique(s) homologué(s) au Brésil · ${u.matieres.length} M.A. de l'index`,
+    lignesMaroc: null,
+    // Le seul registre qui nomme l'atelier plutôt que la seule société.
+    adresse: u.sites.length ? `${u.sites.join(" · ")}, ${u.pays ?? u.paysBrut ?? ""}`.trim() : null,
+    usines: usinesDe(u.nom),
     meToo: false,
   };
 }
@@ -311,6 +328,19 @@ export function consultation(maId: string): Consultation | null {
     }
   }
 
+  // ⚠️ LE BRÉSIL PASSE EN PREMIER parmi les registres étrangers : c'est le seul
+  // qui déclare le fabricant du technique, avec son site. Les autres nomment
+  // des détenteurs d'homologation, ce qui n'est pas la même chose.
+  const br = fabricantsBresiliens(ma.nom);
+  if (br) {
+    for (const u of br.usines.slice(0, 10)) {
+      const n = u.nom.toUpperCase();
+      if (vus.has(n)) continue;
+      vus.add(n);
+      autres.push(depuisBresil(u));
+    }
+  }
+
   const ru = fabricantsRusses(ma.nom);
   if (ru) {
     for (const s of ru.russes.slice(0, 8)) {
@@ -348,5 +378,6 @@ export const LIBELLE_ORIGINE: Record<Origine, string> = {
   chine: "registre chinois",
   turquie: "registre turc",
   russie: "catalogue russe",
+  bresil: "registre brésilien",
   usine: "registre EPA",
 };

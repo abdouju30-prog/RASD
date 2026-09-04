@@ -42,6 +42,9 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _chimie import cle_chimique, verifier_collisions  # noqa: E402
+
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "russie.json"
 CACHE = RACINE / "data" / "_cache" / "gospesticid.pdf"
@@ -206,46 +209,9 @@ def tokens(s: str):
 # les registres étrangers en ISO anglais. Le pont français -> ISO existe déjà
 # (lib/apvma.ts, via data/_iso.json) ; reste le pont russe -> ISO.
 #
-# ⚠️ CE RAPPROCHEMENT N'EST PAS FLOU. Il ne calcule aucune similarité : il
-# réduit les deux noms à une clé phonétique et exige l'ÉGALITÉ. La réduction
-# vient de la façon dont le russe transcrit la nomenclature chimique, qui est
-# régulière :
-#
-#     к ↔ c/k     ц ↔ ts/c     х ↔ kh/ch/h     ф ↔ f/ph     и,ы ↔ i/y
-#     з ↔ z/s     г ↔ h        кс ↔ x          le -e final tombe
-#
-# Une collision entre deux noms ISO ferait refuser le lot : deux substances
-# distinctes ne peuvent pas partager une clé.
-REDUCTIONS = [
-    ("ph", "f"), ("kh", "h"), ("ch", "h"), ("th", "t"), ("x", "ks"),
-    ("ts", "c"), ("k", "c"), ("ya", "a"), ("y", "i"), ("j", "i"),
-    ("w", "v"), ("z", "s"), ("h", "g"),
-]
-
-
-def sans_sel(nom: str) -> str:
-    """Nom débarrassé de la mention de sel ou de forme, entre parenthèses.
-
-    Le catalogue liste « Глифосат (изопропиламинная соль) » et « Глифосат
-    (калиевая соль) » : deux sels d'une même substance, que l'index marocain
-    ne distingue pas. La clé porte sur la base ; le nom complet reste affiché.
-    """
-    return re.sub(r"\s*\(.*", "", nom).strip()
-
-
-def cle_chimique(nom: str) -> str:
-    s = sans_sel(nom)
-    # Un nom déjà latin (les micro-organismes) ne se translittère pas.
-    if re.search(r"[А-Яа-яЁё]", s):
-        s = translitterer(s)
-    s = re.sub(r"[^a-z0-9]", " ", s.lower())
-    for a, b in REDUCTIONS:
-        s = s.replace(a, b)
-    # ⚠️ Les espaces d'abord, les doublons ensuite : « carfentrazone » + « etil »
-    # gardait sinon son double « e » et manquait « carfentrazon-etil ».
-    s = re.sub(r"\s+", "", s)
-    s = re.sub(r"(.)\1+", r"\1", s)
-    return s.rstrip("e")
+# ⚠️ LA RÈGLE VIT DANS scripts/_chimie.py, pas ici. Le registre brésilien pose
+# exactement le même problème depuis le portugais : deux implémentations
+# auraient dérivé l'une de l'autre sans qu'on s'en aperçoive.
 
 
 # Correspondances que la réduction phonétique ne peut pas produire : traductions
@@ -448,23 +414,17 @@ def main():
         for part in re.split(r"\s*\+\s*", titre):
             part = part.strip(" .,;")
             if part:
-                par_cle.setdefault(cle_chimique(part), part)
+                par_cle.setdefault(cle_chimique(part, translitterer), part)
 
     # ⚠️ Une collision interdirait de distinguer deux substances : on refuse.
-    vus = {}
-    collisions = []
-    for n in noms_iso:
-        k = cle_chimique(n)
-        if k in vus:
-            collisions.append((vus[k], n))
-        vus[k] = n
+    collisions = verifier_collisions(noms_iso, translitterer)
     if collisions:
         raise SystemExit(f"Clés chimiques en collision, rapprochement refusé : {collisions}")
 
     iso_par_cle = {}
     for n in noms_iso:
         alias = ALIAS_MATIERES.get(n)
-        k = cle_chimique(alias) if alias else cle_chimique(n)
+        k = cle_chimique(alias, translitterer) if alias else cle_chimique(n, translitterer)
         if k in par_cle:
             iso_par_cle[k] = n
     print(f"  {len(iso_par_cle)}/{len(noms_iso)} matières actives de l'index retrouvées au catalogue")
@@ -503,7 +463,8 @@ def main():
             "produit": normaliser(produit) if produit else None,
             "matiereRusse": titre,
             "iso": sorted({iso_par_cle[k] for k in
-                           (cle_chimique(s) for s in substances) if k in iso_par_cle}),
+                           (cle_chimique(s, translitterer) for s in substances)
+                           if k in iso_par_cle}),
             "societes": [{"nom": n, "formes": f} for n, f in noms],
             "blocNonDecoupe": reste,
         })

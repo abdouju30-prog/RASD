@@ -14,6 +14,8 @@ import { STATS_BKU, fabricantsTurcs } from "@/lib/bku";
 import { FabricantsTurcs } from "@/components/FabricantsTurcs";
 import { STATS_RUSSIE, fabricantsRusses } from "@/lib/russie";
 import { FabricantsRusses } from "@/components/FabricantsRusses";
+import { STATS_BRESIL, fabricantsBresiliens } from "@/lib/bresil";
+import { FabricantsBresil } from "@/components/FabricantsBresil";
 
 export async function generateStaticParams() {
   return candidats({ maxDetenteurs: 8 })
@@ -31,6 +33,7 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
   const chine = fabricantsChinois(ma.nom);
   const turquie = fabricantsTurcs(ma.nom);
   const russie = fabricantsRusses(ma.nom);
+  const bresil = fabricantsBresiliens(ma.nom);
 
   return (
     <>
@@ -204,6 +207,10 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
               </>
             )}
           </div>
+
+          {/* Le Brésil d'abord : c'est le seul registre qui nomme le site de
+              fabrication et publie la teneur du technique. */}
+          <FabricantsBresil d={bresil} attribution={STATS_BRESIL.attribution} />
 
           <FabricantsChinois m={chine} attribution={STATS_ICAMA.attribution} />
 

@@ -3,6 +3,7 @@ import { ANNUAIRE_PISTES } from "./pistes";
 import { USINES_CHINE } from "./icama";
 import { USINES_TURQUES } from "./bku";
 import { PRODUCTEURS_RUSSES } from "./russie";
+import { USINES_BRESIL } from "./bresil";
 import { USINES_SOURCING } from "./epa";
 import { ORGANISMES_BPE, SOCIETES_AGREEES, PRODUITS_EXPIRES } from "./onssa-eservice";
 
@@ -33,6 +34,7 @@ export type TypeEntree =
   | "usine_chine"
   | "usine_turquie"
   | "producteur_russe"
+  | "usine_bresil"
   | "usine_epa"
   | "societe_agreee"
   | "organisme_bpe"
@@ -59,6 +61,7 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   usine_chine: "Usine chinoise",
   usine_turquie: "Usine turque",
   producteur_russe: "Producteur russe",
+  usine_bresil: "Usine (registre brésilien)",
   usine_epa: "Usine (registre EPA)",
   societe_agreee: "Société agréée ONSSA",
   organisme_bpe: "Organisme d'essai BPE",
@@ -81,6 +84,7 @@ const RANG: Record<TypeEntree, number> = {
   usine_chine: 7,
   usine_turquie: 7,
   producteur_russe: 7,
+  usine_bresil: 5,
   organisme_bpe: 8,
   produit_expire: 9,
 };
@@ -205,6 +209,18 @@ function construire(): Indexee[] {
       type: "producteur_russe",
       href: `/fournisseurs?pays=${encodeURIComponent("Russie")}`,
       poids: s.nbHomologations,
+    });
+  }
+
+  for (const u of USINES_BRESIL) {
+    out.push({
+      id: `br-${u.id}`,
+      libelle: u.nom,
+      detail: [u.pays ?? u.paysBrut, u.sites.slice(0, 2).join(" · "),
+               `${u.matieres.length} M.A. fabriquées`].filter(Boolean).join(" · "),
+      type: "usine_bresil",
+      href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
+      poids: u.matieres.length * 2,
     });
   }
 

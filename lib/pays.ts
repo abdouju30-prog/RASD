@@ -4,6 +4,7 @@ import { ETABLISSEMENTS } from "./epa";
 import { USINES_TURQUES } from "./bku";
 import { USINES_CHINE } from "./icama";
 import { SOCIETES_CATALOGUE_RU } from "./russie";
+import { USINES_BRESIL } from "./bresil";
 
 // ────────────────────────────────────────────────────────────────────────────
 // RECENSEMENT PAR PAYS — le même gisement, lu par nationalité
@@ -26,7 +27,8 @@ import { SOCIETES_CATALOGUE_RU } from "./russie";
 // de son registre pour qu'on puisse remonter à la source.
 // ────────────────────────────────────────────────────────────────────────────
 
-export type Registre = "onssa" | "australie" | "epa" | "chine" | "turquie" | "russie";
+export type Registre =
+  | "onssa" | "australie" | "epa" | "chine" | "turquie" | "russie" | "bresil";
 
 export const LIBELLE_REGISTRE: Record<Registre, string> = {
   onssa: "Index ONSSA",
@@ -35,6 +37,7 @@ export const LIBELLE_REGISTRE: Record<Registre, string> = {
   chine: "Registre chinois",
   turquie: "Registre turc",
   russie: "Catalogue russe",
+  bresil: "Registre brésilien",
 };
 
 /** Ce que chaque registre prouve — à ne jamais gommer en agrégeant. */
@@ -45,6 +48,7 @@ export const PORTEE_REGISTRE: Record<Registre, string> = {
   chine: "Homologation chinoise de technique, licence de production",
   turquie: "Fabrique en Turquie (mention İMAL)",
   russie: "Détient une homologation russe",
+  bresil: "Fabrique le technique, site déclaré au dossier brésilien",
 };
 
 export interface EntreePays {
@@ -124,6 +128,26 @@ function entrees(): EntreePays[] {
     });
   }
 
+  // ⚠️ Le registre brésilien est le seul à déclarer un FABRICANT de technique
+  // avec son site : ses lignes ne se confondent pas avec des détenteurs
+  // d'homologation, et c'est pourquoi il passe en tête du classement.
+  for (const u of USINES_BRESIL) {
+    const pays = u.pays ?? u.paysBrut;
+    if (!pays) continue;
+    out.push({
+      id: `br-${u.id}`,
+      nom: u.nom,
+      registre: "bresil",
+      detail: [u.sites.slice(0, 2).join(" · "), `${u.matieres.length} M.A. de l'index`]
+        .filter(Boolean)
+        .join(" · "),
+      meToo: false,
+      paysFiable: Boolean(u.pays),
+      href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
+      pays,
+    });
+  }
+
   for (const u of USINES_CHINE) {
     out.push({
       id: `cn-${u.nom}`,
@@ -186,13 +210,17 @@ for (const e of TOUTES) {
   PAR_PAYS.set(e.pays, l);
 }
 
+// L'ordre dit ce que chaque registre prouve : l'ONSSA ouvre la voie me-too, le
+// Brésil nomme un fabricant de technique, l'EPA situe un site, les autres
+// attestent d'une homologation.
 const RANG: Record<Registre, number> = {
   onssa: 0,
-  epa: 1,
-  chine: 2,
-  turquie: 3,
-  russie: 4,
-  australie: 5,
+  bresil: 1,
+  epa: 2,
+  chine: 3,
+  turquie: 4,
+  russie: 5,
+  australie: 6,
 };
 
 export function fichePays(pays: string): FichePays {
@@ -220,5 +248,5 @@ export const CENSUS_PAYS: FichePays[] = [...PAR_PAYS.keys()]
 export const STATS_PAYS = {
   nbPays: CENSUS_PAYS.length,
   nbEntrees: TOUTES.length,
-  nbRegistres: 6,
+  nbRegistres: 7,
 };
