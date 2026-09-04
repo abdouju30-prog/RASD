@@ -29,7 +29,20 @@ import { apparierApvma } from "./apvma";
 // ────────────────────────────────────────────────────────────────────────────
 
 export interface SocieteChinoise {
+  /** Raison sociale en caractères han — ce que dit le registre, et qui fait foi. */
   nom: string;
+  /**
+   * Pinyin segmenté : « Shandong Weifang Runfeng Huagong Gufen Youxiangongsi ».
+   * C'est ce qui se recopie dans un moteur de recherche ou se dicte au
+   * téléphone. Le pinyin transcrit les sons — il ne retrouve pas la marque
+   * déposée, « 润丰 » donnant « Runfeng » là où la société se présente à
+   * l'international sous « Rainbow ».
+   */
+  latin: string | null;
+  /** Lecture courte : marque en pinyin, qualificatifs traduits en français. */
+  glose: string | null;
+  /** Province ou région : elle décide du port d'embarquement, donc du fret. */
+  region: string | null;
   /** Numéro de licence de production, ou null : titulaire sans usine connue. */
   licenceProduction: string | null;
   nbHomologations: number;
@@ -119,6 +132,12 @@ export function fraicheurIcama(ref = new Date()): { jours: number | null; date: 
 
 export interface UsineChinoise {
   nom: string;
+  /** Pinyin segmenté — la forme cherchable et dictable. */
+  latin: string | null;
+  /** Lecture courte : marque en pinyin, qualificatifs traduits. */
+  glose: string | null;
+  /** Province ou région, quand le nom la porte. */
+  region: string | null;
   licenceProduction: string | null;
   /** Matières actives de l'index marocain qu'elle produit, en nom ISO. */
   matieres: string[];
@@ -141,7 +160,15 @@ function construireUsines(): UsineChinoise[] {
     for (const s of m.societes) {
       const e =
         par.get(s.nom) ??
-        ({ nom: s.nom, licenceProduction: s.licenceProduction, matieres: [], nbHomologations: 0 } as UsineChinoise);
+        ({
+          nom: s.nom,
+          latin: s.latin,
+          glose: s.glose,
+          region: s.region,
+          licenceProduction: s.licenceProduction,
+          matieres: [],
+          nbHomologations: 0,
+        } as UsineChinoise);
       e.matieres.push(m.iso);
       e.nbHomologations += s.nbHomologations;
       par.set(s.nom, e);

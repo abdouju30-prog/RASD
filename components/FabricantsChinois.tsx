@@ -11,6 +11,7 @@ function Table({ soc, usine }: { soc: ReturnType<typeof usines>; usine: boolean 
       <thead>
         <tr>
           <th>Société</th>
+          <th>Région</th>
           <th style={{ textAlign: "right" }}>Homolog. TC</th>
           <th style={{ textAlign: "right" }}>Teneur max</th>
           <th>Validité</th>
@@ -20,7 +21,15 @@ function Table({ soc, usine }: { soc: ReturnType<typeof usines>; usine: boolean 
       <tbody>
         {soc.map((s) => (
           <tr key={s.nom}>
-            <td style={{ fontSize: 13 }}>{s.nom}</td>
+            <td>
+              {/* ⚠️ Le pinyin passe devant, les caractères han dessous. Une
+                  raison sociale en han ne se recopie ni ne se dicte : affichée
+                  seule, elle n'apprenait rien. Le nom d'origine reste là, c'est
+                  lui qui fait foi. */}
+              <div style={{ fontSize: 13, fontWeight: 500 }}>{s.glose ?? s.nom}</div>
+              <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 1 }}>{s.nom}</div>
+            </td>
+            <td style={{ fontSize: 12, color: "var(--muted)" }}>{s.region ?? "—"}</td>
             <td className="mono" style={{ fontSize: 13, textAlign: "right" }}>{s.nbHomologations}</td>
             <td className="mono" style={{ fontSize: 13, textAlign: "right" }}>{s.teneurMax ?? "—"}</td>
             <td className="mono" style={{ fontSize: 12.5, color: "var(--muted)" }}>
@@ -104,7 +113,8 @@ export function FabricantsChinois({
 
       <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
         {attribution} · n&apos;ouvre aucun droit devant l&apos;ONSSA. Ni prix, ni capacité, ni
-        audit qualité.
+        audit qualité. Les noms latins sont transcrits du chinois (pinyin) : ils servent à
+        chercher et à reconnaître, pas à identifier une société dans un contrat.
       </p>
     </div>
   );

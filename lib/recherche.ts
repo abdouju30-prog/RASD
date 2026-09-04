@@ -165,11 +165,15 @@ function construire(): Indexee[] {
     });
   }
 
+  // ⚠️ MÊME RAISON QUE POUR LE RUSSE : la normalisation ne garde que [a-z0-9],
+  // et un nom en caractères han s'y réduisait à la chaîne vide. Les usines
+  // chinoises étaient donc introuvables par cette recherche. Le libellé porte
+  // le pinyin, les caractères d'origine passent en détail.
   for (const u of USINES_CHINE) {
     out.push({
       id: `cn-${u.nom}`,
-      libelle: u.nom,
-      detail: `Chine · ${u.matieres.length} M.A. de l'index · licence ${u.licenceProduction}`,
+      libelle: u.latin ?? u.nom,
+      detail: `Chine${u.region ? ` · ${u.region}` : ""} · ${u.nom} · ${u.matieres.length} M.A. de l'index`,
       type: "usine_chine",
       href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
       poids: u.matieres.length,

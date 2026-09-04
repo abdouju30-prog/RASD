@@ -87,7 +87,11 @@ export default async function FournisseursPage({
   const PISTES_EPA = USINES_SOURCING.filter(
     (u) => !u.lienOnssa && u.corroboreeApvma && (!cherche || contient(u.nom))
   );
-  const CHINE = USINES_CHINE.filter((u) => !cherche || contient(u.nom));
+  // Le pinyin est cherchable, les caractères han ne le sont pas depuis un
+  // clavier latin : les deux formes répondent au filtre.
+  const CHINE = USINES_CHINE.filter(
+    (u) => !cherche || contient(u.nom) || contient(u.latin ?? "") || contient(u.glose ?? "")
+  );
   const TURQUIE = USINES_TURQUES.filter((u) => !cherche || contient(u.nom ?? ""));
   const PISTES = PISTES_NOUVELLES.filter((p) => !cherche || contient(p.nom));
   // Le nom cyrillique et sa translittération sont tous deux cherchables : on ne
@@ -461,7 +465,13 @@ export default async function FournisseursPage({
             <tbody>
               {CHINE.slice(0, 25).map((u) => (
                 <tr key={u.nom}>
-                  <td style={{ fontWeight: 500 }}>{u.nom}</td>
+                  <td>
+                    <div style={{ fontWeight: 500 }}>{u.glose ?? u.nom}</div>
+                    <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 1 }}>
+                      {u.nom}
+                      {u.region && <span style={{ marginLeft: 6 }}>· {u.region}</span>}
+                    </div>
+                  </td>
                   <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>
                     {u.matieres.length}
                   </td>
@@ -484,7 +494,8 @@ export default async function FournisseursPage({
           </table>
           <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
             {STATS_ICAMA.attribution} · non rapprochées de l&apos;index, les raisons sociales étant
-            en caractères chinois. Détail par matière active sur chaque fiche de prospection.
+            en caractères chinois. Les noms latins sont transcrits (pinyin) : ils servent à
+            chercher, pas à identifier. Détail par matière active sur chaque fiche de prospection.
           </p>
         </div>
       </div>

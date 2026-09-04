@@ -12,6 +12,8 @@ import { STATS_ICAMA, fabricantsChinois } from "@/lib/icama";
 import { FabricantsChinois } from "@/components/FabricantsChinois";
 import { STATS_BKU, fabricantsTurcs } from "@/lib/bku";
 import { FabricantsTurcs } from "@/components/FabricantsTurcs";
+import { STATS_RUSSIE, fabricantsRusses } from "@/lib/russie";
+import { FabricantsRusses } from "@/components/FabricantsRusses";
 
 export async function generateStaticParams() {
   return candidats({ maxDetenteurs: 8 })
@@ -28,6 +30,7 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
   const pistes = pistesPour(ma.nom);
   const chine = fabricantsChinois(ma.nom);
   const turquie = fabricantsTurcs(ma.nom);
+  const russie = fabricantsRusses(ma.nom);
 
   return (
     <>
@@ -205,6 +208,12 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
           <FabricantsChinois m={chine} attribution={STATS_ICAMA.attribution} />
 
           <FabricantsTurcs d={turquie} attribution={STATS_BKU.attribution} />
+
+          <FabricantsRusses
+            d={russie}
+            attribution={STATS_RUSSIE.attribution}
+            edition={STATS_RUSSIE.edition}
+          />
 
           <div className="card" style={{ padding: "18px 20px" }}>
             <div className="h-title">Usages homologués au Maroc — {c.nbUsages}</div>

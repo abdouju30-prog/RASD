@@ -2,6 +2,7 @@
 Import du Catalogue d'État russe des pesticides -> data/russie.json
 
     python scripts/import_gospesticid.py
+    python scripts/import_gospesticid.py --sans-iso   # sans régénérer data/_iso.json
 
 POURQUOI CETTE SOURCE.
 
@@ -34,6 +35,8 @@ Document officiel ; la citation impose la référence à l'édition.
 
 import json
 import re
+import subprocess
+import sys
 import unicodedata
 from collections import defaultdict
 from datetime import datetime
@@ -42,6 +45,7 @@ from pathlib import Path
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "russie.json"
 CACHE = RACINE / "data" / "_cache" / "gospesticid.pdf"
+ISO = RACINE / "data" / "_iso.json"
 
 # Miroirs régionaux du même document officiel, essayés dans l'ordre.
 MIROIRS = [
@@ -60,25 +64,31 @@ URL_OFFICIELLE = (
     "departament-rastenievodstva-mekhanizatsii-khimizatsii-i-zashchity-rasteniy/"
 )
 
-# ── Repères de découpage ────────────────────────────────────────────────────
-# Une entrée se lit : « matière active | Produit, FORME (teneur) | société(s) |
-# classe de danger | numéro d'homologation | échéance ».
+# ── Lecture du PDF ──────────────────────────────────────────────────────────
+#
+# ⚠️ LA STRUCTURE EST DANS LES STYLES, PAS DANS LE TEXTE. Le catalogue compose
+# les matières actives en GRAS ITALIQUE et les noms de produits en GRAS. Le
+# premier jet reconstituait tout à coups d'expressions régulières sur le texte
+# aplati ; c'était deviner ce que le document déclare. On lit donc les styles.
+GRAS, ITALIQUE = 16, 2
 
 NUMERO = re.compile(r"(\d{3}(?:\([\d,\s]*\))?-\d{2}-\d{3,4}-\d)\s+(\d{2}\.\d{2}\.\d{4})")
-# « Каратэ Зеон, МКС (50 г/л) » — la forme galénique est en capitales.
-FIN_PRODUIT = re.compile(r",\s*([А-ЯЁ]{1,4}(?:-[А-ЯЁ]{1,3})?)\s*(\([^)]{0,80}\))?\s*$")
-CLASSE = re.compile(r"\s*\d[\d\s\-]*/\s*\d\s*$")
+
+# Le catalogue renvoie à ses notes de bas de page par « 3/ » accolé au nom du
+# détenteur, et marque d'un astérisque les homologations sous condition.
+#
+# ⚠️ Le chiffre est parfois un « З » CYRILLIQUE, qui se lit comme un 3 mais que
+# `\d` ignore. Et un détenteur en porte souvent DEUX à la suite — « … АГ 3/ 1/ ».
+# « КЕМИНОВА А/С » n'est pas touchée : la chaîne ne se termine pas par une
+# barre, c'est la forme juridique danoise et non un renvoi.
+NOTE = re.compile(r"(?:\s*[0-9A-Za-zА-Яа-яЁё]{1,3}\s*/)+\s*$")
 GUILLEMETS = re.compile("[«\"“]([^»\"”]{2,90})[»\"”]")
 
 # ⚠️ Ces formes se comparent en TOKENS ENTIERS, jamais en sous-chaînes.
 # « Щёлково Агрохим », premier producteur russe, contient « АГ » : testé en
-# sous-chaîne il ressortait étranger, avec Syngenta et BASF. Le premier jet le
-# faisait, et le classement des sociétés russes s'en trouvait inversé.
+# sous-chaîne il ressortait étranger, avec Syngenta et BASF.
 FORMES_RU = {"ООО", "АО", "ЗАО", "ОАО", "ПАО", "НПФ", "НПП", "НПО", "ПО", "ТПК",
              "УК", "МНТЦ", "ИП", "ФКП", "КФХ", "НПЦ", "ТД", "ГК", "ФИРМА"}
-# Formes étrangères translittérées : l'entité est immatriculée hors de Russie.
-# C'est le seul indice de nationalité que porte le catalogue, et il est bon —
-# « ЛТД » ou « ГМБХ » ne s'appliquent pas à une société russe.
 # « КО » en est volontairement absent : « Агрорус и Ко » est une société russe,
 # et « и Ко » traduit « & Co » aussi bien en russe qu'ailleurs. Les sociétés
 # asiatiques écrites « Ко., Лтд » restent prises par « ЛТД ».
@@ -113,8 +123,7 @@ def translitterer(s: str) -> str:
         if not c.isupper():
             out.append(t)
         elif i + 1 < len(s) and s[i + 1].islower():
-            # « Щелково » -> « Shchelkovo », pas « SHCHelkovo » : seule la
-            # première lettre du digramme se met en capitale au fil du mot.
+            # « Щелково » -> « Shchelkovo », pas « SHCHelkovo ».
             out.append(t.capitalize())
         else:
             out.append(t.upper())
@@ -122,9 +131,7 @@ def translitterer(s: str) -> str:
 
 
 # Sociétés étrangères que la seule forme juridique ne suffit pas à situer.
-# Table explicite plutôt qu'un rapprochement phonétique : une identité
-# réglementaire ne se devine pas. Chaque ligne a été lue dans le catalogue.
-ALIAS = {
+ALIAS_SOCIETES = {
     "СИНГЕНТА": ("Syngenta", "Suisse"),
     "БАЙЕР": ("Bayer", "Allemagne"),
     "БАСФ": ("BASF", "Allemagne"),
@@ -157,9 +164,6 @@ ALIAS = {
     "АГРО-КЕМИ": ("Agro-Kemi", "Hongrie"),
     "ХЕМИНОВА": ("Cheminova", "Danemark"),
     "КОРТЕВА": ("Corteva", "États-Unis"),
-    # Sociétés asiatiques et européennes lues dans le catalogue. Celles de
-    # Chine comptent double : plusieurs sont déjà fournisseurs à l'ONSSA, et
-    # les retrouver ici corrobore l'existence d'une production réelle.
     "ШАНДОНГ ВЕЙФАНГ РЕЙНБОУ": ("Shandong Weifang Rainbow Chemical", "Chine"),
     "ЧЖАНГСУ ГУД ХАРВЕСТ": ("Jiangsu Good Harvest-Weien Agrochemical", "Chine"),
     "КИНГТАЙ": ("Kingtai Chemicals", "Chine"),
@@ -177,28 +181,12 @@ ALIAS = {
 }
 
 
-# Le catalogue renvoie à ses notes de bas de page par « 3/ » accolé au nom du
-# détenteur, et marque d'un astérisque les homologations sous condition.
-#
-# ⚠️ Le chiffre est parfois un « З » CYRILLIQUE, qui se lit comme un 3 mais que
-# `\d` ignore. « Байер КропСайенс АГ З/ » ressortait alors comme une société
-# distincte de « Байер КропСайенс АГ ». La classe accepte donc n'importe quel
-# caractère de mot, court : aucune raison sociale ne se termine par « X/ ».
-#
-# ⚠️ Un détenteur en porte souvent DEUX à la suite — « … АГ 3/ 1/ ». Le motif
-# est donc répété : sans le `+`, seul le dernier partait et la société sortait
-# encore sous deux noms. « КЕМИНОВА А/С » n'est pas touchée, la chaîne ne se
-# terminant pas par une barre : c'est la forme juridique danoise, pas un renvoi.
-NOTE = re.compile(r"(?:\s*[0-9A-Za-zА-Яа-яЁё]{1,3}\s*/)+\s*$")
-
-
 def normaliser(s: str) -> str:
     # ⚠️ L'ORDRE COMPTE. La ponctuation se retire AVANT le renvoi de note :
     # « … АГ 3/ - » se terminait par un tiret, le motif de note ne mordait pas,
     # et le nettoyage de ponctuation laissait « … АГ 3/ » derrière lui.
     s = unicodedata.normalize("NFKC", s or "").strip()
-    # « АГРОХИМ- XXI » : césure du PDF qu'on n'a pas pu recoller plus tôt,
-    # le second morceau étant en caractères latins.
+    # « АГРОХИМ- XXI » : césure du PDF, le second morceau étant en latin.
     s = re.sub(r"-\s+", "-", s)
     s = re.sub(r"\s+", " ", s).strip(" *,.;:·—- ")
     return NOTE.sub("", s).strip(" *,.;:·—- ")
@@ -212,6 +200,77 @@ def tokens(s: str):
     return set(cle(s).split())
 
 
+# ── Rapprochement des matières actives avec les noms ISO ────────────────────
+#
+# Le catalogue nomme les substances en russe, l'index marocain en français, et
+# les registres étrangers en ISO anglais. Le pont français -> ISO existe déjà
+# (lib/apvma.ts, via data/_iso.json) ; reste le pont russe -> ISO.
+#
+# ⚠️ CE RAPPROCHEMENT N'EST PAS FLOU. Il ne calcule aucune similarité : il
+# réduit les deux noms à une clé phonétique et exige l'ÉGALITÉ. La réduction
+# vient de la façon dont le russe transcrit la nomenclature chimique, qui est
+# régulière :
+#
+#     к ↔ c/k     ц ↔ ts/c     х ↔ kh/ch/h     ф ↔ f/ph     и,ы ↔ i/y
+#     з ↔ z/s     г ↔ h        кс ↔ x          le -e final tombe
+#
+# Une collision entre deux noms ISO ferait refuser le lot : deux substances
+# distinctes ne peuvent pas partager une clé.
+REDUCTIONS = [
+    ("ph", "f"), ("kh", "h"), ("ch", "h"), ("th", "t"), ("x", "ks"),
+    ("ts", "c"), ("k", "c"), ("ya", "a"), ("y", "i"), ("j", "i"),
+    ("w", "v"), ("z", "s"), ("h", "g"),
+]
+
+
+def sans_sel(nom: str) -> str:
+    """Nom débarrassé de la mention de sel ou de forme, entre parenthèses.
+
+    Le catalogue liste « Глифосат (изопропиламинная соль) » et « Глифосат
+    (калиевая соль) » : deux sels d'une même substance, que l'index marocain
+    ne distingue pas. La clé porte sur la base ; le nom complet reste affiché.
+    """
+    return re.sub(r"\s*\(.*", "", nom).strip()
+
+
+def cle_chimique(nom: str) -> str:
+    s = sans_sel(nom)
+    # Un nom déjà latin (les micro-organismes) ne se translittère pas.
+    if re.search(r"[А-Яа-яЁё]", s):
+        s = translitterer(s)
+    s = re.sub(r"[^a-z0-9]", " ", s.lower())
+    for a, b in REDUCTIONS:
+        s = s.replace(a, b)
+    # ⚠️ Les espaces d'abord, les doublons ensuite : « carfentrazone » + « etil »
+    # gardait sinon son double « e » et manquait « carfentrazon-etil ».
+    s = re.sub(r"\s+", "", s)
+    s = re.sub(r"(.)\1+", r"\1", s)
+    return s.rstrip("e")
+
+
+# Correspondances que la réduction phonétique ne peut pas produire : traductions
+# (« Сера » pour SULPHUR), formes descriptives de l'index marocain, ou lettres
+# d'isomère écrites en cyrillique. Chacune a été lue dans le catalogue.
+ALIAS_MATIERES = {
+    "SULPHUR": "Сера",
+    "PYRETHRIN": "Экстракт натуральных пиретринов",
+    "QUIZALOFOP-P-ETHYL": "Хизалофоп-П-этил",
+    "LAMBDA-CYHALOTHRIN": "Лямбда-цигалотрин",
+    "GAMMA-CYHALOTHRIN": "Гамма-цигалотрин",
+    "FENHEXAMID": "Фенгексамид",
+    "METALDEHYDE": "Метальдегид",
+    "COPPER PRESENT AS COPPER OXYCHLORIDE": "Медь оксихлорид",
+    "CHLORMEQUAT PRESENT AS CHLORMEQUAT CHLORIDE": "Хлормекватхлорид",
+    "GLYPHOSATE ACID": "Глифосат кислоты",
+    "2,4-D 2-ETHYLHEXYL ESTER": "2,4-Д (2-этилгексиловый эфир)",
+    "FOSETYL-ALUMINIUM": "Алюминия фосэтил",
+    "IODOSULFURON-METHYL-SODIUM": "Йодосульфурон-метил-натрий",
+    "DIMETHENAMID-P": "Диметенамид-Р",
+    "PYRAFLUFEN-ETHYL": "Пирафлуфен-этила",
+    "DIFLUFENICAN": "дифлюфеникан",
+}
+
+
 def societes_du_bloc(bloc: str):
     """(nom, formes juridiques) par société citée, plus ce qui reste non découpé.
 
@@ -219,10 +278,6 @@ def societes_du_bloc(bloc: str):
     ООО «Сибагрохим». N'extraire que l'intérieur des guillemets perdait
     précisément l'indice de nationalité. On lit donc les quarante caractères
     qui précèdent chaque ouverture de guillemet.
-
-    Les noms entre guillemets sont sûrs. Le reste — noms étrangers écrits sans
-    guillemets, « РОТАМ ЛТД » — est repris tel quel plutôt que jeté : une
-    société mal découpée se repère, une société absente ne se repère pas.
     """
     bloc = normaliser(bloc)
     if not bloc:
@@ -244,9 +299,8 @@ def societes_du_bloc(bloc: str):
 
 
 def alias_de(nom: str):
-    """(nom latin, pays) si la société figure à la table, sinon (None, None)."""
     u = cle(nom)
-    for k, (latin, pays) in ALIAS.items():
+    for k, (latin, pays) in ALIAS_SOCIETES.items():
         if cle(k) in u:
             return latin, pays
     return None, None
@@ -268,7 +322,13 @@ def qualifier(nom: str, formes):
     if f & FORMES_ETR:
         return None, False, True
     if f & FORMES_RU:
-        return "Russie", False, False
+        # Une forme juridique russe est un fait porté par le catalogue, pas une
+        # déduction sur le nom : l'entité est immatriculée en Russie. Le premier
+        # jet la marquait « à vérifier », ce qui affublait d'un « ? » les cent
+        # cinquante sociétés russes — un doute affiché là où il n'y en a pas.
+        # Ce qui reste incertain, et que le catalogue ne dit pas, c'est si elle
+        # appartient à un groupe étranger.
+        return "Russie", True, False
     return None, False, False
 
 
@@ -297,68 +357,168 @@ def telecharger() -> bytes:
     raise SystemExit(f"Aucun miroir n'a répondu. Dernière erreur : {dernier}")
 
 
-def main():
-    print(f"catalogue d'État russe — {SOURCE}")
-    data = telecharger()
+def regenerer_iso():
+    """Le pont français -> ISO anglais vient de lib/apvma.ts, pas d'ici."""
+    print("  génération de data/_iso.json (appariement lib/apvma.ts)…")
+    subprocess.run(["npx", "tsx", "scripts/noms_iso.ts"], cwd=RACINE, check=True,
+                   shell=(sys.platform == "win32"))
+    if not ISO.exists():
+        raise SystemExit("data/_iso.json absent : lancez « npx tsx scripts/noms_iso.ts ».")
 
+
+def lire_pdf(data: bytes):
+    """(texte aplati, transitions matière, transitions produit).
+
+    Les transitions sont des couples (offset, valeur) : la matière active et le
+    produit en vigueur à un point du texte sont ceux de la dernière transition
+    qui le précède. Le catalogue n'écrit la matière active qu'une fois, en tête
+    de groupe, puis enchaîne les produits qui la contiennent.
+    """
+    import fitz
+    doc = fitz.open(stream=data, filetype="pdf")
+
+    morceaux = []           # (nature, texte) fusionnés par nature consécutive
+    for pno in range(doc.page_count):
+        for bloc in doc[pno].get_text("dict")["blocks"]:
+            for ligne in bloc.get("lines", []):
+                for span in ligne["spans"]:
+                    t = span["text"]
+                    if not t.strip():
+                        continue
+                    f = span["flags"]
+                    nature = ("matiere" if (f & GRAS and f & ITALIQUE)
+                              else "produit" if f & GRAS else "texte")
+                    if morceaux and morceaux[-1][0] == nature:
+                        morceaux[-1][1] += t
+                    else:
+                        morceaux.append([nature, t])
+                morceaux.append(["texte", "\n"])
+
+    plat = []
+    pos = 0
+    tr_matiere, tr_produit = [], []
+    for nature, texte in morceaux:
+        if nature == "matiere":
+            v = re.sub(r"\s+", " ", texte).strip()
+            if v:
+                tr_matiere.append((pos, v))
+        elif nature == "produit":
+            v = re.sub(r"\s+", " ", texte).strip()
+            if v:
+                tr_produit.append((pos, v))
+        plat.append(texte)
+        pos += len(texte)
+
+    return "".join(plat), tr_matiere, tr_produit, doc
+
+
+def en_vigueur(transitions, offset):
+    """Dernière valeur déclarée avant `offset`, par recherche dichotomique."""
+    import bisect
+    i = bisect.bisect_right([o for o, _ in transitions], offset) - 1
+    return transitions[i][1] if i >= 0 else None
+
+
+def main():
+    args = sys.argv[1:]
+    print(f"catalogue d'État russe — {SOURCE}")
+    if "--sans-iso" not in args:
+        regenerer_iso()
+    if not ISO.exists():
+        raise SystemExit("data/_iso.json absent : lancez « npx tsx scripts/noms_iso.ts ».")
+    noms_iso = json.loads(ISO.read_text(encoding="utf-8"))["iso"]
+
+    data = telecharger()
     try:
-        import fitz
+        import fitz  # noqa: F401
     except ImportError:
         raise SystemExit("PyMuPDF requis :  pip install pymupdf")
 
-    doc = fitz.open(stream=data, filetype="pdf")
-    print(f"  {doc.page_count} pages")
-    brut = "\n".join(doc[i].get_text() for i in range(doc.page_count))
+    brut, tr_matiere, tr_produit, doc = lire_pdf(data)
+    print(f"  {doc.page_count} pages · {len(tr_matiere)} en-têtes de matière active")
 
     m = re.search(r"по состоянию на\s+(\d{1,2}\s+\S+\s+\d{4})", brut)
     edition = m.group(1) if m else None
 
-    # ⚠️ RECOLLER LES MOTS CÉSURÉS AVANT D'APLATIR. Le PDF coupe les mots longs
-    # en fin de ligne : « АГРОХИМИЧЕС-\nКИЕ ТЕХНОЛОГИИ ». Aplati d'abord, le
-    # tiret devient indissociable d'un vrai trait d'union — « Агро-Кеми » — et
-    # la société sort du fichier sous deux noms. La réparation se fait donc
-    # tant que les retours de ligne sont là, et seulement entre deux lettres
-    # cyrilliques : les plages de doses « 0,1-\n0,15 » ne sont pas touchées.
-    brut = re.sub(r"([А-Яа-яЁё])-\s*\n\s*([А-Яа-яЁё])", r"\1\2", brut)
+    # ── Index russe des matières actives ────────────────────────────────────
+    # Les en-têtes combinés (« Абамектин + спиромезифен ») se scindent : chaque
+    # substance doit être trouvable seule.
+    par_cle = {}
+    for _, titre in tr_matiere:
+        for part in re.split(r"\s*\+\s*", titre):
+            part = part.strip(" .,;")
+            if part:
+                par_cle.setdefault(cle_chimique(part), part)
 
-    # Le PDF coupe aussi les numéros d'homologation en fin de ligne.
-    plat = re.sub(r"\s+", " ", brut)
-    plat = re.sub(r"(-\d{3,4}-)\s+(\d)", r"\1\2", plat)
+    # ⚠️ Une collision interdirait de distinguer deux substances : on refuse.
+    vus = {}
+    collisions = []
+    for n in noms_iso:
+        k = cle_chimique(n)
+        if k in vus:
+            collisions.append((vus[k], n))
+        vus[k] = n
+    if collisions:
+        raise SystemExit(f"Clés chimiques en collision, rapprochement refusé : {collisions}")
+
+    iso_par_cle = {}
+    for n in noms_iso:
+        alias = ALIAS_MATIERES.get(n)
+        k = cle_chimique(alias) if alias else cle_chimique(n)
+        if k in par_cle:
+            iso_par_cle[k] = n
+    print(f"  {len(iso_par_cle)}/{len(noms_iso)} matières actives de l'index retrouvées au catalogue")
+
+    # ── Homologations ───────────────────────────────────────────────────────
+    plat = re.sub(r"(-\d{3,4}-)\s+(\d)", r"\1\2", brut)
     plat = re.sub(r"(\d{3}(?:\([\d,\s]*\))?)-\s*(\d{2})-", r"\1-\2-", plat)
-
+    # Les deux substitutions ci-dessus raccourcissent le texte ; les offsets de
+    # transition ne valent plus. On travaille donc sur le texte d'origine pour
+    # localiser, et sur le texte recollé pour lire les numéros.
     entrees = []
     non_decoupes = 0
-    for x in NUMERO.finditer(plat):
-        amont = CLASSE.sub("", plat[max(0, x.start() - 320):x.start()])
-        fin = FIN_PRODUIT.search(amont)
-        if fin:
-            produit = amont[:fin.end()].strip()
-            bloc = amont[fin.end():]
-        else:
-            # Sans forme galénique reconnue, on retombe sur la dernière
-            # parenthèse fermante — moins sûr, mais rien n'est inventé.
-            j = amont.rfind(")")
-            produit = amont[:j + 1].strip() if j >= 0 else ""
-            bloc = amont[j + 1:] if j >= 0 else amont
+    for x in NUMERO.finditer(brut):
+        amont = brut[max(0, x.start() - 320):x.start()]
+        amont = re.sub(r"\s+", " ", amont)
+        amont = re.sub(r"\s*\d[\d\s\-]*/\s*\d\s*$", "", amont)
+
+        titre = en_vigueur(tr_matiere, x.start())
+        produit = en_vigueur(tr_produit, x.start())
+
+        # Le bloc société est ce qui suit le nom du produit dans le texte amont.
+        bloc = amont
+        if produit:
+            j = amont.rfind(produit[-24:]) if len(produit) > 24 else amont.rfind(produit)
+            if j >= 0:
+                bloc = amont[j + len(produit[-24:] if len(produit) > 24 else produit):]
 
         noms, reste = societes_du_bloc(bloc)
         if not noms:
             non_decoupes += 1
+
+        substances = [p.strip(" .,;") for p in re.split(r"\s*\+\s*", titre or "") if p.strip()]
         entrees.append({
             "numero": x.group(1),
             "expiration": x.group(2),
-            "produit": normaliser(produit)[-120:] or None,
+            "produit": normaliser(produit) if produit else None,
+            "matiereRusse": titre,
+            "iso": sorted({iso_par_cle[k] for k in
+                           (cle_chimique(s) for s in substances) if k in iso_par_cle}),
             "societes": [{"nom": n, "formes": f} for n, f in noms],
             "blocNonDecoupe": reste,
         })
 
     # ── Agrégation par société ──────────────────────────────────────────────
-    par = defaultdict(lambda: {"nom": None, "produits": [], "numeros": [], "formes": set()})
+    par = defaultdict(lambda: {"nom": None, "produits": [], "numeros": [],
+                               "formes": set(), "iso": set(), "russes": set()})
     for e in entrees:
         for s in e["societes"]:
             v = par[cle(s["nom"])]
             v["nom"] = v["nom"] or s["nom"]
             v["formes"].update(s["formes"])
+            v["iso"].update(e["iso"])
+            if e["matiereRusse"]:
+                v["russes"].add(e["matiereRusse"])
             if e["produit"]:
                 v["produits"].append(e["produit"])
             v["numeros"].append(e["numero"])
@@ -378,9 +538,32 @@ def main():
             "pays": pays,
             "paysFiable": fiable,
             "nbHomologations": len(set(v["numeros"])),
+            "matieres": sorted(v["iso"]),
+            "matieresRusses": sorted(v["russes"])[:30],
             "produits": sorted(set(v["produits"]))[:40],
         })
-    societes.sort(key=lambda x: (-x["nbHomologations"], x["nom"] or ""))
+    societes.sort(key=lambda x: (-len(x["matieres"]), -x["nbHomologations"], x["nom"] or ""))
+
+    # ── Index par matière active ────────────────────────────────────────────
+    par_ma = defaultdict(lambda: {"russes": set(), "societes": set(), "numeros": set()})
+    for e in entrees:
+        for n in e["iso"]:
+            m = par_ma[n]
+            if e["matiereRusse"]:
+                m["russes"].add(e["matiereRusse"])
+            m["numeros"].add(e["numero"])
+            for s in e["societes"]:
+                m["societes"].add(cle(s["nom"]))
+    nom_par_cle = {s["cle"]: s["nom"] for s in societes}
+    matieres = [
+        {
+            "iso": n,
+            "nomsRusses": sorted(v["russes"]),
+            "nbHomologations": len(v["numeros"]),
+            "societes": sorted(nom_par_cle.get(c, c) for c in v["societes"]),
+        }
+        for n, v in sorted(par_ma.items())
+    ]
 
     par_pays = defaultdict(int)
     for s in societes:
@@ -400,6 +583,8 @@ def main():
             "nbRusses": sum(1 for s in societes if s["pays"] == "Russie"),
             "nbEtrangeres": sum(1 for s in societes if s["etrangere"]),
             "nbSansSociete": non_decoupes,
+            "nbMatieres": len(matieres),
+            "nbMatieresIndex": len(noms_iso),
             "parPays": sorted(par_pays.items(), key=lambda kv: -kv[1]),
             "avertissement": (
                 "Catalogue d'État russe des pesticides. Aucune valeur "
@@ -411,6 +596,7 @@ def main():
             ),
         },
         "societes": societes,
+        "matieres": matieres,
         "entrees": entrees,
     }
 
@@ -421,10 +607,12 @@ def main():
     print(f"  édition : {edition}")
     print(f"  {len(entrees)} homologations · {non_decoupes} sans société identifiée")
     print(f"  {len(societes)} sociétés · {payload['meta']['nbRusses']} russes · "
-          f"{payload['meta']['nbEtrangeres']} étrangères\n")
-    for s in societes[:14]:
-        d = (s["pays"] or ("étranger" if s["etrangere"] else "?"))[:22]
-        print(f"    {s['nbHomologations']:>4}  {d:<22} {(s['nom'] or '')[:40]:<40} {s['latin'][:24]}")
+          f"{payload['meta']['nbEtrangeres']} étrangères")
+    print(f"  {len(matieres)} matières actives de l'index marocain couvertes\n")
+    for s in societes[:12]:
+        d = (s["pays"] or ("étranger" if s["etrangere"] else "?"))[:18]
+        print(f"    {len(s['matieres']):>3} M.A.  {s['nbHomologations']:>4} hom.  "
+              f"{d:<18} {(s['nom'] or '')[:38]}")
 
 
 if __name__ == "__main__":

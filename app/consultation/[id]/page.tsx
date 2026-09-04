@@ -61,7 +61,12 @@ function LigneCandidat({ c }: { c: Candidat }) {
           </div>
         )}
       </td>
-      <td style={{ color: "var(--muted)", fontSize: 13 }}>{c.pays ?? "à préciser"}</td>
+      <td style={{ color: "var(--muted)", fontSize: 13 }}>
+        {c.pays ?? "à préciser"}
+        <div style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 3, maxWidth: 220 }}>
+          {c.adresse ?? "adresse non publiée par le registre"}
+        </div>
+      </td>
       <td>
         <Origine c={c} />
       </td>

@@ -5,6 +5,7 @@ import { PACKS } from "./packs-fournisseur";
 import { pistesPour, type Piste } from "./pistes";
 import { fabricantsChinois, usines as usinesChinoises, type SocieteChinoise } from "./icama";
 import { fabricantsTurcs, type SocieteTurque } from "./bku";
+import { fabricantsRusses, type SocieteRusse } from "./russie";
 import { usinesDe, type UsinesSociete } from "./epa";
 import { organismesPour, type EssaisPourCulture } from "./onssa-eservice";
 import type { CandidatSourcing, Fournisseur, MatiereActive } from "./types";
@@ -65,7 +66,7 @@ const ROUTES: Record<Route, Etape> = {
 
 // ── Liste courte, les quatre couches ────────────────────────────────────────
 
-export type Origine = "onssa" | "australie" | "chine" | "turquie" | "usine";
+export type Origine = "onssa" | "australie" | "chine" | "turquie" | "russie" | "usine";
 
 export interface Candidat {
   id: string;
@@ -82,11 +83,29 @@ export interface Candidat {
   lignesMaroc: number | null;
   /** Usines EPA retrouvées à ce nom, quand le nom est en alphabet latin. */
   usines: UsinesSociete | null;
+  /**
+   * Adresse postale, quand un registre la publie.
+   *
+   * ⚠️ DEUX REGISTRES SEULEMENT EN PUBLIENT : l'EPA américaine, qui déclare
+   * l'adresse de chaque établissement, et le registre turc. L'index ONSSA, le
+   * registre chinois et le catalogue russe n'en portent aucune — dire « adresse
+   * non publiée » vaut mieux que laisser une case vide qu'on prendrait pour un
+   * oubli de saisie.
+   */
+  adresse: string | null;
   /** true = ouvre la voie me-too. Le seul avantage réglementaire qui existe. */
   meToo: boolean;
 }
 
+/** Adresse du premier site EPA connu, formatée pour un courrier. */
+function adresseEpa(u: UsinesSociete | null): string | null {
+  const site = u?.sites?.[0];
+  if (!site) return null;
+  return [site.adresse, site.ville, site.region, site.pays].filter(Boolean).join(", ") || null;
+}
+
 function depuisOnssa(f: Fournisseur): Candidat {
+  const u = usinesDe(f.nom);
   return {
     id: `onssa-${f.id}`,
     nom: f.nom,
@@ -94,12 +113,14 @@ function depuisOnssa(f: Fournisseur): Candidat {
     pays: f.pays,
     motif: `${f.nbLignesMaroc} ligne(s) au Maroc sur cette matière active`,
     lignesMaroc: f.nbLignesMaroc,
-    usines: usinesDe(f.nom),
+    usines: u,
+    adresse: adresseEpa(u),
     meToo: true,
   };
 }
 
 function depuisAustralie(p: Piste): Candidat {
+  const u = usinesDe(p.nom);
   return {
     id: `au-${p.id}`,
     nom: p.nom,
@@ -110,7 +131,26 @@ function depuisAustralie(p: Piste): Candidat {
         ? `${p.nbProduits} produit(s) · nom proche de « ${p.fournisseurOnssa} », à vérifier`
         : `${p.nbProduits} produit(s) homologué(s)`,
     lignesMaroc: null,
-    usines: usinesDe(p.nom),
+    usines: u,
+    adresse: adresseEpa(u),
+    meToo: false,
+  };
+}
+
+function depuisRussie(s: SocieteRusse): Candidat {
+  return {
+    // ⚠️ Le nom latin passe devant : une raison sociale en cyrillique ne se
+    // cherche pas depuis un clavier latin. Le nom d'origine suit, car c'est
+    // lui qui figure au catalogue et lui seul qui permet de vérifier.
+    id: `ru-${s.cle}`,
+    nom: s.identifie ? `${s.latin} — ${s.nom}` : `${s.latin} (translittéré) — ${s.nom}`,
+    origine: "russie",
+    pays: s.pays,
+    motif: `${s.nbHomologations} homologation(s) en Russie · ${s.matieres.length} M.A. de l'index`,
+    lignesMaroc: null,
+    // Le catalogue russe ne publie aucune adresse.
+    adresse: null,
+    usines: null,
     meToo: false,
   };
 }
@@ -118,11 +158,15 @@ function depuisAustralie(p: Piste): Candidat {
 function depuisChine(s: SocieteChinoise): Candidat {
   return {
     id: `cn-${s.nom}`,
-    nom: s.nom,
+    // Le pinyin devant, les caractères han derrière : c'est le premier qui se
+    // recopie dans un courriel de consultation.
+    nom: s.glose ? `${s.glose} — ${s.nom}` : s.nom,
     origine: "chine",
-    pays: "Chine",
+    pays: s.region ? `Chine (${s.region})` : "Chine",
     motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · licence ${s.licenceProduction}`,
     lignesMaroc: null,
+    // Le registre chinois ne publie pas d'adresse ; la région, si.
+    adresse: s.region ? `${s.region}, Chine` : null,
     // Les raisons sociales chinoises ne se rapprochent pas de l'alphabet latin.
     usines: null,
     meToo: false,
@@ -137,6 +181,7 @@ function depuisTurquie(s: SocieteTurque): Candidat {
     pays: "Turquie",
     motif: `${s.nbImal} homologation(s) fabriquée(s) en Turquie · ${s.matieresImal.length} M.A.`,
     lignesMaroc: null,
+    adresse: s.adresse,
     // Raisons sociales en alphabet latin : le registre EPA est interrogeable.
     usines: usinesDe(s.nom ?? ""),
     meToo: false,
@@ -266,6 +311,16 @@ export function consultation(maId: string): Consultation | null {
     }
   }
 
+  const ru = fabricantsRusses(ma.nom);
+  if (ru) {
+    for (const s of ru.russes.slice(0, 8)) {
+      const n = s.nom.toUpperCase();
+      if (vus.has(n)) continue;
+      vus.add(n);
+      autres.push(depuisRussie(s));
+    }
+  }
+
   const cn = fabricantsChinois(ma.nom);
   if (cn) {
     for (const s of usinesChinoises(cn).slice(0, 12)) {
@@ -292,5 +347,6 @@ export const LIBELLE_ORIGINE: Record<Origine, string> = {
   australie: "registre australien",
   chine: "registre chinois",
   turquie: "registre turc",
+  russie: "catalogue russe",
   usine: "registre EPA",
 };

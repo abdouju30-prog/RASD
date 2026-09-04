@@ -1,4 +1,5 @@
 import russieFile from "../data/russie.json";
+import { apparierApvma } from "./apvma";
 import { FOURNISSEURS } from "./data";
 import { IndexNoms } from "./noms";
 
@@ -43,7 +44,20 @@ export interface SocieteRusse {
   pays: string | null;
   paysFiable: boolean;
   nbHomologations: number;
+  /** Matières actives de l'index marocain, sous leur nom ISO anglais. */
+  matieres: string[];
+  /** Les mêmes telles que le catalogue les écrit — pour pouvoir vérifier. */
+  matieresRusses: string[];
   produits: string[];
+}
+
+export interface MatiereRusse {
+  /** Nom ISO anglais — la clé commune à tous les registres étrangers. */
+  iso: string;
+  /** En-têtes du catalogue qui correspondent, sels et formes compris. */
+  nomsRusses: string[];
+  nbHomologations: number;
+  societes: string[];
 }
 
 interface FichierRussie {
@@ -61,15 +75,19 @@ interface FichierRussie {
     nbEtrangeres: number;
     nbSansSociete: number;
     parPays: [string, number][];
+    nbMatieres: number;
+    nbMatieresIndex: number;
     avertissement: string;
   };
   societes: SocieteRusse[];
+  matieres: MatiereRusse[];
 }
 
 const FICHIER = russieFile as unknown as FichierRussie;
 
 export const META_RUSSIE = FICHIER.meta;
 export const SOCIETES_CATALOGUE_RU: SocieteRusse[] = FICHIER.societes;
+export const MATIERES_RUSSES: MatiereRusse[] = FICHIER.matieres;
 
 /** Sociétés immatriculées en Russie — le gisement que l'outil ne voyait pas. */
 export const PRODUCTEURS_RUSSES: SocieteRusse[] = SOCIETES_CATALOGUE_RU.filter(
@@ -128,3 +146,62 @@ export const STATS_RUSSIE = {
   miroir: META_RUSSIE.miroir,
   avertissement: META_RUSSIE.avertissement,
 };
+
+// ── Le pont matière active -> détenteurs russes ─────────────────────────────
+//
+// C'est ce qui manquait : le catalogue liait des sociétés à des produits, et
+// l'outil raisonne par matière active. Le pont passe par le nom ISO anglais,
+// comme pour la Chine et la Turquie — une seule règle de rapprochement dans
+// tout l'outil, `apparierApvma`, jamais réimplémentée ici.
+//
+// ⚠️ CÔTÉ RUSSE, LE RAPPROCHEMENT EST FAIT À L'IMPORT, par égalité de clé
+// phonétique et non par similarité : le russe transcrit la nomenclature
+// chimique de façon régulière (к↔c, ц↔ts, х↔kh/ch, ф↔f/ph, г↔h, le -e final
+// tombe), ce qui permet une réduction déterministe des deux côtés. Une
+// collision entre deux noms ISO ferait échouer l'import plutôt que produire un
+// rapprochement douteux.
+
+const PAR_ISO = new Map(MATIERES_RUSSES.map((m) => [m.iso, m]));
+const PAR_NOM = new Map(SOCIETES_CATALOGUE_RU.map((s) => [s.nom, s]));
+
+/** Entrée du catalogue russe correspondant à une matière active de l'index. */
+export function matiereRusse(nomONSSA: string): MatiereRusse | null {
+  const c = apparierApvma(nomONSSA);
+  return c ? PAR_ISO.get(c.nom) ?? null : null;
+}
+
+export interface FabricantsRusses {
+  matiere: MatiereRusse;
+  /** Détenteurs immatriculés en Russie — le gisement propre au pays. */
+  russes: SocieteRusse[];
+  /** Sociétés étrangères homologuées en Russie sur la même matière active. */
+  etrangers: SocieteRusse[];
+}
+
+/**
+ * Qui détient une homologation russe sur cette matière active.
+ *
+ * Les deux listes sont séparées et le restent : une société russe est une
+ * piste de sourcing nouvelle, une société étrangère homologuée en Russie est
+ * le plus souvent déjà connue par ailleurs — et c'est justement ce qui rend sa
+ * présence ici informative plutôt que redondante.
+ */
+export function fabricantsRusses(nomONSSA: string): FabricantsRusses | null {
+  const m = matiereRusse(nomONSSA);
+  if (!m) return null;
+  const russes: SocieteRusse[] = [];
+  const etrangers: SocieteRusse[] = [];
+  for (const nom of m.societes) {
+    const s = PAR_NOM.get(nom);
+    if (!s) continue;
+    (s.etrangere ? etrangers : russes).push(s);
+  }
+  const parVolume = (a: SocieteRusse, b: SocieteRusse) =>
+    b.matieres.length - a.matieres.length || b.nbHomologations - a.nbHomologations;
+  russes.sort(parVolume);
+  etrangers.sort(parVolume);
+  return { matiere: m, russes, etrangers };
+}
+
+/** Matières actives de l'index marocain présentes au catalogue russe. */
+export const NB_MATIERES_COUVERTES = MATIERES_RUSSES.length;
