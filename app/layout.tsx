@@ -11,6 +11,7 @@ import { fmtDate, usagesTotal } from "@/lib/logic";
 import { candidats, statsSourcing } from "@/lib/sourcing";
 import { NB_LIGNES_CHECKLIST } from "@/lib/dossier";
 import { STATS_SENTINELLE } from "@/lib/sentinelle";
+import { gamme } from "@/lib/gamme";
 
 export const metadata: Metadata = {
   title: "Homologa — Tour de contrôle réglementaire",
@@ -24,6 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const st = statsAlertes(d.id);
   const so = statsSourcing();
   const nbCibles = candidats({ detenteurId: d.id }).length;
+  const gm = gamme(d.id);
 
   const stations: Station[] = [
     { href: "/", nom: "Radar", compteur: `${st.total} détections` },
@@ -60,7 +62,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       compteur: `${NB_LIGNES_CHECKLIST} lignes · 3-B`,
     },
     // Hors chaîne, comme le radar : la chaîne défend le portefeuille contre les
-    // retraits, la sentinelle cherche ce qu'on homologuerait le premier.
+    // retraits, ces deux-là cherchent ce qu'on pourrait prendre.
+    {
+      href: "/gamme",
+      nom: "Gamme",
+      compteur: `${gm.manques.length} M.A. manquantes`,
+    },
     {
       href: "/sentinelle",
       nom: "Sentinelle",
