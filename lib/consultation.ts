@@ -7,6 +7,11 @@ import { fabricantsChinois, usines as usinesChinoises, type SocieteChinoise } fr
 import { fabricantsTurcs, type SocieteTurque } from "./bku";
 import { fabricantsRusses, type SocieteRusse } from "./russie";
 import { fabricantsBresiliens, type UsineBresil } from "./bresil";
+import {
+  etiquette as etiquetteCoree,
+  fabricantsCoreens,
+  type SocieteCoreenne,
+} from "./coree";
 import { usinesDe, type UsinesSociete } from "./epa";
 import { organismesPour, type EssaisPourCulture } from "./onssa-eservice";
 import type { CandidatSourcing, Fournisseur, MatiereActive } from "./types";
@@ -68,7 +73,8 @@ const ROUTES: Record<Route, Etape> = {
 // ── Liste courte, les quatre couches ────────────────────────────────────────
 
 export type Origine =
-  | "onssa" | "australie" | "chine" | "turquie" | "russie" | "bresil" | "usine";
+  | "onssa" | "australie" | "chine" | "turquie" | "russie" | "bresil" | "coree"
+  | "usine";
 
 export interface Candidat {
   id: string;
@@ -150,6 +156,24 @@ function depuisBresil(u: UsineBresil): Candidat {
     // Le seul registre qui nomme l'atelier plutôt que la seule société.
     adresse: u.sites.length ? `${u.sites.join(" · ")}, ${u.pays ?? u.paysBrut ?? ""}`.trim() : null,
     usines: usinesDe(u.nom),
+    meToo: false,
+  };
+}
+
+function depuisCoree(s: SocieteCoreenne): Candidat {
+  return {
+    id: `kr-${s.cle}`,
+    // Le nom latin devant, le hangul derrière : c'est le premier qui se recopie
+    // dans un courriel de consultation, le second qui permet de vérifier.
+    nom: s.commercial ? `${s.commercial} — ${s.nom}` : `${etiquetteCoree(s)} (romanisé) — ${s.nom}`,
+    origine: "coree",
+    pays: "Corée du Sud",
+    motif: `${s.nbHomologations} homologation(s) en Corée · ${s.matieres.length} M.A. de l'index`,
+    lignesMaroc: null,
+    // Le registre coréen ne publie pas l'adresse du titulaire.
+    adresse: null,
+    // Les raisons sociales coréennes ne se rapprochent pas de l'alphabet latin.
+    usines: null,
     meToo: false,
   };
 }
@@ -351,6 +375,20 @@ export function consultation(maId: string): Consultation | null {
     }
   }
 
+  // La Corée après la Russie : elle nomme des titulaires, non des usines de
+  // synthèse — mais c'est un membre de l'OCDE qui produit du générique, et le
+  // seul registre de l'outil daté au jour. Les filiales de groupes étrangers
+  // sont écartées : ce ne sont pas des pistes de sourcing.
+  const kr = fabricantsCoreens(ma.nom);
+  if (kr) {
+    for (const s of kr.societes.slice(0, 8)) {
+      const n = s.nom.toUpperCase();
+      if (vus.has(n)) continue;
+      vus.add(n);
+      autres.push(depuisCoree(s));
+    }
+  }
+
   const cn = fabricantsChinois(ma.nom);
   if (cn) {
     for (const s of usinesChinoises(cn).slice(0, 12)) {
@@ -379,5 +417,6 @@ export const LIBELLE_ORIGINE: Record<Origine, string> = {
   turquie: "registre turc",
   russie: "catalogue russe",
   bresil: "registre brésilien",
+  coree: "registre coréen",
   usine: "registre EPA",
 };

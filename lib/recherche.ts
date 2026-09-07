@@ -3,6 +3,7 @@ import { ANNUAIRE_PISTES } from "./pistes";
 import { USINES_CHINE } from "./icama";
 import { USINES_TURQUES } from "./bku";
 import { PRODUCTEURS_RUSSES } from "./russie";
+import { PRODUCTEURS_COREENS, etiquette as etiquetteCoree } from "./coree";
 import { USINES_BRESIL } from "./bresil";
 import { USINES_SOURCING } from "./epa";
 import { ORGANISMES_BPE, SOCIETES_AGREEES, PRODUITS_EXPIRES } from "./onssa-eservice";
@@ -34,6 +35,7 @@ export type TypeEntree =
   | "usine_chine"
   | "usine_turquie"
   | "producteur_russe"
+  | "producteur_coreen"
   | "usine_bresil"
   | "usine_epa"
   | "societe_agreee"
@@ -61,6 +63,7 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   usine_chine: "Usine chinoise",
   usine_turquie: "Usine turque",
   producteur_russe: "Producteur russe",
+  producteur_coreen: "Société coréenne",
   usine_bresil: "Usine (registre brésilien)",
   usine_epa: "Usine (registre EPA)",
   societe_agreee: "Société agréée ONSSA",
@@ -84,6 +87,7 @@ const RANG: Record<TypeEntree, number> = {
   usine_chine: 7,
   usine_turquie: 7,
   producteur_russe: 7,
+  producteur_coreen: 7,
   usine_bresil: 5,
   organisme_bpe: 8,
   produit_expire: 9,
@@ -209,6 +213,20 @@ function construire(): Indexee[] {
       type: "producteur_russe",
       href: `/fournisseurs?pays=${encodeURIComponent("Russie")}`,
       poids: s.nbHomologations,
+    });
+  }
+
+  // ⚠️ MÊME RAISON QUE POUR LE RUSSE ET LE CHINOIS : un nom en hangul se
+  // réduit à la chaîne vide et la société serait introuvable. Le libellé porte
+  // la romanisation ou le nom commercial, le hangul passe en détail.
+  for (const s of PRODUCTEURS_COREENS) {
+    out.push({
+      id: `kr-${s.cle}`,
+      libelle: etiquetteCoree(s),
+      detail: `Corée du Sud · ${s.nom} · ${s.nbHomologations} homologation(s)`,
+      type: "producteur_coreen",
+      href: `/fournisseurs?pays=${encodeURIComponent("Corée du Sud")}`,
+      poids: s.matieres.length * 2,
     });
   }
 

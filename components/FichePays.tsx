@@ -15,6 +15,7 @@ import { LIBELLE_LIEN, PORTEE_LIEN, type FicheOcde } from "@/lib/ocde";
 const TON: Record<string, string> = {
   onssa: "var(--accent)",
   bresil: "var(--info)",
+  coree: "var(--info)",
   epa: "var(--info)",
   chine: "var(--info)",
   turquie: "var(--info)",

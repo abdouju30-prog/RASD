@@ -16,6 +16,8 @@ import { STATS_RUSSIE, fabricantsRusses } from "@/lib/russie";
 import { FabricantsRusses } from "@/components/FabricantsRusses";
 import { STATS_BRESIL, fabricantsBresiliens } from "@/lib/bresil";
 import { FabricantsBresil } from "@/components/FabricantsBresil";
+import { STATS_COREE, fabricantsCoreens } from "@/lib/coree";
+import { FabricantsCoreens } from "@/components/FabricantsCoreens";
 
 export async function generateStaticParams() {
   return candidats({ maxDetenteurs: 8 })
@@ -34,6 +36,7 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
   const turquie = fabricantsTurcs(ma.nom);
   const russie = fabricantsRusses(ma.nom);
   const bresil = fabricantsBresiliens(ma.nom);
+  const coree = fabricantsCoreens(ma.nom);
 
   return (
     <>
@@ -213,6 +216,11 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
           <FabricantsBresil d={bresil} attribution={STATS_BRESIL.attribution} />
 
           <FabricantsChinois m={chine} attribution={STATS_ICAMA.attribution} />
+
+          {/* La Corée après la Chine : elle nomme des titulaires, pas des
+              usines de synthèse — mais elle est le seul registre daté au jour,
+              et le seul membre de l'OCDE de la liste à produire du générique. */}
+          <FabricantsCoreens d={coree} attribution={STATS_COREE.attribution} />
 
           <FabricantsTurcs d={turquie} attribution={STATS_BKU.attribution} />
 

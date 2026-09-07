@@ -27,6 +27,15 @@ import sentinelleFile from "../data/sentinelle.json";
 // preuve, PAR LES FAITS, que sa fabrication générique a lieu. C'est le
 // classement retenu ici, et il ne repose sur aucune supposition.
 //
+// ET LA CORÉE APPORTE LA DATE — donc la veille que vous cherchiez vraiment.
+// Le registre coréen date chaque homologation au jour et se régénère chaque
+// jour : on y voit ENTRER les molécules, y compris celles que les majors
+// viennent de lancer. Une molécule entrée récemment en Corée et sans aucun
+// fabricant générique au Brésil est exactement une nouveauté sous brevet :
+// à surveiller, pas à sourcer. Le jour où un fabricant chinois ou indien
+// apparaîtra au registre brésilien, elle basculera d'elle-même dans les
+// candidates à saisir — sans que personne ait à y penser.
+//
 // ⚠️ ET IL NE SUFFIT PAS. Une molécule fabriquée par dix usines chinoises peut
 // rester couverte par un brevet au Maroc. La liberté d'exploitation se vérifie
 // auprès d'un conseil en propriété industrielle, jamais dans un registre
@@ -55,8 +64,26 @@ export interface StatutAustralie {
   matiereActiveApprouvee: boolean;
 }
 
+/** Ce que le registre coréen sait d'une molécule — et lui seul : la date. */
+export interface PresenceCoree {
+  nom: string;
+  nbHomologations: number;
+  /** Produits fabriqués en Corée — pas matières actives synthétisées. */
+  nbFabrique: number;
+  nbImporte: number;
+  /** Première homologation coréenne : la date d'entrée de la molécule. */
+  premiere: string | null;
+  derniere: string | null;
+  nbSocietes: number;
+}
+
 export interface CandidateBrute {
-  nomPt: string;
+  /** Clé chimique — l'identité stable d'une molécule entre deux registres. */
+  cle: string;
+  /** Nom sous lequel la molécule a été rencontrée la première fois. */
+  nom: string;
+  nomPt: string | null;
+  coree: PresenceCoree | null;
   iso: string | null;
   groupeChimique: string | null;
   teneurMax: number | null;
@@ -80,6 +107,8 @@ interface FichierSentinelle {
     nbNouvelles: number;
     nbAvecStatutFrancais: number;
     nbAvecStatutAustralien: number;
+    nbVuesAuBresil: number;
+    nbVuesEnCoree: number;
     avertissement: string;
   };
   candidates: CandidateBrute[];
@@ -120,6 +149,10 @@ export const LIBELLE_FEU: Record<Feu, string> = {
 };
 
 export interface Candidate extends CandidateBrute {
+  /** Ce qu'on écrit : le nom ISO s'il existe, sinon le nom de rencontre. */
+  libelle: string;
+  /** Date d'entrée en Corée, ou null si la molécule n'y est pas homologuée. */
+  entreeCoree: string | null;
   acces: Acces;
   feu: Feu;
   nbGeneriques: number;
@@ -151,6 +184,8 @@ function enrichir(c: CandidateBrute): Candidate {
   const pays = [...new Set(gen.map((f) => f.pays).filter((p): p is string => Boolean(p)))].sort();
   return {
     ...c,
+    libelle: c.iso ?? c.nom,
+    entreeCoree: c.coree?.premiere ?? null,
     acces: acces(c),
     feu: feu(c),
     nbGeneriques: gen.length,
@@ -166,7 +201,7 @@ function enrichir(c: CandidateBrute): Candidate {
 
 export const CANDIDATES: Candidate[] = FICHIER.candidates
   .map(enrichir)
-  .sort((a, b) => b.rang - a.rang || a.nomPt.localeCompare(b.nomPt, "fr"));
+  .sort((a, b) => b.rang - a.rang || a.libelle.localeCompare(b.libelle, "fr"));
 
 /** Les seules qui valent un appel : sourçables ET pas retirées en France. */
 export const A_SAISIR = CANDIDATES.filter((c) => c.acces === "ouverte" && c.feu === "vert");
@@ -182,12 +217,44 @@ export const A_ECARTER = CANDIDATES.filter((c) => c.acces === "ouverte" && c.feu
 /** Nouveautés du dernier relevé — la notification, sans rien à faire tourner. */
 export const NOUVELLES = CANDIDATES.filter((c) => c.nouvelle);
 
+/**
+ * Fenêtre au-delà de laquelle une homologation coréenne n'est plus une
+ * nouveauté. Trois ans : c'est le temps qu'il faut à une molécule pour se
+ * diffuser d'un premier registre aux autres, et bien moins que la durée d'un
+ * brevet — une molécule entrée il y a trois ans n'a donc rien perdu de sa
+ * protection, seulement de son caractère de nouvelle.
+ */
+const FENETRE_NOUVEAUTE_ANS = 3;
+
+const SEUIL_RECENT = (() => {
+  const d = new Date(META_SENTINELLE.dernierReleve);
+  d.setFullYear(d.getFullYear() - FENETRE_NOUVEAUTE_ANS);
+  return d.toISOString().slice(0, 10);
+})();
+
+/**
+ * LA VEILLE DES LANCEMENTS — ce que vous vouliez guetter chez les majors.
+ *
+ * Molécules entrées récemment au registre coréen et dont AUCUN fabricant
+ * générique n'est déclaré au Brésil. C'est la signature d'une molécule encore
+ * verrouillée par son inventeur : renseignement de concurrence, pas piste
+ * d'achat. Elles restent suivies, et basculeront d'elles-mêmes dans « à
+ * saisir » le jour où une usine chinoise ou indienne apparaîtra sur elles.
+ */
+export const A_SURVEILLER = CANDIDATES.filter(
+  (c) => c.acces !== "ouverte" && c.entreeCoree !== null && c.entreeCoree >= SEUIL_RECENT
+).sort((a, b) => (b.entreeCoree ?? "").localeCompare(a.entreeCoree ?? ""));
+
 export const STATS_SENTINELLE = {
   nbCandidates: CANDIDATES.length,
   nbASaisir: A_SAISIR.length,
   nbAVerifier: A_VERIFIER.length,
   nbAEcarter: A_ECARTER.length,
   nbNouvelles: NOUVELLES.length,
+  nbASurveiller: A_SURVEILLER.length,
+  nbVuesAuBresil: META_SENTINELLE.nbVuesAuBresil,
+  nbVuesEnCoree: META_SENTINELLE.nbVuesEnCoree,
+  fenetreNouveaute: FENETRE_NOUVEAUTE_ANS,
   nbEcartees: META_SENTINELLE.nbEcarteesIndexMaroc,
   premierReleve: META_SENTINELLE.premierReleve,
   dernierReleve: META_SENTINELLE.dernierReleve,

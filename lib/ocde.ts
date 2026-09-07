@@ -232,6 +232,15 @@ export const REGISTRES: RegistreNational[] = [
     constat: "Membre de l'OCDE et pays de coût compétitif : la combinaison est rare.",
   },
   {
+    pays: "Corée du Sud",
+    autorite: "RDA — 농약안전정보시스템 (PSIS)",
+    url: "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
+    etat: "integre",
+    nomme: "Le titulaire d'homologation, son rôle (fabriqué / importé) et LA DATE",
+    constat:
+      "Le seul registre de l'outil daté au jour et régénéré quotidiennement : on y voit entrer les molécules. Membre de l'OCDE et pays de production générique réelle — la combinaison est rare.",
+  },
+  {
     pays: "France",
     autorite: "ANSES — E-Phy",
     url: "https://ephy.anses.fr/",
@@ -266,14 +275,6 @@ export const REGISTRES: RegistreNational[] = [
     etat: "atteignable",
     nomme: "Le titulaire d'homologation — le fabricant reste à vérifier",
     constat: `200 (${RELEVE}). Une seule usine canadienne au registre brésilien : le Canada formule, il ne synthétise pas.`,
-  },
-  {
-    pays: "Corée du Sud",
-    autorite: "RDA — PSIS",
-    url: "https://psis.rda.go.kr/psis/index.ps",
-    etat: "atteignable",
-    nomme: "À vérifier",
-    constat: `200 (${RELEVE}). Membre de l'OCDE doté d'une industrie générique réelle — le meilleur rapport effort/rendement parmi les registres non ouverts.`,
   },
   {
     pays: "Colombie",

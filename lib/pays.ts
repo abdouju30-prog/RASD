@@ -5,6 +5,7 @@ import { USINES_TURQUES } from "./bku";
 import { USINES_CHINE } from "./icama";
 import { SOCIETES_CATALOGUE_RU } from "./russie";
 import { USINES_BRESIL } from "./bresil";
+import { SOCIETES_COREE, etiquette } from "./coree";
 import { ocde, type FicheOcde } from "./ocde";
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -22,14 +23,15 @@ import { ocde, type FicheOcde } from "./ocde";
 // rien d'exploitable ; l'Inde est pourtant partout ailleurs.
 //
 // ⚠️ CE QUE CE MODULE NE DIT PAS. Le pays vient d'une inférence sur la raison
-// sociale, sauf pour l'EPA qui le déclare et pour la Chine, la Turquie et la
-// Russie où le registre lui-même situe la société. Un comptage par pays est
+// sociale, sauf pour l'EPA qui le déclare et pour la Chine, la Turquie, la
+// Russie et la Corée où le registre lui-même situe la société. Un comptage par pays est
 // donc un ordre de grandeur, pas un état civil — chaque ligne garde la marque
 // de son registre pour qu'on puisse remonter à la source.
 // ────────────────────────────────────────────────────────────────────────────
 
 export type Registre =
-  | "onssa" | "australie" | "epa" | "chine" | "turquie" | "russie" | "bresil";
+  | "onssa" | "australie" | "epa" | "chine" | "turquie" | "russie" | "bresil"
+  | "coree";
 
 export const LIBELLE_REGISTRE: Record<Registre, string> = {
   onssa: "Index ONSSA",
@@ -39,6 +41,7 @@ export const LIBELLE_REGISTRE: Record<Registre, string> = {
   turquie: "Registre turc",
   russie: "Catalogue russe",
   bresil: "Registre brésilien",
+  coree: "Registre coréen",
 };
 
 /** Ce que chaque registre prouve — à ne jamais gommer en agrégeant. */
@@ -50,6 +53,7 @@ export const PORTEE_REGISTRE: Record<Registre, string> = {
   turquie: "Fabrique en Turquie (mention İMAL)",
   russie: "Détient une homologation russe",
   bresil: "Fabrique le technique, site déclaré au dossier brésilien",
+  coree: "Détient une homologation coréenne — titulaire, non usine de synthèse",
 };
 
 export interface EntreePays {
@@ -149,6 +153,23 @@ function entrees(): EntreePays[] {
     });
   }
 
+  // ⚠️ LES FILIALES DE GROUPES ÉTRANGERS SONT EXCLUES. « Syngenta Korea » est
+  // coréenne au registre et ne l'est pas au sourcing : la compter gonflerait le
+  // recensement coréen de sociétés qu'on connaît déjà sous leur maison mère.
+  for (const s of SOCIETES_COREE) {
+    if (s.groupe) continue;
+    out.push({
+      id: `kr-${s.cle}`,
+      nom: s.commercial ? `${s.commercial} (${s.nom})` : etiquette(s),
+      registre: "coree",
+      detail: `${s.nbHomologations} homologation(s) · ${s.nbFabrique} produit(s) fabriqué(s) en Corée`,
+      meToo: false,
+      paysFiable: true,
+      href: `/fournisseurs?q=${encodeURIComponent(s.commercial ?? s.nom)}`,
+      pays: "Corée du Sud",
+    });
+  }
+
   for (const u of USINES_CHINE) {
     out.push({
       id: `cn-${u.nom}`,
@@ -230,8 +251,9 @@ const RANG: Record<Registre, number> = {
   epa: 2,
   chine: 3,
   turquie: 4,
-  russie: 5,
-  australie: 6,
+  coree: 5,
+  russie: 6,
+  australie: 7,
 };
 
 export function fichePays(pays: string): FichePays {
@@ -260,5 +282,5 @@ export const CENSUS_PAYS: FichePays[] = [...PAR_PAYS.keys()]
 export const STATS_PAYS = {
   nbPays: CENSUS_PAYS.length,
   nbEntrees: TOUTES.length,
-  nbRegistres: 7,
+  nbRegistres: 8,
 };

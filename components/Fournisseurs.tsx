@@ -18,7 +18,9 @@ import { LIBELLE_ORIGINE, type Candidat, type Etape, type Origine } from "@/lib/
 // ouvre la voie me-too — le seul raccourci réglementaire qui existe.
 // ────────────────────────────────────────────────────────────────────────────
 
-const ORDRE: Origine[] = ["bresil", "australie", "turquie", "chine", "russie", "usine"];
+const ORDRE: Origine[] = [
+  "bresil", "australie", "turquie", "chine", "coree", "russie", "usine",
+];
 
 export function QuiLaFournit({
   maId,

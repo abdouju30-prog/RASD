@@ -15,7 +15,8 @@
     "maj": "python scripts/maj.py",
     "sentinelle": "python scripts/sentinelle.py",
     "import:agrofit": "python scripts/import_agrofit.py",
-    "import:russie": "python scripts/import_gospesticid.py"
+    "import:russie": "python scripts/import_gospesticid.py",
+    "import:coree": "python scripts/import_psis.py"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",

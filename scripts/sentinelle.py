@@ -35,9 +35,19 @@ lib/sentinelle.ts, là où l'écran l'affiche.
 CE QUE LE SCRIPT CROISE.
 
     AGROFIT (Brésil)   la matière technique, ses fabricants, leur pays
+    PSIS (Corée)       LA DATE d'entrée de la molécule, et ses titulaires
     index ONSSA        est-elle déjà connue au Maroc ?
     E-Phy (Anses)      quel statut en France — l'ONSSA s'y aligne
     PUBCRIS (Australie) recoupement d'existence hors référentiel européen
+
+LA CORÉE APPORTE LA DATE, ET LA DATE CHANGE TOUT.
+Le Brésil dit qui fabrique, il ne dit pas quand la molécule est arrivée. Le
+registre coréen date chaque homologation au jour et se régénère quotidiennement :
+on y voit donc entrer les molécules — y compris celles que les majors viennent
+de lancer. Une molécule entrée récemment en Corée SANS aucun fabricant générique
+au Brésil est exactement une nouveauté sous brevet : à surveiller, pas à sourcer.
+Le jour où un fabricant chinois ou indien apparaîtra au registre brésilien, elle
+basculera d'elle-même dans les candidates à saisir.
 
 ⚠️ UNE MOLÉCULE RETIRÉE EN FRANCE N'EST PAS UNE OCCASION, C'EST UN PIÈGE.
 L'ONSSA suit l'ANSES. Homologuer au Maroc ce que la France vient de retirer,
@@ -64,6 +74,7 @@ RACINE = Path(__file__).resolve().parent.parent
 BRESIL = RACINE / "data" / "bresil.json"
 EPHY = RACINE / "data" / "ephy.json"
 APVMA = RACINE / "data" / "apvma.json"
+COREE = RACINE / "data" / "coree.json"
 ISO = RACINE / "data" / "_iso.json"
 ONSSA = RACINE / "data" / "onssa.json"
 SORTIE = RACINE / "data" / "sentinelle.json"
@@ -135,6 +146,7 @@ def main():
     br = charger(BRESIL)
     ephy = charger(EPHY)
     apvma = charger(APVMA)
+    kr = charger(COREE)
     noms_iso = charger(ISO)["iso"]
 
     collisions = verifier_collisions(noms_iso)
@@ -157,23 +169,65 @@ def main():
             cles_maroc.setdefault(k, n)
     print(f"  {len(marocaines)} molécules distinctes lues dans l'index ONSSA")
 
-    candidates, ecartees = [], []
+    # ── Deux sources, fusionnées par la clé chimique ────────────────────────
+    #
+    # Le Brésil dit QUI FABRIQUE le technique — c'est ce qui décide si une
+    # molécule est sourçable. La Corée dit QUAND elle est arrivée : c'est le
+    # seul registre de l'outil daté au jour. Une molécule vue dans les deux
+    # porte les deux informations, et c'est le couple qui vaut quelque chose.
+    candidates, ecartees, index = [], [], {}
+
+    def ecarter(nom, cle, alias=None):
+        """Renvoie le nom marocain si la molécule y figure déjà, sinon None."""
+        deja = cles_maroc.get(cle_chimique(alias)) if alias else cles_maroc.get(cle)
+        if deja:
+            ecartees.append((nom, deja))
+        return deja
+
+    def poser(cle, nom):
+        c = index.get(cle)
+        if c is None:
+            nom_fr = par_ephy.get(cle)
+            nom_au = par_apvma.get(cle)
+            fr = ephy_par_nom.get(nom_fr) if nom_fr else None
+            au = apvma_par_nom.get(nom_au) if nom_au else None
+            c = index[cle] = {
+                "cle": cle,
+                "nom": nom,
+                # Le nom ISO anglais vient d'Australie quand il existe : c'est
+                # lui qui se dicte a un fournisseur chinois ou indien.
+                "iso": nom_au,
+                "nomPt": None,
+                "groupeChimique": None,
+                "teneurMax": None,
+                "nbHomologationsBr": 0,
+                "fabricants": [],
+                "titulaires": [],
+                "coree": None,
+                "france": None if not fr else {
+                    "nom": fr["nom"],
+                    "etat": fr["etat"],
+                    "nbProduitsAutorises": fr["nbProduitsAutorises"],
+                    "nbProduitsRetires": fr["nbProduitsRetires"],
+                    "dernierRetrait": fr["dernierRetrait"],
+                },
+                "australie": None if not au else {
+                    "nom": au["nom"],
+                    "statut": au["statut"],
+                    "nbProduitsAgricoles": au["nbProduitsAgricoles"],
+                    "matiereActiveApprouvee": au["matiereActiveApprouvee"],
+                },
+            }
+            candidates.append(c)
+        return c
+
     for m in br["horsIndex"]:
         k = cle_chimique(m["nomPt"])
-        alias = ALIAS_MAROC.get(m["nomPt"])
-        deja = cles_maroc.get(cle_chimique(alias)) if alias else cles_maroc.get(k)
-        if deja:
-            ecartees.append((m["nomPt"], deja))
+        if not k or ecarter(m["nomPt"], k, ALIAS_MAROC.get(m["nomPt"])):
             continue
-        nom_fr = par_ephy.get(k)
-        nom_au = par_apvma.get(k)
-        fr = ephy_par_nom.get(nom_fr) if nom_fr else None
-        au = apvma_par_nom.get(nom_au) if nom_au else None
-        candidates.append({
+        c = poser(k, m["nomPt"])
+        c.update({
             "nomPt": m["nomPt"],
-            # Le nom ISO anglais vient d'Australie quand il existe : c'est lui
-            # qui se dicte à un fournisseur chinois ou indien.
-            "iso": nom_au,
             "groupeChimique": m["groupeChimique"],
             "teneurMax": m["teneurMax"],
             "nbHomologationsBr": m["nbHomologations"],
@@ -187,20 +241,26 @@ def main():
                 {**f, "coutFaible": f["pays"] in PAYS_COUT_FAIBLE} for f in m["fabricants"]
             ],
             "titulaires": m["titulaires"][:12],
-            "france": None if not fr else {
-                "nom": fr["nom"],
-                "etat": fr["etat"],
-                "nbProduitsAutorises": fr["nbProduitsAutorises"],
-                "nbProduitsRetires": fr["nbProduitsRetires"],
-                "dernierRetrait": fr["dernierRetrait"],
-            },
-            "australie": None if not au else {
-                "nom": au["nom"],
-                "statut": au["statut"],
-                "nbProduitsAgricoles": au["nbProduitsAgricoles"],
-                "matiereActiveApprouvee": au["matiereActiveApprouvee"],
-            },
         })
+
+    # ── La Corée : le nom ISO anglais, et surtout la date d'entrée ──────────
+    for m in kr["horsIndex"]:
+        k = cle_chimique(m["nom"])
+        if not k or ecarter(m["nom"], k):
+            continue
+        c = poser(k, m["nom"])
+        # Le registre coréen écrit déjà le nom commun en anglais ISO : quand
+        # PUBCRIS ne connaît pas la molécule, c'est le meilleur nom disponible.
+        c["iso"] = c["iso"] or m["nom"]
+        c["coree"] = {
+            "nom": m["nom"],
+            "nbHomologations": m["nbHomologations"],
+            "nbFabrique": m["nbFabrique"],
+            "nbImporte": m["nbImporte"],
+            "premiere": m["premiere"],
+            "derniere": m["derniere"],
+            "nbSocietes": len(m["societes"]),
+        }
 
     # ── Journal des premières apparitions ───────────────────────────────────
     aujourd_hui = date.today().isoformat()
@@ -208,13 +268,17 @@ def main():
     premier_releve = vu is None
     connues = dict(vu["premiereVue"]) if vu else {}
     nouvelles = []
+    # ⚠️ LE JOURNAL SE TIENT SUR LA CLÉ CHIMIQUE, pas sur un nom. Deux sources
+    # nomment la même molécule différemment — « clorpirifós » au Brésil,
+    # « Chlorpyrifos » en Corée : la clé les réunit, un nom les compterait deux
+    # fois et signalerait une fausse nouveauté à chaque ajout de registre.
     for c in candidates:
-        if c["nomPt"] not in connues:
-            connues[c["nomPt"]] = aujourd_hui
+        if c["cle"] not in connues:
+            connues[c["cle"]] = aujourd_hui
             if not premier_releve:
-                nouvelles.append(c["nomPt"])
-        c["premiereVue"] = connues[c["nomPt"]]
-        c["nouvelle"] = c["nomPt"] in nouvelles
+                nouvelles.append(c["cle"])
+        c["premiereVue"] = connues[c["cle"]]
+        c["nouvelle"] = c["cle"] in nouvelles
 
     VU.write_text(
         json.dumps({
@@ -230,9 +294,12 @@ def main():
 
     nb_fr = sum(1 for c in candidates if c["france"])
     nb_au = sum(1 for c in candidates if c["australie"])
+    nb_kr = sum(1 for c in candidates if c["coree"])
+    nb_br = sum(1 for c in candidates if c["nomPt"])
     payload = {
         "meta": {
-            "source": "AGROFIT (Brésil) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
+            "source": ("AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA "
+                       "× E-Phy (Anses) × PUBCRIS (Australie)"),
             "genere": datetime.now().isoformat(timespec="seconds"),
             "dernierReleve": aujourd_hui,
             "premierReleve": premier_releve,
@@ -241,12 +308,16 @@ def main():
             "nbNouvelles": len(nouvelles),
             "nbAvecStatutFrancais": nb_fr,
             "nbAvecStatutAustralien": nb_au,
+            "nbVuesAuBresil": nb_br,
+            "nbVuesEnCoree": nb_kr,
             "avertissement": (
-                "Matières actives homologuées comme produit technique au Brésil et "
-                "non appariées à l'index ONSSA. « Absente de l'index » signifie que "
-                "la clé chimique n'a rien apparié : une graphie portugaise non "
-                "réduite au nom marocain produirait un faux positif, à vérifier "
-                "avant tout engagement. Aucun registre ouvert ne publie l'état des "
+                "Matières actives homologuées au Brésil (produit technique) ou en "
+                "Corée du Sud, et non appariées à l'index ONSSA. « Absente de "
+                "l'index » signifie que la clé chimique n'a rien apparié : une "
+                "graphie non réduite au nom marocain produirait un faux positif, à "
+                "vérifier avant tout engagement. La date coréenne est celle de la "
+                "première homologation en Corée, pas celle de l'invention de la "
+                "molécule. Aucun registre ouvert ne publie l'état des "
                 "brevets : la présence d'un fabricant autre que l'inventeur est le "
                 "seul indice, par les faits, qu'une fabrication générique a lieu. "
                 "Ni prix, ni capacité, ni qualité, ni liberté d'exploitation."
@@ -260,8 +331,8 @@ def main():
     print(f"  {len(ecartees)} écartées : déjà présentes à l'index ONSSA")
     for a, b in sorted(ecartees)[:12]:
         print(f"     - {a[:34]:<36} = {b}")
-    print(f"  {len(candidates)} candidates · {nb_fr} avec statut français · "
-          f"{nb_au} avec statut australien")
+    print(f"  {len(candidates)} candidates · {nb_br} vues au Brésil · {nb_kr} vues en Corée")
+    print(f"  {nb_fr} avec statut français · {nb_au} avec statut australien")
     if premier_releve:
         print("  premier relevé : le journal des apparitions est initialisé, "
               "rien n'est signalé comme nouveau")

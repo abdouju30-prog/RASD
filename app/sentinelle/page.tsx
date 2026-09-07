@@ -4,6 +4,7 @@ import { Aide } from "@/components/Aide";
 import {
   A_ECARTER,
   A_SAISIR,
+  A_SURVEILLER,
   A_VERIFIER,
   LIBELLE_ACCES,
   LIBELLE_FEU,
@@ -36,7 +37,7 @@ function Ligne({ c }: { c: Candidate }) {
   return (
     <tr>
       <td style={{ fontWeight: 500 }}>
-        {c.iso ?? c.nomPt}
+        {c.libelle}
         {c.nouvelle && (
           <span
             className="pill"
@@ -51,7 +52,7 @@ function Ligne({ c }: { c: Candidate }) {
             nouvelle
           </span>
         )}
-        {c.iso && (
+        {c.nomPt && c.nomPt !== c.libelle && (
           <div className="mono" style={{ fontSize: 10.5, color: "var(--muted-2)" }}>
             {c.nomPt}
           </div>
@@ -68,6 +69,17 @@ function Ligne({ c }: { c: Candidate }) {
       <td style={{ fontSize: 12, color: "var(--muted)" }}>{c.paysGeneriques.join(" · ") || "—"}</td>
       <td className="mono" style={{ textAlign: "right", fontSize: 12 }}>
         {c.teneurMax ? `${c.teneurMax} g/kg` : "—"}
+      </td>
+      <td
+        className="mono"
+        style={{ fontSize: 12, color: "var(--muted)", whiteSpace: "nowrap" }}
+        title={
+          c.coree
+            ? `${c.coree.nbSocietes} société(s) coréenne(s) · ${c.coree.nbHomologations} homologation(s)`
+            : "Non homologuée en Corée du Sud"
+        }
+      >
+        {c.entreeCoree ?? "—"}
       </td>
       <td>
         <span
@@ -120,6 +132,7 @@ function Table({
             <th style={{ textAlign: "right" }}>Usines gén.</th>
             <th>Pays</th>
             <th style={{ textAlign: "right" }}>Teneur max</th>
+            <th>Entrée en Corée</th>
             <th>Statut France</th>
             <th style={{ textAlign: "right" }}>Hom. Brésil</th>
           </tr>
@@ -174,6 +187,12 @@ export default function SentinellePage() {
           </strong>
         </div>
         <div>
+          <span className="eyebrow">Lancements à surveiller</span>
+          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
+            {s.nbASurveiller}
+          </strong>
+        </div>
+        <div>
           <span className="eyebrow">Candidates suivies</span>
           <strong className="mono" style={{ fontSize: 17, fontWeight: 600 }}>{s.nbCandidates}</strong>
         </div>
@@ -205,6 +224,13 @@ export default function SentinellePage() {
         lecture="Une usine au moins en fabrique le technique dans un pays de sourcing générique, et la France autorise encore des produits. C'est le seul groupe où il y a à la fois quelque chose à acheter et une trajectoire réglementaire sûre."
         liste={A_SAISIR}
         max={30}
+      />
+
+      <Table
+        titre="Lancements des majors — à surveiller, pas à sourcer"
+        lecture={`Entrées au registre coréen depuis moins de ${s.fenetreNouveaute} ans, et sans aucun fabricant générique déclaré au Brésil. C'est la signature d'une molécule encore verrouillée par son inventeur : renseignement de concurrence, pas piste d'achat. Elles restent suivies — le jour où une usine chinoise ou indienne apparaîtra sur l'une d'elles, elle basculera d'elle-même dans « à saisir ».`}
+        liste={A_SURVEILLER}
+        max={25}
       />
 
       <Table
@@ -245,6 +271,22 @@ export default function SentinellePage() {
             l&apos;a déclaré à un régulateur</strong>. Le registre brésilien publie précisément
             cela, usine par usine et pays par pays. Une usine chinoise ou indienne déclarée sur une
             molécule prouve, par les faits, que sa fabrication générique existe.
+          </p>
+        </Aide>
+
+        <Aide titre="Ce que la Corée du Sud a apporté">
+          <p>
+            Le Brésil dit <strong>qui fabrique</strong> ; il ne dit pas quand la molécule est
+            arrivée. Le registre coréen date chaque homologation au jour et se régénère
+            quotidiennement : c&apos;est le seul de l&apos;outil où l&apos;on <em>voit entrer</em>{" "}
+            une molécule. {s.nbVuesEnCoree} des {s.nbCandidates} candidates y sont homologuées,
+            contre {s.nbVuesAuBresil} au Brésil.
+          </p>
+          <p>
+            C&apos;est ce qui rend la veille des lancements possible — et c&apos;est aussi ce qui
+            en montre la limite : les molécules entrées récemment en Corée n&apos;ont, pour la
+            plupart, <strong>aucun fabricant générique</strong>. Le tableau le dit colonne par
+            colonne, au lieu de le laisser supposer.
           </p>
         </Aide>
 

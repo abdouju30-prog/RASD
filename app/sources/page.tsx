@@ -15,6 +15,7 @@ import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
 import { fmtDate } from "@/lib/logic";
 import { LIBELLE_ETAT, REGISTRES, STATS_OCDE, type EtatRegistre } from "@/lib/ocde";
+import { STATS_COREE } from "@/lib/coree";
 
 export const dynamic = "force-dynamic";
 
@@ -190,7 +191,7 @@ export default function SourcesPage() {
       <div className="fil">Compartiments</div>
       <h1>D&apos;où vient chaque chiffre</h1>
       <p className="chapeau">
-        Huit compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
+        Neuf compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
         plutôt que sur les écrans de travail.
       </p>
 
@@ -260,7 +261,7 @@ export default function SourcesPage() {
       </div>
 
       <div className="section">
-        <span className="h-title">Les huit compartiments</span>
+        <span className="h-title">Les neuf compartiments</span>
         <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <Compartiment
             icone={<Database size={15} color="var(--accent)" />}
@@ -302,6 +303,17 @@ export default function SourcesPage() {
             maj={`${STATS_ICAMA.nbLicences} licences de production`}
             fiabilite="source"
             reserve="Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. Une licence n'est pas un audit — ni prix, ni capacité, ni qualité."
+          />
+
+          <Compartiment
+            icone={<Factory size={15} color="var(--info)" />}
+            nom="PSIS · Corée du Sud"
+            role="Quand une molécule arrive — le seul registre daté"
+            contenu={`${STATS_COREE.nbHomologations.toLocaleString("fr")} homologations coréennes, ${STATS_COREE.nbSocietes} sociétés dont ${STATS_COREE.nbFiliales} filiales de groupes étrangers, sur ${STATS_COREE.nbMatieresIndex} matières actives de l'index marocain. Chaque homologation porte sa date au jour et l'export est régénéré quotidiennement : c'est le seul compartiment où l'on voit ENTRER une molécule. Membre de l'OCDE et pays de production générique — la combinaison est rare.`}
+            origine={STATS_COREE.attribution}
+            maj={`dernière homologation ${STATS_COREE.derniereHomologation ?? "—"}`}
+            fiabilite="source"
+            reserve="« 제조 » désigne un produit fabriqué en Corée, pas une matière active synthétisée : ce registre nomme le titulaire de l'homologation, pas l'usine de synthèse. Les raisons sociales sont romanisées — une poignée pour chercher, pas une identité contractuelle."
           />
 
           <Compartiment
