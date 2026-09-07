@@ -5,6 +5,7 @@ import { USINES_TURQUES } from "./bku";
 import { USINES_CHINE } from "./icama";
 import { SOCIETES_CATALOGUE_RU } from "./russie";
 import { USINES_BRESIL } from "./bresil";
+import { ocde, type FicheOcde } from "./ocde";
 
 // ────────────────────────────────────────────────────────────────────────────
 // RECENSEMENT PAR PAYS — le même gisement, lu par nationalité
@@ -201,6 +202,16 @@ export interface FichePays {
   /** true dès qu'une société du pays est déjà référencée à l'ONSSA. */
   meToo: number;
   entrees: EntreePays[];
+  /**
+   * Lien du pays avec l'OCDE, ou null s'il n'en a aucun.
+   *
+   * ⚠️ NE DIT RIEN DU FOURNISSEUR. C'est un fait sur le pays : ses laboratoires
+   * relèvent — ou non — d'un programme BPL couvert par l'Acceptation Mutuelle
+   * des Données. Une société d'un pays adhérent peut très bien ne produire
+   * aucune étude BPL, et le Maroc n'étant pas adhérent, l'ONSSA n'est de toute
+   * façon pas tenue par l'AMD.
+   */
+  ocde: FicheOcde | null;
 }
 
 const PAR_PAYS = new Map<string, EntreePays[]>();
@@ -237,6 +248,7 @@ export function fichePays(pays: string): FichePays {
     entrees: [...l].sort(
       (a, b) => RANG[a.registre] - RANG[b.registre] || a.nom.localeCompare(b.nom)
     ),
+    ocde: ocde(pays),
   };
 }
 

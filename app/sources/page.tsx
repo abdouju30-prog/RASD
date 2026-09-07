@@ -14,6 +14,7 @@ import { RefreshCw } from "lucide-react";
 import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
 import { fmtDate } from "@/lib/logic";
+import { LIBELLE_ETAT, REGISTRES, STATS_OCDE, type EtatRegistre } from "@/lib/ocde";
 
 export const dynamic = "force-dynamic";
 
@@ -89,6 +90,92 @@ function Compartiment({
       {reserve && (
         <div style={{ fontSize: 11.5, color: "var(--high)", marginTop: 7, lineHeight: 1.5 }}>{reserve}</div>
       )}
+    </div>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// LA CARTE DES REGISTRES
+//
+// L'OCDE n'ouvre aucun annuaire d'usines. Sa liste sert d'autre chose : elle
+// désigne les administrations qui ont l'habitude de publier. Et un registre
+// ouvert nomme des sociétés du monde entier — c'est ainsi que 327 sociétés
+// indiennes sont entrées dans l'outil alors que l'Inde ne publie rien.
+//
+// « Répond » veut dire 200 à la date du relevé. Pas « exploitable ».
+// ────────────────────────────────────────────────────────────────────────────
+
+const TON_ETAT: Record<EtatRegistre, string> = {
+  integre: "var(--low)",
+  atteignable: "var(--info)",
+  ferme: "var(--high)",
+  inexplore: "var(--mod)",
+};
+
+function CarteRegistres() {
+  return (
+    <div className="section">
+      <div className="card" style={{ padding: "18px 20px" }}>
+        <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Globe size={14} /> Registres nationaux — {STATS_OCDE.nbIntegres} intégrés,{" "}
+          {STATS_OCDE.nbAtteignables} à ouvrir
+        </div>
+
+        <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "9px 0 4px", lineHeight: 1.6, maxWidth: "88ch" }}>
+          L&apos;OCDE compte {STATS_OCDE.nbMembres} membres et {STATS_OCDE.nbAdherents} pays non
+          membres adhérant à l&apos;Acceptation Mutuelle des Données — dont l&apos;Inde et le Brésil.
+          Cette liste sert ici de <strong>carte de prospection</strong> : ce sont les administrations
+          qui publient. Aucune ne délivre d&apos;annuaire de fournisseurs ; toutes nomment des
+          sociétés, et pas seulement les leurs.
+        </p>
+
+        <table className="tbl" style={{ marginTop: 12 }}>
+          <thead>
+            <tr>
+              <th>Pays</th>
+              <th>Autorité</th>
+              <th>État</th>
+              <th>Ce qu&apos;il nomme</th>
+              <th>Constat</th>
+            </tr>
+          </thead>
+          <tbody>
+            {REGISTRES.map((r) => (
+              <tr key={`${r.pays}-${r.autorite}`}>
+                <td style={{ fontWeight: 500, whiteSpace: "nowrap" }}>{r.pays}</td>
+                <td style={{ fontSize: 12, color: "var(--muted)" }}>
+                  <a href={r.url} target="_blank" rel="noreferrer" className="link-accent">
+                    {r.autorite}
+                  </a>
+                </td>
+                <td>
+                  <span
+                    className="pill"
+                    style={{
+                      fontSize: 10,
+                      whiteSpace: "nowrap",
+                      color: TON_ETAT[r.etat],
+                      borderColor: `color-mix(in srgb, ${TON_ETAT[r.etat]} 38%, transparent)`,
+                    }}
+                  >
+                    {LIBELLE_ETAT[r.etat]}
+                  </span>
+                </td>
+                <td style={{ fontSize: 12, color: "var(--muted)", maxWidth: 240 }}>{r.nomme}</td>
+                <td style={{ fontSize: 11.5, color: "var(--muted-2)", maxWidth: 380, lineHeight: 1.5 }}>
+                  {r.constat}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <p style={{ fontSize: 11.5, color: "var(--high)", marginTop: 12, lineHeight: 1.55, maxWidth: "88ch" }}>
+          L&apos;AMD lie les pays qui y adhèrent. <strong>Le Maroc n&apos;en est pas.</strong> Une
+          étude BPL faite en Inde ou au Brésil est donc un argument solide devant l&apos;ONSSA, pas
+          un droit opposable — au même titre que le recoupement australien.
+        </p>
+      </div>
     </div>
   );
 }
@@ -335,6 +422,8 @@ export default function SourcesPage() {
           </p>
         </Aide>
       </div>
+
+      <CarteRegistres />
 
       <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 20 }}>
         <Link href="/" className="link-accent">Retour au radar</Link>

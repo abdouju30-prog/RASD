@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Globe2 } from "lucide-react";
 import { LIBELLE_REGISTRE, PORTEE_REGISTRE, type FichePays as Fiche } from "@/lib/pays";
+import { LIBELLE_LIEN, PORTEE_LIEN, type FicheOcde } from "@/lib/ocde";
 
 // ────────────────────────────────────────────────────────────────────────────
 // FICHE PAYS — ce que l'outil connaît d'un pays, registre par registre
@@ -13,12 +14,56 @@ import { LIBELLE_REGISTRE, PORTEE_REGISTRE, type FichePays as Fiche } from "@/li
 
 const TON: Record<string, string> = {
   onssa: "var(--accent)",
+  bresil: "var(--info)",
   epa: "var(--info)",
   chine: "var(--info)",
   turquie: "var(--info)",
   russie: "var(--info)",
   australie: "var(--info)",
 };
+
+/**
+ * Le cadre OCDE du pays — une ligne, et sa réserve.
+ *
+ * ⚠️ La réserve n'est pas une précaution de style. L'Acceptation Mutuelle des
+ * Données oblige les pays qui y adhèrent ; le Maroc n'en fait pas partie. Dire
+ * « études acceptées » sans le rappeler ferait croire à une dispense qui
+ * n'existe pas devant l'ONSSA.
+ */
+function CadreOcde({ o }: { o: FicheOcde | null }) {
+  if (!o) return null;
+  const fort = o.amd;
+  const ton = fort ? "var(--low)" : "var(--muted-2)";
+  const mentions = [
+    o.candidat && !o.amd ? "candidat à l'adhésion" : null,
+    o.partenaireCle && o.lien !== "partenaire" ? "partenaire clé" : null,
+  ].filter(Boolean);
+
+  return (
+    <div style={{ marginTop: 12, display: "flex", gap: 9, alignItems: "baseline", flexWrap: "wrap" }}>
+      <span
+        className="pill"
+        style={{
+          fontSize: 10.5,
+          fontWeight: 500,
+          color: ton,
+          borderColor: `color-mix(in srgb, ${ton} 40%, transparent)`,
+          background: `color-mix(in srgb, ${ton} 8%, transparent)`,
+        }}
+        title={PORTEE_LIEN[o.lien]}
+      >
+        {LIBELLE_LIEN[o.lien]}
+        {o.amdDepuis && <span className="mono"> · {o.amdDepuis.slice(0, 4)}</span>}
+      </span>
+      <span style={{ fontSize: 11.5, color: "var(--muted-2)", lineHeight: 1.55 }}>
+        {fort
+          ? "Études BPL couvertes par l'Acceptation Mutuelle des Données — argument devant l'ONSSA, qui n'y adhère pas."
+          : PORTEE_LIEN[o.lien]}
+        {mentions.length > 0 && ` (${mentions.join(", ")})`}
+      </span>
+    </div>
+  );
+}
 
 export function BlocPays({ fiche, limite = 60 }: { fiche: Fiche; limite?: number }) {
   return (
@@ -45,6 +90,8 @@ export function BlocPays({ fiche, limite = 60 }: { fiche: Fiche; limite?: number
           </span>
         ))}
       </div>
+
+      <CadreOcde o={fiche.ocde} />
 
       {fiche.meToo > 0 ? (
         <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "13px 0 0", lineHeight: 1.6 }}>
