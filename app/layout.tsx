@@ -10,6 +10,7 @@ import { statsAlertes } from "@/lib/alertes";
 import { fmtDate, usagesTotal } from "@/lib/logic";
 import { candidats, statsSourcing } from "@/lib/sourcing";
 import { NB_LIGNES_CHECKLIST } from "@/lib/dossier";
+import { STATS_SENTINELLE } from "@/lib/sentinelle";
 
 export const metadata: Metadata = {
   title: "Homologa — Tour de contrôle réglementaire",
@@ -57,6 +58,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       etape: "Étape 6",
       nom: "Dossier",
       compteur: `${NB_LIGNES_CHECKLIST} lignes · 3-B`,
+    },
+    // Hors chaîne, comme le radar : la chaîne défend le portefeuille contre les
+    // retraits, la sentinelle cherche ce qu'on homologuerait le premier.
+    {
+      href: "/sentinelle",
+      nom: "Sentinelle",
+      compteur: `${STATS_SENTINELLE.nbASaisir} à saisir`,
     },
   ];
 

@@ -14,8 +14,10 @@ y a un disque — ici, ou dans GitHub Actions.
 Ce que le script fait, dans l'ordre :
   1. E-Phy (Anses)   — statut français, republié chaque nuit de mardi à mercredi
   2. APVMA (Australie) — recoupement hors UE, republié chaque semaine
-  3. Diff : si aucun statut n'a changé, il s'arrête là et ne commite rien
-  4. Commit décrivant ce qui a bougé, push, puis déploiement Vercel
+  3. Sentinelle — recroise les deux avec le registre brésilien et l'index ONSSA
+     pour tenir à jour les matières homologuées ailleurs et absentes du Maroc
+  4. Diff : si aucun statut n'a changé, il s'arrête là et ne commite rien
+  5. Commit décrivant ce qui a bougé, push, puis déploiement Vercel
 
 Le relevé ICAMA (Chine) n'est PAS dans la course hebdomadaire, et c'est
 délibéré : il se fait en interrogeant un formulaire ~200 fois, le registre
@@ -82,6 +84,13 @@ def main():
         if executer([sys.executable, "scripts/import_icama.py"]).returncode != 0:
             sys.exit("Import ICAMA en échec — rien n'a été commité.")
 
+    # La sentinelle se recalcule après E-Phy et PUBCRIS : c'est d'eux qu'elle
+    # tire le statut réglementaire de chaque candidate. Elle ne télécharge rien
+    # et son échec ne doit pas emporter la veille, qui est l'essentiel.
+    titre("2 ter · Sentinelle — matières absentes du Maroc")
+    if executer([sys.executable, "scripts/sentinelle.py"]).returncode != 0:
+        print("  Sentinelle en échec — la veille continue sans elle.")
+
     titre("3 · Ce qui a changé")
     code, sortie = capturer(["git", "status", "--porcelain", "--", "data/"])
     modifies = [l[3:] for l in sortie.splitlines() if l.strip()]
@@ -117,7 +126,8 @@ def main():
         f"{len(changements)} changement(s) de statut\n\n{corps}\n\n"
         "Données E-Phy - Anses · APVMA PUBCRIS"
     )
-    executer(["git", "add", "data/ephy.json", "data/apvma.json", "data/icama.json"])
+    executer(["git", "add", "data/ephy.json", "data/apvma.json", "data/icama.json",
+              "data/sentinelle.json", "data/sentinelle-vu.json"])
     if executer(["git", "commit", "-m", message]).returncode != 0:
         print("  Rien à commiter.")
         return

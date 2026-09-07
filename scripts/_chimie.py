@@ -45,9 +45,27 @@ REDUCTIONS = [
     # les deux se manquaient. Les trois graphies se ramènent donc à « cl ».
     ("chl", "cl"), ("khl", "cl"),
     ("ph", "f"), ("kh", "h"), ("ch", "h"), ("th", "t"),
+    # Le français garde le « que » latin là où le portugais écrit « ca » :
+    # « hydrazide maleique » / « hidrazida malêica ».
+    ("qu", "c"), ("q", "c"),
     ("x", "ks"), ("ts", "c"), ("k", "c"),
     ("ya", "a"), ("y", "i"), ("j", "i"), ("w", "v"), ("z", "s"),
-    ("h", "g"),
+    # ⚠️ « h » ET « g » DISPARAISSENT TOUS LES DEUX. Les trois langues traitent
+    # le h aspiré différemment, et une seule substitution ne peut pas les
+    # réconcilier :
+    #
+    #     anglais            portugais          russe
+    #     cyhalothrin        cialotrina         (h muet, tombe)
+    #     hexaconazole       hexaconazol        гексаконазол (h -> г, donc g)
+    #
+    # Le portugais laisse tomber le h, le russe le rend par un g. « h -> g »
+    # servait le russe et faisait manquer au portugais la lambda-cyhalothrine
+    # et la gamma-cyhalothrine ; « h supprimé » servait le portugais et faisait
+    # perdre cinq matières russes. Supprimer les deux lettres sert les deux
+    # langues : +2 côté brésilien, aucune perte côté russe, et toujours zéro
+    # collision sur les noms ISO de l'index — ce que `verifier_collisions`
+    # revérifie à chaque import.
+    ("h", ""), ("g", ""),
 ]
 
 # Le portugais et l'espagnol ajoutent une voyelle finale — « Abamectina »,
@@ -57,7 +75,19 @@ VOYELLES_FINALES = "eoa"
 
 # Mots de liaison des langues romanes, sans valeur chimique : « benzoato DE
 # emamectina », « sal DE amônio ».
-LIAISONS = {"de", "do", "da", "of", "e", "et", "and", "the", "sal"}
+#
+# ⚠️ LE CONTRE-ION EN FAIT PARTIE, PAS L'ACIDE. Chaque registre nomme le sel à
+# sa façon — « Fosétyl-Aluminium » au Maroc, « fosetil » au Brésil ;
+# « GLUFOSINATE-AMMONIUM » en ISO, « glufosinato - sal de amônio » en portugais.
+# L'index marocain ne distingue pas les sels d'une même substance : les laisser
+# tomber rapproche ces graphies. « acide » en revanche a dû rester : le retirer
+# confondait GLYPHOSATE et GLYPHOSATE ACID, deux entrées distinctes de l'index —
+# c'est `verifier_collisions` qui l'a refusé, et il avait raison.
+LIAISONS = {
+    "de", "do", "da", "of", "e", "et", "and", "the", "sal",
+    "aluminium", "sodium", "potassium", "ammonium", "amonio", "calcium",
+    "magnesium",
+}
 
 
 def sans_parenthese(nom: str) -> str:

@@ -286,6 +286,52 @@ def main():
         "usines": sorted({u for u in v["usines"] if u in par_id}),
     } for n, v in sorted(par_ma.items())]
 
+    # ── Matières HORS index — le gisement de première homologation ──────────
+    #
+    # Jusqu'ici on jetait tout ce qui ne correspondait pas à une matière active
+    # du portefeuille marocain. C'était jeter le plus intéressant : une matière
+    # homologuée au Brésil et absente de l'index marocain est une première
+    # homologation possible au Maroc, donc une exclusivité.
+    #
+    # ⚠️ ON N'ÉMET ICI QUE DES FAITS. Savoir si la molécule est sourçable —
+    # c'est-à-dire si quelqu'un d'autre que son inventeur la fabrique — se
+    # décide dans lib/sentinelle.ts, sur ces noms de fabricants. La règle n'est
+    # écrite qu'une fois, et là où l'écran l'affiche.
+    #
+    # ⚠️ « Hors index » veut dire « la clé chimique n'a rien apparié ». Une
+    # graphie portugaise que la réduction ne ramène pas au nom ISO produirait
+    # un faux positif : vérifier l'absence à l'index avant d'agir.
+    hors = defaultdict(lambda: {
+        "numeros": set(), "titulaires": set(), "fabricants": {},
+        "groupes": set(), "teneurs": [],
+    })
+    for h in homologations:
+        if h["iso"] or not h["matierePt"]:
+            continue
+        v = hors[h["matierePt"]]
+        if h["numero"]:
+            v["numeros"].add(h["numero"])
+        if h["titulaire"]:
+            v["titulaires"].add(h["titulaire"])
+        if h["groupeChimique"]:
+            v["groupes"].add(h["groupeChimique"])
+        if h["teneur"]:
+            v["teneurs"].append(h["teneur"])
+        for f in h["fabricants"]:
+            if f["nom"]:
+                v["fabricants"][f["nom"]] = f["pays"] or f["paysBrut"]
+
+    liste_hors = [{
+        "nomPt": n,
+        "groupeChimique": sorted(v["groupes"])[0] if v["groupes"] else None,
+        "nbHomologations": len(v["numeros"]),
+        "teneurMax": max(v["teneurs"]) if v["teneurs"] else None,
+        "titulaires": sorted(v["titulaires"]),
+        "fabricants": [{"nom": k, "pays": p} for k, p in sorted(v["fabricants"].items())],
+    } for n, v in sorted(hors.items())]
+    liste_hors.sort(key=lambda m: (-len(m["fabricants"]), -m["nbHomologations"], m["nomPt"]))
+    print(f"  {len(liste_hors)} matières actives hors index marocain")
+
     par_pays = defaultdict(int)
     for u in liste_usines:
         par_pays[u["pays"] or u["paysBrut"] or "—"] += 1
@@ -300,6 +346,7 @@ def main():
             "nbUsines": len(liste_usines),
             "nbMatieres": len(matieres),
             "nbMatieresIndex": len(noms_iso),
+            "nbHorsIndex": len(liste_hors),
             "parPays": sorted(par_pays.items(), key=lambda kv: -kv[1]),
             "avertissement": (
                 "Registre brésilien des produits techniques. Aucune valeur "
@@ -310,6 +357,7 @@ def main():
             ),
         },
         "matieres": matieres,
+        "horsIndex": liste_hors,
         "usines": liste_usines,
     }
 
