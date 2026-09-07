@@ -12,6 +12,7 @@ import { candidats, statsSourcing } from "@/lib/sourcing";
 import { NB_LIGNES_CHECKLIST } from "@/lib/dossier";
 import { STATS_SENTINELLE } from "@/lib/sentinelle";
 import { gamme } from "@/lib/gamme";
+import { STATS_MELANGES } from "@/lib/melanges";
 
 export const metadata: Metadata = {
   title: "Homologa — Tour de contrôle réglementaire",
@@ -67,6 +68,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       href: "/gamme",
       nom: "Gamme",
       compteur: `${gm.manques.length} M.A. manquantes`,
+    },
+    {
+      href: "/melanges",
+      nom: "Mélanges",
+      compteur: `${STATS_MELANGES.nbPretes} prêtes`,
     },
     {
       href: "/sentinelle",

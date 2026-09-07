@@ -11,6 +11,8 @@ import { TableAlternatives } from "@/components/Alternatives";
 import { QuiLaFournit } from "@/components/Fournisseurs";
 import { consultation } from "@/lib/consultation";
 import { lectureCroisee, STATS_APVMA } from "@/lib/apvma";
+import { partenairesDe } from "@/lib/melanges";
+import { Partenaires } from "@/components/Partenaires";
 
 // Le contenu dépend du détenteur choisi, qui est lu dans un cookie : la page
 // ne peut donc pas être pré-générée.
@@ -164,6 +166,8 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
               autres={cons.autres}
             />
           )}
+
+          <Partenaires liste={partenairesDe(ma)} />
         </div>
 
         <div style={{ display: "grid", gap: 16 }}>

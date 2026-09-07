@@ -4,6 +4,7 @@ import { fabricantsChinois, usines as usinesChinoises } from "./icama";
 import { fabricantsCoreens } from "./coree";
 import { fabricantsRusses } from "./russie";
 import { fabricantsTurcs } from "./bku";
+import { base, molecules } from "./formulation";
 import type { Detenteur, FicheAnses, MatiereActive } from "./types";
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -28,7 +29,7 @@ import type { Detenteur, FicheAnses, MatiereActive } from "./types";
 // marché porte et que vous n'avez pas. Le reste est une décision commerciale.
 //
 // ⚠️ LES MÉLANGES COMPTENT POUR CHACUN DE LEURS COMPOSANTS. L'index nomme des
-// formulations : 504 de ses 653 lignes sont des mélanges, et son champ
+// formulations : 212 de ses 653 lignes sont des mélanges, et son champ
 // « molecule » ne retient que le PREMIER composant. S'y fier faisait
 // disparaître 46 matières actives — dont le flufénacet, le MCPA, le pyroxsulame
 // et l'halauxifène-méthyl, tous vendus au Maroc à l'intérieur d'un mélange.
@@ -130,38 +131,6 @@ interface Molecule {
 }
 
 /**
- * Composants d'une ligne d'index.
- *
- *     « Mandipropamide(250 g/kg) / Cymoxanil(180 g/kg) »  ->  [Mandipropamide,
- *                                                              Cymoxanil]
- *
- * Les teneurs partent d'abord : elles contiennent un « / » qu'il ne faut pas
- * prendre pour un séparateur de matière active.
- */
-function composants(ma: MatiereActive): string[] {
-  const nu = ma.nom.replace(/\([^)]*\)/g, " ");
-  const parts = nu
-    .split("/")
-    .map((x) => x.trim().replace(/^[-–,;\s]+/, "").replace(/[-–,;\s]+$/, ""))
-    .filter((x) => x.length >= 4);
-  return [...new Set(parts.length ? parts : [(ma.molecule || ma.nom).trim()])];
-}
-
-/**
- * Nom commercial d'une matière active : le sel ou l'ester tombe.
- *
- * ⚠️ REGROUPEMENT LOCAL À CE MODULE. Devant l'ONSSA, « 2,4-D » et
- * « 2,4-D -sel d'amine » sont deux identités ; pour savoir si une société a une
- * offre 2,4-D, c'en est une seule.
- */
-function base(nom: string): string {
-  return nom
-    .replace(/\s*-\s*(sels?|esters?)\b.*$/i, "")
-    .replace(/\s*-\s*(2-éthylhexyl|éthylhexyl|isoctylique)\b.*$/i, "")
-    .trim();
-}
-
-/**
  * Ligne de référence d'une molécule.
  *
  * ⚠️ LA LIGNE PURE PASSE AVANT LA LIGNE LOURDE. Les registres étrangers
@@ -181,8 +150,7 @@ function ligneRef(lignes: MatiereActive[]): MatiereActive {
 function construireMarche(): Map<string, Molecule> {
   const parNom = new Map<string, MatiereActive[]>();
   for (const ma of MATIERES) {
-    for (const brut of composants(ma)) {
-      const nom = base(brut);
+    for (const nom of molecules(ma.nom, ma.molecule)) {
       if (!nom) continue;
       const l = parNom.get(nom) ?? [];
       l.push(ma);
@@ -293,7 +261,7 @@ export function gamme(detenteurId: string): Gamme {
       const ma = PAR_ID.get(id);
       // Un produit qui contient l'halauxifène-méthyl en second composant tient
       // l'halauxifène-méthyl : c'est ce que le découpage rend visible.
-      if (ma) for (const c of composants(ma)) tenues.add(base(c));
+      if (ma) for (const c of molecules(ma.nom, ma.molecule)) tenues.add(c);
     }
     for (const u of p.usages) {
       if (u.culture && u.cible) usagesTenus.add(`${u.culture} / ${u.cible}`);

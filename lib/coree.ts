@@ -64,6 +64,27 @@ export interface MatiereCoreenne {
   societes: string[];
 }
 
+/**
+ * Association homologuée en Corée, avec sa date.
+ *
+ * Le registre coréen est le seul de l'outil à dater ses homologations : on voit
+ * donc quelles associations sortent et lesquelles s'installent. 1 059
+ * associations distinctes, contre 167 à l'index marocain.
+ */
+export interface MelangeCoreen {
+  cle: string;
+  /** Noms communs ISO anglais, tels que le registre les écrit. */
+  composants: string[];
+  nbHomologations: number;
+  nbSocietes: number;
+  societes: string[];
+  nbFabrique: number;
+  nbImporte: number;
+  usages: string[];
+  premiere: string | null;
+  derniere: string | null;
+}
+
 /** Matière active homologuée en Corée et absente de l'index marocain. */
 export interface HorsIndexCoreen {
   nom: string;
@@ -91,11 +112,13 @@ interface FichierCoree {
     nbMatieresIndex: number;
     nbNomsIso: number;
     nbHorsIndex: number;
+    nbMelanges: number;
     nbFabrique: number;
     nbImporte: number;
     avertissement: string;
   };
   matieres: MatiereCoreenne[];
+  melanges: MelangeCoreen[];
   horsIndex: HorsIndexCoreen[];
   societes: SocieteCoreenne[];
 }
@@ -105,6 +128,7 @@ const FICHIER = coreeFile as unknown as FichierCoree;
 export const META_COREE = FICHIER.meta;
 export const MATIERES_COREE: MatiereCoreenne[] = FICHIER.matieres;
 export const HORS_INDEX_COREE: HorsIndexCoreen[] = FICHIER.horsIndex;
+export const MELANGES_COREE: MelangeCoreen[] = FICHIER.melanges;
 export const SOCIETES_COREE: SocieteCoreenne[] = FICHIER.societes;
 
 /** Les sociétés proprement coréennes — les filiales de groupes en sont exclues. */
@@ -148,6 +172,27 @@ export function fabricantsCoreens(nomONSSA: string): FabricantsCoreens | null {
   };
 }
 
+/**
+ * Le champ « 용도 » du registre — la destination du produit.
+ *
+ * Sept valeurs seulement, traduites une fois ici : les afficher en hangul
+ * revenait à ne rien afficher.
+ */
+export const USAGE_COREEN: Record<string, string> = {
+  "살균": "fongicide",
+  "살충": "insecticide",
+  "균충": "fongicide-insecticide",
+  "충초": "insecticide-herbicide",
+  "제초": "herbicide",
+  "생조": "régulateur de croissance",
+  "기타": "autre",
+};
+
+/** Usage traduit, ou le libellé d'origine si le registre en invente un autre. */
+export function usageFr(u: string): string {
+  return USAGE_COREEN[u] ?? u;
+}
+
 /** Étiquette lisible d'une société : le commercial s'il est connu, sinon le latin. */
 export function etiquette(s: SocieteCoreenne): string {
   return s.commercial ?? s.latin ?? s.nom;
@@ -162,6 +207,7 @@ export const STATS_COREE = {
   nbMatieresIndex: META_COREE.nbMatieresIndex,
   nbNomsIso: META_COREE.nbNomsIso,
   nbHorsIndex: META_COREE.nbHorsIndex,
+  nbMelanges: META_COREE.nbMelanges,
   nbFabrique: META_COREE.nbFabrique,
   nbImporte: META_COREE.nbImporte,
   derniereHomologation: META_COREE.derniereHomologation,

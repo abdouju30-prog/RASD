@@ -69,7 +69,11 @@ URL_XLSX = ("https://psis.rda.go.kr/psis/agc/res/"
 # « Bacillus thuringiensis subsp. kurstaki IMBL-B9 ». Découper sur tous les
 # points cassait ces noms en morceaux, et l'écran annonçait « subsp » comme une
 # matière active à saisir.
-SEPARATEURS = re.compile(r"\+|\.(?!\s)")
+#
+# ⚠️ LE « + » NE SÉPARE PAS ENTRE DEUX CHIFFRES. « Gibberellin A4+7 » désigne
+# un mélange d'isomères qui porte un seul nom : découpé, il produisait une
+# matière active « 7 » et une association « 7 + Gibberellic acid ».
+SEPARATEURS = re.compile(r"(?<![0-9])\+(?![0-9])|\.(?!\s)")
 
 # La seule abréviation que la règle d'espacement ne rattrape pas : « B.T. »
 # porte un point non suivi d'espace. Le registre écrit la même bactérie en
@@ -209,6 +213,48 @@ def main():
             elif p["role"] == IMPORTE:
                 m["importe"] += 1
 
+    # ── Associations ────────────────────────────────────────────────────────
+    #
+    # Le marché ne se vend pas en molécules mais en mélanges : 1 063 associations
+    # distinctes ici, contre 167 à l'index marocain. Et chacune porte sa date,
+    # ce qu'aucun autre registre de l'outil ne donne — on voit donc quelles
+    # associations sortent, et lesquelles s'installent.
+    melanges = defaultdict(lambda: {
+        "produits": set(), "societes": set(), "dates": [],
+        "fabrique": 0, "importe": 0, "usages": set(),
+    })
+    for p in produits.values():
+        comp = sorted({c.strip() for c in SEPARATEURS.split(p["communs"]) if c.strip()})
+        if len(comp) < 2:
+            continue
+        v = melanges[" + ".join(comp)]
+        v["produits"].add(p["numero"])
+        if p["societe"]:
+            v["societes"].add(p["societe"])
+        if p["date"]:
+            v["dates"].append(p["date"])
+        if p["usage"]:
+            v["usages"].add(p["usage"])
+        if p["role"] == FABRIQUE:
+            v["fabrique"] += 1
+        elif p["role"] == IMPORTE:
+            v["importe"] += 1
+
+    liste_melanges = [{
+        "cle": k,
+        "composants": k.split(" + "),
+        "nbHomologations": len(v["produits"]),
+        "nbSocietes": len(v["societes"]),
+        "societes": sorted(v["societes"])[:12],
+        "nbFabrique": v["fabrique"],
+        "nbImporte": v["importe"],
+        "usages": sorted(v["usages"]),
+        "premiere": min(v["dates"]) if v["dates"] else None,
+        "derniere": max(v["dates"]) if v["dates"] else None,
+    } for k, v in melanges.items()]
+    liste_melanges.sort(key=lambda m: (-m["nbHomologations"], -m["nbSocietes"], m["cle"]))
+    print(f"  {len(liste_melanges)} associations distinctes")
+
     # ── Sociétés ────────────────────────────────────────────────────────────
     societes = defaultdict(lambda: {
         "produits": set(), "matieres": set(), "dates": [],
@@ -308,6 +354,7 @@ def main():
             "nbMatieresIndex": len(liste_matieres),
             "nbNomsIso": len(noms_iso),
             "nbHorsIndex": len(hors),
+            "nbMelanges": len(liste_melanges),
             "nbFabrique": sum(1 for p in produits.values() if p["role"] == FABRIQUE),
             "nbImporte": sum(1 for p in produits.values() if p["role"] == IMPORTE),
             "avertissement": (
@@ -322,6 +369,7 @@ def main():
             ),
         },
         "matieres": liste_matieres,
+        "melanges": liste_melanges,
         "horsIndex": hors,
         "societes": liste_societes,
     }
