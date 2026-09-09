@@ -17,6 +17,8 @@ import { marcheDe } from "@/lib/concurrents";
 import { Concurrents } from "@/components/Concurrents";
 import { spectreDe } from "@/lib/usages";
 import { Usages } from "@/components/Usages";
+import { usagesCoreens } from "@/lib/coree-usages";
+import { UsagesCoree } from "@/components/UsagesCoree";
 
 // Le contenu dépend du détenteur choisi, qui est lu dans un cookie : la page
 // ne peut donc pas être pré-générée.
@@ -35,6 +37,7 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
   // consultation les assemble déjà : la fiche de matière active en montre le
   // résumé plutôt que d'en refaire le calcul.
   const cons = consultation(ma.id);
+  const spectre = spectreDe(ma, d.id);
   const f = ma.fiche;
   const au = lectureCroisee(ma.nom, ma.anses?.statut);
 
@@ -171,7 +174,9 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
             />
           )}
 
-          <Usages s={spectreDe(ma, d.id)} />
+          <Usages s={spectre} />
+
+          <UsagesCoree m={usagesCoreens(ma.nom)} culturesMaroc={spectre.cultures} />
 
           <Concurrents m={marcheDe(ma, d.id)} />
 

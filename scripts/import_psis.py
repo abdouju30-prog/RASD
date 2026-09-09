@@ -14,6 +14,9 @@ trois choses que les autres ne donnent pas ensemble :
     LE NOM COMMUN EN ANGLAIS ISO          « Emamectin benzoate »
     LA SOCIÉTÉ, ET SON RÔLE               제조 fabriqué / 수입 importé
     LA DATE D'HOMOLOGATION                2026-08-06
+    L'USAGE, CULTURE PAR RAVAGEUR         29 462 couples, avec dilution,
+                                          délai avant récolte et nombre
+                                          d'applications
 
 La date est ce qui manquait partout ailleurs. Le catalogue russe est daté de
 2022, le registre brésilien ne publie pas de date d'entrée : impossible d'y
@@ -51,9 +54,17 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _chimie import cle_chimique, verifier_collisions  # noqa: E402
 from _coreen import identifier  # noqa: E402
+from _coreen_agro import (  # noqa: E402
+    cadence, culture as culture_fr, dilution, methode,
+    parasite as parasite_fr, stade,
+)
 
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "coree.json"
+# ⚠️ FICHIER À PART. La matrice d'usages pèse 10 Mo : la laisser dans
+# data/coree.json obligeait tous les écrans à la charger pour lire trois
+# compteurs. Seule la fiche d'une matière active en a besoin.
+SORTIE_USAGES = RACINE / "data" / "coree-usages.json"
 CACHE = RACINE / "data" / "_cache" / "psis_produits.xlsx"
 ISO = RACINE / "data" / "_iso.json"
 
@@ -218,6 +229,83 @@ def main():
             elif p["role"] == IMPORTE:
                 m["importe"] += 1
 
+    # ── Usages : culture × ravageur ─────────────────────────────────────────
+    #
+    # 29 462 couples, dix fois le spectre marocain. C'est la seule source de
+    # l'outil qui donne, pour une matière active, TOUT ce sur quoi elle est
+    # employée ailleurs — donc les usages qu'on pourrait revendiquer ici.
+    #
+    # ⚠️ LA TRADUCTION PORTE SON NIVEAU DE CONFIANCE, et le coréen reste. Voir
+    # scripts/_coreen_agro.py : « exact » quand le terme entier a été lu et
+    # traduit à la main, « compose » quand il est reconstruit à partir de
+    # morphèmes, « brut » quand il ne l'est pas. Un nom de ravageur faux
+    # oriente un traitement : on ne devine pas, on marque.
+    usages = defaultdict(lambda: {
+        "produits": set(), "dilutions": set(), "doses": set(),
+        "delais": set(), "applications": set(), "methodes": set(),
+    })
+    for x in lignes:
+        num = texte(x.get("등록번호"))
+        p = produits.get(num)
+        if not p:
+            continue
+        cul = texte(x.get("작물명"))
+        cib = texte(x.get("적용병해충"))
+        if not cul or not cib:
+            continue
+        for brut in SEPARATEURS.split(p["communs"]):
+            nom = brut.strip()
+            if not nom:
+                continue
+            v = usages[(nom, cul, cib)]
+            v["produits"].add(num)
+            for champ, col in (("dilutions", "희석배수"), ("doses", "사용량"),
+                               ("delais", "안전사용시기"), ("applications", "안전사용횟수"),
+                               ("methodes", "사용방법")):
+                t = texte(x.get(col))
+                if t and t != "-":
+                    v[champ].add(t)
+
+    par_matiere = defaultdict(list)
+    for (nom, cul, cib), v in usages.items():
+        fr_cul, niv_cul = culture_fr(cul)
+        fr_cib, niv_cib = parasite_fr(cib)
+        par_matiere[nom].append({
+            "culture": fr_cul,
+            "cultureKo": cul,
+            "cultureNiveau": niv_cul,
+            "cible": fr_cib,
+            "cibleKo": cib,
+            "cibleNiveau": niv_cib,
+            "nbProduits": len(v["produits"]),
+            # Les trois colonnes ci-dessous suivent des motifs réguliers :
+            # « 수확7일전 » = 7 jours avant récolte, « 2회 » = 2 applications,
+            # « 2000배 » = dilution au 1:2000. Traduites par règle.
+            "dilutions": [x for x in (dilution(d)[0] for d in sorted(v["dilutions"])[:4]) if x],
+            "doses": sorted(v["doses"])[:4],
+            "delais": [x for x in (stade(d)[0] for d in sorted(v["delais"])[:3]) if x],
+            "applications": [x for x in (cadence(d)[0] for d in sorted(v["applications"])[:3]) if x],
+            "methodes": [x for x in (methode(d)[0] for d in sorted(v["methodes"])[:2]) if x],
+        })
+    for l in par_matiere.values():
+        l.sort(key=lambda u: (-u["nbProduits"], u["culture"], u["cible"]))
+
+    liste_usages = [{
+        "matiere": nom,
+        "iso": iso_par_cle.get(cle_chimique(nom)),
+        "nbUsages": len(l),
+        "cultures": sorted({u["culture"] for u in l}),
+        "cibles": sorted({u["cible"] for u in l}),
+        "usages": l[:120],
+    } for nom, l in sorted(par_matiere.items())]
+    liste_usages.sort(key=lambda m: -m["nbUsages"])
+    nb_traduits = sum(
+        1 for l in par_matiere.values() for u in l
+        if u["cultureNiveau"] != "brut" and u["cibleNiveau"] != "brut"
+    )
+    total_u = sum(len(l) for l in par_matiere.values())
+    print(f"  {total_u} usages culture x ravageur · {nb_traduits * 100 // max(total_u, 1)} % entièrement traduits")
+
     # ── Associations ────────────────────────────────────────────────────────
     #
     # Le marché ne se vend pas en molécules mais en mélanges : 1 063 associations
@@ -360,6 +448,8 @@ def main():
             "nbNomsIso": len(noms_iso),
             "nbHorsIndex": len(hors),
             "nbMelanges": len(liste_melanges),
+            "nbUsages": total_u,
+            "partTraduite": nb_traduits * 100 // max(total_u, 1),
             "nbFabrique": sum(1 for p in produits.values() if p["role"] == FABRIQUE),
             "nbImporte": sum(1 for p in produits.values() if p["role"] == IMPORTE),
             "avertissement": (
@@ -380,6 +470,28 @@ def main():
     }
     SORTIE.parent.mkdir(parents=True, exist_ok=True)
     SORTIE.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    SORTIE_USAGES.write_text(
+        json.dumps({
+            "meta": {
+                "source": SOURCE,
+                "attribution": payload["meta"]["attribution"],
+                "genere": payload["meta"]["genere"],
+                "nbUsages": total_u,
+                "partTraduite": nb_traduits * 100 // max(total_u, 1),
+                "avertissement": (
+                    "Usages homologués en Corée du Sud, culture par ravageur. Aucune "
+                    "valeur réglementaire au Maroc : un usage coréen ne se revendique "
+                    "pas devant l'ONSSA, il indique sur quoi la matière active est "
+                    "employée ailleurs. Cultures et ravageurs traduits par glossaire "
+                    "(scripts/_coreen_agro.py) ; chaque terme porte son niveau — exact, "
+                    "composé ou brut — et le nom coréen d'origine, qui seul fait foi."
+                ),
+            },
+            "matieres": liste_usages,
+        }, ensure_ascii=False, indent=1),
+        encoding="utf-8",
+    )
 
     print(f"OK -> {SORTIE}")
     print(f"  {len(liste_matieres)}/{len(noms_iso)} matières actives de l'index retrouvées")
