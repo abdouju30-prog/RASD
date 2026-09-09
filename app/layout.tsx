@@ -13,6 +13,7 @@ import { NB_LIGNES_CHECKLIST } from "@/lib/dossier";
 import { STATS_SENTINELLE } from "@/lib/sentinelle";
 import { gamme } from "@/lib/gamme";
 import { STATS_MELANGES } from "@/lib/melanges";
+import { STATS_IMPORT } from "@/lib/importation";
 
 export const metadata: Metadata = {
   title: "Homologa — Tour de contrôle réglementaire",
@@ -78,6 +79,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       href: "/sentinelle",
       nom: "Sentinelle",
       compteur: `${STATS_SENTINELLE.nbASaisir} à saisir`,
+    },
+    {
+      href: "/importation",
+      nom: "Importation",
+      compteur: `${STATS_IMPORT.nbBarrieres} barrières`,
     },
   ];
 

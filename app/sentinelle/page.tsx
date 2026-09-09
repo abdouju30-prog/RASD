@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LienMatiere } from "@/components/LienMatiere";
 import { Radar, ArrowRight } from "lucide-react";
 import { Aide } from "@/components/Aide";
 import {
@@ -37,7 +38,7 @@ function Ligne({ c }: { c: Candidate }) {
   return (
     <tr>
       <td style={{ fontWeight: 500 }}>
-        {c.libelle}
+        <LienMatiere nom={c.libelle} />
         {c.nouvelle && (
           <span
             className="pill"

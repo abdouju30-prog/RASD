@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LienMatiere } from "@/components/LienMatiere";
 import { Combine } from "lucide-react";
 import type { Partenaire } from "@/lib/melanges";
 
@@ -28,7 +29,9 @@ export function Partenaires({ liste, max = 8 }: { liste: Partenaire[]; max?: num
         <tbody>
           {liste.slice(0, max).map((p) => (
             <tr key={p.molecule}>
-              <td style={{ fontWeight: 500 }}>{p.molecule}</td>
+              <td style={{ fontWeight: 500 }}>
+                <LienMatiere nom={p.molecule} />
+              </td>
               <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>
                 {p.nbProduits}
               </td>

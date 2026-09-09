@@ -13,6 +13,10 @@ import { consultation } from "@/lib/consultation";
 import { lectureCroisee, STATS_APVMA } from "@/lib/apvma";
 import { partenairesDe } from "@/lib/melanges";
 import { Partenaires } from "@/components/Partenaires";
+import { marcheDe } from "@/lib/concurrents";
+import { Concurrents } from "@/components/Concurrents";
+import { spectreDe } from "@/lib/usages";
+import { Usages } from "@/components/Usages";
 
 // Le contenu dépend du détenteur choisi, qui est lu dans un cookie : la page
 // ne peut donc pas être pré-générée.
@@ -166,6 +170,10 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
               autres={cons.autres}
             />
           )}
+
+          <Usages s={spectreDe(ma, d.id)} />
+
+          <Concurrents m={marcheDe(ma, d.id)} />
 
           <Partenaires liste={partenairesDe(ma)} />
         </div>

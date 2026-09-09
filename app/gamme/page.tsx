@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LienMatiere } from "@/components/LienMatiere";
 import { LayoutGrid, ArrowRight } from "lucide-react";
 import { detenteurActuel } from "@/lib/detenteur";
 import { gamme, type Manque } from "@/lib/gamme";
@@ -73,7 +74,7 @@ function Table({ liste, max }: { liste: Manque[]; max: number }) {
           {liste.slice(0, max).map((m) => (
             <tr key={m.molecule}>
               <td style={{ fontWeight: 500 }}>
-                {m.molecule}
+                <LienMatiere nom={m.molecule} />
                 {m.anses && (
                   <span
                     style={{ color: TON_ANSES[m.anses.statut] ?? "var(--muted-2)", fontSize: 10 }}

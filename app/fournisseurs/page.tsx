@@ -15,6 +15,7 @@ import { EnteteUsines, ReserveEpa, SiteProduction, TableUsines } from "@/compone
 import { CENSUS_PAYS, fichePays } from "@/lib/pays";
 import { BlocPays } from "@/components/FichePays";
 import { PRODUCTEURS_RUSSES, STATS_RUSSIE } from "@/lib/russie";
+import { nbEtranger, resoudre } from "@/lib/requete";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -64,8 +65,18 @@ export default async function FournisseursPage({
   const cherche = (sp.q ?? "").trim().toLowerCase();
   const contient = (x: string) => x.toLowerCase().includes(cherche);
 
+  // ⚠️ UNE REQUÊTE PEUT ÊTRE UNE MATIÈRE ACTIVE. C'est même la question la plus
+  // fréquente sur cet écran — QUI PEUT ME FOURNIR CETTE MOLÉCULE — et le filtre
+  // ne comparait qu'à des raisons sociales : taper « emamectine » ne donnait
+  // rien. Quand la requête désigne une molécule de l'index, on ne filtre plus
+  // par nom, on filtre par CE QUE CHACUN PORTE.
+  const req = resoudre(sp.q);
+  const surMatiere = req?.estMatiere ? req : null;
+  const porteurs = new Set(surMatiere?.gisement.fournisseursOnssa ?? []);
+
   let list: Fournisseur[] = [...FOURNISSEURS];
-  if (cherche) list = list.filter((f) => contient(f.nom));
+  if (surMatiere) list = list.filter((f) => porteurs.has(f.nom));
+  else if (cherche) list = list.filter((f) => contient(f.nom));
   if (sp.pays) list = list.filter((f) => f.pays === sp.pays);
   if (sp.profil === "generique") list = list.filter((f) => f.coutFaible);
   if (sp.profil === "multinationale") list = list.filter((f) => f.multinationale);
@@ -84,21 +95,36 @@ export default async function FournisseursPage({
   // Le croisement le plus sélectif de l'outil : une usine localisée, un
   // régulateur exigeant qui l'a homologuée, et personne au Maroc qui la fasse
   // déjà entrer.
+  // Sur une matière active, les registres étrangers ne se refiltrent pas ici :
+  // lib/requete.ts a déjà fait la sélection, une fois, pour tous les écrans.
+  const nomsBresil = new Set((surMatiere?.gisement.bresil ?? []).map((u) => u.nom));
+
   const PISTES_EPA = USINES_SOURCING.filter(
-    (u) => !u.lienOnssa && u.corroboreeApvma && (!cherche || contient(u.nom))
+    (u) =>
+      !u.lienOnssa &&
+      u.corroboreeApvma &&
+      (surMatiere ? porteurs.has(u.nom) || nomsBresil.has(u.nom) : !cherche || contient(u.nom))
   );
   // Le pinyin est cherchable, les caractères han ne le sont pas depuis un
   // clavier latin : les deux formes répondent au filtre.
-  const CHINE = USINES_CHINE.filter(
-    (u) => !cherche || contient(u.nom) || contient(u.latin ?? "") || contient(u.glose ?? "")
+  const CHINE = surMatiere
+    ? surMatiere.gisement.chine
+    : USINES_CHINE.filter(
+        (u) => !cherche || contient(u.nom) || contient(u.latin ?? "") || contient(u.glose ?? "")
+      );
+  const TURQUIE = surMatiere
+    ? surMatiere.gisement.turquie
+    : USINES_TURQUES.filter((u) => !cherche || contient(u.nom ?? ""));
+  const PISTES = PISTES_NOUVELLES.filter((p) =>
+    surMatiere
+      ? p.matieresMaroc.some((m) => surMatiere.matieres.some((x) => x.nom === m))
+      : !cherche || contient(p.nom)
   );
-  const TURQUIE = USINES_TURQUES.filter((u) => !cherche || contient(u.nom ?? ""));
-  const PISTES = PISTES_NOUVELLES.filter((p) => !cherche || contient(p.nom));
   // Le nom cyrillique et sa translittération sont tous deux cherchables : on ne
   // peut pas demander de taper « Щёлково » sur un clavier latin.
-  const RUSSIE = PRODUCTEURS_RUSSES.filter(
-    (s) => !cherche || contient(s.nom) || contient(s.latin)
-  );
+  const RUSSIE = surMatiere
+    ? surMatiere.gisement.russie
+    : PRODUCTEURS_RUSSES.filter((s) => !cherche || contient(s.nom) || contient(s.latin));
 
   return (
     <>
@@ -123,8 +149,28 @@ export default async function FournisseursPage({
           }}
         >
           <span style={{ color: "var(--muted)" }}>
-            Filtré sur <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> — {list.length}{" "}
-            fournisseur(s), {PISTES.length} piste(s), {CHINE.length} usine(s) chinoise(s).
+            {surMatiere ? (
+              <>
+                <strong style={{ color: "var(--fg)" }}>
+                  {surMatiere.molecules.slice(0, 3).join(" · ")}
+                </strong>{" "}
+                — matière active. <strong style={{ color: "var(--accent)" }}>{list.length}</strong>{" "}
+                fournisseur(s) de l&apos;index la portent (voie me-too),{" "}
+                <strong style={{ color: "var(--info)" }}>
+                  {nbEtranger(surMatiere.gisement)}
+                </strong>{" "}
+                piste(s) étrangère(s) — Brésil {surMatiere.gisement.bresil.length}, Chine{" "}
+                {surMatiere.gisement.chine.length}, Corée {surMatiere.gisement.coree.length},
+                Turquie {surMatiere.gisement.turquie.length}, Russie{" "}
+                {surMatiere.gisement.russie.length}.
+              </>
+            ) : (
+              <>
+                Filtré sur <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> —{" "}
+                {list.length} fournisseur(s), {PISTES.length} piste(s), {CHINE.length} usine(s)
+                chinoise(s). Aucune matière active de l&apos;index ne porte ce nom.
+              </>
+            )}
           </span>
           <Link href={q({ q: undefined })} className="link-accent" style={{ marginLeft: "auto" }}>
             Tout afficher

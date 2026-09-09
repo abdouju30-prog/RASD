@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LienMatiere, LiensMatieres } from "@/components/LienMatiere";
 import { Combine, ArrowRight } from "lucide-react";
 import { detenteurActuel } from "@/lib/detenteur";
 import {
@@ -30,7 +31,7 @@ function Composants({ p }: { p: PisteAssociation }) {
           {i > 0 && <span style={{ color: "var(--muted-2)" }}>+ </span>}
           {c.auMaroc ? (
             <span>
-              {c.auMaroc}
+              <LienMatiere nom={c.auMaroc} />
               <span className="mono" style={{ color: "var(--muted-2)", fontSize: 10.5 }}>
                 {" "}
                 {c.nbProduits}
@@ -101,7 +102,7 @@ function TableMaroc({ liste, tenues, max }: { liste: Association[]; tenues: Set<
           {liste.slice(0, max).map((a) => (
             <tr key={a.cle}>
               <td style={{ fontWeight: 500 }}>
-                {a.cle}
+                <LiensMatieres noms={a.composants} separateur=" + " />
                 {tenues.has(a.cle) && (
                   <span
                     className="pill"
