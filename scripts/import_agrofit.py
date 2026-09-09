@@ -3,6 +3,7 @@ Import du registre brésilien des produits techniques -> data/bresil.json
 
     python scripts/import_agrofit.py
     python scripts/import_agrofit.py --sans-iso   # sans régénérer data/_iso.json
+    python scripts/import_agrofit.py --frais      # ignore le cache et retélécharge
 
 POURQUOI CETTE SOURCE EST LA MEILLEURE DE TOUTES.
 
@@ -140,9 +141,9 @@ def site(nom: str):
     return nom.strip(), None
 
 
-def telecharger() -> str:
+def telecharger(frais: bool = False) -> str:
     import urllib.request
-    if CACHE.exists() and CACHE.stat().st_size > 100_000:
+    if not frais and CACHE.exists() and CACHE.stat().st_size > 100_000:
         print(f"  cache : {CACHE.name} ({CACHE.stat().st_size:,} octets)")
         return CACHE.read_text(encoding="utf-8-sig")
     print(f"  téléchargement — {URL_CSV.rsplit('/', 1)[-1]}")
@@ -175,7 +176,7 @@ def main():
     if collisions:
         raise SystemExit(f"Clés chimiques en collision, rapprochement refusé : {collisions}")
 
-    texte = telecharger()
+    texte = telecharger(frais="--frais" in args)
     lignes = list(csv.DictReader(texte.splitlines(), delimiter=";"))
     print(f"  {len(lignes)} homologations de produit technique")
 

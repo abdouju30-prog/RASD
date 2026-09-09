@@ -3,6 +3,7 @@ Import du registre coréen des produits phytosanitaires -> data/coree.json
 
     python scripts/import_psis.py
     python scripts/import_psis.py --sans-iso   # sans régénérer data/_iso.json
+    python scripts/import_psis.py --frais      # ignore le cache et retélécharge
 
 CE QUE CETTE SOURCE APPORTE, ET QU'AUCUNE AUTRE N'APPORTE.
 
@@ -91,8 +92,12 @@ def developper(nom: str) -> str:
 FABRIQUE, IMPORTE = "제조", "수입"
 
 
-def telecharger() -> Path:
-    if CACHE.exists() and CACHE.stat().st_size > 1_000_000:
+def telecharger(frais: bool = False) -> Path:
+    # ⚠️ CE REGISTRE EST RÉGÉNÉRÉ CHAQUE JOUR. Se contenter du cache revient à
+    # relire l'export d'hier — ce qui vide de son sens la veille des nouveautés
+    # qu'il est justement le seul à permettre. En intégration continue le cache
+    # n'existe pas ; en local, « --frais » le contourne.
+    if not frais and CACHE.exists() and CACHE.stat().st_size > 1_000_000:
         print(f"  cache : {CACHE.name} ({CACHE.stat().st_size:,} octets)")
         return CACHE
     print("  téléchargement de l'export « 농약제품 목록 »…")
@@ -161,7 +166,7 @@ def main():
     for n in noms_iso:
         iso_par_cle.setdefault(cle_chimique(n), n)
 
-    lignes = list(lire(telecharger()))
+    lignes = list(lire(telecharger(frais="--frais" in args)))
     print(f"  {len(lignes)} lignes d'usage")
 
     # ── Une homologation, pas un usage ──────────────────────────────────────

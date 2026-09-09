@@ -1,16 +1,28 @@
-name: Mise à jour des catalogues (Anses, APVMA)
+name: Veille — actualisation des registres
 
 # ─────────────────────────────────────────────────────────────────────────────
-# L'Anses republie le catalogue E-Phy chaque nuit de mardi à mercredi.
-# Ce workflow le récupère le jeudi matin, régénère data/ephy.json, et ne
-# commite QUE si un statut a réellement changé.
+# CE QUI SE RAFRAÎCHIT TOUT SEUL, ET CE QUI NE SE RAFRAÎCHIT PAS.
+#
+# Automatique, ici :
+#   E-Phy (Anses)   republié chaque nuit de mardi à mercredi
+#   APVMA (PUBCRIS) republié chaque semaine
+#   PSIS (Corée)    RÉGÉNÉRÉ CHAQUE JOUR — c'est le registre le plus frais de
+#                   l'outil, et le seul qui date ses homologations
+#   Sentinelle      recalculée derrière, ainsi que les mélanges qui en dérivent
+#
+# À la main, et c'est délibéré :
+#   index ONSSA     vient d'un fichier Excel que vous maîtrisez  -> npm run import
+#   ICAMA (Chine)   ~200 requêtes sur un formulaire, ~7 min      -> npm run import:icama
+#   AGROFIT (Brésil), BKÜ (Turquie), catalogue russe             -> voir package.json
 #
 # Pourquoi passer par un commit plutôt que par une écriture à l'exécution :
 #   • le système de fichiers est en lecture seule sur Vercel ;
 #   • le commit déclenche un redéploiement, donc la mise en ligne est acquise ;
-#   • surtout, l'historique git devient le JOURNAL DE LA VEILLE : chaque semaine
+#   • surtout, l'historique git devient le JOURNAL DE LA VEILLE : chaque jour
 #     où quelque chose bouge laisse une trace datée, lisible et opposable.
-#     C'est exactement ce qu'un outil réglementaire doit pouvoir produire.
+#
+# La course tourne TOUS LES JOURS mais ne commite QUE si un fichier a changé :
+# une journée sans mouvement ne laisse aucune trace.
 #
 # Prérequis : dépôt GitHub relié à Vercel (Vercel redéploie tout seul au push).
 # Aucun secret à configurer : le GITHUB_TOKEN par défaut suffit.
@@ -18,14 +30,14 @@ name: Mise à jour des catalogues (Anses, APVMA)
 
 on:
   schedule:
-    - cron: "0 6 * * 4" # jeudi 06:00 UTC (07:00 à Casablanca)
+    - cron: "0 6 * * *" # tous les jours 06:00 UTC (07:00 à Casablanca)
   workflow_dispatch: # déclenchement manuel depuis l'onglet Actions
 
 permissions:
   contents: write
 
 concurrency:
-  group: maj-ephy
+  group: maj-veille
   cancel-in-progress: false
 
 jobs:
@@ -38,38 +50,84 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Récupérer le catalogue E-Phy
+      # openpyxl lit l'export coréen ; E-Phy et APVMA n'ont besoin de rien.
+      - name: Dépendances Python
+        run: pip install --quiet openpyxl
+
+      # Le pont vers les noms ISO (data/_iso.json) est régénéré par un script
+      # TypeScript, pour n'avoir qu'UNE règle d'appariement dans tout l'outil.
+      # Il n'est pas versionné : il faut donc Node ici.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+
+      - name: Catalogue E-Phy — Anses
         run: python scripts/import_ephy.py | tee sortie-import.txt
 
-      - name: Récupérer le registre APVMA
+      - name: Registre PUBCRIS — APVMA
         run: python scripts/import_apvma.py | tee -a sortie-import.txt
+
+      # Le seul registre daté au jour : c'est lui qui fait la veille des
+      # nouveautés. Son échec ne doit pas emporter la veille réglementaire,
+      # qui est l'essentiel — d'où le « continue-on-error ».
+      - name: Registre PSIS — Corée du Sud
+        id: psis
+        continue-on-error: true
+        run: python scripts/import_psis.py | tee -a sortie-import.txt
+
+      - name: Sentinelle — matières et associations absentes du Maroc
+        continue-on-error: true
+        run: python scripts/sentinelle.py | tee -a sortie-import.txt
 
       - name: Y a-t-il eu un changement ?
         id: diff
         run: |
-          if git diff --quiet -- data/ephy.json data/apvma.json; then
+          SUIVIS="data/ephy.json data/apvma.json data/coree.json data/sentinelle.json data/sentinelle-vu.json"
+          if git diff --quiet -- $SUIVIS; then
             echo "change=non" >> "$GITHUB_OUTPUT"
-            echo "Aucune évolution du catalogue — rien à commiter."
+            echo "Aucune évolution des registres — rien à commiter."
           else
             echo "change=oui" >> "$GITHUB_OUTPUT"
             python - <<'PY' >> "$GITHUB_OUTPUT"
-          import json
-          d = json.load(open("data/ephy.json", encoding="utf-8"))
-          diff = d.get("diff", {})
-          maj = d["meta"].get("majDonnees") or "date inconnue"
-          lignes = [
-              f"{c['nom']} : {c['avant'] or '—'} -> {c['apres'] or '—'}"
-              for c in diff.get("changements", [])[:20]
-          ]
-          corps = "\n".join(f"- {l}" for l in lignes) or "- aucun changement de statut"
+          import json, pathlib
+
+          def lire(p):
+              f = pathlib.Path(p)
+              return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+
+          lignes = []
+
+          e = lire("data/ephy.json")
+          if e:
+              diff = e.get("diff", {})
+              maj = e.get("meta", {}).get("majDonnees") or "date inconnue"
+              n = diff.get("nbChangements", 0)
+              lignes.append(f"E-Phy du {maj} — {n} changement(s) de statut")
+              for c in diff.get("changements", [])[:15]:
+                  lignes.append(f"  - {c['nom']} : {c.get('avant') or '—'} -> {c.get('apres') or '—'}")
+              if n > 15:
+                  lignes.append(f"  - … et {n - 15} autres")
+
+          k = lire("data/coree.json").get("meta", {})
+          if k:
+              lignes.append(
+                  f"Corée — {k.get('nbHomologations')} homologations, "
+                  f"{k.get('nbMelanges')} associations, dernière le {k.get('derniereHomologation')}"
+              )
+
+          s = lire("data/sentinelle.json").get("meta", {})
+          if s:
+              lignes.append(
+                  f"Sentinelle — {s.get('nbCandidates')} candidates, "
+                  f"{s.get('nbNouvelles')} nouvelle(s) depuis le dernier relevé"
+              )
+
           print("resume<<EOF")
-          print(f"Catalogue E-Phy du {maj} — {diff.get('nbChangements', 0)} changement(s) de statut")
+          print("\n".join(lignes) or "actualisation des métadonnées")
           print()
-          print(corps)
-          if diff.get("nbChangements", 0) > 20:
-              print(f"- … et {diff['nbChangements'] - 20} autres")
-          print()
-          print("Données E-Phy - Anses, Licence Ouverte.")
+          print("Données E-Phy - Anses · APVMA PUBCRIS · PSIS (RDA, Corée du Sud).")
           print("EOF")
           PY
           fi
@@ -81,8 +139,9 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ephy.json data/apvma.json
-          git commit -m "Veille E-Phy — actualisation du catalogue Anses" -m "$RESUME"
+          git add data/ephy.json data/apvma.json data/coree.json \
+                  data/sentinelle.json data/sentinelle-vu.json
+          git commit -m "Veille — actualisation des registres" -m "$RESUME"
           git push
 
       - name: Récapitulatif

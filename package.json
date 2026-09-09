@@ -16,7 +16,8 @@
     "sentinelle": "python scripts/sentinelle.py",
     "import:agrofit": "python scripts/import_agrofit.py",
     "import:russie": "python scripts/import_gospesticid.py",
-    "import:coree": "python scripts/import_psis.py"
+    "import:coree": "python scripts/import_psis.py",
+    "veille": "python scripts/import_ephy.py && python scripts/import_apvma.py && python scripts/import_psis.py --frais && python scripts/sentinelle.py"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",
