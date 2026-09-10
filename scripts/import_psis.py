@@ -14,6 +14,9 @@ trois choses que les autres ne donnent pas ensemble :
     LE NOM COMMUN EN ANGLAIS ISO          « Emamectin benzoate »
     LA SOCIÉTÉ, ET SON RÔLE               제조 fabriqué / 수입 importé
     LA DATE D'HOMOLOGATION                2026-08-06
+    QUAND LE GÉNÉRIQUE ARRIVE             l'écart entre la première
+                                          homologation et la première d'un
+                                          producteur coréen INDÉPENDANT
     L'USAGE, CULTURE PAR RAVAGEUR         29 462 couples, avec dilution,
                                           délai avant récolte et nombre
                                           d'applications
@@ -41,6 +44,7 @@ export « 농약제품 목록 ». robots.txt autorise ; seul /psis/search.ps est
 
 import json
 import re
+import statistics
 import subprocess
 import sys
 import urllib.request
@@ -229,6 +233,127 @@ def main():
             elif p["role"] == IMPORTE:
                 m["importe"] += 1
 
+    # ── Sociétés ────────────────────────────────────────────────────────────
+    # (placé ici car la fenêtre d'exclusivité ci-dessous a besoin de
+    # liste_societes pour construire groupe_de et etiquette_de)
+    societes = defaultdict(lambda: {
+        "produits": set(), "matieres": set(), "dates": [],
+        "fabrique": 0, "importe": 0,
+    })
+    for p in produits.values():
+        if not p["societe"]:
+            continue
+        s = societes[p["societe"]]
+        s["produits"].add(p["numero"])
+        for brut in SEPARATEURS.split(p["communs"]):
+            if brut.strip():
+                s["matieres"].add(brut.strip())
+        if p["date"]:
+            s["dates"].append(p["date"])
+        if p["role"] == FABRIQUE:
+            s["fabrique"] += 1
+        elif p["role"] == IMPORTE:
+            s["importe"] += 1
+
+    liste_societes = []
+    for nom, s in societes.items():
+        latin, commercial, groupe, formes = identifier(nom)
+        iso_connues = sorted({iso_par_cle[cle_chimique(m)] for m in s["matieres"]
+                              if cle_chimique(m) in iso_par_cle})
+        liste_societes.append({
+            "cle": nom,
+            "nom": nom,
+            "latin": latin,
+            "commercial": commercial,
+            # Filiale d'un groupe étranger : ce n'est pas une piste coréenne,
+            # c'est l'antenne locale d'un fabricant déjà connu par ailleurs.
+            "groupe": groupe,
+            "formes": formes,
+            "nbHomologations": len(s["produits"]),
+            "nbFabrique": s["fabrique"],
+            "nbImporte": s["importe"],
+            "nbMatieres": len(s["matieres"]),
+            "matieres": iso_connues,
+            "premiere": min(s["dates"]) if s["dates"] else None,
+            "derniere": max(s["dates"]) if s["dates"] else None,
+        })
+    liste_societes.sort(key=lambda s: (-len(s["matieres"]), -s["nbHomologations"], s["nom"]))
+
+    # ── Fenêtre d'exclusivité, observée ─────────────────────────────────────
+    #
+    # AUCUN REGISTRE NE PUBLIE LES BREVETS. Mais celui-ci date ses homologations
+    # et distingue les sociétés coréennes indépendantes des filiales de majors :
+    # l'écart entre la PREMIÈRE homologation d'une molécule et la première
+    # homologation par un indépendant mesure, par les faits, combien de temps
+    # l'inventeur l'a gardée pour lui.
+    #
+    # Sur les molécules où le basculement a eu lieu, la médiane tourne autour de
+    # trois ans — mais le quartile haut, celui des molécules réellement
+    # propriétaires, est à neuf ans passés. C'est ce chiffre-là qui sert à dire
+    # quand préparer un dossier.
+    #
+    # ⚠️ CE N'EST PAS UNE DATE D'EXPIRATION DE BREVET. C'est une dynamique de
+    # marché coréenne. Elle donne un ordre de grandeur et un signal de calendrier,
+    # jamais une date opposable.
+    #
+    # ⚠️ ET L'ABSENCE DE GÉNÉRIQUE NE PROUVE PAS L'EXCLUSIVITÉ. Personne en Corée
+    # n'a peut-être jugé utile de faire la molécule. C'est pourquoi l'application
+    # croise avec le registre brésilien, qui dit qui FABRIQUE.
+    premieres = defaultdict(dict)
+    for p in produits.values():
+        if not p["date"] or not p["societe"]:
+            continue
+        for brut in SEPARATEURS.split(p["communs"]):
+            nom = brut.strip()
+            if not nom:
+                continue
+            vue = premieres[nom].get(p["societe"])
+            if vue is None or p["date"] < vue:
+                premieres[nom][p["societe"]] = p["date"]
+
+    groupe_de = {s["cle"]: s["groupe"] for s in liste_societes}
+    etiquette_de = {s["cle"]: (s["commercial"] or s["latin"] or s["cle"]) for s in liste_societes}
+
+    def ecart_ans(a, b):
+        return round((int(b[:4]) - int(a[:4])) + (int(b[5:7]) - int(a[5:7])) / 12, 1)
+
+    fenetres, ecarts = [], []
+    for nom, socs in premieres.items():
+        t0, s0 = min((d, s) for s, d in socs.items())
+        indeps = [(d, s) for s, d in socs.items() if not groupe_de.get(s)]
+        t1, s1 = min(indeps) if indeps else (None, None)
+        # Un écart ne se mesure que si l'inventeur est arrivé le premier : quand
+        # un indépendant ouvre le bal, la molécule n'a jamais été verrouillée.
+        e = ecart_ans(t0, t1) if t1 and t1 > t0 else None
+        if e and e > 0:
+            ecarts.append(e)
+        fenetres.append({
+            "matiere": nom,
+            "iso": iso_par_cle.get(cle_chimique(nom)),
+            "premiere": t0,
+            "premierTitulaire": etiquette_de.get(s0, s0),
+            "premierGroupe": groupe_de.get(s0),
+            "premierGenerique": t1,
+            "premierGeneriqueSociete": etiquette_de.get(s1, s1) if s1 else None,
+            "ecartAns": e,
+            "nbSocietes": len(socs),
+            "nbIndependants": len(indeps),
+        })
+    fenetres.sort(key=lambda f: f["premiere"])
+
+    ecarts.sort()
+    exclusivite = {
+        "nbObservations": len(ecarts),
+        "mediane": round(statistics.median(ecarts), 1) if ecarts else None,
+        "quartileHaut": round(ecarts[3 * len(ecarts) // 4], 1) if ecarts else None,
+        "maximum": round(max(ecarts), 1) if ecarts else None,
+        "matieres": fenetres,
+    }
+    verrouillees = sum(1 for f in fenetres if f["nbIndependants"] == 0)
+    print(f"  fenêtre d'exclusivité : médiane {exclusivite['mediane']} ans, "
+          f"quartile haut {exclusivite['quartileHaut']} ans sur {len(ecarts)} basculements "
+          f"· {verrouillees} matières sans producteur indépendant")
+
     # ── Usages : culture × ravageur ─────────────────────────────────────────
     #
     # 29 462 couples, dix fois le spectre marocain. C'est la seule source de
@@ -348,50 +473,6 @@ def main():
     liste_melanges.sort(key=lambda m: (-m["nbHomologations"], -m["nbSocietes"], m["cle"]))
     print(f"  {len(liste_melanges)} associations distinctes")
 
-    # ── Sociétés ────────────────────────────────────────────────────────────
-    societes = defaultdict(lambda: {
-        "produits": set(), "matieres": set(), "dates": [],
-        "fabrique": 0, "importe": 0,
-    })
-    for p in produits.values():
-        if not p["societe"]:
-            continue
-        s = societes[p["societe"]]
-        s["produits"].add(p["numero"])
-        for brut in SEPARATEURS.split(p["communs"]):
-            if brut.strip():
-                s["matieres"].add(brut.strip())
-        if p["date"]:
-            s["dates"].append(p["date"])
-        if p["role"] == FABRIQUE:
-            s["fabrique"] += 1
-        elif p["role"] == IMPORTE:
-            s["importe"] += 1
-
-    liste_societes = []
-    for nom, s in societes.items():
-        latin, commercial, groupe, formes = identifier(nom)
-        iso_connues = sorted({iso_par_cle[cle_chimique(m)] for m in s["matieres"]
-                              if cle_chimique(m) in iso_par_cle})
-        liste_societes.append({
-            "cle": nom,
-            "nom": nom,
-            "latin": latin,
-            "commercial": commercial,
-            # Filiale d'un groupe étranger : ce n'est pas une piste coréenne,
-            # c'est l'antenne locale d'un fabricant déjà connu par ailleurs.
-            "groupe": groupe,
-            "formes": formes,
-            "nbHomologations": len(s["produits"]),
-            "nbFabrique": s["fabrique"],
-            "nbImporte": s["importe"],
-            "nbMatieres": len(s["matieres"]),
-            "matieres": iso_connues,
-            "premiere": min(s["dates"]) if s["dates"] else None,
-            "derniere": max(s["dates"]) if s["dates"] else None,
-        })
-    liste_societes.sort(key=lambda s: (-len(s["matieres"]), -s["nbHomologations"], s["nom"]))
-
     # ── Index par matière de l'index marocain, et hors index ────────────────
     dans, hors = [], []
     for nom, m in sorted(matieres.items()):
@@ -449,6 +530,9 @@ def main():
             "nbHorsIndex": len(hors),
             "nbMelanges": len(liste_melanges),
             "nbUsages": total_u,
+            "exclusiviteMediane": exclusivite["mediane"],
+            "exclusiviteQuartileHaut": exclusivite["quartileHaut"],
+            "nbVerrouillees": verrouillees,
             "partTraduite": nb_traduits * 100 // max(total_u, 1),
             "nbFabrique": sum(1 for p in produits.values() if p["role"] == FABRIQUE),
             "nbImporte": sum(1 for p in produits.values() if p["role"] == IMPORTE),
@@ -465,6 +549,7 @@ def main():
         },
         "matieres": liste_matieres,
         "melanges": liste_melanges,
+        "exclusivite": exclusivite,
         "horsIndex": hors,
         "societes": liste_societes,
     }
@@ -478,6 +563,9 @@ def main():
                 "attribution": payload["meta"]["attribution"],
                 "genere": payload["meta"]["genere"],
                 "nbUsages": total_u,
+            "exclusiviteMediane": exclusivite["mediane"],
+            "exclusiviteQuartileHaut": exclusivite["quartileHaut"],
+            "nbVerrouillees": verrouillees,
                 "partTraduite": nb_traduits * 100 // max(total_u, 1),
                 "avertissement": (
                     "Usages homologués en Corée du Sud, culture par ravageur. Aucune "

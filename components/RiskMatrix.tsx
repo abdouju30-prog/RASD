@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { niveauRisque, riskColorVar } from "@/lib/logic";
 
 export interface MatrixPoint {
@@ -20,6 +23,7 @@ export function RiskMatrix({
   /** Plafond d'étiquettes, avant même l'évitement des collisions. */
   maxEtiquettes?: number;
 }) {
+  const router = useRouter();
   const W = 1000;
   const H = 430;
   const ml = 62;
@@ -129,8 +133,13 @@ export function RiskMatrix({
         const cy = y(p.expo);
         const et = etiquettes.get(p.id);
         return (
-          <a key={p.id} href={`/matieres/${p.id}`}>
-            {/* Une seule chaîne : React refuse un tableau d'enfants dans <title>. */}
+          <g
+            key={p.id}
+            onClick={() => router.push(`/matieres/${p.id}`)}
+            style={{ cursor: "pointer" }}
+            role="link"
+            aria-label={`${p.nom} — risque ${p.score}, ${p.expo} usage(s)`}
+          >
             <title>{`${p.nom} — risque ${p.score}, ${p.expo} usage(s)`}</title>
             <circle cx={cx} cy={cy} r={r(p.expo)} fill={c} opacity={0.22} stroke={c} strokeWidth={1.5} />
             {et && (
@@ -145,7 +154,7 @@ export function RiskMatrix({
                 {p.nom}
               </text>
             )}
-          </a>
+          </g>
         );
       })}
     </svg>

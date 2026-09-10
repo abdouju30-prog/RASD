@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { timingSafeEqual } from "crypto";
 
 // ────────────────────────────────────────────────────────────────────────────
 // Protection par mot de passe (HTTP Basic).
@@ -50,7 +51,7 @@ export function middleware(req: NextRequest) {
 
   let decode: string;
   try {
-    decode = atob(entete.slice(6));
+    decode = Buffer.from(entete.slice(6), "base64").toString("utf-8");
   } catch {
     return refuser("En-tête d'authentification invalide.");
   }
@@ -59,16 +60,30 @@ export function middleware(req: NextRequest) {
   const u = sep >= 0 ? decode.slice(0, sep) : "";
   const p = sep >= 0 ? decode.slice(sep + 1) : "";
 
-  if (u !== utilisateur || !egal(p, attendu)) {
+  if (!egal(u, utilisateur) || !egal(p, attendu)) {
     return refuser("Identifiants incorrects.");
   }
   return NextResponse.next();
 }
 
-/** Comparaison à durée constante — évite de fuiter le mot de passe au timing. */
+/**
+ * Comparaison à durée constante — évite de fuiter la longueur ou le contenu
+ * au timing. Les deux chaînes sont ramenées à la même longueur avant la
+ * comparaison via crypto.timingSafeEqual.
+ */
 function egal(a: string, b: string): boolean {
-  if (a.length !== b.length) return false;
-  let d = 0;
-  for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return d === 0;
+  const bufA = Buffer.from(a, "utf-8");
+  const bufB = Buffer.from(b, "utf-8");
+  const maxLen = Math.max(bufA.length, bufB.length);
+  // Padder les deux buffers à la même longueur pour ne pas fuiter la taille
+  const padA = Buffer.alloc(maxLen);
+  const padB = Buffer.alloc(maxLen);
+  bufA.copy(padA);
+  bufB.copy(padB);
+  // timingSafeEqual compare en temps constant, mais on doit aussi vérifier
+  // la longueur réelle sans court-circuiter.
+  const longueurEgale = bufA.length === bufB.length;
+  const contenuEgal = timingSafeEqual(padA, padB);
+  return longueurEgale && contenuEgal;
 }
+

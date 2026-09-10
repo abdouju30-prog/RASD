@@ -22,6 +22,7 @@ export async function choisirDetenteur(formData: FormData) {
     maxAge: 60 * 60 * 24 * 365,
     sameSite: "lax",
     httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
   });
   revalidatePath("/", "layout");
 }

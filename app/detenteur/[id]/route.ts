@@ -24,6 +24,7 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ id: string 
       maxAge: 60 * 60 * 24 * 365,
       sameSite: "lax",
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
     });
   }
 

@@ -24,11 +24,6 @@ import { Aide } from "@/components/Aide";
 
 export const dynamic = "force-dynamic";
 
-export async function generateStaticParams() {
-  return candidats({ maxDetenteurs: 8 })
-    .slice(0, 40)
-    .map((c) => ({ id: c.id }));
-}
 
 function Origine({ c }: { c: Candidat }) {
   const couleur = c.meToo ? "var(--low)" : "var(--info)";

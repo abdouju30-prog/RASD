@@ -70,11 +70,9 @@ jobs:
         run: python scripts/import_apvma.py | tee -a sortie-import.txt
 
       # Le seul registre daté au jour : c'est lui qui fait la veille des
-      # nouveautés. Son échec ne doit pas emporter la veille réglementaire,
-      # qui est l'essentiel — d'où le « continue-on-error ».
+      # nouveautés.
       - name: Registre PSIS — Corée du Sud
         id: psis
-        continue-on-error: true
         run: python scripts/import_psis.py | tee -a sortie-import.txt
 
       - name: Sentinelle — matières et associations absentes du Maroc
