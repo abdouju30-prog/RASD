@@ -72,6 +72,24 @@ export function ChaineNav({
         <span className="ctx">{contexte}</span>
         <div className="droite">
           <Link
+            href="/nouveautes"
+            className="jauge"
+            style={{
+              fontWeight: 600,
+              color: path === "/nouveautes" ? "var(--accent)" : "var(--fg)",
+              background: "var(--accent-fond)",
+              padding: "4px 9px",
+              borderRadius: "5px",
+              border: "1px solid color-mix(in srgb, var(--accent) 30%, transparent)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 5,
+              textDecoration: "none",
+            }}
+          >
+            ✨ NOUVEAUTÉS ONSSA
+          </Link>
+          <Link
             href="/sources"
             className="jauge"
             style={{ textDecoration: path === "/sources" ? "underline" : "none" }}

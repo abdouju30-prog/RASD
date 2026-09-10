@@ -1,0 +1,1389 @@
+{
+  "meta": {
+    "source": "ONSSA (eservice.onssa.gov.ma) & E-Phy",
+    "urlIndex": "https://eservice.onssa.gov.ma/IndPesticide.aspx",
+    "dateGeneration": "2026-09-10T17:43:00",
+    "dateMajOnssa": "13/08/2026 12:11:00",
+    "totalEvenements": 70,
+    "emailDestinataire": "abdouju30@gmail.com",
+    "frequence": "Hebdomadaire (chaque lundi)",
+    "statut": "Actif"
+  },
+  "statistiques": {
+    "nbNouveauxProduits": 20,
+    "nbNouvellesSocietes": 14,
+    "nbNouveauxUsages": 6,
+    "nbRetraitsExpires": 30,
+    "totalProduitsEnLigne": 1975
+  },
+  "evenements": [
+    {
+      "id": "evt-1",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : AXIAL 050 EC",
+      "description": "Le produit AXIAL 050 EC est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "AXIAL 050 EC",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-2",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : روميرال 800 ويب بي",
+      "description": "Le produit روميرال 800 ويب بي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "روميرال 800 ويب بي",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-3",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : VERDAM 30 WG HI BIO",
+      "description": "Le produit VERDAM 30 WG HI BIO est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "VERDAM 30 WG HI BIO",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-4",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : NIFRAN 50 SC",
+      "description": "Le produit NIFRAN 50 SC est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "NIFRAN 50 SC",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-5",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : NEMAPROP SL",
+      "description": "Le produit NEMAPROP SL est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "NEMAPROP SL",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-6",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : SQUADRON 240 SC",
+      "description": "Le produit SQUADRON 240 SC est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "SQUADRON 240 SC",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-7",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : SCORE 250 EC",
+      "description": "Le produit SCORE 250 EC est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "SCORE 250 EC",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-8",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : TRI FORM 40 EC",
+      "description": "Le produit TRI FORM 40 EC est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "TRI FORM 40 EC",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-9",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : جوكر بلس 310 دي سي",
+      "description": "Le produit جوكر بلس 310 دي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "جوكر بلس 310 دي سي",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-10",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : غازيل 20 إس جي",
+      "description": "Le produit غازيل 20 إس جي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "غازيل 20 إس جي",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-11",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : TERBUZINE",
+      "description": "Le produit TERBUZINE est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "TERBUZINE",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-12",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : نيليبروتكت 200 إس سي",
+      "description": "Le produit نيليبروتكت 200 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "نيليبروتكت 200 إس سي",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-13",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : ORAMI NEO",
+      "description": "Le produit ORAMI NEO est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "ORAMI NEO",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-14",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : SPIROX D",
+      "description": "Le produit SPIROX D est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "SPIROX D",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-15",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : بيروس 400 إس سي",
+      "description": "Le produit بيروس 400 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "بيروس 400 إس سي",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-16",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : LANCELOT NEO",
+      "description": "Le produit LANCELOT NEO est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "LANCELOT NEO",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-17",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : فلارموني 480 إس سي",
+      "description": "Le produit فلارموني 480 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "فلارموني 480 إس سي",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-18",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : PARDNAR 60 WG",
+      "description": "Le produit PARDNAR 60 WG est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "PARDNAR 60 WG",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-19",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : EZOPTANE",
+      "description": "Le produit EZOPTANE est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "EZOPTANE",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-20",
+      "date": "2026-09-10",
+      "categorie": "produit",
+      "titre": "Nouvelle homologation détectée : PORSELEN XTRA",
+      "description": "Le produit PORSELEN XTRA est listé dans le registre officiel en ligne de l'ONSSA (MAJ 13/08/2026 12:11:00).",
+      "tags": [
+        "Nouveau produit",
+        "ONSSA e-service",
+        "AMM"
+      ],
+      "criticite": "attention",
+      "details": {
+        "nomCommercial": "PORSELEN XTRA",
+        "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
+      }
+    },
+    {
+      "id": "evt-65",
+      "date": "2026-09-10",
+      "categorie": "usage",
+      "titre": "Usage & Culture : Tomate × Tuta absoluta (Mineuse de la tomate)",
+      "description": "Insecticide de référence : Chlorantraniliprole. Nouvelles spécialités et extensions d'usages homologuées.",
+      "tags": [
+        "Tomate",
+        "Insecticide",
+        "Homologation usage"
+      ],
+      "criticite": "info",
+      "details": {
+        "culture": "Tomate",
+        "nuisible": "Tuta absoluta (Mineuse de la tomate)",
+        "matiere": "Chlorantraniliprole",
+        "type": "Insecticide",
+        "note": "Nouvelles spécialités et extensions d'usages homologuées"
+      }
+    },
+    {
+      "id": "evt-66",
+      "date": "2026-09-10",
+      "categorie": "usage",
+      "titre": "Usage & Culture : Agrumes × Ceratitis capitata (Mouche méditerranéenne des fruits)",
+      "description": "Insecticide de référence : Spinosad. Mise à jour des délais avant récolte (DAR) et pièges.",
+      "tags": [
+        "Agrumes",
+        "Insecticide",
+        "Homologation usage"
+      ],
+      "criticite": "info",
+      "details": {
+        "culture": "Agrumes",
+        "nuisible": "Ceratitis capitata (Mouche méditerranéenne des fruits)",
+        "matiere": "Spinosad",
+        "type": "Insecticide",
+        "note": "Mise à jour des délais avant récolte (DAR) et pièges"
+      }
+    },
+    {
+      "id": "evt-67",
+      "date": "2026-09-10",
+      "categorie": "usage",
+      "titre": "Usage & Culture : Olivier × Bactrocera oleae (Mouche de l'olive)",
+      "description": "Insecticide de référence : Deltaméthrine. Renouvellement d'AMM et protocoles de traitement préventif.",
+      "tags": [
+        "Olivier",
+        "Insecticide",
+        "Homologation usage"
+      ],
+      "criticite": "info",
+      "details": {
+        "culture": "Olivier",
+        "nuisible": "Bactrocera oleae (Mouche de l'olive)",
+        "matiere": "Deltaméthrine",
+        "type": "Insecticide",
+        "note": "Renouvellement d'AMM et protocoles de traitement préventif"
+      }
+    },
+    {
+      "id": "evt-68",
+      "date": "2026-09-10",
+      "categorie": "usage",
+      "titre": "Usage & Culture : Vigne × Plasmopara viticola (Mildiou de la vigne)",
+      "description": "Fongicide de référence : Folpel + Fosétyl-Al. Associations prêtes à l'emploi autorisées en pulvérisation.",
+      "tags": [
+        "Vigne",
+        "Fongicide",
+        "Homologation usage"
+      ],
+      "criticite": "info",
+      "details": {
+        "culture": "Vigne",
+        "nuisible": "Plasmopara viticola (Mildiou de la vigne)",
+        "matiere": "Folpel + Fosétyl-Al",
+        "type": "Fongicide",
+        "note": "Associations prêtes à l'emploi autorisées en pulvérisation"
+      }
+    },
+    {
+      "id": "evt-69",
+      "date": "2026-09-10",
+      "categorie": "usage",
+      "titre": "Usage & Culture : Céréales (Blé) × Septoria tritici (Septoriose du blé)",
+      "description": "Fongicide de référence : Prothioconazole. Extension de spectre homologuée pour traitement foliaire.",
+      "tags": [
+        "Céréales (Blé)",
+        "Fongicide",
+        "Homologation usage"
+      ],
+      "criticite": "info",
+      "details": {
+        "culture": "Céréales (Blé)",
+        "nuisible": "Septoria tritici (Septoriose du blé)",
+        "matiere": "Prothioconazole",
+        "type": "Fongicide",
+        "note": "Extension de spectre homologuée pour traitement foliaire"
+      }
+    },
+    {
+      "id": "evt-70",
+      "date": "2026-09-10",
+      "categorie": "usage",
+      "titre": "Usage & Culture : Fraise & Petits fruits × Tetranychus urticae (Acarien tisserand)",
+      "description": "Acaricide de référence : Acéquinocyl. Nouveaux seuils de résidus autorisés pour exportation UE.",
+      "tags": [
+        "Fraise & Petits fruits",
+        "Acaricide",
+        "Homologation usage"
+      ],
+      "criticite": "info",
+      "details": {
+        "culture": "Fraise & Petits fruits",
+        "nuisible": "Tetranychus urticae (Acarien tisserand)",
+        "matiere": "Acéquinocyl",
+        "type": "Acaricide",
+        "note": "Nouveaux seuils de résidus autorisés pour exportation UE"
+      }
+    },
+    {
+      "id": "evt-35",
+      "date": "2026-03-29",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : ALMECTIN™ (PROTECO)",
+      "description": "L'AMM F03-6-008 du produit ALMECTIN™ (Abamectine (18 g/l)) détenu par PROTECO est arrivée à expiration légale le 2026-03-29. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "PROTECO",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "ALMECTIN™",
+        "detenteur": "PROTECO",
+        "matiere": "Abamectine (18 g/l)",
+        "expiration": "2026-03-29",
+        "amm": "F03-6-008"
+      }
+    },
+    {
+      "id": "evt-36",
+      "date": "2026-03-17",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : KALENKOA (BAYER SA)",
+      "description": "L'AMM F06-1-040 du produit KALENKOA (Diflufenican (120 g/l) Iodosulfuron-méthyl-sodium (7,5 g/l) Mefenpyr-diethyl (27 g/l) Mesosulfuron-methyl (9 g/l)) détenu par BAYER SA est arrivée à expiration légale le 2026-03-17. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "BAYER SA",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "KALENKOA",
+        "detenteur": "BAYER SA",
+        "matiere": "Diflufenican (120 g/l) Iodosulfuron-méthyl-sodium (7,5 g/l) Mefenpyr-diethyl (27 g/l) Mesosulfuron-methyl (9 g/l)",
+        "expiration": "2026-03-17",
+        "amm": "F06-1-040"
+      }
+    },
+    {
+      "id": "evt-37",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : ZANTARA 216 EC (BAYER SA)",
+      "description": "L'AMM F11-0-002 du produit ZANTARA 216 EC (Bixafen (50 g/l) Tébuconazole (166 g/l)) détenu par BAYER SA est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "BAYER SA",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "ZANTARA 216 EC",
+        "detenteur": "BAYER SA",
+        "matiere": "Bixafen (50 g/l) Tébuconazole (166 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F11-0-002"
+      }
+    },
+    {
+      "id": "evt-38",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : VERTIGO 018 EC (PROTECO)",
+      "description": "L'AMM E11-8-020 du produit VERTIGO 018 EC (Abamectine (18 g/l)) détenu par PROTECO est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "PROTECO",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "VERTIGO 018 EC",
+        "detenteur": "PROTECO",
+        "matiere": "Abamectine (18 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "E11-8-020"
+      }
+    },
+    {
+      "id": "evt-39",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : TREATSOIL-51 (AGRO SPRAY TECHNIC)",
+      "description": "L'AMM E05-6-004 du produit TREATSOIL-51 (Métam-sodium (510 g/l)) détenu par AGRO SPRAY TECHNIC est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "AGRO SPRAY TECHNIC",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "TREATSOIL-51",
+        "detenteur": "AGRO SPRAY TECHNIC",
+        "matiere": "Métam-sodium (510 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "E05-6-004"
+      }
+    },
+    {
+      "id": "evt-40",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : TRANSIT (ARZAK SEEDS TRADE)",
+      "description": "L'AMM E05-6-010 du produit TRANSIT (Lécithine de soja (355 g/l)) détenu par ARZAK SEEDS TRADE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "ARZAK SEEDS TRADE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "TRANSIT",
+        "detenteur": "ARZAK SEEDS TRADE",
+        "matiere": "Lécithine de soja (355 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "E05-6-010"
+      }
+    },
+    {
+      "id": "evt-41",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : TOPAXOS (AGRO SPRAY TECHNIC)",
+      "description": "L'AMM F03-4-010 du produit TOPAXOS (Clodinafop-propargyl (240 g/l) Cloquintocet-méxyl (Safener) (60 g/l)) détenu par AGRO SPRAY TECHNIC est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "AGRO SPRAY TECHNIC",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "TOPAXOS",
+        "detenteur": "AGRO SPRAY TECHNIC",
+        "matiere": "Clodinafop-propargyl (240 g/l) Cloquintocet-méxyl (Safener) (60 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F03-4-010"
+      }
+    },
+    {
+      "id": "evt-42",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : SULPHUR 98 DP (COMPTOIR AGRICOLE DU SOUSS)",
+      "description": "L'AMM E04-6-015 du produit SULPHUR 98 DP (Soufre (98%)) détenu par COMPTOIR AGRICOLE DU SOUSS est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "COMPTOIR AGRICOLE DU SOUSS",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "SULPHUR 98 DP",
+        "detenteur": "COMPTOIR AGRICOLE DU SOUSS",
+        "matiere": "Soufre (98%)",
+        "expiration": "2026-03-16",
+        "amm": "E04-6-015"
+      }
+    },
+    {
+      "id": "evt-43",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : SOUFRO PLUS 80 WG (ARZAK SEEDS TRADE)",
+      "description": "L'AMM F12-4-004 du produit SOUFRO PLUS 80 WG (Soufre (80%)) détenu par ARZAK SEEDS TRADE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "ARZAK SEEDS TRADE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "SOUFRO PLUS 80 WG",
+        "detenteur": "ARZAK SEEDS TRADE",
+        "matiere": "Soufre (80%)",
+        "expiration": "2026-03-16",
+        "amm": "F12-4-004"
+      }
+    },
+    {
+      "id": "evt-44",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : SOFREVAL WG (BODOR)",
+      "description": "L'AMM E11-8-019 du produit SOFREVAL WG (Soufre (80%)) détenu par BODOR est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "BODOR",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "SOFREVAL WG",
+        "detenteur": "BODOR",
+        "matiere": "Soufre (80%)",
+        "expiration": "2026-03-16",
+        "amm": "E11-8-019"
+      }
+    },
+    {
+      "id": "evt-45",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : SCHOLAR 230 SC (SYNGENTA MAROC)",
+      "description": "L'AMM F11-0-037 du produit SCHOLAR 230 SC (Fludioxonil (230 g/l)) détenu par SYNGENTA MAROC est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "SYNGENTA MAROC",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "SCHOLAR 230 SC",
+        "detenteur": "SYNGENTA MAROC",
+        "matiere": "Fludioxonil (230 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F11-0-037"
+      }
+    },
+    {
+      "id": "evt-46",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : ROUNDUP TURBO (ALFACHIMIE)",
+      "description": "L'AMM E04-6-011 du produit ROUNDUP TURBO (Glyphosate -sel d'isopropylamine (450 g/l [607 g/l])) détenu par ALFACHIMIE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "ALFACHIMIE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "ROUNDUP TURBO",
+        "detenteur": "ALFACHIMIE",
+        "matiere": "Glyphosate -sel d'isopropylamine (450 g/l [607 g/l])",
+        "expiration": "2026-03-16",
+        "amm": "E04-6-011"
+      }
+    },
+    {
+      "id": "evt-47",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : RIVAL 607 SL (PHILEA)",
+      "description": "L'AMM F07-4-005 du produit RIVAL 607 SL (Propamocarbe HCl (722 g/l)) détenu par PHILEA est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "PHILEA",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "RIVAL 607 SL",
+        "detenteur": "PHILEA",
+        "matiere": "Propamocarbe HCl (722 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F07-4-005"
+      }
+    },
+    {
+      "id": "evt-48",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : OXYFEN EC (SOPROCHIBA)",
+      "description": "L'AMM F06-3-006 du produit OXYFEN EC (Oxyfluorfène (240 g/l)) détenu par SOPROCHIBA est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "SOPROCHIBA",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "OXYFEN EC",
+        "detenteur": "SOPROCHIBA",
+        "matiere": "Oxyfluorfène (240 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F06-3-006"
+      }
+    },
+    {
+      "id": "evt-49",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : MORPHEE 71,3 WG (SAOAS)",
+      "description": "L'AMM F11-0-034 du produit MORPHEE 71,3 WG (Diméthomorphe (11,3%) Folpel (60%)) détenu par SAOAS est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "SAOAS",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "MORPHEE 71,3 WG",
+        "detenteur": "SAOAS",
+        "matiere": "Diméthomorphe (11,3%) Folpel (60%)",
+        "expiration": "2026-03-16",
+        "amm": "F11-0-034"
+      }
+    },
+    {
+      "id": "evt-50",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : MEGATHOATE (ACI EQUIPMENTS)",
+      "description": "L'AMM F09-4-001 du produit MEGATHOATE (Diméthoate (400 g/l)) détenu par ACI EQUIPMENTS est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "ACI EQUIPMENTS",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "MEGATHOATE",
+        "detenteur": "ACI EQUIPMENTS",
+        "matiere": "Diméthoate (400 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F09-4-001"
+      }
+    },
+    {
+      "id": "evt-51",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : MAXCEL (AGRO SPRAY TECHNIC)",
+      "description": "L'AMM F11-1-025 du produit MAXCEL (6-benzyladénine (20 g/l)) détenu par AGRO SPRAY TECHNIC est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "AGRO SPRAY TECHNIC",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "MAXCEL",
+        "detenteur": "AGRO SPRAY TECHNIC",
+        "matiere": "6-benzyladénine (20 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F11-1-025"
+      }
+    },
+    {
+      "id": "evt-52",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : K-OBIOL ULV 6 (DYNACOME)",
+      "description": "L'AMM D01-1-007 du produit K-OBIOL ULV 6 (Deltaméthrine (6 g/l) Pipéronyl butoxyde (54 g/l)) détenu par DYNACOME est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "DYNACOME",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "K-OBIOL ULV 6",
+        "detenteur": "DYNACOME",
+        "matiere": "Deltaméthrine (6 g/l) Pipéronyl butoxyde (54 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "D01-1-007"
+      }
+    },
+    {
+      "id": "evt-53",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : K-OBIOL EC 25 PB (AGRICHIMIE)",
+      "description": "L'AMM D01-1-006 du produit K-OBIOL EC 25 PB (Deltaméthrine (25 g/l) Pipéronyl butoxyde (225 g/l)) détenu par AGRICHIMIE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "AGRICHIMIE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "K-OBIOL EC 25 PB",
+        "detenteur": "AGRICHIMIE",
+        "matiere": "Deltaméthrine (25 g/l) Pipéronyl butoxyde (225 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "D01-1-006"
+      }
+    },
+    {
+      "id": "evt-54",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : KEMALEX (ARZAK SEEDS TRADE)",
+      "description": "L'AMM F03-2-037 du produit KEMALEX (Acide gibbérellique (20%)) détenu par ARZAK SEEDS TRADE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "ARZAK SEEDS TRADE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "KEMALEX",
+        "detenteur": "ARZAK SEEDS TRADE",
+        "matiere": "Acide gibbérellique (20%)",
+        "expiration": "2026-03-16",
+        "amm": "F03-2-037"
+      }
+    },
+    {
+      "id": "evt-55",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : HEXY STAR (SOPROCHIBA)",
+      "description": "L'AMM F11-4-010 du produit HEXY STAR (Hexythiazox (50%)) détenu par SOPROCHIBA est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "SOPROCHIBA",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "HEXY STAR",
+        "detenteur": "SOPROCHIBA",
+        "matiere": "Hexythiazox (50%)",
+        "expiration": "2026-03-16",
+        "amm": "F11-4-010"
+      }
+    },
+    {
+      "id": "evt-56",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : HECTOR 20 SL (ARZAK SEEDS TRADE)",
+      "description": "L'AMM F12-4-003 du produit HECTOR 20 SL (Imidaclopride (200 g/l)) détenu par ARZAK SEEDS TRADE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "ARZAK SEEDS TRADE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "HECTOR 20 SL",
+        "detenteur": "ARZAK SEEDS TRADE",
+        "matiere": "Imidaclopride (200 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F12-4-003"
+      }
+    },
+    {
+      "id": "evt-57",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : FUNGICURE SL (UNIVERS HORTICOLE)",
+      "description": "L'AMM F03-2-003 du produit FUNGICURE SL (Propamocarbe HCl (722 g/l)) détenu par UNIVERS HORTICOLE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "UNIVERS HORTICOLE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "FUNGICURE SL",
+        "detenteur": "UNIVERS HORTICOLE",
+        "matiere": "Propamocarbe HCl (722 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F03-2-003"
+      }
+    },
+    {
+      "id": "evt-58",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : ECO-BLUE 50 (ASTRACHEM MAROC)",
+      "description": "L'AMM F03-2-054 du produit ECO-BLUE 50 (Cuivre - hydroxyde de cuivre (50%)) détenu par ASTRACHEM MAROC est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "ASTRACHEM MAROC",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "ECO-BLUE 50",
+        "detenteur": "ASTRACHEM MAROC",
+        "matiere": "Cuivre - hydroxyde de cuivre (50%)",
+        "expiration": "2026-03-16",
+        "amm": "F03-2-054"
+      }
+    },
+    {
+      "id": "evt-59",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : CYPRUX (LAKORALE)",
+      "description": "L'AMM F05-4-019 du produit CYPRUX (Cyperméthrine (25%)) détenu par LAKORALE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "LAKORALE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "CYPRUX",
+        "detenteur": "LAKORALE",
+        "matiere": "Cyperméthrine (25%)",
+        "expiration": "2026-03-16",
+        "amm": "F05-4-019"
+      }
+    },
+    {
+      "id": "evt-60",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : CUIVROBOR (PROTECTAGRI)",
+      "description": "L'AMM D04-6-001 du produit CUIVROBOR (Cuivre - sulfate de cuivre (20%)) détenu par PROTECTAGRI est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "PROTECTAGRI",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "CUIVROBOR",
+        "detenteur": "PROTECTAGRI",
+        "matiere": "Cuivre - sulfate de cuivre (20%)",
+        "expiration": "2026-03-16",
+        "amm": "D04-6-001"
+      }
+    },
+    {
+      "id": "evt-61",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : COSAVET-DF (COMPTOIR AGRICOLE DU SOUSS)",
+      "description": "L'AMM E04-6-014 du produit COSAVET-DF (Soufre (80%)) détenu par COMPTOIR AGRICOLE DU SOUSS est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "COMPTOIR AGRICOLE DU SOUSS",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "COSAVET-DF",
+        "detenteur": "COMPTOIR AGRICOLE DU SOUSS",
+        "matiere": "Soufre (80%)",
+        "expiration": "2026-03-16",
+        "amm": "E04-6-014"
+      }
+    },
+    {
+      "id": "evt-62",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : BOOM SUPER (ARZAK SEEDS TRADE)",
+      "description": "L'AMM F01-3-001 du produit BOOM SUPER (Glyphosate -sel d'isopropylamine (360 g/l)) détenu par ARZAK SEEDS TRADE est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "ARZAK SEEDS TRADE",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "BOOM SUPER",
+        "detenteur": "ARZAK SEEDS TRADE",
+        "matiere": "Glyphosate -sel d'isopropylamine (360 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F01-3-001"
+      }
+    },
+    {
+      "id": "evt-63",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : ALPHATORE 10 EC (AGREVA)",
+      "description": "L'AMM F02-4-011 du produit ALPHATORE 10 EC (Alpha-cyperméthrine (100 g/l)) détenu par AGREVA est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "AGREVA",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "ALPHATORE 10 EC",
+        "detenteur": "AGREVA",
+        "matiere": "Alpha-cyperméthrine (100 g/l)",
+        "expiration": "2026-03-16",
+        "amm": "F02-4-011"
+      }
+    },
+    {
+      "id": "evt-64",
+      "date": "2026-03-16",
+      "categorie": "retrait",
+      "titre": "Homologation expirée : ALIETTE FLASH (BAYER SA)",
+      "description": "L'AMM E05-6-013 du produit ALIETTE FLASH (Fosétyl-Aluminium (800 g/kg)) détenu par BAYER SA est arrivée à expiration légale le 2026-03-16. Opportunité de substitution ou reprise de marché.",
+      "tags": [
+        "Expiration AMM",
+        "BAYER SA",
+        "Marché vacant"
+      ],
+      "criticite": "critique",
+      "details": {
+        "produit": "ALIETTE FLASH",
+        "detenteur": "BAYER SA",
+        "matiere": "Fosétyl-Aluminium (800 g/kg)",
+        "expiration": "2026-03-16",
+        "amm": "E05-6-013"
+      }
+    },
+    {
+      "id": "evt-21",
+      "date": "15/07/2025",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : ASTRACHEM MAROC",
+      "description": "ASTRACHEM MAROC (Parc Haliopolis 1 16-02 CT Drarga TF T228834/09- Ait Melloul) détient l'agrément n° 06/2025 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : Maryam LAHYANE.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "Parc Haliopolis 1 16-02 CT Drarga TF T228834/09- Ait Melloul"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "ASTRACHEM MAROC",
+        "agrement": "06/2025",
+        "date": "15/07/2025",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "Parc Haliopolis 1 16-02 CT Drarga TF T228834/09- Ait Melloul",
+        "ingenieur": "Maryam LAHYANE",
+        "telephone": "0528308778"
+      }
+    },
+    {
+      "id": "evt-29",
+      "date": "15/07/2025",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : GROWCHEM SARL",
+      "description": "GROWCHEM SARL (Farid centre sis à AV HASSAN II Résidence Bni Amir N°55 Béni Mellal- Beni Mellal) détient l'agrément n° 07/2025 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : Amine KHALLOUG.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "Farid centre sis à AV HASSAN II Résidence Bni Amir N°55 Béni Mellal- Beni Mellal"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "GROWCHEM SARL",
+        "agrement": "07/2025",
+        "date": "15/07/2025",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "Farid centre sis à AV HASSAN II Résidence Bni Amir N°55 Béni Mellal- Beni Mellal",
+        "ingenieur": "Amine KHALLOUG",
+        "telephone": "0628583360"
+      }
+    },
+    {
+      "id": "evt-22",
+      "date": "13/03/2026",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : BASF AGRICULTURAL SOLUTIONS MOROCCO SARLAU",
+      "description": "BASF AGRICULTURAL SOLUTIONS MOROCCO SARLAU (La Marina, Tour Iviore 3, 2ème étage, Casablanca- Casablanca) détient l'agrément n° 01/2026 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : TAREK EL BILALI.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "La Marina, Tour Iviore 3, 2ème étage, Casablanca- Casablanca"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "BASF AGRICULTURAL SOLUTIONS MOROCCO SARLAU",
+        "agrement": "01/2026",
+        "date": "13/03/2026",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "La Marina, Tour Iviore 3, 2ème étage, Casablanca- Casablanca",
+        "ingenieur": "TAREK EL BILALI",
+        "telephone": "0522669400"
+      }
+    },
+    {
+      "id": "evt-23",
+      "date": "13/03/2026",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : BASF MAROC",
+      "description": "BASF MAROC (La Marina, Tour Ivoire 3, 2éme étage - 20000 CASABLANCA -- Casablanca) détient l'agrément n° 02/2026 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : Moad HJIEJ.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "La Marina, Tour Ivoire 3, 2éme étage - 20000 CASABLANCA -- Casablanca"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "BASF MAROC",
+        "agrement": "02/2026",
+        "date": "13/03/2026",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "La Marina, Tour Ivoire 3, 2éme étage - 20000 CASABLANCA -- Casablanca",
+        "ingenieur": "Moad HJIEJ",
+        "telephone": "0522669400"
+      }
+    },
+    {
+      "id": "evt-25",
+      "date": "13/03/2026",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : BIOFERT",
+      "description": "BIOFERT (Résidence Najmat Bahmad, entrés B. N°41- 2ème étage- Bd. Bahmad, Blvédère- Casablanca) détient l'agrément n° 03/2026 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : BOUCHAIB ZIMAOUI.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "Résidence Najmat Bahmad, entrés B. N°41- 2ème étage- Bd. Bahmad, Blvédère- Casablanca"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "BIOFERT",
+        "agrement": "03/2026",
+        "date": "13/03/2026",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "Résidence Najmat Bahmad, entrés B. N°41- 2ème étage- Bd. Bahmad, Blvédère- Casablanca",
+        "ingenieur": "BOUCHAIB ZIMAOUI",
+        "telephone": "0522408533/34"
+      }
+    },
+    {
+      "id": "evt-27",
+      "date": "13/03/2026",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : DIAGRO CHEM",
+      "description": "DIAGRO CHEM (N° 73, ZI Sidi Slimane Moul Al Kifane, Meknès- Meknès) détient l'agrément n° 04/2026 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : IBRJIGUI Khalid.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "N° 73, ZI Sidi Slimane Moul Al Kifane, Meknès- Meknès"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "DIAGRO CHEM",
+        "agrement": "04/2026",
+        "date": "13/03/2026",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "N° 73, ZI Sidi Slimane Moul Al Kifane, Meknès- Meknès",
+        "ingenieur": "IBRJIGUI Khalid",
+        "telephone": "0660785740"
+      }
+    },
+    {
+      "id": "evt-34",
+      "date": "12/03/2026",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : SOPHYNAD",
+      "description": "SOPHYNAD (Lot 20, ZI Selouane -Nador- Nador) détient l'agrément n° 05/2026 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : Ouiame HAKAM.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "Lot 20, ZI Selouane -Nador- Nador"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "SOPHYNAD",
+        "agrement": "05/2026",
+        "date": "12/03/2026",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "Lot 20, ZI Selouane -Nador- Nador",
+        "ingenieur": "Ouiame HAKAM",
+        "telephone": "06 61 38 12 22 & 06 72 77 77 75"
+      }
+    },
+    {
+      "id": "evt-28",
+      "date": "10/12/2024",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : GREENWOOD PHYTO INN",
+      "description": "GREENWOOD PHYTO INN (Magasin N° 58, Quartier industriel route Ain Chkef,- Fès) détient l'agrément n° 03/2024 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : AIT MOUSSA Yassine.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "Magasin N° 58, Quartier industriel route Ain Chkef,- Fès"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "GREENWOOD PHYTO INN",
+        "agrement": "03/2024",
+        "date": "10/12/2024",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "Magasin N° 58, Quartier industriel route Ain Chkef,- Fès",
+        "ingenieur": "AIT MOUSSA Yassine",
+        "telephone": "0708970004"
+      }
+    },
+    {
+      "id": "evt-30",
+      "date": "10/12/2024",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : HYSAGRI",
+      "description": "HYSAGRI (650 Bd Med. V. Imm. B Magasin N° 3 Casablanca- Casablanca) détient l'agrément n° 02/2024 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : Soufiane BAGY.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "650 Bd Med. V. Imm. B Magasin N° 3 Casablanca- Casablanca"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "HYSAGRI",
+        "agrement": "02/2024",
+        "date": "10/12/2024",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "650 Bd Med. V. Imm. B Magasin N° 3 Casablanca- Casablanca",
+        "ingenieur": "Soufiane BAGY",
+        "telephone": "0661403984"
+      }
+    },
+    {
+      "id": "evt-33",
+      "date": "03/04/2024",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : SCPC SAPEL",
+      "description": "SCPC SAPEL (Av. Ahmed Alhiba, Z.I., BP. 1747- Ait Melloul) détient l'agrément n° 01/2024 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : MOATASSIM BILLAH Soufyane.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "Av. Ahmed Alhiba, Z.I., BP. 1747- Ait Melloul"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "SCPC SAPEL",
+        "agrement": "01/2024",
+        "date": "03/04/2024",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "Av. Ahmed Alhiba, Z.I., BP. 1747- Ait Melloul",
+        "ingenieur": "MOATASSIM BILLAH Soufyane",
+        "telephone": null
+      }
+    },
+    {
+      "id": "evt-24",
+      "date": "03/03/2025",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : BEST PLANTE",
+      "description": "BEST PLANTE (Ang. Av. Aboubaker Essedik et Jamil Sedki Zouhaoui et Amr Ibn Al Ass Bur NA 23, 2ème Etage- Kénitra) détient l'agrément n° 01/2025 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : Mohamed Ismail OUAYACH.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "Ang. Av. Aboubaker Essedik et Jamil Sedki Zouhaoui et Amr Ibn Al Ass Bur NA 23, 2ème Etage- Kénitra"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "BEST PLANTE",
+        "agrement": "01/2025",
+        "date": "03/03/2025",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "Ang. Av. Aboubaker Essedik et Jamil Sedki Zouhaoui et Amr Ibn Al Ass Bur NA 23, 2ème Etage- Kénitra",
+        "ingenieur": "Mohamed Ismail OUAYACH",
+        "telephone": "0661180242/ 0666444406"
+      }
+    },
+    {
+      "id": "evt-26",
+      "date": "03/03/2025",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : CORDERIES DE LA KOUTOUBIA",
+      "description": "CORDERIES DE LA KOUTOUBIA (N° 57, Rue Abdellah Ben Yacine, Quartier Industriel- Marrakech) détient l'agrément n° 04/2025 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : MASKOUF Abdelkrim.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "N° 57, Rue Abdellah Ben Yacine, Quartier Industriel- Marrakech"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "CORDERIES DE LA KOUTOUBIA",
+        "agrement": "04/2025",
+        "date": "03/03/2025",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "N° 57, Rue Abdellah Ben Yacine, Quartier Industriel- Marrakech",
+        "ingenieur": "MASKOUF Abdelkrim",
+        "telephone": "0661340129/0661443421/0624585655"
+      }
+    },
+    {
+      "id": "evt-31",
+      "date": "03/03/2025",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : NEW AGROCHEMICALS COMPANY",
+      "description": "NEW AGROCHEMICALS COMPANY (12 Rue Saria Ben Zounaim Etg 3 Appart 3 Palmier-Casablanca- Casablanca) détient l'agrément n° 02/2025 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : Sara LEMHOR.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "12 Rue Saria Ben Zounaim Etg 3 Appart 3 Palmier-Casablanca- Casablanca"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "NEW AGROCHEMICALS COMPANY",
+        "agrement": "02/2025",
+        "date": "03/03/2025",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "12 Rue Saria Ben Zounaim Etg 3 Appart 3 Palmier-Casablanca- Casablanca",
+        "ingenieur": "Sara LEMHOR",
+        "telephone": "0661610788"
+      }
+    },
+    {
+      "id": "evt-32",
+      "date": "03/03/2025",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : PROBELTE MAROC SARL AU",
+      "description": "PROBELTE MAROC SARL AU (11, Rue Wahda, Res Imam Ali, Appart 2- Casablanca) détient l'agrément n° 3/2025 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : BENAMAR NADA.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "11, Rue Wahda, Res Imam Ali, Appart 2- Casablanca"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "PROBELTE MAROC SARL AU",
+        "agrement": "3/2025",
+        "date": "03/03/2025",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "11, Rue Wahda, Res Imam Ali, Appart 2- Casablanca",
+        "ingenieur": "BENAMAR NADA",
+        "telephone": "0666766064/0666715708"
+      }
+    }
+  ]
+}
