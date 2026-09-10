@@ -1,5 +1,4 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { timingSafeEqual } from "crypto";
 
 // ────────────────────────────────────────────────────────────────────────────
 // Protection par mot de passe (HTTP Basic).
@@ -15,6 +14,10 @@ import { timingSafeEqual } from "crypto";
 // Configuration Vercel : Settings → Environment Variables
 //   HOMOLOGA_USER      (optionnel, défaut « phytobeht »)
 //   HOMOLOGA_PASSWORD  (obligatoire en production)
+//
+// ⚠️ Ce middleware tourne sur l'Edge Runtime (Vercel) : pas de Buffer ni
+//    de crypto.timingSafeEqual (Node.js uniquement). On utilise TextEncoder
+//    et une boucle XOR manuelle avec padding à longueur fixe.
 // ────────────────────────────────────────────────────────────────────────────
 
 export const config = {
@@ -51,7 +54,7 @@ export function middleware(req: NextRequest) {
 
   let decode: string;
   try {
-    decode = Buffer.from(entete.slice(6), "base64").toString("utf-8");
+    decode = decodeBase64(entete.slice(6));
   } catch {
     return refuser("En-tête d'authentification invalide.");
   }
@@ -66,24 +69,34 @@ export function middleware(req: NextRequest) {
   return NextResponse.next();
 }
 
+/** Décodage Base64 compatible Edge Runtime (supporte UTF-8). */
+function decodeBase64(b64: string): string {
+  const binaire = atob(b64);
+  const octets = Uint8Array.from(binaire, (c) => c.charCodeAt(0));
+  return new TextDecoder().decode(octets);
+}
+
 /**
  * Comparaison à durée constante — évite de fuiter la longueur ou le contenu
- * au timing. Les deux chaînes sont ramenées à la même longueur avant la
- * comparaison via crypto.timingSafeEqual.
+ * au timing. Compatible Edge Runtime (pas de crypto.timingSafeEqual).
+ *
+ * Les deux chaînes sont encodées en octets UTF-8 puis paddées à la même
+ * longueur avant la boucle XOR, qui parcourt TOUJOURS le tableau entier.
+ * La longueur réelle est vérifiée séparément sans court-circuit.
  */
 function egal(a: string, b: string): boolean {
-  const bufA = Buffer.from(a, "utf-8");
-  const bufB = Buffer.from(b, "utf-8");
-  const maxLen = Math.max(bufA.length, bufB.length);
-  // Padder les deux buffers à la même longueur pour ne pas fuiter la taille
-  const padA = Buffer.alloc(maxLen);
-  const padB = Buffer.alloc(maxLen);
-  bufA.copy(padA);
-  bufB.copy(padB);
-  // timingSafeEqual compare en temps constant, mais on doit aussi vérifier
-  // la longueur réelle sans court-circuiter.
-  const longueurEgale = bufA.length === bufB.length;
-  const contenuEgal = timingSafeEqual(padA, padB);
-  return longueurEgale && contenuEgal;
+  const enc = new TextEncoder();
+  const bufA = enc.encode(a);
+  const bufB = enc.encode(b);
+  const maxLen = Math.max(bufA.length, bufB.length, 1);
+
+  let d = 0;
+  for (let i = 0; i < maxLen; i++) {
+    d |= (bufA[i] ?? 0) ^ (bufB[i] ?? 0);
+  }
+  // Vérifier la longueur réelle sans court-circuiter la boucle XOR
+  d |= bufA.length ^ bufB.length;
+  return d === 0;
 }
+
 
