@@ -30,60 +30,34 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const gm = gamme(d.id);
 
   const stations: Station[] = [
-    { href: "/", nom: "Radar", compteur: `${st.total} détections` },
     {
-      href: "/veille",
-      etape: "Étape 1",
-      nom: "Signal",
+      href: "/",
+      etape: "Section 1",
+      nom: "Contrôle",
       compteur: `${st.total} détections`,
       alerte: st.critiques,
+      aliases: ["/veille"],
     },
     {
-      href: "/matieres",
-      etape: "Étape 2",
-      nom: "Matière active",
-      compteur: `${matieresDuPortefeuille(d.id).length} au portefeuille`,
+      href: "/portefeuille",
+      etape: "Section 2",
+      nom: "Portefeuille",
+      compteur: `${produitsDe(d.id).length} prod. · ${matieresDuPortefeuille(d.id).length} mol.`,
+      aliases: ["/produits", "/matieres"],
     },
     {
-      href: "/produits",
-      etape: "Étape 3",
-      nom: "Produits touchés",
-      compteur: `${st.produitsTouches} / ${produitsDe(d.id).length} · ${usagesTotal(d.id)} usages`,
-    },
-    { href: "/sourcing", etape: "Étape 4", nom: "Alternative", compteur: `${nbCibles} cibles` },
-    {
-      href: "/fournisseurs",
-      etape: "Étape 5",
-      nom: "Fournisseur",
-      compteur: `${so.nbGeneriques} génér. · ${so.parPays.length} pays`,
+      href: "/developpement",
+      etape: "Section 3",
+      nom: "Développement",
+      compteur: `${nbCibles} cibles · ${gm.manques.length} manques`,
+      aliases: ["/sourcing", "/gamme", "/melanges", "/sentinelle"],
     },
     {
-      href: "/dossiers",
-      etape: "Étape 6",
-      nom: "Dossier",
-      compteur: `${NB_LIGNES_CHECKLIST} lignes · 3-B`,
-    },
-    // Hors chaîne, comme le radar : la chaîne défend le portefeuille contre les
-    // retraits, ces deux-là cherchent ce qu'on pourrait prendre.
-    {
-      href: "/gamme",
-      nom: "Gamme",
-      compteur: `${gm.manques.length} M.A. manquantes`,
-    },
-    {
-      href: "/melanges",
-      nom: "Mélanges",
-      compteur: `${STATS_MELANGES.nbPretes} prêtes`,
-    },
-    {
-      href: "/sentinelle",
-      nom: "Sentinelle",
-      compteur: `${STATS_SENTINELLE.nbASaisir} à saisir`,
-    },
-    {
-      href: "/importation",
-      nom: "Importation",
-      compteur: `${STATS_IMPORT.nbBarrieres} barrières`,
+      href: "/execution",
+      etape: "Section 4",
+      nom: "Exécution",
+      compteur: `${so.nbGeneriques} fourn. · Annexe 3-B`,
+      aliases: ["/fournisseurs", "/dossiers", "/importation", "/consultation"],
     },
   ];
 

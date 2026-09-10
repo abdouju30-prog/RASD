@@ -18,7 +18,8 @@ import { Recherche } from "./Recherche";
 
 export interface Station {
   href: string;
-  /** « Étape 1 » — vide pour le radar, qui est hors chaîne. */
+  aliases?: string[];
+  /** « Section 1 » */
   etape?: string;
   nom: string;
   compteur: string;
@@ -48,17 +49,23 @@ export function ChaineNav({
 }) {
   const path = usePathname();
 
-  const actif = (href: string) =>
-    href === "/" ? path === "/" : path === href || path.startsWith(href + "/");
+  const actif = (s: Station) => {
+    if (s.href === "/" && (path === "/" || path === "/veille")) return true;
+    if (s.href !== "/" && (path === s.href || path.startsWith(s.href + "/"))) return true;
+    if (s.aliases?.some((a) => path === a || path.startsWith(a + "/"))) return true;
+    return false;
+  };
 
   return (
     <header className="entete">
       <div className="barre">
-        <Link href="/" className="logo" aria-label="Homologa — radar réglementaire">
-          H
-        </Link>
-        <Link href="/" className="nom">
-          Homologa
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }} aria-label="Homologa — Accueil">
+          <span className="logo" aria-hidden="true">
+            H
+          </span>
+          <span className="nom">
+            Homologa
+          </span>
         </Link>
         {selecteur}
         <Recherche />
@@ -82,7 +89,7 @@ export function ChaineNav({
 
       <nav className="chaine" aria-label="Chaîne de décision">
         {stations.map((s) => {
-          const on = actif(s.href);
+          const on = actif(s);
           return (
             <Link
               key={s.href}
@@ -94,7 +101,11 @@ export function ChaineNav({
               <span className="n">{s.nom}</span>
               <span className="k">
                 {s.compteur}
-                {s.alerte ? <span className="badge">{s.alerte}</span> : null}
+                {s.alerte ? (
+                  <span className="badge" aria-label={`${s.alerte} alertes critiques`}>
+                    {s.alerte}
+                  </span>
+                ) : null}
               </span>
             </Link>
           );
