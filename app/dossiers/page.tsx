@@ -1,214 +1,188 @@
 import Link from "next/link";
-import { RefreshCw, Replace, Sparkles, ArrowRight } from "lucide-react";
-import { RiskBadge } from "@/components/RiskBadge";
-import { AlternativesCompactes } from "@/components/Alternatives";
-import { alternatives } from "@/lib/substitution";
-import { StatCard } from "@/components/StatCard";
-import { produitsDe } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { ammEcheance, ammExpirees, fmtDate, portefeuilleClasse } from "@/lib/logic";
 import { candidats } from "@/lib/sourcing";
 import { DELAIS_INDICATIFS } from "@/lib/dossier";
+import { alternatives } from "@/lib/substitution";
 
-export default async function DossiersPage() {
+type File = "renouveler" | "substituer" | "homologuer";
+
+const LIBELLE: Record<File, string> = {
+  renouveler: "Renouveler",
+  substituer: "Substituer",
+  homologuer: "Homologuer",
+};
+
+export default async function DossiersPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ file?: string }>;
+}) {
+  const sp = await searchParams;
+  const file = (["renouveler", "substituer", "homologuer"] as File[]).find((f) => f === sp.file);
+
   const d = await detenteurActuel();
   const expirees = ammExpirees(d.id);
   const proches = ammEcheance(d.id, 18);
-  const aRenouveler = [...expirees, ...proches];
-
   const aSubstituer = portefeuilleClasse(d.id).filter((c) => (c.risque?.score ?? 0) >= 55);
+  const opportunites = candidats({ maxDetenteurs: 2, detenteurId: d.id }).slice(0, 8);
 
-  const opportunites = candidats({ maxDetenteurs: 2, detenteurId: d.id }).slice(0, 4);
+  type Ligne = {
+    key: string;
+    file: File;
+    titre: string;
+    detail: string;
+    href: string;
+    rang: number;
+    etiq: string;
+    couleur: string;
+  };
+
+  const lignes: Ligne[] = [];
+
+  for (const p of expirees) {
+    lignes.push({
+      key: `exp-${p.id}`,
+      file: "renouveler",
+      titre: p.nomCommercial,
+      detail: `AMM ${p.amm ?? "—"} · ${p.usages.length} usage(s) · ${p.fournisseurs.join(", ")}`,
+      href: `/dossiers/generer/${p.matieresActivesIds[0]}?type=renouvellement&produit=${encodeURIComponent(p.nomCommercial)}`,
+      rang: 0,
+      etiq: `expirée ${fmtDate(p.expiration)}`,
+      couleur: "var(--crit)",
+    });
+  }
+  for (const p of proches) {
+    if (expirees.includes(p)) continue;
+    lignes.push({
+      key: `ech-${p.id}`,
+      file: "renouveler",
+      titre: p.nomCommercial,
+      detail: `AMM ${p.amm ?? "—"} · ${p.usages.length} usage(s) · ${p.fournisseurs.join(", ")}`,
+      href: `/dossiers/generer/${p.matieresActivesIds[0]}?type=renouvellement&produit=${encodeURIComponent(p.nomCommercial)}`,
+      rang: 1,
+      etiq: `échéance ${fmtDate(p.expiration)}`,
+      couleur: "var(--mod)",
+    });
+  }
+  for (const { ma, risque, expo } of aSubstituer) {
+    const alts = alternatives(ma.id, 2);
+    lignes.push({
+      key: `sub-${ma.id}`,
+      file: "substituer",
+      titre: ma.nom,
+      detail:
+        `${expo.produits} produit(s) · ${expo.usages} usage(s)` +
+        (alts.length ? ` · remplacer : ${alts.map((a) => a.molecule).join(", ")}` : ""),
+      href: `/dossiers/generer/${ma.id}?origine=substitution`,
+      rang: 2 + (100 - (risque?.score ?? 55)) / 1000,
+      etiq: risque ? `risque ${risque.score}` : "risque",
+      couleur: (risque?.score ?? 0) >= 70 ? "var(--crit)" : "var(--high)",
+    });
+  }
+  for (const c of opportunites) {
+    lignes.push({
+      key: `hom-${c.id}`,
+      file: "homologuer",
+      titre: c.nom,
+      detail: `${c.nbUsages} usages · ${c.nbDetenteurs} détenteur(s) · ${c.paysSourcing.join(", ")}`,
+      href: `/dossiers/generer/${c.id}?origine=prospection`,
+      rang: 4 + (100 - c.score) / 1000,
+      etiq: `score ${c.score}`,
+      couleur: "var(--accent)",
+    });
+  }
+
+  lignes.sort((a, b) => a.rang - b.rang);
+  const vue = file ? lignes.filter((l) => l.file === file) : lignes;
+  const n = (f: File) => lignes.filter((l) => l.file === f).length;
+
+  const pill = (href: string, actif: boolean, label: string, count: number) => (
+    <Link
+      href={href}
+      className="pill"
+      style={{
+        fontWeight: actif ? 600 : 500,
+        color: actif ? "var(--accent)" : "var(--muted)",
+        borderColor: actif ? "color-mix(in srgb, var(--accent) 45%, transparent)" : "var(--border-strong)",
+        background: actif ? "var(--accent-fond)" : "transparent",
+      }}
+    >
+      {label} <span className="mono" style={{ opacity: 0.7 }}>{count}</span>
+    </Link>
+  );
 
   return (
     <>
       <div className="fil">Étape 3 — dossier</div>
-      <h1>Atelier dossiers</h1>
-      <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
-        Trois files, toutes déduites des données : renouveler ce qui expire, substituer ce qui est
-        menacé, homologuer ce qui rapporte. Chaque ligne génère un dossier ONSSA pré-rempli.
+      <h1>À traiter</h1>
+      <p className="chapeau">
+        Une file, triée par urgence. Chaque ligne ouvre un dossier ONSSA 3-B pré-rempli.
+        Délais indicatifs : renouvellement {DELAIS_INDICATIFS.renouvellement} · nouvelle
+        homologation {DELAIS_INDICATIFS.nouvelle_homologation}.
       </p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
-          gap: 14,
-          margin: "22px 0 26px",
-        }}
-      >
-        <StatCard
-          label="À renouveler"
-          value={String(aRenouveler.length)}
-          tone={expirees.length ? "crit" : "mod"}
-          sub={`dont ${expirees.length} déjà expirée(s)`}
-        />
-        <StatCard
-          label="À substituer"
-          value={String(aSubstituer.length)}
-          tone={aSubstituer.length ? "high" : "low"}
-          sub="matières actives en risque ≥ 55"
-        />
-        <StatCard
-          label="À homologuer"
-          value={String(opportunites.length)}
-          tone="low"
-          sub="cibles de prospection prioritaires"
-        />
-        <StatCard
-          label="Portefeuille"
-          value={String(produitsDe(d.id).length)}
-          sub="produits couverts par une AMM"
-        />
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, margin: "8px 0 16px" }}>
+        {pill("/dossiers", !file, "Tout", lignes.length)}
+        {pill("/dossiers?file=renouveler", file === "renouveler", "Renouveler", n("renouveler"))}
+        {pill("/dossiers?file=substituer", file === "substituer", "Substituer", n("substituer"))}
+        {pill("/dossiers?file=homologuer", file === "homologuer", "Homologuer", n("homologuer"))}
       </div>
 
-      <File
-        titre="Renouvellement"
-        icone={<RefreshCw size={15} color="var(--crit)" />}
-        delai={DELAIS_INDICATIFS.renouvellement}
-        vide="Aucune AMM à échéance dans les 18 mois."
-      >
-        {aRenouveler.map((p) => {
-          const exp = expirees.includes(p);
-          return (
-            <Ligne
-              key={p.id}
-              href={`/dossiers/generer/${p.matieresActivesIds[0]}?type=renouvellement&produit=${encodeURIComponent(
-                p.nomCommercial
-              )}`}
-              titre={p.nomCommercial}
-              sous={`AMM ${p.amm ?? "—"} · ${p.usages.length} usage(s) · ${p.fournisseurs.join(", ")}`}
-              droite={
-                <span
-                  className="mono"
-                  style={{ color: exp ? "var(--crit)" : "var(--mod)", fontSize: 13, fontWeight: 600 }}
-                >
-                  {exp ? "expirée le " : "échéance "}
-                  {fmtDate(p.expiration)}
-                </span>
-              }
-            />
-          );
-        })}
-      </File>
-
-      <File
-        titre="Substitution"
-        icone={<Replace size={15} color="var(--high)" />}
-        delai={DELAIS_INDICATIFS.nouvelle_homologation}
-        vide="Aucune matière active du portefeuille en risque élevé."
-      >
-        {aSubstituer.map(({ ma, risque, expo }) => (
-          <Ligne
-            key={ma.id}
-            href={`/dossiers/generer/${ma.id}?origine=substitution`}
-            titre={ma.nom}
-            sous={`${expo.produits} produit(s) · ${expo.usages} usage(s) · ${
-              ma.fiche?.statutUE.replace(/_/g, " ") ?? "statut inconnu"
-            }`}
-            droite={risque ? <RiskBadge niveau={risque.niveau} score={risque.score} /> : null}
-            dessous={<AlternativesCompactes alts={alternatives(ma.id)} />}
-          />
-        ))}
-      </File>
-
-      <File
-        titre="Nouvelle homologation — prospection"
-        icone={<Sparkles size={15} color="var(--accent)" />}
-        delai={DELAIS_INDICATIFS.nouvelle_homologation}
-        vide="Aucune cible."
-        lien={{ href: "/sourcing", label: "Voir toutes les cibles" }}
-      >
-        {opportunites.map((c) => (
-          <Ligne
-            key={c.id}
-            href={`/dossiers/generer/${c.id}?origine=prospection`}
-            titre={c.nom}
-            sous={`${c.nbUsages} usages · ${c.nbDetenteurs} détenteur(s) · sourçable ${c.paysSourcing.join(
-              ", "
-            )}`}
-            droite={
-              <span className="mono" style={{ color: "var(--accent)", fontWeight: 600 }}>
-                score {c.score}
-              </span>
-            }
-          />
-        ))}
-      </File>
+      <div className="bloc">
+        <div className="titre">
+          <span>Dossiers</span>
+          <span className="mono">{vue.length}</span>
+        </div>
+        <table className="tbl">
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Objet</th>
+              <th>Urgence</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {vue.map((l) => (
+              <tr key={l.key}>
+                <td>
+                  <span className="pill" style={{ fontSize: 10.5 }}>{LIBELLE[l.file]}</span>
+                </td>
+                <td>
+                  <div style={{ fontWeight: 600 }}>{l.titre}</div>
+                  <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>{l.detail}</div>
+                </td>
+                <td>
+                  <span className="mono" style={{ color: l.couleur, fontWeight: 600, fontSize: 12.5 }}>
+                    {l.etiq}
+                  </span>
+                </td>
+                <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>
+                  <Link
+                    href={l.href}
+                    className="pill"
+                    style={{
+                      fontWeight: 600,
+                      fontSize: 12,
+                      color: "var(--accent-fg)",
+                      background: "var(--accent)",
+                      borderColor: "var(--accent)",
+                    }}
+                  >
+                    Dossier 3-B
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {vue.length === 0 && (
+          <p style={{ fontSize: 13, color: "var(--muted)", padding: "18px 0" }}>
+            Rien à traiter dans cette file.
+          </p>
+        )}
+      </div>
     </>
-  );
-}
-
-function File({
-  titre,
-  icone,
-  delai,
-  vide,
-  lien,
-  children,
-}: {
-  titre: string;
-  icone: React.ReactNode;
-  delai: string;
-  vide: string;
-  lien?: { href: string; label: string };
-  children: React.ReactNode;
-}) {
-  const vides = !children || (Array.isArray(children) && children.length === 0);
-  return (
-    <div className="card" style={{ padding: "18px 20px", marginBottom: 16 }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14 }}>
-        <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 9 }}>
-          {icone} {titre}
-        </div>
-        {lien && (
-          <Link href={lien.href} className="link-accent" style={{ fontSize: 12.5 }}>
-            {lien.label} <ArrowRight size={12} style={{ display: "inline", verticalAlign: -1 }} />
-          </Link>
-        )}
-      </div>
-      <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 6 }}>
-        Instruction ONSSA — ordre de grandeur : {delai}
-      </div>
-      <div style={{ display: "grid", gap: 9, marginTop: 14 }}>
-        {vides ? (
-          <div style={{ fontSize: 13, color: "var(--muted)" }}>{vide}</div>
-        ) : (
-          children
-        )}
-      </div>
-    </div>
-  );
-}
-
-// La carte n'est plus elle-même un lien : le bloc « remplacer par » en contient,
-// et un lien imbriqué dans un lien n'est pas du HTML valide. C'est le titre qui
-// porte la destination.
-function Ligne({
-  href,
-  titre,
-  sous,
-  droite,
-  dessous,
-}: {
-  href: string;
-  titre: string;
-  sous: string;
-  droite: React.ReactNode;
-  dessous?: React.ReactNode;
-}) {
-  return (
-    <div className="card" style={{ padding: "13px 15px", background: "var(--card-2)" }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
-        <div style={{ minWidth: 0 }}>
-          <Link href={href} className="link-accent" style={{ fontWeight: 600, fontSize: 14 }}>
-            {titre}
-          </Link>
-          <div style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 4 }}>{sous}</div>
-        </div>
-        <div style={{ flexShrink: 0 }}>{droite}</div>
-      </div>
-      {dessous}
-    </div>
   );
 }
