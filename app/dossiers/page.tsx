@@ -22,7 +22,7 @@ export default async function DossiersPage() {
 
   return (
     <>
-      <div className="eyebrow">Usine à dossiers</div>
+      <div className="fil">Étape 3 — dossier</div>
       <h1>Atelier dossiers</h1>
       <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
         Trois files, toutes déduites des données : renouveler ce qui expire, substituer ce qui est

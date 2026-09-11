@@ -37,7 +37,7 @@ export default async function VeillePage() {
 
   return (
     <>
-      <div className="eyebrow">Veille réglementaire</div>
+      <div className="fil">Portefeuille · Alertes</div>
       <h1>Flux d&apos;alertes</h1>
       <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
         Recalculées à chaque affichage. Rien n&apos;est stocké.

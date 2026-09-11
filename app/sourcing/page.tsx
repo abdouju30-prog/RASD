@@ -68,7 +68,7 @@ export default async function SourcingPage({
 
   return (
     <>
-      <div className="fil">Étape 4 — Alternative · Cibles</div>
+      <div className="fil">Étape 1 — Alternative · Cibles</div>
       <h1>
         Matières actives à importer
       </h1>

@@ -3,14 +3,13 @@ import { AlertTriangle, ArrowRight, ShieldQuestion } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { RiskBadge } from "@/components/RiskBadge";
 import { RiskMatrix, type MatrixPoint } from "@/components/RiskMatrix";
-import { META, matieresDuPortefeuille, produitsDe } from "@/lib/data";
+import { matieresDuPortefeuille, produitsDe } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { alertes, anglesMorts, statsAlertes } from "@/lib/alertes";
 import {
   CA_DISPONIBLE,
   ammEcheance,
   ammExpirees,
-  fmtDate,
   fmtMAD,
   portefeuilleClasse,
   usagesTotal,
@@ -44,9 +43,7 @@ export default async function RadarPage() {
 
   return (
     <>
-      <div className="eyebrow">
-        Radar réglementaire · {d.nom} · index du {fmtDate(META.genere.slice(0, 10))}
-      </div>
+      <div className="fil">Portefeuille · Vue</div>
       <h1>Tour de contrôle</h1>
 
       {st.critiques > 0 && (
@@ -180,50 +177,6 @@ export default async function RadarPage() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="card" style={{ marginTop: 16, overflow: "hidden" }}>
-        <div style={{ padding: "16px 20px 4px" }}>
-          <div className="h-title">Matières actives du portefeuille</div>
-        </div>
-        <table className="tbl">
-          <thead>
-            <tr>
-              <th>Matière active</th>
-              <th>Catégorie</th>
-              <th>Produits</th>
-              <th>Usages</th>
-              <th>Statut UE</th>
-              <th>Risque</th>
-            </tr>
-          </thead>
-          <tbody>
-            {classe.map(({ ma, risque, expo }) => (
-              <tr key={ma.id}>
-                <td>
-                  <Link href={`/matieres/${ma.id}`} className="link-accent">
-                    {ma.nom}
-                  </Link>
-                </td>
-                <td style={{ color: "var(--muted)", fontSize: 13 }}>{ma.categorie ?? "—"}</td>
-                <td className="mono">{expo.produits}</td>
-                <td className="mono">{expo.usages}</td>
-                <td style={{ fontSize: 13, color: "var(--muted)" }}>
-                  {ma.fiche && ma.fiche.statutUE !== "inconnu"
-                    ? ma.fiche.statutUE.replace(/_/g, " ")
-                    : "non renseigné"}
-                </td>
-                <td>
-                  {risque ? (
-                    <RiskBadge niveau={risque.niveau} score={risque.score} />
-                  ) : (
-                    <span style={{ color: "var(--muted-2)", fontSize: 12.5 }}>—</span>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </div>
 
       {morts.length > 0 && (

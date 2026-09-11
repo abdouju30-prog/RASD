@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ChaineNav, type Jauge, type Station } from "@/components/ChaineNav";
 import { NavAlternative } from "@/components/NavAlternative";
+import { NavPortefeuille } from "@/components/NavPortefeuille";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
 import { SelecteurDetenteur } from "@/components/SelecteurDetenteur";
 import { choisirDetenteur } from "./actions";
 import { DETENTEURS, META, matieresDuPortefeuille, produitsDe } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { statsAlertes } from "@/lib/alertes";
-import { fmtDate, usagesTotal } from "@/lib/logic";
+import { fmtDate } from "@/lib/logic";
 import { candidats, statsSourcing } from "@/lib/sourcing";
 import { NB_LIGNES_CHECKLIST } from "@/lib/dossier";
 import { STATS_SENTINELLE } from "@/lib/sentinelle";
@@ -31,42 +32,29 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const gm = gamme(d.id);
 
   const stations: Station[] = [
-    { href: "/", nom: "Radar", compteur: `${st.total} détections` },
     {
-      href: "/veille",
-      etape: "Étape 1",
-      nom: "Signal",
-      compteur: `${st.total} détections`,
+      href: "/",
+      nom: "Portefeuille",
+      compteur: `${st.critiques} critiques`,
       alerte: st.critiques,
-    },
-    {
-      href: "/matieres",
-      etape: "Étape 2",
-      nom: "Matière active",
-      compteur: `${matieresDuPortefeuille(d.id).length} au portefeuille`,
-    },
-    {
-      href: "/produits",
-      etape: "Étape 3",
-      nom: "Produits touchés",
-      compteur: `${st.produitsTouches} / ${produitsDe(d.id).length} · ${usagesTotal(d.id)} usages`,
+      aliases: ["/veille", "/matieres", "/produits"],
     },
     {
       href: "/sourcing",
-      etape: "Étape 4",
+      etape: "Étape 1",
       nom: "Alternative",
       compteur: `${nbCibles} cibles`,
       aliases: ["/gamme", "/melanges", "/sentinelle", "/importation"],
     },
     {
       href: "/fournisseurs",
-      etape: "Étape 5",
+      etape: "Étape 2",
       nom: "Fournisseur",
       compteur: `${so.nbGeneriques} génér. · ${so.parPays.length} pays`,
     },
     {
       href: "/dossiers",
-      etape: "Étape 6",
+      etape: "Étape 3",
       nom: "Dossier",
       compteur: `${NB_LIGNES_CHECKLIST} lignes · 3-B`,
     },
@@ -103,6 +91,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           fraicheur={<FraicheurEphy compact />}
         />
         <main className="main">
+          <NavPortefeuille
+            critiques={st.critiques}
+            detections={st.total}
+            matieres={matieresDuPortefeuille(d.id).length}
+            produits={produitsDe(d.id).length}
+          />
           <NavAlternative
             cibles={nbCibles}
             gamme={gm.manques.length}

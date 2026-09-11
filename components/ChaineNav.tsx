@@ -7,10 +7,9 @@ import { Recherche } from "./Recherche";
 /**
  * Ruban de stations — la signature de la direction retenue.
  *
- * La navigation matérialise la boucle du produit plutôt que de lister des
- * écrans : Signal → Matière active → Produits touchés → Alternative →
- * Fournisseur → Dossier. On sait toujours où l'on est dans le raisonnement,
- * et chaque station porte le compteur qui dit s'il y a du travail dessus.
+ * La navigation matérialise la boucle : Portefeuille → Alternative →
+ * Fournisseur → Dossier. Le portefeuille fusionne radar, alertes, matières
+ * et produits. Chaque station porte le compteur du travail restant.
  *
  * Le radar précède la chaîne, séparé par un filet : c'est une vue d'ensemble,
  * pas une étape du raisonnement.

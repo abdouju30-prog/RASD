@@ -93,7 +93,7 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
         <ArrowLeft size={14} /> Fiche de prospection
       </Link>
 
-      <div className="fil" style={{ marginTop: 14 }}>Étape 5 — consulter</div>
+      <div className="fil" style={{ marginTop: 14 }}>Étape 2 — consulter</div>
       <h1>
         Consultation fournisseur — {c.matiere.nom}
       </h1>

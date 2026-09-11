@@ -200,7 +200,7 @@ export default async function FournisseursPage({
 
   return (
     <>
-      <div className="fil">Étape 5 — fournisseur</div>
+      <div className="fil">Étape 2 — fournisseur</div>
       <h1>Qui peut porter le dossier</h1>
       <p className="chapeau">
         Une molécule, puis une source. Les registres restent tous là ; on n&apos;ouvre que celui
