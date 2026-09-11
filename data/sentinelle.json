@@ -1,12 +1,12 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-10T10:29:30",
-  "dernierReleve": "2026-09-10",
+  "genere": "2026-09-11T10:32:13",
+  "dernierReleve": "2026-09-11",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
-  "nbNouvelles": 4,
+  "nbNouvelles": 0,
   "nbAvecStatutFrancais": 200,
   "nbAvecStatutAustralien": 172,
   "nbVuesAuBresil": 219,
@@ -11808,7 +11808,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-09-10",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "fluoridsulfuril",
@@ -15059,7 +15059,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-09-10",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "tiadinil",
@@ -15713,7 +15713,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-09-10",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "6bensilaminopurin",
@@ -16076,7 +16076,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-09-10",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "flusulfamid",
