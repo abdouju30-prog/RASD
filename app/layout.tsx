@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ChaineNav, type Jauge, type Station } from "@/components/ChaineNav";
+import { NavAlternative } from "@/components/NavAlternative";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
 import { SelecteurDetenteur } from "@/components/SelecteurDetenteur";
 import { choisirDetenteur } from "./actions";
@@ -50,7 +51,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       nom: "Produits touchés",
       compteur: `${st.produitsTouches} / ${produitsDe(d.id).length} · ${usagesTotal(d.id)} usages`,
     },
-    { href: "/sourcing", etape: "Étape 4", nom: "Alternative", compteur: `${nbCibles} cibles` },
+    {
+      href: "/sourcing",
+      etape: "Étape 4",
+      nom: "Alternative",
+      compteur: `${nbCibles} cibles`,
+      aliases: ["/gamme", "/melanges", "/sentinelle", "/importation"],
+    },
     {
       href: "/fournisseurs",
       etape: "Étape 5",
@@ -62,28 +69,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       etape: "Étape 6",
       nom: "Dossier",
       compteur: `${NB_LIGNES_CHECKLIST} lignes · 3-B`,
-    },
-    // Hors chaîne, comme le radar : la chaîne défend le portefeuille contre les
-    // retraits, ces deux-là cherchent ce qu'on pourrait prendre.
-    {
-      href: "/gamme",
-      nom: "Gamme",
-      compteur: `${gm.manques.length} M.A. manquantes`,
-    },
-    {
-      href: "/melanges",
-      nom: "Mélanges",
-      compteur: `${STATS_MELANGES.nbPretes} prêtes`,
-    },
-    {
-      href: "/sentinelle",
-      nom: "Sentinelle",
-      compteur: `${STATS_SENTINELLE.nbASaisir} à saisir`,
-    },
-    {
-      href: "/importation",
-      nom: "Importation",
-      compteur: `${STATS_IMPORT.nbBarrieres} barrières`,
     },
   ];
 
@@ -117,7 +102,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }
           fraicheur={<FraicheurEphy compact />}
         />
-        <main className="main">{children}</main>
+        <main className="main">
+          <NavAlternative
+            cibles={nbCibles}
+            gamme={gm.manques.length}
+            melanges={STATS_MELANGES.nbPretes}
+            sentinelle={STATS_SENTINELLE.nbASaisir}
+            importation={STATS_IMPORT.nbBarrieres}
+          />
+          {children}
+        </main>
       </body>
     </html>
   );

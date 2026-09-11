@@ -24,6 +24,8 @@ export interface Station {
   compteur: string;
   /** Nombre d'alertes critiques, affiché en pastille rouge. */
   alerte?: number;
+  /** Autres préfixes qui gardent cette station allumée (sous-vues). */
+  aliases?: string[];
 }
 
 export interface Jauge {
@@ -48,8 +50,12 @@ export function ChaineNav({
 }) {
   const path = usePathname();
 
-  const actif = (href: string) =>
-    href === "/" ? path === "/" : path === href || path.startsWith(href + "/");
+  const actif = (s: Station) => {
+    const paths = [s.href, ...(s.aliases ?? [])];
+    return paths.some((href) =>
+      href === "/" ? path === "/" : path === href || path.startsWith(href + "/")
+    );
+  };
 
   return (
     <header className="entete">
@@ -82,7 +88,7 @@ export function ChaineNav({
 
       <nav className="chaine" aria-label="Chaîne de décision">
         {stations.map((s) => {
-          const on = actif(s.href);
+          const on = actif(s);
           return (
             <Link
               key={s.href}

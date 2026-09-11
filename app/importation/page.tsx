@@ -59,7 +59,7 @@ export default async function ImportationPage({
 
   return (
     <>
-      <div className="fil">Hors chaîne — contraintes fixes</div>
+      <div className="fil">Étape 4 — Alternative · Importation</div>
       <h1 style={{ display: "flex", alignItems: "center", gap: 9 }}>
         <ShieldAlert size={19} /> Importation
       </h1>

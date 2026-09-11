@@ -158,7 +158,7 @@ export default function SentinellePage() {
 
   return (
     <>
-      <div className="fil">Hors chaîne — prise d&apos;exclusivité</div>
+      <div className="fil">Étape 4 — Alternative · Sentinelle</div>
       <h1 style={{ display: "flex", alignItems: "center", gap: 9 }}>
         <Radar size={19} /> Sentinelle
       </h1>

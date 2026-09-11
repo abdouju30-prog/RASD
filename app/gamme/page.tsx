@@ -130,7 +130,7 @@ export default async function GammePage({
 
   return (
     <>
-      <div className="fil">Hors chaîne — complétude de gamme</div>
+      <div className="fil">Étape 4 — Alternative · Gamme</div>
       <h1 style={{ display: "flex", alignItems: "center", gap: 9 }}>
         <LayoutGrid size={19} /> Gamme — {d.nom}
       </h1>
