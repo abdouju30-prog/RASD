@@ -339,14 +339,7 @@ const FICHES_COMPLETES: FicheReglementaire[] = FICHES.map(avecAnses);
 
 const PAR_MOLECULE = new Map(FICHES_COMPLETES.map((f) => [norm(f.molecule), f]));
 
-function norm(s: string): string {
-  return s
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
+import { normaliser as norm } from "./texte";
 
 /**
  * Rattache une matière active de l'index ONSSA (« Abamectine(1,8%) ») à sa

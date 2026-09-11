@@ -18,14 +18,7 @@ import { base, molecules } from "./formulation";
 // définition, n'ont pas de fiche et ne doivent pas faire croire le contraire.
 // ────────────────────────────────────────────────────────────────────────────
 
-function normaliser(s: string): string {
-  return s
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
+import { normaliser } from "./texte";
 
 /** Radicaux des mots d'un nom : le « e » final tombe, comme dans lib/requete.ts. */
 function radicaux(s: string): string[] {

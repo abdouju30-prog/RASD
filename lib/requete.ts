@@ -29,13 +29,10 @@ import type { MatiereActive } from "./types";
 // et c'est très bien ainsi.
 // ────────────────────────────────────────────────────────────────────────────
 
-function normaliser(s: string): string {
-  return s
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-}
+import { normaliser as normaliserBase } from "./texte";
+
+// Filtre plein texte : on conserve la ponctuation (pas de réduction alphanum).
+const normaliser = (s: string) => normaliserBase(s, { collapse: false });
 
 /**
  * Mots d'un nom, chacun ramené à son radical.

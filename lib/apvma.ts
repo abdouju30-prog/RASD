@@ -75,14 +75,7 @@ const APVMA = apvmaFile as unknown as FichierApvma;
 export const META_APVMA = APVMA.meta;
 export const CONSTITUANTS_APVMA = APVMA.constituants;
 
-function norm(s: string): string {
-  return s
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
+import { normaliser as norm } from "./texte";
 
 /** « Glyphosate -sel d'isopropylamine(360 g/l) » -> « glyphosate ». */
 function moleculeNue(nom: string): string {
