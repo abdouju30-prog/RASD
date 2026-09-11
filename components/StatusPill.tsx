@@ -1,3 +1,5 @@
+import { Pill } from "./Pill";
+
 const COLORS: Record<string, string> = {
   // AMM
   valide: "var(--low)",
@@ -31,17 +33,5 @@ const COLORS: Record<string, string> = {
 export function StatusPill({ value }: { value: string }) {
   const color = COLORS[value] ?? "var(--muted)";
   const label = value.replace(/_/g, " ");
-  return (
-    <span
-      className="pill"
-      style={{
-        color,
-        borderColor: "color-mix(in srgb, " + color + " 38%, transparent)",
-        background: "color-mix(in srgb, " + color + " 11%, transparent)",
-      }}
-    >
-      <span className="dot" style={{ background: color }} />
-      {label}
-    </span>
-  );
+  return <Pill color={color} label={label} borderPct={38} bgPct={11} />;
 }
