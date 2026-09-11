@@ -1,26 +1,43 @@
 import Link from "next/link";
-import { Compass, Factory } from "lucide-react";
+import { Compass, Factory, Search } from "lucide-react";
 import { FOURNISSEURS, MATIERES } from "@/lib/data";
 import { statsSourcing } from "@/lib/sourcing";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { PastillesPacks } from "@/components/PacksFournisseur";
-import { Figure } from "@/components/Aide";
-import { SchemaGisements } from "@/components/Schemas";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
 import { STATS_BKU, USINES_TURQUES } from "@/lib/bku";
 import { STATS_EPA, USINES_SOURCING, usinesDe } from "@/lib/epa";
-import { EnteteUsines, ReserveEpa, SiteProduction, TableUsines } from "@/components/UsinesEpa";
-import { CENSUS_PAYS, fichePays } from "@/lib/pays";
+import { ReserveEpa, SiteProduction, TableUsines } from "@/components/UsinesEpa";
+import { fichePays } from "@/lib/pays";
 import { BlocPays } from "@/components/FichePays";
 import { PRODUCTEURS_RUSSES, STATS_RUSSIE } from "@/lib/russie";
+import { USINES_BRESIL, STATS_BRESIL } from "@/lib/bresil";
+import { SOCIETES_COREE, STATS_COREE, etiquette } from "@/lib/coree";
 import { nbEtranger, resoudre } from "@/lib/requete";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
-/** Matières actives fournies par chaque société, d'après l'index ONSSA. */
+const MAX = 40;
+
+const SOURCES = [
+  "onssa",
+  "bresil",
+  "chine",
+  "turquie",
+  "epa",
+  "coree",
+  "russie",
+  "apvma",
+] as const;
+type Source = (typeof SOURCES)[number];
+
+function estSource(s: string | undefined): s is Source {
+  return !!s && (SOURCES as readonly string[]).includes(s);
+}
+
 function matieresPar(): Map<string, { id: string; nom: string }[]> {
   const m = new Map<string, { id: string; nom: string }[]>();
   for (const ma of MATIERES) {
@@ -50,26 +67,67 @@ function Chip({ href, actif, children }: { href: string; actif: boolean; childre
   );
 }
 
+function Pastille({
+  href,
+  actif,
+  nom,
+  n,
+  note,
+}: {
+  href: string;
+  actif: boolean;
+  nom: string;
+  n: number;
+  note?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      aria-current={actif ? "page" : undefined}
+      title={note}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 7,
+        padding: "8px 12px",
+        borderRadius: 8,
+        border: actif ? "1px solid color-mix(in srgb, var(--accent) 45%, transparent)" : "1px solid var(--border)",
+        background: actif ? "var(--accent-fond)" : "var(--card)",
+        color: actif ? "var(--accent)" : "var(--fg)",
+        fontWeight: actif ? 600 : 500,
+        fontSize: 13,
+      }}
+    >
+      <span>{nom}</span>
+      <span
+        className="mono"
+        style={{
+          fontSize: 11,
+          padding: "1px 7px",
+          borderRadius: 10,
+          background: actif ? "var(--accent)" : "color-mix(in srgb, var(--border) 60%, transparent)",
+          color: actif ? "#fff" : "var(--muted-2)",
+        }}
+      >
+        {n}
+      </span>
+    </Link>
+  );
+}
+
 export default async function FournisseursPage({
   searchParams,
 }: {
-  searchParams: Promise<{ pays?: string; profil?: string; q?: string }>;
+  searchParams: Promise<{ pays?: string; profil?: string; q?: string; source?: string }>;
 }) {
   const sp = await searchParams;
+  const source: Source = estSource(sp.source) ? sp.source : "onssa";
   const so = statsSourcing();
   const parMa = matieresPar();
 
-  // Le « q » vient de la recherche transverse : elle amène ici sur un nom
-  // précis, il faut donc que la liste s'y réduise plutôt que de laisser
-  // retrouver la ligne à la main.
   const cherche = (sp.q ?? "").trim().toLowerCase();
   const contient = (x: string) => x.toLowerCase().includes(cherche);
 
-  // ⚠️ UNE REQUÊTE PEUT ÊTRE UNE MATIÈRE ACTIVE. C'est même la question la plus
-  // fréquente sur cet écran — QUI PEUT ME FOURNIR CETTE MOLÉCULE — et le filtre
-  // ne comparait qu'à des raisons sociales : taper « emamectine » ne donnait
-  // rien. Quand la requête désigne une molécule de l'index, on ne filtre plus
-  // par nom, on filtre par CE QUE CHACUN PORTE.
   const req = resoudre(sp.q);
   const surMatiere = req?.estMatiere ? req : null;
   const porteurs = new Set(surMatiere?.gisement.fournisseursOnssa ?? []);
@@ -85,28 +143,25 @@ export default async function FournisseursPage({
 
   const q = (o: Record<string, string | undefined>) => {
     const p = new URLSearchParams();
-    for (const [k, v] of Object.entries({ pays: sp.pays, profil: sp.profil, q: sp.q, ...o })) if (v) p.set(k, v);
+    for (const [k, v] of Object.entries({
+      pays: sp.pays,
+      profil: sp.profil,
+      q: sp.q,
+      source,
+      ...o,
+    }))
+      if (v) p.set(k, v);
     const s = p.toString();
     return s ? `/fournisseurs?${s}` : "/fournisseurs";
   };
 
-  const nbFiches = FOURNISSEURS.filter((f) => ficheFournisseur(f.id)).length;
-
-  // Le croisement le plus sélectif de l'outil : une usine localisée, un
-  // régulateur exigeant qui l'a homologuée, et personne au Maroc qui la fasse
-  // déjà entrer.
-  // Sur une matière active, les registres étrangers ne se refiltrent pas ici :
-  // lib/requete.ts a déjà fait la sélection, une fois, pour tous les écrans.
   const nomsBresil = new Set((surMatiere?.gisement.bresil ?? []).map((u) => u.nom));
-
   const PISTES_EPA = USINES_SOURCING.filter(
     (u) =>
       !u.lienOnssa &&
       u.corroboreeApvma &&
       (surMatiere ? porteurs.has(u.nom) || nomsBresil.has(u.nom) : !cherche || contient(u.nom))
   );
-  // Le pinyin est cherchable, les caractères han ne le sont pas depuis un
-  // clavier latin : les deux formes répondent au filtre.
   const CHINE = surMatiere
     ? surMatiere.gisement.chine
     : USINES_CHINE.filter(
@@ -120,19 +175,81 @@ export default async function FournisseursPage({
       ? p.matieresMaroc.some((m) => surMatiere.matieres.some((x) => x.nom === m))
       : !cherche || contient(p.nom)
   );
-  // Le nom cyrillique et sa translittération sont tous deux cherchables : on ne
-  // peut pas demander de taper « Щёлково » sur un clavier latin.
   const RUSSIE = surMatiere
     ? surMatiere.gisement.russie
     : PRODUCTEURS_RUSSES.filter((s) => !cherche || contient(s.nom) || contient(s.latin));
+  const BRESIL = surMatiere
+    ? surMatiere.gisement.bresil
+    : USINES_BRESIL.filter((u) => !cherche || contient(u.nom));
+  const COREE = surMatiere
+    ? surMatiere.gisement.coree
+    : SOCIETES_COREE.filter(
+        (s) => !cherche || contient(s.nom) || contient(s.latin ?? "") || contient(s.commercial ?? "")
+      );
+
+  const comptes: Record<Source, number> = {
+    onssa: list.length,
+    bresil: BRESIL.length,
+    chine: CHINE.length,
+    turquie: TURQUIE.length,
+    epa: surMatiere ? surMatiere.gisement.sitesEpa : PISTES_EPA.length,
+    coree: COREE.length,
+    russie: RUSSIE.length,
+    apvma: PISTES.length,
+  };
 
   return (
     <>
       <div className="fil">Étape 5 — fournisseur</div>
       <h1>Qui peut porter le dossier</h1>
       <p className="chapeau">
-        Les {FOURNISSEURS.length} sociétés de l&apos;index, et les usines identifiées hors du Maroc.
+        Une molécule, puis une source. Les registres restent tous là ; on n&apos;ouvre que celui
+        qui répond.
       </p>
+
+      <form
+        action="/fournisseurs"
+        method="get"
+        style={{ display: "flex", gap: 8, marginBottom: 14, maxWidth: 560 }}
+      >
+        {source !== "onssa" && <input type="hidden" name="source" value={source} />}
+        <div style={{ position: "relative", flex: 1 }}>
+          <Search
+            size={14}
+            style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)", color: "var(--muted-2)" }}
+          />
+          <input
+            name="q"
+            defaultValue={sp.q ?? ""}
+            placeholder="Molécule ou société — ex. emamectine"
+            aria-label="Molécule ou société"
+            style={{
+              width: "100%",
+              padding: "9px 12px 9px 32px",
+              border: "1px solid var(--border-strong)",
+              borderRadius: 8,
+              fontSize: 13.5,
+              fontFamily: "var(--sans)",
+              background: "var(--card)",
+              color: "var(--fg)",
+            }}
+          />
+        </div>
+        <button
+          type="submit"
+          className="pill"
+          style={{
+            fontWeight: 600,
+            color: "var(--accent-fg)",
+            background: "var(--accent)",
+            borderColor: "var(--accent)",
+            padding: "8px 14px",
+            cursor: "pointer",
+          }}
+        >
+          Chercher
+        </button>
+      </form>
 
       {cherche && (
         <div
@@ -153,363 +270,187 @@ export default async function FournisseursPage({
               <>
                 <strong style={{ color: "var(--fg)" }}>
                   {surMatiere.molecules.slice(0, 3).join(" · ")}
-                </strong>{" "}
-                — matière active. <strong style={{ color: "var(--accent)" }}>{list.length}</strong>{" "}
-                fournisseur(s) de l&apos;index la portent (voie me-too),{" "}
-                <strong style={{ color: "var(--info)" }}>
-                  {nbEtranger(surMatiere.gisement)}
-                </strong>{" "}
-                piste(s) étrangère(s) — Brésil {surMatiere.gisement.bresil.length}, Chine{" "}
-                {surMatiere.gisement.chine.length}, Corée {surMatiere.gisement.coree.length},
-                Turquie {surMatiere.gisement.turquie.length}, Russie{" "}
-                {surMatiere.gisement.russie.length}.
+                </strong>
+                {" — "}
+                <strong style={{ color: "var(--accent)" }}>{list.length}</strong> me-too ONSSA
+                {nbEtranger(surMatiere.gisement) > 0 && (
+                  <>
+                    {" · "}
+                    <strong style={{ color: "var(--info)" }}>{nbEtranger(surMatiere.gisement)}</strong>{" "}
+                    piste(s) étrangère(s)
+                  </>
+                )}
               </>
             ) : (
               <>
                 Filtré sur <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> —{" "}
-                {list.length} fournisseur(s), {PISTES.length} piste(s), {CHINE.length} usine(s)
-                chinoise(s). Aucune matière active de l&apos;index ne porte ce nom.
+                {list.length} fournisseur(s) ONSSA. Aucune matière active de l&apos;index ne porte
+                ce nom.
               </>
             )}
           </span>
           <Link href={q({ q: undefined })} className="link-accent" style={{ marginLeft: "auto" }}>
-            Tout afficher
+            Effacer
           </Link>
         </div>
       )}
 
-      <div className="strip" style={{ marginBottom: 14 }}>
-        <div>
-          <span className="eyebrow">Référencés ONSSA</span>
-          <strong className="mono" style={{ fontSize: 17, fontWeight: 600 }}>{FOURNISSEURS.length}</strong>
-        </div>
-        <div>
-          <span className="eyebrow">Génériques</span>
-          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--accent)" }}>
-            {so.nbGeneriques}
-          </strong>
-        </div>
-        <div>
-          <span className="eyebrow">Agréments renseignés</span>
-          <strong
-            className="mono"
-            style={{ fontSize: 17, fontWeight: 600, color: nbFiches ? "var(--low)" : "var(--mod)" }}
-          >
-            {nbFiches}
-          </strong>
-        </div>
-        <div>
-          <span className="eyebrow">Pistes hors index</span>
-          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
-            {STATS_PISTES.nbNouvelles}
-          </strong>
-        </div>
-        <div>
-          <span className="eyebrow">Usines situées</span>
-          <strong className="mono" style={{ fontSize: 17, fontWeight: 600, color: "var(--info)" }}>
-            {STATS_EPA.nbFournisseursAvecUsine}
-          </strong>
-        </div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 8 }}>
+        <Pastille href={q({ source: "onssa" })} actif={source === "onssa"} nom="ONSSA" n={comptes.onssa} note="Voie me-too — déjà à l'index marocain" />
+        <Pastille href={q({ source: "bresil" })} actif={source === "bresil"} nom="Brésil" n={comptes.bresil} note="AGROFIT — usine de synthèse déclarée" />
+        <Pastille href={q({ source: "chine" })} actif={source === "chine"} nom="Chine" n={comptes.chine} note="ICAMA — licence de production" />
+        <Pastille href={q({ source: "turquie" })} actif={source === "turquie"} nom="Turquie" n={comptes.turquie} note="BKÜ — İMAL, fabriqué sur place" />
+        <Pastille href={q({ source: "epa" })} actif={source === "epa"} nom="EPA" n={comptes.epa} note="Sites de production déclarés aux États-Unis" />
+        <Pastille href={q({ source: "coree" })} actif={source === "coree"} nom="Corée" n={comptes.coree} note="PSIS — titulaire, avec la date" />
+        <Pastille href={q({ source: "russie" })} actif={source === "russie"} nom="Russie" n={comptes.russie} note="Catalogue d'État" />
+        <Pastille href={q({ source: "apvma" })} actif={source === "apvma"} nom="Australie" n={comptes.apvma} note="PUBCRIS — détenteur, pas usine" />
       </div>
+      <p style={{ fontSize: 12, color: "var(--muted-2)", margin: "0 0 16px" }}>
+        {surMatiere
+          ? "Comptes pour cette molécule. Cliquez une pastille pour ouvrir le registre."
+          : "Sans molécule, les comptes sont ceux du registre entier. Tapez un nom pour ne voir que qui la fabrique."}
+      </p>
 
-      <div className="card" style={{ padding: "12px 15px", marginBottom: 14 }}>
-        {/* ⚠️ Ces compteurs portent sur TOUS les registres, pas sur le seul
-            index ONSSA. Auparavant ils ne comptaient que les fournisseurs
-            marocains : l'Inde affichait 24 alors que l'outil en connaissait
-            plus de trois cents, assises dans le registre de l'EPA. */}
-        <div className="eyebrow" style={{ marginBottom: 8 }}>Pays — tous registres</div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
-          <Chip href={q({ pays: undefined })} actif={!sp.pays}>Tous</Chip>
-          {CENSUS_PAYS.slice(0, 22).map((c) => (
-            <Chip key={c.pays} href={q({ pays: c.pays })} actif={sp.pays === c.pays}>
-              {c.pays} <span className="mono" style={{ opacity: 0.65 }}>{c.total}</span>
-            </Chip>
-          ))}
-        </div>
-        <div className="eyebrow" style={{ marginBottom: 8 }}>Profil</div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-          <Chip href={q({ profil: undefined })} actif={!sp.profil}>Tous</Chip>
-          <Chip href={q({ profil: "generique" })} actif={sp.profil === "generique"}>Générique</Chip>
-          <Chip href={q({ profil: "multinationale" })} actif={sp.profil === "multinationale"}>Multinationale</Chip>
-          <Chip href={q({ profil: "agrements" })} actif={sp.profil === "agrements"}>Agréments renseignés</Chip>
-        </div>
-      </div>
-
-
-      {sp.pays && (
-        <div style={{ marginBottom: 16 }}>
-          <BlocPays fiche={fichePays(sp.pays)} />
-        </div>
+      {source === "onssa" && (
+        <>
+          <div className="card" style={{ padding: "12px 15px", marginBottom: 14 }}>
+            <div className="eyebrow" style={{ marginBottom: 8 }}>Pays — index ONSSA</div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 12 }}>
+              <Chip href={q({ pays: undefined })} actif={!sp.pays}>Tous</Chip>
+              {so.parPays.slice(0, 16).map(([pays, n]) => (
+                <Chip key={pays} href={q({ pays })} actif={sp.pays === pays}>
+                  {pays} <span className="mono" style={{ opacity: 0.65 }}>{n}</span>
+                </Chip>
+              ))}
+            </div>
+            <div className="eyebrow" style={{ marginBottom: 8 }}>Profil</div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              <Chip href={q({ profil: undefined })} actif={!sp.profil}>Tous</Chip>
+              <Chip href={q({ profil: "generique" })} actif={sp.profil === "generique"}>Générique</Chip>
+              <Chip href={q({ profil: "multinationale" })} actif={sp.profil === "multinationale"}>Multinationale</Chip>
+              <Chip href={q({ profil: "agrements" })} actif={sp.profil === "agrements"}>Agréments renseignés</Chip>
+            </div>
+          </div>
+          {sp.pays && fichePays(sp.pays) && (
+            <div style={{ marginBottom: 16 }}>
+              <BlocPays fiche={fichePays(sp.pays)} />
+            </div>
+          )}
+          <div className="bloc">
+            <div className="titre">
+              <span>Fournisseurs ONSSA</span>
+              <span className="mono">{list.length}</span>
+            </div>
+            <table className="tbl">
+              <thead>
+                <tr>
+                  <th>Fournisseur</th>
+                  <th>Pays</th>
+                  <th>Profil</th>
+                  <th style={{ textAlign: "right" }}>Réf. Maroc</th>
+                  <th style={{ textAlign: "right" }}>M.A.</th>
+                  <th>Matières actives fournies</th>
+                  <th>Agréments déclarés</th>
+                </tr>
+              </thead>
+              <tbody>
+                {list.slice(0, MAX).map((f) => {
+                  const mas = parMa.get(f.nom) ?? [];
+                  return (
+                    <tr key={f.id}>
+                      <td style={{ fontWeight: 500 }}>
+                        {f.nom}
+                        <SiteProduction u={usinesDe(f.nom)} />
+                      </td>
+                      <td style={{ color: "var(--muted)" }}>
+                        {f.pays ?? "à préciser"}
+                        {f.pays && !f.paysFiable && (
+                          <span style={{ color: "var(--mod)", fontSize: 11 }}> ?</span>
+                        )}
+                      </td>
+                      <td>
+                        {f.coutFaible ? (
+                          <span className="pill" style={{ fontSize: 10, color: "var(--accent)", borderColor: "color-mix(in srgb, var(--accent) 40%, transparent)", background: "var(--accent-fond)" }}>générique</span>
+                        ) : f.multinationale ? (
+                          <span className="pill" style={{ fontSize: 10 }}>multinationale</span>
+                        ) : (
+                          <span className="pill" style={{ fontSize: 10 }}>autre</span>
+                        )}
+                      </td>
+                      <td className="mono" style={{ textAlign: "right" }}>{f.nbLignesMaroc}</td>
+                      <td className="mono" style={{ textAlign: "right" }}>{f.nbMatieresActives}</td>
+                      <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
+                        {mas.slice(0, 3).map((m, i) => (
+                          <span key={m.id}>
+                            {i > 0 && " · "}
+                            <Link href={`/sourcing/${m.id}`} className="link-accent" style={{ fontWeight: 500 }}>{m.nom}</Link>
+                          </span>
+                        ))}
+                        {mas.length > 3 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{mas.length - 3}</span>}
+                        {mas.length === 0 && <span style={{ color: "var(--muted-2)" }}>—</span>}
+                      </td>
+                      <td>
+                        <PastillesPacks packs={ficheFournisseur(f.id)?.packs ?? []} />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            {list.length > MAX && (
+              <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 10 }}>
+                {list.length - MAX} autres — affinez par molécule, pays ou profil.
+              </p>
+            )}
+            {list.length === 0 && (
+              <p style={{ fontSize: 13, color: "var(--muted)", padding: "20px 0" }}>
+                Aucun fournisseur ONSSA ne correspond.
+              </p>
+            )}
+          </div>
+        </>
       )}
 
-      <div className="grille">
-        <div className="bloc">
-          <div className="titre">
-            <span>Fournisseurs</span>
-            <span className="mono">{list.length}</span>
-          </div>
+      {source === "bresil" && (
+        <BlocSource icone titre="Usines de synthèse — AGROFIT" n={BRESIL.length} reserve={STATS_BRESIL.avertissement}>
           <table className="tbl">
             <thead>
               <tr>
-                <th>Fournisseur</th>
+                <th>Société</th>
+                <th>Site déclaré</th>
                 <th>Pays</th>
-                <th>Profil</th>
-                <th style={{ textAlign: "right" }}>Réf. Maroc</th>
-                <th style={{ textAlign: "right" }}>M.A.</th>
-                <th>Matières actives fournies</th>
-                <th>Agréments déclarés</th>
+                <th style={{ textAlign: "right" }}>M.A. index</th>
               </tr>
             </thead>
             <tbody>
-              {list.slice(0, 80).map((f) => {
-                const mas = parMa.get(f.nom) ?? [];
-                return (
-                  <tr key={f.id}>
-                    <td style={{ fontWeight: 500 }}>
-                      {f.nom}
-                      <SiteProduction u={usinesDe(f.nom)} />
-                    </td>
-                    <td style={{ color: "var(--muted)" }}>
-                      {f.pays ?? "à préciser"}
-                      {f.pays && !f.paysFiable && (
-                        <span style={{ color: "var(--mod)", fontSize: 11 }}> ?</span>
-                      )}
-                    </td>
-                    <td>
-                      {f.coutFaible ? (
-                        <span
-                          className="pill"
-                          style={{
-                            fontSize: 10,
-                            color: "var(--accent)",
-                            borderColor: "color-mix(in srgb, var(--accent) 40%, transparent)",
-                            background: "var(--accent-fond)",
-                          }}
-                        >
-                          générique
-                        </span>
-                      ) : f.multinationale ? (
-                        <span className="pill" style={{ fontSize: 10 }}>multinationale</span>
-                      ) : (
-                        <span className="pill" style={{ fontSize: 10 }}>autre</span>
-                      )}
-                    </td>
-                    <td className="mono" style={{ textAlign: "right" }}>{f.nbLignesMaroc}</td>
-                    <td className="mono" style={{ textAlign: "right" }}>{f.nbMatieresActives}</td>
-                    <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
-                      {mas.slice(0, 3).map((m, i) => (
-                        <span key={m.id}>
-                          {i > 0 && " · "}
-                          <Link href={`/sourcing/${m.id}`} className="link-accent" style={{ fontWeight: 500 }}>
-                            {m.nom}
-                          </Link>
-                        </span>
-                      ))}
-                      {mas.length > 3 && (
-                        <span className="mono" style={{ color: "var(--muted-2)" }}> +{mas.length - 3}</span>
-                      )}
-                      {mas.length === 0 && <span style={{ color: "var(--muted-2)" }}>—</span>}
-                    </td>
-                    <td>
-                      <PastillesPacks packs={ficheFournisseur(f.id)?.packs ?? []} />
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-          {list.length > 80 && (
-            <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 10 }}>
-              {list.length - 80} autres au-delà des 80 premiers — affinez les filtres.
-            </p>
-          )}
-          {list.length === 0 && (
-            <p style={{ fontSize: 13, color: "var(--muted)", padding: "20px 0" }}>
-              Aucun fournisseur ne correspond à ces filtres.
-            </p>
-          )}
-        </div>
-      </div>
-
-      <div className="section">
-        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <Compass size={14} color="var(--info)" /> Pistes hors index — détenteurs australiens
-        </span>
-        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
-          {STATS_PISTES.nbNouvelles} génériqueurs détenant une homologation australienne, absents de
-          l&apos;index marocain.
-        </p>
-        <Figure
-          titre="Deux gisements, deux voies"
-          legende="seul l'index marocain raccourcit le dossier"
-        >
-          <SchemaGisements />
-        </Figure>
-
-        <div className="bloc" style={{ marginTop: 14 }}>
-          <div className="titre">
-            <span>Fabricants à qualifier</span>
-            <span className="mono">{PISTES.length}</span>
-          </div>
-          <table className="tbl">
-            <thead>
-              <tr>
-                <th>Société</th>
-                <th>Pays présumé</th>
-                <th style={{ textAlign: "right" }}>M.A. en AU</th>
-                <th style={{ textAlign: "right" }}>dont homologuées au Maroc</th>
-                <th>Matières actives du terrain commun</th>
-                <th>Index ONSSA</th>
-              </tr>
-            </thead>
-            <tbody>
-              {PISTES.map((p) => (
-                <tr key={p.id}>
-                  <td style={{ fontWeight: 500 }}>{p.nom}</td>
-                  <td style={{ color: "var(--muted)" }}>
-                    {p.pays ?? "à préciser"}
-                    {p.pays && !p.paysFiable && (
-                      <span style={{ color: "var(--mod)", fontSize: 11 }}> ?</span>
-                    )}
-                    {p.filialeLocale && (
-                      <span
-                        style={{ color: "var(--muted-2)", fontSize: 11 }}
-                        title="Entité australienne d'un groupe étranger — le pays indiqué est celui du groupe."
-                      >
-                        {" "}
-                        · filiale AU
-                      </span>
-                    )}
-                  </td>
-                  <td className="mono" style={{ textAlign: "right" }}>{p.matieres.length}</td>
-                  <td
-                    className="mono"
-                    style={{
-                      textAlign: "right",
-                      color: p.matieresMaroc.length ? "var(--accent)" : "var(--muted-2)",
-                      fontWeight: p.matieresMaroc.length ? 600 : 400,
-                    }}
-                  >
-                    {p.matieresMaroc.length}
-                  </td>
-                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
-                    {p.matieresMaroc.slice(0, 4).join(" · ") || (
-                      <span style={{ color: "var(--muted-2)" }}>aucune</span>
-                    )}
-                    {p.matieresMaroc.length > 4 && (
-                      <span className="mono" style={{ color: "var(--muted-2)" }}>
-                        {" "}
-                        +{p.matieresMaroc.length - 4}
-                      </span>
-                    )}
-                  </td>
-                  <td>
-                    <EtiquetteLien lien={p.lien} />
-                    {p.fournisseurOnssa && (
-                      <div style={{ color: "var(--muted-2)", fontSize: 11, marginTop: 3 }}>
-                        {p.fournisseurOnssa}
-                      </div>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <ReservePistes source={STATS_PISTES.source} />
-        </div>
-      </div>
-
-      <div className="section">
-        <EnteteUsines titre="Usines à qualifier — registre EPA" nb={PISTES_EPA.length} />
-        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
-          Sites de production enregistrés à l&apos;EPA, en pays de sourcing, absents de l&apos;index
-          marocain et confirmés par une homologation australienne.
-        </p>
-        <div className="bloc">
-          <TableUsines usines={PISTES_EPA} />
-          <ReserveEpa attribution={STATS_EPA.attribution} />
-        </div>
-      </div>
-
-      <div className="section">
-        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <Factory size={14} color="var(--info)" /> Usines turques — fabrication locale
-        </span>
-        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
-          Sociétés détenant au moins une homologation <span className="mono">İMAL</span> —
-          fabriquée en Turquie, par opposition à <span className="mono">İTHAL</span>, importée.
-        </p>
-        <div className="bloc">
-          <div className="titre">
-            <span>Fabricants turcs</span>
-            <span className="mono">{TURQUIE.length}</span>
-          </div>
-          <table className="tbl">
-            <thead>
-              <tr>
-                <th>Société</th>
-                <th style={{ textAlign: "right" }}>M.A. de l&apos;index</th>
-                <th style={{ textAlign: "right" }}>İMAL</th>
-                <th>Matières actives</th>
-                <th>Index ONSSA</th>
-              </tr>
-            </thead>
-            <tbody>
-              {TURQUIE.slice(0, 20).map((u) => (
+              {BRESIL.slice(0, MAX).map((u) => (
                 <tr key={u.id}>
                   <td style={{ fontWeight: 500 }}>{u.nom}</td>
-                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>
-                    {u.matieresMaroc.length}
-                  </td>
-                  <td className="mono" style={{ textAlign: "right" }}>{u.nbImal}</td>
-                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
-                    {u.matieresMaroc.slice(0, 4).join(" · ")}
-                    {u.matieresMaroc.length > 4 && (
-                      <span className="mono" style={{ color: "var(--muted-2)" }}>
-                        {" "}
-                        +{u.matieresMaroc.length - 4}
-                      </span>
-                    )}
-                  </td>
-                  <td style={{ fontSize: 11.5, color: "var(--muted-2)" }}>
-                    {u.fournisseurOnssa ?? "—"}
-                  </td>
+                  <td style={{ fontSize: 12, color: "var(--muted)", maxWidth: 220 }}>{u.sites.join(" · ") || "—"}</td>
+                  <td style={{ color: "var(--muted)" }}>{u.pays ?? u.paysBrut ?? "—"}</td>
+                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{u.matieres.length}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-            {STATS_BKU.attribution} · İMAL désigne une fabrication en Turquie, pas nécessairement la
-            synthèse de la matière active.
-          </p>
-        </div>
-      </div>
+          {BRESIL.length > MAX && <PiedReste n={BRESIL.length - MAX} mol={!surMatiere} />}
+        </BlocSource>
+      )}
 
-      <div className="section">
-        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <Factory size={14} color="var(--info)" /> Usines chinoises — les plus polyvalentes
-        </span>
-        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
-          Homologation chinoise de matière active technique <em>et</em> licence de production,
-          classées par couverture de l&apos;index marocain.
-        </p>
-        <div className="bloc">
-          <div className="titre">
-            <span>Usines confirmées</span>
-            <span className="mono">{CHINE.length}</span>
-          </div>
+      {source === "chine" && (
+        <BlocSource icone titre="Usines chinoises — ICAMA" n={CHINE.length} reserve={STATS_ICAMA.attribution}>
           <table className="tbl">
             <thead>
               <tr>
                 <th>Société</th>
-                <th style={{ textAlign: "right" }}>M.A. de l&apos;index</th>
+                <th style={{ textAlign: "right" }}>M.A. index</th>
                 <th style={{ textAlign: "right" }}>Homolog. TC</th>
                 <th>Matières actives</th>
                 <th>Licence</th>
               </tr>
             </thead>
             <tbody>
-              {CHINE.slice(0, 25).map((u) => (
+              {CHINE.slice(0, MAX).map((u) => (
                 <tr key={u.nom}>
                   <td>
                     <div style={{ fontWeight: 500 }}>{u.glose ?? u.nom}</div>
@@ -518,69 +459,108 @@ export default async function FournisseursPage({
                       {u.region && <span style={{ marginLeft: 6 }}>· {u.region}</span>}
                     </div>
                   </td>
-                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>
-                    {u.matieres.length}
-                  </td>
+                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{u.matieres.length}</td>
                   <td className="mono" style={{ textAlign: "right" }}>{u.nbHomologations}</td>
                   <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 340 }}>
                     {u.matieres.slice(0, 5).join(" · ")}
-                    {u.matieres.length > 5 && (
-                      <span className="mono" style={{ color: "var(--muted-2)" }}>
-                        {" "}
-                        +{u.matieres.length - 5}
-                      </span>
-                    )}
+                    {u.matieres.length > 5 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{u.matieres.length - 5}</span>}
                   </td>
-                  <td className="mono" style={{ fontSize: 11.5, color: "var(--low)" }}>
-                    {u.licenceProduction}
+                  <td className="mono" style={{ fontSize: 11.5, color: "var(--low)" }}>{u.licenceProduction}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {CHINE.length > MAX && <PiedReste n={CHINE.length - MAX} mol={!surMatiere} />}
+        </BlocSource>
+      )}
+
+      {source === "turquie" && (
+        <BlocSource icone titre="Fabricants turcs — BKÜ İMAL" n={TURQUIE.length} reserve={`${STATS_BKU.attribution} · İMAL désigne une fabrication en Turquie, pas nécessairement la synthèse.`}>
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Société</th>
+                <th style={{ textAlign: "right" }}>M.A. index</th>
+                <th style={{ textAlign: "right" }}>İMAL</th>
+                <th>Matières actives</th>
+                <th>Index ONSSA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {TURQUIE.slice(0, MAX).map((u) => (
+                <tr key={u.id}>
+                  <td style={{ fontWeight: 500 }}>{u.nom}</td>
+                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{u.matieresMaroc.length}</td>
+                  <td className="mono" style={{ textAlign: "right" }}>{u.nbImal}</td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
+                    {u.matieresMaroc.slice(0, 4).join(" · ")}
+                    {u.matieresMaroc.length > 4 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{u.matieresMaroc.length - 4}</span>}
+                  </td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted-2)" }}>{u.fournisseurOnssa ?? "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {TURQUIE.length > MAX && <PiedReste n={TURQUIE.length - MAX} mol={!surMatiere} />}
+        </BlocSource>
+      )}
+
+      {source === "epa" && (
+        <BlocSource icone titre="Sites de production — EPA" n={PISTES_EPA.length} reserve={STATS_EPA.attribution}>
+          <TableUsines usines={PISTES_EPA.slice(0, MAX)} />
+          {PISTES_EPA.length > MAX && <PiedReste n={PISTES_EPA.length - MAX} mol={!surMatiere} />}
+          <ReserveEpa attribution={STATS_EPA.attribution} />
+        </BlocSource>
+      )}
+
+      {source === "coree" && (
+        <BlocSource icone titre="Titulaires — PSIS Corée" n={COREE.length} reserve={STATS_COREE.avertissement}>
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Société</th>
+                <th>Romanisation</th>
+                <th style={{ textAlign: "right" }}>Homologations</th>
+                <th>Dernière</th>
+                <th>Matières actives</th>
+              </tr>
+            </thead>
+            <tbody>
+              {COREE.slice(0, MAX).map((s) => (
+                <tr key={s.cle}>
+                  <td style={{ fontWeight: 500 }}>{etiquette(s)}</td>
+                  <td className="mono" style={{ fontSize: 11.5, color: "var(--muted)" }}>{s.latin ?? "—"}</td>
+                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{s.nbHomologations}</td>
+                  <td className="mono" style={{ fontSize: 12, color: "var(--muted)" }}>{s.derniere ?? "—"}</td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 280 }}>
+                    {s.matieres.slice(0, 4).join(" · ") || "—"}
+                    {s.matieres.length > 4 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{s.matieres.length - 4}</span>}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-            {STATS_ICAMA.attribution} · non rapprochées de l&apos;index, les raisons sociales étant
-            en caractères chinois. Les noms latins sont transcrits (pinyin) : ils servent à
-            chercher, pas à identifier. Détail par matière active sur chaque fiche de prospection.
-          </p>
-        </div>
-      </div>
+          {COREE.length > MAX && <PiedReste n={COREE.length - MAX} mol={!surMatiere} />}
+        </BlocSource>
+      )}
 
-      <div className="section">
-        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <Factory size={14} color="var(--info)" /> Producteurs russes — catalogue d&apos;État
-        </span>
-        <p style={{ color: "var(--muted)", fontSize: 13, margin: "0 0 12px" }}>
-          Sociétés immatriculées en Russie détenant au moins une homologation au catalogue
-          fédéral. L&apos;outil n&apos;en connaissait que deux par l&apos;index marocain.
-        </p>
-        <div className="bloc">
-          <div className="titre">
-            <span>Détenteurs russes</span>
-            <span className="mono">{RUSSIE.length}</span>
-          </div>
+      {source === "russie" && (
+        <BlocSource icone titre="Détenteurs — catalogue russe" n={RUSSIE.length} reserve={STATS_RUSSIE.attribution}>
           <table className="tbl">
             <thead>
               <tr>
                 <th>Société</th>
                 <th>Translittération</th>
                 <th style={{ textAlign: "right" }}>Homologations</th>
-                <th>Produits homologués</th>
+                <th>Produits</th>
               </tr>
             </thead>
             <tbody>
-              {RUSSIE.slice(0, 25).map((s) => (
+              {RUSSIE.slice(0, MAX).map((s) => (
                 <tr key={s.cle}>
                   <td style={{ fontWeight: 500 }}>{s.nom}</td>
-                  <td className="mono" style={{ fontSize: 11.5, color: "var(--muted)" }}>
-                    {s.latin}
-                  </td>
-                  <td
-                    className="mono"
-                    style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}
-                  >
-                    {s.nbHomologations}
-                  </td>
+                  <td className="mono" style={{ fontSize: 11.5, color: "var(--muted)" }}>{s.latin}</td>
+                  <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{s.nbHomologations}</td>
                   <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
                     {s.produits.slice(0, 2).join(" · ").slice(0, 110) || "—"}
                   </td>
@@ -588,14 +568,94 @@ export default async function FournisseursPage({
               ))}
             </tbody>
           </table>
-          <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-            {STATS_RUSSIE.attribution}, via le miroir du {STATS_RUSSIE.miroir} — le site fédéral ne
-            répond pas depuis l&apos;étranger. Les raisons sociales sont en cyrillique : la
-            translittération sert à chercher, elle ne vaut pas identification. Édition datée —
-            elle sert à identifier des sociétés, pas à établir un statut réglementaire courant.
-          </p>
-        </div>
-      </div>
+          {RUSSIE.length > MAX && <PiedReste n={RUSSIE.length - MAX} mol={!surMatiere} />}
+        </BlocSource>
+      )}
+
+      {source === "apvma" && (
+        <BlocSource titre="Pistes hors index — PUBCRIS" n={PISTES.length} reserve="Une homologation australienne n'ouvre aucun droit devant l'ONSSA." compass>
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Société</th>
+                <th>Pays présumé</th>
+                <th style={{ textAlign: "right" }}>M.A. en AU</th>
+                <th style={{ textAlign: "right" }}>dont Maroc</th>
+                <th>Terrain commun</th>
+                <th>Index ONSSA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {PISTES.slice(0, MAX).map((p) => (
+                <tr key={p.id}>
+                  <td style={{ fontWeight: 500 }}>{p.nom}</td>
+                  <td style={{ color: "var(--muted)" }}>
+                    {p.pays ?? "à préciser"}
+                    {p.pays && !p.paysFiable && <span style={{ color: "var(--mod)", fontSize: 11 }}> ?</span>}
+                  </td>
+                  <td className="mono" style={{ textAlign: "right" }}>{p.matieres.length}</td>
+                  <td className="mono" style={{ textAlign: "right", color: p.matieresMaroc.length ? "var(--accent)" : "var(--muted-2)", fontWeight: p.matieresMaroc.length ? 600 : 400 }}>
+                    {p.matieresMaroc.length}
+                  </td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
+                    {p.matieresMaroc.slice(0, 4).join(" · ") || <span style={{ color: "var(--muted-2)" }}>aucune</span>}
+                    {p.matieresMaroc.length > 4 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{p.matieresMaroc.length - 4}</span>}
+                  </td>
+                  <td>
+                    <EtiquetteLien lien={p.lien} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {PISTES.length > MAX && <PiedReste n={PISTES.length - MAX} mol={!surMatiere} />}
+          <ReservePistes source={STATS_PISTES.source} />
+        </BlocSource>
+      )}
     </>
+  );
+}
+
+function PiedReste({ n, mol }: { n: number; mol: boolean }) {
+  return (
+    <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 10 }}>
+      {n} autres au-delà des {MAX} premiers
+      {mol ? " — tapez une molécule pour filtrer." : "."}
+    </p>
+  );
+}
+
+function BlocSource({
+  titre,
+  n,
+  reserve,
+  children,
+  icone,
+  compass,
+}: {
+  titre: string;
+  n: number;
+  reserve?: string;
+  children: React.ReactNode;
+  icone?: boolean;
+  compass?: boolean;
+}) {
+  return (
+    <div className="section" style={{ marginTop: 0 }}>
+      <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        {compass ? <Compass size={14} color="var(--info)" /> : icone ? <Factory size={14} color="var(--info)" /> : null}
+        {titre}
+      </span>
+      <div className="bloc" style={{ marginTop: 12 }}>
+        <div className="titre">
+          <span>Résultats</span>
+          <span className="mono">{n}</span>
+        </div>
+        {children}
+        {reserve && (
+          <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>{reserve}</p>
+        )}
+      </div>
+    </div>
   );
 }
