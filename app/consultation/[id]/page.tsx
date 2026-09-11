@@ -87,11 +87,8 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
 
       <div className="fil" style={{ marginTop: 10 }}>Fournisseur · Consultation</div>
       <h1>Consulter — {c.matiere.nom}</h1>
-      <p className="chapeau" style={{ marginBottom: 14 }}>
-        {c.route.titre}. Le prix vient en dernier.
-      </p>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, margin: "14px 0 18px" }}>
         <Link
           href={`/dossiers/generer/${id}`}
           className="pill"
