@@ -3,7 +3,6 @@ import { Compass, Factory, Search } from "lucide-react";
 import { FOURNISSEURS, MATIERES } from "@/lib/data";
 import { statsSourcing } from "@/lib/sourcing";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
-import { PastillesPacks } from "@/components/PacksFournisseur";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
@@ -16,6 +15,8 @@ import { PRODUCTEURS_RUSSES, STATS_RUSSIE } from "@/lib/russie";
 import { USINES_BRESIL, STATS_BRESIL } from "@/lib/bresil";
 import { SOCIETES_COREE, STATS_COREE, etiquette } from "@/lib/coree";
 import { nbEtranger, resoudre } from "@/lib/requete";
+import { contactDe } from "@/lib/contact";
+import { ContactCell } from "@/components/Contact";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -200,7 +201,7 @@ export default async function FournisseursPage({
 
   return (
     <>
-      <div className="fil">Étape 2 — fournisseur</div>
+      <div className="fil">Fournisseur</div>
       <h1>Qui peut porter le dossier</h1>
       <p className="chapeau">
         Une molécule, puis une source. Les registres restent tous là ; on n&apos;ouvre que celui
@@ -350,7 +351,7 @@ export default async function FournisseursPage({
                   <th style={{ textAlign: "right" }}>Réf. Maroc</th>
                   <th style={{ textAlign: "right" }}>M.A.</th>
                   <th>Matières actives fournies</th>
-                  <th>Agréments déclarés</th>
+                  <th>Contact</th>
                 </tr>
               </thead>
               <tbody>
@@ -390,7 +391,7 @@ export default async function FournisseursPage({
                         {mas.length === 0 && <span style={{ color: "var(--muted-2)" }}>—</span>}
                       </td>
                       <td>
-                        <PastillesPacks packs={ficheFournisseur(f.id)?.packs ?? []} />
+                        <ContactCell c={contactDe(f.nom, f.id)} />
                       </td>
                     </tr>
                   );
@@ -483,7 +484,7 @@ export default async function FournisseursPage({
                 <th style={{ textAlign: "right" }}>M.A. index</th>
                 <th style={{ textAlign: "right" }}>İMAL</th>
                 <th>Matières actives</th>
-                <th>Index ONSSA</th>
+                <th>Adresse</th>
               </tr>
             </thead>
             <tbody>
@@ -496,7 +497,7 @@ export default async function FournisseursPage({
                     {u.matieresMaroc.slice(0, 4).join(" · ")}
                     {u.matieresMaroc.length > 4 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{u.matieresMaroc.length - 4}</span>}
                   </td>
-                  <td style={{ fontSize: 11.5, color: "var(--muted-2)" }}>{u.fournisseurOnssa ?? "—"}</td>
+                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 240 }}>{u.adresse ?? "—"}</td>
                 </tr>
               ))}
             </tbody>

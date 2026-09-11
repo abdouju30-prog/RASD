@@ -39,6 +39,76 @@
       "source": "Brochure commerciale transmise par le détenteur",
       "date": "2026-09-01",
       "note": "Une seule ligne à l'index ONSSA : présence marocaine quasi nulle, donc peu de précédent réglementaire à invoquer. Thiophanate méthyl et tricyclazole sont absents de l'index — ce seraient des homologations de substance nouvelle, pas des dossiers me-too."
+    },
+    "upl-limited": {
+      "nom": "UPL LIMITED",
+      "pays": "Inde",
+      "referenceOnssa": true,
+      "packs": [],
+      "contact": {
+        "adresse": "Uniphos House, C.D. Marg, 11th Road, Madhu Park, Khar (West), Mumbai 400 052, Inde",
+        "telephone": "+91 22 7152 8000",
+        "email": "global.enquires@upl-ltd.com",
+        "site": "www.upl-ltd.com/contact-us"
+      },
+      "source": "Site officiel UPL — page Contact Us",
+      "date": "2026-09-11"
+    },
+    "gharda-chemicals-ltd": {
+      "nom": "GHARDA CHEMICALS Ltd",
+      "pays": "Inde",
+      "referenceOnssa": true,
+      "packs": [],
+      "contact": {
+        "adresse": "48, Hill Road, Bandra (West), Mumbai 400 050, Inde",
+        "telephone": "+91 22 66265600",
+        "email": "contactus@gharda.com",
+        "site": "www.gharda.com/contact"
+      },
+      "source": "Site officiel Gharda Chemicals — page Contact Us",
+      "date": "2026-09-11"
+    },
+    "sharda-cropchem-limited": {
+      "nom": "SHARDA CROPCHEM LIMITED",
+      "pays": "Inde",
+      "referenceOnssa": true,
+      "packs": [],
+      "contact": {
+        "adresse": "Prime Business Park, 2nd Floor, Vile Parle (West), Mumbai 400 056, Inde",
+        "telephone": "+91 22 6678 2800",
+        "email": "export@shardaintl.com",
+        "site": "www.shardacropchem.com/contact"
+      },
+      "source": "Site officiel Sharda Cropchem — page Contact",
+      "date": "2026-09-11"
+    },
+    "meghmani-organics-ltd": {
+      "nom": "MEGHMANI ORGANICS LTD",
+      "pays": "Inde",
+      "referenceOnssa": true,
+      "packs": [],
+      "contact": {
+        "adresse": "Meghmani House, Behind Safal Profitaire, Corporate Road, Prahladnagar, Ahmedabad 380015, Inde",
+        "telephone": "+91 79 2970 9600 / +91 79 7176 1000",
+        "email": "exports@meghmani.com",
+        "site": "meghmani.com/contact"
+      },
+      "source": "Site officiel Meghmani Organics — page Contact Us",
+      "date": "2026-09-11"
+    },
+    "aako-b-v": {
+      "nom": "AAKO B.V",
+      "pays": "Pays-Bas",
+      "referenceOnssa": true,
+      "packs": [],
+      "contact": {
+        "adresse": "Arnhemseweg 87, 3832 GK Leusden, Pays-Bas",
+        "telephone": "+31 33 494 84 94",
+        "email": "cropprotection@aako.nl",
+        "site": "www.aako.nl/contact"
+      },
+      "source": "Site officiel AAKO — page Crop Protection / Contact",
+      "date": "2026-09-11"
     }
   }
 }

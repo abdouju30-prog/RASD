@@ -9,6 +9,8 @@ import { alternatives } from "@/lib/substitution";
 import { consultation } from "@/lib/consultation";
 import { lectureCroisee } from "@/lib/apvma";
 import { resoudre, nbEtranger } from "@/lib/requete";
+import { contactDe } from "@/lib/contact";
+import { ContactCell } from "@/components/Contact";
 
 export const dynamic = "force-dynamic";
 
@@ -179,6 +181,7 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
               <tr>
                 <th>Fournisseur</th>
                 <th>Pays</th>
+                <th>Contact</th>
                 <th style={{ textAlign: "right" }}>Lignes Maroc</th>
               </tr>
             </thead>
@@ -187,6 +190,9 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
                 <tr key={x.id}>
                   <td style={{ fontWeight: 500 }}>{x.nom}</td>
                   <td style={{ color: "var(--muted)" }}>{x.pays ?? "à préciser"}</td>
+                  <td>
+                    <ContactCell c={contactDe(x.nom, x.id.startsWith("onssa-") ? x.id.slice(6) : undefined)} />
+                  </td>
                   <td className="mono" style={{ textAlign: "right" }}>{x.lignesMaroc ?? "—"}</td>
                 </tr>
               ))}

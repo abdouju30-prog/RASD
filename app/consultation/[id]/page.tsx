@@ -7,6 +7,8 @@ import {
   type Candidat,
 } from "@/lib/consultation";
 import { candidats } from "@/lib/sourcing";
+import { contactDe } from "@/lib/contact";
+import { ContactCell } from "@/components/Contact";
 
 export const dynamic = "force-dynamic";
 
@@ -41,7 +43,10 @@ function LigneCandidat({ c }: { c: Candidat }) {
       <td>
         <Origine c={c} />
       </td>
-      <td style={{ fontSize: 12.5, color: "var(--muted)", maxWidth: 420, lineHeight: 1.45 }}>
+      <td>
+        <ContactCell c={contactDe(c.nom, c.id.startsWith("onssa-") ? c.id.slice(6) : undefined)} />
+      </td>
+      <td style={{ fontSize: 12.5, color: "var(--muted)", maxWidth: 360, lineHeight: 1.45 }}>
         {c.motif}
       </td>
     </tr>
@@ -56,6 +61,7 @@ function TableCandidats({ rows }: { rows: Candidat[] }) {
           <th>Société</th>
           <th>Pays</th>
           <th>Registre</th>
+          <th>Contact</th>
           <th>Motif</th>
         </tr>
       </thead>
