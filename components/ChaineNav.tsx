@@ -92,10 +92,9 @@ export function ChaineNav({
             <Link
               key={s.href}
               href={s.href}
-              className={`station${on ? " on" : ""}${s.etape ? "" : " hors-chaine"}`}
+              className={`station${on ? " on" : ""}`}
               aria-current={on ? "page" : undefined}
             >
-              <span className="e">{s.etape ?? "Vue d'ensemble"}</span>
               <span className="n">{s.nom}</span>
               <span className="k">
                 {s.compteur}

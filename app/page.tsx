@@ -2,7 +2,6 @@ import Link from "next/link";
 import { AlertTriangle, ArrowRight, ShieldQuestion } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { RiskBadge } from "@/components/RiskBadge";
-import { RiskMatrix, type MatrixPoint } from "@/components/RiskMatrix";
 import { matieresDuPortefeuille, produitsDe } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { alertes, anglesMorts, statsAlertes } from "@/lib/alertes";
@@ -27,15 +26,6 @@ export default async function RadarPage() {
   const morts = anglesMorts(d.id);
   const top = alertes(d.id).slice(0, 5);
   const produits = produitsDe(d.id);
-
-  const points: MatrixPoint[] = classe
-    .filter((c) => c.risque !== null)
-    .map((c) => ({
-      id: c.ma.id,
-      nom: c.ma.molecule,
-      score: c.risque!.score,
-      expo: CA_DISPONIBLE && c.expo.ca ? c.expo.ca : c.expo.usages,
-    }));
 
   const usagesARisque = classe
     .filter((c) => (c.risque?.score ?? 0) >= 55)
@@ -114,34 +104,6 @@ export default async function RadarPage() {
           tone="default"
           sub={CA_DISPONIBLE ? "sur risque ≥ 55" : `${COUVERTURE.nbVerifiees} fiches UE vérifiées`}
         />
-      </div>
-
-      {/* La matrice prend toute la largeur : c'est une carte de décision, elle
-          se lit d'autant mieux qu'elle respire. La légende passe à côté du
-          titre, les actions en dessous. */}
-      <div className="card" style={{ padding: "16px 20px 10px" }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            justifyContent: "space-between",
-            gap: 16,
-            flexWrap: "wrap",
-            marginBottom: 6,
-          }}
-        >
-          <span className="h-title">Matrice risque × exposition</span>
-          <span style={{ color: "var(--muted-2)", fontSize: 11.5 }}>
-            Taille de bulle = {CA_DISPONIBLE ? "chiffre d'affaires" : "usages détenus"}
-          </span>
-        </div>
-        {points.length ? (
-          <RiskMatrix points={points} labelY={CA_DISPONIBLE ? "Exposition CA" : "Usages détenus"} />
-        ) : (
-          <p style={{ color: "var(--muted)", fontSize: 13, padding: "30px 0" }}>
-            Aucune matière active du portefeuille ne dispose d&apos;une fiche réglementaire vérifiée.
-          </p>
-        )}
       </div>
 
       <div className="section">

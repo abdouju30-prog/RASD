@@ -114,7 +114,7 @@ export default async function DossiersPage({
 
   return (
     <>
-      <div className="fil">Étape 3 — dossier</div>
+      <div className="fil">Dossier</div>
       <h1>À traiter</h1>
       <p className="chapeau">
         Une file, triée par urgence. Chaque ligne ouvre un dossier ONSSA 3-B pré-rempli.

@@ -41,20 +41,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     },
     {
       href: "/sourcing",
-      etape: "Étape 1",
       nom: "Alternative",
       compteur: `${nbCibles} cibles`,
       aliases: ["/gamme", "/melanges", "/sentinelle", "/importation"],
     },
     {
       href: "/fournisseurs",
-      etape: "Étape 2",
       nom: "Fournisseur",
       compteur: `${so.nbGeneriques} génér. · ${so.parPays.length} pays`,
     },
     {
       href: "/dossiers",
-      etape: "Étape 3",
       nom: "Dossier",
       compteur: `${NB_LIGNES_CHECKLIST} lignes · 3-B`,
     },

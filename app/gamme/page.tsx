@@ -130,7 +130,7 @@ export default async function GammePage({
 
   return (
     <>
-      <div className="fil">Étape 1 — Alternative · Gamme</div>
+      <div className="fil">Alternative · Gamme</div>
       <h1 style={{ display: "flex", alignItems: "center", gap: 9 }}>
         <LayoutGrid size={19} /> Gamme — {d.nom}
       </h1>
@@ -196,61 +196,6 @@ export default async function GammePage({
           <Table liste={liste} max={40} />
         </div>
       </div>
-
-      <div className="card" style={{ padding: "18px 20px" }}>
-        <div className="h-title">Couverture par culture</div>
-        <div style={{ marginTop: 12, overflowX: "auto" }}>
-          <table className="tbl">
-            <thead>
-              <tr>
-                <th>Culture</th>
-                {g.categories.map((c) => (
-                  <th key={c.categorie} style={{ textAlign: "right" }}>
-                    {c.categorie.slice(0, 4)}.
-                  </th>
-                ))}
-                <th style={{ textAlign: "right" }}>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {g.cultures.slice(0, 24).map((l) => (
-                <tr key={l.culture}>
-                  <td style={{ fontWeight: 500 }}>{l.culture}</td>
-                  {l.cases.map((c) => (
-                    <td
-                      key={c.categorie}
-                      className="mono"
-                      style={{
-                        textAlign: "right",
-                        fontSize: 12,
-                        color:
-                          c.marche === 0
-                            ? "var(--muted-2)"
-                            : c.vous === 0
-                            ? "var(--high)"
-                            : "var(--low)",
-                      }}
-                      title={`${c.categorie} · vous ${c.vous} / marché ${c.marche}`}
-                    >
-                      {c.marche === 0 ? "—" : `${c.vous}/${c.marche}`}
-                    </td>
-                  ))}
-                  <td className="mono" style={{ textAlign: "right", fontWeight: 600 }}>
-                    {l.vous}/{l.marche}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 14, lineHeight: 1.55, maxWidth: "92ch" }}>
-        Marché = produits de l&apos;index ONSSA portant la molécule. Molécules retirées ou en retrait
-        chez l&apos;ANSES exclues. <span className="mono">me-too</span> = fournisseur déjà référencé
-        au Maroc ; Brésil et Chine comptent des usines, Corée, Turquie et Russie des détenteurs.
-        Ni prix, ni volume, ni brevet.
-      </p>
     </>
   );
 }

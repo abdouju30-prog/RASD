@@ -1,14 +1,11 @@
 import Link from "next/link";
-import { CalendarClock, Ban, Flag, Timer, RefreshCw, Info, ShieldAlert } from "lucide-react";
+import { CalendarClock, Ban, Flag, Timer, RefreshCw, ShieldAlert } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { alertes, statsAlertes, type TypeAlerte } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
-import { COUVERTURE } from "@/lib/reglementaire";
 import { META } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
-import { STATS_EPHY } from "@/lib/ephy";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
-import { Aide } from "@/components/Aide";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
   anses_retrait: ShieldAlert,
@@ -72,22 +69,6 @@ export default async function VeillePage() {
 
       <div style={{ margin: "14px 0 12px" }}>
         <FraicheurEphy />
-      </div>
-
-      <div style={{ margin: "0 0 16px" }}>
-        <Aide titre="Hiérarchie des signaux, et réserve sur les échéances UE">
-          <p>
-            L&apos;ONSSA s&apos;aligne sur l&apos;ANSES : un retrait français annonce le retrait
-            marocain. Les alertes « retrait ANSES » passent donc en tête, avant le statut UE qui est
-            en amont et plus lent. Statut français lu dans E-Phy — {STATS_EPHY.attribution}.
-          </p>
-          <p>
-            Les échéances UE viennent de la {COUVERTURE.source} (consultée le{" "}
-            {fmtDate(COUVERTURE.date)}). La Commission les prolonge fréquemment par règlement
-            d&apos;exécution : <strong>une échéance dépassée signifie « à recouper d&apos;urgence »,
-            pas « substance interdite »</strong>.
-          </p>
-        </Aide>
       </div>
 
       <div style={{ display: "grid", gap: 12 }}>
