@@ -1,5 +1,6 @@
 import { Factory } from "lucide-react";
 import { titulaires, usines, type MatiereIcama } from "@/lib/icama";
+import { NomChinois } from "@/components/NomChinois";
 
 // Le registre chinois distingue deux droits que rien d'autre ne distingue :
 // vendre la matière active technique, et la fabriquer. L'affichage garde la
@@ -22,12 +23,7 @@ function Table({ soc, usine }: { soc: ReturnType<typeof usines>; usine: boolean 
         {soc.map((s) => (
           <tr key={s.nom}>
             <td>
-              {/* ⚠️ Le pinyin passe devant, les caractères han dessous. Une
-                  raison sociale en han ne se recopie ni ne se dicte : affichée
-                  seule, elle n'apprenait rien. Le nom d'origine reste là, c'est
-                  lui qui fait foi. */}
-              <div style={{ fontSize: 13, fontWeight: 500 }}>{s.glose ?? s.nom}</div>
-              <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 1 }}>{s.nom}</div>
+              <NomChinois nom={s.nom} latin={s.latin} region={s.region} />
             </td>
             <td style={{ fontSize: 12, color: "var(--muted)" }}>{s.region ?? "—"}</td>
             <td className="mono" style={{ fontSize: 13, textAlign: "right" }}>{s.nbHomologations}</td>

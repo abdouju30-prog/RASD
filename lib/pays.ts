@@ -173,7 +173,7 @@ function entrees(): EntreePays[] {
   for (const u of USINES_CHINE) {
     out.push({
       id: `cn-${u.nom}`,
-      nom: u.glose ? `${u.glose} — ${u.nom}` : u.nom,
+      nom: u.latin ? `${u.latin} — ${u.nom}` : u.nom,
       registre: "chine",
       detail: `${u.matieres.length} M.A. de l'index · licence ${u.licenceProduction}`,
       meToo: false,

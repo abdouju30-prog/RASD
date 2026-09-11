@@ -92,6 +92,17 @@ export function fabricantsChinois(nomONSSA: string): MatiereIcama | null {
   return PAR_ISO.get(c.nom) ?? null;
 }
 
+/**
+ * Nom collable dans un moteur de recherche.
+ *
+ * La glose (« Yifan — biotechnologies, SARL ») n'existe nulle part : ni au
+ * registre, ni sur le site de la société. Le pinyin reprend chaque caractère
+ * du nom han ; collé dans Google, il retrouve l'usine. Le han reste l'identité.
+ */
+export function nomCherchable(s: { nom: string; latin: string | null }): string {
+  return s.latin?.trim() || s.nom;
+}
+
 /** Usines confirmées : homologation TC **et** licence de production. */
 export function usines(m: MatiereIcama): SocieteChinoise[] {
   return m.societes.filter((s) => s.licenceProduction);

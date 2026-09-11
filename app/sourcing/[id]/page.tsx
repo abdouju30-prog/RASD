@@ -25,11 +25,12 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
     ? [
         { nom: "ONSSA", n: g.fournisseursOnssa.length, source: "onssa" },
         { nom: "Brésil", n: g.bresil.length, source: "bresil" },
-        { nom: "Chine", n: g.chine.length, source: "chine" },
+        { nom: "Chine", n: g.chineTc.length, source: "chine" },
         { nom: "Turquie", n: g.turquie.length, source: "turquie" },
         { nom: "EPA", n: g.sitesEpa, source: "epa" },
         { nom: "Corée", n: g.coree.length, source: "coree" },
         { nom: "Russie", n: g.russie.length, source: "russie" },
+        { nom: "Australie", n: g.apvma.length, source: "apvma" },
       ]
     : [];
 

@@ -201,7 +201,7 @@ function depuisChine(s: SocieteChinoise): Candidat {
     id: `cn-${s.nom}`,
     // Le pinyin devant, les caractères han derrière : c'est le premier qui se
     // recopie dans un courriel de consultation.
-    nom: s.glose ? `${s.glose} — ${s.nom}` : s.nom,
+    nom: s.latin ? `${s.latin} — ${s.nom}` : s.nom,
     origine: "chine",
     pays: s.region ? `Chine (${s.region})` : "Chine",
     motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · licence ${s.licenceProduction}`,
@@ -344,7 +344,7 @@ export function consultation(maId: string): Consultation | null {
 
   const tr = fabricantsTurcs(ma.nom);
   if (tr) {
-    for (const s of tr.fabricants.slice(0, 8)) {
+    for (const s of tr.fabricants) {
       const n = (s.nom ?? "").toUpperCase();
       if (!n || vus.has(n)) continue;
       vus.add(n);
@@ -391,7 +391,7 @@ export function consultation(maId: string): Consultation | null {
 
   const cn = fabricantsChinois(ma.nom);
   if (cn) {
-    for (const s of usinesChinoises(cn).slice(0, 12)) {
+    for (const s of usinesChinoises(cn)) {
       if (vus.has(s.nom.toUpperCase())) continue;
       vus.add(s.nom.toUpperCase());
       autres.push(depuisChine(s));

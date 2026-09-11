@@ -1,12 +1,12 @@
 import { FOURNISSEURS, MATIERES } from "./data";
 import { molecules } from "./formulation";
 import { fabricantsBresiliens, type UsineBresil } from "./bresil";
-import { USINES_CHINE, type UsineChinoise } from "./icama";
+import { fabricantsChinois, USINES_CHINE, type SocieteChinoise, type UsineChinoise } from "./icama";
 import { fabricantsCoreens, type SocieteCoreenne } from "./coree";
-import { PRODUCTEURS_RUSSES, type SocieteRusse } from "./russie";
+import { SOCIETES_CATALOGUE_RU, type SocieteRusse } from "./russie";
 import { USINES_TURQUES, fabricantsTurcs, type UsineTurque } from "./bku";
 import { apparierApvma } from "./apvma";
-import { usinesDe } from "./epa";
+import { ANNUAIRE_PISTES, type PisteGlobale } from "./pistes";
 import type { MatiereActive } from "./types";
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -68,11 +68,22 @@ export interface Gisement {
   /** Fournisseurs de l'index ONSSA qui la portent — la voie me-too. */
   fournisseursOnssa: string[];
   bresil: UsineBresil[];
+  /** Usines ICAMA (licence de production) dont le portefeuille couvre la molécule. */
   chine: UsineChinoise[];
+  /** Titulaires TC de cette molécule, avec teneur et licence — pas l'annuaire agrégé. */
+  chineTc: SocieteChinoise[];
+  /** Noms chinois de la substance au registre ICAMA. */
+  chineNoms: string[];
   coree: SocieteCoreenne[];
   turquie: UsineTurque[];
+  /** Tous les détenteurs du catalogue russe sur cette ISO, y compris étrangers. */
   russie: SocieteRusse[];
-  /** Sites EPA retrouvés au nom des fournisseurs ONSSA. */
+  /** Détenteurs PUBCRIS de cette ISO — y compris l'originateur déjà à l'index. */
+  apvma: PisteGlobale[];
+  /**
+   * Toujours 0 : l'EPA ne publie pas la matière. Un compteur d'usines Bayer
+   * faisait croire à 5 sources alors que la table était vide.
+   */
   sitesEpa: number;
 }
 
@@ -128,8 +139,10 @@ function gisementDe(molecules: typeof MOLECULES): Gisement {
   const fournisseurs = new Set<string>();
   const br = new Map<string, UsineBresil>();
   const kr = new Map<string, SocieteCoreenne>();
+  const cnTc = new Map<string, SocieteChinoise>();
   const iso = new Set<string>();
   const idsTurcs = new Set<number | string>();
+  const chineNoms = new Set<string>();
 
   for (const mol of molecules) {
     for (const ma of mol.lignes) for (const f of ma.fournisseurs) fournisseurs.add(f);
@@ -153,26 +166,33 @@ function gisementDe(molecules: typeof MOLECULES): Gisement {
     // pas sur un nom ISO : c'est `fabricantsTurcs` qui fait la traduction, et
     // on ne garde que les identifiants qu'il rend.
     for (const u of fabricantsTurcs(ref.nom)?.fabricants ?? []) idsTurcs.add(u.id);
+
+    const ic = fabricantsChinois(ref.nom);
+    if (ic) {
+      for (const x of ic.nomsChinois) chineNoms.add(x);
+      for (const s of ic.societes) ajouter(cnTc, s.nom, s);
+    }
   }
 
   // Les trois annuaires ci-dessous portent déjà, pour chaque société, les
   // matières actives de l'index qu'elle couvre — en nom ISO. On les lit, on ne
   // les réinterroge pas : c'est la même donnée, déjà rapprochée.
   const chine = USINES_CHINE.filter((u) => u.matieres.some((m) => iso.has(m)));
-  const russie = PRODUCTEURS_RUSSES.filter((s) => s.matieres.some((m) => iso.has(m)));
+  const russie = SOCIETES_CATALOGUE_RU.filter((s) => s.matieres.some((m) => iso.has(m)));
   const turquie = USINES_TURQUES.filter((u) => idsTurcs.has(u.id));
-
-  let epa = 0;
-  for (const f of fournisseurs) epa += usinesDe(f)?.sites.length ?? 0;
+  const apvma = ANNUAIRE_PISTES.filter((p) => p.matieres.some((m) => iso.has(m)));
 
   return {
     fournisseursOnssa: [...fournisseurs].sort(),
     bresil: [...br.values()],
     chine,
+    chineTc: [...cnTc.values()],
+    chineNoms: [...chineNoms],
     coree: [...kr.values()],
     turquie,
     russie,
-    sitesEpa: epa,
+    apvma,
+    sitesEpa: 0,
   };
 }
 
