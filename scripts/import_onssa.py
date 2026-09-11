@@ -45,13 +45,7 @@ pays_fournisseur = pays_societe
 
 
 # --- Normalisation ---------------------------------------------------------
-def slug(s):
-    if not s:
-        return ""
-    s = unicodedata.normalize("NFKD", str(s))
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    s = re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-").lower()
-    return s[:70]
+from _texte import slug  # noqa: E402,F401
 
 
 def molecule_base(ma):

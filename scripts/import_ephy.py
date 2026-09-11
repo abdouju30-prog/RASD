@@ -54,10 +54,7 @@ API_DATASET = (
 ATTRIBUTION = "Données E-Phy - Anses"
 
 
-def slug(s):
-    s = unicodedata.normalize("NFKD", str(s or ""))
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    return re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-").lower()[:70]
+from _texte import slug  # noqa: E402,F401
 
 
 def parse_date(s):
