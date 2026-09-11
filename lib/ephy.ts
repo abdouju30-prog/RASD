@@ -64,14 +64,7 @@ const EPHY = ephyFile as unknown as FichierEphy;
 export const META_EPHY = EPHY.meta;
 export const SUBSTANCES_EPHY = EPHY.substances;
 
-function norm(s: string): string {
-  return s
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
+import { normaliser as norm } from "./texte";
 
 /**
  * Retire la teneur et les qualificatifs de sel pour ne garder que la molécule.
@@ -96,7 +89,7 @@ function nbProduits(s: SubstanceEphy): number {
 // retient la ligne qui porte des produits : c'est elle qui décrit le marché.
 const PAR_CLE = new Map<string, SubstanceEphy>();
 for (const s of SUBSTANCES_EPHY) {
-  for (const c of [s.nom, ...s.variantes].map(norm).filter(Boolean)) {
+  for (const c of [s.nom, ...s.variantes].map((x) => norm(x)).filter(Boolean)) {
     const actuel = PAR_CLE.get(c);
     if (!actuel || nbProduits(s) > nbProduits(actuel)) PAR_CLE.set(c, s);
   }

@@ -70,16 +70,10 @@ export const META_BKU = BKU.meta;
 export const SOCIETES_TURQUES = BKU.societes;
 export const MATIERES_TURQUES = BKU.matieres;
 
-function normaliser(s: string): string {
-  return s
-    .replace(/İ/g, "I")
-    .replace(/ı/g, "i")
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
+import { normaliser as normaliserBase } from "./texte";
+
+// Le registre turc écrit « İMAL »/« İTHAL » : le mapping İ/ı est indispensable.
+const normaliser = (s: string) => normaliserBase(s, { turc: true });
 
 const PAR_CLE = new Map(MATIERES_TURQUES.map((m) => [normaliser(m.nom), m]));
 

@@ -93,14 +93,7 @@ const RANG: Record<TypeEntree, number> = {
   produit_expire: 9,
 };
 
-function normaliser(s: string): string {
-  return s
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
+import { normaliser } from "./texte";
 
 interface Indexee extends Entree {
   cle: string;
