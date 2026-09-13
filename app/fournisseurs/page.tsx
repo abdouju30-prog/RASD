@@ -770,7 +770,7 @@ function PiedReste({
         <>
           Liste complète.{" "}
           <Link href={hrefReduire} className="link-accent">
-            Réduire aux {MAX} premiers
+            Réduire aux {`${MAX} premiers`}
           </Link>
         </>
       ) : (
