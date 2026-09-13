@@ -244,9 +244,11 @@ export default function SourcesPage() {
             La mise à jour ne peut pas se déclencher depuis l&apos;application déployée : le
             système de fichiers y est en lecture seule, et l&apos;archive APVMA fait 23 Mo. Elle
             tourne chaque jour à 07:00 (Casablanca) via le workflow GitHub{" "}
-            <span className="mono">maj-ephy</span> sur <span className="mono">master</span>.
-            L&apos;Anses republie E-Phy dans la nuit de mardi à mercredi : le jeudi, le relevé
-            porte en principe la semaine en cours. Commande manuelle :{" "}
+            <span className="mono">maj-ephy</span> sur <span className="mono">master</span>
+            {" "}
+            (E-Phy, Australie, Brésil, Corée, sentinelle). L&apos;Anses republie E-Phy dans
+            la nuit de mardi à mercredi : le jeudi, le relevé porte en principe la semaine
+            en cours. Commande manuelle :{" "}
             <span className="mono">npm run maj</span>.
           </div>
         </div>

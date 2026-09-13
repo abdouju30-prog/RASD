@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-12T09:59:49",
-  "dernierReleve": "2026-09-12",
+  "genere": "2026-09-13T10:11:09",
+  "dernierReleve": "2026-09-13",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
@@ -189,6 +189,165 @@
    "nouvelle": false
   },
   {
+   "cle": "bifentrin",
+   "nom": "bifentrina",
+   "iso": "BIFENTHRIN",
+   "nomPt": "bifentrina",
+   "groupeChimique": "piretróide",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 52,
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Agrow Allied Ventures Pvt.Ltd.",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Aimco Pesticides Ltd.",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Bharat Rasayan Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "FMC Corporation",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "Guangdong Liwei Chemical Industry Co.,Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Hemani Industries Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Heranba Industries Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Changlong Agrochemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Chunjiang Agrochemical Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Chunjiang Runtian Agrochemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Huangma Agrochemicals Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Lianhe Chemical Technology Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Meghmani Organics Ltd. Unit I",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Qingdao Rainbow Chemical Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong United Pesticide Industry Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sinon Corporation",
+     "pays": "Taïwan",
+     "coutFaible": true
+    },
+    {
+     "nom": "UPL Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Viakem S.A. de C.V.",
+     "pays": "Mexique",
+     "coutFaible": true
+    },
+    {
+     "nom": "Weifang Maoyuan Biotechnology Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Youjia Crop Protection Co Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Zhejiang Lianhe Chemical Technology Co. LTD",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
+    "Acrom Agroindustrial Ltda- Londrina/PR",
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
+    "Agroallianz S.A",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "BRA Defensivos Agrícolas Ltda - Piracicaba/SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "CCAB Agro S.A.   São Paulo",
+    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
+    "Cropchem Ltda - Porto Alegre"
+   ],
+   "coree": {
+    "nom": "Bifenthrin",
+    "nbHomologations": 74,
+    "nbFabrique": 66,
+    "nbImporte": 8,
+    "premiere": "1987-04-09",
+    "derniere": "2026-07-29",
+    "nbSocietes": 22
+   },
+   "france": {
+    "nom": "Bifenthrin",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 68,
+    "dernierRetrait": "2011-04-27"
+   },
+   "australie": {
+    "nom": "BIFENTHRIN",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 259,
+    "matiereActiveApprouvee": true
+   },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "fipronil",
    "nom": "fipronil",
    "iso": "FIPRONIL",
@@ -342,160 +501,6 @@
     "nom": "FIPRONIL",
     "statut": "autorisée",
     "nbProduitsAgricoles": 114,
-    "matiereActiveApprouvee": true
-   },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "bifentrin",
-   "nom": "bifentrina",
-   "iso": "BIFENTHRIN",
-   "nomPt": "bifentrina",
-   "groupeChimique": "piretróide",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 52,
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Agrow Allied Ventures Pvt.Ltd.",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Aimco Pesticides Ltd.",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Bharat Rasayan Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "FMC Corporation",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "Guangdong Liwei Chemical Industry Co.,Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Hemani Industries Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Heranba Industries Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Changlong Agrochemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Chunjiang Agrochemical Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Chunjiang Runtian Agrochemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Huangma Agrochemicals Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Lianhe Chemical Technology Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Meghmani Organics Ltd. Unit I",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Qingdao Rainbow Chemical Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong United Pesticide Industry Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sinon Corporation",
-     "pays": "Taïwan",
-     "coutFaible": true
-    },
-    {
-     "nom": "UPL Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Viakem S.A. de C.V.",
-     "pays": "Mexique",
-     "coutFaible": true
-    },
-    {
-     "nom": "Youjia Crop Protection Co Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Zhejiang Lianhe Chemical Technology Co. LTD",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
-    "Acrom Agroindustrial Ltda- Londrina/PR",
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
-    "Agroallianz S.A",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "BRA Defensivos Agrícolas Ltda - Piracicaba/SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "CCAB Agro S.A.   São Paulo",
-    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
-    "Cropchem Ltda - Porto Alegre"
-   ],
-   "coree": {
-    "nom": "Bifenthrin",
-    "nbHomologations": 74,
-    "nbFabrique": 66,
-    "nbImporte": 8,
-    "premiere": "1987-04-09",
-    "derniere": "2026-07-29",
-    "nbSocietes": 22
-   },
-   "france": {
-    "nom": "Bifenthrin",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 68,
-    "dernierRetrait": "2011-04-27"
-   },
-   "australie": {
-    "nom": "BIFENTHRIN",
-    "statut": "autorisée",
-    "nbProduitsAgricoles": 259,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -2043,13 +2048,13 @@
     "Agro-Lead Brasil Assessoria em Produtos Agrícolas Ltda - EPP",
     "Agrobeats Defensivos Agrícolas Ltda",
     "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
     "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
     "Cropchem Ltda - Porto Alegre",
-    "Globachem Proteção de Cultivos do Brasil Ltda. - Campinas/SP",
-    "Hailir Brasil Defensivos Agricolas Ltda - São Paulo/SP"
+    "Globachem Proteção de Cultivos do Brasil Ltda. - Campinas/SP"
    ],
    "coree": {
     "nom": "Chlorfenapyr",
@@ -2071,6 +2076,112 @@
     "nom": "CHLORFENAPYR",
     "statut": "autorisée",
     "nbProduitsAgricoles": 1,
+    "matiereActiveApprouvee": true
+   },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "metomil",
+   "nom": "metomil",
+   "iso": "METHOMYL",
+   "nomPt": "metomil",
+   "groupeChimique": "metilcarbamato de oxima",
+   "teneurMax": 985.0,
+   "nbHomologationsBr": 30,
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Haili Guixi Chemical Industry Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Henan Jinpeng Chemicals Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Hunan Haili Chemical Industry",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "PT Inti Everspring Indonesia",
+     "pays": "INDONÉSIA",
+     "coutFaible": false
+    },
+    {
+     "nom": "Shandong Huayang Pesticide Chemical Industry Group Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Libang Chemical Industry Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sinon Chemical CO. LTD.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sinon Chemical CO., LTD. Fengxian/Shanghai",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sinon Corporation",
+     "pays": "Taïwan",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sunko Ink Co. Ltd.",
+     "pays": "Taïwan",
+     "coutFaible": true
+    },
+    {
+     "nom": "Yancheng Limin Chemical Co. Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Yancheng Limin Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agroallianz S.A",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "AllierBrasil Agro Ltda.",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "CCAB Agro S.A.   São Paulo",
+    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
+    "Cropchem Ltda - Porto Alegre",
+    "Gilmore Agro do Brasil Ltda - ME",
+    "Jubailireg Brasil Ltda - São Paulo/SP",
+    "Nortox S.A. - Arapongas",
+    "Ouro Fino Química S.A. - Uberaba"
+   ],
+   "coree": null,
+   "france": {
+    "nom": "Methomyl",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 15,
+    "dernierRetrait": "2008-03-10"
+   },
+   "australie": {
+    "nom": "METHOMYL",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 30,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -2179,6 +2290,115 @@
     "nbProduitsAgricoles": 39,
     "matiereActiveApprouvee": true
    },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "sulfentrason",
+   "nom": "sulfentrazona",
+   "iso": "Sulfentrazone",
+   "nomPt": "sulfentrazona",
+   "groupeChimique": "triazolona",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 29,
+   "fabricants": [
+    {
+     "nom": "Inner Mongolia Shijie Chemicals Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Agrochem Laboratory Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Lianhe Chemical Technology Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Repont Agrochemical Co. Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangxi Heyi Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangxi Zhonghe Chemical Industry Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Ningxia Rainbow Chemical Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shanghai Baoda Veterinary Pharmaceutical Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Tagros Chemicals India Private Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Tagros Chemicals Índia Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "UPL Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Zhejiang Lianhe Chemical Technology Co. LTD",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agroallianz S.A",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "CCAB Agro S.A.   São Paulo",
+    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
+    "FMC Química do Brasil Ltda. - Campinas/SP",
+    "Helm do Brasil Mercantil - São Paulo/SP",
+    "Maxunitech do Brasil Ltda",
+    "Nortox S.A. - Arapongas",
+    "Ouro Fino Química S.A. - Uberaba"
+   ],
+   "coree": {
+    "nom": "Sulfentrazone",
+    "nbHomologations": 1,
+    "nbFabrique": 1,
+    "nbImporte": 0,
+    "premiere": "2022-11-01",
+    "derniere": "2022-11-01",
+    "nbSocietes": 1
+   },
+   "france": {
+    "nom": "Sulfentrazone",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 0,
+    "dernierRetrait": null
+   },
+   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -2483,211 +2703,6 @@
     "nbProduitsAgricoles": 2,
     "matiereActiveApprouvee": true
    },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "metomil",
-   "nom": "metomil",
-   "iso": "METHOMYL",
-   "nomPt": "metomil",
-   "groupeChimique": "metilcarbamato de oxima",
-   "teneurMax": 985.0,
-   "nbHomologationsBr": 29,
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Haili Guixi Chemical Industry Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Henan Jinpeng Chemicals Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Hunan Haili Chemical Industry",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Huayang Pesticide Chemical Industry Group Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Libang Chemical Industry Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sinon Chemical CO. LTD.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sinon Chemical CO., LTD. Fengxian/Shanghai",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sinon Corporation",
-     "pays": "Taïwan",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sunko Ink Co. Ltd.",
-     "pays": "Taïwan",
-     "coutFaible": true
-    },
-    {
-     "nom": "Yancheng Limin Chemical Co. Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Yancheng Limin Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agroallianz S.A",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "AllierBrasil Agro Ltda.",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "CCAB Agro S.A.   São Paulo",
-    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
-    "Cropchem Ltda - Porto Alegre",
-    "Gilmore Agro do Brasil Ltda - ME",
-    "Jubailireg Brasil Ltda - São Paulo/SP",
-    "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba"
-   ],
-   "coree": null,
-   "france": {
-    "nom": "Methomyl",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 15,
-    "dernierRetrait": "2008-03-10"
-   },
-   "australie": {
-    "nom": "METHOMYL",
-    "statut": "autorisée",
-    "nbProduitsAgricoles": 30,
-    "matiereActiveApprouvee": true
-   },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "sulfentrason",
-   "nom": "sulfentrazona",
-   "iso": "Sulfentrazone",
-   "nomPt": "sulfentrazona",
-   "groupeChimique": "triazolona",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 29,
-   "fabricants": [
-    {
-     "nom": "Jiangsu Agrochem Laboratory Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Lianhe Chemical Technology Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Repont Agrochemical Co. Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangxi Heyi Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangxi Zhonghe Chemical Industry Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Ningxia Rainbow Chemical Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shanghai Baoda Veterinary Pharmaceutical Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Tagros Chemicals India Private Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Tagros Chemicals Índia Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "UPL Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Zhejiang Lianhe Chemical Technology Co. LTD",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agroallianz S.A",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "CCAB Agro S.A.   São Paulo",
-    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
-    "FMC Química do Brasil Ltda. - Campinas/SP",
-    "Helm do Brasil Mercantil - São Paulo/SP",
-    "Maxunitech do Brasil Ltda",
-    "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba"
-   ],
-   "coree": {
-    "nom": "Sulfentrazone",
-    "nbHomologations": 1,
-    "nbFabrique": 1,
-    "nbImporte": 0,
-    "premiere": "2022-11-01",
-    "derniere": "2022-11-01",
-    "nbSocietes": 1
-   },
-   "france": {
-    "nom": "Sulfentrazone",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 0,
-    "dernierRetrait": null
-   },
-   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -3271,89 +3286,6 @@
    "nouvelle": false
   },
   {
-   "cle": "flumetralin",
-   "nom": "flumetralina",
-   "iso": null,
-   "nomPt": "flumetralina",
-   "groupeChimique": "dinitroanilina",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 5,
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Adama Brasil S.A.",
-     "pays": "Brésil",
-     "coutFaible": true
-    },
-    {
-     "nom": "Adama Brasil S.A.- Londrina/PR",
-     "pays": "Brésil",
-     "coutFaible": true
-    },
-    {
-     "nom": "Bayer CropScience Schweiz AG",
-     "pays": "Suisse",
-     "coutFaible": false
-    },
-    {
-     "nom": "Chem Desing Corporation",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "ChemDesign Products, Inc.,",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "Ciba-Geigy Specialities",
-     "pays": "France",
-     "coutFaible": false
-    },
-    {
-     "nom": "Luxembourg Industries Ltd",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Syngenta Grimsby Ltd",
-     "pays": "Royaume-Uni",
-     "coutFaible": false
-    },
-    {
-     "nom": "Westrade Guatemala S.A.",
-     "pays": "Guatemala",
-     "coutFaible": false
-    },
-    {
-     "nom": "WeylChem US INC",
-     "pays": "États-Unis",
-     "coutFaible": false
-    }
-   ],
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "AllierBrasil Agro Ltda.",
-    "Luxembourg Brasil Comércio de Produtos Químicos Ltda",
-    "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP"
-   ],
-   "coree": null,
-   "france": {
-    "nom": "Flumetralin",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 0,
-    "dernierRetrait": null
-   },
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
    "cle": "dibrometdicat",
    "nom": "Dibrometo de diquate",
    "iso": null,
@@ -3669,6 +3601,84 @@
     "nbProduitsAutorises": 0,
     "nbProduitsRetires": 9,
     "dernierRetrait": "2003-06-06"
+   },
+   "australie": null,
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "flumetralin",
+   "nom": "flumetralina",
+   "iso": null,
+   "nomPt": "flumetralina",
+   "groupeChimique": "dinitroanilina",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 5,
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Adama Brasil S.A.",
+     "pays": "Brésil",
+     "coutFaible": true
+    },
+    {
+     "nom": "Adama Brasil S.A.- Londrina/PR",
+     "pays": "Brésil",
+     "coutFaible": true
+    },
+    {
+     "nom": "Bayer CropScience Schweiz AG",
+     "pays": "Suisse",
+     "coutFaible": false
+    },
+    {
+     "nom": "Chem Desing Corporation",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "ChemDesign Products, Inc.,",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "Ciba-Geigy Specialities",
+     "pays": "France",
+     "coutFaible": false
+    },
+    {
+     "nom": "Luxembourg Industries Ltd",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Syngenta Grimsby Ltd",
+     "pays": "Royaume-Uni",
+     "coutFaible": false
+    },
+    {
+     "nom": "WeylChem US INC",
+     "pays": "États-Unis",
+     "coutFaible": false
+    }
+   ],
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "AllierBrasil Agro Ltda.",
+    "Luxembourg Brasil Comércio de Produtos Químicos Ltda",
+    "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP"
+   ],
+   "coree": null,
+   "france": {
+    "nom": "Flumetralin",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 0,
+    "dernierRetrait": null
    },
    "australie": null,
    "premiereVue": "2026-09-07",
@@ -6404,9 +6414,9 @@
     }
    ],
    "titulaires": [
+    "Ascenza Brasil Ltda - Hortolândia/SP",
     "Bayer S.A. - São Paulo/ SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Tradecorp do Brasil Comércio de Insumos Agrícolas Ltda - Araporangas/PR"
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda."
    ],
    "coree": null,
    "france": null,

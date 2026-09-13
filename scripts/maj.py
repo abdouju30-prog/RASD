@@ -13,10 +13,10 @@ y a un disque — ici, ou dans GitHub Actions.
 
 Ce que le script fait, dans l'ordre :
   1. E-Phy (Anses)   — statut français, republié chaque nuit de mardi à mercredi
-  2. APVMA (Australie) — recoupement hors UE, republié chaque semaine
-  2 bis. PSIS (Corée du Sud) — le seul registre daté au jour, régénéré chaque jour
-  3. Sentinelle — recroise les deux avec le registre brésilien et l'index ONSSA
-     pour tenir à jour les matières homologuées ailleurs et absentes du Maroc
+  2. APVMA (Australie) — recoupement hors UE, dump hebdomadaire
+  2 bis. AGROFIT (Brésil) — CSV ouvert, usines de synthèse (la sentinelle s'en sert)
+  2 ter. PSIS (Corée du Sud) — le seul registre daté au jour
+  3. Sentinelle — recroise Brésil × Corée × ONSSA × E-Phy × PUBCRIS
   4. Diff : si aucun statut n'a changé, il s'arrête là et ne commite rien
   5. Commit décrivant ce qui a bougé, push, puis déploiement Vercel
 
@@ -80,22 +80,26 @@ def main():
     if executer([sys.executable, "scripts/import_apvma.py"]).returncode != 0:
         sys.exit("Import APVMA en échec — rien n'a été commité.")
 
+    titre("2 bis · Registre AGROFIT — Brésil")
+    if executer([sys.executable, "scripts/import_agrofit.py", "--frais"]).returncode != 0:
+        print("  Import AGROFIT en échec — la veille continue avec le relevé précédent.")
+
     if "--chine" in args:
-        titre("2 bis · Registre ICAMA — Chine")
+        titre("2 ter · Registre ICAMA — Chine")
         if executer([sys.executable, "scripts/import_icama.py"]).returncode != 0:
             sys.exit("Import ICAMA en échec — rien n'a été commité.")
 
     # Le registre coréen se régénère quotidiennement et c'est le seul qui date
     # ses homologations : il vaut d'être relevé à chaque veille, avant la
     # sentinelle qui s'en sert. Son échec n'emporte pas la veille.
-    titre("2 ter · Registre coréen — PSIS")
+    titre("2 quater · Registre coréen — PSIS")
     if executer([sys.executable, "scripts/import_psis.py", "--sans-iso"]).returncode != 0:
         print("  Import PSIS en échec — la veille continue avec le relevé précédent.")
 
     # La sentinelle se recalcule après E-Phy et PUBCRIS : c'est d'eux qu'elle
     # tire le statut réglementaire de chaque candidate. Elle ne télécharge rien
     # et son échec ne doit pas emporter la veille, qui est l'essentiel.
-    titre("2 quater · Sentinelle — matières absentes du Maroc")
+    titre("2 quinquies · Sentinelle — matières absentes du Maroc")
     if executer([sys.executable, "scripts/sentinelle.py"]).returncode != 0:
         print("  Sentinelle en échec — la veille continue sans elle.")
 
@@ -132,11 +136,11 @@ def main():
     message = (
         f"Veille — actualisation des catalogues ({date.today().isoformat()})\n\n"
         f"{len(changements)} changement(s) de statut\n\n{corps}\n\n"
-        "Données E-Phy - Anses · APVMA PUBCRIS"
+        "Données E-Phy - Anses · APVMA PUBCRIS · AGROFIT Brésil"
     )
     executer(["git", "add", "data/ephy.json", "data/apvma.json", "data/icama.json",
               "data/sentinelle.json", "data/sentinelle-vu.json",
-              "data/coree.json"])
+              "data/coree.json", "data/bresil.json"])
     if executer(["git", "commit", "-m", message]).returncode != 0:
         print("  Rien à commiter.")
         return
