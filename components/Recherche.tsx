@@ -102,7 +102,12 @@ export function Recherche() {
       setOuvert(false);
       setQ("");
       champ.current?.blur();
-      if (r.href) router.push(r.href);
+      if (!r.href) return;
+      if (r.href.startsWith("http://") || r.href.startsWith("https://")) {
+        window.open(r.href, "_blank", "noopener,noreferrer");
+        return;
+      }
+      router.push(r.href);
     },
     [router]
   );

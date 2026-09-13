@@ -11,6 +11,7 @@ import { ORGANISMES_BPE, SOCIETES_AGREEES, PRODUITS_EXPIRES } from "./onssa-eser
 import { CONSTITUANTS_APVMA, apparierApvma } from "./apvma";
 import { molecules, sansTeneurs } from "./formulation";
 import { idMatiere } from "./liens";
+import { LIBELLE_TYPE_ONSSA, TEXTES_ONSSA, estRecent } from "./onssa-reglementation";
 
 // ────────────────────────────────────────────────────────────────────────────
 // RECHERCHE TRANSVERSE
@@ -45,7 +46,8 @@ export type TypeEntree =
   | "usine_epa"
   | "societe_agreee"
   | "organisme_bpe"
-  | "produit_expire";
+  | "produit_expire"
+  | "nouveaute";
 
 export interface Entree {
   id: string;
@@ -75,6 +77,7 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   societe_agreee: "Société agréée ONSSA",
   organisme_bpe: "Organisme d'essai BPE",
   produit_expire: "Produit expiré",
+  nouveaute: "Nouveauté ONSSA",
 };
 
 /**
@@ -90,6 +93,7 @@ const RANG: Record<TypeEntree, number> = {
   fournisseur: 4,
   societe_agreee: 5,
   piste: 6,
+  nouveaute: 3,
   usine_epa: 7,
   usine_chine: 8,
   usine_turquie: 8,
@@ -423,6 +427,22 @@ function construire(): Indexee[] {
       type: "produit_expire",
       href: null,
       poids: 0,
+    });
+  }
+
+  // Avis, listes, décrets : une catégorie à part, pas l'index des AMM.
+  // « revendeurs », « avis », « liste » doivent tomber dessus.
+  for (const t of TEXTES_ONSSA) {
+    if (!t.titre) continue;
+    const cat = LIBELLE_TYPE_ONSSA[t.type] ?? t.type;
+    out.push({
+      id: `tx-${t.id}`,
+      libelle: t.titre,
+      detail: [cat, t.dateMiseEnLigne || t.date, t.source].filter(Boolean).join(" · "),
+      type: "nouveaute",
+      href: t.url || `/veille#texte-${t.id}`,
+      poids: t.nouveau ? 400 : t.misAJour ? 300 : estRecent(t) ? 200 : 40,
+      alias: aliasDe(cat, "nouveaute", "nouveautes"),
     });
   }
 

@@ -97,12 +97,16 @@ function Ligne({ t }: { t: TexteOnssa }) {
 
   if (t.url) {
     return (
-      <a href={t.url} target="_blank" rel="noreferrer" style={style}>
+      <a id={`texte-${t.id}`} href={t.url} target="_blank" rel="noreferrer" style={style}>
         {corps}
       </a>
     );
   }
-  return <div style={style}>{corps}</div>;
+  return (
+    <div id={`texte-${t.id}`} style={style}>
+      {corps}
+    </div>
+  );
 }
 
 /**
