@@ -12,6 +12,10 @@ import { resoudre, nbEtranger } from "@/lib/requete";
 import { contactDe } from "@/lib/contact";
 import { ContactCell } from "@/components/Contact";
 import { BanniereOnssa } from "@/components/SignalOnssa";
+import { spectreDe } from "@/lib/usages";
+import { Usages } from "@/components/Usages";
+import { usagesCoreens } from "@/lib/coree-usages";
+import { UsagesCoree } from "@/components/UsagesCoree";
 
 export const dynamic = "force-dynamic";
 
@@ -23,6 +27,7 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
 
   const risque = detailRisque(ma);
   const expo = exposition(ma, d.id);
+  const spectre = spectreDe(ma, d.id);
   const alts = alternatives(ma.id, 3);
   const cons = consultation(ma.id);
   const f = ma.fiche;
@@ -99,6 +104,9 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
         {!f && (
           <span className="pill" style={{ color: "var(--mod)" }}>statut UE inconnu</span>
         )}
+        <span className="pill mono">
+          {spectre.emplois.length} usage(s) · {spectre.cultures.length} culture(s)
+        </span>
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
@@ -121,6 +129,13 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
       </div>
 
       <BanniereOnssa ma={ma} />
+
+      <div style={{ marginBottom: 16 }}>
+        <Usages s={spectre} />
+      </div>
+      <div style={{ marginBottom: 16 }}>
+        <UsagesCoree m={usagesCoreens(ma.nom)} culturesMaroc={spectre.cultures} />
+      </div>
 
       {risque && (
         <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
