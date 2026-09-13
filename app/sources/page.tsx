@@ -188,7 +188,7 @@ export default function SourcesPage() {
       <div className="fil">Compartiments</div>
       <h1>D&apos;où vient chaque chiffre</h1>
       <p className="chapeau">
-        Neuf compartiments, trois niveaux de fiabilité.
+        Les compartiments, trois niveaux de fiabilité.
       </p>
 
       <div
