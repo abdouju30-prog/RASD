@@ -16,6 +16,7 @@ import {
 import { COUVERTURE } from "@/lib/reglementaire";
 import { alternatives } from "@/lib/substitution";
 import { AlternativesCompactes } from "@/components/Alternatives";
+import { NouveautesOnssa } from "@/components/NouveautesOnssa";
 
 export default async function RadarPage() {
   const d = await detenteurActuel();
@@ -35,6 +36,8 @@ export default async function RadarPage() {
     <>
       <div className="fil">Portefeuille · Vue</div>
       <h1>Tour de contrôle</h1>
+
+      <NouveautesOnssa compact />
 
       {st.critiques > 0 && (
         <Link

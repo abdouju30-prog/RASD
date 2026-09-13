@@ -1,0 +1,85 @@
+name: Veille — textes réglementaires ONSSA
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TEXTES ONSSA, CHAQUE JEUDI.
+#
+# Ce n'est PAS l'index phytosanitaire (Excel, `npm run import`). C'est la
+# page https://eservice.onssa.gov.ma/Reglementation_N.aspx : avis, listes
+# de revendeurs, substances retirées, décrets. Si l'e-service ne répond
+# pas, le script fusionne le dernier relevé et la consolidation
+# www.onssa.gov.ma.
+#
+# Même logique que maj-ephy : commit sur master, journal git. Un site
+# déployé depuis une autre branche ne verra les textes qu'après reprise
+# des fichiers data/.
+#
+# Jeudi 07:00 Casablanca (06:00 UTC) — le lendemain du cycle E-Phy.
+# ─────────────────────────────────────────────────────────────────────────────
+
+on:
+  schedule:
+    - cron: "0 6 * * 4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: maj-onssa-regl
+  cancel-in-progress: false
+
+jobs:
+  actualiser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Textes ONSSA — Reglementation_N.aspx
+        id: import
+        run: python scripts/import_onssa_reglementation.py | tee sortie-onssa-regl.txt
+
+      - name: Y a-t-il eu un changement ?
+        id: diff
+        run: |
+          SUIVIS="data/onssa-reglementation.json data/onssa-reglementation-vu.json"
+          if git diff --quiet -- $SUIVIS; then
+            echo "change=non" >> "$GITHUB_OUTPUT"
+            echo "Aucun mouvement des textes ONSSA."
+          else
+            echo "change=oui" >> "$GITHUB_OUTPUT"
+            python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, pathlib
+          p = pathlib.Path("data/onssa-reglementation.json")
+          d = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+          m = d.get("meta") or {}
+          n = m.get("nbNouveaux") or 0
+          u = m.get("nbMisAJour") or 0
+          print("resume<<EOF")
+          print(f"ONSSA — {m.get('nbTextes', 0)} textes, {n} nouveau(x), {u} mis à jour")
+          print(f"Sources : {', '.join(m.get('sourcesJointes') or [])}")
+          for t in (d.get("textes") or [])[:8]:
+              if t.get("nouveau") or t.get("misAJour"):
+                  print(f"  - {t.get('titre','')[:90]}")
+          print("EOF")
+          PY
+          fi
+
+      - name: Commiter la mise à jour
+        if: steps.diff.outputs.change == 'oui'
+        env:
+          RESUME: ${{ steps.diff.outputs.resume }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/onssa-reglementation.json data/onssa-reglementation-vu.json
+          git commit -m "Veille — textes réglementaires ONSSA" -m "$RESUME"
+          git push
+
+      - name: Récapitulatif
+        run: cat sortie-onssa-regl.txt >> "$GITHUB_STEP_SUMMARY"

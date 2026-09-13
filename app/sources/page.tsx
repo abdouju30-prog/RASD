@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Database, PenLine, FileCheck2, Factory, Globe, ShieldAlert, RefreshCw } from "lucide-react";
+import { Database, PenLine, FileCheck2, Factory, Globe, ShieldAlert, RefreshCw, Scale } from "lucide-react";
 import { META, MATIERES, FOURNISSEURS, PRODUITS, DETENTEURS } from "@/lib/data";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
@@ -12,6 +12,7 @@ import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
 import { fmtDate } from "@/lib/logic";
 import { LIBELLE_ETAT, REGISTRES, STATS_OCDE, type EtatRegistre } from "@/lib/ocde";
 import { STATS_COREE } from "@/lib/coree";
+import { STATS_ONSSA_TEXTES } from "@/lib/onssa-reglementation";
 
 export const dynamic = "force-dynamic";
 
@@ -246,7 +247,10 @@ export default function SourcesPage() {
             tourne chaque jour à 07:00 (Casablanca) via le workflow GitHub{" "}
             <span className="mono">maj-ephy</span> sur <span className="mono">master</span>
             {" "}
-            (E-Phy, Australie, Brésil, Corée, sentinelle). L&apos;Anses republie E-Phy dans
+            (E-Phy, Australie, Brésil, Corée, sentinelle). Les textes ONSSA
+            (avis, listes, décrets) tournent le jeudi via{" "}
+            <span className="mono">maj-onssa-regl</span>
+            , distincts de l&apos;index Excel. L&apos;Anses republie E-Phy dans
             la nuit de mardi à mercredi : le jeudi, le relevé porte en principe la semaine
             en cours. Commande manuelle :{" "}
             <span className="mono">npm run maj</span>.
@@ -255,7 +259,7 @@ export default function SourcesPage() {
       </div>
 
       <div className="section">
-        <span className="h-title">Les neuf compartiments</span>
+        <span className="h-title">Les compartiments</span>
         <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <Compartiment
             icone={<Database size={15} color="var(--accent)" />}
@@ -265,6 +269,17 @@ export default function SourcesPage() {
             origine={META.source}
             maj={`importé le ${fmtDate(META.genere.slice(0, 10))}`}
             fiabilite="source"
+          />
+
+          <Compartiment
+            icone={<Scale size={15} color="var(--accent)" />}
+            nom="Textes ONSSA"
+            role="Ce que l'Office publie la semaine où ça sort"
+            contenu={`${STATS_ONSSA_TEXTES.nbTextes} textes (avis, listes, lois, décrets, arrêtés) relevés sur eservice.onssa.gov.ma/Reglementation_N.aspx. ${STATS_ONSSA_TEXTES.nbRecents} des trois dernières semaines. Ce n'est pas l'index des AMM.`}
+            origine={STATS_ONSSA_TEXTES.attribution}
+            maj={`relevé le ${STATS_ONSSA_TEXTES.releveFmt} · cron jeudi`}
+            fiabilite="source"
+            reserve="Seuls les textes du Bulletin Officiel font foi. L'index phytosanitaire (Excel) reste la source des matières actives et des AMM."
           />
 
           <Compartiment

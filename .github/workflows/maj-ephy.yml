@@ -12,6 +12,7 @@ name: Veille — actualisation des registres
 #
 # À la main, et c'est délibéré :
 #   index ONSSA       Excel que vous maîtrisez           -> npm run import
+#   textes ONSSA      avis / listes / décrets, le jeudi  -> workflow maj-onssa-regl
 #   ICAMA (Chine)     ~200 POST sur un formulaire, ~7 min -> npm run import:icama
 #   BKÜ (Turquie)     API DataTables, pas un dump         -> npm run import:bku
 #   EPA (usines)      Qlik WebSocket, aucune M.A.         -> python scripts/import_epa.py

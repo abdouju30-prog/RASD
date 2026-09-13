@@ -27,7 +27,8 @@ fournisseurs. Il se lance à la demande, avec --chine ou `npm run import:icama`.
 
 L'index ONSSA n'est PAS rafraîchi ici : il vient d'un fichier Excel que vous
 maîtrisez, pas d'une source publique. Utiliser `npm run import` après l'avoir
-mis à jour.
+mis à jour. Les avis et textes de Reglementation_N.aspx tournent à part,
+chaque jeudi : `npm run import:onssa-regl` ou le workflow maj-onssa-regl.
 """
 
 import json

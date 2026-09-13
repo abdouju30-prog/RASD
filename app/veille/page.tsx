@@ -6,6 +6,7 @@ import { fmtDate } from "@/lib/logic";
 import { META } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
+import { NouveautesOnssa } from "@/components/NouveautesOnssa";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
   anses_retrait: ShieldAlert,
@@ -70,6 +71,8 @@ export default async function VeillePage() {
       <div style={{ margin: "14px 0 12px" }}>
         <FraicheurEphy />
       </div>
+
+      <NouveautesOnssa />
 
       <div style={{ display: "grid", gap: 12 }}>
         {list.map((a) => {
