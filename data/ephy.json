@@ -3,9 +3,9 @@
   "source": "Données E-Phy - Anses",
   "url": "https://www.data.gouv.fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges",
   "licence": "Licence Ouverte / Open Licence",
-  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-01",
-  "majDonnees": "2026-09-01",
-  "genere": "2026-09-03T10:10:20",
+  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-08",
+  "majDonnees": "2026-09-08",
+  "genere": "2026-09-13T07:34:14",
   "nbSubstances": 1337,
   "nbProduitsPPP": 13558,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
@@ -13,7 +13,7 @@
  "diff": {
   "premiereImport": false,
   "nbChangements": 0,
-  "dateComparaison": "2026-09-01",
+  "dateComparaison": "2026-09-08",
   "changements": []
  },
  "substances": [

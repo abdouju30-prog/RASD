@@ -1,16 +1,16 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-07T11:00:17",
-  "dernierReleve": "2026-09-07",
-  "premierReleve": true,
-  "nbCandidates": 477,
+  "genere": "2026-09-12T09:59:49",
+  "dernierReleve": "2026-09-12",
+  "premierReleve": false,
+  "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
   "nbNouvelles": 0,
   "nbAvecStatutFrancais": 200,
   "nbAvecStatutAustralien": 172,
   "nbVuesAuBresil": 219,
-  "nbVuesEnCoree": 340,
+  "nbVuesEnCoree": 339,
   "avertissement": "Matières actives homologuées au Brésil (produit technique) ou en Corée du Sud, et non appariées à l'index ONSSA. « Absente de l'index » signifie que la clé chimique n'a rien apparié : une graphie non réduite au nom marocain produirait un faux positif, à vérifier avant tout engagement. La date coréenne est celle de la première homologation en Corée, pas celle de l'invention de la molécule. Aucun registre ouvert ne publie l'état des brevets : la présence d'un fabricant autre que l'inventeur est le seul indice, par les faits, qu'une fabrication générique a lieu. Ni prix, ni capacité, ni qualité, ni liberté d'exploitation."
  },
  "candidates": [
@@ -341,7 +341,7 @@
    "australie": {
     "nom": "FIPRONIL",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 113,
+    "nbProduitsAgricoles": 114,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4252,7 +4252,7 @@
    "australie": {
     "nom": "SIMAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 75,
+    "nbProduitsAgricoles": 76,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6752,7 +6752,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 61,
+    "nbProduitsAgricoles": 63,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11787,9 +11787,9 @@
    "nouvelle": false
   },
   {
-   "cle": "301bacilusrtivelesensis",
-   "nom": "Bacillus velezensis RTI-301",
-   "iso": "Bacillus velezensis RTI-301",
+   "cle": "30147bacilusbacilusrtirtisubtilisvelesensis",
+   "nom": "Bacillus subtilis RTI-477+Bacillus velezensis RTI-301",
+   "iso": "Bacillus subtilis RTI-477+Bacillus velezensis RTI-301",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -11797,7 +11797,7 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "Bacillus velezensis RTI-301",
+    "nom": "Bacillus subtilis RTI-477+Bacillus velezensis RTI-301",
     "nbHomologations": 1,
     "nbFabrique": 0,
     "nbImporte": 1,
@@ -11807,31 +11807,7 @@
    },
    "france": null,
    "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "47bacilusrtisubtilis",
-   "nom": "Bacillus subtilis RTI-477",
-   "iso": "Bacillus subtilis RTI-477",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "Bacillus subtilis RTI-477",
-    "nbHomologations": 1,
-    "nbFabrique": 0,
-    "nbImporte": 1,
-    "premiere": "2025-08-14",
-    "derniere": "2025-08-14",
-    "nbSocietes": 1
-   },
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
+   "premiereVue": "2026-09-10",
    "nouvelle": false
   },
   {
@@ -14184,7 +14160,7 @@
    "australie": {
     "nom": "CUPROUS OXIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 24,
+    "nbProduitsAgricoles": 30,
     "matiereActiveApprouvee": false
    },
    "premiereVue": "2026-09-07",
@@ -15062,6 +15038,30 @@
    "nouvelle": false
   },
   {
+   "cle": "7a4iberelin",
+   "nom": "Gibberellin A4+7",
+   "iso": "Gibberellin A4+7",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "Gibberellin A4+7",
+    "nbHomologations": 19,
+    "nbFabrique": 12,
+    "nbImporte": 7,
+    "premiere": "2003-09-06",
+    "derniere": "2025-12-23",
+    "nbSocietes": 11
+   },
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-09-10",
+   "nouvelle": false
+  },
+  {
    "cle": "tiadinil",
    "nom": "Tiadinil",
    "iso": "Tiadinil",
@@ -15692,9 +15692,9 @@
    "nouvelle": false
   },
   {
-   "cle": "i",
-   "nom": "IAA",
-   "iso": "IAA",
+   "cle": "6bensilaminopurini",
+   "nom": "IAA+6-Benzylaminopurine",
+   "iso": "IAA+6-Benzylaminopurine",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -15702,13 +15702,37 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "IAA",
+    "nom": "IAA+6-Benzylaminopurine",
     "nbHomologations": 2,
     "nbFabrique": 2,
     "nbImporte": 0,
     "premiere": "1998-11-28",
     "derniere": "2007-03-29",
     "nbSocietes": 2
+   },
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-09-10",
+   "nouvelle": false
+  },
+  {
+   "cle": "6bensilaminopurin",
+   "nom": "6-Benzylaminopurine",
+   "iso": "6-Benzylaminopurine",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "6-Benzylaminopurine",
+    "nbHomologations": 9,
+    "nbFabrique": 8,
+    "nbImporte": 1,
+    "premiere": "1997-03-11",
+    "derniere": "2022-12-20",
+    "nbSocietes": 7
    },
    "france": null,
    "australie": null,
@@ -16031,9 +16055,9 @@
    "nouvelle": false
   },
   {
-   "cle": "a4iberelin",
-   "nom": "Gibberellin A4",
-   "iso": "Gibberellin A4",
+   "cle": "67a4bensilaminopuriniberelin",
+   "nom": "Gibberellin A4+7+6-Benzylaminopurine",
+   "iso": "Gibberellin A4+7+6-Benzylaminopurine",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -16041,17 +16065,17 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "Gibberellin A4",
-    "nbHomologations": 28,
-    "nbFabrique": 19,
-    "nbImporte": 9,
+    "nom": "Gibberellin A4+7+6-Benzylaminopurine",
+    "nbHomologations": 9,
+    "nbFabrique": 7,
+    "nbImporte": 2,
     "premiere": "1996-03-27",
-    "derniere": "2025-12-23",
-    "nbSocietes": 12
+    "derniere": "2016-11-07",
+    "nbSocietes": 5
    },
    "france": null,
    "australie": null,
-   "premiereVue": "2026-09-07",
+   "premiereVue": "2026-09-10",
    "nouvelle": false
   },
   {
@@ -16110,54 +16134,6 @@
     "nbProduitsAgricoles": 2,
     "matiereActiveApprouvee": false
    },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "7",
-   "nom": "7",
-   "iso": "7",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "7",
-    "nbHomologations": 28,
-    "nbFabrique": 19,
-    "nbImporte": 9,
-    "premiere": "1996-03-27",
-    "derniere": "2025-12-23",
-    "nbSocietes": 12
-   },
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "6bensilaminopurin",
-   "nom": "6-Benzylaminopurine",
-   "iso": "6-Benzylaminopurine",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "6-Benzylaminopurine",
-    "nbHomologations": 20,
-    "nbFabrique": 17,
-    "nbImporte": 3,
-    "premiere": "1996-03-27",
-    "derniere": "2022-12-20",
-    "nbSocietes": 9
-   },
-   "france": null,
-   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },

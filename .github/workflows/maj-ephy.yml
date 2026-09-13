@@ -21,11 +21,16 @@ name: Veille — actualisation des registres
 #   • surtout, l'historique git devient le JOURNAL DE LA VEILLE : chaque jour
 #     où quelque chose bouge laisse une trace datée, lisible et opposable.
 #
-# La course tourne TOUS LES JOURS mais ne commite QUE si un fichier a changé :
-# une journée sans mouvement ne laisse aucune trace.
+# La course tourne TOUS LES JOURS (07:00 Casablanca) mais ne commite QUE si un
+# fichier a changé : une journée sans mouvement ne laisse aucune trace.
 #
-# Prérequis : dépôt GitHub relié à Vercel (Vercel redéploie tout seul au push).
-# Aucun secret à configurer : le GITHUB_TOKEN par défaut suffit.
+# GitHub n'exécute le cron QUE sur la branche par défaut (master). Un site
+# déployé depuis une autre branche n'affichera pas ces données tant qu'elles
+# n'y sont pas reprises. Le commit sur master est le journal de la veille.
+#
+# Prérequis : dépôt GitHub, GITHUB_TOKEN par défaut (contents: write).
+# Le redéploiement Vercel depuis master n'est pas garanti (ignore-build) :
+# reprendre les fichiers data/ sur la branche servie, ou `npm run maj`.
 # ─────────────────────────────────────────────────────────────────────────────
 
 on:
@@ -45,6 +50,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: master
 
       - uses: actions/setup-python@v5
         with:
