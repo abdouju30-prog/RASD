@@ -61,7 +61,7 @@ export interface Entree {
 export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   matiere: "Matière active",
   produit: "Produit",
-  constituant: "PUBCRIS (hors ONSSA)",
+  constituant: "PUBCRIS hors index",
   fournisseur: "Fournisseur ONSSA",
   detenteur: "Détenteur",
   piste: "Piste australienne",
