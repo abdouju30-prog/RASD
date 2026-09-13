@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ShieldAlert } from "lucide-react";
+import { ArrowLeft, ShieldAlert, TriangleAlert } from "lucide-react";
 import { getMatiere } from "@/lib/data";
-import { genererDossier, statsDossier } from "@/lib/dossier";
+import { chargeParResponsable, genererDossier, partAllegeable, statsDossier } from "@/lib/dossier";
 import type { TypeDossier } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -45,6 +45,8 @@ export default async function GenererPage({
   if (!d) notFound();
 
   const st = statsDossier(d);
+  const allege = partAllegeable(d);
+  const charge = chargeParResponsable(d);
   const ansesKo = ma.fiche?.anses?.statut === "retirée" || ma.fiche?.anses?.statut === "en_retrait";
   const q = encodeURIComponent(ma.molecule || ma.nom);
   const aProduire = d.pieces
@@ -102,6 +104,68 @@ export default async function GenererPage({
           <div style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.65 }}>
             <strong style={{ color: "var(--fg)" }}>Matière retirée en France — dossier déconseillé.</strong>{" "}
             L&apos;ONSSA s&apos;alignant sur l&apos;ANSES, engager un dossier expose à un refus.
+          </div>
+        </div>
+      )}
+
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12 }}>
+          <div className="h-title">Charge du dossier</div>
+          <span className="mono" style={{ color: "var(--accent)", fontWeight: 600, fontSize: 15 }}>
+            {allege}% allégeable
+          </span>
+        </div>
+        <div className="bar" style={{ margin: "12px 0 14px" }}>
+          <span style={{ width: `${allege}%`, background: "var(--accent)" }} />
+        </div>
+        <div style={{ display: "flex", gap: 20, flexWrap: "wrap", fontSize: 12.5, color: "var(--muted)" }}>
+          <span>
+            <strong className="mono" style={{ color: "var(--fg)" }}>{st.nbLignes}</strong> lignes
+          </span>
+          <span>
+            <strong className="mono" style={{ color: "var(--accent)" }}>{st.nbAllegeables}</strong>{" "}
+            allégeables
+          </span>
+          <span>
+            <strong className="mono" style={{ color: "var(--high)" }}>{st.nbNonAllegeables}</strong>{" "}
+            à produire
+          </span>
+          <span>
+            <strong className="mono" style={{ color: "var(--mod)" }}>{st.nbGLP}</strong> études BPL
+          </span>
+        </div>
+        {charge.length > 0 && (
+          <div style={{ display: "grid", gap: 6, marginTop: 14, fontSize: 13 }}>
+            {charge.map(([qui, n]) => (
+              <div key={String(qui)} style={{ display: "flex", justifyContent: "space-between" }}>
+                <span style={{ color: "var(--muted)" }}>
+                  {qui === "non attribué" ? "Non attribué" : LIBELLE_RESP[qui] ?? qui}
+                </span>
+                <span className="mono">{n}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {d.objections.length > 0 && (
+        <div
+          className="card"
+          style={{
+            padding: "14px 18px",
+            marginBottom: 16,
+            borderColor: "color-mix(in srgb, var(--mod) 30%, transparent)",
+          }}
+        >
+          <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <TriangleAlert size={14} color="var(--mod)" /> Objections anticipées
+          </div>
+          <div style={{ display: "grid", gap: 11, marginTop: 13 }}>
+            {d.objections.map((o, i) => (
+              <p key={i} style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6, margin: 0 }}>
+                {o}
+              </p>
+            ))}
           </div>
         </div>
       )}

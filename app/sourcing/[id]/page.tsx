@@ -128,11 +128,14 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
 
       {c.facteurs.length > 0 && (
         <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
-          <div className="h-title">Score {c.score}</div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 18px", marginTop: 10, fontSize: 13 }}>
+          <div className="h-title">Décomposition du score</div>
+          <div style={{ display: "grid", gap: 8, marginTop: 12 }}>
             {c.facteurs.map((f) => (
-              <span key={f.libelle} style={{ color: "var(--muted)" }}>
-                {f.libelle}{" "}
+              <div
+                key={f.libelle}
+                style={{ display: "flex", justifyContent: "space-between", gap: 14, fontSize: 13.5 }}
+              >
+                <span style={{ color: "var(--muted)" }}>{f.libelle}</span>
                 <span
                   className="mono"
                   style={{ color: f.points > 0 ? "var(--low)" : "var(--crit)", fontWeight: 600 }}
@@ -140,11 +143,55 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
                   {f.points > 0 ? "+" : ""}
                   {f.points}
                 </span>
-              </span>
+              </div>
             ))}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                borderTop: "1px solid var(--border)",
+                paddingTop: 10,
+                marginTop: 4,
+                fontWeight: 600,
+              }}
+            >
+              <span>Score</span>
+              <span className="mono">{c.score}</span>
+            </div>
           </div>
         </div>
       )}
+
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div className="h-title">Usages homologués au Maroc — {c.nbUsages}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 12 }}>
+          {c.usages.slice(0, 40).map((u) => (
+            <span key={u} className="pill" style={{ fontWeight: 500, fontSize: 11.5 }}>
+              {u}
+            </span>
+          ))}
+          {c.usages.length > 40 && (
+            <span className="pill" style={{ fontWeight: 500 }}>+{c.usages.length - 40}</span>
+          )}
+          {c.usages.length === 0 && (
+            <span style={{ fontSize: 13, color: "var(--muted)" }}>Aucun usage renseigné à l&apos;index.</span>
+          )}
+        </div>
+      </div>
+
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div className="h-title">Cultures couvertes — {c.nbCultures}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 12 }}>
+          {c.cultures.slice(0, 30).map((cu) => (
+            <span key={cu} className="pill" style={{ fontWeight: 500, fontSize: 11.5 }}>
+              {cu}
+            </span>
+          ))}
+          {c.cultures.length > 30 && (
+            <span className="pill" style={{ fontWeight: 500 }}>+{c.cultures.length - 30}</span>
+          )}
+        </div>
+      </div>
 
       <div className="bloc" style={{ marginBottom: 16 }}>
         <div className="titre">

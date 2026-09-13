@@ -6,6 +6,9 @@ import { getMatiere } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { detailRisque, etatAMM, exposition, fmtDate } from "@/lib/logic";
 import { alternatives } from "@/lib/substitution";
+import { TableAlternatives } from "@/components/Alternatives";
+import { marcheDe } from "@/lib/concurrents";
+import { Concurrents } from "@/components/Concurrents";
 import { consultation } from "@/lib/consultation";
 import { lectureCroisee } from "@/lib/apvma";
 import { resoudre, nbEtranger } from "@/lib/requete";
@@ -28,7 +31,8 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
   const risque = detailRisque(ma);
   const expo = exposition(ma, d.id);
   const spectre = spectreDe(ma, d.id);
-  const alts = alternatives(ma.id, 3);
+  const alts = alternatives(ma.id, 8);
+  const marche = marcheDe(ma, d.id);
   const cons = consultation(ma.id);
   const f = ma.fiche;
   const au = lectureCroisee(ma.nom, ma.anses?.statut);
@@ -151,6 +155,20 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
         </div>
       )}
 
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div className="h-title">Par quoi la remplacer — {alts.length}</div>
+        {alts.length > 0 ? (
+          <div style={{ marginTop: 12 }}>
+            <TableAlternatives alts={alts} />
+          </div>
+        ) : (
+          <p style={{ fontSize: 13, color: "var(--muted)", margin: "10px 0 0", lineHeight: 1.6 }}>
+            Aucune matière active de la même catégorie ne couvre une cible, un usage ou une
+            culture en commun avec un risque réglementaire plus faible.
+          </p>
+        )}
+      </div>
+
       <div className="bloc" style={{ marginBottom: 16 }}>
         <div className="titre">
           <span>Vos produits</span>
@@ -197,6 +215,10 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
             Aucun produit de {d.nom} ne porte cette molécule.
           </p>
         )}
+      </div>
+
+      <div style={{ marginBottom: 16 }}>
+        <Concurrents m={marche} />
       </div>
 
       <div className="bloc" style={{ marginBottom: 16 }}>
@@ -253,19 +275,6 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
               ))}
           </div>
         </div>
-      )}
-
-      {alts.length > 0 && (
-        <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 12 }}>
-          Remplacer par{" "}
-          {alts.map((a, i) => (
-            <span key={a.molecule}>
-              {i > 0 && ", "}
-              <span style={{ color: "var(--fg)", fontWeight: 500 }}>{a.molecule}</span>
-            </span>
-          ))}
-          .
-        </p>
       )}
 
       {au.convergence === "divergence" && (

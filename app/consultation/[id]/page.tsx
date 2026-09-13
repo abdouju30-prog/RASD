@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Ban, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Ban, ShieldCheck, FlaskConical } from "lucide-react";
 import {
   LIBELLE_ORIGINE,
+  QUESTIONNAIRE,
   consultation,
   type Candidat,
 } from "@/lib/consultation";
+import { bpeAEcheance, STATS_ESERVICE } from "@/lib/onssa-eservice";
 import { candidats } from "@/lib/sourcing";
 import { contactDe } from "@/lib/contact";
 import { ContactCell } from "@/components/Contact";
@@ -158,6 +160,122 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
             Aucune piste au-delà de l&apos;index marocain pour cette matière active.
           </p>
         )}
+      </div>
+
+      <div className="bloc" style={{ marginBottom: 16 }}>
+        <div className="titre">
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <FlaskConical size={14} /> Questionnaire technique
+          </span>
+          <span className="mono">
+            {c.nbLignesFournisseur} · {c.nbLignesGlp} BPL
+          </span>
+        </div>
+        <p style={{ color: "var(--muted)", fontSize: 12.5, margin: "0 0 12px" }}>
+          Lignes de l&apos;Annexe 3-B qui incombent au fournisseur, avec le nom commercial du paquet
+          d&apos;études.
+        </p>
+        <table className="tbl">
+          <thead>
+            <tr>
+              <th style={{ width: 74 }}>Ligne</th>
+              <th>Donnée demandée</th>
+              <th style={{ width: 58 }}>BPL</th>
+              <th style={{ width: 150 }}>Paquet commercial</th>
+            </tr>
+          </thead>
+          <tbody>
+            {QUESTIONNAIRE.map((q) => (
+              <tr key={q.cle}>
+                <td className="mono" style={{ fontSize: 12, color: "var(--muted)" }}>{q.cle}</td>
+                <td style={{ fontSize: 13 }}>{q.libelle}</td>
+                <td>
+                  {q.glp && (
+                    <span
+                      className="pill"
+                      style={{
+                        fontSize: 10,
+                        color: "var(--mod)",
+                        borderColor: "color-mix(in srgb, var(--mod) 42%, transparent)",
+                        background: "color-mix(in srgb, var(--mod) 10%, transparent)",
+                      }}
+                    >
+                      BPL
+                    </span>
+                  )}
+                </td>
+                <td style={{ fontSize: 11.5, color: "var(--muted)" }}>{q.pack ?? "—"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="bloc" style={{ marginBottom: 16 }}>
+        <div className="titre">
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <FlaskConical size={14} /> Essais d&apos;efficacité — organismes BPE
+          </span>
+          <span className="mono">{c.essais.organismes.length}</span>
+        </div>
+        <p style={{ color: "var(--muted)", fontSize: 12.5, margin: "0 0 12px", maxWidth: "88ch", lineHeight: 1.6 }}>
+          {c.essais.indetermine ? (
+            <>
+              Les cultures de cette matière active ne se rattachent à aucun périmètre BPE reconnu :
+              la liste n&apos;est pas filtrée, à vous de vérifier la couverture au cas par cas.
+            </>
+          ) : (
+            <>
+              Périmètre requis :{" "}
+              <strong style={{ color: "var(--fg)" }}>{c.essais.perimetres.join(" · ")}</strong>.
+              Seuls les organismes qui couvrent tout le périmètre sont listés.
+            </>
+          )}
+        </p>
+        {c.essais.organismes.length > 0 ? (
+          <table className="tbl">
+            <thead>
+              <tr>
+                <th>Organisme</th>
+                <th>Agrément</th>
+                <th>Valable jusqu&apos;au</th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {c.essais.organismes.map((o) => {
+                const ech = bpeAEcheance(o);
+                return (
+                  <tr key={o.nom ?? ""}>
+                    <td style={{ fontWeight: 500 }}>
+                      {o.nom}
+                      <div style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 3 }}>
+                        {o.siege}
+                      </div>
+                    </td>
+                    <td className="mono" style={{ fontSize: 12 }}>{o.agrement.numero}</td>
+                    <td className="mono" style={{ fontSize: 12, color: ech ? "var(--mod)" : "var(--muted)" }}>
+                      {o.agrement.expiration ?? "—"}
+                      {ech && <div style={{ fontSize: 10.5 }}>{ech}</div>}
+                    </td>
+                    <td style={{ fontSize: 11.5, color: "var(--muted)" }}>
+                      {o.telephone}
+                      {o.emails.length > 0 && <div>{o.emails[0]}</div>}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        ) : (
+          <p style={{ fontSize: 13, color: "var(--muted)", padding: "12px 0" }}>
+            Aucun organisme BPE listé pour ce périmètre.
+          </p>
+        )}
+        <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
+          {STATS_ESERVICE.attribution} · un agrément expiré en cours d&apos;essai invalide les
+          résultats.
+        </p>
       </div>
     </>
   );
