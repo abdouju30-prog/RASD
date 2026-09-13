@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
-import { candidatParId, candidats } from "@/lib/sourcing";
+import { candidatParId, candidats, estFenetreMaroc } from "@/lib/sourcing";
 import { getMatiere } from "@/lib/data";
 import { nbEtranger, resoudre } from "@/lib/requete";
 
@@ -65,6 +65,19 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
         ) : (
           <span className="pill" style={{ color: "var(--mod)" }}>risque non évalué</span>
         )}
+        {estFenetreMaroc(c) && (
+          <span
+            className="pill"
+            style={{
+              fontWeight: 500,
+              color: "var(--high)",
+              borderColor: "color-mix(in srgb, var(--high) 40%, transparent)",
+            }}
+            title="Pas un retrait ANSES : une part de marché peut encore tenir au Maroc."
+          >
+            fenêtre Maroc
+          </span>
+        )}
         <span className="pill" style={{ fontWeight: 500 }}>
           voie {c.voie === "me_too" ? "me-too" : "substance nouvelle"}
         </span>
@@ -79,6 +92,17 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
           </span>
         )}
       </div>
+
+      {estFenetreMaroc(c) && (
+        <p style={{ fontSize: 13, color: "var(--muted)", margin: "0 0 14px", maxWidth: 640 }}>
+          Risque élevé, pas un retrait ANSES. Avec {c.nbDetenteurs} détenteur
+          {c.nbDetenteurs > 1 ? "s" : ""}, une part de marché peut encore tenir au Maroc le temps
+          du dossier.
+          {c.statutAnses === "en_retrait"
+            ? " Attention : retrait commercial en France (aucun produit E-Phy autorisé) — à qualifier."
+            : ""}
+        </p>
+      )}
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
         <Link

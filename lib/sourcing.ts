@@ -13,9 +13,14 @@ import type { CandidatSourcing, Fournisseur, MatiereActive, VoieReglementaire } 
 //   3. Sourcing possible — au moins un fournisseur générique (Inde, Chine,
 //                          Russie, Mexique, Colombie, Turquie…) DÉJÀ référencé
 //                          à l'ONSSA sur cette M.A.
-//   4. Avenir dégagé     — toujours autorisée en France. L'ONSSA s'alignant sur
-//                          l'ANSES, une molécule retirée en France est écartée
-//                          d'office : le dossier serait condamné d'avance.
+//   4. Pas de retrait ANSES — une molécule déjà retirée en France est écartée
+//                          d'office : l'ONSSA s'alignant sur l'ANSES, le
+//                          dossier serait condamné d'avance.
+//
+// Le risque réglementaire ÉLEVÉ n'est pas un retrait. Au Maroc, ces molécules
+// (surtout celles à peu de détenteurs) gardent souvent une part de marché
+// pendant des années : c'est une fenêtre, pas une disqualification. On les
+// montre à part. Le « critique » issu d'un retrait ANSES, lui, reste dehors.
 //
 // La condition 3 est la plus importante et la moins évidente : un fournisseur
 // déjà référencé à l'ONSSA a, par définition, déjà constitué le dossier
@@ -48,8 +53,8 @@ export interface FiltresSourcing {
   pays?: string[];
   /** Catégorie ONSSA (Insecticide, Fongicide, Herbicide…). */
   categorie?: string | null;
-  /** Exclure les molécules dont le risque réglementaire dépasse ce score.
-   *  Indépendant du retrait ANSES, qui écarte la cible quel que soit le score. */
+  /** Plafond optionnel de score de risque. Par défaut : aucun — le risque
+   *  élevé reste une cible (fenêtre Maroc). Seul le retrait ANSES écarte. */
   risqueMax?: number;
   /** Exclure les M.A. déjà présentes au portefeuille de ce détenteur. */
   detenteurId?: string;
@@ -113,9 +118,16 @@ export function candidat(ma: MatiereActive): CandidatSourcing {
   }
 
   if (risque) {
-    if (risque.niveau === "critique") add("Molécule en risque réglementaire critique", -40);
-    else if (risque.niveau === "élevé") add("Molécule en risque réglementaire élevé", -25);
-    else if (risque.niveau === "modéré") add("Molécule en risque réglementaire modéré", -8);
+    if (ma.anses?.statut === "retirée") {
+      add("Risque critique — retrait ANSES, l'ONSSA suivra", -40);
+    } else if (risque.niveau === "élevé" || risque.niveau === "critique") {
+      add("Risque élevé — fenêtre encore ouverte au Maroc", 8);
+      if (nbDetenteurs <= 3) {
+        add("Peu de détenteurs : part de marché tenable le temps de la fenêtre", 6);
+      }
+    } else if (risque.niveau === "modéré") {
+      add("Molécule en risque réglementaire modéré", -8);
+    }
   }
 
   const score = Math.round(facteurs.reduce((s, f) => s + f.points, 0));
@@ -146,8 +158,14 @@ export function candidat(ma: MatiereActive): CandidatSourcing {
   };
 }
 
+/** Risque élevé (ou critique hors retrait ANSES) : encore du temps au Maroc. */
+export function estFenetreMaroc(c: CandidatSourcing): boolean {
+  if (c.ansesRetiree) return false;
+  return c.risque === "élevé" || c.risque === "critique";
+}
+
 export function candidats(f: FiltresSourcing = {}): CandidatSourcing[] {
-  const { maxDetenteurs = 3, pays, categorie, risqueMax = 55, detenteurId } = f;
+  const { maxDetenteurs = 3, pays, categorie, risqueMax, detenteurId } = f;
 
   const base = detenteurId ? matieresDe(detenteurId) : MATIERES;
 
@@ -161,11 +179,13 @@ export function candidats(f: FiltresSourcing = {}): CandidatSourcing[] {
     .filter((c) => {
       if (c.fournisseursCoutFaible.length === 0) return false;
       if (pays && pays.length && !c.paysSourcing.some((p) => pays.includes(p))) return false;
-      // Disqualification catégorique, pas affaire de seuil : l'ONSSA s'alignant
-      // sur l'ANSES, importer une molécule déjà retirée en France revient à
-      // monter un dossier condamné d'avance.
+      // Disqualification catégorique : l'ONSSA s'alignant sur l'ANSES, une
+      // molécule déjà retirée en France est un dossier condamné. Le risque
+      // élevé, lui, n'écarte pas — c'est la fenêtre Maroc.
       if (c.ansesRetiree) return false;
-      if (c.scoreRisque !== null && c.scoreRisque > risqueMax) return false;
+      if (risqueMax !== undefined && c.scoreRisque !== null && c.scoreRisque > risqueMax) {
+        return false;
+      }
       return true;
     })
     .sort((a, b) => b.score - a.score);
