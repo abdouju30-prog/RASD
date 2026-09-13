@@ -19,7 +19,8 @@ import { USINES_BRESIL, STATS_BRESIL } from "@/lib/bresil";
 import { SOCIETES_COREE, STATS_COREE, etiquette } from "@/lib/coree";
 import { nbEtranger, resoudre } from "@/lib/requete";
 import { contactDe } from "@/lib/contact";
-import { ContactCell } from "@/components/Contact";
+import { ContactCell, ValiditeIcama } from "@/components/Contact";
+import { contactIcama } from "@/lib/contacts-icama";
 import type { Fournisseur } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -453,7 +454,7 @@ export default async function FournisseursPage({
           n={surMatiere ? CHINE_TC.length : CHINE.length}
           reserve={
             surMatiere
-              ? `ICAMA — ${surMatiere.gisement.chineNoms.join(" · ") || "nom chinois non relevé"}. Le pinyin et le nom han sont ceux du registre ; la glose française n'est plus affichée, elle ne se retrouve pas dans un moteur.`
+              ? `ICAMA — ${surMatiere.gisement.chineNoms.join(" · ") || "nom chinois non relevé"}. Contacts : pages officielles GET HTTP 200, e-mail et téléphone présents dans le HTML. Ce n'est pas un envoi de courriel.`
               : STATS_ICAMA.attribution
           }
         >
@@ -465,30 +466,38 @@ export default async function FournisseursPage({
                 <thead>
                   <tr>
                     <th>Société</th>
+                    <th>Contact</th>
+                    <th>Validité</th>
                     <th>Région</th>
                     <th style={{ textAlign: "right" }}>Teneur</th>
-                    <th>Validité</th>
-                    <th>Licence</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {CHINE_TC.slice(0, MAX).map((u) => (
-                    <tr key={u.nom}>
-                      <td>
-                        <NomChinois nom={u.nom} latin={u.latin} glose={u.glose} />
-                      </td>
-                      <td style={{ fontSize: 12, color: "var(--muted)" }}>{u.region ?? "—"}</td>
-                      <td className="mono" style={{ textAlign: "right", fontWeight: 600 }}>
-                        {u.teneurMax ?? "—"}
-                      </td>
-                      <td className="mono" style={{ fontSize: 12, color: "var(--muted)" }}>
-                        {u.expirationMax ?? "—"}
-                      </td>
-                      <td className="mono" style={{ fontSize: 11.5, color: u.licenceProduction ? "var(--low)" : "var(--mod)" }}>
-                        {u.licenceProduction ?? "titulaire sans licence"}
-                      </td>
-                    </tr>
-                  ))}
+                  {CHINE_TC.slice(0, MAX).map((u) => {
+                    const ic = contactIcama(u.nom);
+                    return (
+                      <tr key={u.nom}>
+                        <td>
+                          <NomChinois nom={u.nom} latin={u.latin} glose={u.glose} />
+                        </td>
+                        <td>
+                          <ContactCell c={contactDe(u.nom)} />
+                        </td>
+                        <td>
+                          <ValiditeIcama
+                            licence={u.licenceProduction}
+                            teneur={u.teneurMax}
+                            expiration={u.expirationMax}
+                            c={ic}
+                          />
+                        </td>
+                        <td style={{ fontSize: 12, color: "var(--muted)" }}>{u.region ?? "—"}</td>
+                        <td className="mono" style={{ textAlign: "right", fontWeight: 600 }}>
+                          {u.teneurMax ?? "—"}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             )

@@ -3,6 +3,7 @@ import { usinesDe } from "./epa";
 import { ficheFournisseur, toutesLesFiches } from "./packs-fournisseur";
 import { USINES_TURQUES } from "./bku";
 import { IndexNoms } from "./noms";
+import { contactIcama } from "./contacts-icama";
 
 // ────────────────────────────────────────────────────────────────────────────
 // COORDONNÉES FOURNISSEUR
@@ -11,9 +12,10 @@ import { IndexNoms } from "./noms";
 // ce qui existe, sans inventer :
 //
 //   1. Fiche saisie (brochure / site officiel) — e-mail, tél, site, siège
-//   2. ONSSA e-service — agrément marocain (souvent le bureau local)
-//   3. EPA — adresse d'établissement de production
-//   4. BKÜ Turquie — adresse du titulaire İMAL
+//   2. Pages Contact ICAMA retestées par HTTP (groupes chinois)
+//   3. ONSSA e-service — agrément marocain (souvent le bureau local)
+//   4. EPA — adresse d'établissement de production
+//   5. BKÜ Turquie — adresse du titulaire İMAL
 //
 // Chaque ligne porte sa source. Une case vide signifie « non publié », pas
 // un oubli de saisie.
@@ -56,9 +58,14 @@ export function contactDe(nom: string, idOnssa?: string): ContactResolu {
   const epa = usinesDe(nom);
   const tr = INDEX_TURC.exact(nom) ?? INDEX_TURC.proches(nom, 1)[0] ?? null;
 
-  const emails = uniq([fiche?.contact?.email, ...(agr?.emails ?? [])]);
-  const telephones = uniq([fiche?.contact?.telephone, agr?.telephone]);
-  const site = fiche?.contact?.site?.replace(/^https?:\/\//, "") ?? null;
+  const ic = contactIcama(nom);
+  const emails = uniq([fiche?.contact?.email, ...(ic?.emails ?? []), ...(agr?.emails ?? [])]);
+  const telephones = uniq([
+    fiche?.contact?.telephone,
+    ...(ic?.telephones ?? []),
+    agr?.telephone,
+  ]);
+  const site = fiche?.contact?.site ?? ic?.site ?? null;
 
   const adresses: { texte: string; source: string }[] = [];
   const push = (texte: string | null | undefined, source: string) => {
@@ -69,6 +76,7 @@ export function contactDe(nom: string, idOnssa?: string): ContactResolu {
   };
 
   push(fiche?.contact?.adresse ?? null, fiche?.source ?? "fiche fournisseur");
+  push(ic?.adresse ?? null, ic?.source ?? "page Contact officielle");
   push(agr?.siege ?? null, "ONSSA e-service");
   if (epa?.sites[0]) {
     push(

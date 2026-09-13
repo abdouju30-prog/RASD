@@ -1,0 +1,60 @@
+{
+  "_lisezmoi": [
+    "Contacts d'usines ICAMA relevés sur des pages officielles, puis retestés",
+    "par GET HTTP : l'e-mail et le téléphone doivent figurer dans le HTML.",
+    "Rien n'est inventé. Une société sans fiche ici n'a pas de contact public",
+    "vérifié — ce n'est pas un oubli de saisie."
+  ],
+  "meta": {
+    "dateTest": "2026-09-13",
+    "methode": "GET HTTP des pages Contact officielles ; présence de l'e-mail et du téléphone dans le HTML."
+  },
+  "societes": [
+    {
+      "nom": "宁夏一帆生物科技有限公司",
+      "aliases": [
+        "Ningxia Yifan Shengwukeji Youxiangongsi",
+        "Yifan — biotechnologies, SARL",
+        "Yifan Biotechnology",
+        "Yifan Bio-tech"
+      ],
+      "parent": "Yifan Biotechnology Group Co., Ltd.",
+      "emails": ["yifan@chinayifan.com", "wendy@yifan-biotech.com"],
+      "telephones": ["+86 158 6808 8686", "+86 577 8663 7855"],
+      "site": "http://www.chinayifan.com/contact_en.html",
+      "adresse": "#555 Changan Road, Yaoxi Street, Longwan, Wenzhou, Zhejiang (siège groupe). Usine ICAMA : Ningdong, Guangfu Rd 006, Ningxia.",
+      "source": "Page Contact Us anglaise du groupe Yifan — Wendy Wu, yifan@chinayifan.com. Page chinoise : wendy@yifan-biotech.com (international).",
+      "date": "2026-09-13",
+      "http": {
+        "url": "http://www.chinayifan.com/contact_en.html",
+        "status": 200,
+        "date": "2026-09-13"
+      },
+      "validite": "Filiale du groupe Yifan, fabricant phytosanitaire. Licence ICAMA de production. Page Contact anglaise HTTP 200.",
+      "reserve": null
+    },
+    {
+      "nom": "内蒙古扬帆新材料有限公司",
+      "aliases": [
+        "Neimenggu Yangfan Xin Cailiao Youxiangongsi",
+        "Yangfan Xin Cailiao — SARL",
+        "Yangfan New Materials",
+        "Inner Mongolia Yangfan"
+      ],
+      "parent": "扬帆新材料（浙江）股份有限公司 / SZSE 300637",
+      "emails": ["shoufu@shoufuchem.com"],
+      "telephones": ["+86 571 8890 2507"],
+      "site": "https://www.zjyfxc.com/introduce1/64.html",
+      "adresse": "Hangzhou : 31 Xincheng Rd, Yangfan Building 5F. Usine ICAMA : Bayin Obo Industrial Park, Alxa, Mongolie-Intérieure 750336.",
+      "source": "Page Contact Us officielle Yangfan New Materials (Zhejiang) — usine Inner Mongolia listée, e-mail shoufu@shoufuchem.com, vente intermédiaires +86-571-88902507. HTTP 200 le 2026-09-13.",
+      "date": "2026-09-13",
+      "http": {
+        "url": "https://www.zjyfxc.com/introduce1/64.html",
+        "status": 200,
+        "date": "2026-09-13"
+      },
+      "validite": "Société mère cotée SZSE 300637. Usine Inner Mongolia sur la page Contact officielle. Homologation ICAMA TC aclonifen 98 %.",
+      "reserve": "L'activité publique du groupe est les photoinitiateurs et intermédiaires soufrés, pas la protection des cultures. Le contact est le bureau ventes intermédiaires de Hangzhou — à qualifier avant d'engager un achat d'aclonifène."
+    }
+  ]
+}
