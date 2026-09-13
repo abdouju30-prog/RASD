@@ -23,7 +23,7 @@ function Table({ soc, usine }: { soc: ReturnType<typeof usines>; usine: boolean 
         {soc.map((s) => (
           <tr key={s.nom}>
             <td>
-              <NomChinois nom={s.nom} latin={s.latin} region={s.region} />
+              <NomChinois nom={s.nom} latin={s.latin} glose={s.glose} region={s.region} />
             </td>
             <td style={{ fontSize: 12, color: "var(--muted)" }}>{s.region ?? "—"}</td>
             <td className="mono" style={{ fontSize: 13, textAlign: "right" }}>{s.nbHomologations}</td>

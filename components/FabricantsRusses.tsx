@@ -1,42 +1,13 @@
 import { Factory } from "lucide-react";
 import type { FabricantsRusses as Donnees, SocieteRusse } from "@/lib/russie";
+import { NomRusse } from "@/components/NomRusse";
 
 // ────────────────────────────────────────────────────────────────────────────
 // DÉTENTEURS RUSSES D'UNE MATIÈRE ACTIVE
 //
-// ⚠️ LE NOM LATIN PASSE DEVANT, le cyrillique le suit. Une raison sociale en
-// cyrillique n'est ni lisible ni cherchable pour qui travaille en français :
-// afficher « Щёлково Агрохим » seul revenait à ne rien afficher. Mais le nom
-// d'origine reste là, parce que c'est lui qui figure au catalogue et lui seul
-// qui permet de vérifier.
-//
-// ⚠️ DEUX NIVEAUX DE NOM LATIN, jamais confondus : « vérifié » quand la société
-// a été lue et nommée à la main (Syngenta, UPL, Rangoli), « translittéré »
-// quand la machine a simplement transcrit les lettres. Le second se cherche,
-// il ne s'affirme pas.
+// Lecture française devant, cyrillique du catalogue dessous. ≈ = transcription
+// automatique (chtch, tch, ia) ; sans ≈ = nom lu et vérifié (Bayer, Syngenta).
 // ────────────────────────────────────────────────────────────────────────────
-
-function Nom({ s }: { s: SocieteRusse }) {
-  return (
-    <div>
-      <div style={{ fontWeight: 500, fontSize: 13 }}>
-        {/* Le mot « translittéré » répété à chaque ligne noyait la table.
-            Un signe suffit, expliqué une fois sous le tableau. */}
-        {!s.identifie && (
-          <span
-            className="mono"
-            style={{ color: "var(--muted-2)", fontWeight: 400, marginRight: 3 }}
-            title="Transcription automatique du cyrillique — sert à chercher, ne vaut pas identification"
-          >
-            ≈
-          </span>
-        )}
-        {s.latin}
-      </div>
-      <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 1 }}>{s.nom}</div>
-    </div>
-  );
-}
 
 function Table({ soc }: { soc: SocieteRusse[] }) {
   return (
@@ -52,7 +23,7 @@ function Table({ soc }: { soc: SocieteRusse[] }) {
       <tbody>
         {soc.map((s) => (
           <tr key={s.cle}>
-            <td><Nom s={s} /></td>
+            <td><NomRusse s={s} /></td>
             <td
               className="mono"
               style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}
@@ -123,8 +94,9 @@ export function FabricantsRusses({
       )}
 
       <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.55 }}>
-        <span className="mono">≈</span> nom transcrit automatiquement du cyrillique : il sert à
-        chercher, il ne vaut pas identification. Les autres ont été lus et nommés à la main.{" "}
+        <span className="mono">≈</span> lecture française du cyrillique (chtch, tch, ia) : elle
+        sert à lire, elle ne vaut pas identification. Les noms sans ≈ ont été lus et
+        vérifiés.{" "}
         {attribution}. Détenir une homologation russe ne prouve pas la synthèse de la matière
         active : le titulaire est parfois un distributeur. Édition au {edition ?? "date non lue"} —
         elle sert à identifier des sociétés, pas à établir un statut courant. N&apos;ouvre aucun

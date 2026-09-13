@@ -3,6 +3,7 @@ import { ANNUAIRE_PISTES } from "./pistes";
 import { USINES_CHINE } from "./icama";
 import { USINES_TURQUES } from "./bku";
 import { PRODUCTEURS_RUSSES } from "./russie";
+import { etiquetteRusse } from "./cyrillique";
 import { PRODUCTEURS_COREENS, etiquette as etiquetteCoree } from "./coree";
 import { USINES_BRESIL } from "./bresil";
 import { USINES_SOURCING } from "./epa";
@@ -208,7 +209,7 @@ function construire(): Indexee[] {
   for (const s of PRODUCTEURS_RUSSES) {
     out.push({
       id: `ru-${s.cle}`,
-      libelle: s.latin,
+      libelle: etiquetteRusse(s),
       detail: `Russie · ${s.nom} · ${s.nbHomologations} homologation(s)`,
       type: "producteur_russe",
       href: `/fournisseurs?pays=${encodeURIComponent("Russie")}`,

@@ -7,6 +7,8 @@ import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
 import { NomChinois } from "@/components/NomChinois";
+import { NomRusse } from "@/components/NomRusse";
+import { etiquetteRusse } from "@/lib/cyrillique";
 import { STATS_BKU, USINES_TURQUES } from "@/lib/bku";
 import { STATS_EPA, USINES_SOURCING, usinesDe } from "@/lib/epa";
 import { ReserveEpa, SiteProduction, TableUsines } from "@/components/UsinesEpa";
@@ -176,7 +178,9 @@ export default async function FournisseursPage({
     : PISTES_NOUVELLES.filter((p) => !cherche || contient(p.nom));
   const RUSSIE = surMatiere
     ? surMatiere.gisement.russie
-    : PRODUCTEURS_RUSSES.filter((s) => !cherche || contient(s.nom) || contient(s.latin));
+    : PRODUCTEURS_RUSSES.filter(
+        (s) => !cherche || contient(s.nom) || contient(s.latin) || contient(etiquetteRusse(s))
+      );
   const BRESIL = surMatiere
     ? surMatiere.gisement.bresil
     : USINES_BRESIL.filter((u) => !cherche || contient(u.nom));
@@ -471,7 +475,7 @@ export default async function FournisseursPage({
                   {CHINE_TC.slice(0, MAX).map((u) => (
                     <tr key={u.nom}>
                       <td>
-                        <NomChinois nom={u.nom} latin={u.latin} />
+                        <NomChinois nom={u.nom} latin={u.latin} glose={u.glose} />
                       </td>
                       <td style={{ fontSize: 12, color: "var(--muted)" }}>{u.region ?? "—"}</td>
                       <td className="mono" style={{ textAlign: "right", fontWeight: 600 }}>
@@ -503,7 +507,7 @@ export default async function FournisseursPage({
                 {CHINE.slice(0, MAX).map((u) => (
                   <tr key={u.nom}>
                     <td>
-                      <NomChinois nom={u.nom} latin={u.latin} region={u.region} />
+                      <NomChinois nom={u.nom} latin={u.latin} glose={u.glose} region={u.region} />
                     </td>
                     <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{u.matieres.length}</td>
                     <td className="mono" style={{ textAlign: "right" }}>{u.nbHomologations}</td>
@@ -613,7 +617,7 @@ export default async function FournisseursPage({
       )}
 
       {source === "russie" && (
-        <BlocSource icone titre="Détenteurs — catalogue russe" n={RUSSIE.length} reserve={STATS_RUSSIE.attribution}>
+        <BlocSource icone titre="Détenteurs — catalogue russe" n={RUSSIE.length} reserve={`${STATS_RUSSIE.attribution} · Noms en lecture française ; le cyrillique du catalogue reste sous chaque ligne.`}>
           {RUSSIE.length === 0 ? (
             <Vide texte="Aucun détenteur au catalogue russe sur cette molécule." />
           ) : (
@@ -622,7 +626,6 @@ export default async function FournisseursPage({
             <thead>
               <tr>
                 <th>Société</th>
-                <th>Nom au catalogue</th>
                 <th style={{ textAlign: "right" }}>Homologations</th>
                 <th>Pays</th>
               </tr>
@@ -631,12 +634,8 @@ export default async function FournisseursPage({
               {RUSSIE.slice(0, MAX).map((s) => (
                 <tr key={s.cle}>
                   <td>
-                    <div style={{ fontWeight: 500 }}>{s.latin}</div>
-                    {s.identifie ? null : (
-                      <div style={{ fontSize: 11, color: "var(--mod)" }}>translittéré</div>
-                    )}
+                    <NomRusse s={s} />
                   </td>
-                  <td style={{ fontSize: 12, color: "var(--muted)" }}>{s.nom}</td>
                   <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{s.nbHomologations}</td>
                   <td style={{ fontSize: 12, color: "var(--muted)" }}>{s.pays ?? "—"}</td>
                 </tr>
