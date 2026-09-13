@@ -5,6 +5,7 @@ import { statsSourcing } from "@/lib/sourcing";
 import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
+import { LiensMatieres } from "@/components/LienMatiere";
 import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
 import { NomChinois } from "@/components/NomChinois";
 import { NomRusse } from "@/components/NomRusse";
@@ -520,9 +521,8 @@ export default async function FournisseursPage({
                     </td>
                     <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{u.matieres.length}</td>
                     <td className="mono" style={{ textAlign: "right" }}>{u.nbHomologations}</td>
-                    <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 340 }}>
-                      {u.matieres.slice(0, 5).join(" · ")}
-                      {u.matieres.length > 5 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{u.matieres.length - 5}</span>}
+                    <td style={{ fontSize: 11.5, maxWidth: 340 }}>
+                      <LiensMatieres noms={u.matieres} max={5} />
                     </td>
                     <td className="mono" style={{ fontSize: 11.5, color: "var(--low)" }}>{u.licenceProduction}</td>
                   </tr>
@@ -552,9 +552,8 @@ export default async function FournisseursPage({
                   <td style={{ fontWeight: 500 }}>{u.nom}</td>
                   <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{u.matieresMaroc.length}</td>
                   <td className="mono" style={{ textAlign: "right" }}>{u.nbImal}</td>
-                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
-                    {u.matieresMaroc.slice(0, 4).join(" · ")}
-                    {u.matieresMaroc.length > 4 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{u.matieresMaroc.length - 4}</span>}
+                  <td style={{ fontSize: 11.5, maxWidth: 320 }}>
+                    <LiensMatieres noms={u.matieresMaroc} max={4} />
                   </td>
                   <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 240 }}>{u.adresse ?? "—"}</td>
                 </tr>
@@ -613,9 +612,8 @@ export default async function FournisseursPage({
                   <td className="mono" style={{ fontSize: 11.5, color: "var(--muted)" }}>{s.latin ?? "—"}</td>
                   <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{s.nbHomologations}</td>
                   <td className="mono" style={{ fontSize: 12, color: "var(--muted)" }}>{s.derniere ?? "—"}</td>
-                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 280 }}>
-                    {s.matieres.slice(0, 4).join(" · ") || "—"}
-                    {s.matieres.length > 4 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{s.matieres.length - 4}</span>}
+                  <td style={{ fontSize: 11.5, maxWidth: 280 }}>
+                    {s.matieres.length ? <LiensMatieres noms={s.matieres} max={4} /> : "—"}
                   </td>
                 </tr>
               ))}
@@ -677,7 +675,11 @@ export default async function FournisseursPage({
             <tbody>
               {PISTES.slice(0, MAX).map((p) => (
                 <tr key={p.id}>
-                  <td style={{ fontWeight: 500 }}>{p.nom}</td>
+                  <td style={{ fontWeight: 500 }}>
+                    <Link href={`/fournisseurs/piste/${p.id}`} className="link-accent">
+                      {p.nom}
+                    </Link>
+                  </td>
                   <td style={{ color: "var(--muted)" }}>
                     {p.pays ?? "à préciser"}
                     {p.pays && !p.paysFiable && <span style={{ color: "var(--mod)", fontSize: 11 }}> ?</span>}
@@ -686,9 +688,16 @@ export default async function FournisseursPage({
                   <td className="mono" style={{ textAlign: "right", color: p.matieresMaroc.length ? "var(--accent)" : "var(--muted-2)", fontWeight: p.matieresMaroc.length ? 600 : 400 }}>
                     {p.matieresMaroc.length}
                   </td>
-                  <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
-                    {p.matieresMaroc.slice(0, 4).join(" · ") || <span style={{ color: "var(--muted-2)" }}>aucune</span>}
-                    {p.matieresMaroc.length > 4 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{p.matieresMaroc.length - 4}</span>}
+                  <td style={{ fontSize: 11.5, maxWidth: 360 }}>
+                    {p.matieresMaroc.length ? (
+                      <LiensMatieres
+                        noms={p.matieresMaroc}
+                        max={4}
+                        resteHref={`/fournisseurs/piste/${p.id}`}
+                      />
+                    ) : (
+                      <span style={{ color: "var(--muted-2)" }}>aucune</span>
+                    )}
                   </td>
                   <td>
                     <EtiquetteLien lien={p.lien} />

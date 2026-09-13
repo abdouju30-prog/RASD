@@ -144,6 +144,12 @@ function construireAnnuaire(): PisteGlobale[] {
 
 export const ANNUAIRE_PISTES: PisteGlobale[] = construireAnnuaire();
 
+const PISTE_PAR_ID = new Map(ANNUAIRE_PISTES.map((p) => [p.id, p]));
+
+export function pisteParId(id: string): PisteGlobale | undefined {
+  return PISTE_PAR_ID.get(id);
+}
+
 /** Génériqueurs absents de l'index marocain — le cœur de la prospection. */
 export const PISTES_NOUVELLES: PisteGlobale[] = ANNUAIRE_PISTES.filter(
   (p) => p.coutFaible && !p.multinationale && p.lien !== "referencee"

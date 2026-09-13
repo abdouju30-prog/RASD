@@ -82,6 +82,16 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
             Maroc · {f.statutMaroc.replace(/_/g, " ")}
           </span>
         )}
+        {au.constituant && (
+          <Link
+            href={`/constituants/${au.constituant.id}`}
+            className="pill"
+            style={{ fontWeight: 500 }}
+            title={au.lecture}
+          >
+            AU · {au.constituant.statut} · {au.constituant.nbProduitsAgricoles} prod.
+          </Link>
+        )}
         {f?.drapeaux.slice(0, 4).map((x) => (
           <span key={x} className="pill" style={{ fontSize: 11 }}>{x}</span>
         ))}
