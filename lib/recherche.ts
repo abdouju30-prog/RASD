@@ -25,8 +25,9 @@ import { idMatiere } from "./liens";
 // une requête, le serveur renvoie seize suggestions.
 //
 // Elle classe par qualité de correspondance — début du libellé, mot, alias
-// ISO, sous-chaîne, radical — puis propose une correction de frappe bornée
-// quand rien d'ancré ne match. Le type de chaque résultat reste visible.
+// ISO, sous-chaîne, radical, une lettre d'écart — puis propose une correction
+// quand rien d'ancré ne match. Une coquille ne doit pas vider la barre. Le
+// type de chaque résultat reste visible.
 // ────────────────────────────────────────────────────────────────────────────
 
 export type TypeEntree =
@@ -129,6 +130,62 @@ function aliasDe(...xs: (string | null | undefined)[]): string[] {
   return out;
 }
 
+function aliasPays(pays: string | null | undefined, ...plus: (string | null | undefined)[]): string[] {
+  const extra: Record<string, string[]> = {
+    inde: ["india"],
+    chine: ["china"],
+    allemagne: ["germany"],
+    "etats unis": ["usa"],
+    "coree du sud": ["korea", "coree"],
+    turquie: ["turkey"],
+    bresil: ["brazil"],
+    russie: ["russia"],
+  };
+  const n = normaliser(pays ?? "");
+  return aliasDe(pays, ...(extra[n] ?? []), ...plus);
+}
+
+/** Suffixes juridiques : indexés en préfixe exact, jamais floutés. */
+const SUFFIXE_JURIDIQUE = new Set([
+  "ltd",
+  "limited",
+  "sa",
+  "sas",
+  "ag",
+  "gmbh",
+  "inc",
+  "llc",
+  "llp",
+  "plc",
+  "pvt",
+  "pty",
+  "co",
+  "company",
+  "corp",
+  "corporation",
+  "bv",
+  "sl",
+  "srl",
+  "spa",
+  "sarl",
+  "ltda",
+  "nv",
+  "kg",
+  "pte",
+  "sdn",
+  "bhd",
+  "the",
+  "and",
+  "of",
+  "de",
+  "du",
+  "des",
+  "et",
+  "la",
+  "le",
+  "les",
+]);
+
 interface Indexee extends Entree {
   cle: string;
   /** Positions de début de mot, pour distinguer « meth » de « diméth ». */
@@ -221,6 +278,7 @@ function construire(): Indexee[] {
       type: "fournisseur",
       href: `/fournisseurs?q=${encodeURIComponent(f.nom)}`,
       poids: f.nbLignesMaroc,
+      alias: aliasPays(f.pays),
     });
   }
 
@@ -233,6 +291,7 @@ function construire(): Indexee[] {
       type: "piste",
       href: `/fournisseurs/piste/${p.id}`,
       poids: p.matieresMaroc.length,
+      alias: aliasPays(p.pays),
     });
   }
 
@@ -248,7 +307,7 @@ function construire(): Indexee[] {
       type: "usine_chine",
       href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
       poids: u.matieres.length,
-      alias: aliasDe(u.nom, u.glose, u.latin),
+      alias: aliasPays("Chine", u.nom, u.glose, u.latin, u.region),
     });
   }
 
@@ -261,6 +320,7 @@ function construire(): Indexee[] {
       type: "usine_turquie",
       href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
       poids: u.matieresMaroc.length,
+      alias: aliasPays("Turquie"),
     });
   }
 
@@ -277,6 +337,7 @@ function construire(): Indexee[] {
       type: "producteur_russe",
       href: `/fournisseurs?pays=${encodeURIComponent("Russie")}`,
       poids: s.nbHomologations,
+      alias: aliasPays("Russie", s.nom),
     });
   }
 
@@ -291,6 +352,7 @@ function construire(): Indexee[] {
       type: "producteur_coreen",
       href: `/fournisseurs?pays=${encodeURIComponent("Corée du Sud")}`,
       poids: s.matieres.length * 2,
+      alias: aliasPays("Corée du Sud", s.nom),
     });
   }
 
@@ -303,6 +365,7 @@ function construire(): Indexee[] {
       type: "usine_bresil",
       href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
       poids: u.matieres.length * 2,
+      alias: aliasPays(u.pays, u.paysBrut),
     });
   }
 
@@ -316,6 +379,7 @@ function construire(): Indexee[] {
       type: "usine_epa",
       href: `/fournisseurs?q=${encodeURIComponent(u.nom)}`,
       poids: u.nbSites,
+      alias: aliasPays(u.pays, ...u.villes.slice(0, 2)),
     });
   }
 
@@ -375,30 +439,51 @@ const INDEX = construire();
 export const NB_ENTREES = INDEX.length;
 
 /**
- * Dictionnaire des molécules (français + ISO) pour corriger une frappe.
- * On ne floute PAS les 10 000 raisons sociales : trop de faux positifs.
+ * Dictionnaire pour corriger une frappe : molécules d'abord (prio 0), puis
+ * les mots distinctifs des sociétés (prio 1). Une lettre d'écart suffit ;
+ * on ne floute pas les suffixes juridiques.
  */
-const DICTIONNAIRE: { n: string; affiche: string }[] = [];
+const DICTIONNAIRE: { n: string; affiche: string; prio: number }[] = [];
 (() => {
   const vu = new Set<string>();
-  const push = (brut: string, affiche: string) => {
+  const push = (brut: string, affiche: string, prio: number) => {
     const n = normaliser(brut);
-    if (n.length < 4 || vu.has(n)) return;
+    if (n.length < 4 || vu.has(n) || SUFFIXE_JURIDIQUE.has(n)) return;
     vu.add(n);
-    DICTIONNAIRE.push({ n, affiche });
+    DICTIONNAIRE.push({ n, affiche, prio });
   };
   for (const m of MATIERES) {
     for (const mol of molecules(m.nom, m.molecule)) {
-      push(mol, mol);
+      push(mol, mol, 0);
       const iso = apparierApvma(mol);
-      if (iso) push(iso.nom, mol);
+      if (iso) push(iso.nom, mol, 0);
     }
   }
   for (const c of CONSTITUANTS_APVMA) {
     if (c.nbProduitsAgricoles < 1) continue;
     if (idMatiere(c.nom)) continue;
     if (normaliser(c.nom).split(" ").length > 3) continue;
-    push(c.nom, c.nom);
+    push(c.nom, c.nom, 0);
+  }
+  const SOCIETE = new Set<TypeEntree>([
+    "fournisseur",
+    "detenteur",
+    "piste",
+    "usine_chine",
+    "usine_turquie",
+    "producteur_russe",
+    "producteur_coreen",
+    "usine_bresil",
+    "usine_epa",
+    "societe_agreee",
+  ]);
+  const titrer = (s: string) => s.replace(/\b[a-z]/g, (c) => c.toUpperCase());
+  for (const e of INDEX) {
+    if (!SOCIETE.has(e.type)) continue;
+    for (const mot of e.mots) {
+      if (mot.length < 5 || /^\d+$/.test(mot)) continue;
+      push(mot, titrer(mot), 1);
+    }
   }
 })();
 
@@ -449,16 +534,24 @@ function distance(a: string, b: string, max: number): number {
 }
 
 function corriger(n: string): string | null {
-  const max = plafondDistance(n.length);
-  if (max === 0) return null;
-  let best: { affiche: string; d: number; n: string } | null = null;
+  const cap = n.length >= 4 ? Math.max(plafondDistance(n.length), 1) : plafondDistance(n.length);
+  if (cap === 0) return null;
+  let best: { affiche: string; d: number; n: string; prio: number } | null = null;
   for (const t of DICTIONNAIRE) {
-    if (t.n[0] !== n[0]) continue;
-    if (Math.abs(t.n.length - n.length) > max) continue;
-    const d = distance(n, t.n, max);
-    if (d === 0 || d > max) continue;
-    if (!best || d < best.d || (d === best.d && t.n.length < best.n.length)) {
-      best = { affiche: t.affiche, d, n: t.n };
+    if (Math.abs(t.n.length - n.length) > cap) continue;
+    const dmax =
+      t.prio === 1 ? (t.n[0] === n[0] ? 1 : 0) : t.n[0] === n[0] ? cap : 1;
+    if (dmax === 0) continue;
+    if (Math.abs(t.n.length - n.length) > dmax) continue;
+    const d = distance(n, t.n, dmax);
+    if (d === 0 || d > dmax) continue;
+    if (
+      !best ||
+      d < best.d ||
+      (d === best.d && t.prio < best.prio) ||
+      (d === best.d && t.prio === best.prio && t.n.length < best.n.length)
+    ) {
+      best = { affiche: t.affiche, d, n: t.n, prio: t.prio };
     }
   }
   return best?.affiche ?? null;
@@ -474,7 +567,17 @@ function radicauxCompatibles(a: string, b: string): boolean {
   return false;
 }
 
-function qualiteDe(e: Indexee, n: string): 0 | 1 | 2 | 3 | null {
+/** Une lettre d'écart sur un mot : gebuconazole, syngnta, cropchm. */
+function uneLettre(t: string, m: string, initiale: boolean): boolean {
+  if (t.length < 4 || m.length < 4) return false;
+  if (SUFFIXE_JURIDIQUE.has(m) || SUFFIXE_JURIDIQUE.has(t)) return false;
+  if (/^\d+$/.test(m) || /^\d+$/.test(t)) return false;
+  if (Math.abs(t.length - m.length) > 1) return false;
+  if (initiale && t[0] !== m[0]) return false;
+  return distance(t, m, 1) === 1;
+}
+
+function qualiteSimple(e: Indexee, n: string): 0 | 1 | 2 | 3 | null {
   if (e.cle.startsWith(n) || e.alias.some((a) => a.startsWith(n))) return 0;
   if (e.mots.some((m) => m.startsWith(n))) return 1;
   if (e.cle.includes(n) || e.alias.some((a) => a.includes(n))) return 2;
@@ -489,8 +592,23 @@ function qualiteDe(e: Indexee, n: string): 0 | 1 | 2 | 3 | null {
     ) {
       return 3;
     }
+    if (e.mots.some((m) => uneLettre(n, m, e.type !== "matiere" && e.type !== "constituant"))) {
+      return 3;
+    }
   }
   return null;
+}
+
+function qualiteDe(e: Indexee, n: string): 0 | 1 | 2 | 3 | null {
+  const parts = n.split(" ").filter((p) => p.length >= 2);
+  if (parts.length <= 1) return qualiteSimple(e, n);
+  let worst: 0 | 1 | 2 | 3 = 0;
+  for (const p of parts) {
+    const q = qualiteSimple(e, p);
+    if (q === null) return null;
+    if (q > worst) worst = q;
+  }
+  return worst;
 }
 
 function penaliteMelange(libelle: string): number {
@@ -538,8 +656,8 @@ function matcher(n: string): (Indexee & { qualite: 0 | 1 | 2 | 3 })[] {
 
 /**
  * Seize suggestions au plus, classées par qualité puis par type (matière
- * avant produit). Au-delà du préfixe : radical, graphie ISO, constituants
- * PUBCRIS hors index, et correction de frappe (« tubécunazole »).
+ * avant produit). Une lettre d'écart, un mot de raison sociale ou un pays
+ * suffisent : on facilite, on ne vise pas l'identité.
  */
 export function interpreter(q: string, limite = 16): Interpretation {
   const n = normaliser(q);
