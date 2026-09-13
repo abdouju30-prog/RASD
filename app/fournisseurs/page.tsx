@@ -124,10 +124,12 @@ function Pastille({
 export default async function FournisseursPage({
   searchParams,
 }: {
-  searchParams: Promise<{ pays?: string; profil?: string; q?: string; source?: string }>;
+  searchParams: Promise<{ pays?: string; profil?: string; q?: string; source?: string; tout?: string }>;
 }) {
   const sp = await searchParams;
   const source: Source = estSource(sp.source) ? sp.source : "onssa";
+  const etendu = sp.tout === "1";
+  const plafond = etendu ? Number.POSITIVE_INFINITY : MAX;
   const so = statsSourcing();
   const parMa = matieresPar();
 
@@ -154,12 +156,19 @@ export default async function FournisseursPage({
       profil: sp.profil,
       q: sp.q,
       source,
+      tout: sp.tout,
       ...o,
     }))
       if (v) p.set(k, v);
     const s = p.toString();
     return s ? `/fournisseurs?${s}` : "/fournisseurs";
   };
+  const hrefElargir = `${q({ tout: "1" })}#resultats`;
+  const hrefReduire = `${q({ tout: undefined })}#resultats`;
+  const pied = (total: number) =>
+    total > MAX ? (
+      <PiedReste n={total - MAX} etendu={etendu} hrefElargir={hrefElargir} hrefReduire={hrefReduire} />
+    ) : null;
 
   const PISTES_EPA = surMatiere
     ? []
@@ -342,7 +351,7 @@ export default async function FournisseursPage({
             </div>
           )}
           <div className="bloc">
-            <div className="titre">
+            <div className="titre" id="resultats">
               <span>Fournisseurs ONSSA</span>
               <span className="mono">{list.length}</span>
             </div>
@@ -359,8 +368,9 @@ export default async function FournisseursPage({
                 </tr>
               </thead>
               <tbody>
-                {list.slice(0, MAX).map((f) => {
+                {list.slice(0, plafond).map((f) => {
                   const mas = parMa.get(f.nom) ?? [];
+                  const masVues = etendu ? mas : mas.slice(0, 3);
                   return (
                     <tr key={f.id}>
                       <td style={{ fontWeight: 500 }}>
@@ -385,13 +395,22 @@ export default async function FournisseursPage({
                       <td className="mono" style={{ textAlign: "right" }}>{f.nbLignesMaroc}</td>
                       <td className="mono" style={{ textAlign: "right" }}>{f.nbMatieresActives}</td>
                       <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 320 }}>
-                        {mas.slice(0, 3).map((m, i) => (
+                        {masVues.map((m, i) => (
                           <span key={m.id}>
                             {i > 0 && " · "}
                             <Link href={`/sourcing/${m.id}`} className="link-accent" style={{ fontWeight: 500 }}>{m.nom}</Link>
                           </span>
                         ))}
-                        {mas.length > 3 && <span className="mono" style={{ color: "var(--muted-2)" }}> +{mas.length - 3}</span>}
+                        {!etendu && mas.length > 3 && (
+                          <Link
+                            href={hrefElargir}
+                            className="link-accent mono"
+                            title="Afficher les autres matières et le reste des fournisseurs"
+                          >
+                            {" "}
+                            +{mas.length - 3}
+                          </Link>
+                        )}
                         {mas.length === 0 && <span style={{ color: "var(--muted-2)" }}>—</span>}
                       </td>
                       <td>
@@ -402,11 +421,7 @@ export default async function FournisseursPage({
                 })}
               </tbody>
             </table>
-            {list.length > MAX && (
-              <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 10 }}>
-                {list.length - MAX} autres — affinez par molécule, pays ou profil.
-              </p>
-            )}
+            {pied(list.length)}
             {list.length === 0 && (
               <p style={{ fontSize: 13, color: "var(--muted)", padding: "20px 0" }}>
                 Aucun fournisseur ONSSA ne correspond.
@@ -432,7 +447,7 @@ export default async function FournisseursPage({
               </tr>
             </thead>
             <tbody>
-              {BRESIL.slice(0, MAX).map((u) => (
+              {BRESIL.slice(0, plafond).map((u) => (
                 <tr key={u.id}>
                   <td style={{ fontWeight: 500 }}>{u.nom}</td>
                   <td style={{ fontSize: 12, color: "var(--muted)", maxWidth: 220 }}>{u.sites.join(" · ") || "—"}</td>
@@ -442,7 +457,7 @@ export default async function FournisseursPage({
               ))}
             </tbody>
           </table>
-          {BRESIL.length > MAX && <PiedReste n={BRESIL.length - MAX} mol={!surMatiere} />}
+          {pied(BRESIL.length)}
             </>
           )}
         </BlocSource>
@@ -474,7 +489,7 @@ export default async function FournisseursPage({
                   </tr>
                 </thead>
                 <tbody>
-                  {CHINE_TC.slice(0, MAX).map((u) => {
+                  {CHINE_TC.slice(0, plafond).map((u) => {
                     const ic = contactIcama(u.nom);
                     return (
                       <tr key={u.nom}>
@@ -514,7 +529,7 @@ export default async function FournisseursPage({
                 </tr>
               </thead>
               <tbody>
-                {CHINE.slice(0, MAX).map((u) => (
+                {CHINE.slice(0, plafond).map((u) => (
                   <tr key={u.nom}>
                     <td>
                       <NomChinois nom={u.nom} latin={u.latin} glose={u.glose} region={u.region} />
@@ -522,7 +537,11 @@ export default async function FournisseursPage({
                     <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{u.matieres.length}</td>
                     <td className="mono" style={{ textAlign: "right" }}>{u.nbHomologations}</td>
                     <td style={{ fontSize: 11.5, maxWidth: 340 }}>
-                      <LiensMatieres noms={u.matieres} max={5} />
+                      <LiensMatieres
+                        noms={u.matieres}
+                        max={etendu ? undefined : 5}
+                        resteHref={hrefElargir}
+                      />
                     </td>
                     <td className="mono" style={{ fontSize: 11.5, color: "var(--low)" }}>{u.licenceProduction}</td>
                   </tr>
@@ -530,7 +549,7 @@ export default async function FournisseursPage({
               </tbody>
             </table>
           )}
-          {!surMatiere && CHINE.length > MAX && <PiedReste n={CHINE.length - MAX} mol />}
+          {pied(surMatiere ? CHINE_TC.length : CHINE.length)}
         </BlocSource>
       )}
 
@@ -547,20 +566,24 @@ export default async function FournisseursPage({
               </tr>
             </thead>
             <tbody>
-              {TURQUIE.slice(0, MAX).map((u) => (
+              {TURQUIE.slice(0, plafond).map((u) => (
                 <tr key={u.id}>
                   <td style={{ fontWeight: 500 }}>{u.nom}</td>
                   <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{u.matieresMaroc.length}</td>
                   <td className="mono" style={{ textAlign: "right" }}>{u.nbImal}</td>
                   <td style={{ fontSize: 11.5, maxWidth: 320 }}>
-                    <LiensMatieres noms={u.matieresMaroc} max={4} />
+                    <LiensMatieres
+                      noms={u.matieresMaroc}
+                      max={etendu ? undefined : 4}
+                      resteHref={hrefElargir}
+                    />
                   </td>
                   <td style={{ fontSize: 11.5, color: "var(--muted)", maxWidth: 240 }}>{u.adresse ?? "—"}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          {TURQUIE.length > MAX && <PiedReste n={TURQUIE.length - MAX} mol={!surMatiere} />}
+          {pied(TURQUIE.length)}
         </BlocSource>
       )}
 
@@ -585,8 +608,8 @@ export default async function FournisseursPage({
             />
           ) : (
             <>
-              <TableUsines usines={PISTES_EPA.slice(0, MAX)} />
-              {PISTES_EPA.length > MAX && <PiedReste n={PISTES_EPA.length - MAX} mol={!surMatiere} />}
+              <TableUsines usines={PISTES_EPA.slice(0, plafond)} />
+              {pied(PISTES_EPA.length)}
             </>
           )}
           {!surMatiere && <ReserveEpa attribution={STATS_EPA.attribution} />}
@@ -606,20 +629,28 @@ export default async function FournisseursPage({
               </tr>
             </thead>
             <tbody>
-              {COREE.slice(0, MAX).map((s) => (
+              {COREE.slice(0, plafond).map((s) => (
                 <tr key={s.cle}>
                   <td style={{ fontWeight: 500 }}>{etiquette(s)}</td>
                   <td className="mono" style={{ fontSize: 11.5, color: "var(--muted)" }}>{s.latin ?? "—"}</td>
                   <td className="mono" style={{ textAlign: "right", color: "var(--accent)", fontWeight: 600 }}>{s.nbHomologations}</td>
                   <td className="mono" style={{ fontSize: 12, color: "var(--muted)" }}>{s.derniere ?? "—"}</td>
                   <td style={{ fontSize: 11.5, maxWidth: 280 }}>
-                    {s.matieres.length ? <LiensMatieres noms={s.matieres} max={4} /> : "—"}
+                    {s.matieres.length ? (
+                      <LiensMatieres
+                        noms={s.matieres}
+                        max={etendu ? undefined : 4}
+                        resteHref={hrefElargir}
+                      />
+                    ) : (
+                      "—"
+                    )}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          {COREE.length > MAX && <PiedReste n={COREE.length - MAX} mol={!surMatiere} />}
+          {pied(COREE.length)}
         </BlocSource>
       )}
 
@@ -638,7 +669,7 @@ export default async function FournisseursPage({
               </tr>
             </thead>
             <tbody>
-              {RUSSIE.slice(0, MAX).map((s) => (
+              {RUSSIE.slice(0, plafond).map((s) => (
                 <tr key={s.cle}>
                   <td>
                     <NomRusse s={s} />
@@ -649,7 +680,7 @@ export default async function FournisseursPage({
               ))}
             </tbody>
           </table>
-          {RUSSIE.length > MAX && <PiedReste n={RUSSIE.length - MAX} mol={!surMatiere} />}
+          {pied(RUSSIE.length)}
             </>
           )}
         </BlocSource>
@@ -673,7 +704,7 @@ export default async function FournisseursPage({
               </tr>
             </thead>
             <tbody>
-              {PISTES.slice(0, MAX).map((p) => (
+              {PISTES.slice(0, plafond).map((p) => (
                 <tr key={p.id}>
                   <td style={{ fontWeight: 500 }}>
                     <Link href={`/fournisseurs/piste/${p.id}`} className="link-accent">
@@ -692,7 +723,7 @@ export default async function FournisseursPage({
                     {p.matieresMaroc.length ? (
                       <LiensMatieres
                         noms={p.matieresMaroc}
-                        max={4}
+                        max={etendu ? undefined : 4}
                         resteHref={`/fournisseurs/piste/${p.id}`}
                       />
                     ) : (
@@ -706,7 +737,7 @@ export default async function FournisseursPage({
               ))}
             </tbody>
           </table>
-          {PISTES.length > MAX && <PiedReste n={PISTES.length - MAX} mol={!surMatiere} />}
+          {pied(PISTES.length)}
             </>
           )}
           <ReservePistes source={STATS_PISTES.source} />
@@ -722,11 +753,34 @@ function Vide({ texte }: { texte: string }) {
   );
 }
 
-function PiedReste({ n, mol }: { n: number; mol: boolean }) {
+function PiedReste({
+  n,
+  etendu,
+  hrefElargir,
+  hrefReduire,
+}: {
+  n: number;
+  etendu: boolean;
+  hrefElargir: string;
+  hrefReduire: string;
+}) {
   return (
     <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 10 }}>
-      {n} autres au-delà des {MAX} premiers
-      {mol ? " — tapez une molécule pour filtrer." : "."}
+      {etendu ? (
+        <>
+          Liste complète.{" "}
+          <Link href={hrefReduire} className="link-accent">
+            Réduire aux {MAX} premiers
+          </Link>
+        </>
+      ) : (
+        <>
+          <Link href={hrefElargir} className="link-accent">
+            {`${n} autres`}
+          </Link>
+          {" — afficher le reste de la liste."}
+        </>
+      )}
     </p>
   );
 }
@@ -753,7 +807,7 @@ function BlocSource({
         {titre}
       </span>
       <div className="bloc" style={{ marginTop: 12 }}>
-        <div className="titre">
+        <div className="titre" id="resultats">
           <span>Résultats</span>
           <span className="mono">{n}</span>
         </div>
