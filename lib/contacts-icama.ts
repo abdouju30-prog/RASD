@@ -21,6 +21,16 @@ export interface ContactIcama {
   http: { url: string; status: number; date: string };
   validite: string;
   reserve: string | null;
+  /** Offre publique testée sur le site — distinct de la licence ICAMA. */
+  catalogue?: {
+    molecule: string;
+    statut: "present" | "absent" | "non_teste";
+    url: string;
+    http: number;
+    date: string;
+    pages?: string[];
+    vus?: string[];
+  };
 }
 
 const FICHIER = fichier as unknown as { societes: ContactIcama[] };

@@ -39,7 +39,7 @@ export function ContactCell({ c }: { c: ContactResolu }) {
   );
 }
 
-/** Preuve publique : licence ICAMA + page Contact HTTP testée. */
+/** Preuve publique : licence ICAMA ≠ offre catalogue. */
 export function ValiditeIcama({
   licence,
   teneur,
@@ -51,6 +51,7 @@ export function ValiditeIcama({
   expiration: string | null;
   c: ContactIcama | null;
 }) {
+  const cat = c?.catalogue;
   return (
     <div style={{ fontSize: 11.5, lineHeight: 1.45, maxWidth: 300 }}>
       <div>
@@ -65,7 +66,35 @@ export function ValiditeIcama({
       {c ? (
         <>
           <div style={{ marginTop: 2 }}>{c.parent}</div>
-          <div className="mono" style={{ color: "var(--muted-2)" }}>
+          {cat?.statut === "absent" && (
+            <div style={{ marginTop: 4 }}>
+              <span
+                className="pill"
+                style={{
+                  fontSize: 10,
+                  color: "var(--high)",
+                  borderColor: "color-mix(in srgb, var(--high) 42%, transparent)",
+                  background: "color-mix(in srgb, var(--high) 10%, transparent)",
+                }}
+              >
+                pas au catalogue public
+              </span>
+              {cat.url && (
+                <div>
+                  <a
+                    href={cat.url}
+                    className="link-accent"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ fontSize: 11 }}
+                  >
+                    catalogue testé {cat.date}
+                  </a>
+                </div>
+              )}
+            </div>
+          )}
+          <div className="mono" style={{ color: "var(--muted-2)", marginTop: 2 }}>
             HTTP {c.http.status} · {c.http.date}
           </div>
           {c.reserve && (

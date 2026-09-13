@@ -454,7 +454,7 @@ export default async function FournisseursPage({
           n={surMatiere ? CHINE_TC.length : CHINE.length}
           reserve={
             surMatiere
-              ? `ICAMA — ${surMatiere.gisement.chineNoms.join(" · ") || "nom chinois non relevé"}. Contacts : pages officielles GET HTTP 200, e-mail et téléphone présents dans le HTML. Ce n'est pas un envoi de courriel.`
+              ? `ICAMA — ${surMatiere.gisement.chineNoms.join(" · ") || "nom chinois non relevé"}. Une licence de production n'est pas une offre : le catalogue public est testé à part. Contacts GET HTTP 200 ; ce n'est pas un envoi de courriel.`
               : STATS_ICAMA.attribution
           }
         >

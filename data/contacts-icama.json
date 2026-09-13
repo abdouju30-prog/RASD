@@ -2,12 +2,14 @@
   "_lisezmoi": [
     "Contacts d'usines ICAMA relevés sur des pages officielles, puis retestés",
     "par GET HTTP : l'e-mail et le téléphone doivent figurer dans le HTML.",
+    "Une licence ICAMA n'est pas une offre commerciale. Le champ catalogue",
+    "dit si la molécule figure sur le site public (GET des pages produits).",
     "Rien n'est inventé. Une société sans fiche ici n'a pas de contact public",
     "vérifié — ce n'est pas un oubli de saisie."
   ],
   "meta": {
     "dateTest": "2026-09-13",
-    "methode": "GET HTTP des pages Contact officielles ; présence de l'e-mail et du téléphone dans le HTML."
+    "methode": "GET HTTP des pages Contact et des catalogues produits ; présence de l'e-mail, du téléphone, et de la molécule (ou son absence) dans le HTML."
   },
   "societes": [
     {
@@ -21,17 +23,38 @@
       "parent": "Yifan Biotechnology Group Co., Ltd.",
       "emails": ["yifan@chinayifan.com", "wendy@yifan-biotech.com"],
       "telephones": ["+86 158 6808 8686", "+86 577 8663 7855"],
-      "site": "http://www.chinayifan.com/contact_en.html",
+      "site": "http://www.chinayifan.com/product_en.html",
       "adresse": "#555 Changan Road, Yaoxi Street, Longwan, Wenzhou, Zhejiang (siège groupe). Usine ICAMA : Ningdong, Guangfu Rd 006, Ningxia.",
-      "source": "Page Contact Us anglaise du groupe Yifan — Wendy Wu, yifan@chinayifan.com. Page chinoise : wendy@yifan-biotech.com (international).",
+      "source": "Page Contact Us anglaise du groupe Yifan — Wendy Wu, yifan@chinayifan.com. Catalogue EN Technical products : chinayifan.com/product_en.html.",
       "date": "2026-09-13",
       "http": {
         "url": "http://www.chinayifan.com/contact_en.html",
         "status": 200,
         "date": "2026-09-13"
       },
-      "validite": "Filiale du groupe Yifan, fabricant phytosanitaire. Licence ICAMA de production. Page Contact anglaise HTTP 200.",
-      "reserve": null
+      "validite": "Licence ICAMA TC aclonifen 98 % à la filiale Ningxia, jusqu'au 2029-9-28. Le groupe est un vrai fabricant phyto — mais pas d'aclonifène à son catalogue public.",
+      "catalogue": {
+        "molecule": "aclonifen",
+        "statut": "absent",
+        "url": "http://www.chinayifan.com/product_en.html",
+        "http": 200,
+        "date": "2026-09-13",
+        "pages": [
+          "http://www.chinayifan.com/product_en.html",
+          "http://www.chinayifan.com/product1_en.html",
+          "http://www.chinayifan.com/products_en_3.html",
+          "http://www.chinayifan.com/products_en_6.html",
+          "http://www.chinayifan.com/product.html",
+          "http://www.chinayifan.com/products_6.html"
+        ],
+        "vus": [
+          "Clethodim 94% TC",
+          "Clodinafop-Propargyl 96% TC",
+          "Diclofop-Methyl 97% TC",
+          "Oxyfluorfen 95% TC"
+        ]
+      },
+      "reserve": "Catalogue public du groupe (chinayifan.com, Technical + formulations EN et CN, 2026-09-13) : zéro occurrence d'aclonifen / aclonifène / 苯草醚. TC herbicides en ligne : clethodim, clodinafop-propargyl, diclofop-méthyl, oxyfluorfen. La licence ICAMA Ningxia n'est pas une offre. Ne pas RFQ le desk groupe comme s'il vendait de l'aclonifène."
     },
     {
       "nom": "内蒙古扬帆新材料有限公司",
@@ -54,7 +77,16 @@
         "date": "2026-09-13"
       },
       "validite": "Société mère cotée SZSE 300637. Usine Inner Mongolia sur la page Contact officielle. Homologation ICAMA TC aclonifen 98 %.",
-      "reserve": "L'activité publique du groupe est les photoinitiateurs et intermédiaires soufrés, pas la protection des cultures. Le contact est le bureau ventes intermédiaires de Hangzhou — à qualifier avant d'engager un achat d'aclonifène."
+      "catalogue": {
+        "molecule": "aclonifen",
+        "statut": "absent",
+        "url": "https://www.zjyfxc.com/",
+        "http": 200,
+        "date": "2026-09-13",
+        "pages": ["https://www.zjyfxc.com/introduce1/64.html"],
+        "vus": []
+      },
+      "reserve": "L'activité publique du groupe est les photoinitiateurs et intermédiaires soufrés, pas la protection des cultures. Pas d'aclonifène au catalogue. Le contact est le bureau ventes intermédiaires de Hangzhou — licence ICAMA, pas une offre."
     }
   ]
 }
