@@ -1,0 +1,537 @@
+{
+ "meta": {
+  "source": "ONSSA — listes opérationnelles (retraits et restrictions d'usage)",
+  "attribution": "ONSSA — listes de substances actives, pas l'index des AMM",
+  "genere": "2026-09-13T15:05:52",
+  "urlRetirees": "https://eservice.onssa.gov.ma/Docs/MATIERES ACTIVES RETIREES ONSSA FINAL-MAI 25-06-02-2026 15-28-48.pdf",
+  "urlRestrictions": "https://eservice.onssa.gov.ma/Docs/MATIERES ACTIVES RESTRICTION-USAGE ONSSA FINAL  05-12-2025-05-12-2025 16-48-48.pdf",
+  "majRetirees": "2025-05-28",
+  "majRestrictions": "2025-05-21",
+  "nbRetirees": 87,
+  "nbRestrictions": 14,
+  "avertissement": "Lecture des PDF officiels. Une présence ici n'ouvre aucun droit et n'ajoute aucune AMM. L'index Excel reste la source des homologations."
+ },
+ "retirees": [
+  {
+   "nom": "Acrinathrine",
+   "cas": "101007-06-1",
+   "dateRetrait": "2024-05-24"
+  },
+  {
+   "nom": "Aldrine",
+   "cas": "309-00-2",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Amitrole",
+   "cas": "61-82-5",
+   "dateRetrait": "2018-01-12"
+  },
+  {
+   "nom": "Atrazine",
+   "cas": "1912-24-9",
+   "dateRetrait": "2005-03-31"
+  },
+  {
+   "nom": "Bénalaxyl",
+   "cas": "71626-11-4",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Benomyl",
+   "cas": "17804-35-2",
+   "dateRetrait": "2010-01-01"
+  },
+  {
+   "nom": "Betacyfluthrine",
+   "cas": "68359-37-5",
+   "dateRetrait": "2021-10-08"
+  },
+  {
+   "nom": "Béta-cypermethrine",
+   "cas": "65731-84-2",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Brodifacoum",
+   "cas": "56073-10-0",
+   "dateRetrait": "2021-12-24"
+  },
+  {
+   "nom": "Bromoxynil",
+   "cas": "1689-84-5",
+   "dateRetrait": "2021-10-08"
+  },
+  {
+   "nom": "Carbendazime",
+   "cas": "10605-21-7",
+   "dateRetrait": "2017-05-03"
+  },
+  {
+   "nom": "Carbétamide",
+   "cas": "16118-49-3",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Carbofuran",
+   "cas": "1563-66-2",
+   "dateRetrait": "2018-01-12"
+  },
+  {
+   "nom": "Carboxine",
+   "cas": "5234-68-4",
+   "dateRetrait": "2024-05-24"
+  },
+  {
+   "nom": "Chloprophame",
+   "cas": "101-21-3",
+   "dateRetrait": "2021-12-24"
+  },
+  {
+   "nom": "Chlordane",
+   "cas": "57-74-9",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Chlorfénapyr",
+   "cas": "122453-73-0",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Chlorobenzilate",
+   "cas": "510-15-6",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Chlorothalonil",
+   "cas": "1897-45-6",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Chlorpyriphos méthyl",
+   "cas": "5598-13-0",
+   "dateRetrait": "2020-08-11"
+  },
+  {
+   "nom": "Chlorpyriphos-éthyl",
+   "cas": "2921-88-2",
+   "dateRetrait": "2020-08-11"
+  },
+  {
+   "nom": "Cyhexatin",
+   "cas": "13121-70-5",
+   "dateRetrait": "2015-03-26"
+  },
+  {
+   "nom": "Cyproconazole",
+   "cas": "94361-06-5",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Desmidiphame",
+   "cas": "13684-56-5",
+   "dateRetrait": "2021-10-08"
+  },
+  {
+   "nom": "Dichlorodiphényldichloroéthylène (DDE)",
+   "cas": "72-55-9",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Dichlorodiphényltrichloroéthane (DDT)",
+   "cas": "50-29-3",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Dichlorvos (DDVP)",
+   "cas": "62-73-7",
+   "dateRetrait": "2019-01-29"
+  },
+  {
+   "nom": "Dicofol",
+   "cas": "115-32-2",
+   "dateRetrait": "2017-05-03"
+  },
+  {
+   "nom": "Diflovidazine",
+   "cas": "162320-67-4",
+   "dateRetrait": "2019-01-29"
+  },
+  {
+   "nom": "Dimoxystrobine",
+   "cas": "149961-52-4",
+   "dateRetrait": "2024-05-24"
+  },
+  {
+   "nom": "Dinitro-ortho-crésol (DNOC)",
+   "cas": "534-52-1",
+   "dateRetrait": "2002-06-25"
+  },
+  {
+   "nom": "Dinocap",
+   "cas": "39300-45-3",
+   "dateRetrait": "2018-01-12"
+  },
+  {
+   "nom": "Diquat",
+   "cas": "2764-72-9",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Endosulfan",
+   "cas": "115-29-7",
+   "dateRetrait": "2010-09-22"
+  },
+  {
+   "nom": "Endrine",
+   "cas": "72-20-8",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Epoxiconazole",
+   "cas": "106325-08-0",
+   "dateRetrait": "2021-06-25"
+  },
+  {
+   "nom": "Ethoprophos",
+   "cas": "13194-48-4",
+   "dateRetrait": "2020-08-11"
+  },
+  {
+   "nom": "Famoxadone",
+   "cas": "131807-57-3",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Fénamidone",
+   "cas": "161326-34-7",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Fenpropimorphe",
+   "cas": "67564-91-4",
+   "dateRetrait": "2021-10-08"
+  },
+  {
+   "nom": "Fenthion",
+   "cas": "55-38-9",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Flurtamone",
+   "cas": "96525-23-4",
+   "dateRetrait": "2024-05-24"
+  },
+  {
+   "nom": "Glufosinate d’ammonium",
+   "cas": "51276-47-2",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Guazatine",
+   "cas": "115044-19-4",
+   "dateRetrait": "2021-12-24"
+  },
+  {
+   "nom": "Haloxyfop-R-méthyl ester",
+   "cas": "72619-32-0",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Heptachlore",
+   "cas": "76-44-8",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Hexachlorobenzène (HCB)",
+   "cas": "118-74-1",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Hexachlorocyclohexane (HCH)",
+   "cas": "608-73-1",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Hexaconazole",
+   "cas": "79983-71-4",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Iprodione",
+   "cas": "36734-19-7",
+   "dateRetrait": "2019-01-29"
+  },
+  {
+   "nom": "Isopyrazam",
+   "cas": "881685-58-1",
+   "dateRetrait": "2024-05-24"
+  },
+  {
+   "nom": "Linuron",
+   "cas": "330-55-2",
+   "dateRetrait": "2020-08-11"
+  },
+  {
+   "nom": "Mancozèbe",
+   "cas": "8018-01-7",
+   "dateRetrait": "2021-12-24"
+  },
+  {
+   "nom": "Manèbe",
+   "cas": "12427-38-2",
+   "dateRetrait": "2021-12-24"
+  },
+  {
+   "nom": "Mercaptodimethur (Methiocarb)",
+   "cas": "1581694-94-1",
+   "dateRetrait": "2021-06-25"
+  },
+  {
+   "nom": "Méthamidophos",
+   "cas": "10265-92-6",
+   "dateRetrait": "2015-06-25"
+  },
+  {
+   "nom": "Methidathion",
+   "cas": "950-37-8",
+   "dateRetrait": "2019-01-29"
+  },
+  {
+   "nom": "Méthomyl",
+   "cas": "16752-77-5",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Nonyl phenol polyglycol ether",
+   "cas": "9016-45-9",
+   "dateRetrait": "2021-10-08"
+  },
+  {
+   "nom": "Novaluron",
+   "cas": "116714-46-6",
+   "dateRetrait": "2025-05-28"
+  },
+  {
+   "nom": "Paraquat",
+   "cas": "4685-14-7",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Parathion éthyl",
+   "cas": "56-38-2",
+   "dateRetrait": "2004-04-29"
+  },
+  {
+   "nom": "Parathion méthyl",
+   "cas": "298-00-0",
+   "dateRetrait": "2004-04-29"
+  },
+  {
+   "nom": "Phenamiphos",
+   "cas": "22224-92-6",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Phorate (CR)",
+   "cas": "298-02-2",
+   "dateRetrait": "2020-12-22"
+  },
+  {
+   "nom": "Phosmet",
+   "cas": "732-11-6",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Picoxystrobine",
+   "cas": "117428-22-5",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Prochloraze",
+   "cas": "67747-09-5",
+   "dateRetrait": "2025-05-28"
+  },
+  {
+   "nom": "Propargite",
+   "cas": "2312-35-8",
+   "dateRetrait": "2019-01-29"
+  },
+  {
+   "nom": "Propiconazole",
+   "cas": "60207-90-1",
+   "dateRetrait": "2024-05-24"
+  },
+  {
+   "nom": "Propinèbe",
+   "cas": "9016-72-2",
+   "dateRetrait": "2020-08-11"
+  },
+  {
+   "nom": "Pymétrozine",
+   "cas": "123312-89-0",
+   "dateRetrait": "2021-12-24"
+  },
+  {
+   "nom": "Quinoxyfène",
+   "cas": "124495-18-7",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Spirodicolfène",
+   "cas": "148477-71-8",
+   "dateRetrait": "2021-06-25"
+  },
+  {
+   "nom": "Strobane",
+   "cas": "8001-50-1",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Telodrine",
+   "cas": "297-78-9",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Tepraloxydim",
+   "cas": "149979-41-9",
+   "dateRetrait": "2021-12-24"
+  },
+  {
+   "nom": "Thiaclopride",
+   "cas": "111988-49-9",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Thiocyclam Hydrogen Oxalate",
+   "cas": "31895-21-3",
+   "dateRetrait": "2022-12-29"
+  },
+  {
+   "nom": "Thiophanate methyl",
+   "cas": "23564-05-8",
+   "dateRetrait": "2021-12-24"
+  },
+  {
+   "nom": "Thirame",
+   "cas": "137-26-8",
+   "dateRetrait": "2021-03-26"
+  },
+  {
+   "nom": "Toxaphène",
+   "cas": "8001-35-2",
+   "dateRetrait": "1984-04-18"
+  },
+  {
+   "nom": "Triadiménol",
+   "cas": "55219-65-3",
+   "dateRetrait": "2021-06-25"
+  },
+  {
+   "nom": "Triasulfuron",
+   "cas": "82097-50-5",
+   "dateRetrait": "2021-06-25"
+  },
+  {
+   "nom": "Trichlorfon (CR)",
+   "cas": "52-68-6",
+   "dateRetrait": "2018-01-12"
+  },
+  {
+   "nom": "Triflumizole",
+   "cas": "68694-11-1",
+   "dateRetrait": "2021-06-25"
+  },
+  {
+   "nom": "Zinèbe",
+   "cas": "12122-67-7",
+   "dateRetrait": "2010-10-23"
+  }
+ ],
+ "restrictions": [
+  {
+   "nom": "1,3-Dichloropropene",
+   "cas": "542-75-6",
+   "dateRestriction": "2021-06-25",
+   "condition": "Renforcement des conditions d’emploi."
+  },
+  {
+   "nom": "Chloropicrine",
+   "cas": "76-06-2",
+   "dateRestriction": "2021-06-25",
+   "condition": "Renforcement des conditions d’emploi."
+  },
+  {
+   "nom": "Acétamipride",
+   "cas": "135410-20-7",
+   "dateRestriction": "2021-12-24",
+   "condition": "Restriction d’usage pour la protection des pollinisateurs (Décision N°646/2022/ONSSA/DIL/DIC/SHIC du 24 Mars 2022)"
+  },
+  {
+   "nom": "Alphachloralose",
+   "cas": "15879-93-3",
+   "dateRestriction": "2021-12-24",
+   "condition": "Utilisation uniquement pour le traitement des locaux selon les conditions fixées dans les décisions d’homologation."
+  },
+  {
+   "nom": "Bifenthrine",
+   "cas": "82657-04-3",
+   "dateRestriction": "2021-10-08",
+   "condition": "Retrait des formulations liquides."
+  },
+  {
+   "nom": "Cyanamide d’hydrogène",
+   "cas": "420-04-2",
+   "dateRestriction": "2021-06-25",
+   "condition": "Renforcement des conditions d’emploi."
+  },
+  {
+   "nom": "Diméthoate",
+   "cas": "60-51-5",
+   "dateRestriction": "2021-03-26",
+   "condition": "Restriction d’usage sur l’olivier avec augmentation du DAR à 60 jours."
+  },
+  {
+   "nom": "Glyphosate",
+   "cas": "61791-26-2",
+   "dateRestriction": "2018-01-12",
+   "condition": "Interdiction des formulations contenant le glyphosate en association avec le co-formulant POE-Tallowamine."
+  },
+  {
+   "nom": "Imidaclopride",
+   "cas": "138261-41-3",
+   "dateRestriction": "2021-12-24",
+   "condition": "Restriction d’usage pour la protection des pollinisateurs (Décision N°646/2022/ONSSA/DIL/DIC/SHIC du 24 Mars 2022)"
+  },
+  {
+   "nom": "Thiamethoxam",
+   "cas": "153719-23-4",
+   "dateRestriction": "2021-12-24",
+   "condition": "Restriction d’usage pour la protection des pollinisateurs (Décision N°646/2022/ONSSA/DIL/DIC/SHIC du 24 Mars 2022)"
+  },
+  {
+   "nom": "Diflubenzuron",
+   "cas": "35367-38-5",
+   "dateRestriction": "2022-12-29",
+   "condition": "Maintien de la matière active Diflubenzuron pour son utilisation dans les cultures non comestibles à savoir la protection phytosanitaire de la forêt et la lutte antiacridienne ;"
+  },
+  {
+   "nom": "Dinotefuran",
+   "cas": "165252-70-0",
+   "dateRestriction": "2022-12-29",
+   "condition": "Restriction d’usage pour la protection des pollinisateurs (Décision N°646/2022/ONSSA/DIL/DIC/SHIC du 24 Mars 2022)"
+  },
+  {
+   "nom": "Cadusafos",
+   "cas": "95465-99-9",
+   "dateRestriction": "2025-05-28",
+   "condition": "Maintien de la substance active uniquement pour usage professionnel le temps d’investiguer sur les alternatives notamment en bananier. - Supervision des utilisations par la société détentrice de l’homologation (Personnel qualifié, Niveau élevé de protection des applicateurs lors du mélange et de l’application). - Sécurisation de la livraison directement aux exploitations agricoles - Maintien de la"
+  },
+  {
+   "nom": "Topramezone",
+   "cas": "210631-68-8",
+   "dateRestriction": "2025-05-28",
+   "condition": "Maintien de la substance active uniquement pour usage professionnel le temps d’investiguer sur les alternatives. - Supervision des utilisa tions par la société détentrice de l’homologation (Personnel qualifié, Niveau élevé de protection des applicateurs lors du mélange et de l’application). - Sécurisation de la livraison directement aux exploitations agricoles productrices du maïs ensilage ; - Mai"
+  }
+ ]
+}

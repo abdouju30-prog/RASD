@@ -1,4 +1,5 @@
 import { CA_RENSEIGNE, matieresDuPortefeuille, produitsDe, usagesDetenteur } from "./data";
+import { restreintePourMatiere, retireePourMatiere } from "./onssa-listes";
 import type { MatiereActive, NiveauRisque, ProduitPortefeuille } from "./types";
 
 /** Date de référence du système. Recalculée à chaque rendu. */
@@ -43,15 +44,44 @@ export function detailRisque(ma: MatiereActive): DetailRisque | null {
   const f = ma.fiche;
   const anses = ma.anses;
   const ansesConnu = anses && anses.statut !== "inconnu";
+  const retraitOnssa = retireePourMatiere(ma);
+  const restrictionOnssa = restreintePourMatiere(ma);
+
+  // Liste officielle des retraits : plus récente que l'Excel. Si les deux
+  // se contredisent, on ne corrige pas l'index — on note 100.
+  if (retraitOnssa) {
+    return {
+      score: 100,
+      niveau: "critique",
+      facteurs: [
+        {
+          libelle: retraitOnssa.dateRetrait
+            ? `Retirée ONSSA depuis le ${fmtDate(retraitOnssa.dateRetrait)} — encore à l'index Excel`
+            : "Retirée ONSSA — encore à l'index Excel",
+          points: 100,
+        },
+      ],
+    };
+  }
+
   // Un statut ANSES connu suffit à évaluer le risque, même sans fiche UE :
   // c'est le signal qui gouverne l'ONSSA. Il est lu dans E-Phy pour toute
   // molécule appariable, donc pour la quasi-totalité de l'index.
-  if (!ansesConnu && (!f || f.statutUE === "inconnu")) return null;
+  if (!ansesConnu && (!f || f.statutUE === "inconnu") && !restrictionOnssa) return null;
 
   const fa: { libelle: string; points: number }[] = [];
   const add = (libelle: string, points: number) => {
     if (points > 0) fa.push({ libelle, points });
   };
+
+  if (restrictionOnssa) {
+    add(
+      restrictionOnssa.dateRestriction
+        ? `Restriction d'usage ONSSA (${fmtDate(restrictionOnssa.dateRestriction)})`
+        : "Restriction d'usage ONSSA",
+      40
+    );
+  }
 
   if (f?.statutMaroc === "retirée") {
     return {

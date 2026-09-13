@@ -13,6 +13,7 @@
     "import:bku": "python scripts/import_bku.py",
     "import:onssa-web": "python scripts/import_onssa_eservice.py",
     "import:onssa-regl": "python scripts/import_onssa_reglementation.py",
+    "import:onssa-listes": "python scripts/import_onssa_listes.py",
     "maj": "python scripts/maj.py",
     "sentinelle": "python scripts/sentinelle.py",
     "import:agrofit": "python scripts/import_agrofit.py",

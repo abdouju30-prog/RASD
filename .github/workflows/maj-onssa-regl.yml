@@ -44,13 +44,20 @@ jobs:
         id: import
         run: python scripts/import_onssa_reglementation.py | tee sortie-onssa-regl.txt
 
+      - name: Listes opérationnelles — retraits et restrictions
+        id: listes
+        continue-on-error: true
+        run: |
+          python -m pip install --quiet pypdf
+          python scripts/import_onssa_listes.py | tee sortie-onssa-listes.txt
+
       - name: Y a-t-il eu un changement ?
         id: diff
         run: |
-          SUIVIS="data/onssa-reglementation.json data/onssa-reglementation-vu.json"
+          SUIVIS="data/onssa-reglementation.json data/onssa-reglementation-vu.json data/onssa-listes.json"
           if git diff --quiet -- $SUIVIS; then
             echo "change=non" >> "$GITHUB_OUTPUT"
-            echo "Aucun mouvement des textes ONSSA."
+            echo "Aucun mouvement des textes ou listes ONSSA."
           else
             echo "change=oui" >> "$GITHUB_OUTPUT"
             python - <<'PY' >> "$GITHUB_OUTPUT"
@@ -60,8 +67,13 @@ jobs:
           m = d.get("meta") or {}
           n = m.get("nbNouveaux") or 0
           u = m.get("nbMisAJour") or 0
+          l = {}
+          lp = pathlib.Path("data/onssa-listes.json")
+          if lp.exists():
+              l = (json.loads(lp.read_text(encoding="utf-8")).get("meta") or {})
           print("resume<<EOF")
           print(f"ONSSA — {m.get('nbTextes', 0)} textes, {n} nouveau(x), {u} mis à jour")
+          print(f"Listes — {l.get('nbRetirees', 0)} retirées, {l.get('nbRestrictions', 0)} restrictions")
           print(f"Sources : {', '.join(m.get('sourcesJointes') or [])}")
           for t in (d.get("textes") or [])[:8]:
               if t.get("nouveau") or t.get("misAJour"):
@@ -77,9 +89,14 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/onssa-reglementation.json data/onssa-reglementation-vu.json
-          git commit -m "Veille — textes réglementaires ONSSA" -m "$RESUME"
+          git add data/onssa-reglementation.json data/onssa-reglementation-vu.json data/onssa-listes.json
+          git commit -m "Veille — textes et listes ONSSA" -m "$RESUME"
           git push
 
       - name: Récapitulatif
-        run: cat sortie-onssa-regl.txt >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          cat sortie-onssa-regl.txt >> "$GITHUB_STEP_SUMMARY"
+          if [ -f sortie-onssa-listes.txt ]; then
+            echo >> "$GITHUB_STEP_SUMMARY"
+            cat sortie-onssa-listes.txt >> "$GITHUB_STEP_SUMMARY"
+          fi

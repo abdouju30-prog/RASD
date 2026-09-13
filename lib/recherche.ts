@@ -12,6 +12,14 @@ import { CONSTITUANTS_APVMA, apparierApvma } from "./apvma";
 import { molecules, sansTeneurs } from "./formulation";
 import { idMatiere } from "./liens";
 import { LIBELLE_TYPE_ONSSA, TEXTES_ONSSA, estRecent } from "./onssa-reglementation";
+import {
+  META_ONSSA_LISTES,
+  RESTRICTIONS_HORS_INDEX,
+  RETIREES_HORS_INDEX,
+  hrefOnssa,
+  restreintePourMatiere,
+  retireePourMatiere,
+} from "./onssa-listes";
 
 // ────────────────────────────────────────────────────────────────────────────
 // RECHERCHE TRANSVERSE
@@ -47,7 +55,9 @@ export type TypeEntree =
   | "societe_agreee"
   | "organisme_bpe"
   | "produit_expire"
-  | "nouveaute";
+  | "nouveaute"
+  | "retiree"
+  | "restriction";
 
 export interface Entree {
   id: string;
@@ -78,6 +88,8 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   organisme_bpe: "Organisme d'essai BPE",
   produit_expire: "Produit expiré",
   nouveaute: "Nouveauté ONSSA",
+  retiree: "Retirée ONSSA",
+  restriction: "Restriction ONSSA",
 };
 
 /**
@@ -88,6 +100,8 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
 const RANG: Record<TypeEntree, number> = {
   matiere: 0,
   produit: 1,
+  retiree: 2,
+  restriction: 2,
   constituant: 2,
   detenteur: 3,
   fournisseur: 4,
@@ -208,16 +222,68 @@ function construire(): Indexee[] {
       const iso = apparierApvma(mol);
       if (iso) extras.push(iso.nom);
     }
+    const retrait = retireePourMatiere(m);
+    const restriction = restreintePourMatiere(m);
     out.push({
       id: `ma-${m.id}`,
       libelle: m.nom,
-      detail: [m.categorie, `${m.nbHomologations} AMM`, `${m.detenteurs.length} détenteur(s)`]
+      detail: [
+        m.categorie,
+        `${m.nbHomologations} AMM`,
+        `${m.detenteurs.length} détenteur(s)`,
+        retrait
+          ? "retirée ONSSA — incohérence index"
+          : restriction
+            ? "restriction d'usage ONSSA"
+            : "",
+      ]
         .filter(Boolean)
         .join(" · "),
       type: "matiere",
       href: `/matieres/${m.id}`,
       poids: m.nbHomologations,
       alias: aliasDe(...extras),
+    });
+  }
+
+  // Substances de la liste officielle absentes de l'Excel : on ne leur invente
+  // pas de fiche /matieres. Le clic ouvre le PDF ONSSA.
+  const hrefRetirees = hrefOnssa(META_ONSSA_LISTES.urlRetirees);
+  for (const r of RETIREES_HORS_INDEX) {
+    const iso = apparierApvma(r.nom);
+    out.push({
+      id: `rt-${normaliser(r.nom).replace(/ /g, "-")}`,
+      libelle: r.nom,
+      detail: [
+        "ONSSA",
+        r.dateRetrait ? `retirée depuis le ${r.dateRetrait.split("-").reverse().join("/")}` : "retirée",
+        "absente de l'index Excel",
+      ].join(" · "),
+      type: "retiree",
+      href: hrefRetirees,
+      poids: 10_000,
+      alias: aliasDe(r.nom, iso?.nom),
+    });
+  }
+
+  const hrefRestrictions = hrefOnssa(META_ONSSA_LISTES.urlRestrictions);
+  for (const r of RESTRICTIONS_HORS_INDEX) {
+    const iso = apparierApvma(r.nom);
+    out.push({
+      id: `rs-${normaliser(r.nom).replace(/ /g, "-")}`,
+      libelle: r.nom,
+      detail: [
+        "ONSSA",
+        r.dateRestriction ? `restriction depuis le ${r.dateRestriction.split("-").reverse().join("/")}` : "restriction d'usage",
+        r.condition.slice(0, 120),
+        "absente de l'index Excel",
+      ]
+        .filter(Boolean)
+        .join(" · "),
+      type: "restriction",
+      href: hrefRestrictions,
+      poids: 9_000,
+      alias: aliasDe(r.nom, iso?.nom),
     });
   }
 
@@ -478,6 +544,16 @@ const DICTIONNAIRE: { n: string; affiche: string; prio: number }[] = [];
       const iso = apparierApvma(mol);
       if (iso) push(iso.nom, mol, 0);
     }
+  }
+  for (const r of RETIREES_HORS_INDEX) {
+    push(r.nom, r.nom, 0);
+    const iso = apparierApvma(r.nom);
+    if (iso) push(iso.nom, r.nom, 0);
+  }
+  for (const r of RESTRICTIONS_HORS_INDEX) {
+    push(r.nom, r.nom, 0);
+    const iso = apparierApvma(r.nom);
+    if (iso) push(iso.nom, r.nom, 0);
   }
   for (const c of CONSTITUANTS_APVMA) {
     if (c.nbProduitsAgricoles < 1) continue;

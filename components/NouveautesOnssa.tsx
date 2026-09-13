@@ -11,6 +11,12 @@ import {
   fraicheurOnssaTextes,
   type TexteOnssa,
 } from "@/lib/onssa-reglementation";
+import {
+  META_ONSSA_LISTES,
+  NB_COLLISIONS_RETRAIT,
+  NB_RESTRICTIONS_INDEX,
+  hrefOnssa,
+} from "@/lib/onssa-listes";
 import { fmtDate } from "@/lib/logic";
 
 function Pastille({ t }: { t: TexteOnssa }) {
@@ -109,6 +115,73 @@ function Ligne({ t }: { t: TexteOnssa }) {
   );
 }
 
+function SignauxIntegres({ compact }: { compact: boolean }) {
+  const hrefR = hrefOnssa(META_ONSSA_LISTES.urlRetirees);
+  const hrefS = hrefOnssa(META_ONSSA_LISTES.urlRestrictions);
+  const pastille: CSSProperties = { fontSize: 10.5 };
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: 8,
+        marginTop: 10,
+        alignItems: "center",
+      }}
+    >
+      {hrefR ? (
+        <a href={hrefR} target="_blank" rel="noreferrer" className="pill" style={pastille}>
+          {META_ONSSA_LISTES.nbRetirees} substances retirées
+        </a>
+      ) : (
+        <span className="pill" style={pastille}>
+          {META_ONSSA_LISTES.nbRetirees} substances retirées
+        </span>
+      )}
+      {hrefS ? (
+        <a href={hrefS} target="_blank" rel="noreferrer" className="pill" style={pastille}>
+          {META_ONSSA_LISTES.nbRestrictions} restrictions d&apos;usage
+        </a>
+      ) : (
+        <span className="pill" style={pastille}>
+          {META_ONSSA_LISTES.nbRestrictions} restrictions d&apos;usage
+        </span>
+      )}
+      {NB_RESTRICTIONS_INDEX > 0 && (
+        <span
+          className="pill"
+          style={{
+            ...pastille,
+            color: "var(--high)",
+            borderColor: "color-mix(in srgb, var(--high) 40%, transparent)",
+            background: "color-mix(in srgb, var(--high) 10%, transparent)",
+          }}
+        >
+          {NB_RESTRICTIONS_INDEX} dans l&apos;index
+        </span>
+      )}
+      {NB_COLLISIONS_RETRAIT > 0 && (
+        <span
+          className="pill"
+          style={{
+            ...pastille,
+            color: "var(--crit)",
+            borderColor: "color-mix(in srgb, var(--crit) 40%, transparent)",
+            background: "color-mix(in srgb, var(--crit) 10%, transparent)",
+          }}
+        >
+          {NB_COLLISIONS_RETRAIT} encore à l&apos;Excel
+        </span>
+      )}
+      {!compact && (
+        <span style={{ fontSize: 11.5, color: "var(--muted-2)" }}>
+          Intégrés au radar, pas seulement au journal.
+        </span>
+      )}
+    </div>
+  );
+}
+
 /**
  * Case « nouveautés ONSSA ».
  *
@@ -157,6 +230,7 @@ export function NouveautesOnssa({ compact = false }: { compact?: boolean }) {
             </a>
             . Ce n&apos;est pas l&apos;index des AMM : celui-là vient toujours de l&apos;Excel.
           </p>
+          <SignauxIntegres compact={compact} />
         </div>
       </div>
 

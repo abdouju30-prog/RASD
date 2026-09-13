@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { RiskBadge } from "@/components/RiskBadge";
+import { PastilleOnssaMatiere } from "@/components/SignalOnssa";
 import { portefeuilleClasse } from "@/lib/logic";
 import { MATIERES } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
@@ -43,6 +44,9 @@ export default async function MatieresPage() {
                   <Link href={`/matieres/${ma.id}`} className="link-accent">
                     {ma.nom}
                   </Link>
+                  <div style={{ marginTop: 4 }}>
+                    <PastilleOnssaMatiere ma={ma} />
+                  </div>
                   <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 3 }}>
                     {ma.produitsDetenteur.map((p) => p.nomCommercial).join(" · ")}
                   </div>

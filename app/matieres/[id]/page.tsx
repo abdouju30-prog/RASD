@@ -11,6 +11,7 @@ import { lectureCroisee } from "@/lib/apvma";
 import { resoudre, nbEtranger } from "@/lib/requete";
 import { contactDe } from "@/lib/contact";
 import { ContactCell } from "@/components/Contact";
+import { BanniereOnssa } from "@/components/SignalOnssa";
 
 export const dynamic = "force-dynamic";
 
@@ -118,6 +119,8 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
           )}
         </Link>
       </div>
+
+      <BanniereOnssa ma={ma} />
 
       {risque && (
         <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>

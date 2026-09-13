@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarClock, Ban, Flag, Timer, RefreshCw, ShieldAlert } from "lucide-react";
+import { CalendarClock, Ban, Flag, Timer, RefreshCw, ShieldAlert, Scale } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { alertes, statsAlertes, type TypeAlerte } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
@@ -9,22 +9,26 @@ import { FraicheurEphy } from "@/components/FraicheurEphy";
 import { NouveautesOnssa } from "@/components/NouveautesOnssa";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
+  onssa_retrait: Ban,
   anses_retrait: ShieldAlert,
   amm_expiree: Ban,
   amm_echeance: CalendarClock,
   ue_non_renouvelee: Ban,
   ue_echeance_depassee: Timer,
   ue_echeance_proche: CalendarClock,
+  onssa_restriction: Scale,
   candidate_substitution: Flag,
 };
 
 const LIBELLE: Record<TypeAlerte, string> = {
+  onssa_retrait: "Retrait ONSSA — l'Excel est en retard",
   anses_retrait: "Retrait ANSES — l'ONSSA suivra",
   amm_expiree: "AMM expirée",
   amm_echeance: "Échéance AMM",
   ue_non_renouvelee: "Approbation UE perdue",
   ue_echeance_depassee: "Échéance UE dépassée",
   ue_echeance_proche: "Échéance UE proche",
+  onssa_restriction: "Restriction d'usage ONSSA",
   candidate_substitution: "Candidate à la substitution",
 };
 

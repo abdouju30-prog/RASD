@@ -6,6 +6,7 @@ import { constituantParId } from "@/lib/apvma";
 import { ficheNom } from "@/lib/liens";
 import { slug } from "@/lib/noms";
 import { pisteParId } from "@/lib/pistes";
+import { PastilleOnssaNom } from "@/components/SignalOnssa";
 
 export const dynamic = "force-dynamic";
 
@@ -57,6 +58,7 @@ export default async function ConstituantPage({ params }: { params: Promise<{ id
             ANSES · {f.matiere.anses.statut.replace(/_/g, " ")}
           </span>
         )}
+        <PastilleOnssaNom nom={c.nom} />
       </div>
 
       {f.matiere && (
