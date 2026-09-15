@@ -163,26 +163,46 @@ export default async function DeveloppementPage({
           </p>
         </div>
         {mode === "metoo" && (
-          <a
-            href="/api/spectres-pdf"
-            className="pill"
-            style={{
-              background: "var(--accent)",
-              color: "#fff",
-              borderColor: "var(--accent)",
-              fontWeight: 600,
-              padding: "10px 16px",
-              fontSize: 12.5,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              flexShrink: 0,
-              boxShadow: "var(--ombre-1)",
-            }}
-            download
-          >
-            <Download size={15} /> PDF spectres · 21 M.A.
-          </a>
+          <div style={{ display: "flex", flexDirection: "column", gap: 7, alignItems: "stretch", flexShrink: 0 }}>
+            <a
+              href="/api/catalogue-pdf"
+              className="pill"
+              style={{
+                background: "var(--accent)",
+                color: "#fff",
+                borderColor: "var(--accent)",
+                fontWeight: 600,
+                padding: "9px 13px",
+                fontSize: 12,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                justifyContent: "center",
+                boxShadow: "var(--ombre-1)",
+              }}
+              download
+            >
+              <Download size={15} /> PDF catalogue · 36 produits
+            </a>
+            <a
+              href="/api/spectres-pdf"
+              className="pill"
+              style={{
+                color: "var(--accent)",
+                borderColor: "var(--accent)",
+                fontWeight: 600,
+                padding: "8px 13px",
+                fontSize: 11.5,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                justifyContent: "center",
+              }}
+              download
+            >
+              <Download size={14} /> PDF spectres · 21 M.A.
+            </a>
+          </div>
         )}
       </div>
 

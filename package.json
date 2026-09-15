@@ -18,7 +18,8 @@
     "import:russie": "python scripts/import_gospesticid.py",
     "import:coree": "python scripts/import_psis.py",
     "veille": "python scripts/import_ephy.py && python scripts/import_apvma.py && python scripts/import_psis.py --frais && python scripts/sentinelle.py",
-    "pdf:spectres": "python scripts/generer_pdf_spectres.py"
+    "pdf:spectres": "python scripts/generer_pdf_spectres.py",
+    "pdf:catalogue": "python scripts/generer_catalogue_phyto_beht.py"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",
