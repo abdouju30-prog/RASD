@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Download } from "lucide-react";
 import { TabNav } from "@/components/TabNav";
 import { StatCard } from "@/components/StatCard";
 import { RiskBadge } from "@/components/RiskBadge";
@@ -145,19 +146,45 @@ export default async function DeveloppementPage({
 
   return (
     <>
-      <div className="eyebrow">Section 3 · Développement & Croissance</div>
-      <h1>
-        {mode === "metoo" && "Cibles Me-too à fort potentiel"}
-        {mode === "gamme" && "Trous de gamme & opportunités de marché"}
-        {mode === "melanges" && "Associations & formulations prêtes"}
-        {mode === "sentinelle" && "Sentinelle — Prise d'exclusivité"}
-      </h1>
-      <p className="chapeau">
-        {mode === "metoo" && "Molécules déjà référencées à l'ONSSA avec fournisseurs génériques identifiés (homologation allégée sans dossier toxicologique complet)."}
-        {mode === "gamme" && "Substances actives présentes sur le marché marocain chez des concurrents mais absentes de votre catalogue."}
-        {mode === "melanges" && "Formulations 2-way et 3-way déjà homologuées à l'international (Corée du Sud) dont les matières actives sont présentes au Maroc."}
-        {mode === "sentinelle" && "Molécules émergentes dans les registres OCDE (Brésil, Corée) mais absentes du Maroc — opportunités de premier arrivant."}
-      </p>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20 }}>
+        <div>
+          <div className="eyebrow">Section 3 · Développement & Croissance</div>
+          <h1>
+            {mode === "metoo" && "Cibles Me-too à fort potentiel"}
+            {mode === "gamme" && "Trous de gamme & opportunités de marché"}
+            {mode === "melanges" && "Associations & formulations prêtes"}
+            {mode === "sentinelle" && "Sentinelle — Prise d'exclusivité"}
+          </h1>
+          <p className="chapeau">
+            {mode === "metoo" && "Molécules déjà référencées à l'ONSSA avec fournisseurs génériques identifiés (homologation allégée sans dossier toxicologique complet)."}
+            {mode === "gamme" && "Substances actives présentes sur le marché marocain chez des concurrents mais absentes de votre catalogue."}
+            {mode === "melanges" && "Formulations 2-way et 3-way déjà homologuées à l'international (Corée du Sud) dont les matières actives sont présentes au Maroc."}
+            {mode === "sentinelle" && "Molécules émergentes dans les registres OCDE (Brésil, Corée) mais absentes du Maroc — opportunités de premier arrivant."}
+          </p>
+        </div>
+        {mode === "metoo" && (
+          <a
+            href="/api/spectres-pdf"
+            className="pill"
+            style={{
+              background: "var(--accent)",
+              color: "#fff",
+              borderColor: "var(--accent)",
+              fontWeight: 600,
+              padding: "10px 16px",
+              fontSize: 12.5,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              flexShrink: 0,
+              boxShadow: "var(--ombre-1)",
+            }}
+            download
+          >
+            <Download size={15} /> PDF spectres · 21 M.A.
+          </a>
+        )}
+      </div>
 
       <TabNav tabs={tabs} />
 
