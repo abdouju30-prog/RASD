@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-14T11:36:58",
-  "dernierReleve": "2026-09-14",
+  "genere": "2026-09-16T10:46:11",
+  "dernierReleve": "2026-09-16",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
@@ -4006,7 +4006,7 @@
    "australie": {
     "nom": "IMAZAPIC",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 11,
+    "nbProduitsAgricoles": 12,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4335,7 +4335,7 @@
    "australie": {
     "nom": "CLOTHIANIDIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 15,
+    "nbProduitsAgricoles": 16,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5744,7 +5744,7 @@
    "australie": {
     "nom": "IMAZAPYR",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 21,
+    "nbProduitsAgricoles": 22,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6752,7 +6752,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 63,
+    "nbProduitsAgricoles": 64,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -14160,7 +14160,7 @@
    "australie": {
     "nom": "CUPROUS OXIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 30,
+    "nbProduitsAgricoles": 32,
     "matiereActiveApprouvee": false
    },
    "premiereVue": "2026-09-07",
@@ -16018,7 +16018,7 @@
    "australie": {
     "nom": "NAPROPAMIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 2,
+    "nbProduitsAgricoles": 3,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
