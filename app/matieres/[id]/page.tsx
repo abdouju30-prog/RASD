@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Globe } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
+import { StatusPill } from "@/components/StatusPill";
 import { getMatiere } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { detailRisque, etatAMM, exposition, fmtDate } from "@/lib/logic";
@@ -10,7 +11,9 @@ import { TableAlternatives } from "@/components/Alternatives";
 import { marcheDe } from "@/lib/concurrents";
 import { Concurrents } from "@/components/Concurrents";
 import { consultation } from "@/lib/consultation";
-import { lectureCroisee } from "@/lib/apvma";
+import { lectureCroisee, STATS_APVMA } from "@/lib/apvma";
+import { partenairesDe } from "@/lib/melanges";
+import { Partenaires } from "@/components/Partenaires";
 import { resoudre, nbEtranger } from "@/lib/requete";
 import { contactDe } from "@/lib/contact";
 import { ContactCell } from "@/components/Contact";
@@ -102,7 +105,7 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
             AU · {au.constituant.statut} · {au.constituant.nbProduitsAgricoles} prod.
           </Link>
         )}
-        {f?.drapeaux.slice(0, 4).map((x) => (
+        {f?.drapeaux.map((x) => (
           <span key={x} className="pill" style={{ fontSize: 11 }}>{x}</span>
         ))}
         {!f && (
@@ -154,6 +157,108 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
           </div>
         </div>
       )}
+
+      {f && (
+        <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+          <div className="h-title">Statut réglementaire</div>
+          <div style={{ display: "grid", gap: 11, marginTop: 13, fontSize: 13.5 }}>
+            <Ligne
+              label="France · ANSES"
+              value={
+                f.anses && f.anses.statut !== "inconnu" ? (
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                    <StatusPill value={f.anses.statut === "retirée" ? "retirée" : "en_cours"} />
+                    {f.anses.deduit && (
+                      <span style={{ fontSize: 10.5, color: "var(--muted-2)" }}>déduit</span>
+                    )}
+                  </span>
+                ) : (
+                  <span style={{ color: "var(--muted-2)", fontSize: 12.5 }}>non renseigné</span>
+                )
+              }
+            />
+            <Ligne label="Union européenne" value={<StatusPill value={f.statutUE} />} />
+            {f.echeanceUE && (
+              <Ligne
+                label="Échéance UE"
+                value={<span className="mono">{fmtDate(f.echeanceUE)}</span>}
+              />
+            )}
+            <Ligne label="Maroc" value={<StatusPill value={f.statutMaroc} />} />
+            {f.statutVoisins.map((v) => (
+              <Ligne key={v.pays} label={v.pays} value={<StatusPill value={v.statut} />} />
+            ))}
+          </div>
+          {f.drapeaux.length > 0 && (
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 14 }}>
+              {f.drapeaux.map((drap) => (
+                <span key={drap} className="pill" style={{ fontWeight: 500, fontSize: 11.5 }}>
+                  {drap}
+                </span>
+              ))}
+            </div>
+          )}
+          {f.note && (
+            <p style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 14, lineHeight: 1.6 }}>
+              {f.note}
+            </p>
+          )}
+          {f.verifie && (
+            <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.5 }}>
+              Source : {f.verifie.source}, consultée le {fmtDate(f.verifie.date)}.
+            </p>
+          )}
+        </div>
+      )}
+      {!f && (
+        <div className="card" style={{ padding: "14px 18px", marginBottom: 16, display: "flex", gap: 10 }}>
+          <span style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6 }}>
+            Angle mort : statut UE inconnu. À documenter avant toute décision commerciale sur cette
+            molécule.
+          </span>
+        </div>
+      )}
+
+      <div
+        className="card"
+        style={{
+          padding: "14px 18px",
+          marginBottom: 16,
+          borderColor:
+            au.convergence === "divergence"
+              ? "color-mix(in srgb, var(--info) 40%, transparent)"
+              : "var(--border)",
+        }}
+      >
+        <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Globe size={14} color={au.convergence === "divergence" ? "var(--info)" : "var(--muted-2)"} />
+          Recoupement Australie
+        </div>
+        <div style={{ fontSize: 13.5, fontWeight: 600, marginTop: 11 }}>{au.titre}</div>
+        <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6, margin: "6px 0 0" }}>
+          {au.lecture}
+        </p>
+        {au.constituant && (
+          <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 10 }}>
+            Apparié à <span className="mono">{au.constituant.nom}</span>
+            {au.constituant.famille ? ` · ${au.constituant.famille}` : ""}
+          </div>
+        )}
+        <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 10, lineHeight: 1.5 }}>
+          {STATS_APVMA.attribution} · {STATS_APVMA.licence}. L&apos;APVMA ne gouverne pas
+          l&apos;ONSSA : ce statut ne pèse pas dans le score de risque, il sert d&apos;argument.
+        </p>
+      </div>
+
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div className="h-title">Position marché</div>
+        <div style={{ display: "grid", gap: 11, marginTop: 13, fontSize: 13.5 }}>
+          <Ligne label="AMM au Maroc" value={<span className="mono">{ma.nbHomologations}</span>} />
+          <Ligne label="Détenteurs" value={<span className="mono">{ma.detenteurs.length}</span>} />
+          <Ligne label="Usages homologués" value={<span className="mono">{ma.usages.length}</span>} />
+          <Ligne label="Cultures" value={<span className="mono">{ma.cultures.length}</span>} />
+        </div>
+      </div>
 
       <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
         <div className="h-title">Par quoi la remplacer — {alts.length}</div>
@@ -221,6 +326,10 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
         <Concurrents m={marche} />
       </div>
 
+      <div style={{ marginBottom: 16 }}>
+        <Partenaires liste={partenairesDe(ma)} />
+      </div>
+
       <div className="bloc" style={{ marginBottom: 16 }}>
         <div className="titre">
           <span>Fournisseurs ONSSA — me-too</span>
@@ -277,11 +386,15 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
         </div>
       )}
 
-      {au.convergence === "divergence" && (
-        <p style={{ fontSize: 12.5, color: "var(--info)", lineHeight: 1.55 }}>
-          Recoupement Australie : {au.titre}. {au.lecture}
-        </p>
-      )}
     </>
+  );
+}
+
+function Ligne({ label, value }: { label: string; value: React.ReactNode }) {
+  return (
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
+      <span style={{ color: "var(--muted)" }}>{label}</span>
+      {value}
+    </div>
   );
 }

@@ -9,6 +9,8 @@ import {
 } from "@/lib/sourcing";
 import { detenteurActuel } from "@/lib/detenteur";
 import type { CandidatSourcing } from "@/lib/types";
+import { Aide } from "@/components/Aide";
+import { STATS_EPHY } from "@/lib/ephy";
 
 export const dynamic = "force-dynamic";
 
@@ -167,6 +169,22 @@ export default async function SourcingPage({
         <Chip href={q({ vue: "bas" })} actif={vue === "bas"}>
           Risque bas {bas.length}
         </Chip>
+      </div>
+
+      <div style={{ margin: "0 0 16px", maxWidth: "92ch" }}>
+        <Aide titre="Comment lire ce classement">
+          <p>
+            <strong>Aucun prix ici</strong> — l&apos;index ONSSA n&apos;en contient pas. Le score
+            mesure l&apos;<em>accessibilité</em> : le nombre de fournisseurs génériques en concurrence
+            sur la molécule, donc votre pouvoir de négociation.
+          </p>
+          <p>
+            Les molécules retirées en France sont <strong>écartées d&apos;office</strong> : l&apos;ONSSA
+            s&apos;alignant sur l&apos;ANSES, leur dossier serait condamné d&apos;avance. Statut lu dans
+            E-Phy ({STATS_EPHY.attribution}). « Risque non évalué » signale les rares molécules ni
+            appariables ni documentées.
+          </p>
+        </Aide>
       </div>
 
       {montrerFenetre && (

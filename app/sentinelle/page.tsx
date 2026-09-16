@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { LienMatiere } from "@/components/LienMatiere";
-import { Radar } from "lucide-react";
+import { Radar, ArrowRight } from "lucide-react";
 import {
   A_ECARTER,
   A_SAISIR,
@@ -11,6 +12,7 @@ import {
   STATS_SENTINELLE,
   type Candidate,
 } from "@/lib/sentinelle";
+import { Aide } from "@/components/Aide";
 
 export const dynamic = "force-dynamic";
 
@@ -254,6 +256,76 @@ export default function SentinellePage() {
           max={20}
         />
       )}
+
+      <div className="section" style={{ display: "grid", gap: 8, maxWidth: "92ch" }}>
+        <Aide titre="Pourquoi guetter les lancements des majors ne donne pas de fournisseur">
+          <p>
+            Une molécule que Syngenta, Bayer, BASF ou Corteva vient de lancer est protégée par
+            brevet <strong>et</strong> par la protection des données. Personne ne la fabrique pour
+            un tiers, et son inventeur l&apos;homologue lui-même au Maroc. Recevoir l&apos;alerte de
+            son lancement ne mène donc à aucun fournisseur : c&apos;est du renseignement de
+            concurrence — utile, et à ne pas confondre avec une piste d&apos;achat.
+          </p>
+          <p>
+            Le signal qui compte est l&apos;inverse dans le temps :{" "}
+            <strong>quelqu&apos;un d&apos;autre que l&apos;inventeur en fabrique le technique et
+            l&apos;a déclaré à un régulateur</strong>. Le registre brésilien publie précisément
+            cela, usine par usine et pays par pays. Une usine chinoise ou indienne déclarée sur une
+            molécule prouve, par les faits, que sa fabrication générique existe.
+          </p>
+        </Aide>
+
+        <Aide titre="Ce que la Corée du Sud a apporté">
+          <p>
+            Le Brésil dit <strong>qui fabrique</strong> ; il ne dit pas quand la molécule est
+            arrivée. Le registre coréen date chaque homologation au jour et se régénère
+            quotidiennement : c&apos;est le seul de l&apos;outil où l&apos;on <em>voit entrer</em>{" "}
+            une molécule. {s.nbVuesEnCoree} des {s.nbCandidates} candidates y sont homologuées,
+            contre {s.nbVuesAuBresil} au Brésil.
+          </p>
+          <p>
+            C&apos;est ce qui rend la veille des lancements possible — et c&apos;est aussi ce qui
+            en montre la limite : les molécules entrées récemment en Corée n&apos;ont, pour la
+            plupart, <strong>aucun fabricant générique</strong>. Le tableau le dit colonne par
+            colonne, au lieu de le laisser supposer.
+          </p>
+        </Aide>
+
+        <Aide titre="Ce que cet écran ne sait pas">
+          <p>
+            <strong>Le brevet.</strong> Aucun registre sanitaire ne le publie. Une molécule
+            fabriquée par dix usines chinoises peut rester couverte au Maroc : la liberté
+            d&apos;exploitation se vérifie auprès d&apos;un conseil en propriété industrielle.
+          </p>
+          <p>
+            <strong>L&apos;absence à l&apos;index.</strong> Elle est établie par la clé chimique de
+            l&apos;outil — {s.nbEcartees} molécules ont ainsi été écartées parce qu&apos;elles sont
+            déjà homologuées au Maroc. Une graphie portugaise que la réduction ne ramènerait pas au
+            nom marocain resterait un faux positif : vérifier avant d&apos;agir.
+          </p>
+          <p>
+            <strong>Le marché.</strong> Ni prix, ni volume, ni usage revendicable au Maroc. Une
+            molécule sans culture porteuse au Maroc est une exclusivité sans client.
+          </p>
+        </Aide>
+
+        <Aide titre="Comment relever">
+          <p>
+            <span className="mono">npm run sentinelle</span> recroise le registre brésilien,
+            l&apos;index ONSSA, E-Phy et PUBCRIS, et met à jour{" "}
+            <span className="mono">data/sentinelle-vu.json</span>, le journal des premières
+            apparitions. Ce qui n&apos;y figure pas encore ressort en « nouvelle » — et
+            l&apos;historique git tient le registre des relevés, comme pour la veille ANSES.
+          </p>
+          <p style={{ color: "var(--muted-2)" }}>{s.source} · relevé du {s.dernierReleve}</p>
+        </Aide>
+      </div>
+
+      <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 18 }}>
+        <Link href="/sourcing" className="link-accent" style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+          Prospection des matières du portefeuille <ArrowRight size={12} />
+        </Link>
+      </p>
     </>
   );
 }

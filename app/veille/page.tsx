@@ -7,6 +7,9 @@ import { META } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
 import { NouveautesOnssa } from "@/components/NouveautesOnssa";
+import { Aide } from "@/components/Aide";
+import { STATS_EPHY } from "@/lib/ephy";
+import { COUVERTURE } from "@/lib/reglementaire";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
   onssa_retrait: Ban,
@@ -77,6 +80,22 @@ export default async function VeillePage() {
       </div>
 
       <NouveautesOnssa />
+
+      <div style={{ margin: "0 0 16px" }}>
+        <Aide titre="Hiérarchie des signaux, et réserve sur les échéances UE">
+          <p>
+            L&apos;ONSSA s&apos;aligne sur l&apos;ANSES : un retrait français annonce le retrait
+            marocain. Les alertes « retrait ANSES » passent donc en tête, avant le statut UE qui est
+            en amont et plus lent. Statut français lu dans E-Phy — {STATS_EPHY.attribution}.
+          </p>
+          <p>
+            Les échéances UE viennent de la {COUVERTURE.source} (consultée le{" "}
+            {fmtDate(COUVERTURE.date)}). La Commission les prolonge fréquemment par règlement
+            d&apos;exécution : <strong>une échéance dépassée signifie « à recouper d&apos;urgence »,
+            pas « substance interdite »</strong>.
+          </p>
+        </Aide>
+      </div>
 
       <div style={{ display: "grid", gap: 12 }}>
         {list.map((a) => {

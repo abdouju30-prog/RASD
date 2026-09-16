@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Ban, ShieldCheck, FlaskConical } from "lucide-react";
+import { ArrowLeft, Ban, ShieldCheck, FlaskConical, Scale } from "lucide-react";
 import {
+  CADRE_DEVIS,
+  FORMULE_COUT,
   LIBELLE_ORIGINE,
   QUESTIONNAIRE,
   consultation,
@@ -11,6 +13,7 @@ import { bpeAEcheance, STATS_ESERVICE } from "@/lib/onssa-eservice";
 import { candidats } from "@/lib/sourcing";
 import { contactDe } from "@/lib/contact";
 import { ContactCell } from "@/components/Contact";
+import { Aide } from "@/components/Aide";
 
 export const dynamic = "force-dynamic";
 
@@ -276,6 +279,68 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
           {STATS_ESERVICE.attribution} · un agrément expiré en cours d&apos;essai invalide les
           résultats.
         </p>
+      </div>
+
+      <div className="section" style={{ marginBottom: 16 }}>
+        <span className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Scale size={14} /> Rendre les devis comparables
+        </span>
+        <div className="grille" style={{ gridTemplateColumns: "1.1fr 1fr", marginTop: 10 }}>
+          <div className="bloc">
+            <div className="titre"><span>À imposer dans la demande</span></div>
+            <table className="tbl">
+              <tbody>
+                {CADRE_DEVIS.map(([k, v]) => (
+                  <tr key={k}>
+                    <td style={{ fontWeight: 500, width: 180 }}>{k}</td>
+                    <td style={{ fontSize: 12, color: "var(--muted)" }}>{v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="bloc">
+            <div className="titre"><span>Le seul calcul qui décide</span></div>
+            <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>
+              Coût rendu par kilo de <strong style={{ color: "var(--fg)" }}>matière active pure</strong> :
+            </p>
+            <div
+              className="mono"
+              style={{
+                fontSize: 11.5,
+                background: "color-mix(in srgb, var(--fg) 5%, transparent)",
+                border: "1px solid var(--border)",
+                borderRadius: 6,
+                padding: "10px 12px",
+                margin: "8px 0",
+                lineHeight: 1.6,
+              }}
+            >
+              {FORMULE_COUT}
+            </div>
+            <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6 }}>
+              C&apos;est le dernier terme qui tranche. Aucun prix ne figure dans l&apos;outil :
+              aucun registre public n&apos;en publie.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="section" style={{ maxWidth: "92ch" }}>
+        <Aide titre="Pourquoi consulter les fournisseurs me-too même s'ils sont plus chers">
+          <p>
+            Un fournisseur déjà référencé à l&apos;ONSSA sur cette matière active a, par construction,
+            un dossier technique accepté par l&apos;administration marocaine. Votre dossier s&apos;y
+            réfère au lieu de tout reconstituer : les lignes marquées allégeables de l&apos;Annexe 3-B
+            tombent.
+          </p>
+          <p>
+            Sur un tonnage de quelques tonnes par an, quinze pour cent d&apos;écart de prix
+            représentent quelques dizaines de milliers de dirhams. Une étude BPL manquante en
+            représente plusieurs centaines de milliers, et deux ans de délai supplémentaire.
+            L&apos;arbitrage n&apos;est pas serré.
+          </p>
+        </Aide>
       </div>
     </>
   );

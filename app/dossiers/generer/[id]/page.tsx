@@ -2,7 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ShieldAlert, TriangleAlert } from "lucide-react";
 import { getMatiere } from "@/lib/data";
+import { fmtDate } from "@/lib/logic";
 import { chargeParResponsable, genererDossier, partAllegeable, statsDossier } from "@/lib/dossier";
+import { ENTETE_FORMULAIRE, MENTIONS_FORMULAIRE, STATS_CHECKLIST } from "@/lib/checklist-onssa";
+import { ficheFournisseur } from "@/lib/packs-fournisseur";
+import { FicheAgrements } from "@/components/PacksFournisseur";
+import { Aide, Figure } from "@/components/Aide";
+import { SchemaDossier } from "@/components/Schemas";
 import type { TypeDossier } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -108,6 +114,24 @@ export default async function GenererPage({
         </div>
       )}
 
+      <div style={{ margin: "0 0 16px", display: "grid", gap: 10 }}>
+        <Figure titre="Structure du formulaire" legende={`Annexe 3-B · ${STATS_CHECKLIST.nbItems} lignes`}>
+          <SchemaDossier />
+        </Figure>
+        <Aide titre="Ce que cet écran produit — et ce qu'il ne produit pas">
+          <p>
+            Il produit les {STATS_CHECKLIST.nbItems} lignes du formulaire officiel, avec pour chacune :
+            qui détient la donnée, si une accréditation BPL est exigée, si elle est allégeable par
+            référence, et ce que l&apos;index ONSSA permet de pré-remplir.
+          </p>
+          <p>
+            Il ne produit <strong>pas</strong> les études elles-mêmes : elles appartiennent au
+            fournisseur ou relèvent d&apos;un laboratoire accrédité. Le dossier est prêt à être{" "}
+            <em>constitué</em>, pas encore à être déposé.
+          </p>
+        </Aide>
+      </div>
+
       <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12 }}>
           <div className="h-title">Charge du dossier</div>
@@ -146,6 +170,54 @@ export default async function GenererPage({
             ))}
           </div>
         )}
+      </div>
+
+      {d.fournisseur && (
+        <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+          <div className="h-title">Fournisseur pressenti</div>
+          <div style={{ fontSize: 14, fontWeight: 600, marginTop: 11 }}>{d.fournisseur.nom}</div>
+          <div style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 5, lineHeight: 1.6 }}>
+            {d.fournisseur.pays ?? "pays à préciser"} · {d.fournisseur.nbLignesMaroc} références à
+            l&apos;index ONSSA · {d.fournisseur.nbMatieresActives} matières actives
+          </div>
+          <div
+            style={{
+              fontSize: 12.5,
+              color: "var(--accent)",
+              marginTop: 11,
+              lineHeight: 1.6,
+              paddingTop: 11,
+              borderTop: "1px solid var(--border)",
+            }}
+          >
+            Déjà référencé à l&apos;ONSSA sur cette matière active : son dossier technique a passé
+            l&apos;administration marocaine. {d.aFournirParFournisseur.length} lignes du formulaire
+            lui incombent — les lui réclamer en un seul envoi.
+          </div>
+        </div>
+      )}
+
+      {d.fournisseur && ficheFournisseur(d.fournisseur.id) && (
+        <div style={{ marginBottom: 16 }}>
+          <FicheAgrements fiche={ficheFournisseur(d.fournisseur.id)!} />
+        </div>
+      )}
+
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div className="h-title">En-tête du formulaire</div>
+        <ul
+          style={{
+            margin: "11px 0 0",
+            paddingLeft: 17,
+            fontSize: 12.5,
+            color: "var(--muted)",
+            lineHeight: 1.8,
+          }}
+        >
+          {ENTETE_FORMULAIRE.map((e) => (
+            <li key={e}>{e}</li>
+          ))}
+        </ul>
       </div>
 
       {d.objections.length > 0 && (
@@ -219,6 +291,27 @@ export default async function GenererPage({
             Toutes les lignes sont allégeables par référence.
           </p>
         )}
+      </div>
+
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div className="h-title">Mentions du formulaire</div>
+        <ul
+          style={{
+            margin: "11px 0 0",
+            paddingLeft: 17,
+            fontSize: 12,
+            color: "var(--muted)",
+            lineHeight: 1.7,
+          }}
+        >
+          {MENTIONS_FORMULAIRE.map((m) => (
+            <li key={m}>{m}</li>
+          ))}
+        </ul>
+        <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.5 }}>
+          Structure : {STATS_CHECKLIST.source}. Généré le{" "}
+          {fmtDate(new Date().toISOString().slice(0, 10))} depuis l&apos;index ONSSA.
+        </p>
       </div>
     </>
   );

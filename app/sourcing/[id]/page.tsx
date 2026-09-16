@@ -1,10 +1,24 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Globe2, TriangleAlert, Compass } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { candidatParId, candidats, estFenetreMaroc } from "@/lib/sourcing";
 import { getMatiere } from "@/lib/data";
 import { nbEtranger, resoudre } from "@/lib/requete";
+import { ficheFournisseur } from "@/lib/packs-fournisseur";
+import { FicheAgrements, PastillesPacks } from "@/components/PacksFournisseur";
+import { STATS_PISTES, pistesPour } from "@/lib/pistes";
+import { ReservePistes, TablePistes } from "@/components/PistesFournisseur";
+import { STATS_ICAMA, fabricantsChinois } from "@/lib/icama";
+import { FabricantsChinois } from "@/components/FabricantsChinois";
+import { STATS_BKU, fabricantsTurcs } from "@/lib/bku";
+import { FabricantsTurcs } from "@/components/FabricantsTurcs";
+import { STATS_RUSSIE, fabricantsRusses } from "@/lib/russie";
+import { FabricantsRusses } from "@/components/FabricantsRusses";
+import { STATS_BRESIL, fabricantsBresiliens } from "@/lib/bresil";
+import { FabricantsBresil } from "@/components/FabricantsBresil";
+import { STATS_COREE, fabricantsCoreens } from "@/lib/coree";
+import { FabricantsCoreens } from "@/components/FabricantsCoreens";
 
 export async function generateStaticParams() {
   return candidats({ maxDetenteurs: 8 })
@@ -21,6 +35,12 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
   const q = encodeURIComponent(ma.molecule || ma.nom);
   const req = resoudre(ma.molecule || ma.nom);
   const g = req?.estMatiere ? req.gisement : null;
+  const pistes = pistesPour(ma.nom);
+  const chine = fabricantsChinois(ma.nom);
+  const turquie = fabricantsTurcs(ma.nom);
+  const russie = fabricantsRusses(ma.nom);
+  const bresil = fabricantsBresiliens(ma.nom);
+  const coree = fabricantsCoreens(ma.nom);
   const pastilles: { nom: string; n: number; source: string }[] = g
     ? [
         { nom: "ONSSA", n: g.fournisseursOnssa.length, source: "onssa" },
@@ -205,14 +225,33 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
                 <th>Fournisseur</th>
                 <th>Pays</th>
                 <th style={{ textAlign: "right" }}>Lignes Maroc</th>
+                <th>Profil</th>
+                <th>Agréments déclarés</th>
               </tr>
             </thead>
             <tbody>
               {c.fournisseurs.map((f) => (
                 <tr key={f.id}>
                   <td style={{ fontWeight: 500 }}>{f.nom}</td>
-                  <td style={{ color: "var(--muted)" }}>{f.pays ?? "à préciser"}</td>
+                  <td style={{ color: "var(--muted)" }}>
+                    {f.pays ?? "à préciser"}
+                    {f.pays && !f.paysFiable && (
+                      <span style={{ color: "var(--mod)", fontSize: 11 }}> ?</span>
+                    )}
+                  </td>
                   <td className="mono" style={{ textAlign: "right" }}>{f.nbLignesMaroc}</td>
+                  <td>
+                    {f.coutFaible ? (
+                      <span className="pill" style={{ fontSize: 10.5, fontWeight: 500 }}>générique</span>
+                    ) : f.multinationale ? (
+                      <span className="pill" style={{ fontSize: 10.5 }}>multinationale</span>
+                    ) : (
+                      <span className="pill" style={{ fontSize: 10.5 }}>autre</span>
+                    )}
+                  </td>
+                  <td>
+                    <PastillesPacks packs={ficheFournisseur(f.id)?.packs ?? []} />
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -223,6 +262,131 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
           </p>
         )}
       </div>
+
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Compass size={14} /> Fabricants hors Maroc — registre australien
+        </div>
+        {!pistes.apparie ? (
+          <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "9px 0 0" }}>
+            Non appariée au registre PUBCRIS.
+          </p>
+        ) : (
+          <>
+            <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px", lineHeight: 1.55 }}>
+              {pistes.toutes.length} sociétés sur{" "}
+              <span className="mono">{pistes.nomAustralien}</span>
+              {pistes.nouvelles.length > 0 ? (
+                <>
+                  , dont{" "}
+                  <strong style={{ color: "var(--fg)" }}>
+                    {pistes.nouvelles.length} génériqueurs absents de l&apos;index marocain
+                  </strong>
+                  .
+                </>
+              ) : (
+                <> — toutes déjà couvertes par l&apos;index marocain.</>
+              )}
+            </p>
+            {pistes.nouvelles.length > 0 && <TablePistes pistes={pistes.nouvelles} />}
+            <ReservePistes source={STATS_PISTES.source} />
+          </>
+        )}
+      </div>
+
+      <div style={{ marginBottom: 16 }}>
+        <FabricantsBresil d={bresil} attribution={STATS_BRESIL.attribution} />
+      </div>
+      <div style={{ marginBottom: 16 }}>
+        <FabricantsChinois m={chine} attribution={STATS_ICAMA.attribution} />
+      </div>
+      <div style={{ marginBottom: 16 }}>
+        <FabricantsCoreens d={coree} attribution={STATS_COREE.attribution} />
+      </div>
+      <div style={{ marginBottom: 16 }}>
+        <FabricantsTurcs d={turquie} attribution={STATS_BKU.attribution} />
+      </div>
+      <div style={{ marginBottom: 16 }}>
+        <FabricantsRusses
+          d={russie}
+          attribution={STATS_RUSSIE.attribution}
+          edition={STATS_RUSSIE.edition}
+        />
+      </div>
+
+      <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+        <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Globe2 size={14} /> Concurrence en place
+        </div>
+        <div style={{ display: "grid", gap: 7, marginTop: 12 }}>
+          {c.detenteurs.map((det) => (
+            <div key={det} style={{ fontSize: 13, color: "var(--muted)" }}>
+              {det}
+            </div>
+          ))}
+          {c.detenteurs.length === 0 && (
+            <div style={{ fontSize: 13, color: "var(--accent)" }}>
+              Aucun détenteur — marché entièrement ouvert.
+            </div>
+          )}
+        </div>
+      </div>
+
+      {!ma.fiche && (
+        <div
+          className="card"
+          style={{
+            padding: "14px 18px",
+            marginBottom: 16,
+            borderColor: "color-mix(in srgb, var(--mod) 38%, transparent)",
+            background: "color-mix(in srgb, var(--mod) 7%, transparent)",
+          }}
+        >
+          <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <TriangleAlert size={14} color="var(--mod)" /> Statut réglementaire inconnu
+          </div>
+          <p style={{ fontSize: 13, color: "var(--muted)", marginTop: 11, lineHeight: 1.6 }}>
+            Statut UE non renseigné : le filtre de risque ne s&apos;est pas appliqué. À vérifier
+            sur la EU Pesticides Database <strong style={{ color: "var(--fg)" }}>avant</strong>{" "}
+            de consulter un fournisseur.
+          </p>
+        </div>
+      )}
+
+      {ma.fiche && (
+        <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
+          <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <TriangleAlert size={14} color="var(--mod)" /> Profil réglementaire
+          </div>
+          <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 11, lineHeight: 1.6 }}>
+            <div>
+              Statut UE :{" "}
+              <strong style={{ color: "var(--fg)" }}>
+                {ma.fiche.statutUE.replace(/_/g, " ")}
+              </strong>
+            </div>
+            {ma.fiche.drapeaux.length > 0 && (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
+                {ma.fiche.drapeaux.map((drap) => (
+                  <span key={drap} className="pill" style={{ fontWeight: 500, fontSize: 11.5 }}>
+                    {drap}
+                  </span>
+                ))}
+              </div>
+            )}
+            {ma.fiche.note && <p style={{ marginTop: 11 }}>{ma.fiche.note}</p>}
+          </div>
+        </div>
+      )}
+
+      {c.fournisseurs
+        .map((f) => ficheFournisseur(f.id))
+        .filter((fiche): fiche is NonNullable<typeof fiche> => Boolean(fiche))
+        .map((fiche) => (
+          <div key={fiche.nom} style={{ marginBottom: 16 }}>
+            <FicheAgrements fiche={fiche} />
+          </div>
+        ))}
 
       {pastilles.some((p) => p.n > 0) && (
         <div style={{ marginBottom: 18 }}>

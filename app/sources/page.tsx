@@ -13,6 +13,9 @@ import { fmtDate } from "@/lib/logic";
 import { LIBELLE_ETAT, REGISTRES, STATS_OCDE, type EtatRegistre } from "@/lib/ocde";
 import { STATS_COREE } from "@/lib/coree";
 import { STATS_ONSSA_TEXTES } from "@/lib/onssa-reglementation";
+import { Aide, Figure } from "@/components/Aide";
+import { SchemaChaine, SchemaDossier, SchemaSourcing } from "@/components/Schemas";
+import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 
 export const dynamic = "force-dynamic";
 
@@ -386,6 +389,62 @@ export default function SourcesPage() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="section">
+        <Figure titre="La boucle de décision" legende="ce que le ruban de navigation matérialise">
+          <SchemaChaine />
+        </Figure>
+      </div>
+
+      <div className="section" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+        <Figure titre="Structure du dossier ONSSA" legende={`Annexe 3-B · ${STATS_CHECKLIST.nbItems} lignes`}>
+          <SchemaDossier />
+        </Figure>
+        <Figure titre="Conditions d'une cible de prospection" legende="la troisième est décisive">
+          <SchemaSourcing />
+        </Figure>
+      </div>
+
+      <div className="section" style={{ display: "grid", gap: 8, maxWidth: "92ch" }}>
+        <Aide titre="Pourquoi l'ANSES et pas l'Union européenne">
+          <p>
+            L&apos;ONSSA s&apos;aligne sur l&apos;ANSES : le retrait d&apos;une matière active en
+            France annonce son retrait au Maroc. Le statut UE est <strong>en amont et plus lent</strong> —
+            il décrit l&apos;approbation de la substance, pas la disponibilité réelle des produits.
+          </p>
+          <p>
+            Une substance peut rester approuvée en UE alors qu&apos;aucun produit français n&apos;est
+            plus autorisé : c&apos;est un retrait commercial. Il pèse moins qu&apos;un retrait
+            réglementaire, l&apos;ONSSA ne le suivant pas mécaniquement.
+          </p>
+        </Aide>
+
+        <Aide titre="Ce que l'usine à dossiers produit — et ce qu'elle ne produit pas">
+          <p>
+            Elle produit la structure des {STATS_CHECKLIST.nbItems} lignes du formulaire, le détenteur
+            de chaque donnée, l&apos;exigence BPL, la part allégeable par référence, et les usages
+            revendicables avec leur précédent.
+          </p>
+          <p>
+            Elle ne produit <strong>pas</strong> les études : toxicologie, écotoxicologie, résidus et
+            méthodes d&apos;analyse appartiennent au fournisseur ou relèvent d&apos;un laboratoire
+            accrédité. Le dossier est prêt à être <em>constitué</em>, pas à être déposé.
+          </p>
+        </Aide>
+
+        <Aide titre="Mise à jour des sources">
+          <p>
+            L&apos;Anses republie E-Phy chaque nuit de mardi à mercredi, l&apos;APVMA chaque semaine.
+            Le workflow <span className="mono">maj-ephy</span> les récupère le jeudi et ne commite que
+            si un statut a changé — l&apos;historique git devient le journal de veille.
+          </p>
+          <p>
+            À la main : <span className="mono">npm run import:ephy</span>,{" "}
+            <span className="mono">npm run import:apvma</span>,{" "}
+            <span className="mono">npm run import</span> pour l&apos;index ONSSA.
+          </p>
+        </Aide>
       </div>
 
       <CarteRegistres />
