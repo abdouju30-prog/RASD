@@ -5,33 +5,16 @@
   "licence": "Licence Ouverte / Open Licence",
   "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-15",
   "majDonnees": "2026-09-15",
-  "genere": "2026-09-16T10:44:14",
+  "genere": "2026-09-17T10:51:20",
   "nbSubstances": 1337,
   "nbProduitsPPP": 13566,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
   "premiereImport": false,
-  "nbChangements": 2,
-  "dateComparaison": "2026-09-08",
-  "changements": [
-   {
-    "id": "calcium-carbonate",
-    "nom": "Calcium carbonate",
-    "type": "statut",
-    "avant": "indéterminée",
-    "apres": "autorisée",
-    "dernierRetrait": null
-   },
-   {
-    "id": "fish-oil",
-    "nom": "Fish oil",
-    "type": "statut",
-    "avant": "indéterminée",
-    "apres": "autorisée",
-    "dernierRetrait": null
-   }
-  ]
+  "nbChangements": 0,
+  "dateComparaison": "2026-09-15",
+  "changements": []
  },
  "substances": [
   {
