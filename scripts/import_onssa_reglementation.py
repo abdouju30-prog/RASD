@@ -151,6 +151,9 @@ ACRONYMES = ("PPP", "PPPs", "ONSSA", "BPE", "CNPPP", "AMM", "MFSC", "PDF")
 
 def presenter(titre: str) -> str:
     t = re.sub(r"\s+", " ", titre or "").strip()
+    # JSON-LD collé au texte quand on lit une page WordPress (breadcrumb, @id…).
+    t = re.split(r'\\?"\s*,\s*\\?"(?:breadcrumb|@context|@type|@id)\b', t, maxsplit=1)[0]
+    t = t.rstrip(" \\\",")
     alpha = [c for c in t if c.isalpha()]
     if alpha and sum(c.isupper() for c in alpha) / len(alpha) >= 0.65:
         t = t.lower()
