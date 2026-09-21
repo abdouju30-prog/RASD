@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Database, PenLine, FileCheck2, Factory, Globe, ShieldAlert, RefreshCw, Scale } from "lucide-react";
 import { META, MATIERES, FOURNISSEURS, PRODUITS, DETENTEURS } from "@/lib/data";
+import { META_ESERVICE } from "@/lib/onssa-eservice";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
 import { STATS_APVMA, fraicheurApvma } from "@/lib/apvma";
@@ -270,7 +271,7 @@ export default function SourcesPage() {
             role="Le socle — tout le reste s'y rattache"
             contenu={`${META.nbLignesIndex.toLocaleString("fr")} lignes, ${META.nbProduitsIndex} produits, ${META.nbDetenteurs} détenteurs, ${MATIERES.length} matières actives, ${FOURNISSEURS.length} fournisseurs. ${DETENTEURS.length} détenteurs couverts, ${PRODUITS.length} produits avec AMM, dates, usages, doses et DAR.`}
             origine={META.source}
-            maj={`importé le ${fmtDate(META.genere.slice(0, 10))}`}
+            maj={`Excel importé le ${fmtDate(META.genere.slice(0, 10))} · e-service relevé le ${fmtDate(META_ESERVICE.genere.slice(0, 10))}`}
             fiabilite="source"
           />
 

@@ -7,6 +7,7 @@ import { FraicheurEphy } from "@/components/FraicheurEphy";
 import { SelecteurDetenteur } from "@/components/SelecteurDetenteur";
 import { choisirDetenteur } from "./actions";
 import { DETENTEURS, META, matieresDuPortefeuille, produitsDe } from "@/lib/data";
+import { META_ESERVICE } from "@/lib/onssa-eservice";
 import { detenteurActuel } from "@/lib/detenteur";
 import { statsAlertes } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
@@ -76,7 +77,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body>
         <ChaineNav
-          contexte={`index ONSSA ${fmtDate(META.genere.slice(0, 10))}`}
+          contexte={`index ONSSA ${fmtDate(META.genere.slice(0, 10))} · e-service ${fmtDate(META_ESERVICE.genere.slice(0, 10))}`}
           stations={stations}
           jauges={jauges}
           selecteur={

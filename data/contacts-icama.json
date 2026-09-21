@@ -87,6 +87,58 @@
         "vus": []
       },
       "reserve": "L'activité publique du groupe est les photoinitiateurs et intermédiaires soufrés, pas la protection des cultures. Pas d'aclonifène au catalogue. Le contact est le bureau ventes intermédiaires de Hangzhou — licence ICAMA, pas une offre."
+    },
+    {
+      "nom": "南京艾格化学有限公司",
+      "aliases": [
+        "NANJING AGROCHEMICAL CO.; LTD",
+        "Nanjing Agrochemical Co., Ltd.",
+        "Nanjing Agrochemical",
+        "Nanjing Agrochemical Co Ltd"
+      ],
+      "parent": "Nanjing Agrochemical Co., Ltd. (NAC)",
+      "emails": [
+        "wuyang@nanjingagrochem.com",
+        "huliucheng@nanjingagrochem.com"
+      ],
+      "telephones": [
+        "+86 25 8652 0571",
+        "+86 139 5190 6685"
+      ],
+      "site": "http://www.nanjingagrochem.com/",
+      "adresse": "11 Zitanyaju, 126 Mengdu Street, Nanjing 210019, China",
+      "source": "Page Contact officielle nanjingagrochem.com/contact/roadmap.asp (wuyang@, tél. +86 25 86520571). Desk export nacfim.com/contact-us.html (huliucheng@, mobile James Hu) — GET 200 le 2026-09-21.",
+      "date": "2026-09-21",
+      "http": {
+        "url": "http://www.nanjingagrochem.com/contact/roadmap.asp",
+        "status": 200,
+        "date": "2026-09-21"
+      },
+      "validite": "Fournisseur ONSSA de Cléthodime 240 g/l. Site officiel et page Contact HTTP 200. Ce n'est pas une licence ICAMA relevée ici.",
+      "catalogue": {
+        "molecule": "clethodim",
+        "statut": "absent",
+        "url": "http://www.nanjingagrochem.com/product/product.asp?typeid=103",
+        "http": 200,
+        "date": "2026-09-21",
+        "pages": [
+          "http://www.nanjingagrochem.com/product/product2.asp",
+          "http://www.nanjingagrochem.com/product/product.asp?typeid=103"
+        ],
+        "vus": [
+          "2,4-D 98%TC",
+          "Acetochlor 95%",
+          "Bispyribac-sodium 95%TC",
+          "Bromoxynil 97%TC",
+          "Clodinafop-propargyl 97%TC",
+          "Cyhalofop-butyl 95%TC",
+          "Diuron 98%",
+          "Glyphosate 95%TC",
+          "Glufosinate 95%TC",
+          "MCPA 96%TC"
+        ]
+      },
+      "reserve": "Catalogue public herbicides (product.asp?typeid=103, 2026-09-21) : zéro occurrence de clethodim / cléthodime. Ne pas RFQ le desk comme s'il publiait du cléthodime technique. L'index ONSSA le nomme fournisseur marocain — le site, lui, ne l'affiche pas."
     }
   ]
 }
