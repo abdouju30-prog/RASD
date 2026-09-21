@@ -10,8 +10,7 @@ import type { Detenteur } from "./types";
 // partageable telle quelle.
 //
 // Le cookie ne porte qu'un identifiant public déjà présent dans l'index ONSSA.
-// Il ne donne accès à rien : l'accès à l'application est gouverné par le
-// middleware, pas par ce choix.
+// Il ne donne accès à rien : il mémorise seulement le détenteur affiché.
 // ────────────────────────────────────────────────────────────────────────────
 
 export const COOKIE_DETENTEUR = "homologa_detenteur";

@@ -11,7 +11,7 @@ import { COOKIE_DETENTEUR } from "@/lib/detenteur";
 // le même cookie que le sélecteur, puis renvoie sur le portefeuille.
 //
 // Comme le sélecteur, il ne porte qu'un identifiant public déjà présent dans
-// l'index. L'accès à l'application reste gouverné par le middleware.
+// l'index.
 
 export async function GET(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
   const { id } = await ctx.params;

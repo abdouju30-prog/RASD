@@ -9,8 +9,7 @@ import { COOKIE_DETENTEUR } from "@/lib/detenteur";
  * Mémorise le détenteur choisi.
  *
  * Le cookie ne porte qu'un identifiant public déjà présent dans l'index ONSSA :
- * il ne donne accès à rien. L'accès à l'application reste gouverné par le
- * middleware.
+ * il ne donne accès à rien, il mémorise seulement le détenteur affiché.
  */
 export async function choisirDetenteur(formData: FormData) {
   const id = String(formData.get("detenteur") ?? "");
