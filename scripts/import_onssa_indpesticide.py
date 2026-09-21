@@ -30,6 +30,7 @@ from collections import Counter, defaultdict
 from datetime import date, datetime
 from multiprocessing import Process, Queue
 from pathlib import Path
+from queue import Empty
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -308,37 +309,50 @@ def fiche_depuis_liste(workdir: Path, tag: str, fields: dict, idx: int) -> dict 
 def worker(tag: str, taches: list[tuple[int, str]], q: Queue, workdir: str):
     wd = Path(workdir)
     try:
-        _, fields, _, _ = session_liste(wd, tag)
-    except Exception as e:
-        q.put({"fatal": str(e), "tag": tag})
+        fields = None
+        last = None
+        for essai in range(6):
+            try:
+                _, fields, _, _ = session_liste(wd, tag)
+                break
+            except Exception as e:
+                last = e
+                time.sleep(2 * (essai + 1))
+        if fields is None:
+            q.put({"fatal": f"session {tag}: {last}", "tag": tag})
+            return
+    except BaseException as e:
+        q.put({"fatal": f"{type(e).__name__}: {e}", "tag": tag})
         return
     consecutifs = 0
-    for idx, nom in taches:
-        fiche = None
-        err = None
-        for essai in range(4):
-            try:
-                fiche = fiche_depuis_liste(wd, tag, fields, idx)
-                if fiche:
-                    break
-                err = "pas de tblPesticide"
-            except Exception as e:
-                err = str(e)
-                fiche = None
-            consecutifs += 1
-            if consecutifs >= 3:
+    try:
+        for idx, nom in taches:
+            fiche = None
+            err = None
+            for essai in range(4):
                 try:
-                    _, fields, _, _ = session_liste(wd, tag)
-                    consecutifs = 0
-                except Exception as e2:
-                    err = f"reprise session: {e2}"
-            time.sleep(1.2 * (essai + 1))
-        if fiche:
-            consecutifs = 0
-            q.put({"idx": idx, "nom": nom, "fiche": fiche})
-        else:
-            q.put({"idx": idx, "nom": nom, "fiche": None, "err": err})
-    q.put({"done": tag})
+                    fiche = fiche_depuis_liste(wd, tag, fields, idx)
+                    if fiche:
+                        break
+                    err = "pas de tblPesticide"
+                except Exception as e:
+                    err = str(e)
+                    fiche = None
+                consecutifs += 1
+                if consecutifs >= 3:
+                    try:
+                        _, fields, _, _ = session_liste(wd, tag)
+                        consecutifs = 0
+                    except Exception as e2:
+                        err = f"reprise session: {e2}"
+                time.sleep(1.2 * (essai + 1))
+            if fiche:
+                consecutifs = 0
+                q.put({"idx": idx, "nom": nom, "fiche": fiche})
+            else:
+                q.put({"idx": idx, "nom": nom, "fiche": None, "err": err})
+    finally:
+        q.put({"done": tag})
 
 
 def charger_cache(path: Path) -> dict[int, dict]:
@@ -603,7 +617,15 @@ def scraper(workers: int, limite: int | None, depuis_cache: bool) -> tuple[list[
     CACHE.parent.mkdir(parents=True, exist_ok=True)
     with CACHE.open("a", encoding="utf-8") as fh:
         while finis < len(procs):
-            msg = q.get()
+            try:
+                msg = q.get(timeout=90)
+            except Empty:
+                morts = [p for p in procs if not p.is_alive()]
+                if len(morts) == len(procs):
+                    print("  tous les workers sont morts — on arrête l'attente")
+                    break
+                print(f"  attente… {recus}/{cibles} · workers vivants {len(procs) - len(morts)}/{len(procs)}")
+                continue
             if msg.get("fatal"):
                 print("  FATAL", msg)
                 finis += 1
