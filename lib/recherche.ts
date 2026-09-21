@@ -21,6 +21,7 @@ import {
   retireePourMatiere,
 } from "./onssa-listes";
 import {
+  filtrerEmplois,
   hrefUsages,
   inventaireCibles,
   inventaireCultures,
@@ -811,7 +812,8 @@ function extrasEmploi(f: FiltreUsage, limite: number): (Indexee & { qualite: 0 |
   const molecule = moleculeFiltre(f);
   const combo = Boolean((f.culture && f.cible) || molecule);
   const couvrant = matieresCouvrant(f);
-  const detail = `${couvrant.length} matière(s) homologuée(s) · dose et DAR`;
+  const stats = filtrerEmplois(f);
+  const detail = `${stats.emplois.length} usage(s) · ${stats.nbMatieres} matière(s) · dose et DAR`;
 
   if (combo) {
     const bits: string[] = [];

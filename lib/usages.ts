@@ -502,8 +502,18 @@ export function matieresCouvrant(f: FiltreUsage): MatiereActive[] {
   for (const m of MATIERES) {
     const propres = molecules(m.nom, m.molecule);
     if (mols && !propres.some((x) => mols.has(x))) continue;
-    if (f.culture && !m.cultures.some((c) => compatible(c, f.culture!))) continue;
-    if (f.cible && !m.cibles.some((c) => compatible(c, f.cible!))) continue;
+    if (f.culture && f.cible) {
+      const ok = m.usages.some((u) => {
+        const i = u.indexOf(" / ");
+        const cu = i < 0 ? u : u.slice(0, i);
+        const ci = i < 0 ? "" : u.slice(i + 3);
+        return compatible(cu, f.culture!) && compatible(ci, f.cible!);
+      });
+      if (!ok) continue;
+    } else {
+      if (f.culture && !m.cultures.some((c) => compatible(c, f.culture!))) continue;
+      if (f.cible && !m.cibles.some((c) => compatible(c, f.cible!))) continue;
+    }
     const k = propres.map((x) => normaliser(x)).sort().join("|") || m.id;
     const prev = par.get(k);
     par.set(k, prev ? prefererPure(prev, m) : m);
