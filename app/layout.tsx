@@ -37,7 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       nom: "Portefeuille",
       compteur: `${st.critiques} critiques`,
       alerte: st.critiques,
-      aliases: ["/veille", "/matieres", "/produits"],
+      aliases: ["/veille", "/matieres", "/produits", "/usages"],
     },
     {
       href: "/sourcing",

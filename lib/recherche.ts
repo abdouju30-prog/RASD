@@ -20,6 +20,14 @@ import {
   restreintePourMatiere,
   retireePourMatiere,
 } from "./onssa-listes";
+import {
+  hrefUsages,
+  inventaireCibles,
+  inventaireCultures,
+  matieresCouvrant,
+  resoudreEmploi,
+  type FiltreUsage,
+} from "./usages";
 
 // ────────────────────────────────────────────────────────────────────────────
 // RECHERCHE TRANSVERSE
@@ -41,6 +49,9 @@ import {
 
 export type TypeEntree =
   | "matiere"
+  | "culture"
+  | "cible"
+  | "usage"
   | "produit"
   | "constituant"
   | "fournisseur"
@@ -73,6 +84,9 @@ export interface Entree {
 
 export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   matiere: "Matière active",
+  culture: "Culture",
+  cible: "Maladie / ravageur",
+  usage: "Usage homologué",
   produit: "Produit",
   constituant: "PUBCRIS hors index",
   fournisseur: "Fournisseur ONSSA",
@@ -98,6 +112,9 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
  * produit, rarement une usine.
  */
 const RANG: Record<TypeEntree, number> = {
+  usage: 0,
+  culture: 0,
+  cible: 0,
   matiere: 0,
   produit: 1,
   retiree: 2,
@@ -284,6 +301,30 @@ function construire(): Indexee[] {
       href: hrefRestrictions,
       poids: 9_000,
       alias: aliasDe(r.nom, iso?.nom),
+    });
+  }
+
+  for (const c of inventaireCultures()) {
+    out.push({
+      id: `cu-${c.n.replace(/ /g, "-").slice(0, 80)}`,
+      libelle: c.libelle,
+      detail: `${c.nbEmplois} usage(s) homologué(s) · ${c.nbMatieres} matière(s)`,
+      type: "culture",
+      href: hrefUsages({ culture: c.libelle }),
+      poids: c.nbEmplois,
+      alias: aliasDe(c.libelle),
+    });
+  }
+
+  for (const c of inventaireCibles()) {
+    out.push({
+      id: `ci-${c.n.replace(/ /g, "-").slice(0, 80)}`,
+      libelle: c.libelle,
+      detail: `${c.nbEmplois} usage(s) homologué(s) · ${c.nbMatieres} matière(s)`,
+      type: "cible",
+      href: hrefUsages({ cible: c.libelle }),
+      poids: c.nbEmplois,
+      alias: aliasDe(c.libelle),
     });
   }
 
@@ -561,6 +602,8 @@ const DICTIONNAIRE: { n: string; affiche: string; prio: number }[] = [];
     if (normaliser(c.nom).split(" ").length > 3) continue;
     push(c.nom, c.nom, 0);
   }
+  for (const c of inventaireCultures()) push(c.libelle, c.libelle, 2);
+  for (const c of inventaireCibles()) push(c.libelle, c.libelle, 2);
   const SOCIETE = new Set<TypeEntree>([
     "fournisseur",
     "detenteur",
@@ -750,25 +793,140 @@ function matcher(n: string): (Indexee & { qualite: 0 | 1 | 2 | 3 })[] {
   return trouves;
 }
 
+function moleculeFiltre(f: FiltreUsage): string | null {
+  if (!f.matiere) return null;
+  return molecules(f.matiere.nom, f.matiere.molecule)[0] || f.matiere.molecule || f.matiere.nom;
+}
+
+function indexeeManuelle(e: Entree, qualite: 0 | 1 | 2 | 3): Indexee & { qualite: 0 | 1 | 2 | 3 } {
+  const cle = normaliser(e.libelle);
+  return { ...e, cle, alias: [], mots: cle.split(" ").filter(Boolean), qualite };
+}
+
+/** Culture × maladie (et matière, si tapée) : une ligne d'usage + les matières qui couvrent. */
+function extrasEmploi(f: FiltreUsage, limite: number): (Indexee & { qualite: 0 | 1 | 2 | 3 })[] {
+  if (!f.culture && !f.cible) return [];
+
+  const extra: (Indexee & { qualite: 0 | 1 | 2 | 3 })[] = [];
+  const molecule = moleculeFiltre(f);
+  const combo = Boolean((f.culture && f.cible) || molecule);
+  const couvrant = matieresCouvrant(f);
+  const detail = `${couvrant.length} matière(s) homologuée(s) · dose et DAR`;
+
+  if (combo) {
+    const bits: string[] = [];
+    if (molecule) bits.push(molecule);
+    if (f.culture && f.cible) bits.push(`${f.culture} × ${f.cible}`);
+    else if (f.culture) bits.push(f.culture);
+    else if (f.cible) bits.push(f.cible);
+    extra.push(
+      indexeeManuelle(
+        {
+          id: `us-${normaliser(bits.join(" ")).replace(/ /g, "-").slice(0, 80)}`,
+          libelle: bits.join(" — "),
+          detail,
+          type: "usage",
+          href: hrefUsages({ culture: f.culture, cible: f.cible, molecule }),
+          poids: 90_000 + couvrant.length,
+        },
+        0
+      )
+    );
+  }
+
+  if (f.culture) {
+    extra.push(
+      indexeeManuelle(
+        {
+          id: `cu-${normaliser(f.culture).replace(/ /g, "-").slice(0, 80)}`,
+          libelle: f.culture,
+          detail,
+          type: "culture",
+          href: hrefUsages({ culture: f.culture, molecule }),
+          poids: combo ? 40_000 : 90_000,
+        },
+        0
+      )
+    );
+  }
+
+  if (f.cible) {
+    extra.push(
+      indexeeManuelle(
+        {
+          id: `ci-${normaliser(f.cible).replace(/ /g, "-").slice(0, 80)}`,
+          libelle: f.cible,
+          detail,
+          type: "cible",
+          href: hrefUsages({ cible: f.cible, molecule }),
+          poids: combo ? 39_000 : 90_000,
+        },
+        0
+      )
+    );
+  }
+
+  if (!f.matiere) {
+    const plafond = Math.max(3, limite - extra.length - 1);
+    for (const m of couvrant.slice(0, plafond)) {
+      extra.push(
+        indexeeManuelle(
+          {
+            id: `ma-${m.id}`,
+            libelle: m.nom,
+            detail: ["Homologuée", f.culture, f.cible ? `contre ${f.cible}` : "", `${m.nbHomologations} AMM`]
+              .filter(Boolean)
+              .join(" · "),
+            type: "matiere",
+            href: `/matieres/${m.id}`,
+            poids: m.nbHomologations,
+          },
+          1
+        )
+      );
+    }
+  }
+
+  return extra;
+}
+
 /**
  * Seize suggestions au plus, classées par qualité puis par type (matière
  * avant produit). Une lettre d'écart, un mot de raison sociale ou un pays
  * suffisent : on facilite, on ne vise pas l'identité.
+ *
+ * Matière, culture et maladie se croisent : « tomate puceron » n'est le
+ * libellé d'aucune entrée, on injecte l'usage homologué correspondant.
  */
 export function interpreter(q: string, limite = 16): Interpretation {
   const n = normaliser(q);
   if (n.length < 2) return { resultats: [], correction: null };
 
-  const directs = matcher(n);
-  const ancre = directs.some((d) => d.qualite <= 1);
-  if (ancre) return { resultats: classer(directs, limite), correction: null };
+  const emploi = resoudreEmploi(q);
+  const extras = extrasEmploi(emploi, limite);
+
+  let directs = matcher(n);
+  if (emploi.matiere && (emploi.culture || emploi.cible)) {
+    const molN = normaliser(moleculeFiltre(emploi) ?? "");
+    if (molN.length >= 2) directs = [...directs, ...matcher(molN)];
+  }
+  if (emploi.culture && (emploi.cible || emploi.matiere)) {
+    directs = [...directs, ...matcher(normaliser(emploi.culture)).filter((e) => e.type === "culture")];
+  }
+  if (emploi.cible && (emploi.culture || emploi.matiere)) {
+    directs = [...directs, ...matcher(normaliser(emploi.cible)).filter((e) => e.type === "cible")];
+  }
+
+  const fusion = [...extras, ...directs];
+  const ancre = fusion.some((d) => d.qualite <= 1);
+  if (ancre) return { resultats: classer(fusion, limite), correction: null };
 
   const correction = corriger(n);
   if (correction) {
     const via = matcher(normaliser(correction));
-    if (via.length) return { resultats: classer(via, limite), correction };
+    if (via.length) return { resultats: classer([...extras, ...via], limite), correction };
   }
-  return { resultats: classer(directs, limite), correction: null };
+  return { resultats: classer(fusion, limite), correction: null };
 }
 
 export function chercher(q: string, limite = 16): Resultat[] {

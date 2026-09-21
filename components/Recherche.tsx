@@ -147,8 +147,8 @@ export function Recherche() {
         }}
         onFocus={() => setOuvert(true)}
         onKeyDown={clavier}
-        placeholder="Matière, produit, société"
-        aria-label="Rechercher une matière active, un produit, une société"
+        placeholder="Matière, culture, maladie…"
+        aria-label="Rechercher une matière active, une culture, une maladie"
         aria-expanded={listeVisible}
         aria-controls="rech-liste"
         aria-autocomplete="list"
