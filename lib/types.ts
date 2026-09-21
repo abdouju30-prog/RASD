@@ -1,8 +1,8 @@
 // ────────────────────────────────────────────────────────────────────────────
 // Deux origines de données, à ne jamais confondre :
 //
-//  • IMPORTÉ  — index ONSSA + portefeuille détenteur, extraits de l'Excel
-//               client par scripts/import_onssa.py. Fiable, daté, reproductible.
+//  • IMPORTÉ  — index ONSSA + portefeuille détenteur, extraits de
+//               IndPesticide.aspx par scripts/import_onssa_indpesticide.py.
 //  • EXPERTISE — statuts réglementaires UE / voisins, drapeaux de danger.
 //               Saisis à la main dans lib/reglementaire.ts, à valider contre la
 //               EU Pesticides Database avant tout usage opérationnel.
@@ -112,11 +112,14 @@ export interface IndexONSSA {
   meta: {
     source: string;
     genere: string;
+    majIndex?: string | null;
+    url?: string;
     detenteurDefaut: string;
     nbDetenteursCouverts: number;
     nbLignesIndex: number;
     nbProduitsIndex: number;
     nbDetenteurs: number;
+    nbFiches?: number;
     avertissement: string;
   };
   fournisseurs: Fournisseur[];

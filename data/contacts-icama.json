@@ -1,0 +1,144 @@
+{
+  "_lisezmoi": [
+    "Contacts d'usines ICAMA relevés sur des pages officielles, puis retestés",
+    "par GET HTTP : l'e-mail et le téléphone doivent figurer dans le HTML.",
+    "Une licence ICAMA n'est pas une offre commerciale. Le champ catalogue",
+    "dit si la molécule figure sur le site public (GET des pages produits).",
+    "Rien n'est inventé. Une société sans fiche ici n'a pas de contact public",
+    "vérifié — ce n'est pas un oubli de saisie."
+  ],
+  "meta": {
+    "dateTest": "2026-09-13",
+    "methode": "GET HTTP des pages Contact et des catalogues produits ; présence de l'e-mail, du téléphone, et de la molécule (ou son absence) dans le HTML."
+  },
+  "societes": [
+    {
+      "nom": "宁夏一帆生物科技有限公司",
+      "aliases": [
+        "Ningxia Yifan Shengwukeji Youxiangongsi",
+        "Yifan — biotechnologies, SARL",
+        "Yifan Biotechnology",
+        "Yifan Bio-tech"
+      ],
+      "parent": "Yifan Biotechnology Group Co., Ltd.",
+      "emails": ["yifan@chinayifan.com", "wendy@yifan-biotech.com"],
+      "telephones": ["+86 158 6808 8686", "+86 577 8663 7855"],
+      "site": "http://www.chinayifan.com/product_en.html",
+      "adresse": "#555 Changan Road, Yaoxi Street, Longwan, Wenzhou, Zhejiang (siège groupe). Usine ICAMA : Ningdong, Guangfu Rd 006, Ningxia.",
+      "source": "Page Contact Us anglaise du groupe Yifan — Wendy Wu, yifan@chinayifan.com. Catalogue EN Technical products : chinayifan.com/product_en.html.",
+      "date": "2026-09-13",
+      "http": {
+        "url": "http://www.chinayifan.com/contact_en.html",
+        "status": 200,
+        "date": "2026-09-13"
+      },
+      "validite": "Licence ICAMA TC aclonifen 98 % à la filiale Ningxia, jusqu'au 2029-9-28. Le groupe est un vrai fabricant phyto — mais pas d'aclonifène à son catalogue public.",
+      "catalogue": {
+        "molecule": "aclonifen",
+        "statut": "absent",
+        "url": "http://www.chinayifan.com/product_en.html",
+        "http": 200,
+        "date": "2026-09-13",
+        "pages": [
+          "http://www.chinayifan.com/product_en.html",
+          "http://www.chinayifan.com/product1_en.html",
+          "http://www.chinayifan.com/products_en_3.html",
+          "http://www.chinayifan.com/products_en_6.html",
+          "http://www.chinayifan.com/product.html",
+          "http://www.chinayifan.com/products_6.html"
+        ],
+        "vus": [
+          "Clethodim 94% TC",
+          "Clodinafop-Propargyl 96% TC",
+          "Diclofop-Methyl 97% TC",
+          "Oxyfluorfen 95% TC"
+        ]
+      },
+      "reserve": "Catalogue public du groupe (chinayifan.com, Technical + formulations EN et CN, 2026-09-13) : zéro occurrence d'aclonifen / aclonifène / 苯草醚. TC herbicides en ligne : clethodim, clodinafop-propargyl, diclofop-méthyl, oxyfluorfen. La licence ICAMA Ningxia n'est pas une offre. Ne pas RFQ le desk groupe comme s'il vendait de l'aclonifène."
+    },
+    {
+      "nom": "内蒙古扬帆新材料有限公司",
+      "aliases": [
+        "Neimenggu Yangfan Xin Cailiao Youxiangongsi",
+        "Yangfan Xin Cailiao — SARL",
+        "Yangfan New Materials",
+        "Inner Mongolia Yangfan"
+      ],
+      "parent": "扬帆新材料（浙江）股份有限公司 / SZSE 300637",
+      "emails": ["shoufu@shoufuchem.com"],
+      "telephones": ["+86 571 8890 2507"],
+      "site": "https://www.zjyfxc.com/introduce1/64.html",
+      "adresse": "Hangzhou : 31 Xincheng Rd, Yangfan Building 5F. Usine ICAMA : Bayin Obo Industrial Park, Alxa, Mongolie-Intérieure 750336.",
+      "source": "Page Contact Us officielle Yangfan New Materials (Zhejiang) — usine Inner Mongolia listée, e-mail shoufu@shoufuchem.com, vente intermédiaires +86-571-88902507. HTTP 200 le 2026-09-13.",
+      "date": "2026-09-13",
+      "http": {
+        "url": "https://www.zjyfxc.com/introduce1/64.html",
+        "status": 200,
+        "date": "2026-09-13"
+      },
+      "validite": "Société mère cotée SZSE 300637. Usine Inner Mongolia sur la page Contact officielle. Homologation ICAMA TC aclonifen 98 %.",
+      "catalogue": {
+        "molecule": "aclonifen",
+        "statut": "absent",
+        "url": "https://www.zjyfxc.com/",
+        "http": 200,
+        "date": "2026-09-13",
+        "pages": ["https://www.zjyfxc.com/introduce1/64.html"],
+        "vus": []
+      },
+      "reserve": "L'activité publique du groupe est les photoinitiateurs et intermédiaires soufrés, pas la protection des cultures. Pas d'aclonifène au catalogue. Le contact est le bureau ventes intermédiaires de Hangzhou — licence ICAMA, pas une offre."
+    },
+    {
+      "nom": "南京艾格化学有限公司",
+      "aliases": [
+        "NANJING AGROCHEMICAL CO.; LTD",
+        "Nanjing Agrochemical Co., Ltd.",
+        "Nanjing Agrochemical",
+        "Nanjing Agrochemical Co Ltd"
+      ],
+      "parent": "Nanjing Agrochemical Co., Ltd. (NAC)",
+      "emails": [
+        "wuyang@nanjingagrochem.com",
+        "huliucheng@nanjingagrochem.com"
+      ],
+      "telephones": [
+        "+86 25 8652 0571",
+        "+86 139 5190 6685"
+      ],
+      "site": "http://www.nanjingagrochem.com/",
+      "adresse": "11 Zitanyaju, 126 Mengdu Street, Nanjing 210019, China",
+      "source": "Page Contact officielle nanjingagrochem.com/contact/roadmap.asp (wuyang@, tél. +86 25 86520571). Desk export nacfim.com/contact-us.html (huliucheng@, mobile James Hu) — GET 200 le 2026-09-21.",
+      "date": "2026-09-21",
+      "http": {
+        "url": "http://www.nanjingagrochem.com/contact/roadmap.asp",
+        "status": 200,
+        "date": "2026-09-21"
+      },
+      "validite": "Fournisseur ONSSA de Cléthodime 240 g/l. Site officiel et page Contact HTTP 200. Ce n'est pas une licence ICAMA relevée ici.",
+      "catalogue": {
+        "molecule": "clethodim",
+        "statut": "absent",
+        "url": "http://www.nanjingagrochem.com/product/product.asp?typeid=103",
+        "http": 200,
+        "date": "2026-09-21",
+        "pages": [
+          "http://www.nanjingagrochem.com/product/product2.asp",
+          "http://www.nanjingagrochem.com/product/product.asp?typeid=103"
+        ],
+        "vus": [
+          "2,4-D 98%TC",
+          "Acetochlor 95%",
+          "Bispyribac-sodium 95%TC",
+          "Bromoxynil 97%TC",
+          "Clodinafop-propargyl 97%TC",
+          "Cyhalofop-butyl 95%TC",
+          "Diuron 98%",
+          "Glyphosate 95%TC",
+          "Glufosinate 95%TC",
+          "MCPA 96%TC"
+        ]
+      },
+      "reserve": "Catalogue public herbicides (product.asp?typeid=103, 2026-09-21) : zéro occurrence de clethodim / cléthodime. Ne pas RFQ le desk comme s'il publiait du cléthodime technique. L'index ONSSA le nomme fournisseur marocain — le site, lui, ne l'affiche pas."
+    }
+  ]
+}

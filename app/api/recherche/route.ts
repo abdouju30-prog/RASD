@@ -1,12 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { chercher } from "@/lib/recherche";
+import { interpreter } from "@/lib/recherche";
 
-// L'index de recherche reste sur le serveur : plus de dix mille entrées, que
-// l'on n'a aucune raison d'expédier au navigateur à chaque page. Le client
-// envoie la saisie, le serveur renvoie douze suggestions.
-//
-// La route passe par le middleware d'authentification comme le reste de
-// l'application : elle n'ouvre aucun accès qui ne le serait déjà.
+// L'index reste sur le serveur. Le client envoie la saisie ; la route
+// renvoie les suggestions et, le cas échéant, une correction de frappe.
+// Authentifiée comme le reste de l'application.
 
 export const dynamic = "force-dynamic";
 
@@ -15,11 +12,11 @@ export function GET(req: NextRequest) {
 
   // Une saisie démesurée ne peut venir d'une frappe au clavier.
   if (q.length > 80) {
-    return NextResponse.json({ resultats: [] });
+    return NextResponse.json({ resultats: [], correction: null });
   }
 
   return NextResponse.json(
-    { resultats: chercher(q) },
+    { ...interpreter(q) },
     { headers: { "Cache-Control": "no-store" } }
   );
 }

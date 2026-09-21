@@ -1,0 +1,100 @@
+name: Veille Hebdomadaire ONSSA & Rapport PDF
+
+# Lundi 07:00 Casablanca. GitHub n'exécute le cron QUE sur master.
+#
+# Ce job met à jour les catalogues que l'application lit :
+#   E-Phy (Anses), textes ONSSA, listes retraits/restrictions, e-service,
+#   plus le journal nouveautés.json et le PDF envoyé par mail.
+# L'index phytosanitaire est relu depuis IndPesticide.aspx (fiches produit).
+
+on:
+  schedule:
+    # Chaque lundi à 06:00 UTC (07:00 heure de Rabat)
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: maj-hebdo-onssa
+  cancel-in-progress: false
+
+jobs:
+  rapport-hebdo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installation des dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install reportlab pypdf certifi
+
+      - name: Catalogue E-Phy — Anses
+        continue-on-error: true
+        run: python scripts/import_ephy.py
+
+      - name: Textes ONSSA — avis, listes, décrets
+        continue-on-error: true
+        run: python scripts/import_onssa_reglementation.py
+
+      - name: Listes ONSSA — retraits et restrictions
+        continue-on-error: true
+        run: python scripts/import_onssa_listes.py
+
+      - name: Registres e-service ONSSA
+        continue-on-error: true
+        run: python scripts/import_onssa_eservice.py
+
+      - name: Index phytosanitaire — IndPesticide.aspx
+        continue-on-error: true
+        timeout-minutes: 240
+        run: python scripts/import_onssa_indpesticide.py --workers 2
+
+      - name: Journal des nouveautés ONSSA
+        run: python scripts/veille_onssa.py
+
+      - name: Génération du rapport hebdomadaire PDF
+        run: python scripts/generer_pdf_hebdo.py
+
+      - name: Envoi du rapport par email à abdouju30@gmail.com
+        continue-on-error: true
+        env:
+          EMAIL_DESTINATAIRE: abdouju30@gmail.com
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: python scripts/envoyer_rapport_hebdo.py
+
+      - name: Archivage du PDF en artefact GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapport-hebdo-onssa
+          path: data/rapport-hebdo-onssa.pdf
+          retention-days: 30
+
+      - name: Commit et push des données actualisées
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/ephy.json \
+            data/onssa-reglementation.json \
+            data/onssa-reglementation-vu.json \
+            data/onssa-listes.json \
+            data/onssa-eservice.json \
+            data/onssa.json \
+            data/nouveautes.json \
+            data/rapport-hebdo-onssa.pdf
+          git commit -m "Veille hebdomadaire — ONSSA, Anses, rapport PDF" || echo "Aucune modification"
+          git push

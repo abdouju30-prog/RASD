@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Database, PenLine, FileCheck2, Factory, Globe, ShieldAlert } from "lucide-react";
-import { Figure, Aide } from "@/components/Aide";
-import { SchemaSources, SchemaChaine, SchemaDossier, SchemaSourcing } from "@/components/Schemas";
+import { Database, PenLine, FileCheck2, Factory, Globe, ShieldAlert, RefreshCw, Scale } from "lucide-react";
 import { META, MATIERES, FOURNISSEURS, PRODUITS, DETENTEURS } from "@/lib/data";
+import { META_ESERVICE } from "@/lib/onssa-eservice";
 import { COUVERTURE } from "@/lib/reglementaire";
 import { STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
 import { STATS_APVMA, fraicheurApvma } from "@/lib/apvma";
@@ -10,12 +9,14 @@ import { STATS_PISTES } from "@/lib/pistes";
 import { STATS_ICAMA } from "@/lib/icama";
 import { STATS_EPA } from "@/lib/epa";
 import { STATS_BKU } from "@/lib/bku";
-import { RefreshCw } from "lucide-react";
-import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
 import { fmtDate } from "@/lib/logic";
 import { LIBELLE_ETAT, REGISTRES, STATS_OCDE, type EtatRegistre } from "@/lib/ocde";
 import { STATS_COREE } from "@/lib/coree";
+import { STATS_ONSSA_TEXTES } from "@/lib/onssa-reglementation";
+import { Aide, Figure } from "@/components/Aide";
+import { SchemaChaine, SchemaDossier, SchemaSourcing } from "@/components/Schemas";
+import { STATS_CHECKLIST } from "@/lib/checklist-onssa";
 
 export const dynamic = "force-dynamic";
 
@@ -191,16 +192,8 @@ export default function SourcesPage() {
       <div className="fil">Compartiments</div>
       <h1>D&apos;où vient chaque chiffre</h1>
       <p className="chapeau">
-        Neuf compartiments de données, trois niveaux de fiabilité. Les réserves de méthode sont ici
-        plutôt que sur les écrans de travail.
+        Les compartiments, trois niveaux de fiabilité.
       </p>
-
-      <Figure
-        titre="Hiérarchie des sources"
-        legende="une seule source gouverne la décision marocaine"
-      >
-        <SchemaSources />
-      </Figure>
 
       <div
         className="card"
@@ -253,15 +246,26 @@ export default function SourcesPage() {
             </>
           )}
           <div style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 7 }}>
-            La mise à jour ne peut pas se déclencher depuis l&apos;application déployée : le système
-            de fichiers y est en lecture seule, et l&apos;archive APVMA fait 23 Mo. Elle se fait sur
-            un poste, ou par le workflow GitHub du jeudi.
+            La mise à jour ne peut pas se déclencher depuis l&apos;application déployée : le
+            système de fichiers y est en lecture seule, et l&apos;archive APVMA fait 23 Mo. Elle
+            tourne chaque jour à 07:00 (Casablanca) via le workflow GitHub{" "}
+            <span className="mono">maj-ephy</span> sur <span className="mono">master</span>
+            {" "}
+            (E-Phy, Australie, Brésil, Corée, sentinelle). Les textes ONSSA
+            (avis, listes, décrets) tournent le jeudi via{" "}
+            <span className="mono">maj-onssa-regl</span>
+            . L&apos;index phytosanitaire est relu depuis{" "}
+            <span className="mono">IndPesticide.aspx</span>
+            {" "}(MAJ affichée par l&apos;ONSSA). L&apos;Anses republie E-Phy dans
+            la nuit de mardi à mercredi : le jeudi, le relevé porte en principe la semaine
+            en cours. Commande manuelle :{" "}
+            <span className="mono">npm run maj</span>.
           </div>
         </div>
       </div>
 
       <div className="section">
-        <span className="h-title">Les neuf compartiments</span>
+        <span className="h-title">Les compartiments</span>
         <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <Compartiment
             icone={<Database size={15} color="var(--accent)" />}
@@ -269,8 +273,19 @@ export default function SourcesPage() {
             role="Le socle — tout le reste s'y rattache"
             contenu={`${META.nbLignesIndex.toLocaleString("fr")} lignes, ${META.nbProduitsIndex} produits, ${META.nbDetenteurs} détenteurs, ${MATIERES.length} matières actives, ${FOURNISSEURS.length} fournisseurs. ${DETENTEURS.length} détenteurs couverts, ${PRODUITS.length} produits avec AMM, dates, usages, doses et DAR.`}
             origine={META.source}
-            maj={`importé le ${fmtDate(META.genere.slice(0, 10))}`}
+            maj={`IndPesticide ${fmtDate(META.genere.slice(0, 10))} · registres ${fmtDate(META_ESERVICE.genere.slice(0, 10))}`}
             fiabilite="source"
+          />
+
+          <Compartiment
+            icone={<Scale size={15} color="var(--accent)" />}
+            nom="Textes ONSSA"
+            role="Ce que l'Office publie la semaine où ça sort"
+            contenu={`${STATS_ONSSA_TEXTES.nbTextes} textes (avis, listes, lois, décrets, arrêtés) relevés sur eservice.onssa.gov.ma/Reglementation_N.aspx. ${STATS_ONSSA_TEXTES.nbRecents} des trois dernières semaines. Ce n'est pas l'index des AMM.`}
+            origine={STATS_ONSSA_TEXTES.attribution}
+            maj={`relevé le ${STATS_ONSSA_TEXTES.releveFmt} · cron jeudi`}
+            fiabilite="source"
+            reserve="Seuls les textes du Bulletin Officiel font foi. L'index phytosanitaire (IndPesticide.aspx) reste la source des matières actives et des AMM."
           />
 
           <Compartiment

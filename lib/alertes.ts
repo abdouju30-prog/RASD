@@ -1,24 +1,28 @@
 import { getMatiere, matieresDuPortefeuille, produitsDe } from "./data";
-import { detailRisque, etatAMM, fmtDate, moisAvant } from "./logic";
+import { etatAMM, fmtDate, moisAvant } from "./logic";
+import { restreintePourMatiere, retireePourMatiere } from "./onssa-listes";
 import type { MatiereActive, NiveauRisque, ProduitPortefeuille } from "./types";
 
 // ────────────────────────────────────────────────────────────────────────────
 // Les alertes ne sont PAS un flux stocké : elles sont recalculées à chaque
-// affichage à partir de l'index ONSSA (dates d'AMM) et des fiches vérifiées
-// (statuts UE). Il n'y a donc rien à persister, aucun cron à faire tourner, et
-// aucun risque d'afficher un état périmé.
+// affichage à partir de l'index ONSSA (dates d'AMM), des fiches vérifiées
+// (statuts UE) et des listes officielles de retraits / restrictions. Il n'y
+// a donc rien à persister. Une molécule encore à l'Excel alors que l'ONSSA
+// la dit retirée est une incohérence de source, pas une AMM inventée.
 //
-// La veille reste une opération humaine : mettre à jour lib/reglementaire.ts
-// puis réimporter l'index quand l'ONSSA publie une nouvelle version.
+// La veille reste une opération humaine : réimporter l'index quand l'ONSSA
+// publie une nouvelle version Excel, et relire les PDF via le cron du jeudi.
 // ────────────────────────────────────────────────────────────────────────────
 
 export type TypeAlerte =
+  | "onssa_retrait"
   | "anses_retrait"
   | "amm_expiree"
   | "amm_echeance"
   | "ue_non_renouvelee"
   | "ue_echeance_depassee"
   | "ue_echeance_proche"
+  | "onssa_restriction"
   | "candidate_substitution";
 
 export interface Alerte {
@@ -35,9 +39,11 @@ export interface Alerte {
 }
 
 const NIV: Record<TypeAlerte, NiveauRisque> = {
+  onssa_retrait: "critique",
   anses_retrait: "critique",
   amm_expiree: "critique",
   ue_non_renouvelee: "critique",
+  onssa_restriction: "élevé",
   ue_echeance_depassee: "élevé",
   amm_echeance: "élevé",
   ue_echeance_proche: "modéré",
@@ -47,18 +53,19 @@ const NIV: Record<TypeAlerte, NiveauRisque> = {
 const ORDRE: Record<NiveauRisque, number> = { critique: 0, élevé: 1, modéré: 2, faible: 3 };
 
 /**
- * Priorité de type, à niveau de gravité égal. Le retrait ANSES passe devant :
- * c'est le signal le plus en avance sur la décision de l'ONSSA, alors qu'une
- * AMM expirée est un fait déjà consommé.
+ * Priorité de type, à niveau de gravité égal. Un retrait ONSSA déjà publié
+ * passe devant le signal ANSES : c'est la décision marocaine, pas l'anticipation.
  */
 const ORDRE_TYPE: Record<TypeAlerte, number> = {
-  anses_retrait: 0,
-  amm_expiree: 1,
-  ue_non_renouvelee: 2,
-  ue_echeance_depassee: 3,
-  amm_echeance: 4,
-  ue_echeance_proche: 5,
-  candidate_substitution: 6,
+  onssa_retrait: 0,
+  anses_retrait: 1,
+  amm_expiree: 2,
+  ue_non_renouvelee: 3,
+  onssa_restriction: 4,
+  ue_echeance_depassee: 5,
+  amm_echeance: 6,
+  ue_echeance_proche: 7,
+  candidate_substitution: 8,
 };
 
 function nbUsages(prods: ProduitPortefeuille[]): number {
@@ -70,8 +77,78 @@ function produitsPortant(ma: MatiereActive): ProduitPortefeuille[] {
   return ma.produitsDetenteur;
 }
 
+function grouperPortefeuille<T extends { nom: string }>(
+  detenteurId: string,
+  signal: (ma: MatiereActive) => T | null
+): { liste: T; ma: MatiereActive; produits: ProduitPortefeuille[] }[] {
+  const map = new Map<string, { liste: T; mas: MatiereActive[]; produits: ProduitPortefeuille[] }>();
+  for (const ma of matieresDuPortefeuille(detenteurId)) {
+    const liste = signal(ma);
+    if (!liste) continue;
+    let g = map.get(liste.nom);
+    if (!g) {
+      g = { liste, mas: [], produits: [] };
+      map.set(liste.nom, g);
+    }
+    g.mas.push(ma);
+    g.produits.push(...produitsPortant(ma));
+  }
+  const out: { liste: T; ma: MatiereActive; produits: ProduitPortefeuille[] }[] = [];
+  for (const g of map.values()) {
+    const vu = new Set<string>();
+    const produits = g.produits.filter((p) => {
+      if (vu.has(p.id)) return false;
+      vu.add(p.id);
+      return true;
+    });
+    const ma = [...g.mas].sort((a, b) => b.produitsDetenteur.length - a.produitsDetenteur.length)[0];
+    if (!ma) continue;
+    out.push({ liste: g.liste, ma, produits });
+  }
+  return out;
+}
+
 export function alertes(detenteurId: string): Alerte[] {
   const out: Alerte[] = [];
+
+  // 0) Listes ONSSA opérationnelles — décision marocaine, pas anticipation.
+  for (const g of grouperPortefeuille(detenteurId, retireePourMatiere)) {
+    const r = g.liste;
+    out.push({
+      id: `onssa-ret-${g.ma.id}`,
+      type: "onssa_retrait",
+      niveau: NIV.onssa_retrait,
+      titre: `Retrait ONSSA · ${r.nom}`,
+      detail:
+        `Liste officielle des substances retirées / interdites au Maroc` +
+        (r.dateRetrait ? ` (depuis le ${fmtDate(r.dateRetrait)})` : "") +
+        `. L'index ONSSA porte encore cette molécule : l'AMM affichée n'est pas une preuve d'homologation en vigueur.`,
+      matiere: g.ma,
+      produits: g.produits,
+      usages: nbUsages(g.produits),
+      action:
+        "Recouper le PDF ONSSA. Ne pas commercialiser sur la foi de l'Excel. Sécuriser une alternative homologable.",
+      echeance: r.dateRetrait,
+    });
+  }
+
+  for (const g of grouperPortefeuille(detenteurId, restreintePourMatiere)) {
+    const r = g.liste;
+    out.push({
+      id: `onssa-rest-${g.ma.id}`,
+      type: "onssa_restriction",
+      niveau: NIV.onssa_restriction,
+      titre: `Restriction d'usage ONSSA · ${r.nom}`,
+      detail:
+        (r.condition || "Condition d'emploi renforcée.") +
+        (r.dateRestriction ? ` Décision à jour au ${fmtDate(r.dateRestriction)}.` : ""),
+      matiere: g.ma,
+      produits: g.produits,
+      usages: nbUsages(g.produits),
+      action: "Vérifier que les usages et formulations du portefeuille respectent la restriction.",
+      echeance: r.dateRestriction,
+    });
+  }
 
   // 1) AMM du portefeuille — expirées puis à échéance.
   for (const p of produitsDe(detenteurId)) {

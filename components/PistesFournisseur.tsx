@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { LienOnssa, Piste } from "@/lib/pistes";
 
 // Rendu des pistes fournisseur tirées du registre australien. Le point délicat
@@ -72,7 +73,11 @@ export function TablePistes({ pistes }: { pistes: Piste[] }) {
       <tbody>
         {pistes.map((p) => (
           <tr key={p.id}>
-            <td style={{ fontSize: 13 }}>{p.nom}</td>
+            <td style={{ fontSize: 13 }}>
+              <Link href={`/fournisseurs/piste/${p.id}`} className="link-accent">
+                {p.nom}
+              </Link>
+            </td>
             <td style={{ fontSize: 13, color: "var(--muted)" }}>
               <Pays p={p} />
             </td>

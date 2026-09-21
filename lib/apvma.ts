@@ -119,11 +119,23 @@ const ALIAS: Record<string, string> = {
 // Index d'appariement. En cas de collision, la ligne portant des produits
 // agricoles l'emporte : c'est elle qui décrit le marché réel.
 const PAR_CLE = new Map<string, ConstituantApvma>();
+const PAR_ID = new Map<string, ConstituantApvma>();
 for (const c of CONSTITUANTS_APVMA) {
+  PAR_ID.set(c.id, c);
   const cle = norm(c.nom);
   if (!cle) continue;
   const actuel = PAR_CLE.get(cle);
   if (!actuel || poids(c) > poids(actuel)) PAR_CLE.set(cle, c);
+}
+
+export function constituantParId(id: string): ConstituantApvma | undefined {
+  return PAR_ID.get(id);
+}
+
+/** Constituant PUBCRIS par nom ISO anglais, ou null. */
+export function constituantParNom(nom: string): ConstituantApvma | null {
+  const c = PAR_CLE.get(norm(nom));
+  return c ?? null;
 }
 
 /**

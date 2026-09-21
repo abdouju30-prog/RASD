@@ -6,6 +6,7 @@ import { pistesPour, type Piste } from "./pistes";
 import { fabricantsChinois, usines as usinesChinoises, type SocieteChinoise } from "./icama";
 import { fabricantsTurcs, type SocieteTurque } from "./bku";
 import { fabricantsRusses, type SocieteRusse } from "./russie";
+import { etiquetteRusse } from "./cyrillique";
 import { fabricantsBresiliens, type UsineBresil } from "./bresil";
 import {
   etiquette as etiquetteCoree,
@@ -184,10 +185,10 @@ function depuisRussie(s: SocieteRusse): Candidat {
     // cherche pas depuis un clavier latin. Le nom d'origine suit, car c'est
     // lui qui figure au catalogue et lui seul qui permet de vérifier.
     id: `ru-${s.cle}`,
-    nom: s.identifie ? `${s.latin} — ${s.nom}` : `${s.latin} (translittéré) — ${s.nom}`,
+    nom: etiquetteRusse(s),
     origine: "russie",
     pays: s.pays,
-    motif: `${s.nbHomologations} homologation(s) en Russie · ${s.matieres.length} M.A. de l'index`,
+    motif: `${s.nom} · ${s.nbHomologations} homologation(s) en Russie · ${s.matieres.length} M.A. de l'index`,
     lignesMaroc: null,
     // Le catalogue russe ne publie aucune adresse.
     adresse: null,
@@ -201,7 +202,7 @@ function depuisChine(s: SocieteChinoise): Candidat {
     id: `cn-${s.nom}`,
     // Le pinyin devant, les caractères han derrière : c'est le premier qui se
     // recopie dans un courriel de consultation.
-    nom: s.glose ? `${s.glose} — ${s.nom}` : s.nom,
+    nom: s.glose ? `${s.glose} — ${s.nom}` : s.latin ? `${s.latin} — ${s.nom}` : s.nom,
     origine: "chine",
     pays: s.region ? `Chine (${s.region})` : "Chine",
     motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · licence ${s.licenceProduction}`,
@@ -344,7 +345,7 @@ export function consultation(maId: string): Consultation | null {
 
   const tr = fabricantsTurcs(ma.nom);
   if (tr) {
-    for (const s of tr.fabricants.slice(0, 8)) {
+    for (const s of tr.fabricants) {
       const n = (s.nom ?? "").toUpperCase();
       if (!n || vus.has(n)) continue;
       vus.add(n);
@@ -391,7 +392,7 @@ export function consultation(maId: string): Consultation | null {
 
   const cn = fabricantsChinois(ma.nom);
   if (cn) {
-    for (const s of usinesChinoises(cn).slice(0, 12)) {
+    for (const s of usinesChinoises(cn)) {
       if (vus.has(s.nom.toUpperCase())) continue;
       vus.add(s.nom.toUpperCase());
       autres.push(depuisChine(s));

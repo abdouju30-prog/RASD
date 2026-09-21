@@ -1,32 +1,37 @@
 import Link from "next/link";
-import { CalendarClock, Ban, Flag, Timer, RefreshCw, Info, ShieldAlert } from "lucide-react";
+import { CalendarClock, Ban, Flag, Timer, RefreshCw, ShieldAlert, Scale } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
 import { alertes, statsAlertes, type TypeAlerte } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
-import { COUVERTURE } from "@/lib/reglementaire";
 import { META } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
-import { STATS_EPHY } from "@/lib/ephy";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
+import { NouveautesOnssa } from "@/components/NouveautesOnssa";
 import { Aide } from "@/components/Aide";
+import { STATS_EPHY } from "@/lib/ephy";
+import { COUVERTURE } from "@/lib/reglementaire";
 
 const ICONE: Record<TypeAlerte, typeof Ban> = {
+  onssa_retrait: Ban,
   anses_retrait: ShieldAlert,
   amm_expiree: Ban,
   amm_echeance: CalendarClock,
   ue_non_renouvelee: Ban,
   ue_echeance_depassee: Timer,
   ue_echeance_proche: CalendarClock,
+  onssa_restriction: Scale,
   candidate_substitution: Flag,
 };
 
 const LIBELLE: Record<TypeAlerte, string> = {
+  onssa_retrait: "Retrait ONSSA — l'Excel est en retard",
   anses_retrait: "Retrait ANSES — l'ONSSA suivra",
   amm_expiree: "AMM expirée",
   amm_echeance: "Échéance AMM",
   ue_non_renouvelee: "Approbation UE perdue",
   ue_echeance_depassee: "Échéance UE dépassée",
   ue_echeance_proche: "Échéance UE proche",
+  onssa_restriction: "Restriction d'usage ONSSA",
   candidate_substitution: "Candidate à la substitution",
 };
 
@@ -37,7 +42,7 @@ export default async function VeillePage() {
 
   return (
     <>
-      <div className="eyebrow">Veille réglementaire</div>
+      <div className="fil">Portefeuille · Alertes</div>
       <h1>Flux d&apos;alertes</h1>
       <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
         Recalculées à chaque affichage. Rien n&apos;est stocké.
@@ -73,6 +78,8 @@ export default async function VeillePage() {
       <div style={{ margin: "14px 0 12px" }}>
         <FraicheurEphy />
       </div>
+
+      <NouveautesOnssa />
 
       <div style={{ margin: "0 0 16px" }}>
         <Aide titre="Hiérarchie des signaux, et réserve sur les échéances UE">

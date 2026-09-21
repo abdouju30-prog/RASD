@@ -28,6 +28,7 @@ export function Recherche() {
   const router = useRouter();
   const [q, setQ] = useState("");
   const [res, setRes] = useState<Resultat[]>([]);
+  const [correction, setCorrection] = useState<string | null>(null);
   const [ouvert, setOuvert] = useState(false);
   const [actif, setActif] = useState(0);
   const [charge, setCharge] = useState(false);
@@ -41,6 +42,7 @@ export function Recherche() {
     const t = q.trim();
     if (t.length < 2) {
       setRes([]);
+      setCorrection(null);
       setCharge(false);
       return;
     }
@@ -53,9 +55,13 @@ export function Recherche() {
         // Une réponse arrivée après une saisie plus récente est périmée.
         if (jeton !== dernier.current) return;
         setRes(d.resultats ?? []);
+        setCorrection(d.correction ?? null);
         setActif(0);
       } catch {
-        if (jeton === dernier.current) setRes([]);
+        if (jeton === dernier.current) {
+          setRes([]);
+          setCorrection(null);
+        }
       } finally {
         if (jeton === dernier.current) setCharge(false);
       }
@@ -96,7 +102,12 @@ export function Recherche() {
       setOuvert(false);
       setQ("");
       champ.current?.blur();
-      if (r.href) router.push(r.href);
+      if (!r.href) return;
+      if (r.href.startsWith("http://") || r.href.startsWith("https://")) {
+        window.open(r.href, "_blank", "noopener,noreferrer");
+        return;
+      }
+      router.push(r.href);
     },
     [router]
   );
@@ -136,8 +147,8 @@ export function Recherche() {
         }}
         onFocus={() => setOuvert(true)}
         onKeyDown={clavier}
-        placeholder="Rechercher   /"
-        aria-label="Rechercher une matière active, un produit, une société"
+        placeholder="Matière, culture, maladie…"
+        aria-label="Rechercher une matière active, une culture, une maladie"
         aria-expanded={listeVisible}
         aria-controls="rech-liste"
         aria-autocomplete="list"
@@ -161,26 +172,46 @@ export function Recherche() {
 
       {listeVisible && (
         <div className="rech-liste" id="rech-liste" role="listbox">
-          {res.length === 0 ? (
+          {res.length === 0 && !correction ? (
             <div className="rech-vide">
               {charge ? "Recherche…" : `Aucun résultat pour « ${q.trim()} »`}
             </div>
           ) : (
-            res.map((r, i) => (
-              <button
-                key={r.id}
-                type="button"
-                role="option"
-                aria-selected={i === actif}
-                className={`rech-item${i === actif ? " on" : ""}${r.href ? "" : " inerte"}`}
-                onMouseEnter={() => setActif(i)}
-                onClick={() => aller(r)}
-              >
-                <span className="rech-lib">{r.libelle}</span>
-                <span className="rech-type">{LIBELLE_TYPE[r.type]}</span>
-                <span className="rech-det">{r.detail}</span>
-              </button>
-            ))
+            <>
+              {correction && (
+                <button
+                  type="button"
+                  className="rech-corrige"
+                  aria-label={`Rechercher ${correction}`}
+                  onClick={() => {
+                    setQ(correction);
+                    setActif(0);
+                    champ.current?.focus();
+                  }}
+                >
+                  {charge ? "Recherche…" : (
+                    <>
+                      Vouliez-vous dire <strong>{correction}</strong> ?
+                    </>
+                  )}
+                </button>
+              )}
+              {res.map((r, i) => (
+                <button
+                  key={r.id}
+                  type="button"
+                  role="option"
+                  aria-selected={i === actif}
+                  className={`rech-item${i === actif ? " on" : ""}${r.href ? "" : " inerte"}`}
+                  onMouseEnter={() => setActif(i)}
+                  onClick={() => aller(r)}
+                >
+                  <span className="rech-lib">{r.libelle}</span>
+                  <span className="rech-type">{LIBELLE_TYPE[r.type]}</span>
+                  <span className="rech-det">{r.detail}</span>
+                </button>
+              ))}
+            </>
           )}
         </div>
       )}

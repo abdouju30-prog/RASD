@@ -4,6 +4,7 @@ import { ETABLISSEMENTS } from "./epa";
 import { USINES_TURQUES } from "./bku";
 import { USINES_CHINE } from "./icama";
 import { SOCIETES_CATALOGUE_RU } from "./russie";
+import { etiquetteRusse } from "./cyrillique";
 import { USINES_BRESIL } from "./bresil";
 import { SOCIETES_COREE, etiquette } from "./coree";
 import { ocde, type FicheOcde } from "./ocde";
@@ -173,7 +174,7 @@ function entrees(): EntreePays[] {
   for (const u of USINES_CHINE) {
     out.push({
       id: `cn-${u.nom}`,
-      nom: u.glose ? `${u.glose} — ${u.nom}` : u.nom,
+      nom: u.glose ? `${u.glose} — ${u.nom}` : u.latin ? `${u.latin} — ${u.nom}` : u.nom,
       registre: "chine",
       detail: `${u.matieres.length} M.A. de l'index · licence ${u.licenceProduction}`,
       meToo: false,
@@ -201,7 +202,7 @@ function entrees(): EntreePays[] {
     if (!s.pays) continue;
     out.push({
       id: `ru-${s.cle}`,
-      nom: s.identifie ? `${s.latin} (${s.nom})` : s.nom,
+      nom: etiquetteRusse(s),
       registre: "russie",
       detail: `${s.nbHomologations} homologation(s) en Russie`,
       meToo: false,

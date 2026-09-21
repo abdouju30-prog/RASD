@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { LienMatiere } from "@/components/LienMatiere";
 import { Radar, ArrowRight } from "lucide-react";
-import { Aide } from "@/components/Aide";
 import {
   A_ECARTER,
   A_SAISIR,
@@ -13,6 +12,7 @@ import {
   STATS_SENTINELLE,
   type Candidate,
 } from "@/lib/sentinelle";
+import { Aide } from "@/components/Aide";
 
 export const dynamic = "force-dynamic";
 
@@ -158,7 +158,7 @@ export default function SentinellePage() {
 
   return (
     <>
-      <div className="fil">Hors chaîne — prise d&apos;exclusivité</div>
+      <div className="fil">Alternative · Sentinelle</div>
       <h1 style={{ display: "flex", alignItems: "center", gap: 9 }}>
         <Radar size={19} /> Sentinelle
       </h1>
@@ -251,7 +251,7 @@ export default function SentinellePage() {
       {NOUVELLES.length > 0 && (
         <Table
           titre="Apparues au dernier relevé"
-          lecture={`Absentes du journal jusqu'au ${s.dernierReleve}. C'est la notification : elle ne demande aucun serveur, seulement de relancer le relevé.`}
+          lecture={`Absentes du journal jusqu'au ${s.dernierReleve}.`}
           liste={NOUVELLES}
           max={20}
         />

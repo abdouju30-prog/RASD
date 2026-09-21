@@ -4,16 +4,20 @@ name: Veille — actualisation des registres
 # CE QUI SE RAFRAÎCHIT TOUT SEUL, ET CE QUI NE SE RAFRAÎCHIT PAS.
 #
 # Automatique, ici :
-#   E-Phy (Anses)   republié chaque nuit de mardi à mercredi
-#   APVMA (PUBCRIS) republié chaque semaine
-#   PSIS (Corée)    RÉGÉNÉRÉ CHAQUE JOUR — c'est le registre le plus frais de
-#                   l'outil, et le seul qui date ses homologations
-#   Sentinelle      recalculée derrière, ainsi que les mélanges qui en dérivent
+#   E-Phy (Anses)     republié chaque nuit de mardi à mercredi
+#   APVMA (Australie) dump PUBCRIS, chaque semaine
+#   AGROFIT (Brésil)  CSV ouvert du ministère — usines de synthèse
+#   PSIS (Corée)      régénéré chaque jour, seul registre daté au jour
+#   Sentinelle        recalculée derrière (elle croise Brésil × Corée × ONSSA)
 #
 # À la main, et c'est délibéré :
-#   index ONSSA     vient d'un fichier Excel que vous maîtrisez  -> npm run import
-#   ICAMA (Chine)   ~200 requêtes sur un formulaire, ~7 min      -> npm run import:icama
-#   AGROFIT (Brésil), BKÜ (Turquie), catalogue russe             -> voir package.json
+#   index ONSSA       Excel que vous maîtrisez           -> npm run import
+#   textes ONSSA      avis / listes / décrets, le jeudi  -> workflow maj-onssa-regl
+#   listes ONSSA      retraits + restrictions (PDF)      -> npm run import:onssa-listes
+#   ICAMA (Chine)     ~200 POST sur un formulaire, ~7 min -> npm run import:icama
+#   BKÜ (Turquie)     API DataTables, pas un dump         -> npm run import:bku
+#   EPA (usines)      Qlik WebSocket, aucune M.A.         -> python scripts/import_epa.py
+#   Catalogue russe   édition figée avril 2022            -> npm run import:russie
 #
 # Pourquoi passer par un commit plutôt que par une écriture à l'exécution :
 #   • le système de fichiers est en lecture seule sur Vercel ;
@@ -21,11 +25,16 @@ name: Veille — actualisation des registres
 #   • surtout, l'historique git devient le JOURNAL DE LA VEILLE : chaque jour
 #     où quelque chose bouge laisse une trace datée, lisible et opposable.
 #
-# La course tourne TOUS LES JOURS mais ne commite QUE si un fichier a changé :
-# une journée sans mouvement ne laisse aucune trace.
+# La course tourne TOUS LES JOURS (07:00 Casablanca) mais ne commite QUE si un
+# fichier a changé : une journée sans mouvement ne laisse aucune trace.
 #
-# Prérequis : dépôt GitHub relié à Vercel (Vercel redéploie tout seul au push).
-# Aucun secret à configurer : le GITHUB_TOKEN par défaut suffit.
+# GitHub n'exécute le cron QUE sur la branche par défaut (master). Un site
+# déployé depuis une autre branche n'affichera pas ces données tant qu'elles
+# n'y sont pas reprises. Le commit sur master est le journal de la veille.
+#
+# Prérequis : dépôt GitHub, GITHUB_TOKEN par défaut (contents: write).
+# Le redéploiement Vercel depuis master n'est pas garanti (ignore-build) :
+# reprendre les fichiers data/ sur la branche servie, ou `npm run maj`.
 # ─────────────────────────────────────────────────────────────────────────────
 
 on:
@@ -45,6 +54,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: master
 
       - uses: actions/setup-python@v5
         with:
@@ -69,6 +80,13 @@ jobs:
       - name: Registre PUBCRIS — APVMA
         run: python scripts/import_apvma.py | tee -a sortie-import.txt
 
+      # Même famille qu'APVMA : un CSV officiel, pas le site AGROFIT (403).
+      # La sentinelle s'en sert ; un Brésil périmé rate les nouvelles usines.
+      - name: Registre AGROFIT — Brésil
+        id: agrofit
+        continue-on-error: true
+        run: python scripts/import_agrofit.py --frais | tee -a sortie-import.txt
+
       # Le seul registre daté au jour : c'est lui qui fait la veille des
       # nouveautés. Son échec ne doit pas emporter la veille réglementaire,
       # qui est l'essentiel — d'où le « continue-on-error ».
@@ -84,7 +102,7 @@ jobs:
       - name: Y a-t-il eu un changement ?
         id: diff
         run: |
-          SUIVIS="data/ephy.json data/apvma.json data/coree.json data/sentinelle.json data/sentinelle-vu.json"
+          SUIVIS="data/ephy.json data/apvma.json data/bresil.json data/coree.json data/sentinelle.json data/sentinelle-vu.json"
           if git diff --quiet -- $SUIVIS; then
             echo "change=non" >> "$GITHUB_OUTPUT"
             echo "Aucune évolution des registres — rien à commiter."
@@ -110,6 +128,13 @@ jobs:
               if n > 15:
                   lignes.append(f"  - … et {n - 15} autres")
 
+          b = lire("data/bresil.json").get("meta", {})
+          if b:
+              lignes.append(
+                  f"Brésil — {b.get('nbUsines')} usines, "
+                  f"{b.get('nbMatieres')} M.A. index, relevé { (b.get('genere') or '')[:10] }"
+              )
+
           k = lire("data/coree.json").get("meta", {})
           if k:
               lignes.append(
@@ -127,7 +152,7 @@ jobs:
           print("resume<<EOF")
           print("\n".join(lignes) or "actualisation des métadonnées")
           print()
-          print("Données E-Phy - Anses · APVMA PUBCRIS · PSIS (RDA, Corée du Sud).")
+          print("Données E-Phy - Anses · APVMA PUBCRIS · AGROFIT (Brésil) · PSIS (RDA, Corée du Sud).")
           print("EOF")
           PY
           fi
@@ -139,7 +164,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ephy.json data/apvma.json data/coree.json \
+          git add data/ephy.json data/apvma.json data/bresil.json data/coree.json \
                   data/sentinelle.json data/sentinelle-vu.json
           git commit -m "Veille — actualisation des registres" -m "$RESUME"
           git push

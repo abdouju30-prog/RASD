@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { PRODUITS, produitsDe, META } from "@/lib/data";
+import { PRODUITS, produitsDe } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
-import { CA_DISPONIBLE, etatAMM, fmtDate, fmtMAD, usagesTotal } from "@/lib/logic";
-import { StatCard } from "@/components/StatCard";
+import { CA_DISPONIBLE, etatAMM, fmtDate, fmtMAD } from "@/lib/logic";
 
 const COULEUR = {
   expirée: "var(--crit)",
@@ -36,8 +35,6 @@ export default async function ProduitsPage({
   const list = [...filtre].sort((a, b) =>
     (a.expiration ?? "9999").localeCompare(b.expiration ?? "9999")
   );
-  const expirees = list.filter((p) => etatAMM(p).etat === "expirée").length;
-  const critiques = list.filter((p) => etatAMM(p).etat === "critique").length;
 
   return (
     <>
@@ -82,7 +79,7 @@ export default async function ProduitsPage({
         </div>
       )}
 
-      <div className="eyebrow">Portefeuille · {d.nom}</div>
+      <div className="fil">Portefeuille · Produits</div>
       <h1>
         {portefeuille.length} produits homologués
       </h1>
@@ -90,30 +87,6 @@ export default async function ProduitsPage({
         Classés par échéance d&apos;AMM, la plus proche en premier. Données extraites de l&apos;index
         ONSSA — aucune saisie manuelle.
       </p>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
-          gap: 14,
-          margin: "22px 0",
-        }}
-      >
-        <StatCard label="Produits" value={String(portefeuille.length)} sub="détenus" />
-        <StatCard label="Usages homologués" value={String(usagesTotal(d.id))} sub="couples culture × cible" />
-        <StatCard
-          label="AMM expirées"
-          value={String(expirees)}
-          tone={expirees ? "crit" : "low"}
-          sub="commercialisation non couverte"
-        />
-        <StatCard
-          label="AMM < 6 mois"
-          value={String(critiques)}
-          tone={critiques ? "high" : "low"}
-          sub="renouvellement urgent"
-        />
-      </div>
 
       {!CA_DISPONIBLE && (
         <p

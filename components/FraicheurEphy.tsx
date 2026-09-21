@@ -1,5 +1,5 @@
 import { RefreshCw, CircleAlert, CircleCheck } from "lucide-react";
-import { CHANGEMENTS_EPHY, NB_CHANGEMENTS_EPHY, STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
+import { CHANGEMENTS_EPHY, META_EPHY, NB_CHANGEMENTS_EPHY, STATS_EPHY, fraicheurEphy } from "@/lib/ephy";
 import { fmtDate } from "@/lib/logic";
 
 /**
@@ -16,8 +16,17 @@ export function FraicheurEphy({ compact = false }: { compact?: boolean }) {
   const Icone = f.etat === "à jour" ? CircleCheck : CircleAlert;
 
   if (compact) {
+    const releve = META_EPHY.genere?.slice(0, 10) ?? null;
     return (
-      <span className="pill" style={{ color: couleur, borderColor: `color-mix(in srgb, ${couleur} 40%, transparent)` }}>
+      <span
+        className="pill"
+        title={
+          f.maj
+            ? `Publication Anses du ${fmtDate(f.maj)}${releve ? ` · dernier relevé ${fmtDate(releve)}` : ""} · ${f.etat}`
+            : "Date Anses inconnue"
+        }
+        style={{ color: couleur, borderColor: `color-mix(in srgb, ${couleur} 40%, transparent)` }}
+      >
         <Icone size={12} />
         E-Phy {f.maj ? fmtDate(f.maj) : "?"}
       </span>
@@ -41,6 +50,9 @@ export function FraicheurEphy({ compact = false }: { compact?: boolean }) {
           Source ANSES — {f.maj ? `données du ${fmtDate(f.maj)}` : "date inconnue"}
           {f.jours !== null && `, il y a ${f.jours} jour${f.jours > 1 ? "s" : ""}`}.
         </strong>{" "}
+        {META_EPHY.genere && (
+          <>Relevé le {fmtDate(META_EPHY.genere.slice(0, 10))}. </>
+        )}
         {f.etat === "à jour" && (
           <>Catalogue à jour. L&apos;Anses republie chaque nuit de mardi à mercredi.</>
         )}

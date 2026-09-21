@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ChaineNav, type Jauge, type Station } from "@/components/ChaineNav";
+import { NavAlternative } from "@/components/NavAlternative";
+import { NavPortefeuille } from "@/components/NavPortefeuille";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
 import { SelecteurDetenteur } from "@/components/SelecteurDetenteur";
 import { choisirDetenteur } from "./actions";
 import { DETENTEURS, META, matieresDuPortefeuille, produitsDe } from "@/lib/data";
+import { META_ESERVICE } from "@/lib/onssa-eservice";
 import { detenteurActuel } from "@/lib/detenteur";
 import { statsAlertes } from "@/lib/alertes";
-import { fmtDate, usagesTotal } from "@/lib/logic";
+import { fmtDate } from "@/lib/logic";
 import { candidats, statsSourcing } from "@/lib/sourcing";
 import { NB_LIGNES_CHECKLIST } from "@/lib/dossier";
 import { STATS_SENTINELLE } from "@/lib/sentinelle";
@@ -30,60 +33,29 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const gm = gamme(d.id);
 
   const stations: Station[] = [
-    { href: "/", nom: "Radar", compteur: `${st.total} détections` },
     {
-      href: "/veille",
-      etape: "Étape 1",
-      nom: "Signal",
-      compteur: `${st.total} détections`,
+      href: "/",
+      nom: "Portefeuille",
+      compteur: `${st.critiques} critiques`,
       alerte: st.critiques,
+      aliases: ["/veille", "/matieres", "/produits", "/usages"],
     },
     {
-      href: "/matieres",
-      etape: "Étape 2",
-      nom: "Matière active",
-      compteur: `${matieresDuPortefeuille(d.id).length} au portefeuille`,
+      href: "/sourcing",
+      nom: "Alternative",
+      compteur: `${nbCibles} cibles`,
+      aliases: ["/gamme", "/melanges", "/sentinelle", "/importation"],
     },
-    {
-      href: "/produits",
-      etape: "Étape 3",
-      nom: "Produits touchés",
-      compteur: `${st.produitsTouches} / ${produitsDe(d.id).length} · ${usagesTotal(d.id)} usages`,
-    },
-    { href: "/sourcing", etape: "Étape 4", nom: "Alternative", compteur: `${nbCibles} cibles` },
     {
       href: "/fournisseurs",
-      etape: "Étape 5",
       nom: "Fournisseur",
       compteur: `${so.nbGeneriques} génér. · ${so.parPays.length} pays`,
+      aliases: ["/constituants"],
     },
     {
       href: "/dossiers",
-      etape: "Étape 6",
       nom: "Dossier",
       compteur: `${NB_LIGNES_CHECKLIST} lignes · 3-B`,
-    },
-    // Hors chaîne, comme le radar : la chaîne défend le portefeuille contre les
-    // retraits, ces deux-là cherchent ce qu'on pourrait prendre.
-    {
-      href: "/gamme",
-      nom: "Gamme",
-      compteur: `${gm.manques.length} M.A. manquantes`,
-    },
-    {
-      href: "/melanges",
-      nom: "Mélanges",
-      compteur: `${STATS_MELANGES.nbPretes} prêtes`,
-    },
-    {
-      href: "/sentinelle",
-      nom: "Sentinelle",
-      compteur: `${STATS_SENTINELLE.nbASaisir} à saisir`,
-    },
-    {
-      href: "/importation",
-      nom: "Importation",
-      compteur: `${STATS_IMPORT.nbBarrieres} barrières`,
     },
   ];
 
@@ -105,7 +77,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body>
         <ChaineNav
-          contexte={`index ONSSA ${fmtDate(META.genere.slice(0, 10))}`}
+          contexte={`index ONSSA ${fmtDate(META.genere.slice(0, 10))} · e-service ${fmtDate(META_ESERVICE.genere.slice(0, 10))}`}
           stations={stations}
           jauges={jauges}
           selecteur={
@@ -117,7 +89,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }
           fraicheur={<FraicheurEphy compact />}
         />
-        <main className="main">{children}</main>
+        <main className="main">
+          <NavPortefeuille
+            critiques={st.critiques}
+            detections={st.total}
+            matieres={matieresDuPortefeuille(d.id).length}
+            produits={produitsDe(d.id).length}
+          />
+          <NavAlternative
+            cibles={nbCibles}
+            gamme={gm.manques.length}
+            melanges={STATS_MELANGES.nbPretes}
+            sentinelle={STATS_SENTINELLE.nbASaisir}
+            importation={STATS_IMPORT.nbBarrieres}
+          />
+          {children}
+        </main>
       </body>
     </html>
   );

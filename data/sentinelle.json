@@ -1,16 +1,16 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-07T11:00:17",
-  "dernierReleve": "2026-09-07",
-  "premierReleve": true,
-  "nbCandidates": 477,
+  "genere": "2026-09-21T11:16:20",
+  "dernierReleve": "2026-09-21",
+  "premierReleve": false,
+  "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
   "nbNouvelles": 0,
   "nbAvecStatutFrancais": 200,
   "nbAvecStatutAustralien": 172,
   "nbVuesAuBresil": 219,
-  "nbVuesEnCoree": 340,
+  "nbVuesEnCoree": 339,
   "avertissement": "Matières actives homologuées au Brésil (produit technique) ou en Corée du Sud, et non appariées à l'index ONSSA. « Absente de l'index » signifie que la clé chimique n'a rien apparié : une graphie non réduite au nom marocain produirait un faux positif, à vérifier avant tout engagement. La date coréenne est celle de la première homologation en Corée, pas celle de l'invention de la molécule. Aucun registre ouvert ne publie l'état des brevets : la présence d'un fabricant autre que l'inventeur est le seul indice, par les faits, qu'une fabrication générique a lieu. Ni prix, ni capacité, ni qualité, ni liberté d'exploitation."
  },
  "candidates": [
@@ -189,6 +189,165 @@
    "nouvelle": false
   },
   {
+   "cle": "bifentrin",
+   "nom": "bifentrina",
+   "iso": "BIFENTHRIN",
+   "nomPt": "bifentrina",
+   "groupeChimique": "piretróide",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 52,
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Agrow Allied Ventures Pvt.Ltd.",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Aimco Pesticides Ltd.",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Bharat Rasayan Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "FMC Corporation",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "Guangdong Liwei Chemical Industry Co.,Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Hemani Industries Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Heranba Industries Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Changlong Agrochemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Chunjiang Agrochemical Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Chunjiang Runtian Agrochemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Huangma Agrochemicals Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Lianhe Chemical Technology Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Meghmani Organics Ltd. Unit I",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Qingdao Rainbow Chemical Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong United Pesticide Industry Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sinon Corporation",
+     "pays": "Taïwan",
+     "coutFaible": true
+    },
+    {
+     "nom": "UPL Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Viakem S.A. de C.V.",
+     "pays": "Mexique",
+     "coutFaible": true
+    },
+    {
+     "nom": "Weifang Maoyuan Biotechnology Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Youjia Crop Protection Co Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Zhejiang Lianhe Chemical Technology Co. LTD",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
+    "Acrom Agroindustrial Ltda- Londrina/PR",
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
+    "Agroallianz S.A",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "BRA Defensivos Agrícolas Ltda - Piracicaba/SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "CCAB Agro S.A.   São Paulo",
+    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
+    "Cropchem Ltda - Porto Alegre"
+   ],
+   "coree": {
+    "nom": "Bifenthrin",
+    "nbHomologations": 74,
+    "nbFabrique": 66,
+    "nbImporte": 8,
+    "premiere": "1987-04-09",
+    "derniere": "2026-07-29",
+    "nbSocietes": 22
+   },
+   "france": {
+    "nom": "Bifenthrin",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 68,
+    "dernierRetrait": "2011-04-27"
+   },
+   "australie": {
+    "nom": "BIFENTHRIN",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 259,
+    "matiereActiveApprouvee": true
+   },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "fipronil",
    "nom": "fipronil",
    "iso": "FIPRONIL",
@@ -341,161 +500,7 @@
    "australie": {
     "nom": "FIPRONIL",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 113,
-    "matiereActiveApprouvee": true
-   },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "bifentrin",
-   "nom": "bifentrina",
-   "iso": "BIFENTHRIN",
-   "nomPt": "bifentrina",
-   "groupeChimique": "piretróide",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 52,
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Agrow Allied Ventures Pvt.Ltd.",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Aimco Pesticides Ltd.",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Bharat Rasayan Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "FMC Corporation",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "Guangdong Liwei Chemical Industry Co.,Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Hemani Industries Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Heranba Industries Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Changlong Agrochemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Chunjiang Agrochemical Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Chunjiang Runtian Agrochemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Huangma Agrochemicals Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Lianhe Chemical Technology Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Meghmani Organics Ltd. Unit I",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Qingdao Rainbow Chemical Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong United Pesticide Industry Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sinon Corporation",
-     "pays": "Taïwan",
-     "coutFaible": true
-    },
-    {
-     "nom": "UPL Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Viakem S.A. de C.V.",
-     "pays": "Mexique",
-     "coutFaible": true
-    },
-    {
-     "nom": "Youjia Crop Protection Co Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Zhejiang Lianhe Chemical Technology Co. LTD",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
-    "Acrom Agroindustrial Ltda- Londrina/PR",
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
-    "Agroallianz S.A",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "BRA Defensivos Agrícolas Ltda - Piracicaba/SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "CCAB Agro S.A.   São Paulo",
-    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
-    "Cropchem Ltda - Porto Alegre"
-   ],
-   "coree": {
-    "nom": "Bifenthrin",
-    "nbHomologations": 74,
-    "nbFabrique": 66,
-    "nbImporte": 8,
-    "premiere": "1987-04-09",
-    "derniere": "2026-07-29",
-    "nbSocietes": 22
-   },
-   "france": {
-    "nom": "Bifenthrin",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 68,
-    "dernierRetrait": "2011-04-27"
-   },
-   "australie": {
-    "nom": "BIFENTHRIN",
-    "statut": "autorisée",
-    "nbProduitsAgricoles": 259,
+    "nbProduitsAgricoles": 114,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -2043,13 +2048,13 @@
     "Agro-Lead Brasil Assessoria em Produtos Agrícolas Ltda - EPP",
     "Agrobeats Defensivos Agrícolas Ltda",
     "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
     "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
     "Cropchem Ltda - Porto Alegre",
-    "Globachem Proteção de Cultivos do Brasil Ltda. - Campinas/SP",
-    "Hailir Brasil Defensivos Agricolas Ltda - São Paulo/SP"
+    "Globachem Proteção de Cultivos do Brasil Ltda. - Campinas/SP"
    ],
    "coree": {
     "nom": "Chlorfenapyr",
@@ -2071,6 +2076,112 @@
     "nom": "CHLORFENAPYR",
     "statut": "autorisée",
     "nbProduitsAgricoles": 1,
+    "matiereActiveApprouvee": true
+   },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "metomil",
+   "nom": "metomil",
+   "iso": "METHOMYL",
+   "nomPt": "metomil",
+   "groupeChimique": "metilcarbamato de oxima",
+   "teneurMax": 985.0,
+   "nbHomologationsBr": 30,
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Haili Guixi Chemical Industry Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Henan Jinpeng Chemicals Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Hunan Haili Chemical Industry",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "PT Inti Everspring Indonesia",
+     "pays": "INDONÉSIA",
+     "coutFaible": false
+    },
+    {
+     "nom": "Shandong Huayang Pesticide Chemical Industry Group Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Libang Chemical Industry Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sinon Chemical CO. LTD.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sinon Chemical CO., LTD. Fengxian/Shanghai",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sinon Corporation",
+     "pays": "Taïwan",
+     "coutFaible": true
+    },
+    {
+     "nom": "Sunko Ink Co. Ltd.",
+     "pays": "Taïwan",
+     "coutFaible": true
+    },
+    {
+     "nom": "Yancheng Limin Chemical Co. Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Yancheng Limin Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agroallianz S.A",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "AllierBrasil Agro Ltda.",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "CCAB Agro S.A.   São Paulo",
+    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
+    "Cropchem Ltda - Porto Alegre",
+    "Gilmore Agro do Brasil Ltda - ME",
+    "Jubailireg Brasil Ltda - São Paulo/SP",
+    "Nortox S.A. - Arapongas",
+    "Ouro Fino Química S.A. - Uberaba"
+   ],
+   "coree": null,
+   "france": {
+    "nom": "Methomyl",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 15,
+    "dernierRetrait": "2008-03-10"
+   },
+   "australie": {
+    "nom": "METHOMYL",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 30,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -2179,6 +2290,115 @@
     "nbProduitsAgricoles": 39,
     "matiereActiveApprouvee": true
    },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "sulfentrason",
+   "nom": "sulfentrazona",
+   "iso": "Sulfentrazone",
+   "nomPt": "sulfentrazona",
+   "groupeChimique": "triazolona",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 29,
+   "fabricants": [
+    {
+     "nom": "Inner Mongolia Shijie Chemicals Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Agrochem Laboratory Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Lianhe Chemical Technology Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Repont Agrochemical Co. Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangxi Heyi Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangxi Zhonghe Chemical Industry Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Ningxia Rainbow Chemical Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shanghai Baoda Veterinary Pharmaceutical Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Tagros Chemicals India Private Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Tagros Chemicals Índia Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "UPL Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Zhejiang Lianhe Chemical Technology Co. LTD",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agroallianz S.A",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "CCAB Agro S.A.   São Paulo",
+    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
+    "FMC Química do Brasil Ltda. - Campinas/SP",
+    "Helm do Brasil Mercantil - São Paulo/SP",
+    "Maxunitech do Brasil Ltda",
+    "Nortox S.A. - Arapongas",
+    "Ouro Fino Química S.A. - Uberaba"
+   ],
+   "coree": {
+    "nom": "Sulfentrazone",
+    "nbHomologations": 1,
+    "nbFabrique": 1,
+    "nbImporte": 0,
+    "premiere": "2022-11-01",
+    "derniere": "2022-11-01",
+    "nbSocietes": 1
+   },
+   "france": {
+    "nom": "Sulfentrazone",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 0,
+    "dernierRetrait": null
+   },
+   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -2487,211 +2707,6 @@
    "nouvelle": false
   },
   {
-   "cle": "metomil",
-   "nom": "metomil",
-   "iso": "METHOMYL",
-   "nomPt": "metomil",
-   "groupeChimique": "metilcarbamato de oxima",
-   "teneurMax": 985.0,
-   "nbHomologationsBr": 29,
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Haili Guixi Chemical Industry Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Henan Jinpeng Chemicals Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Hunan Haili Chemical Industry",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Huayang Pesticide Chemical Industry Group Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Libang Chemical Industry Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sinon Chemical CO. LTD.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sinon Chemical CO., LTD. Fengxian/Shanghai",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sinon Corporation",
-     "pays": "Taïwan",
-     "coutFaible": true
-    },
-    {
-     "nom": "Sunko Ink Co. Ltd.",
-     "pays": "Taïwan",
-     "coutFaible": true
-    },
-    {
-     "nom": "Yancheng Limin Chemical Co. Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Yancheng Limin Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agroallianz S.A",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "AllierBrasil Agro Ltda.",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "CCAB Agro S.A.   São Paulo",
-    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
-    "Cropchem Ltda - Porto Alegre",
-    "Gilmore Agro do Brasil Ltda - ME",
-    "Jubailireg Brasil Ltda - São Paulo/SP",
-    "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba"
-   ],
-   "coree": null,
-   "france": {
-    "nom": "Methomyl",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 15,
-    "dernierRetrait": "2008-03-10"
-   },
-   "australie": {
-    "nom": "METHOMYL",
-    "statut": "autorisée",
-    "nbProduitsAgricoles": 30,
-    "matiereActiveApprouvee": true
-   },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "sulfentrason",
-   "nom": "sulfentrazona",
-   "iso": "Sulfentrazone",
-   "nomPt": "sulfentrazona",
-   "groupeChimique": "triazolona",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 29,
-   "fabricants": [
-    {
-     "nom": "Jiangsu Agrochem Laboratory Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Lianhe Chemical Technology Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Repont Agrochemical Co. Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangxi Heyi Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangxi Zhonghe Chemical Industry Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Ningxia Rainbow Chemical Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shanghai Baoda Veterinary Pharmaceutical Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Tagros Chemicals India Private Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Tagros Chemicals Índia Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "UPL Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Zhejiang Lianhe Chemical Technology Co. LTD",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agroallianz S.A",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "CCAB Agro S.A.   São Paulo",
-    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
-    "FMC Química do Brasil Ltda. - Campinas/SP",
-    "Helm do Brasil Mercantil - São Paulo/SP",
-    "Maxunitech do Brasil Ltda",
-    "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba"
-   ],
-   "coree": {
-    "nom": "Sulfentrazone",
-    "nbHomologations": 1,
-    "nbFabrique": 1,
-    "nbImporte": 0,
-    "premiere": "2022-11-01",
-    "derniere": "2022-11-01",
-    "nbSocietes": 1
-   },
-   "france": {
-    "nom": "Sulfentrazone",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 0,
-    "dernierRetrait": null
-   },
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
    "cle": "clorimurometilic",
    "nom": "clorimurom-etílico",
    "iso": null,
@@ -2977,7 +2992,7 @@
    "nomPt": "tiodicarbe",
    "groupeChimique": "metilcarbamato de oxima",
    "teneurMax": 980.0,
-   "nbHomologationsBr": 21,
+   "nbHomologationsBr": 20,
    "fabricants": [
     {
      "nom": "Bayer CropScience LP.",
@@ -3036,7 +3051,6 @@
     }
    ],
    "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "ANASAC Brasil Comercio e Locação de Máquinas Ltda.",
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
     "Agro-Lead Brasil Assessoria em Produtos Agrícolas Ltda - EPP",
@@ -3047,7 +3061,8 @@
     "Cropchem Ltda - Porto Alegre",
     "Jubailireg Brasil Ltda - São Paulo/SP",
     "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba"
+    "Ouro Fino Química S.A. - Uberaba",
+    "Proventis Lifescience Defensivos Agrícolas Ltda"
    ],
    "coree": {
     "nom": "Thiodicarb",
@@ -3267,89 +3282,6 @@
     "nbProduitsAgricoles": 98,
     "matiereActiveApprouvee": true
    },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "flumetralin",
-   "nom": "flumetralina",
-   "iso": null,
-   "nomPt": "flumetralina",
-   "groupeChimique": "dinitroanilina",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 5,
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Adama Brasil S.A.",
-     "pays": "Brésil",
-     "coutFaible": true
-    },
-    {
-     "nom": "Adama Brasil S.A.- Londrina/PR",
-     "pays": "Brésil",
-     "coutFaible": true
-    },
-    {
-     "nom": "Bayer CropScience Schweiz AG",
-     "pays": "Suisse",
-     "coutFaible": false
-    },
-    {
-     "nom": "Chem Desing Corporation",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "ChemDesign Products, Inc.,",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "Ciba-Geigy Specialities",
-     "pays": "France",
-     "coutFaible": false
-    },
-    {
-     "nom": "Luxembourg Industries Ltd",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Syngenta Grimsby Ltd",
-     "pays": "Royaume-Uni",
-     "coutFaible": false
-    },
-    {
-     "nom": "Westrade Guatemala S.A.",
-     "pays": "Guatemala",
-     "coutFaible": false
-    },
-    {
-     "nom": "WeylChem US INC",
-     "pays": "États-Unis",
-     "coutFaible": false
-    }
-   ],
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "AllierBrasil Agro Ltda.",
-    "Luxembourg Brasil Comércio de Produtos Químicos Ltda",
-    "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP"
-   ],
-   "coree": null,
-   "france": {
-    "nom": "Flumetralin",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 0,
-    "dernierRetrait": null
-   },
-   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -3669,6 +3601,84 @@
     "nbProduitsAutorises": 0,
     "nbProduitsRetires": 9,
     "dernierRetrait": "2003-06-06"
+   },
+   "australie": null,
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "flumetralin",
+   "nom": "flumetralina",
+   "iso": null,
+   "nomPt": "flumetralina",
+   "groupeChimique": "dinitroanilina",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 5,
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Adama Brasil S.A.",
+     "pays": "Brésil",
+     "coutFaible": true
+    },
+    {
+     "nom": "Adama Brasil S.A.- Londrina/PR",
+     "pays": "Brésil",
+     "coutFaible": true
+    },
+    {
+     "nom": "Bayer CropScience Schweiz AG",
+     "pays": "Suisse",
+     "coutFaible": false
+    },
+    {
+     "nom": "Chem Desing Corporation",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "ChemDesign Products, Inc.,",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "Ciba-Geigy Specialities",
+     "pays": "France",
+     "coutFaible": false
+    },
+    {
+     "nom": "Luxembourg Industries Ltd",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Syngenta Grimsby Ltd",
+     "pays": "Royaume-Uni",
+     "coutFaible": false
+    },
+    {
+     "nom": "WeylChem US INC",
+     "pays": "États-Unis",
+     "coutFaible": false
+    }
+   ],
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "AllierBrasil Agro Ltda.",
+    "Luxembourg Brasil Comércio de Produtos Químicos Ltda",
+    "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP"
+   ],
+   "coree": null,
+   "france": {
+    "nom": "Flumetralin",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 0,
+    "dernierRetrait": null
    },
    "australie": null,
    "premiereVue": "2026-09-07",
@@ -4006,7 +4016,7 @@
    "australie": {
     "nom": "IMAZAPIC",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 11,
+    "nbProduitsAgricoles": 12,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4252,7 +4262,7 @@
    "australie": {
     "nom": "SIMAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 75,
+    "nbProduitsAgricoles": 76,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4335,7 +4345,7 @@
    "australie": {
     "nom": "CLOTHIANIDIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 15,
+    "nbProduitsAgricoles": 16,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5600,12 +5610,12 @@
    ],
    "coree": {
     "nom": "Oxadiazon",
-    "nbHomologations": 20,
+    "nbHomologations": 21,
     "nbFabrique": 17,
-    "nbImporte": 3,
+    "nbImporte": 4,
     "premiere": "1981-03-02",
-    "derniere": "2025-11-10",
-    "nbSocietes": 12
+    "derniere": "2026-09-14",
+    "nbSocietes": 13
    },
    "france": {
     "nom": "Oxadiazon",
@@ -5744,7 +5754,7 @@
    "australie": {
     "nom": "IMAZAPYR",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 21,
+    "nbProduitsAgricoles": 22,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6404,9 +6414,9 @@
     }
    ],
    "titulaires": [
+    "Ascenza Brasil Ltda - Hortolândia/SP",
     "Bayer S.A. - São Paulo/ SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Tradecorp do Brasil Comércio de Insumos Agrícolas Ltda - Araporangas/PR"
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda."
    ],
    "coree": null,
    "france": null,
@@ -6752,7 +6762,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 61,
+    "nbProduitsAgricoles": 64,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11787,9 +11797,9 @@
    "nouvelle": false
   },
   {
-   "cle": "301bacilusrtivelesensis",
-   "nom": "Bacillus velezensis RTI-301",
-   "iso": "Bacillus velezensis RTI-301",
+   "cle": "30147bacilusbacilusrtirtisubtilisvelesensis",
+   "nom": "Bacillus subtilis RTI-477+Bacillus velezensis RTI-301",
+   "iso": "Bacillus subtilis RTI-477+Bacillus velezensis RTI-301",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -11797,7 +11807,7 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "Bacillus velezensis RTI-301",
+    "nom": "Bacillus subtilis RTI-477+Bacillus velezensis RTI-301",
     "nbHomologations": 1,
     "nbFabrique": 0,
     "nbImporte": 1,
@@ -11807,31 +11817,7 @@
    },
    "france": null,
    "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "47bacilusrtisubtilis",
-   "nom": "Bacillus subtilis RTI-477",
-   "iso": "Bacillus subtilis RTI-477",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "Bacillus subtilis RTI-477",
-    "nbHomologations": 1,
-    "nbFabrique": 0,
-    "nbImporte": 1,
-    "premiere": "2025-08-14",
-    "derniere": "2025-08-14",
-    "nbSocietes": 1
-   },
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
+   "premiereVue": "2026-09-10",
    "nouvelle": false
   },
   {
@@ -12931,11 +12917,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Triafamone",
-    "nbHomologations": 12,
+    "nbHomologations": 13,
     "nbFabrique": 11,
-    "nbImporte": 1,
+    "nbImporte": 2,
     "premiere": "2014-04-29",
-    "derniere": "2026-02-25",
+    "derniere": "2026-09-14",
     "nbSocietes": 6
    },
    "france": null,
@@ -12955,11 +12941,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Tefuryltrione",
-    "nbHomologations": 27,
+    "nbHomologations": 28,
     "nbFabrique": 26,
-    "nbImporte": 1,
+    "nbImporte": 2,
     "premiere": "2014-04-29",
-    "derniere": "2026-03-20",
+    "derniere": "2026-09-14",
     "nbSocietes": 7
    },
    "france": null,
@@ -14184,7 +14170,7 @@
    "australie": {
     "nom": "CUPROUS OXIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 24,
+    "nbProduitsAgricoles": 32,
     "matiereActiveApprouvee": false
    },
    "premiereVue": "2026-09-07",
@@ -15062,6 +15048,30 @@
    "nouvelle": false
   },
   {
+   "cle": "7a4iberelin",
+   "nom": "Gibberellin A4+7",
+   "iso": "Gibberellin A4+7",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "Gibberellin A4+7",
+    "nbHomologations": 19,
+    "nbFabrique": 12,
+    "nbImporte": 7,
+    "premiere": "2003-09-06",
+    "derniere": "2025-12-23",
+    "nbSocietes": 11
+   },
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-09-10",
+   "nouvelle": false
+  },
+  {
    "cle": "tiadinil",
    "nom": "Tiadinil",
    "iso": "Tiadinil",
@@ -15454,11 +15464,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Fentrazamide",
-    "nbHomologations": 52,
+    "nbHomologations": 53,
     "nbFabrique": 51,
-    "nbImporte": 1,
+    "nbImporte": 2,
     "premiere": "2000-04-03",
-    "derniere": "2025-11-10",
+    "derniere": "2026-09-14",
     "nbSocietes": 7
    },
    "france": null,
@@ -15692,9 +15702,9 @@
    "nouvelle": false
   },
   {
-   "cle": "i",
-   "nom": "IAA",
-   "iso": "IAA",
+   "cle": "6bensilaminopurini",
+   "nom": "IAA+6-Benzylaminopurine",
+   "iso": "IAA+6-Benzylaminopurine",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -15702,13 +15712,37 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "IAA",
+    "nom": "IAA+6-Benzylaminopurine",
     "nbHomologations": 2,
     "nbFabrique": 2,
     "nbImporte": 0,
     "premiere": "1998-11-28",
     "derniere": "2007-03-29",
     "nbSocietes": 2
+   },
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-09-10",
+   "nouvelle": false
+  },
+  {
+   "cle": "6bensilaminopurin",
+   "nom": "6-Benzylaminopurine",
+   "iso": "6-Benzylaminopurine",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "6-Benzylaminopurine",
+    "nbHomologations": 9,
+    "nbFabrique": 8,
+    "nbImporte": 1,
+    "premiere": "1997-03-11",
+    "derniere": "2022-12-20",
+    "nbSocietes": 7
    },
    "france": null,
    "australie": null,
@@ -15994,7 +16028,7 @@
    "australie": {
     "nom": "NAPROPAMIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 2,
+    "nbProduitsAgricoles": 3,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -16031,9 +16065,9 @@
    "nouvelle": false
   },
   {
-   "cle": "a4iberelin",
-   "nom": "Gibberellin A4",
-   "iso": "Gibberellin A4",
+   "cle": "67a4bensilaminopuriniberelin",
+   "nom": "Gibberellin A4+7+6-Benzylaminopurine",
+   "iso": "Gibberellin A4+7+6-Benzylaminopurine",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -16041,17 +16075,17 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "Gibberellin A4",
-    "nbHomologations": 28,
-    "nbFabrique": 19,
-    "nbImporte": 9,
+    "nom": "Gibberellin A4+7+6-Benzylaminopurine",
+    "nbHomologations": 9,
+    "nbFabrique": 7,
+    "nbImporte": 2,
     "premiere": "1996-03-27",
-    "derniere": "2025-12-23",
-    "nbSocietes": 12
+    "derniere": "2016-11-07",
+    "nbSocietes": 5
    },
    "france": null,
    "australie": null,
-   "premiereVue": "2026-09-07",
+   "premiereVue": "2026-09-10",
    "nouvelle": false
   },
   {
@@ -16110,54 +16144,6 @@
     "nbProduitsAgricoles": 2,
     "matiereActiveApprouvee": false
    },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "7",
-   "nom": "7",
-   "iso": "7",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "7",
-    "nbHomologations": 28,
-    "nbFabrique": 19,
-    "nbImporte": 9,
-    "premiere": "1996-03-27",
-    "derniere": "2025-12-23",
-    "nbSocietes": 12
-   },
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "6bensilaminopurin",
-   "nom": "6-Benzylaminopurine",
-   "iso": "6-Benzylaminopurine",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "6-Benzylaminopurine",
-    "nbHomologations": 20,
-    "nbFabrique": 17,
-    "nbImporte": 3,
-    "premiere": "1996-03-27",
-    "derniere": "2022-12-20",
-    "nbSocietes": 9
-   },
-   "france": null,
-   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -18316,11 +18302,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Glyphosate-isopropylammonium",
-    "nbHomologations": 71,
-    "nbFabrique": 55,
+    "nbHomologations": 72,
+    "nbFabrique": 56,
     "nbImporte": 16,
     "premiere": "1981-03-02",
-    "derniere": "2026-05-04",
+    "derniere": "2026-09-14",
     "nbSocietes": 28
    },
    "france": null,

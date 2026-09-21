@@ -7,10 +7,9 @@ import { Recherche } from "./Recherche";
 /**
  * Ruban de stations — la signature de la direction retenue.
  *
- * La navigation matérialise la boucle du produit plutôt que de lister des
- * écrans : Signal → Matière active → Produits touchés → Alternative →
- * Fournisseur → Dossier. On sait toujours où l'on est dans le raisonnement,
- * et chaque station porte le compteur qui dit s'il y a du travail dessus.
+ * La navigation matérialise la boucle : Portefeuille → Alternative →
+ * Fournisseur → Dossier. Le portefeuille fusionne radar, alertes, matières
+ * et produits. Chaque station porte le compteur du travail restant.
  *
  * Le radar précède la chaîne, séparé par un filet : c'est une vue d'ensemble,
  * pas une étape du raisonnement.
@@ -24,6 +23,8 @@ export interface Station {
   compteur: string;
   /** Nombre d'alertes critiques, affiché en pastille rouge. */
   alerte?: number;
+  /** Autres préfixes qui gardent cette station allumée (sous-vues). */
+  aliases?: string[];
 }
 
 export interface Jauge {
@@ -48,8 +49,12 @@ export function ChaineNav({
 }) {
   const path = usePathname();
 
-  const actif = (href: string) =>
-    href === "/" ? path === "/" : path === href || path.startsWith(href + "/");
+  const actif = (s: Station) => {
+    const paths = [s.href, ...(s.aliases ?? [])];
+    return paths.some((href) =>
+      href === "/" ? path === "/" : path === href || path.startsWith(href + "/")
+    );
+  };
 
   return (
     <header className="entete">
@@ -82,15 +87,14 @@ export function ChaineNav({
 
       <nav className="chaine" aria-label="Chaîne de décision">
         {stations.map((s) => {
-          const on = actif(s.href);
+          const on = actif(s);
           return (
             <Link
               key={s.href}
               href={s.href}
-              className={`station${on ? " on" : ""}${s.etape ? "" : " hors-chaine"}`}
+              className={`station${on ? " on" : ""}`}
               aria-current={on ? "page" : undefined}
             >
-              <span className="e">{s.etape ?? "Vue d'ensemble"}</span>
               <span className="n">{s.nom}</span>
               <span className="k">
                 {s.compteur}
