@@ -47,7 +47,7 @@ export function detailRisque(ma: MatiereActive): DetailRisque | null {
   const retraitOnssa = retireePourMatiere(ma);
   const restrictionOnssa = restreintePourMatiere(ma);
 
-  // Liste officielle des retraits : plus récente que l'Excel. Si les deux
+  // Liste officielle des retraits : plus récente que l'index. Si les deux
   // se contredisent, on ne corrige pas l'index — on note 100.
   if (retraitOnssa) {
     return {
@@ -56,8 +56,8 @@ export function detailRisque(ma: MatiereActive): DetailRisque | null {
       facteurs: [
         {
           libelle: retraitOnssa.dateRetrait
-            ? `Retirée ONSSA depuis le ${fmtDate(retraitOnssa.dateRetrait)} — encore à l'index Excel`
-            : "Retirée ONSSA — encore à l'index Excel",
+            ? `Retirée ONSSA depuis le ${fmtDate(retraitOnssa.dateRetrait)} — encore à l'index`
+            : "Retirée ONSSA — encore à l'index",
           points: 100,
         },
       ],

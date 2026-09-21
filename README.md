@@ -52,7 +52,7 @@ npm run import:ephy
 
 | Couche | Contenu | Origine | Fiabilité |
 |---|---|---|---|
-| **Importée** | Index ONSSA : 4 852 lignes, 1 413 produits, 76 détenteurs, 653 matières actives, 211 fournisseurs. Portefeuille du détenteur : AMM, dates, usages, doses, DAR. | `scripts/import_onssa.py` depuis *FICHIERS PHYTO.xlsx* | Reproductible, daté, aucune saisie |
+| **Importée** | Index ONSSA : index public IndPesticide.aspx (produits, détenteurs, matières, usages, doses, DAR). | `scripts/import_onssa_indpesticide.py` depuis eservice.onssa.gov.ma | Reproductible, daté, aucune saisie |
 | **Expertise** | Statuts d'approbation UE, échéances, drapeaux de danger (CMR, perturbateur endocrinien, toxicité abeilles…). | `lib/reglementaire.ts`, saisie manuelle | À valider — voir réserve ci-dessous |
 | **Formulaire** | Checklist ONSSA Annexe 3-B : 2 parties, 11 sections, 78 lignes. | `lib/checklist-onssa.ts`, transcription du formulaire officiel | Fidèle au document |
 | **ANSES** | Statut français de 1 337 substances : inscription au règlement, produits autorisés et retirés, date du dernier retrait. | `scripts/import_ephy.py` depuis le catalogue E-Phy | Source officielle, hebdomadaire |
@@ -319,7 +319,8 @@ Le bandeau liste aussi les changements de statut relevés au dernier import.
 ## Architecture
 
 ```
-scripts/import_onssa.py   Excel ONSSA -> data/onssa.json
+scripts/import_onssa_indpesticide.py   IndPesticide.aspx -> data/onssa.json
+scripts/import_onssa.py                Excel ONSSA (secours hors ligne) -> data/onssa.json
 scripts/import_ephy.py    catalogue E-Phy (Anses) -> data/ephy.json
 data/onssa.json           index + portefeuille (généré, versionné)
 data/ephy.json            statut français des substances (généré, versionné)

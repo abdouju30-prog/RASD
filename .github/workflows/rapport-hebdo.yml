@@ -5,7 +5,7 @@ name: Veille Hebdomadaire ONSSA & Rapport PDF
 # Ce job met à jour les catalogues que l'application lit :
 #   E-Phy (Anses), textes ONSSA, listes retraits/restrictions, e-service,
 #   plus le journal nouveautés.json et le PDF envoyé par mail.
-# L'index Excel (FICHIERS PHYTO.xlsx) reste manuel : npm run import.
+# L'index phytosanitaire est relu depuis IndPesticide.aspx (fiches produit).
 
 on:
   schedule:
@@ -55,6 +55,11 @@ jobs:
         continue-on-error: true
         run: python scripts/import_onssa_eservice.py
 
+      - name: Index phytosanitaire — IndPesticide.aspx
+        continue-on-error: true
+        timeout-minutes: 240
+        run: python scripts/import_onssa_indpesticide.py --workers 2
+
       - name: Journal des nouveautés ONSSA
         run: python scripts/veille_onssa.py
 
@@ -88,6 +93,7 @@ jobs:
             data/onssa-reglementation-vu.json \
             data/onssa-listes.json \
             data/onssa-eservice.json \
+            data/onssa.json \
             data/nouveautes.json \
             data/rapport-hebdo-onssa.pdf
           git commit -m "Veille hebdomadaire — ONSSA, Anses, rapport PDF" || echo "Aucune modification"

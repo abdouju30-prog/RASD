@@ -25,9 +25,8 @@ délibéré : il se fait en interrogeant un formulaire ~200 fois, le registre
 bouge lentement, et il n'apporte aucun signal réglementaire — seulement des
 fournisseurs. Il se lance à la demande, avec --chine ou `npm run import:icama`.
 
-L'index ONSSA n'est PAS rafraîchi ici : il vient d'un fichier Excel que vous
-maîtrisez, pas d'une source publique. Utiliser `npm run import` après l'avoir
-mis à jour. Les avis et textes de Reglementation_N.aspx tournent à part,
+L'index ONSSA se rafraîchit à part : `npm run import` relit IndPesticide.aspx
+(usages, doses, DAR). Les avis et textes de Reglementation_N.aspx tournent
 chaque jeudi : `npm run import:onssa-regl` ou le workflow maj-onssa-regl.
 """
 

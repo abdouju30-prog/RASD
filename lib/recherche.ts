@@ -275,7 +275,7 @@ function construire(): Indexee[] {
       detail: [
         "ONSSA",
         r.dateRetrait ? `retirée depuis le ${r.dateRetrait.split("-").reverse().join("/")}` : "retirée",
-        "absente de l'index Excel",
+        "absente de l'index ONSSA",
       ].join(" · "),
       type: "retiree",
       href: hrefRetirees,
@@ -294,7 +294,7 @@ function construire(): Indexee[] {
         "ONSSA",
         r.dateRestriction ? `restriction depuis le ${r.dateRestriction.split("-").reverse().join("/")}` : "restriction d'usage",
         r.condition.slice(0, 120),
-        "absente de l'index Excel",
+        "absente de l'index ONSSA",
       ]
         .filter(Boolean)
         .join(" · "),

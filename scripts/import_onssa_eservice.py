@@ -33,8 +33,8 @@ des questions que l'index ne pose même pas :
   • « Évaluateurs » : noms, téléphones mobiles et adresses de fonctionnaires de
     l'ONSSA. Aucun besoin métier ne justifie de recopier des données
     personnelles dans une application déployée.
-  • « Index phytosanitaire » : c'est un moteur de recherche à neuf entrées, pas
-    une page à télécharger. Il reste alimenté par « FICHIERS PHYTO.xlsx ».
+  • « Index phytosanitaire » : fiches produit (usages, dose, DAR) importées
+    à part par scripts/import_onssa_indpesticide.py depuis IndPesticide.aspx.
 
 Source : ONSSA — https://eservice.onssa.gov.ma, registres publics.
 """

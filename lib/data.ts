@@ -14,7 +14,8 @@ import type {
 
 // ────────────────────────────────────────────────────────────────────────────
 // Source unique de vérité : data/onssa.json, produit par
-//     python scripts/import_onssa.py "<FICHIERS PHYTO.xlsx>"
+//     python scripts/import_onssa_indpesticide.py
+// (Excel FICHIERS PHYTO.xlsx via import_onssa.py reste un secours hors ligne.)
 //
 // L'outil couvre les 75 détenteurs de l'index, pas un seul. Tout ce qui dépend
 // du détenteur est donc une FONCTION de son identifiant, pas une constante :

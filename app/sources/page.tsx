@@ -254,7 +254,9 @@ export default function SourcesPage() {
             (E-Phy, Australie, Brésil, Corée, sentinelle). Les textes ONSSA
             (avis, listes, décrets) tournent le jeudi via{" "}
             <span className="mono">maj-onssa-regl</span>
-            , distincts de l&apos;index Excel. L&apos;Anses republie E-Phy dans
+            . L&apos;index phytosanitaire est relu depuis{" "}
+            <span className="mono">IndPesticide.aspx</span>
+            {" "}(MAJ affichée par l&apos;ONSSA). L&apos;Anses republie E-Phy dans
             la nuit de mardi à mercredi : le jeudi, le relevé porte en principe la semaine
             en cours. Commande manuelle :{" "}
             <span className="mono">npm run maj</span>.
@@ -271,7 +273,7 @@ export default function SourcesPage() {
             role="Le socle — tout le reste s'y rattache"
             contenu={`${META.nbLignesIndex.toLocaleString("fr")} lignes, ${META.nbProduitsIndex} produits, ${META.nbDetenteurs} détenteurs, ${MATIERES.length} matières actives, ${FOURNISSEURS.length} fournisseurs. ${DETENTEURS.length} détenteurs couverts, ${PRODUITS.length} produits avec AMM, dates, usages, doses et DAR.`}
             origine={META.source}
-            maj={`Excel importé le ${fmtDate(META.genere.slice(0, 10))} · e-service relevé le ${fmtDate(META_ESERVICE.genere.slice(0, 10))}`}
+            maj={`IndPesticide ${fmtDate(META.genere.slice(0, 10))} · registres ${fmtDate(META_ESERVICE.genere.slice(0, 10))}`}
             fiabilite="source"
           />
 
@@ -283,7 +285,7 @@ export default function SourcesPage() {
             origine={STATS_ONSSA_TEXTES.attribution}
             maj={`relevé le ${STATS_ONSSA_TEXTES.releveFmt} · cron jeudi`}
             fiabilite="source"
-            reserve="Seuls les textes du Bulletin Officiel font foi. L'index phytosanitaire (Excel) reste la source des matières actives et des AMM."
+            reserve="Seuls les textes du Bulletin Officiel font foi. L'index phytosanitaire (IndPesticide.aspx) reste la source des matières actives et des AMM."
           />
 
           <Compartiment

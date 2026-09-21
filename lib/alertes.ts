@@ -122,7 +122,7 @@ export function alertes(detenteurId: string): Alerte[] {
       detail:
         `Liste officielle des substances retirées / interdites au Maroc` +
         (r.dateRetrait ? ` (depuis le ${fmtDate(r.dateRetrait)})` : "") +
-        `. L'index Excel porte encore cette molécule : l'AMM affichée n'est pas une preuve d'homologation en vigueur.`,
+        `. L'index ONSSA porte encore cette molécule : l'AMM affichée n'est pas une preuve d'homologation en vigueur.`,
       matiere: g.ma,
       produits: g.produits,
       usages: nbUsages(g.produits),

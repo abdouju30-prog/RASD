@@ -10,7 +10,7 @@ import { fmtDate } from "./logic";
 // www.onssa.gov.ma). Un décret d'application, une liste de revendeurs,
 // un avis de réexamen : c'est ça qu'il faut avoir lu la semaine où ça sort.
 //
-// L'index des matières actives n'est PAS ici. Il reste FICHIERS PHYTO.xlsx.
+// L'index des matières actives n'est PAS ici. Il vient d'IndPesticide.aspx.
 // ────────────────────────────────────────────────────────────────────────────
 
 export type TypeTexteOnssa =

@@ -33,7 +33,7 @@ export function BanniereOnssa({ ma }: { ma: { nom: string; molecule: string } })
         </div>
         <p style={{ margin: "8px 0 0", fontSize: 13.5, lineHeight: 1.55, color: "var(--fg)" }}>
           Liste ONSSA des substances actives retirées
-          {retrait.dateRetrait ? ` depuis le ${fmtDate(retrait.dateRetrait)}` : ""}. L&apos;index Excel
+          {retrait.dateRetrait ? ` depuis le ${fmtDate(retrait.dateRetrait)}` : ""}. L&apos;index ONSSA
           porte encore cette molécule : l&apos;AMM affichée n&apos;est pas une preuve d&apos;homologation
           en vigueur.
         </p>

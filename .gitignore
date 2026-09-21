@@ -21,3 +21,4 @@ __pycache__/
 
 # PDF source du catalogue russe : 8 Mo, retéléchargeable
 data/_cache/
+data/onssa-indpesticide-cache.jsonl
