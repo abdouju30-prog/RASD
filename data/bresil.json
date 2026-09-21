@@ -2,8 +2,8 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-09-13",
-  "genere": "2026-09-13T10:11:03",
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-09-21",
+  "genere": "2026-09-21T11:15:01",
   "nbHomologations": 2992,
   "nbUsines": 543,
   "nbMatieres": 73,
@@ -1474,7 +1474,7 @@
    "nomsPt": [
     "tiametoxam"
    ],
-   "nbHomologations": 40,
+   "nbHomologations": 41,
    "teneurMax": 995.0,
    "usines": [
     "ALZCHEM TROSTBERG GMBH  -TROSTBERG|ALEMANHA",
@@ -4092,10 +4092,9 @@
   {
    "nomPt": "tiodicarbe",
    "groupeChimique": "metilcarbamato de oxima",
-   "nbHomologations": 21,
+   "nbHomologations": 20,
    "teneurMax": 980.0,
    "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "ANASAC Brasil Comercio e Locação de Máquinas Ltda.",
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
     "Agro-Lead Brasil Assessoria em Produtos Agrícolas Ltda - EPP",
@@ -10583,7 +10582,7 @@
     "tiametoxam",
     "tiodicarbe"
    ],
-   "nbHomologations": 39,
+   "nbHomologations": 38,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
@@ -14850,6 +14849,25 @@
    ]
   },
   {
+   "id": "CRYSTAL CROP PROTECTION LIMITED.|ÍNDIA",
+   "nom": "Crystal Crop Protection Limited.",
+   "pays": "Inde",
+   "paysBrut": "ÍNDIA",
+   "sites": [],
+   "matieres": [
+    "THIAMETHOXAM"
+   ],
+   "matieresPt": [
+    "tiametoxam"
+   ],
+   "nbHomologations": 3,
+   "titulaires": [
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "Cropchem Ltda - Porto Alegre",
+    "Ouro Fino Química S.A. - Uberaba"
+   ]
+  },
+  {
    "id": "HANGZHOU NUTRICHEM COMPANY LIMITED|CHINA, REPUBLICA POPULAR",
    "nom": "Hangzhou Nutrichem Company Limited",
    "pays": "Chine",
@@ -15311,24 +15329,6 @@
    "nbHomologations": 2,
    "titulaires": [
     "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP"
-   ]
-  },
-  {
-   "id": "CRYSTAL CROP PROTECTION LIMITED.|ÍNDIA",
-   "nom": "Crystal Crop Protection Limited.",
-   "pays": "Inde",
-   "paysBrut": "ÍNDIA",
-   "sites": [],
-   "matieres": [
-    "THIAMETHOXAM"
-   ],
-   "matieresPt": [
-    "tiametoxam"
-   ],
-   "nbHomologations": 2,
-   "titulaires": [
-    "Cropchem Ltda - Porto Alegre",
-    "Ouro Fino Química S.A. - Uberaba"
    ]
   },
   {

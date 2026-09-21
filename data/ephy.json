@@ -3,18 +3,35 @@
   "source": "Données E-Phy - Anses",
   "url": "https://www.data.gouv.fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges",
   "licence": "Licence Ouverte / Open Licence",
-  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-08",
-  "majDonnees": "2026-09-08",
-  "genere": "2026-09-13T07:34:14",
+  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-15",
+  "majDonnees": "2026-09-15",
+  "genere": "2026-09-21T11:13:56",
   "nbSubstances": 1337,
-  "nbProduitsPPP": 13558,
+  "nbProduitsPPP": 13566,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
   "premiereImport": false,
-  "nbChangements": 0,
+  "nbChangements": 2,
   "dateComparaison": "2026-09-08",
-  "changements": []
+  "changements": [
+   {
+    "id": "calcium-carbonate",
+    "nom": "Calcium carbonate",
+    "type": "statut",
+    "avant": "indéterminée",
+    "apres": "autorisée",
+    "dernierRetrait": null
+   },
+   {
+    "id": "fish-oil",
+    "nom": "Fish oil",
+    "type": "statut",
+    "avant": "indéterminée",
+    "apres": "autorisée",
+    "dernierRetrait": null
+   }
+  ]
  },
  "substances": [
   {
@@ -945,9 +962,9 @@
    "variantes": [
     "aclonifène"
    ],
-   "nbProduitsAutorises": 22,
-   "nbProduitsRetires": 20,
-   "dernierRetrait": "2025-12-10"
+   "nbProduitsAutorises": 21,
+   "nbProduitsRetires": 21,
+   "dernierRetrait": "2026-08-10"
   },
   {
    "id": "acridinic-bases",
@@ -1419,7 +1436,7 @@
    "variantes": [
     "amétoctradine"
    ],
-   "nbProduitsAutorises": 3,
+   "nbProduitsAutorises": 4,
    "nbProduitsRetires": 5,
    "dernierRetrait": "2024-11-20"
   },
@@ -2932,7 +2949,7 @@
    "variantes": [
     "boscalide"
    ],
-   "nbProduitsAutorises": 24,
+   "nbProduitsAutorises": 25,
    "nbProduitsRetires": 5,
    "dernierRetrait": "2024-01-31"
   },
@@ -3288,7 +3305,7 @@
    "variantes": [
     "carbonate de calcium"
    ],
-   "nbProduitsAutorises": 0,
+   "nbProduitsAutorises": 1,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },
@@ -4418,7 +4435,7 @@
    "id": "cloquintocet-mexyl",
    "nom": "Cloquintocet mexyl",
    "cas": "99607-70-2",
-   "etat": "AUTRE_CAS",
+   "etat": "INSCRITE",
    "variantes": [
     "cloquintocet-mexyl"
    ],
@@ -4919,9 +4936,9 @@
    "variantes": [
     "cymoxanil"
    ],
-   "nbProduitsAutorises": 16,
-   "nbProduitsRetires": 164,
-   "dernierRetrait": "2025-11-10"
+   "nbProduitsAutorises": 15,
+   "nbProduitsRetires": 165,
+   "dernierRetrait": "2026-07-22"
   },
   {
    "id": "cypermethrin",
@@ -5527,9 +5544,9 @@
    "variantes": [
     "difénoconazole"
    ],
-   "nbProduitsAutorises": 38,
-   "nbProduitsRetires": 19,
-   "dernierRetrait": "2020-09-01"
+   "nbProduitsAutorises": 37,
+   "nbProduitsRetires": 20,
+   "dernierRetrait": "2026-09-06"
   },
   {
    "id": "difenoxuron",
@@ -6037,7 +6054,7 @@
    "variantes": [
     "dithianon"
    ],
-   "nbProduitsAutorises": 10,
+   "nbProduitsAutorises": 11,
    "nbProduitsRetires": 9,
    "dernierRetrait": "2026-02-16"
   },
@@ -6834,7 +6851,7 @@
     "acides gras C7-C20 sels de potassium",
     "acides gras en C7-C18 et sels de potassium insaturés en C18"
    ],
-   "nbProduitsAutorises": 11,
+   "nbProduitsAutorises": 10,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },
@@ -7375,7 +7392,7 @@
     "Repellents by smell of animal or plant origin/ fish oil",
     "huile de poisson"
    ],
-   "nbProduitsAutorises": 0,
+   "nbProduitsAutorises": 1,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },
@@ -7524,9 +7541,9 @@
    "variantes": [
     "fluaziname"
    ],
-   "nbProduitsAutorises": 10,
-   "nbProduitsRetires": 7,
-   "dernierRetrait": "2024-11-20"
+   "nbProduitsAutorises": 9,
+   "nbProduitsRetires": 8,
+   "dernierRetrait": "2026-07-22"
   },
   {
    "id": "fluazolate",
@@ -7985,9 +8002,9 @@
    "variantes": [
     "fluxapyroxade"
    ],
-   "nbProduitsAutorises": 15,
-   "nbProduitsRetires": 5,
-   "dernierRetrait": "2025-11-20"
+   "nbProduitsAutorises": 16,
+   "nbProduitsRetires": 6,
+   "dernierRetrait": "2026-09-06"
   },
   {
    "id": "folic-acid",
@@ -8133,7 +8150,7 @@
     "fosétyl",
     "fosétyl d'aluminium"
    ],
-   "nbProduitsAutorises": 23,
+   "nbProduitsAutorises": 24,
    "nbProduitsRetires": 66,
    "dernierRetrait": "2025-10-31"
   },
@@ -8935,9 +8952,9 @@
    "variantes": [
     "imazamox"
    ],
-   "nbProduitsAutorises": 10,
-   "nbProduitsRetires": 2,
-   "dernierRetrait": "2018-08-14"
+   "nbProduitsAutorises": 9,
+   "nbProduitsRetires": 3,
+   "dernierRetrait": "2026-08-10"
   },
   {
    "id": "imazapyr",
@@ -12757,7 +12774,7 @@
     "propamocarbe",
     "propamocarbe HCl"
    ],
-   "nbProduitsAutorises": 11,
+   "nbProduitsAutorises": 12,
    "nbProduitsRetires": 16,
    "dernierRetrait": "2020-09-01"
   },
@@ -13012,7 +13029,7 @@
    "variantes": [
     "prothioconazole"
    ],
-   "nbProduitsAutorises": 77,
+   "nbProduitsAutorises": 78,
    "nbProduitsRetires": 2,
    "dernierRetrait": "2021-02-09"
   },
@@ -16427,7 +16444,7 @@
    "variantes": [
     "zoxamide"
    ],
-   "nbProduitsAutorises": 6,
+   "nbProduitsAutorises": 7,
    "nbProduitsRetires": 5,
    "dernierRetrait": "2024-11-20"
   },

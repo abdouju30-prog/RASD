@@ -3,11 +3,11 @@
   "source": "APVMA PUBCRIS",
   "url": "https://data.gov.au/data/dataset/apvma-pubcris-dataset-for-registered-agricultural-and-veterinary-chemical-products-and-approved-acti",
   "licence": "Creative Commons Attribution 3.0 Australia",
-  "attribution": "APVMA PUBCRIS — mise à jour du 2026-09-09",
-  "majDonnees": "2026-09-09",
-  "genere": "2026-09-12T09:58:29",
+  "attribution": "APVMA PUBCRIS — mise à jour du 2026-09-16",
+  "majDonnees": "2026-09-16",
+  "genere": "2026-09-21T11:14:49",
   "nbConstituants": 2609,
-  "nbProduitsAgricoles": 9451,
+  "nbProduitsAgricoles": 9472,
   "avertissement": "L'APVMA ne gouverne pas l'ONSSA : ce statut sert à recouper une décision européenne hors du référentiel européen, pas à prédire une décision marocaine. PUBCRIS ne conserve que l'état courant, sans historique de retrait : « absente » signifie « aucun produit agricole enregistré aujourd'hui », ce qui peut vouloir dire retirée AUSSI BIEN QUE jamais homologuée. Seul « autorisée » est une information solide."
  },
  "constituants": [
@@ -1012,11 +1012,20 @@
    "nom": "2,4-D PRESENT AS THE 2-ETHYLHEXYL ESTER",
    "famille": "Phenoxy Acids",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 30,
+   "nbProduitsAgricoles": 32,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
    "societes": [
+    {
+     "nom": "NUTRIEN AG SOLUTIONS LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": true,
+     "filialeLocale": false,
+     "nbProduits": 5
+    },
     {
      "nom": "ADAMA AUSTRALIA PTY LIMITED",
      "pays": null,
@@ -1025,15 +1034,6 @@
      "multinationale": true,
      "filialeLocale": true,
      "nbProduits": 4
-    },
-    {
-     "nom": "NUTRIEN AG SOLUTIONS LIMITED",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": true,
-     "filialeLocale": false,
-     "nbProduits": 3
     },
     {
      "nom": "NUFARM AUSTRALIA LIMITED",
@@ -1370,20 +1370,11 @@
    "nom": "2,4-D PRESENT AS THE DIMETHYLAMINE AND DIETHANOLAMINE SA",
    "famille": "PHENOXY ACIDS-2,4-D",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 73,
+   "nbProduitsAgricoles": 74,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
    "societes": [
-    {
-     "nom": "ADAMA AUSTRALIA PTY LIMITED",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": true,
-     "filialeLocale": true,
-     "nbProduits": 4
-    },
     {
      "nom": "TITAN AG PTY LTD",
      "pays": null,
@@ -1391,6 +1382,15 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
+     "nbProduits": 5
+    },
+    {
+     "nom": "ADAMA AUSTRALIA PTY LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": true,
+     "filialeLocale": true,
      "nbProduits": 4
     },
     {
@@ -3700,9 +3700,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -8596,9 +8596,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -10183,9 +10183,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -10377,9 +10377,9 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -11595,9 +11595,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -13174,9 +13174,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -13564,9 +13564,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -24154,7 +24154,7 @@
    "nom": "CLOTHIANIDIN",
    "famille": "Guanidines",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 15,
+   "nbProduitsAgricoles": 16,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -24187,6 +24187,15 @@
      "nbProduits": 2
     },
     {
+     "nom": "CROPSURE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 2
+    },
+    {
      "nom": "Shandong Rainbow International Co Ltd",
      "pays": "Chine",
      "paysFiable": true,
@@ -24206,15 +24215,6 @@
     },
     {
      "nom": "2022 ENVIRONMENTAL SCIENCE AU PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "CROPSURE PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -26006,9 +26006,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -26581,7 +26581,7 @@
    "nom": "COPPER PRESENT AS CUPROUS OXIDE",
    "famille": "MINERAL-COPPER",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 94,
+   "nbProduitsAgricoles": 100,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -26593,7 +26593,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 55
+     "nbProduits": 60
     },
     {
      "nom": "JOTUN AUSTRALIA PTY LTD",
@@ -26611,7 +26611,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 7
+     "nbProduits": 8
     },
     {
      "nom": "WAGON PAINTS AUSTRALIA PTY LTD",
@@ -26773,7 +26773,7 @@
    "nom": "COPPER PYRITHIONE",
    "famille": "MINERAL",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 42,
+   "nbProduitsAgricoles": 43,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -26794,7 +26794,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 9
+     "nbProduits": 10
     },
     {
      "nom": "JOTUN AUSTRALIA PTY LTD",
@@ -27254,7 +27254,7 @@
    "nom": "CUPROUS OXIDE",
    "famille": "MINERAL-COPPER",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 30,
+   "nbProduitsAgricoles": 32,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -27266,7 +27266,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 21
+     "nbProduits": 23
     },
     {
      "nom": "Chugoku Paints B.V.",
@@ -30174,7 +30174,7 @@
    "nom": "DICAMBA PRESENT AS THE DIMETHYLAMINE SALT",
    "famille": "BENZOIC ACID-ARYLALIPHATIC",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 118,
+   "nbProduitsAgricoles": 119,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -30204,7 +30204,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 8
+     "nbProduits": 9
     },
     {
      "nom": "J C & A T SEARLE PTY LTD",
@@ -31863,9 +31863,9 @@
      "nbProduits": 4
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -33910,9 +33910,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -36189,9 +36189,9 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -36549,9 +36549,9 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -37947,9 +37947,9 @@
      "nbProduits": 3
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -39448,9 +39448,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -40165,9 +40165,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -40187,9 +40187,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -40270,9 +40270,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -40552,9 +40552,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -41742,9 +41742,9 @@
      "nbProduits": 3
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -44170,7 +44170,7 @@
    "nom": "GLYPHOSATE PRESENT AS THE ISOPROPYLAMINE SALT",
    "famille": "GLYCINE",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 255,
+   "nbProduitsAgricoles": 258,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -44182,7 +44182,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 19
+     "nbProduits": 21
     },
     {
      "nom": "EVERGREEN GARDEN CARE AUSTRALIA PTY LTD",
@@ -44191,7 +44191,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 15
+     "nbProduits": 16
     },
     {
      "nom": "SYNGENTA AUSTRALIA PTY LTD",
@@ -45964,9 +45964,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -48646,7 +48646,7 @@
    "nom": "IMAZAPIC",
    "famille": "IMIDAZOLINONES",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 11,
+   "nbProduitsAgricoles": 12,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -48667,7 +48667,7 @@
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": true,
-     "nbProduits": 1
+     "nbProduits": 2
     },
     {
      "nom": "CROP SMART PTY LTD",
@@ -48924,7 +48924,7 @@
    "nom": "IMAZAPYR",
    "famille": "IMIDAZOLINONES",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 21,
+   "nbProduitsAgricoles": 22,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -48957,6 +48957,15 @@
      "nbProduits": 3
     },
     {
+     "nom": "NUFARM AUSTRALIA LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": true,
+     "filialeLocale": true,
+     "nbProduits": 2
+    },
+    {
      "nom": "4 FARMERS AUSTRALIA PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -48972,15 +48981,6 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "NUFARM AUSTRALIA LIMITED",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": true,
-     "filialeLocale": true,
      "nbProduits": 1
     },
     {
@@ -49609,9 +49609,9 @@
      "nbProduits": 6
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -50542,9 +50542,9 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -50716,7 +50716,7 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "SJ ENTERPRISES PTY LTD",
+     "nom": "ROOTZ DISTRIBUTION PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -51005,7 +51005,7 @@
    "nom": "INDOXACARB (75:25)",
    "famille": "Ungrouped",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 8,
+   "nbProduitsAgricoles": 9,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -51017,7 +51017,7 @@
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": true,
-     "nbProduits": 3
+     "nbProduits": 4
     },
     {
      "nom": "ADAMA AUSTRALIA PTY LIMITED",
@@ -51714,9 +51714,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -52666,9 +52666,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -52722,9 +52722,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -56071,9 +56071,9 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -56379,7 +56379,7 @@
    "nom": "MCPA PRESENT AS THE DIMETHYLAMINE SALT",
    "famille": "PHENOXY ACIDS-MCPA-AMINE",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 135,
+   "nbProduitsAgricoles": 136,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -56409,7 +56409,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 9
+     "nbProduits": 10
     },
     {
      "nom": "NUFARM AUSTRALIA LIMITED",
@@ -57836,9 +57836,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -58394,9 +58394,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -58645,9 +58645,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -60551,9 +60551,9 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -62812,7 +62812,7 @@
    "nom": "NAPROPAMIDE",
    "famille": "Amides",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 2,
+   "nbProduitsAgricoles": 3,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -62824,7 +62824,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 1
+     "nbProduits": 2
     },
     {
      "nom": "FMC AUSTRALASIA PTY LTD",
@@ -66854,9 +66854,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -67812,9 +67812,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -68950,9 +68950,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -70185,9 +70185,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -73392,9 +73392,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -74878,9 +74878,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -74909,9 +74909,9 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -75607,9 +75607,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -76790,9 +76790,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -77400,9 +77400,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -78217,9 +78217,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -78544,15 +78544,15 @@
    "nom": "PYROXASULFONE",
    "famille": "Azoles, Oxazoles, Thiazoles",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 63,
+   "nbProduitsAgricoles": 64,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -78595,6 +78595,15 @@
      "nbProduits": 3
     },
     {
+     "nom": "NUFARM AUSTRALIA LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": true,
+     "filialeLocale": true,
+     "nbProduits": 3
+    },
+    {
      "nom": "CONQUEST CROP PROTECTION PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -78627,15 +78636,6 @@
      "paysFiable": false,
      "coutFaible": false,
      "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 2
-    },
-    {
-     "nom": "NUFARM AUSTRALIA LIMITED",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": true,
      "filialeLocale": true,
      "nbProduits": 2
     },
@@ -83928,9 +83928,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -84064,9 +84064,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -84131,9 +84131,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -84153,9 +84153,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -86375,9 +86375,9 @@
      "nbProduits": 5
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -86957,7 +86957,7 @@
    "nom": "TEBUTHIURON",
    "famille": "Urea Derivatives",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 32,
+   "nbProduitsAgricoles": 33,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -86969,7 +86969,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 6
+     "nbProduits": 7
     },
     {
      "nom": "NUTRIEN AG SOLUTIONS LIMITED",
@@ -88167,9 +88167,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -88322,9 +88322,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -88582,9 +88582,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -88793,9 +88793,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -88872,9 +88872,9 @@
      "nbProduits": 1
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -90334,9 +90334,9 @@
      "nbProduits": 2
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -91034,7 +91034,7 @@
    "nom": "TRICLOPYR AS THE TRIETHYLAMINE SALT",
    "famille": "PYRIDINE-PYRIDINOXY",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 12,
+   "nbProduitsAgricoles": 13,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -91046,7 +91046,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 5
+     "nbProduits": 6
     },
     {
      "nom": "IMTRADE AUSTRALIA PTY LTD",
@@ -91929,9 +91929,9 @@
    "derniereExpiration": null,
    "societes": [
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -92070,9 +92070,9 @@
      "nbProduits": 5
     },
     {
-     "nom": "BAYER CROPSCIENCE PTY LTD",
-     "pays": "Allemagne",
-     "paysFiable": true,
+     "nom": "BAYER CROP SCIENCE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": false,
@@ -94685,7 +94685,7 @@
    "nom": "ZINEB",
    "famille": "UNGROUPED",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 39,
+   "nbProduitsAgricoles": 46,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -94697,7 +94697,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 30
+     "nbProduits": 37
     },
     {
      "nom": "JOTUN AUSTRALIA PTY LTD",

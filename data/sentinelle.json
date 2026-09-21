@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-13T10:11:09",
-  "dernierReleve": "2026-09-13",
+  "genere": "2026-09-21T11:16:20",
+  "dernierReleve": "2026-09-21",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
@@ -2992,7 +2992,7 @@
    "nomPt": "tiodicarbe",
    "groupeChimique": "metilcarbamato de oxima",
    "teneurMax": 980.0,
-   "nbHomologationsBr": 21,
+   "nbHomologationsBr": 20,
    "fabricants": [
     {
      "nom": "Bayer CropScience LP.",
@@ -3051,7 +3051,6 @@
     }
    ],
    "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "ANASAC Brasil Comercio e Locação de Máquinas Ltda.",
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
     "Agro-Lead Brasil Assessoria em Produtos Agrícolas Ltda - EPP",
@@ -3062,7 +3061,8 @@
     "Cropchem Ltda - Porto Alegre",
     "Jubailireg Brasil Ltda - São Paulo/SP",
     "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba"
+    "Ouro Fino Química S.A. - Uberaba",
+    "Proventis Lifescience Defensivos Agrícolas Ltda"
    ],
    "coree": {
     "nom": "Thiodicarb",
@@ -4016,7 +4016,7 @@
    "australie": {
     "nom": "IMAZAPIC",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 11,
+    "nbProduitsAgricoles": 12,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4345,7 +4345,7 @@
    "australie": {
     "nom": "CLOTHIANIDIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 15,
+    "nbProduitsAgricoles": 16,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5610,12 +5610,12 @@
    ],
    "coree": {
     "nom": "Oxadiazon",
-    "nbHomologations": 20,
+    "nbHomologations": 21,
     "nbFabrique": 17,
-    "nbImporte": 3,
+    "nbImporte": 4,
     "premiere": "1981-03-02",
-    "derniere": "2025-11-10",
-    "nbSocietes": 12
+    "derniere": "2026-09-14",
+    "nbSocietes": 13
    },
    "france": {
     "nom": "Oxadiazon",
@@ -5754,7 +5754,7 @@
    "australie": {
     "nom": "IMAZAPYR",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 21,
+    "nbProduitsAgricoles": 22,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6762,7 +6762,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 63,
+    "nbProduitsAgricoles": 64,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -12917,11 +12917,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Triafamone",
-    "nbHomologations": 12,
+    "nbHomologations": 13,
     "nbFabrique": 11,
-    "nbImporte": 1,
+    "nbImporte": 2,
     "premiere": "2014-04-29",
-    "derniere": "2026-02-25",
+    "derniere": "2026-09-14",
     "nbSocietes": 6
    },
    "france": null,
@@ -12941,11 +12941,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Tefuryltrione",
-    "nbHomologations": 27,
+    "nbHomologations": 28,
     "nbFabrique": 26,
-    "nbImporte": 1,
+    "nbImporte": 2,
     "premiere": "2014-04-29",
-    "derniere": "2026-03-20",
+    "derniere": "2026-09-14",
     "nbSocietes": 7
    },
    "france": null,
@@ -14170,7 +14170,7 @@
    "australie": {
     "nom": "CUPROUS OXIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 30,
+    "nbProduitsAgricoles": 32,
     "matiereActiveApprouvee": false
    },
    "premiereVue": "2026-09-07",
@@ -15464,11 +15464,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Fentrazamide",
-    "nbHomologations": 52,
+    "nbHomologations": 53,
     "nbFabrique": 51,
-    "nbImporte": 1,
+    "nbImporte": 2,
     "premiere": "2000-04-03",
-    "derniere": "2025-11-10",
+    "derniere": "2026-09-14",
     "nbSocietes": 7
    },
    "france": null,
@@ -16028,7 +16028,7 @@
    "australie": {
     "nom": "NAPROPAMIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 2,
+    "nbProduitsAgricoles": 3,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -18302,11 +18302,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Glyphosate-isopropylammonium",
-    "nbHomologations": 71,
-    "nbFabrique": 55,
+    "nbHomologations": 72,
+    "nbFabrique": 56,
     "nbImporte": 16,
     "premiere": "1981-03-02",
-    "derniere": "2026-05-04",
+    "derniere": "2026-09-14",
     "nbSocietes": 28
    },
    "france": null,
