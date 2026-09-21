@@ -143,6 +143,64 @@ def encoder(fields: dict) -> bytes:
     return urllib.parse.urlencode(fields, quote_via=urllib.parse.quote, encoding="utf-8").encode("ascii")
 
 
+def parse_usages(blob: str) -> list[dict]:
+    """Les colonnes changent d'une fiche à l'autre (DAR, Intervalle, Mode…)."""
+    usages = []
+    for tm in re.finditer(r'<table class="Bordure"[^>]*>(.*?)</table>', blob, flags=re.S | re.I):
+        block = tm.group(1)
+        rows = re.findall(r"<tr>(.*?)</tr>", block, flags=re.S)
+        if not rows:
+            continue
+        ths = re.findall(r"<th([^>]*)>(.*?)</th>", rows[0], flags=re.S)
+        if not ths:
+            continue
+        headers = []
+        for attrs, content in ths:
+            label = texte(content)
+            span_m = re.search(r"colspan=['\"](\d+)", attrs, flags=re.I)
+            span = int(span_m.group(1)) if span_m else 1
+            if span >= 2 and label.lower().startswith("usage"):
+                headers.extend(["culture", "cible"])
+            else:
+                headers.append(label)
+        if "culture" not in headers or not any(h.lower().startswith("dose") for h in headers):
+            continue
+        alias = {
+            "dose": "dose",
+            "max. appli.": "nbAppl",
+            "max appli.": "nbAppl",
+            "dar (j)": "dar",
+            "dar": "dar",
+            "stade ennemi": "stade",
+            "période": "stade",
+            "periode": "stade",
+        }
+        for row in rows[1:]:
+            tds = [txt(texte(td)) for td in re.findall(r"<td[^>]*>(.*?)</td>", row, flags=re.S)]
+            if len(tds) < 2:
+                continue
+            raw = {h: v for h, v in zip(headers, tds)}
+            mapped = {}
+            for h, v in raw.items():
+                key = alias.get(h.strip().lower())
+                if key:
+                    mapped[key] = v
+            culture, cible = raw.get("culture"), raw.get("cible")
+            usage = " / ".join(x for x in (culture, cible) if x)
+            usages.append({
+                "usage": usage or None,
+                "culture": culture,
+                "cible": cible,
+                "dose": mapped.get("dose"),
+                "stade": mapped.get("stade"),
+                "dar": mapped.get("dar"),
+                "nbAppl": mapped.get("nbAppl"),
+            })
+        if usages:
+            break
+    return usages
+
+
 def parse_fiche(page: str) -> dict | None:
     """Lit le tableau français de la fiche produit. Ignore le volet arabe."""
     m = re.search(r'<table id="ctl00_CPHCorps_tblPesticide"[^>]*>(.*)', page, flags=re.S)
@@ -165,23 +223,7 @@ def parse_fiche(page: str) -> dict | None:
             if n:
                 matieres.append({"nom": n, "teneur": t})
 
-    usages = []
-    um = re.search(r"<th>DAR \(j\)</th></tr>\s*</tbody>(.*?)</table>", blob, flags=re.S)
-    if um:
-        for row in re.findall(r"<tr>(.*?)</tr>", um.group(1), flags=re.S):
-            tds = [txt(texte(td)) for td in re.findall(r"<td[^>]*>(.*?)</td>", row, flags=re.S)]
-            if len(tds) >= 6:
-                culture, cible, dose, stade, nb_appl, dar = tds[:6]
-                usage = " / ".join(x for x in (culture, cible) if x)
-                usages.append({
-                    "usage": usage or None,
-                    "culture": culture,
-                    "cible": cible,
-                    "dose": dose,
-                    "stade": stade,
-                    "dar": dar,
-                    "nbAppl": nb_appl,
-                })
+    usages = parse_usages(blob)
 
     return {
         "nomCommercial": nom,
