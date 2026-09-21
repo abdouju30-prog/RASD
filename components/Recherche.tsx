@@ -2,14 +2,24 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search, X } from "lucide-react";
+import { ListFilter, Search, X } from "lucide-react";
 import { LIBELLE_TYPE, type Resultat } from "@/lib/recherche";
+import {
+  FILTRES_VIDES,
+  OBJETS_RECHERCHE,
+  REGISTRES_RECHERCHE,
+  nbFiltres,
+  type FiltresRecherche,
+  type ObjetRecherche,
+  type RegistreRecherche,
+} from "@/lib/filtres-recherche";
 
 /**
  * Recherche transverse, dans la barre haute.
  *
  * Sept registres cohabitent : il faut pouvoir retrouver une société ou une
- * molécule sans savoir d'avance lequel la contient.
+ * molécule sans savoir d'avance lequel la contient — et pouvoir restreindre
+ * à un registre (ONSSA, ANSES, EPA…) ou à un objet (matière, fournisseur…).
  *
  * Trois choix de conception :
  *
@@ -30,12 +40,23 @@ export function Recherche() {
   const [res, setRes] = useState<Resultat[]>([]);
   const [correction, setCorrection] = useState<string | null>(null);
   const [ouvert, setOuvert] = useState(false);
+  const [filtresOuverts, setFiltresOuverts] = useState(false);
+  const [filtres, setFiltres] = useState<FiltresRecherche>(FILTRES_VIDES);
   const [actif, setActif] = useState(0);
   const [charge, setCharge] = useState(false);
 
   const boite = useRef<HTMLDivElement>(null);
   const champ = useRef<HTMLInputElement>(null);
   const dernier = useRef(0);
+  const nFiltres = nbFiltres(filtres);
+
+  const qsFiltres = useCallback((f: FiltresRecherche) => {
+    const p = new URLSearchParams();
+    if (f.registres.length) p.set("registre", f.registres.join(","));
+    if (f.objets.length) p.set("objet", f.objets.join(","));
+    const s = p.toString();
+    return s ? `&${s}` : "";
+  }, []);
 
   // ── Interrogation, retardée le temps que la frappe se stabilise ──────────
   useEffect(() => {
@@ -50,7 +71,7 @@ export function Recherche() {
     const jeton = ++dernier.current;
     const minuteur = setTimeout(async () => {
       try {
-        const r = await fetch(`/api/recherche?q=${encodeURIComponent(t)}`);
+        const r = await fetch(`/api/recherche?q=${encodeURIComponent(t)}${qsFiltres(filtres)}`);
         const d = await r.json();
         // Une réponse arrivée après une saisie plus récente est périmée.
         if (jeton !== dernier.current) return;
@@ -67,12 +88,15 @@ export function Recherche() {
       }
     }, 130);
     return () => clearTimeout(minuteur);
-  }, [q]);
+  }, [q, filtres, qsFiltres]);
 
   // ── Fermeture au clic extérieur ─────────────────────────────────────────
   useEffect(() => {
     const clic = (e: MouseEvent) => {
-      if (boite.current && !boite.current.contains(e.target as Node)) setOuvert(false);
+      if (boite.current && !boite.current.contains(e.target as Node)) {
+        setOuvert(false);
+        setFiltresOuverts(false);
+      }
     };
     document.addEventListener("mousedown", clic);
     return () => document.removeEventListener("mousedown", clic);
@@ -100,6 +124,7 @@ export function Recherche() {
   const aller = useCallback(
     (r: Resultat) => {
       setOuvert(false);
+      setFiltresOuverts(false);
       setQ("");
       champ.current?.blur();
       if (!r.href) return;
@@ -114,6 +139,10 @@ export function Recherche() {
 
   const clavier = (e: React.KeyboardEvent) => {
     if (e.key === "Escape") {
+      if (filtresOuverts) {
+        setFiltresOuverts(false);
+        return;
+      }
       setOuvert(false);
       champ.current?.blur();
       return;
@@ -132,42 +161,116 @@ export function Recherche() {
     }
   };
 
+  const basculeRegistre = (id: RegistreRecherche) => {
+    setFiltres((f) => ({
+      ...f,
+      registres: f.registres.includes(id) ? f.registres.filter((x) => x !== id) : [...f.registres, id],
+    }));
+    setOuvert(true);
+  };
+
+  const basculeObjet = (id: ObjetRecherche) => {
+    setFiltres((f) => ({
+      ...f,
+      objets: f.objets.includes(id) ? f.objets.filter((x) => x !== id) : [...f.objets, id],
+    }));
+    setOuvert(true);
+  };
+
   const listeVisible = ouvert && q.trim().length >= 2;
 
   return (
     <div className="rech" ref={boite}>
-      <Search size={13} className="rech-icone" aria-hidden />
-      <input
-        ref={champ}
-        type="search"
-        value={q}
-        onChange={(e) => {
-          setQ(e.target.value);
-          setOuvert(true);
-        }}
-        onFocus={() => setOuvert(true)}
-        onKeyDown={clavier}
-        placeholder="Matière, culture, maladie…"
-        aria-label="Rechercher une matière active, une culture, une maladie"
-        aria-expanded={listeVisible}
-        aria-controls="rech-liste"
-        aria-autocomplete="list"
-        role="combobox"
-        spellCheck={false}
-        autoComplete="off"
-      />
-      {q && (
-        <button
-          type="button"
-          className="rech-vider"
-          onClick={() => {
-            setQ("");
-            champ.current?.focus();
+      <div className="rech-champ">
+        <Search size={13} className="rech-icone" aria-hidden />
+        <input
+          ref={champ}
+          type="search"
+          value={q}
+          onChange={(e) => {
+            setQ(e.target.value);
+            setOuvert(true);
           }}
-          aria-label="Effacer la recherche"
-        >
-          <X size={12} />
-        </button>
+          onFocus={() => setOuvert(true)}
+          onKeyDown={clavier}
+          placeholder="Matière, culture, maladie…"
+          aria-label="Rechercher une matière active, une culture, une maladie"
+          aria-expanded={listeVisible}
+          aria-controls="rech-liste"
+          aria-autocomplete="list"
+          role="combobox"
+          spellCheck={false}
+          autoComplete="off"
+        />
+        {q && (
+          <button
+            type="button"
+            className="rech-vider"
+            onClick={() => {
+              setQ("");
+              champ.current?.focus();
+            }}
+            aria-label="Effacer la recherche"
+          >
+            <X size={12} />
+          </button>
+        )}
+      </div>
+
+      <button
+        type="button"
+        className={`rech-filtre${nFiltres ? " on" : ""}`}
+        aria-label={nFiltres ? `Filtres de recherche, ${nFiltres} actifs` : "Filtres de recherche"}
+        aria-expanded={filtresOuverts}
+        aria-controls="rech-filtres"
+        onClick={() => setFiltresOuverts((v) => !v)}
+      >
+        <ListFilter size={14} aria-hidden />
+        {nFiltres > 0 && <span className="rech-filtre-n">{nFiltres}</span>}
+      </button>
+
+      {filtresOuverts && (
+        <div className="rech-panneau" id="rech-filtres" role="dialog" aria-label="Filtres de recherche">
+          <div className="rech-panneau-tete">
+            <span>Restreindre la recherche</span>
+            {nFiltres > 0 && (
+              <button type="button" className="rech-panneau-reset" onClick={() => setFiltres(FILTRES_VIDES)}>
+                Tout afficher
+              </button>
+            )}
+          </div>
+
+          <p className="rech-panneau-sec">Source</p>
+          <div className="rech-chips">
+            {REGISTRES_RECHERCHE.map((r) => (
+              <button
+                key={r.id}
+                type="button"
+                className={`rech-chip${filtres.registres.includes(r.id) ? " on" : ""}`}
+                title={r.detail}
+                aria-pressed={filtres.registres.includes(r.id)}
+                onClick={() => basculeRegistre(r.id)}
+              >
+                {r.libelle}
+              </button>
+            ))}
+          </div>
+
+          <p className="rech-panneau-sec">Objet</p>
+          <div className="rech-chips">
+            {OBJETS_RECHERCHE.map((o) => (
+              <button
+                key={o.id}
+                type="button"
+                className={`rech-chip${filtres.objets.includes(o.id) ? " on" : ""}`}
+                aria-pressed={filtres.objets.includes(o.id)}
+                onClick={() => basculeObjet(o.id)}
+              >
+                {o.libelle}
+              </button>
+            ))}
+          </div>
+        </div>
       )}
 
       {listeVisible && (

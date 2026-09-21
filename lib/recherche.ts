@@ -29,6 +29,8 @@ import {
   resoudreEmploi,
   type FiltreUsage,
 } from "./usages";
+import { apparier } from "./ephy";
+import type { FiltresRecherche, ObjetRecherche, RegistreRecherche } from "./filtres-recherche";
 
 // ────────────────────────────────────────────────────────────────────────────
 // RECHERCHE TRANSVERSE
@@ -106,6 +108,66 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   retiree: "Retirée ONSSA",
   restriction: "Restriction ONSSA",
 };
+
+/**
+ * Un résultat appartient à un registre (source / pays) et à un objet
+ * (matière, produit…). Les deux filtres se combinent : ONSSA × Fournisseur
+ * ne garde que les fournisseurs de l'index marocain.
+ */
+const TYPES_REGISTRE: Record<RegistreRecherche, readonly TypeEntree[]> = {
+  onssa: [
+    "matiere",
+    "culture",
+    "cible",
+    "usage",
+    "produit",
+    "fournisseur",
+    "detenteur",
+    "societe_agreee",
+    "organisme_bpe",
+    "produit_expire",
+    "nouveaute",
+    "retiree",
+    "restriction",
+  ],
+  anses: ["matiere"],
+  epa: ["usine_epa"],
+  apvma: ["constituant", "piste"],
+  chine: ["usine_chine"],
+  bresil: ["usine_bresil"],
+  coree: ["producteur_coreen"],
+  russie: ["producteur_russe"],
+  turquie: ["usine_turquie"],
+};
+
+const TYPES_OBJET: Record<ObjetRecherche, readonly TypeEntree[]> = {
+  matiere: ["matiere", "constituant"],
+  produit: ["produit", "produit_expire"],
+  usage: ["usage", "culture", "cible"],
+  fournisseur: [
+    "fournisseur",
+    "usine_chine",
+    "usine_turquie",
+    "producteur_russe",
+    "producteur_coreen",
+    "usine_bresil",
+    "usine_epa",
+    "piste",
+  ],
+  detenteur: ["detenteur", "societe_agreee"],
+  texte: ["nouveaute", "retiree", "restriction"],
+};
+
+function passeFiltres(e: { type: TypeEntree; libelle: string }, f?: FiltresRecherche): boolean {
+  if (!f) return true;
+  if (f.objets.length && !f.objets.some((o) => TYPES_OBJET[o].includes(e.type))) return false;
+  if (!f.registres.length) return true;
+  return f.registres.some((r) => {
+    if (!TYPES_REGISTRE[r].includes(e.type)) return false;
+    if (r === "anses") return e.type === "matiere" && apparier(e.libelle) !== null;
+    return true;
+  });
+}
 
 /**
  * Ordre de préférence à correspondance égale. Ce qui sert la décision passe
@@ -900,23 +962,31 @@ function extrasEmploi(f: FiltreUsage, limite: number): (Indexee & { qualite: 0 |
  * Matière, culture et maladie se croisent : « tomate puceron » n'est le
  * libellé d'aucune entrée, on injecte l'usage homologué correspondant.
  */
-export function interpreter(q: string, limite = 16): Interpretation {
+export function interpreter(q: string, limite = 16, filtres?: FiltresRecherche): Interpretation {
   const n = normaliser(q);
   if (n.length < 2) return { resultats: [], correction: null };
 
   const emploi = resoudreEmploi(q);
-  const extras = extrasEmploi(emploi, limite);
+  const extras = extrasEmploi(emploi, limite).filter((e) => passeFiltres(e, filtres));
 
-  let directs = matcher(n);
+  let directs = matcher(n).filter((e) => passeFiltres(e, filtres));
   if (emploi.matiere && (emploi.culture || emploi.cible)) {
     const molN = normaliser(moleculeFiltre(emploi) ?? "");
-    if (molN.length >= 2) directs = [...directs, ...matcher(molN)];
+    if (molN.length >= 2) {
+      directs = [...directs, ...matcher(molN).filter((e) => passeFiltres(e, filtres))];
+    }
   }
   if (emploi.culture && (emploi.cible || emploi.matiere)) {
-    directs = [...directs, ...matcher(normaliser(emploi.culture)).filter((e) => e.type === "culture")];
+    directs = [
+      ...directs,
+      ...matcher(normaliser(emploi.culture)).filter((e) => e.type === "culture" && passeFiltres(e, filtres)),
+    ];
   }
   if (emploi.cible && (emploi.culture || emploi.matiere)) {
-    directs = [...directs, ...matcher(normaliser(emploi.cible)).filter((e) => e.type === "cible")];
+    directs = [
+      ...directs,
+      ...matcher(normaliser(emploi.cible)).filter((e) => e.type === "cible" && passeFiltres(e, filtres)),
+    ];
   }
 
   const fusion = [...extras, ...directs];
@@ -925,12 +995,12 @@ export function interpreter(q: string, limite = 16): Interpretation {
 
   const correction = corriger(n);
   if (correction) {
-    const via = matcher(normaliser(correction));
+    const via = matcher(normaliser(correction)).filter((e) => passeFiltres(e, filtres));
     if (via.length) return { resultats: classer([...extras, ...via], limite), correction };
   }
   return { resultats: classer(fusion, limite), correction: null };
 }
 
-export function chercher(q: string, limite = 16): Resultat[] {
-  return interpreter(q, limite).resultats;
+export function chercher(q: string, limite = 16, filtres?: FiltresRecherche): Resultat[] {
+  return interpreter(q, limite, filtres).resultats;
 }

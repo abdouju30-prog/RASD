@@ -583,10 +583,18 @@ a.card:hover {
   position: relative;
   display: flex;
   align-items: center;
-  width: 480px;
-  min-width: 360px;
-  max-width: 640px;
-  flex: 1 0 480px;
+  gap: 6px;
+  width: 520px;
+  min-width: 380px;
+  max-width: 680px;
+  flex: 1 0 520px;
+}
+.rech-champ {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .rech-icone {
   position: absolute;
@@ -594,7 +602,7 @@ a.card:hover {
   color: var(--muted-2);
   pointer-events: none;
 }
-.rech input {
+.rech-champ input {
   width: 100%;
   font-family: inherit;
   font-size: 12.5px;
@@ -605,17 +613,17 @@ a.card:hover {
   padding: 5px 26px 5px 27px;
   outline: none;
 }
-.rech input::placeholder {
+.rech-champ input::placeholder {
   color: var(--muted-2);
   letter-spacing: 0.02em;
 }
-.rech input:focus {
+.rech-champ input:focus {
   border-color: var(--accent);
   background: var(--card);
   box-shadow: 0 0 0 3px var(--accent-fond);
 }
 /* Chrome dessine sa propre croix sur les champs de type search. */
-.rech input::-webkit-search-cancel-button {
+.rech-champ input::-webkit-search-cancel-button {
   display: none;
 }
 .rech-vider {
@@ -634,6 +642,105 @@ a.card:hover {
 .rech-vider:hover {
   background: var(--border);
   color: var(--fg);
+}
+.rech-filtre {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 30px;
+  height: 28px;
+  padding: 0 7px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card-2);
+  color: var(--muted);
+  cursor: pointer;
+}
+.rech-filtre:hover {
+  border-color: var(--border-strong);
+  color: var(--fg);
+}
+.rech-filtre.on {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: var(--accent-fond);
+  color: var(--accent);
+}
+.rech-filtre-n {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 12px;
+}
+.rech-panneau {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: min(420px, 94vw);
+  background: var(--card);
+  border: 1px solid var(--border-strong);
+  border-radius: 9px;
+  box-shadow: 0 10px 30px rgb(15 40 50 / 14%);
+  z-index: 45;
+  padding: 12px 12px 14px;
+}
+.rech-panneau-tete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: var(--tete);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.rech-panneau-reset {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+.rech-panneau-reset:hover {
+  text-decoration: underline;
+}
+.rech-panneau-sec {
+  margin: 10px 0 6px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+.rech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.rech-chip {
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+.rech-chip:hover {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+.rech-chip.on {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: var(--accent-fond);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .rech-liste {
