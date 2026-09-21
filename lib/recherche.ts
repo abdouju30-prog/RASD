@@ -29,6 +29,9 @@ import {
   resoudreEmploi,
   type FiltreUsage,
 } from "./usages";
+import { apparier, ansesPour } from "./ephy";
+import { resoudre } from "./requete";
+import type { FiltresRecherche, ObjetRecherche, RegistreRecherche } from "./filtres-recherche";
 
 // ────────────────────────────────────────────────────────────────────────────
 // RECHERCHE TRANSVERSE
@@ -106,6 +109,66 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   retiree: "Retirée ONSSA",
   restriction: "Restriction ONSSA",
 };
+
+/**
+ * Un résultat appartient à un registre (source / pays) et à un objet
+ * (matière, produit…). Les deux filtres se combinent : ONSSA × Fournisseur
+ * ne garde que les fournisseurs de l'index marocain.
+ */
+const TYPES_REGISTRE: Record<RegistreRecherche, readonly TypeEntree[]> = {
+  onssa: [
+    "matiere",
+    "culture",
+    "cible",
+    "usage",
+    "produit",
+    "fournisseur",
+    "detenteur",
+    "societe_agreee",
+    "organisme_bpe",
+    "produit_expire",
+    "nouveaute",
+    "retiree",
+    "restriction",
+  ],
+  anses: ["matiere"],
+  epa: ["usine_epa"],
+  apvma: ["constituant", "piste"],
+  chine: ["usine_chine"],
+  bresil: ["usine_bresil"],
+  coree: ["producteur_coreen"],
+  russie: ["producteur_russe"],
+  turquie: ["usine_turquie"],
+};
+
+const TYPES_OBJET: Record<ObjetRecherche, readonly TypeEntree[]> = {
+  matiere: ["matiere", "constituant"],
+  produit: ["produit", "produit_expire"],
+  usage: ["usage", "culture", "cible"],
+  fournisseur: [
+    "fournisseur",
+    "usine_chine",
+    "usine_turquie",
+    "producteur_russe",
+    "producteur_coreen",
+    "usine_bresil",
+    "usine_epa",
+    "piste",
+  ],
+  detenteur: ["detenteur", "societe_agreee"],
+  texte: ["nouveaute", "retiree", "restriction"],
+};
+
+function passeFiltres(e: { type: TypeEntree; libelle: string }, f?: FiltresRecherche): boolean {
+  if (!f) return true;
+  if (f.objets.length && !f.objets.some((o) => TYPES_OBJET[o].includes(e.type))) return false;
+  if (!f.registres.length) return true;
+  return f.registres.some((r) => {
+    if (!TYPES_REGISTRE[r].includes(e.type)) return false;
+    if (r === "anses") return e.type === "matiere" && apparier(e.libelle) !== null;
+    return true;
+  });
+}
 
 /**
  * Ordre de préférence à correspondance égale. Ce qui sert la décision passe
@@ -804,6 +867,226 @@ function indexeeManuelle(e: Entree, qualite: 0 | 1 | 2 | 3): Indexee & { qualite
   return { ...e, cle, alias: [], mots: cle.split(" ").filter(Boolean), qualite };
 }
 
+function veutSource(f: FiltresRecherche, r: RegistreRecherche): boolean {
+  return !f.registres.length || f.registres.includes(r);
+}
+
+function veutObjet(f: FiltresRecherche, o: ObjetRecherche): boolean {
+  return !f.objets.length || f.objets.includes(o);
+}
+
+/**
+ * Quand la saisie est une matière active, les filtres portent sur QUI la
+ * fournit / OÙ elle est homologuée — pas sur le nom de la société.
+ *
+ * Sans cela, « glyphosate » + ICAMA ne trouvait rien : aucune usine ne
+ * s'appelle glyphosate.
+ */
+function extrasGisement(
+  q: string,
+  f: FiltresRecherche | undefined,
+  limite: number
+): (Indexee & { qualite: 0 | 1 | 2 | 3 })[] {
+  if (!f || (!f.registres.length && !f.objets.length)) return [];
+  const req = resoudre(q);
+  if (!req?.estMatiere) return [];
+
+  const extra: (Indexee & { qualite: 0 | 1 | 2 | 3 })[] = [];
+  const push = (e: Entree, qualite: 0 | 1 | 2 | 3 = 0) => extra.push(indexeeManuelle(e, qualite));
+  const mol = req.molecules[0] ?? req.texte;
+  const qFourn = encodeURIComponent(req.texte);
+  const g = req.gisement;
+
+  if (veutSource(f, "anses") && veutObjet(f, "matiere")) {
+    const vus = new Set<string>();
+    for (const m of req.matieres) {
+      const a = ansesPour(m.nom);
+      if (!a || vus.has(a.substance)) continue;
+      vus.add(a.substance);
+      push({
+        id: `anses-${normaliser(a.substance).replace(/ /g, "-")}`,
+        libelle: a.substance,
+        detail: [
+          "ANSES / E-Phy",
+          a.statut,
+          a.dateRetrait ? `retrait ${a.dateRetrait}` : "",
+          m.nom,
+        ]
+          .filter(Boolean)
+          .join(" · "),
+        type: "matiere",
+        href: `/matieres/${m.id}`,
+        poids: 80_000,
+      });
+    }
+  }
+
+  if (veutSource(f, "onssa") && veutObjet(f, "matiere")) {
+    for (const m of req.matieres.slice(0, limite)) {
+      push({
+        id: `ma-${m.id}`,
+        libelle: m.nom,
+        detail: `ONSSA · ${m.nbHomologations} AMM · ${m.fournisseurs.length} fournisseur(s)`,
+        type: "matiere",
+        href: `/matieres/${m.id}`,
+        poids: 70_000 + m.nbHomologations,
+      });
+    }
+  }
+
+  if (veutSource(f, "onssa") && veutObjet(f, "produit")) {
+    const noms = new Set(req.matieres.flatMap((m) => m.produits));
+    for (const p of PRODUITS) {
+      if (!noms.has(p.nomCommercial)) continue;
+      push({
+        id: `pr-${p.id}`,
+        libelle: p.nomCommercial,
+        detail: [p.detenteur, p.categorie, p.matieresActives.join(" + ")].filter(Boolean).join(" · "),
+        type: "produit",
+        href: `/produits?q=${encodeURIComponent(p.nomCommercial)}`,
+        poids: 60_000,
+      });
+      if (extra.length > limite * 3) break;
+    }
+  }
+
+  if (veutSource(f, "onssa") && veutObjet(f, "fournisseur")) {
+    const parNom = new Map(FOURNISSEURS.map((x) => [x.nom, x]));
+    for (const nom of g.fournisseursOnssa) {
+      const fo = parNom.get(nom);
+      push({
+        id: fo ? `fo-${fo.id}` : `fo-${normaliser(nom).replace(/ /g, "-")}`,
+        libelle: nom,
+        detail: [fo?.pays ?? "pays à préciser", "fournisseur ONSSA", mol].filter(Boolean).join(" · "),
+        type: "fournisseur",
+        href: `/fournisseurs?source=onssa&q=${qFourn}`,
+        poids: 55_000 + (fo?.nbLignesMaroc ?? 0),
+      });
+    }
+  }
+
+  if (veutSource(f, "onssa") && veutObjet(f, "detenteur")) {
+    const noms = new Set(req.matieres.flatMap((m) => m.detenteurs));
+    for (const d of DETENTEURS) {
+      if (!noms.has(d.nom)) continue;
+      push({
+        id: `de-${d.id}`,
+        libelle: d.nom,
+        detail: `Détenteur ONSSA · ${d.nbProduits} produits · ${mol}`,
+        type: "detenteur",
+        href: `/detenteur/${d.id}`,
+        poids: 50_000 + d.nbProduits,
+      });
+    }
+  }
+
+  if (veutSource(f, "onssa") && veutObjet(f, "usage")) {
+    const cultures = [...new Set(req.matieres.flatMap((m) => m.cultures))].slice(0, 8);
+    for (const c of cultures) {
+      push({
+        id: `cu-mol-${normaliser(c).replace(/ /g, "-").slice(0, 80)}`,
+        libelle: c,
+        detail: `Usage ONSSA · ${mol}`,
+        type: "culture",
+        href: hrefUsages({ culture: c, molecule: mol }),
+        poids: 45_000,
+      });
+    }
+  }
+
+  if (veutSource(f, "chine") && veutObjet(f, "fournisseur")) {
+    for (const u of g.chine.slice(0, limite)) {
+      push({
+        id: `cn-${u.nom}`,
+        libelle: u.latin ?? u.nom,
+        detail: [`ICAMA`, "Chine", u.region, mol, `${u.matieres.length} M.A.`].filter(Boolean).join(" · "),
+        type: "usine_chine",
+        href: `/fournisseurs?source=chine&q=${qFourn}`,
+        poids: 40_000 + u.matieres.length,
+      });
+    }
+  }
+
+  if (veutSource(f, "bresil") && veutObjet(f, "fournisseur")) {
+    for (const u of g.bresil.slice(0, limite)) {
+      push({
+        id: `br-${u.id}`,
+        libelle: u.nom,
+        detail: [u.pays ?? u.paysBrut, "MAPA / Agrofit", mol].filter(Boolean).join(" · "),
+        type: "usine_bresil",
+        href: `/fournisseurs?source=bresil&q=${qFourn}`,
+        poids: 38_000 + u.matieres.length,
+      });
+    }
+  }
+
+  if (veutSource(f, "coree") && veutObjet(f, "fournisseur")) {
+    for (const s of g.coree.slice(0, limite)) {
+      push({
+        id: `kr-${s.cle}`,
+        libelle: etiquetteCoree(s),
+        detail: `PSIS · Corée du Sud · ${s.nom} · ${mol}`,
+        type: "producteur_coreen",
+        href: `/fournisseurs?source=coree&q=${qFourn}`,
+        poids: 36_000 + s.nbHomologations,
+      });
+    }
+  }
+
+  if (veutSource(f, "russie") && veutObjet(f, "fournisseur")) {
+    for (const s of g.russie.slice(0, limite)) {
+      push({
+        id: `ru-${s.cle}`,
+        libelle: etiquetteRusse(s),
+        detail: `Catalogue RU · ${s.nom} · ${mol}`,
+        type: "producteur_russe",
+        href: `/fournisseurs?source=russie&q=${qFourn}`,
+        poids: 34_000 + s.nbHomologations,
+      });
+    }
+  }
+
+  if (veutSource(f, "turquie") && veutObjet(f, "fournisseur")) {
+    for (const u of g.turquie.slice(0, limite)) {
+      if (!u.nom) continue;
+      push({
+        id: `tr-${u.id}`,
+        libelle: u.nom,
+        detail: `BKU · Turquie · ${mol}`,
+        type: "usine_turquie",
+        href: `/fournisseurs?source=turquie&q=${qFourn}`,
+        poids: 32_000 + u.matieresMaroc.length,
+      });
+    }
+  }
+
+  if (veutSource(f, "apvma") && veutObjet(f, "fournisseur")) {
+    for (const p of g.apvma.slice(0, limite)) {
+      push({
+        id: `pi-${p.id}`,
+        libelle: p.nom,
+        detail: [p.pays ?? "Australie", "APVMA / PUBCRIS", mol].filter(Boolean).join(" · "),
+        type: "piste",
+        href: `/fournisseurs?source=apvma&q=${qFourn}`,
+        poids: 31_000 + p.matieresMaroc.length,
+      });
+    }
+  }
+
+  if (veutSource(f, "epa") && veutObjet(f, "fournisseur")) {
+    push({
+      id: `epa-na-${normaliser(mol).replace(/ /g, "-")}`,
+      libelle: "EPA — matière non publiée",
+      detail: "Le registre EPA identifie des usines, pas la molécule. Aucune usine ne peut être rattachée à cette matière.",
+      type: "usine_epa",
+      href: "/fournisseurs?source=epa",
+      poids: 1,
+    });
+  }
+
+  return extra;
+}
+
 /** Culture × maladie (et matière, si tapée) : une ligne d'usage + les matières qui couvrent. */
 function extrasEmploi(f: FiltreUsage, limite: number): (Indexee & { qualite: 0 | 1 | 2 | 3 })[] {
   if (!f.culture && !f.cible) return [];
@@ -900,37 +1183,48 @@ function extrasEmploi(f: FiltreUsage, limite: number): (Indexee & { qualite: 0 |
  * Matière, culture et maladie se croisent : « tomate puceron » n'est le
  * libellé d'aucune entrée, on injecte l'usage homologué correspondant.
  */
-export function interpreter(q: string, limite = 16): Interpretation {
+export function interpreter(q: string, limite = 16, filtres?: FiltresRecherche): Interpretation {
   const n = normaliser(q);
   if (n.length < 2) return { resultats: [], correction: null };
 
+  const extrasG = extrasGisement(q, filtres, limite);
   const emploi = resoudreEmploi(q);
-  const extras = extrasEmploi(emploi, limite);
+  const extras = extrasEmploi(emploi, limite).filter((e) => passeFiltres(e, filtres));
 
-  let directs = matcher(n);
+  let directs = matcher(n).filter((e) => passeFiltres(e, filtres));
   if (emploi.matiere && (emploi.culture || emploi.cible)) {
     const molN = normaliser(moleculeFiltre(emploi) ?? "");
-    if (molN.length >= 2) directs = [...directs, ...matcher(molN)];
+    if (molN.length >= 2) {
+      directs = [...directs, ...matcher(molN).filter((e) => passeFiltres(e, filtres))];
+    }
   }
   if (emploi.culture && (emploi.cible || emploi.matiere)) {
-    directs = [...directs, ...matcher(normaliser(emploi.culture)).filter((e) => e.type === "culture")];
+    directs = [
+      ...directs,
+      ...matcher(normaliser(emploi.culture)).filter((e) => e.type === "culture" && passeFiltres(e, filtres)),
+    ];
   }
   if (emploi.cible && (emploi.culture || emploi.matiere)) {
-    directs = [...directs, ...matcher(normaliser(emploi.cible)).filter((e) => e.type === "cible")];
+    directs = [
+      ...directs,
+      ...matcher(normaliser(emploi.cible)).filter((e) => e.type === "cible" && passeFiltres(e, filtres)),
+    ];
   }
 
-  const fusion = [...extras, ...directs];
+  const fusion = extrasG.length ? [...extrasG, ...extras] : [...extras, ...directs];
   const ancre = fusion.some((d) => d.qualite <= 1);
   if (ancre) return { resultats: classer(fusion, limite), correction: null };
 
   const correction = corriger(n);
   if (correction) {
-    const via = matcher(normaliser(correction));
-    if (via.length) return { resultats: classer([...extras, ...via], limite), correction };
+    const via = matcher(normaliser(correction)).filter((e) => passeFiltres(e, filtres));
+    if (via.length || extrasG.length) {
+      return { resultats: classer(extrasG.length ? [...extrasG, ...extras] : [...extras, ...via], limite), correction };
+    }
   }
   return { resultats: classer(fusion, limite), correction: null };
 }
 
-export function chercher(q: string, limite = 16): Resultat[] {
-  return interpreter(q, limite).resultats;
+export function chercher(q: string, limite = 16, filtres?: FiltresRecherche): Resultat[] {
+  return interpreter(q, limite, filtres).resultats;
 }

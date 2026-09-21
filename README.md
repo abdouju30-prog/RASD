@@ -223,34 +223,18 @@ de l'ONSSA**, pas des engagements.
 
 ## Déploiement
 
-L'application expose le portefeuille commercial d'un détenteur. Elle est protégée
-par mot de passe (HTTP Basic, `middleware.ts`), en **fail-closed** : en production,
-l'absence de mot de passe bloque l'accès au lieu de l'ouvrir.
-
-Variables d'environnement (Vercel → Settings → Environment Variables) :
-
-| Variable | Obligatoire | Défaut |
-|---|---|---|
-| `HOMOLOGA_PASSWORD` | **oui en production** | — |
-| `HOMOLOGA_USER` | non | `phytobeht` |
-
-En développement local, l'accès reste libre tant que `HOMOLOGA_PASSWORD` n'est pas
-défini.
+Aucune variable d'environnement n'est requise. L'application est publique.
 
 ### Première mise en ligne
 
 ```bash
 vercel login
 vercel link          # créer le projet « homologa »
-vercel env add HOMOLOGA_PASSWORD production
-vercel env add HOMOLOGA_USER production      # optionnel
 vercel --prod
 ```
 
 > ⚠️ `data/onssa.json` contient le portefeuille commercial du détenteur : AMM,
-> fournisseurs, usages, échéances. **Garder le dépôt privé** et ne jamais
-> déployer sans `HOMOLOGA_PASSWORD`. Le middleware refuse de servir
-> l'application si la variable est absente en production — c'est volontaire.
+> fournisseurs, usages, échéances. **Garder le dépôt privé.**
 
 ---
 
@@ -334,7 +318,6 @@ lib/logic.ts              risque, exposition, état des AMM — heuristiques lis
 lib/alertes.ts            flux d'alertes recalculé, sans persistance
 lib/sourcing.ts           scoring des cibles de prospection
 lib/dossier.ts            génération de dossier ONSSA pré-rempli
-middleware.ts             protection par mot de passe
 ```
 
 Next.js 15 (App Router, composants serveur), Tailwind v4, tokens CSS dans
