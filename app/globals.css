@@ -673,17 +673,49 @@ a.card:hover {
   font-weight: 600;
   min-width: 12px;
 }
-.rech-panneau {
+.rech-drop {
   position: absolute;
   top: calc(100% + 6px);
-  right: 0;
-  width: min(420px, 94vw);
+  left: 0;
+  width: max(520px, 100%);
+  max-width: min(640px, 94vw);
   background: var(--card);
   border: 1px solid var(--border-strong);
   border-radius: 9px;
   box-shadow: 0 10px 30px rgb(15 40 50 / 14%);
   z-index: 45;
+  overflow: hidden;
+}
+.rech-panneau {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: auto;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: auto;
   padding: 12px 12px 14px;
+}
+.rech-liste {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: auto;
+  max-width: none;
+  max-height: 52vh;
+  overflow-y: auto;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  z-index: auto;
+  padding: 4px;
+}
+.rech-drop > .rech-liste:first-child {
+  border-top: 0;
 }
 .rech-panneau-tete {
   display: flex;
@@ -743,24 +775,6 @@ a.card:hover {
   font-weight: 600;
 }
 
-.rech-liste {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  width: max(520px, 100%);
-  max-width: min(640px, 94vw);
-  max-height: 62vh;
-  overflow-y: auto;
-  background: var(--card);
-  border: 1px solid var(--border-strong);
-  border-radius: 9px;
-  box-shadow: 0 10px 30px rgb(15 40 50 / 14%);
-  z-index: 40;
-  padding: 4px;
-}
-.rech:has(.rech-panneau) .rech-liste {
-  top: calc(100% + 188px);
-}
 .rech-item {
   display: grid;
   grid-template-columns: 1fr auto;

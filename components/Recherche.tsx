@@ -190,7 +190,6 @@ export function Recherche() {
           onChange={(e) => {
             setQ(e.target.value);
             setOuvert(true);
-            setFiltresOuverts(false);
           }}
           onFocus={() => setOuvert(true)}
           onKeyDown={clavier}
@@ -230,92 +229,96 @@ export function Recherche() {
         {nFiltres > 0 && <span className="rech-filtre-n">{nFiltres}</span>}
       </button>
 
-      {filtresOuverts && (
-        <div className="rech-panneau" id="rech-filtres" role="dialog" aria-label="Filtres de recherche">
-          <div className="rech-panneau-tete">
-            <span>Restreindre la recherche</span>
-            {nFiltres > 0 && (
-              <button type="button" className="rech-panneau-reset" onClick={() => setFiltres(FILTRES_VIDES)}>
-                Tout afficher
-              </button>
-            )}
-          </div>
+      {(filtresOuverts || listeVisible) && (
+        <div className="rech-drop">
+          {filtresOuverts && (
+            <div className="rech-panneau" id="rech-filtres" role="dialog" aria-label="Filtres de recherche">
+              <div className="rech-panneau-tete">
+                <span>Restreindre la recherche</span>
+                {nFiltres > 0 && (
+                  <button type="button" className="rech-panneau-reset" onClick={() => setFiltres(FILTRES_VIDES)}>
+                    Tout afficher
+                  </button>
+                )}
+              </div>
 
-          <p className="rech-panneau-sec">Source</p>
-          <div className="rech-chips">
-            {REGISTRES_RECHERCHE.map((r) => (
-              <button
-                key={r.id}
-                type="button"
-                className={`rech-chip${filtres.registres.includes(r.id) ? " on" : ""}`}
-                title={r.detail}
-                aria-pressed={filtres.registres.includes(r.id)}
-                onClick={() => basculeRegistre(r.id)}
-              >
-                {r.libelle}
-              </button>
-            ))}
-          </div>
+              <p className="rech-panneau-sec">Source</p>
+              <div className="rech-chips">
+                {REGISTRES_RECHERCHE.map((r) => (
+                  <button
+                    key={r.id}
+                    type="button"
+                    className={`rech-chip${filtres.registres.includes(r.id) ? " on" : ""}`}
+                    title={r.detail}
+                    aria-pressed={filtres.registres.includes(r.id)}
+                    onClick={() => basculeRegistre(r.id)}
+                  >
+                    {r.libelle}
+                  </button>
+                ))}
+              </div>
 
-          <p className="rech-panneau-sec">Objet</p>
-          <div className="rech-chips">
-            {OBJETS_RECHERCHE.map((o) => (
-              <button
-                key={o.id}
-                type="button"
-                className={`rech-chip${filtres.objets.includes(o.id) ? " on" : ""}`}
-                aria-pressed={filtres.objets.includes(o.id)}
-                onClick={() => basculeObjet(o.id)}
-              >
-                {o.libelle}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {listeVisible && (
-        <div className="rech-liste" id="rech-liste" role="listbox">
-          {res.length === 0 && !correction ? (
-            <div className="rech-vide">
-              {charge ? "Recherche…" : `Aucun résultat pour « ${q.trim()} »`}
+              <p className="rech-panneau-sec">Objet</p>
+              <div className="rech-chips">
+                {OBJETS_RECHERCHE.map((o) => (
+                  <button
+                    key={o.id}
+                    type="button"
+                    className={`rech-chip${filtres.objets.includes(o.id) ? " on" : ""}`}
+                    aria-pressed={filtres.objets.includes(o.id)}
+                    onClick={() => basculeObjet(o.id)}
+                  >
+                    {o.libelle}
+                  </button>
+                ))}
+              </div>
             </div>
-          ) : (
-            <>
-              {correction && (
-                <button
-                  type="button"
-                  className="rech-corrige"
-                  aria-label={`Rechercher ${correction}`}
-                  onClick={() => {
-                    setQ(correction);
-                    setActif(0);
-                    champ.current?.focus();
-                  }}
-                >
-                  {charge ? "Recherche…" : (
-                    <>
-                      Vouliez-vous dire <strong>{correction}</strong> ?
-                    </>
+          )}
+
+          {listeVisible && (
+            <div className="rech-liste" id="rech-liste" role="listbox">
+              {res.length === 0 && !correction ? (
+                <div className="rech-vide">
+                  {charge ? "Recherche…" : `Aucun résultat pour « ${q.trim()} »`}
+                </div>
+              ) : (
+                <>
+                  {correction && (
+                    <button
+                      type="button"
+                      className="rech-corrige"
+                      aria-label={`Rechercher ${correction}`}
+                      onClick={() => {
+                        setQ(correction);
+                        setActif(0);
+                        champ.current?.focus();
+                      }}
+                    >
+                      {charge ? "Recherche…" : (
+                        <>
+                          Vouliez-vous dire <strong>{correction}</strong> ?
+                        </>
+                      )}
+                    </button>
                   )}
-                </button>
+                  {res.map((r, i) => (
+                    <button
+                      key={r.id}
+                      type="button"
+                      role="option"
+                      aria-selected={i === actif}
+                      className={`rech-item${i === actif ? " on" : ""}${r.href ? "" : " inerte"}`}
+                      onMouseEnter={() => setActif(i)}
+                      onClick={() => aller(r)}
+                    >
+                      <span className="rech-lib">{r.libelle}</span>
+                      <span className="rech-type">{LIBELLE_TYPE[r.type]}</span>
+                      <span className="rech-det">{r.detail}</span>
+                    </button>
+                  ))}
+                </>
               )}
-              {res.map((r, i) => (
-                <button
-                  key={r.id}
-                  type="button"
-                  role="option"
-                  aria-selected={i === actif}
-                  className={`rech-item${i === actif ? " on" : ""}${r.href ? "" : " inerte"}`}
-                  onMouseEnter={() => setActif(i)}
-                  onClick={() => aller(r)}
-                >
-                  <span className="rech-lib">{r.libelle}</span>
-                  <span className="rech-type">{LIBELLE_TYPE[r.type]}</span>
-                  <span className="rech-det">{r.detail}</span>
-                </button>
-              ))}
-            </>
+            </div>
           )}
         </div>
       )}
