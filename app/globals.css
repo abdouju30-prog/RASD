@@ -758,6 +758,9 @@ a.card:hover {
   z-index: 40;
   padding: 4px;
 }
+.rech:has(.rech-panneau) .rech-liste {
+  top: calc(100% + 188px);
+}
 .rech-item {
   display: grid;
   grid-template-columns: 1fr auto;

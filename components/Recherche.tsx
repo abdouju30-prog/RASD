@@ -190,6 +190,7 @@ export function Recherche() {
           onChange={(e) => {
             setQ(e.target.value);
             setOuvert(true);
+            setFiltresOuverts(false);
           }}
           onFocus={() => setOuvert(true)}
           onKeyDown={clavier}
