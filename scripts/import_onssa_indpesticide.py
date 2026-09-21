@@ -296,14 +296,27 @@ def session_liste(workdir: Path, tag: str) -> tuple[bytes, dict, str | None, lis
     return raw, parse_fields(page), maj, produits
 
 
-def fiche_depuis_liste(workdir: Path, tag: str, fields: dict, idx: int) -> dict | None:
+def poster_cible(workdir: Path, tag: str, fields: dict, target: str, timeout: int = 180) -> tuple[str, dict]:
     cookie = workdir / f"{tag}.cookies"
     f = dict(fields)
-    f["__EVENTTARGET"] = f"ctl00$CPHCorps$lnkProduits{idx}"
+    f["__EVENTTARGET"] = target
     f["__EVENTARGUMENT"] = ""
-    raw = curl(cookie, workdir / f"{tag}-fiche.html", encoder(f), timeout=180)
+    raw = curl(cookie, workdir / f"{tag}-post.html", encoder(f), timeout=timeout)
     page = raw.decode("utf-8", "replace")
-    return parse_fiche(page)
+    return page, parse_fields(page)
+
+
+def fiche_et_retour(workdir: Path, tag: str, fields: dict, idx: int) -> tuple[dict | None, dict]:
+    """Ouvre une fiche puis revient à la liste — sinon le session ASP.NET dérive."""
+    page, fiche_fields = poster_cible(workdir, tag, fields, f"ctl00$CPHCorps$lnkProduits{idx}")
+    fiche = parse_fiche(page)
+    if "lnkRetProd" in page:
+        page_liste, fields_liste = poster_cible(workdir, tag, fiche_fields, "ctl00$CPHCorps$lnkRetProd")
+        if "Produits :" in page_liste:
+            return fiche, fields_liste
+    # Session perdue : on réouvre la liste.
+    _, fields_liste, _, _ = session_liste(workdir, tag)
+    return fiche, fields_liste
 
 
 def worker(tag: str, taches: list[tuple[int, str]], q: Queue, workdir: str):
@@ -331,10 +344,15 @@ def worker(tag: str, taches: list[tuple[int, str]], q: Queue, workdir: str):
             err = None
             for essai in range(4):
                 try:
-                    fiche = fiche_depuis_liste(wd, tag, fields, idx)
+                    fiche, fields = fiche_et_retour(wd, tag, fields, idx)
                     if fiche:
-                        break
-                    err = "pas de tblPesticide"
+                        if nom and fiche.get("nomCommercial", "").upper() != nom.upper():
+                            err = f"nom {fiche.get('nomCommercial')!r} ≠ {nom!r}"
+                            fiche = None
+                        else:
+                            break
+                    else:
+                        err = "pas de tblPesticide"
                 except Exception as e:
                     err = str(e)
                     fiche = None
@@ -586,7 +604,12 @@ def scraper(workers: int, limite: int | None, depuis_cache: bool) -> tuple[list[
     print(f"cache {len(cache)} fiches")
 
     if depuis_cache and cache:
-        return list(cache.values()), None, len(cache)
+        par_nom = {}
+        for f in cache.values():
+            nom = (f.get("nomCommercial") or "").upper()
+            if nom:
+                par_nom[nom] = f
+        return list(par_nom.values()), None, len(par_nom)
 
     print("-> session liste Nom commercial")
     _, _, maj, produits = session_liste(workdir, "main")
@@ -594,8 +617,13 @@ def scraper(workers: int, limite: int | None, depuis_cache: bool) -> tuple[list[
     if limite:
         produits = produits[:limite]
 
-    restants = [(i, n) for i, n in produits if i not in cache]
-    print(f"  à télécharger {len(restants)} (déjà en cache {len(produits) - len(restants)})")
+    got_noms = {
+        f["nomCommercial"].upper()
+        for f in cache.values()
+        if f.get("nomCommercial")
+    }
+    restants = [(i, n) for i, n in produits if n.upper() not in got_noms]
+    print(f"  à télécharger {len(restants)} (déjà en cache {len(got_noms)} noms)")
     if not restants:
         return [cache[i] for i, _ in produits if i in cache], maj, len(produits)
 
@@ -648,13 +676,20 @@ def scraper(workers: int, limite: int | None, depuis_cache: bool) -> tuple[list[
     for p in procs:
         p.join()
 
+    par_nom = {}
+    for f in cache.values():
+        nomu = (f.get("nomCommercial") or "").upper()
+        if nomu:
+            par_nom[nomu] = f
     fiches = []
     manquants = []
+    vus = set()
     for idx, nom in produits:
-        f = cache.get(idx)
-        if f:
+        f = par_nom.get(nom.upper())
+        if f and nom.upper() not in vus:
             fiches.append(f)
-        else:
+            vus.add(nom.upper())
+        elif not f:
             manquants.append(nom)
     if manquants:
         print(f"  manquants {len(manquants)} : {manquants[:12]}")
