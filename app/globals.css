@@ -578,6 +578,63 @@ a.card:hover {
   color: var(--accent);
 }
 
+/* ── Requête homologation (substance × culture × ravageur × société) ─────── */
+.requete {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px 12px;
+  align-items: end;
+}
+.requete label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  font-weight: 600;
+}
+.requete input,
+.requete select {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--fg);
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 7px 9px;
+  outline: none;
+  width: 100%;
+}
+.requete input:focus,
+.requete select:focus {
+  border-color: var(--accent);
+}
+.requete-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 34px;
+}
+.requete button {
+  font-family: var(--tete);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  border: 0;
+  border-radius: 7px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.requete button:hover {
+  filter: brightness(1.05);
+}
+
 /* ── Recherche transverse ─────────────────────────────────────────────────── */
 .rech {
   position: relative;

@@ -18,6 +18,7 @@ import { COUVERTURE } from "@/lib/reglementaire";
 import { alternatives } from "@/lib/substitution";
 import { AlternativesCompactes } from "@/components/Alternatives";
 import { NouveautesOnssa } from "@/components/NouveautesOnssa";
+import { RequeteHomologation } from "@/components/RequeteHomologation";
 
 export default async function RadarPage() {
   const d = await detenteurActuel();
@@ -46,6 +47,16 @@ export default async function RadarPage() {
     <>
       <div className="fil">Portefeuille · Vue</div>
       <h1>Tour de contrôle</h1>
+
+      <div className="card" style={{ padding: "16px 18px", marginTop: 16 }}>
+        <div className="h-title" style={{ marginBottom: 6 }}>
+          Recherche homologation
+        </div>
+        <p className="chapeau" style={{ marginBottom: 12 }}>
+          Substance, culture, ravageur ou société — enregistrements ONSSA, dose, DAR et échéance d&apos;AMM.
+        </p>
+        <RequeteHomologation />
+      </div>
 
       <NouveautesOnssa compact />
 

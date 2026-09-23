@@ -475,17 +475,35 @@ export function resoudreCible(s: string): string | null {
   return resoudreEmploi(n).cible;
 }
 
+export type StatutAmm = "tous" | "vigueur" | "expire";
+
 export function hrefUsages(f: {
   culture?: string | null;
   cible?: string | null;
   molecule?: string | null;
+  societe?: string | null;
+  statut?: StatutAmm | null;
 }): string {
   const p = new URLSearchParams();
   if (f.culture) p.set("culture", f.culture);
   if (f.cible) p.set("cible", f.cible);
   if (f.molecule) p.set("molecule", f.molecule);
+  if (f.societe) p.set("societe", f.societe);
+  if (f.statut && f.statut !== "tous") p.set("statut", f.statut);
   const q = p.toString();
   return q ? `/usages?${q}` : "/usages";
+}
+
+/** Libellés de molécules pour la saisie assistée. */
+export function suggestionsMolecules(): string[] {
+  return inventaireMolecules()
+    .map((m) => m.libelle)
+    .sort((a, b) => a.localeCompare(b, "fr"));
+}
+
+/** Sociétés présentes à l'index, pour la saisie assistée. */
+export function suggestionsSocietes(): string[] {
+  return [...new Set(PRODUITS.map((p) => p.detenteur))].sort((a, b) => a.localeCompare(b, "fr"));
 }
 
 function prefererPure(a: MatiereActive, b: MatiereActive): MatiereActive {
@@ -619,5 +637,171 @@ export function filtrerEmplois(f: FiltreUsage): {
     nbProduits: produits.size,
     nbDetenteurs: detenteurs.size,
     nbMatieres: matieres.size,
+  };
+}
+
+export interface Enregistrement {
+  produitId: string;
+  nom: string;
+  detenteur: string;
+  amm: string | null;
+  expiration: string | null;
+  formulation: string | null;
+  culture: string;
+  cible: string;
+  dose: string | null;
+  dar: string | null;
+  nbAppl: string | null;
+  matieres: string;
+  expire: boolean;
+}
+
+export interface RequeteHomologation {
+  culture: string | null;
+  cible: string | null;
+  matiere: MatiereActive | null;
+  societe: string | null;
+  statut: StatutAmm;
+}
+
+function aujourdhui(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function estExpire(expiration: string | null, jour: string): boolean {
+  return Boolean(expiration && expiration < jour);
+}
+
+/**
+ * Une ligne par produit × culture × ravageur — la lecture d'une base
+ * d'enregistrements : marque, société, n° AMM, dose, DAR, échéance.
+ */
+export function listerEnregistrements(
+  f: RequeteHomologation,
+  limite = 120
+): {
+  lignes: Enregistrement[];
+  total: number;
+  nbProduits: number;
+  nbDetenteurs: number;
+} {
+  const molsFiltre = f.matiere ? new Set(molecules(f.matiere.nom, f.matiere.molecule)) : null;
+  const lignesIds = molsFiltre
+    ? new Set(
+        MATIERES.filter((l) => molecules(l.nom, l.molecule).some((m) => molsFiltre.has(m))).map((l) => l.id)
+      )
+    : null;
+  const parMa = new Map(MATIERES.map((m) => [m.id, m]));
+  const societe = f.societe ? normaliser(f.societe) : "";
+  const jour = aujourdhui();
+
+  const lignes: Enregistrement[] = [];
+  const produits = new Set<string>();
+  const detenteurs = new Set<string>();
+
+  for (const p of PRODUITS) {
+    if (lignesIds && !p.matieresActivesIds.some((id) => lignesIds.has(id))) continue;
+    if (societe && !normaliser(p.detenteur).includes(societe)) continue;
+    const expire = estExpire(p.expiration, jour);
+    if (f.statut === "expire" && !expire) continue;
+    if (f.statut === "vigueur" && expire) continue;
+
+    for (const u of p.usages) {
+      if (!u.culture || !u.cible) continue;
+      if (f.culture && !compatible(u.culture, f.culture)) continue;
+      if (f.cible && !compatible(u.cible, f.cible)) continue;
+
+      const noms = new Set<string>();
+      const ids = p.matieresActivesIds.length ? p.matieresActivesIds : [];
+      for (const maId of ids) {
+        if (lignesIds && !lignesIds.has(maId)) continue;
+        const ma = parMa.get(maId);
+        const propres = ma ? molecules(ma.nom, ma.molecule) : [];
+        const retenues = molsFiltre ? propres.filter((x) => molsFiltre.has(x)) : propres;
+        for (const et of retenues.length ? retenues : propres) noms.add(libelleMatiere(ma, et));
+      }
+      if (noms.size === 0 && p.matieresActives[0]) noms.add(p.matieresActives[0]);
+
+      produits.add(p.id);
+      detenteurs.add(p.detenteur);
+      lignes.push({
+        produitId: p.id,
+        nom: p.nomCommercial,
+        detenteur: p.detenteur,
+        amm: p.amm,
+        expiration: p.expiration,
+        formulation: p.formulation,
+        culture: u.culture,
+        cible: u.cible,
+        dose: u.dose,
+        dar: u.dar,
+        nbAppl: u.nbAppl,
+        matieres: [...noms].join(" · ") || "—",
+        expire,
+      });
+    }
+  }
+
+  lignes.sort(
+    (a, b) =>
+      a.nom.localeCompare(b.nom, "fr") ||
+      a.culture.localeCompare(b.culture, "fr") ||
+      a.cible.localeCompare(b.cible, "fr")
+  );
+
+  return {
+    lignes: lignes.slice(0, limite),
+    total: lignes.length,
+    nbProduits: produits.size,
+    nbDetenteurs: detenteurs.size,
+  };
+}
+
+const CSV_MAX = 4000;
+
+function csvCell(v: string | null): string {
+  const s = (v ?? "").replace(/"/g, '""');
+  return /[;"\n]/.test(s) ? `"${s}"` : s;
+}
+
+/** Export tableur (séparateur point-virgule, UTF-8) des enregistrements filtrés. */
+export function enregistrementsCsv(f: RequeteHomologation): { csv: string; total: number; tronque: boolean } {
+  const { lignes, total } = listerEnregistrements(f, CSV_MAX);
+  const entete = [
+    "Produit",
+    "N° AMM",
+    "Société",
+    "Formulation",
+    "Matières actives",
+    "Culture",
+    "Ravageur",
+    "Dose",
+    "DAR (j)",
+    "Applications",
+    "Échéance",
+    "Statut",
+  ];
+  const corps = lignes.map((l) =>
+    [
+      l.nom,
+      l.amm,
+      l.detenteur,
+      l.formulation,
+      l.matieres,
+      l.culture,
+      l.cible,
+      l.dose,
+      l.dar,
+      l.nbAppl,
+      l.expiration,
+      l.expire ? "expirée" : "en vigueur",
+    ]
+      .map(csvCell)
+      .join(";")
+  );
+  return {
+    csv: `\uFEFF${entete.join(";")}\n${corps.join("\n")}\n`,
+    total,
+    tronque: total > lignes.length,
   };
 }
