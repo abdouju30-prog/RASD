@@ -103,6 +103,8 @@ export interface Precedent {
   matiere: string;
   doses: string;
   dar: string;
+  choixDoses: string[];
+  choixDar: string[];
 }
 
 export function precedentsDe(essai: EssaiPret): Precedent[] {
@@ -111,6 +113,8 @@ export function precedentsDe(essai: EssaiPret): Precedent[] {
       matiere: "",
       doses: e.doses.join(" · ") || "—",
       dar: e.dar.join(" · ") || "—",
+      choixDoses: e.doses.filter(Boolean),
+      choixDar: e.dar.filter(Boolean),
     }));
   }
   return essai.matieres.map((m) => {
@@ -126,6 +130,8 @@ export function precedentsDe(essai: EssaiPret): Precedent[] {
       matiere: m.nom,
       doses: doses.join(" · ") || "aucun emploi dans l'extrait",
       dar: dar.join(" · ") || "—",
+      choixDoses: doses,
+      choixDar: dar,
     };
   });
 }

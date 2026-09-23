@@ -14,6 +14,7 @@ export function SchemaQuestion({
   groupes,
   matieres,
   plan = "",
+  appliquees = [],
 }: {
   question: string;
   cultureId: string;
@@ -23,6 +24,7 @@ export function SchemaQuestion({
   groupes: GroupeCible[];
   matieres: Choix[];
   plan?: string;
+  appliquees?: string[];
 }) {
   const router = useRouter();
   const slots = [0, 1, 2].map((i) => matiereIds[i] ?? "");
@@ -47,6 +49,7 @@ export function SchemaQuestion({
       if (id) q.append("m", id);
     }
     if (plan) q.set("plan", plan);
+    for (const dose of appliquees) q.append("da", dose);
     router.push(`/procedures?${q}`);
   }
 

@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Schema } from "./Schema";
+import { SchemaDoses } from "./SchemaDoses";
 import { SchemaDispositif } from "./SchemaDispositif";
 import { SchemaQuestion } from "./SchemaQuestion";
 import type { Choix } from "./RechercheListe";
@@ -23,6 +25,7 @@ export function Parcours({
   groupes,
   matieres,
   plan,
+  appliquees,
 }: {
   etape: Etape;
   question: string;
@@ -38,7 +41,9 @@ export function Parcours({
   groupes: GroupeCible[];
   matieres: Choix[];
   plan: string;
+  appliquees: string[];
 }) {
+  const [dosesAppliquees, setDosesAppliquees] = useState(appliquees);
   const router = useRouter();
   const index = Math.max(0, ETAPES.findIndex((e) => e.id === etape.id));
   const planLien = plan || (index >= 1 ? coderPlan(SCHEMAS[0].blocs) : "");
@@ -55,6 +60,7 @@ export function Parcours({
     for (const id of matiereIds) params.append("m", id);
     const choisi = planForce || planLien;
     if (choisi) params.set("plan", choisi);
+    for (const dose of dosesAppliquees) params.append("da", dose);
     return `/procedures?${params}`;
   }
 
@@ -65,6 +71,7 @@ export function Parcours({
     if (cible) params.set("cible", cible);
     for (const id of matiereIds) params.append("m", id);
     if (planLien) params.set("plan", planLien);
+    for (const dose of dosesAppliquees) params.append("da", dose);
     const s = params.toString();
     return s ? `/rapport?${s}` : "/rapport";
   }
@@ -98,37 +105,30 @@ export function Parcours({
           groupes={groupes}
           matieres={matieres}
           plan={plan}
+          appliquees={dosesAppliquees}
         />
       ) : etape.id === "dispositif" ? (
         <SchemaDispositif plan={plan} onPlan={(suivant) => router.push(href(etape.id, question, suivant))} />
+      ) : etape.id === "doses" ? (
+        <SchemaDoses
+          lignes={precedents}
+          appliquees={dosesAppliquees}
+          onAppliquee={(i, valeur) =>
+            setDosesAppliquees((courant) => {
+              const suivant = [...courant];
+              suivant[i] = valeur;
+              return suivant;
+            })
+          }
+        />
       ) : (
         etape.schemas.map((id) => <Schema key={id} id={id} />)
       )}
-      {etape.id !== "question" && <p>{sansCuve ? "Pas de mélange en cuve." : etape.texte}</p>}
+      {etape.id !== "question" && etape.id !== "doses" && <p>{sansCuve ? "Pas de mélange en cuve." : etape.texte}</p>}
       {etape.id !== "question" && (
         <p className="text-sm">
           {[cultureNom, cible, choix?.label, matiereNoms.join(", ")].filter(Boolean).join(" · ") || "Culture non choisie"}
         </p>
-      )}
-      {etape.id === "doses" && precedents.length > 0 && (
-        <table className="table-feuille">
-          <thead>
-            <tr>
-              <th>Matière</th>
-              <th>Dose index</th>
-              <th>DAR index</th>
-            </tr>
-          </thead>
-          <tbody>
-            {precedents.map((p) => (
-              <tr key={p.matiere + p.doses}>
-                <td>{p.matiere || "—"}</td>
-                <td>{p.doses}</td>
-                <td>{p.dar}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       )}
       {etape.id === "melange" && melanges.length > 0 && (
         <p className="text-sm">Déjà formulé : {melanges.join(" ; ")}. Cuve à part.</p>

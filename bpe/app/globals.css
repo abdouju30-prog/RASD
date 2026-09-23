@@ -263,6 +263,10 @@ span.bouton {
   color: var(--muted);
 }
 
+.dose-prop {
+  margin-top: 0.35rem;
+}
+
 .schema .chaine > div {
   display: grid;
   gap: 0.35rem;

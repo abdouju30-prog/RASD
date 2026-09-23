@@ -11,11 +11,12 @@ export const metadata = { title: "Feuille de terrain" };
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string }>;
+  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string; da?: string | string[] }>;
 }) {
   const sp = await searchParams;
   const essai = preparerEssai(sp);
   const question = questionParId(sp.question);
+  const appliquees = Array.isArray(sp.da) ? sp.da : sp.da ? [sp.da] : [];
   const precedents = precedentsDe(essai).slice(0, 6);
   const q = parametresEssai(essai.culture?.id ?? "", essai.cible, essai.matieres.map((m) => m.id));
   const index = (CORPUS.meta.genereIndex ?? "").slice(0, 10);
@@ -73,12 +74,8 @@ export default async function Page({
         </section>
 
         <section>
-          <h2>Précédents d&apos;index et dose appliquée</h2>
-          <Schema id="doses" />
-          <p className="note-feuille">
-            Colonne « index » : extrait du {index || "—"}. Ce n&apos;est pas la dose à appliquer. Écrire la
-            dose réellement épandue à droite.
-          </p>
+          <h2>Dose d&apos;index et dose appliquée</h2>
+          <p className="note-feuille">Index du {index || "—"}. La dose appliquée est celle du jour.</p>
           <table className="table-feuille">
             <thead>
               <tr>
@@ -95,7 +92,7 @@ export default async function Page({
                   <td>{p.matiere}</td>
                   <td>{p.doses}</td>
                   <td>{p.dar}</td>
-                  <td className="cellule-vide" />
+                  <td className={appliquees[i] ? "" : "cellule-vide"}>{appliquees[i] ?? ""}</td>
                   <td className="cellule-vide" />
                 </tr>
               ))}
