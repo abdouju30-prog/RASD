@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { TabNav } from "./TabNav";
 
-/** Radar + Signal + Matières + Produits : un seul poste, quatre vues. */
+/** Radar + Signal + Matières + Produits + Homologations : un seul poste. */
 export function NavPortefeuille({
   critiques,
   detections,
@@ -20,7 +20,8 @@ export function NavPortefeuille({
     path === "/" ||
     path.startsWith("/veille") ||
     path.startsWith("/matieres") ||
-    path.startsWith("/produits");
+    path.startsWith("/produits") ||
+    path.startsWith("/usages");
   if (!ici) return null;
 
   return (
@@ -53,6 +54,12 @@ export function NavPortefeuille({
           href: "/produits",
           count: produits,
           active: path.startsWith("/produits"),
+        },
+        {
+          id: "homologations",
+          label: "Homologations",
+          href: "/usages",
+          active: path.startsWith("/usages"),
         },
       ]}
     />
