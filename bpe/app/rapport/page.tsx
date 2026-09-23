@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { BoutonImprimer } from "@/components/BoutonImprimer";
+import { Schema } from "@/components/Schema";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
-import { ORDRE_CUVE, questionParId } from "@/lib/procedures";
+import { questionParId } from "@/lib/procedures";
 
 export const metadata = { title: "Feuille de terrain" };
 
@@ -18,15 +19,12 @@ export default async function Page({
   const question = questionParId(sp.question);
   const precedents = precedentsDe(essai).slice(0, 6);
   const q = parametresEssai(essai.culture?.id ?? "", essai.cible, essai.matieres.map((m) => m.id));
-  const retour = q ? `/essai?${q}#grille` : "/essai";
   const index = (CORPUS.meta.genereIndex ?? "").slice(0, 10);
 
   return (
     <div className="grid gap-4">
       <div className="no-print grid gap-2">
         <p className="text-sm">
-          <Link href={retour}>Retour à la grille</Link>
-          {" · "}
           <Link href={`/procedures?etape=notations${q ? `&${q}` : ""}${question ? `&question=${question.id}` : ""}`}>
             Reprendre le parcours
           </Link>
@@ -77,6 +75,7 @@ export default async function Page({
 
         <section>
           <h2>Précédents d&apos;index et dose appliquée</h2>
+          <Schema id="doses" />
           <p className="note-feuille">
             Colonne « index » : extrait du {index || "—"}. Ce n&apos;est pas la dose à appliquer. Écrire la
             dose réellement épandue à droite.
@@ -114,25 +113,19 @@ export default async function Page({
           </table>
         </section>
 
-        {essai.matieres.length >= 2 && (
-          <section>
-            <h2>Mélange en cuve</h2>
-            <p className="note-feuille">
-              {essai.melanges.length
-                ? `Association déjà à l'index : ${essai.melanges.map((m) => m.composants.join(" + ")).join(" ; ")}. Cela ne couvre pas un mélange préparé au champ.`
-                : "Aucun mélange formulé de ces matières dans l'extrait. Essai en bocal avant toute application."}
-            </p>
-            <ol className="ordre-court">
-              {ORDRE_CUVE.map((etage) => (
-                <li key={etage}>{etage}</li>
-              ))}
-            </ol>
-            <p className="coche">Bocal fait · Stable · Instable, bouillie non appliquée</p>
-          </section>
-        )}
+        <section>
+          <h2>Mélange en cuve</h2>
+          {essai.melanges.length > 0 && (
+            <p className="note-feuille">Déjà formulé : {essai.melanges.map((m) => m.composants.join(" + ")).join(" ; ")}.</p>
+          )}
+          <Schema id="cuve" />
+          <Schema id="bocal" />
+          <p className="coche">Bocal fait · Stable · Instable, bouillie non appliquée</p>
+        </section>
 
         <section>
           <h2>Dispositif — numéro de parcelle</h2>
+          <Schema id="dispositif" />
           <table className="table-feuille">
             <thead>
               <tr>
@@ -159,6 +152,7 @@ export default async function Page({
 
         <section>
           <h2>Application</h2>
+          <Schema id="application" />
           <dl className="saisies">
             <div>
               <dt>Volume prévu L/ha</dt>
@@ -193,7 +187,7 @@ export default async function Page({
 
         <section>
           <h2>Notations brutes</h2>
-          <p className="note-feuille">Pas de pourcentage. Note brute et symptôme observé, avec la date.</p>
+          <Schema id="notations" />
           <table className="table-feuille">
             <thead>
               <tr>

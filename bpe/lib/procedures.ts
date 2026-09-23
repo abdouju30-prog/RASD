@@ -37,7 +37,7 @@ export const ETAPES: Etape[] = [
     id: "question",
     titre: "Question",
     texte: "Une culture, une cible, une question.",
-    schemas: [],
+    schemas: ["question"],
   },
   {
     id: "dispositif",

@@ -19,8 +19,7 @@ assert.deepEqual(
   ETAPES.map((e) => e.id),
   ["question", "dispositif", "doses", "melange", "application", "notations"]
 );
-assert.ok(ETAPES.every((e) => e.texte.length < 120));
-assert.ok(ETAPES.filter((e) => e.id !== "question").every((e) => e.schemas.length > 0));
+assert.ok(ETAPES.every((e) => e.texte.length < 120 && e.schemas.length > 0));
 
 const oranger = preparerEssai({ culture: "agrumes-oranger" });
 assert.ok(oranger.cibles.includes("Acariens"));

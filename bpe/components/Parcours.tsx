@@ -81,6 +81,9 @@ export function Parcours({
       <h1 className="text-3xl">
         {index + 1}. {etape.titre}
       </h1>
+      {etape.schemas.map((id) => (
+        <Schema key={id} id={id} />
+      ))}
       <p>{sansCuve ? "Pas de mélange en cuve." : etape.texte}</p>
       {etape.id === "question" && (
         <>
@@ -138,7 +141,6 @@ export function Parcours({
       {etape.id === "melange" && melanges.length > 0 && (
         <p className="text-sm">Déjà formulé : {melanges.join(" ; ")}. Cuve à part.</p>
       )}
-      {!sansCuve && etape.schemas.map((id) => <Schema key={id} id={id} />)}
       <div className="suite">
         {precedente && (
           <a className="bouton-second" href={href(precedente.id)}>
