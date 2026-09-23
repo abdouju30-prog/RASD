@@ -18,6 +18,18 @@ export const REGISTRES_RECHERCHE = [
   { id: "coree", libelle: "PSIS", detail: "Corée du Sud" },
   { id: "russie", libelle: "Catalogue RU", detail: "Russie" },
   { id: "turquie", libelle: "BKU", detail: "Turquie" },
+  { id: "inde", libelle: "Inde", detail: "CIB&RC — liste enregistrée" },
+  { id: "canada", libelle: "Canada", detail: "ARLA — titulaires" },
+  { id: "colombie", libelle: "Colombie", detail: "ICA — registre national" },
+  { id: "argentine", libelle: "Argentine", detail: "SENASA — plantes" },
+  { id: "mexique", libelle: "Mexique", detail: "COFEPRIS" },
+  { id: "malaisie", libelle: "Malaisie", detail: "Pesticides Board" },
+  { id: "thailande", libelle: "Thaïlande", detail: "DOA — licences" },
+  { id: "nz", libelle: "Nlle-Zélande", detail: "ACVM" },
+  { id: "afrique", libelle: "Af. du Sud", detail: "Act 36 — restreints" },
+  { id: "japon", libelle: "Japon", detail: "FAMIC" },
+  { id: "chili", libelle: "Chili", detail: "SAG" },
+  { id: "echa", libelle: "ECHA 95", detail: "Fournisseurs biocides" },
 ] as const;
 
 export type RegistreRecherche = (typeof REGISTRES_RECHERCHE)[number]["id"];

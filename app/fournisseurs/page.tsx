@@ -23,6 +23,7 @@ import { contactDe } from "@/lib/contact";
 import { ContactCell, ValiditeIcama } from "@/components/Contact";
 import { contactIcama } from "@/lib/contacts-icama";
 import type { Fournisseur } from "@/lib/types";
+import { REGISTRES_OUVERTS, societesDuRegistre } from "@/lib/registres-ouverts";
 
 export const dynamic = "force-dynamic";
 
@@ -127,7 +128,8 @@ export default async function FournisseursPage({
   searchParams: Promise<{ pays?: string; profil?: string; q?: string; source?: string; tout?: string }>;
 }) {
   const sp = await searchParams;
-  const source: Source = estSource(sp.source) ? sp.source : "onssa";
+  const ouvert = REGISTRES_OUVERTS.find((r) => r.id === sp.source) ?? null;
+  const source: Source | null = ouvert ? null : estSource(sp.source) ? sp.source : "onssa";
   const etendu = sp.tout === "1";
   const plafond = etendu ? Number.POSITIVE_INFINITY : MAX;
   const so = statsSourcing();
@@ -155,7 +157,7 @@ export default async function FournisseursPage({
       pays: sp.pays,
       profil: sp.profil,
       q: sp.q,
-      source,
+      source: sp.source,
       tout: sp.tout,
       ...o,
     }))
@@ -226,7 +228,7 @@ export default async function FournisseursPage({
         method="get"
         style={{ display: "flex", gap: 8, marginBottom: 14, maxWidth: 560 }}
       >
-        {source !== "onssa" && <input type="hidden" name="source" value={source} />}
+        {sp.source && sp.source !== "onssa" && <input type="hidden" name="source" value={sp.source} />}
         <div style={{ position: "relative", flex: 1 }}>
           <Search
             size={14}
@@ -318,12 +320,86 @@ export default async function FournisseursPage({
         <Pastille href={q({ source: "coree" })} actif={source === "coree"} nom="Corée" n={comptes.coree} note="PSIS — titulaire, avec la date" />
         <Pastille href={q({ source: "russie" })} actif={source === "russie"} nom="Russie" n={comptes.russie} note="Catalogue d'État" />
         <Pastille href={q({ source: "apvma" })} actif={source === "apvma"} nom="Australie" n={comptes.apvma} note="PUBCRIS — détenteur, pas usine" />
+        {REGISTRES_OUVERTS.map((r) => (
+          <Pastille
+            key={r.id}
+            href={q({ source: r.id })}
+            actif={sp.source === r.id}
+            nom={r.pays}
+            n={societesDuRegistre(r.id, cherche, surMatiere?.molecules ?? []).length}
+            note={r.autorite}
+          />
+        ))}
       </div>
       <p style={{ fontSize: 12, color: "var(--muted-2)", margin: "0 0 16px" }}>
         {surMatiere
           ? "Comptes pour cette molécule. Cliquez une pastille pour ouvrir le registre."
           : "Sans molécule, les comptes sont ceux du registre entier. Tapez un nom pour ne voir que qui la fabrique."}
       </p>
+
+      {ouvert && (
+        <div className="bloc">
+          <div className="titre">
+            <span>{ouvert.pays} — {ouvert.autorite}</span>
+            <span className="mono">{societesDuRegistre(ouvert.id, cherche, surMatiere?.molecules ?? []).length}</span>
+          </div>
+          <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "8px 0 4px", lineHeight: 1.55 }}>
+            {ouvert.nomme}.{" "}
+            <a href={ouvert.url} target="_blank" rel="noreferrer" className="link-accent">
+              Source
+            </a>
+          </p>
+          <p style={{ fontSize: 12, color: "var(--high)", margin: "0 0 8px", lineHeight: 1.5 }}>{ouvert.avertissement}</p>
+          {societesDuRegistre(ouvert.id, cherche, surMatiere?.molecules ?? []).length === 0 ? (
+            <p style={{ fontSize: 13, color: "var(--muted)", padding: "12px 0" }}>
+              {ouvert.nbSocietes === 0
+                ? "La source est identifiée. Le fichier public ne permet pas d'en extraire les sociétés."
+                : "Aucune société de ce registre pour cette recherche."}
+            </p>
+          ) : (
+            <table className="tbl">
+              <thead>
+                <tr>
+                  <th>Société</th>
+                  <th>Matières</th>
+                  <th style={{ textAlign: "right" }}>Lignes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {societesDuRegistre(ouvert.id, cherche, surMatiere?.molecules ?? [])
+                  .slice(0, plafond)
+                  .map((s) => (
+                    <tr key={s.nom}>
+                      <td style={{ fontWeight: 600 }}>{s.nom}</td>
+                      <td style={{ fontSize: 12.5, color: "var(--muted)" }}>
+                        {[...s.matieres]
+                          .sort(
+                            (a, b) =>
+                              Number(
+                                (surMatiere?.molecules ?? []).some((m) =>
+                                  b.toLowerCase().includes(m.toLowerCase())
+                                )
+                              ) -
+                              Number(
+                                (surMatiere?.molecules ?? []).some((m) =>
+                                  a.toLowerCase().includes(m.toLowerCase())
+                                )
+                              )
+                          )
+                          .slice(0, 4)
+                          .join(" · ") || "—"}
+                        {s.matieres.length > 4 && (
+                          <span className="mono"> +{s.matieres.length - 4}</span>
+                        )}
+                      </td>
+                      <td className="mono" style={{ textAlign: "right" }}>{s.nb}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      )}
 
       {source === "onssa" && (
         <>

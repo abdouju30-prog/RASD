@@ -31,7 +31,8 @@ import {
 } from "./usages";
 import { apparier, ansesPour } from "./ephy";
 import { resoudre } from "./requete";
-import type { FiltresRecherche, ObjetRecherche, RegistreRecherche } from "./filtres-recherche";
+import { REGISTRES_OUVERTS, societesDuRegistre } from "./registres-ouverts";
+import { estRegistre, type FiltresRecherche, type ObjetRecherche, type RegistreRecherche } from "./filtres-recherche";
 
 // ────────────────────────────────────────────────────────────────────────────
 // RECHERCHE TRANSVERSE
@@ -67,6 +68,7 @@ export type TypeEntree =
   | "producteur_coreen"
   | "usine_bresil"
   | "usine_epa"
+  | "titulaire_registre"
   | "societe_agreee"
   | "organisme_bpe"
   | "produit_expire"
@@ -102,6 +104,7 @@ export const LIBELLE_TYPE: Record<TypeEntree, string> = {
   producteur_coreen: "Société coréenne",
   usine_bresil: "Usine (registre brésilien)",
   usine_epa: "Usine (registre EPA)",
+  titulaire_registre: "Registre national",
   societe_agreee: "Société agréée ONSSA",
   organisme_bpe: "Organisme d'essai BPE",
   produit_expire: "Produit expiré",
@@ -139,6 +142,18 @@ const TYPES_REGISTRE: Record<RegistreRecherche, readonly TypeEntree[]> = {
   coree: ["producteur_coreen"],
   russie: ["producteur_russe"],
   turquie: ["usine_turquie"],
+  inde: ["titulaire_registre"],
+  canada: ["titulaire_registre"],
+  colombie: ["titulaire_registre"],
+  argentine: ["titulaire_registre"],
+  mexique: ["titulaire_registre"],
+  malaisie: ["titulaire_registre"],
+  thailande: ["titulaire_registre"],
+  nz: ["titulaire_registre"],
+  afrique: ["titulaire_registre"],
+  japon: ["titulaire_registre"],
+  chili: ["titulaire_registre"],
+  echa: ["titulaire_registre"],
 };
 
 const TYPES_OBJET: Record<ObjetRecherche, readonly TypeEntree[]> = {
@@ -154,13 +169,22 @@ const TYPES_OBJET: Record<ObjetRecherche, readonly TypeEntree[]> = {
     "usine_bresil",
     "usine_epa",
     "piste",
+    "titulaire_registre",
   ],
   detenteur: ["detenteur", "societe_agreee"],
   texte: ["nouveaute", "retiree", "restriction"],
 };
 
-function passeFiltres(e: { type: TypeEntree; libelle: string }, f?: FiltresRecherche): boolean {
+function passeFiltres(
+  e: { type: TypeEntree; libelle: string; id?: string },
+  f?: FiltresRecherche
+): boolean {
   if (!f) return true;
+  if (e.type === "titulaire_registre") {
+    if (f.objets.length && !f.objets.some((o) => TYPES_OBJET[o].includes(e.type))) return false;
+    if (!f.registres.length) return true;
+    return f.registres.some((r) => (e.id ?? "").startsWith(`reg-${r}-`));
+  }
   if (f.objets.length && !f.objets.some((o) => TYPES_OBJET[o].includes(e.type))) return false;
   if (!f.registres.length) return true;
   return f.registres.some((r) => {
@@ -190,6 +214,7 @@ const RANG: Record<TypeEntree, number> = {
   piste: 6,
   nouveaute: 3,
   usine_epa: 7,
+  titulaire_registre: 8,
   usine_chine: 8,
   usine_turquie: 8,
   producteur_russe: 8,
@@ -531,6 +556,22 @@ function construire(): Indexee[] {
     });
   }
 
+  for (const reg of REGISTRES_OUVERTS) {
+    for (const s of reg.societes) {
+      const libelle = s.nom.trim();
+      if (normaliser(libelle).length < 2) continue;
+      out.push({
+        id: `reg-${reg.id}-${normaliser(libelle).replace(/ /g, "-").slice(0, 72)}`,
+        libelle,
+        detail: `${reg.pays} · ${reg.autorite.split("—")[0].trim()}`,
+        type: "titulaire_registre",
+        href: `/fournisseurs?source=${reg.id}&q=${encodeURIComponent(libelle)}`,
+        poids: s.nb,
+        alias: aliasPays(reg.pays),
+      });
+    }
+  }
+
   for (const u of USINES_BRESIL) {
     out.push({
       id: `br-${u.id}`,
@@ -679,6 +720,7 @@ const DICTIONNAIRE: { n: string; affiche: string; prio: number }[] = [];
     "usine_bresil",
     "usine_epa",
     "societe_agreee",
+    "titulaire_registre",
   ]);
   const titrer = (s: string) => s.replace(/\b[a-z]/g, (c) => c.toUpperCase());
   for (const e of INDEX) {
@@ -1069,6 +1111,47 @@ function extrasGisement(
         type: "piste",
         href: `/fournisseurs?source=apvma&q=${qFourn}`,
         poids: 31_000 + p.matieresMaroc.length,
+      });
+    }
+  }
+
+  for (const reg of REGISTRES_OUVERTS) {
+    if (!estRegistre(reg.id) || !veutSource(f, reg.id) || !veutObjet(f, "fournisseur")) continue;
+    const hits = societesDuRegistre(reg.id, mol, req.molecules);
+    if (hits.length === 0) {
+      push({
+        id: `reg-${reg.id}-vide`,
+        libelle: reg.pays,
+        detail: reg.nbSocietes
+          ? `${reg.autorite} · aucune société sur cette matière`
+          : `${reg.autorite} · source citée, liste non extraite`,
+        type: "titulaire_registre",
+        href: `/sources#reg-${reg.id}`,
+        poids: 800,
+      });
+      continue;
+    }
+    for (const s of hits.slice(0, limite)) {
+      push({
+        id: `reg-${reg.id}-${normaliser(s.nom).replace(/ /g, "-").slice(0, 72)}`,
+        libelle: s.nom,
+        detail: [
+          reg.pays,
+          [...s.matieres]
+            .sort(
+              (a, b) =>
+                Number(b.toLowerCase().includes(mol.toLowerCase())) -
+                Number(a.toLowerCase().includes(mol.toLowerCase()))
+            )
+            .slice(0, 2)
+            .join(" · "),
+          `${s.nb}`,
+        ]
+          .filter(Boolean)
+          .join(" · "),
+        type: "titulaire_registre",
+        href: `/fournisseurs?source=${reg.id}&q=${qFourn}`,
+        poids: 36_000 + Math.min(s.nb, 500),
       });
     }
   }
