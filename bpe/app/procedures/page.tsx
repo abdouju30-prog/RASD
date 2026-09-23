@@ -10,7 +10,7 @@ export const metadata = { title: "Procédure" };
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ etape?: string; question?: string; culture?: string; cible?: string; m?: string | string[]; plan?: string; da?: string | string[] }>;
+  searchParams: Promise<{ etape?: string; question?: string; culture?: string; cible?: string; m?: string | string[]; plan?: string; da?: string | string[]; nt?: string | string[] }>;
 }) {
   const sp = await searchParams;
   const essai = preparerEssai(sp);
