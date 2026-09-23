@@ -1,10 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { FormulaireEssai } from "./FormulaireEssai";
 import { Schema } from "./Schema";
+import { SchemaQuestion } from "./SchemaQuestion";
 import type { Choix } from "./RechercheListe";
-import { ETAPES, QUESTIONS, questionParId, type Etape } from "@/lib/procedures";
+import { ETAPES, questionParId, type Etape } from "@/lib/procedures";
 import type { GroupeCible, Precedent } from "@/lib/essai";
 
 export function Parcours({
@@ -18,7 +17,6 @@ export function Parcours({
   melanges,
   precedents,
   cultures,
-  cibles,
   groupes,
   matieres,
 }: {
@@ -36,7 +34,6 @@ export function Parcours({
   groupes: GroupeCible[];
   matieres: Choix[];
 }) {
-  const router = useRouter();
   const index = Math.max(0, ETAPES.findIndex((e) => e.id === etape.id));
   const suivante = ETAPES[index + 1];
   const precedente = ETAPES[index - 1];
@@ -81,38 +78,20 @@ export function Parcours({
       <h1 className="text-3xl">
         {index + 1}. {etape.titre}
       </h1>
-      {etape.schemas.map((id) => (
-        <Schema key={id} id={id} />
-      ))}
-      <p>{sansCuve ? "Pas de mélange en cuve." : etape.texte}</p>
-      {etape.id === "question" && (
-        <>
-          <div className="choix-question">
-            {QUESTIONS.map((q) => (
-              <button
-                key={q.id}
-                type="button"
-                aria-pressed={question === q.id}
-                onClick={() => router.push(href(etape.id, q.id))}
-              >
-                {q.label}
-              </button>
-            ))}
-          </div>
-          <FormulaireEssai
-            cultures={cultures}
-            cibles={cibles}
-            groupes={groupes}
-            matieres={matieres}
-            culture={cultureId}
-            cible={cible}
-            matiereIds={matiereIds}
-            base="/procedures"
-            extra={{ etape: "question", question }}
-            masquerSubmit
-          />
-        </>
+      {etape.id === "question" ? (
+        <SchemaQuestion
+          question={question}
+          cultureId={cultureId}
+          cible={cible}
+          matiereIds={matiereIds}
+          cultures={cultures}
+          groupes={groupes}
+          matieres={matieres}
+        />
+      ) : (
+        etape.schemas.map((id) => <Schema key={id} id={id} />)
       )}
+      {etape.id !== "question" && <p>{sansCuve ? "Pas de mélange en cuve." : etape.texte}</p>}
       {etape.id !== "question" && (
         <p className="text-sm">
           {[cultureNom, cible, choix?.label, matiereNoms.join(", ")].filter(Boolean).join(" · ") || "Culture non choisie"}

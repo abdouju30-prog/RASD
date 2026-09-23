@@ -257,6 +257,20 @@ span.bouton {
   border-color: var(--accent);
 }
 
+.schema .chaine > div {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+}
+
+.schema .choix-question {
+  flex-direction: column;
+}
+
+.schema .choix-question button {
+  width: 100%;
+}
+
 .suite {
   display: flex;
   flex-wrap: wrap;
@@ -289,6 +303,7 @@ span.bouton {
 }
 
 .chaine > p,
+.chaine > div,
 .chaine > li,
 .frise > p {
   flex: 1 1 7.5rem;
