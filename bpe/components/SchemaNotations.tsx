@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { codesANoter } from "@/lib/dispositif";
 import {
-  AJOUTS_JOURS,
   ECHELLE_PLANTE,
   GESTES,
   SOMMES,
@@ -13,7 +12,10 @@ import {
   appliquerDates,
   insererDelai,
   joursDar,
+  joursDuMoment,
   lectureEfficacite,
+  notationRemplie,
+  rangMoment,
   roleMoment,
   type Notation,
 } from "@/lib/notations";
@@ -39,7 +41,8 @@ export function SchemaNotations({
   traitement: string;
   onTraitement: (jour: string) => void;
 }) {
-  const [actif, setActif] = useState(0);
+  const premierVide = lignes.findIndex((l) => !notationRemplie(l));
+  const [actif, setActif] = useState(premierVide >= 0 ? premierVide : 0);
   const [autreJour, setAutreJour] = useState("");
   const modalites = codesANoter(plan);
   const nomCible = cible || "la cible";
@@ -78,6 +81,23 @@ export function SchemaNotations({
   }
 
   if (!ligne) return null;
+  const notee = notationRemplie(ligne);
+  const courant = joursDuMoment(ligne.moment) ?? -1;
+  const suite = [14, 7, 10, 21, 28].filter(
+    (jours) => jours > courant && !lignes.some((l) => l.moment === `J+${jours}`),
+  );
+  const recolte = lignes.findIndex((l) => /^récolte$|^recolte$/i.test(l.moment.trim()));
+
+  function ajouterRecolte() {
+    if (recolte >= 0) {
+      setActif(recolte);
+      return;
+    }
+    const suivantes = [...lignes, { moment: "Récolte", date: "", stade: "", notes: {}, selectivite: "" }].sort(
+      (a, b) => rangMoment(a.moment) - rangMoment(b.moment),
+    );
+    poser(suivantes, "Récolte");
+  }
 
   return (
     <div className="grid gap-3">
@@ -98,40 +118,17 @@ export function SchemaNotations({
             }}
           />
         </label>
-        <p className="etiquette">Notations</p>
-        <div className="choix-champ">
-          {lignes.map((l, i) => (
-            <button key={l.moment} type="button" aria-pressed={i === index} onClick={() => setActif(i)}>
-              {l.moment}
-              {l.date ? ` ${afficherDate(l.date)}` : ""}
-            </button>
-          ))}
-        </div>
-        <p className="etiquette">Ajouter une notation après le traitement</p>
-        <div className="choix-champ">
-          {AJOUTS_JOURS.map((jours) => {
-            const moment = `J+${jours}`;
-            const existe = lignes.some((l) => l.moment === moment);
-            return (
-              <button key={jours} type="button" aria-pressed={existe} onClick={() => ajouter(jours)}>
-                {jours} j
-              </button>
-            );
-          })}
-        </div>
-        <div className="ligne-champ">
-          <label className="ligne-champ">
-            <span className="etiquette">Autre délai, jours</span>
-            <input
-              inputMode="numeric"
-              value={autreJour}
-              onChange={(e) => setAutreJour(e.target.value.replace(/\D/g, "").slice(0, 3))}
-            />
-          </label>
-          <button type="button" className="bouton-second" disabled={!autreJour} onClick={() => ajouter(Number(autreJour))}>
-            Ajouter
-          </button>
-        </div>
+        {lignes.some((l, i) => i !== index && notationRemplie(l)) && (
+          <div className="choix-champ">
+            {lignes.map((l, i) =>
+              i === index || !notationRemplie(l) ? null : (
+                <button key={l.moment} type="button" onClick={() => setActif(i)}>
+                  {l.moment} noté{l.date ? ` ${afficherDate(l.date)}` : ""}
+                </button>
+              ),
+            )}
+          </div>
+        )}
         <p>
           {dar.length
             ? `Délai avant récolte d'index : ${dar.join(" · ")}.${darJours !== null ? ` La récolte se note à J+${darJours}.` : ""}`
@@ -210,6 +207,50 @@ export function SchemaNotations({
           Retirer {ligne.moment}
         </button>
       </section>
+
+      {notee ? (
+        <section className="schema grid gap-2">
+          <p className="enonce">
+            {ligne.moment} est noté. Plus tard, note J+14 ou un autre délai. Les sommes de {ligne.moment} restent.
+          </p>
+          <div className="choix-champ">
+            {suite.map((jours) => (
+              <button
+                key={jours}
+                type="button"
+                className={jours === 14 ? "bouton" : "bouton-second"}
+                onClick={() => ajouter(jours)}
+              >
+                Noter J+{jours}
+              </button>
+            ))}
+            {recolte < 0 && (
+              <button type="button" className="bouton-second" onClick={ajouterRecolte}>
+                Noter la récolte
+              </button>
+            )}
+          </div>
+          <div className="ligne-champ">
+            <label className="ligne-champ">
+              <span className="etiquette">Autre délai, jours</span>
+              <input
+                inputMode="numeric"
+                value={autreJour}
+                onChange={(e) => setAutreJour(e.target.value.replace(/\D/g, "").slice(0, 3))}
+              />
+            </label>
+            <button type="button" className="bouton-second" disabled={!autreJour} onClick={() => ajouter(Number(autreJour))}>
+              Noter J+{autreJour || "…"}
+            </button>
+          </div>
+        </section>
+      ) : (
+        <p>
+          {ligne.moment === "J0"
+            ? "Note J0 maintenant. J+14, et les dates d'après, viendront ensuite."
+            : `Note ${ligne.moment} maintenant. Les dates d'après viendront ensuite.`}
+        </p>
+      )}
 
       <details>
         <summary>Comment noter les 10 plantes</summary>

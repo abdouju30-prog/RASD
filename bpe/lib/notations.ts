@@ -37,10 +37,11 @@ export const STADES = ["Végétatif", "Floraison", "Nouaison", "Grossissement", 
 
 export const NOTATIONS_DEFAUT: Notation[] = [
   { moment: "J0", date: "", stade: "", notes: {}, selectivite: "" },
-  { moment: "J+7", date: "", stade: "", notes: {}, selectivite: "" },
-  { moment: "J+14", date: "", stade: "", notes: {}, selectivite: "" },
-  { moment: "Récolte", date: "", stade: "", notes: {}, selectivite: "" },
 ];
+
+export function notationRemplie(ligne: Notation): boolean {
+  return Object.values(ligne.notes).some((valeur) => valeur.trim());
+}
 
 export function joursDuMoment(moment: string): number | null {
   const nom = moment.trim().toLowerCase();
