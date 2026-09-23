@@ -29,11 +29,4 @@ npm run extraire
 
 ## Deploy
 
-Separate Vercel project, root directory = this folder.
-
-| Variable | Required in production | Default |
-|---|---|---|
-| `BPE_PASSWORD` | yes | — |
-| `BPE_USER` | no | `bpe` |
-
-Production without `BPE_PASSWORD` returns 503. Local dev stays open when the variable is unset.
+Separate Vercel project, root directory = this folder. No login.
