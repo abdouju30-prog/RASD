@@ -3,6 +3,7 @@ import { BoutonImprimer } from "@/components/BoutonImprimer";
 import { PlanDispositif } from "@/components/PlanDispositif";
 import { SchemaCuve } from "@/components/SchemaCuve";
 import { Schema } from "@/components/Schema";
+import { lireApplication } from "@/lib/application";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
 import { questionParId } from "@/lib/procedures";
@@ -18,6 +19,7 @@ export default async function Page({
   const essai = preparerEssai(sp);
   const question = questionParId(sp.question);
   const appliquees = Array.isArray(sp.da) ? sp.da : sp.da ? [sp.da] : [];
+  const appli = lireApplication(sp);
   const precedents = precedentsDe(essai).slice(0, 6);
   const q = parametresEssai(essai.culture?.id ?? "", essai.cible, essai.matieres.map((m) => m.id));
   const index = (CORPUS.meta.genereIndex ?? "").slice(0, 10);
@@ -126,35 +128,38 @@ export default async function Page({
 
         <section>
           <h2>Application</h2>
-          <Schema id="application" />
           <dl className="saisies">
             <div>
+              <dt>Dose du jour</dt>
+              <dd>{appliquees.filter(Boolean).join(" · ")}</dd>
+            </div>
+            <div>
               <dt>Volume prévu L/ha</dt>
-              <dd />
+              <dd>{appli.volumePrevu}</dd>
             </div>
             <div>
               <dt>Volume réel L/ha</dt>
-              <dd />
+              <dd>{appli.volumeReel}</dd>
             </div>
             <div>
-              <dt>Matériel / buses</dt>
-              <dd />
+              <dt>Buses</dt>
+              <dd>{appli.buses}</dd>
             </div>
             <div>
               <dt>Heure</dt>
-              <dd />
+              <dd>{appli.heure}</dd>
             </div>
             <div>
               <dt>Température</dt>
-              <dd />
+              <dd>{appli.temperature}</dd>
             </div>
             <div>
               <dt>Vent</dt>
-              <dd />
+              <dd>{appli.vent}</dd>
             </div>
             <div>
               <dt>Écart du jour</dt>
-              <dd />
+              <dd>{appli.ecart}</dd>
             </div>
           </dl>
         </section>

@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Schema } from "./Schema";
+import { SchemaApplication } from "./SchemaApplication";
 import { SchemaCuve } from "./SchemaCuve";
 import { SchemaDoses } from "./SchemaDoses";
 import { SchemaDispositif } from "./SchemaDispositif";
 import { SchemaQuestion } from "./SchemaQuestion";
 import type { Choix } from "./RechercheListe";
+import { ecrireApplication, type ApplicationSaisie } from "@/lib/application";
 import { SCHEMAS, coderPlan } from "@/lib/dispositif";
 import { ETAPES, questionParId, type Etape } from "@/lib/procedures";
 import type { GroupeCible, Precedent } from "@/lib/essai";
@@ -27,6 +29,7 @@ export function Parcours({
   matieres,
   plan,
   appliquees,
+  application,
 }: {
   etape: Etape;
   question: string;
@@ -43,8 +46,10 @@ export function Parcours({
   matieres: Choix[];
   plan: string;
   appliquees: string[];
+  application: ApplicationSaisie;
 }) {
   const [dosesAppliquees, setDosesAppliquees] = useState(appliquees);
+  const [appli, setAppli] = useState(application);
   const router = useRouter();
   const index = Math.max(0, ETAPES.findIndex((e) => e.id === etape.id));
   const planLien = plan || (index >= 1 ? coderPlan(SCHEMAS[0].blocs) : "");
@@ -62,6 +67,7 @@ export function Parcours({
     const choisi = planForce || planLien;
     if (choisi) params.set("plan", choisi);
     for (const dose of dosesAppliquees) params.append("da", dose);
+    ecrireApplication(params, appli);
     return `/procedures?${params}`;
   }
 
@@ -73,6 +79,7 @@ export function Parcours({
     for (const id of matiereIds) params.append("m", id);
     if (planLien) params.set("plan", planLien);
     for (const dose of dosesAppliquees) params.append("da", dose);
+    ecrireApplication(params, appli);
     const s = params.toString();
     return s ? `/rapport?${s}` : "/rapport";
   }
@@ -106,6 +113,7 @@ export function Parcours({
           matieres={matieres}
           plan={plan}
           appliquees={dosesAppliquees}
+          application={appli}
         />
       ) : etape.id === "dispositif" ? (
         <SchemaDispositif plan={plan} onPlan={(suivant) => router.push(href(etape.id, question, suivant))} />
@@ -121,12 +129,16 @@ export function Parcours({
             })
           }
         />
+      ) : etape.id === "application" ? (
+        <SchemaApplication doses={dosesAppliquees} saisie={appli} onSaisie={setAppli} />
       ) : etape.id === "melange" ? (
         <SchemaCuve noms={matiereNoms} melanges={melanges} />
       ) : (
         etape.schemas.map((id) => <Schema key={id} id={id} />)
       )}
-      {etape.id !== "question" && etape.id !== "doses" && etape.id !== "melange" && <p>{etape.texte}</p>}
+      {etape.id !== "question" && etape.id !== "doses" && etape.id !== "melange" && etape.id !== "application" && (
+        <p>{etape.texte}</p>
+      )}
       {etape.id !== "question" && (
         <p className="text-sm">
           {[cultureNom, cible, choix?.label, matiereNoms.join(", ")].filter(Boolean).join(" · ") || "Culture non choisie"}

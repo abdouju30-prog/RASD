@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { ecrireApplication, type ApplicationSaisie } from "@/lib/application";
 import { QUESTIONS } from "@/lib/procedures";
 import type { GroupeCible } from "@/lib/essai";
 import { RechercheListe, type Choix } from "./RechercheListe";
@@ -15,6 +16,7 @@ export function SchemaQuestion({
   matieres,
   plan = "",
   appliquees = [],
+  application,
 }: {
   question: string;
   cultureId: string;
@@ -25,6 +27,7 @@ export function SchemaQuestion({
   matieres: Choix[];
   plan?: string;
   appliquees?: string[];
+  application?: ApplicationSaisie;
 }) {
   const router = useRouter();
   const slots = [0, 1, 2].map((i) => matiereIds[i] ?? "");
@@ -50,6 +53,7 @@ export function SchemaQuestion({
     }
     if (plan) q.set("plan", plan);
     for (const dose of appliquees) q.append("da", dose);
+    if (application) ecrireApplication(q, application);
     router.push(`/procedures?${q}`);
   }
 

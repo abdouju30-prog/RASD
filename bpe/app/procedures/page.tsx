@@ -1,5 +1,6 @@
 import { Parcours } from "@/components/Parcours";
 import { CULTURES } from "@/lib/corpus";
+import { lireApplication } from "@/lib/application";
 import { precedentsDe, preparerEssai } from "@/lib/essai";
 import { etapeParId } from "@/lib/procedures";
 
@@ -31,6 +32,7 @@ export default async function Page({
       matieres={essai.choixMatieres.map((m) => ({ value: m.id, label: m.nom }))}
       plan={sp.plan ?? ""}
       appliquees={Array.isArray(sp.da) ? sp.da : sp.da ? [sp.da] : []}
+      application={lireApplication(sp)}
     />
   );
 }
