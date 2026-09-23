@@ -318,12 +318,37 @@ span.bouton {
 }
 
 .choix-champ button {
-  min-height: 36px;
+  width: auto;
+  flex: 0 0 auto;
+  min-height: 32px;
   border: 1px solid var(--line);
   background: #fff;
   border-radius: 999px;
-  padding: 0 0.65rem;
-  font-size: 0.85rem;
+  padding: 0 0.55rem;
+  font-size: 0.8rem;
+}
+
+.grille-application {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem 0.8rem;
+}
+
+.grille-application .pleine {
+  grid-column: 1 / -1;
+}
+
+.ligne-champ {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+}
+
+.ligne-champ input {
+  width: 8.5rem;
+  min-height: 36px;
+  text-align: right;
 }
 
 .choix-champ button[aria-pressed="true"] {
@@ -583,7 +608,7 @@ select.case-mod {
   margin: 0;
 }
 
-.saisies div {
+.saisies > div {
   display: grid;
   gap: 0.15rem;
 }
@@ -661,6 +686,7 @@ select.case-mod {
 @media (max-width: 639px) {
   .saisies,
   .deux-col,
+  .grille-application,
   .signatures,
   .bocaux {
     grid-template-columns: 1fr;

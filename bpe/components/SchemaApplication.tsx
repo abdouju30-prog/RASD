@@ -15,10 +15,10 @@ export function SchemaApplication({
 }) {
   const lignes = doses.length ? doses : [""];
 
-  function champ(cle: keyof ApplicationSaisie, etiquette: string) {
+  function champ(cle: keyof ApplicationSaisie, etiquette: string, large = false) {
     return (
-      <div className="grid gap-1">
-        <label className="grid gap-1">
+      <div className={large ? "pleine grid gap-1" : "grid gap-1"}>
+        <label className="ligne-champ">
           <span className="etiquette">{etiquette}</span>
           <input value={saisie[cle]} onChange={(e) => onSaisie({ ...saisie, [cle]: e.target.value })} />
         </label>
@@ -41,7 +41,7 @@ export function SchemaApplication({
   return (
     <div className="schema grid gap-3">
       {lignes.map((dose, i) => (
-        <label key={i} className="grid gap-1">
+        <label key={i} className="ligne-champ">
           <span className="etiquette">Dose du jour {lignes.length > 1 ? i + 1 : ""}</span>
           <input
             value={dose}
@@ -53,14 +53,14 @@ export function SchemaApplication({
           />
         </label>
       ))}
-      <div className="saisies">
+      <div className="grille-application">
         {champ("volumePrevu", "Volume prévu L/ha")}
         {champ("volumeReel", "Volume réel L/ha")}
         {champ("buses", "Buses")}
         {champ("heure", "Heure")}
         {champ("temperature", "Température °C")}
-        {champ("vent", "Vent")}
-        {champ("ecart", "Écart")}
+        {champ("vent", "Vent", true)}
+        {champ("ecart", "Écart", true)}
       </div>
     </div>
   );
