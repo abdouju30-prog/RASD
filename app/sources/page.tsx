@@ -12,6 +12,7 @@ import { STATS_BKU } from "@/lib/bku";
 import { FOURNISSEURS_RENSEIGNES } from "@/lib/packs-fournisseur";
 import { fmtDate } from "@/lib/logic";
 import { LIBELLE_ETAT, REGISTRES, STATS_OCDE, type EtatRegistre } from "@/lib/ocde";
+import { META_REGISTRES_OUVERTS, REGISTRES_OUVERTS } from "@/lib/registres-ouverts";
 import { STATS_COREE } from "@/lib/coree";
 import { STATS_ONSSA_TEXTES } from "@/lib/onssa-reglementation";
 import { Aide, Figure } from "@/components/Aide";
@@ -450,6 +451,32 @@ export default function SourcesPage() {
         </Aide>
       </div>
 
+      <div className="section">
+        <div className="card" style={{ padding: "18px 20px" }}>
+          <div className="h-title">Registres ajoutés — relevé du {META_REGISTRES_OUVERTS.releve}</div>
+          <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "8px 0 12px", lineHeight: 1.55, maxWidth: "88ch" }}>
+            {META_REGISTRES_OUVERTS.avertissement}
+          </p>
+          <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+            {REGISTRES_OUVERTS.map((r) => (
+              <div key={r.id} id={`reg-${r.id}`} className="bloc">
+                <div style={{ display: "flex", gap: 8, alignItems: "baseline" }}>
+                  <span style={{ fontFamily: "var(--tete)", fontWeight: 600 }}>{r.pays}</span>
+                  <span className="mono" style={{ marginLeft: "auto", fontSize: 11, color: "var(--muted-2)" }}>
+                    {r.nbSocietes} sociétés
+                  </span>
+                </div>
+                <div style={{ fontSize: 12, color: "var(--accent)", marginTop: 4 }}>{r.autorite}</div>
+                <p style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.5, margin: "8px 0" }}>{r.nomme}</p>
+                <a href={r.url} target="_blank" rel="noreferrer" className="link-accent" style={{ fontSize: 12 }}>
+                  Ouvrir la source
+                </a>
+                <p style={{ fontSize: 11.5, color: "var(--high)", marginTop: 8, lineHeight: 1.45 }}>{r.avertissement}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       <CarteRegistres />
 
       <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 20 }}>
