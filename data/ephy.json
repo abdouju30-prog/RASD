@@ -3,11 +3,11 @@
   "source": "Données E-Phy - Anses",
   "url": "https://www.data.gouv.fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges",
   "licence": "Licence Ouverte / Open Licence",
-  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-15",
-  "majDonnees": "2026-09-15",
-  "genere": "2026-09-22T10:50:25",
+  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-22",
+  "majDonnees": "2026-09-22",
+  "genere": "2026-09-23T10:39:24",
   "nbSubstances": 1337,
-  "nbProduitsPPP": 13566,
+  "nbProduitsPPP": 13567,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
@@ -3726,7 +3726,7 @@
     "Chlorantraniliprole",
     "chlorantraniliprole"
    ],
-   "nbProduitsAutorises": 6,
+   "nbProduitsAutorises": 7,
    "nbProduitsRetires": 1,
    "dernierRetrait": "2018-08-10"
   },
@@ -8424,8 +8424,8 @@
     "glyphosate sel monosodium",
     "glyphosate trimesium"
    ],
-   "nbProduitsAutorises": 10,
-   "nbProduitsRetires": 680,
+   "nbProduitsAutorises": 8,
+   "nbProduitsRetires": 682,
    "dernierRetrait": "2026-05-20"
   },
   {

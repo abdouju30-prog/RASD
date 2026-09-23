@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-22T10:52:32",
-  "dernierReleve": "2026-09-22",
+  "genere": "2026-09-23T10:41:13",
+  "dernierReleve": "2026-09-23",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
@@ -495,7 +495,7 @@
    "australie": {
     "nom": "BIFENTHRIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 259,
+    "nbProduitsAgricoles": 260,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -639,7 +639,7 @@
    "australie": {
     "nom": "CYPROCONAZOLE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 14,
+    "nbProduitsAgricoles": 15,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -1956,7 +1956,7 @@
    "australie": {
     "nom": "HEXAZINONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 49,
+    "nbProduitsAgricoles": 50,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -2176,7 +2176,7 @@
    "australie": {
     "nom": "ISOXAFLUTOLE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 39,
+    "nbProduitsAgricoles": 41,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -2964,7 +2964,7 @@
    "australie": {
     "nom": "MANCOZEB",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 71,
+    "nbProduitsAgricoles": 72,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3163,7 +3163,7 @@
    "australie": {
     "nom": "EPOXICONAZOLE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 53,
+    "nbProduitsAgricoles": 54,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3264,7 +3264,7 @@
    "australie": {
     "nom": "PROPICONAZOLE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 98,
+    "nbProduitsAgricoles": 100,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5863,7 +5863,7 @@
    "australie": {
     "nom": "TRIFLURALIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 78,
+    "nbProduitsAgricoles": 80,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6752,7 +6752,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 64,
+    "nbProduitsAgricoles": 65,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -8663,7 +8663,7 @@
    "australie": {
     "nom": "FENPROPIDIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 1,
+    "nbProduitsAgricoles": 3,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -16160,7 +16160,7 @@
    "australie": {
     "nom": "PRODIAMINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 5,
+    "nbProduitsAgricoles": 6,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
