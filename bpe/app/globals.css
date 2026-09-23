@@ -298,6 +298,27 @@ span.bouton {
   width: 100%;
 }
 
+.choix-champ {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.choix-champ button {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 999px;
+  padding: 0 0.65rem;
+  font-size: 0.85rem;
+}
+
+.choix-champ button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
+
 .suite {
   display: flex;
   flex-wrap: wrap;

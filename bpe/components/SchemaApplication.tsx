@@ -1,6 +1,6 @@
 "use client";
 
-import type { ApplicationSaisie } from "@/lib/application";
+import { CHOIX_APPLICATION, type ApplicationSaisie } from "@/lib/application";
 
 export function SchemaApplication({
   doses,
@@ -17,10 +17,24 @@ export function SchemaApplication({
 
   function champ(cle: keyof ApplicationSaisie, etiquette: string) {
     return (
-      <label className="grid gap-1">
-        <span className="etiquette">{etiquette}</span>
-        <input value={saisie[cle]} onChange={(e) => onSaisie({ ...saisie, [cle]: e.target.value })} />
-      </label>
+      <div className="grid gap-1">
+        <label className="grid gap-1">
+          <span className="etiquette">{etiquette}</span>
+          <input value={saisie[cle]} onChange={(e) => onSaisie({ ...saisie, [cle]: e.target.value })} />
+        </label>
+        <div className="choix-champ">
+          {CHOIX_APPLICATION[cle].map((choix) => (
+            <button
+              key={choix}
+              type="button"
+              aria-pressed={saisie[cle] === choix}
+              onClick={() => onSaisie({ ...saisie, [cle]: choix })}
+            >
+              {choix}
+            </button>
+          ))}
+        </div>
+      </div>
     );
   }
 
