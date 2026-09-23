@@ -21,6 +21,14 @@ assert.deepEqual(
 );
 assert.ok(ETAPES.every((e) => e.texte.length < 120 && e.schemas.length > 0));
 
+const mildiou = preparerEssai({ culture: "tomate", cible: "Mildiou" });
+assert.ok(mildiou.choixMatieres.some((m) => m.nom === "Amisulbrom"));
+assert.ok(!mildiou.choixMatieres.some((m) => m.nom.includes("Dichloroprop")));
+assert.deepEqual(
+  mildiou.choixMatieres.map((m) => m.nom),
+  mildiou.choixMatieres.map((m) => m.nom).slice().sort((a, b) => a.localeCompare(b, "fr"))
+);
+
 const oranger = preparerEssai({ culture: "agrumes-oranger" });
 assert.ok(oranger.cibles.includes("Acariens"));
 assert.ok(oranger.groupesCibles.some((g) => g.titre === "Oranger" && g.noms.length === 2));

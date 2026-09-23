@@ -257,6 +257,12 @@ span.bouton {
   border-color: var(--accent);
 }
 
+.ordre-alpha {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .schema .chaine > div {
   display: grid;
   gap: 0.35rem;

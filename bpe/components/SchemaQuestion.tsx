@@ -86,6 +86,7 @@ export function SchemaQuestion({
           </div>
         </div>
       </div>
+      <p className="ordre-alpha">Ordre alphabétique. Aucun classement d&apos;efficacité.</p>
       <div className="chaine">
         {slots.map((id, i) => (
           <div key={i}>

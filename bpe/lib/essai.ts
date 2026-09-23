@@ -54,13 +54,21 @@ export function preparerEssai(sp: {
     .map((id) => matiereParIdDe(id))
     .filter((x) => x !== undefined);
   const lies = culture ? nomsLies(culture.nom) : [];
-  const choixMatieres = culture
+  const matieresCulture = culture
     ? MATIERES.filter((m) => lies.some((nom) => m.cultures.includes(nom)))
     : MATIERES;
+  const choixMatieres = (cible
+    ? matieresCulture.filter((m) =>
+        m.emplois.some((e) => (!lies.length || lies.includes(e.culture)) && e.cible === cible)
+      )
+    : matieresCulture
+  )
+    .slice()
+    .sort((a, b) => a.nom.localeCompare(b.nom, "fr"));
   const groupesCibles: GroupeCible[] = lies.map((nom) => {
     const noms = [
       ...new Set(
-        choixMatieres
+        matieresCulture
           .flatMap((m) => m.emplois.filter((e) => e.culture === nom).map((e) => e.cible))
           .filter(Boolean)
       ),
