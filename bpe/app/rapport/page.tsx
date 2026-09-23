@@ -4,7 +4,8 @@ import { PlanDispositif } from "@/components/PlanDispositif";
 import { SchemaCuve } from "@/components/SchemaCuve";
 import { Schema } from "@/components/Schema";
 import { lireApplication } from "@/lib/application";
-import { lireNotations } from "@/lib/notations";
+import { ECHELLE_PLANTE, GESTES, lectureEfficacite, lireNotations } from "@/lib/notations";
+import { codesANoter } from "@/lib/dispositif";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
 import { enonceQuestion, questionParId } from "@/lib/procedures";
@@ -22,6 +23,7 @@ export default async function Page({
   const appliquees = Array.isArray(sp.da) ? sp.da : sp.da ? [sp.da] : [];
   const appli = lireApplication(sp);
   const notes = lireNotations(sp);
+  const modalites = codesANoter(sp.plan);
   const precedents = precedentsDe(essai).slice(0, 6);
   const q = parametresEssai(essai.culture?.id ?? "", essai.cible, essai.matieres.map((m) => m.id));
   const index = (CORPUS.meta.genereIndex ?? "").slice(0, 10);
@@ -174,29 +176,38 @@ export default async function Page({
         </section>
 
         <section>
-          <h2>Notations brutes</h2>
-          <table className="table-feuille">
-            <thead>
-              <tr>
-                <th>Moment</th>
-                <th>Date</th>
-                <th>Stade</th>
-                <th>Efficacité</th>
-                <th>Sélectivité</th>
-              </tr>
-            </thead>
-            <tbody>
-              {notes.map((n, i) => (
-                <tr key={i}>
-                  <td>{n.moment}</td>
-                  <td className={n.date ? "" : "cellule-vide"}>{n.date}</td>
-                  <td className={n.stade ? "" : "cellule-vide"}>{n.stade}</td>
-                  <td className={n.efficacite ? "" : "cellule-vide"}>{n.efficacite}</td>
-                  <td className={n.selectivite ? "" : "cellule-vide"}>{n.selectivite}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <h2>Efficacité</h2>
+          <p>
+            {(essai.matieres.map((m) => m.nom).join(" et ") || "Le produit")} réduit {essai.cible || "la cible"} sur{" "}
+            {essai.culture?.nom || "la culture"} si sa somme est plus basse que T0. Même organe, 10 plantes, pas de
+            pourcentage.
+          </p>
+          <ol className="guide">
+            {GESTES.map((geste) => (
+              <li key={geste}>{geste}</li>
+            ))}
+          </ol>
+          <ul className="echelle">
+            {ECHELLE_PLANTE.map((palier) => (
+              <li key={palier.note}>
+                {palier.note} {palier.sens}
+              </li>
+            ))}
+          </ul>
+          {notes.map((n, i) => (
+            <div key={i}>
+              <p>
+                <strong>{n.moment || "Date"}</strong>
+                {n.date ? ` · ${n.date}` : ""}
+                {n.stade ? ` · ${n.stade}` : ""}
+              </p>
+              <p>
+                {modalites.map((code) => `${code} ${n.notes[code] || "……"}`).join(" · ")}
+                {n.selectivite ? ` · symptôme ${n.selectivite}` : ""}
+              </p>
+              <p>{lectureEfficacite(n.notes, essai.cible)}</p>
+            </div>
+          ))}
         </section>
 
         <section className="signatures">

@@ -62,6 +62,13 @@ export function decoderPlan(plan: string | undefined): string[][] {
   return blocs.length ? blocs : SCHEMAS[0].blocs.map((ligne) => [...ligne]);
 }
 
+export function codesANoter(plan: string | undefined): string[] {
+  const presents = new Set(decoderPlan(plan).flat());
+  const ordre = ["T0", "E1", "E2", "E3", "R"];
+  const codes = ordre.filter((code) => presents.has(code));
+  return codes.length ? codes : ["T0", "E1"];
+}
+
 export function schemaDuPlan(blocs: string[][]): string {
   const code = coderPlan(blocs);
   return SCHEMAS.find((s) => coderPlan(s.blocs) === code)?.id ?? "";

@@ -142,7 +142,14 @@ export function Parcours({
           }
         />
       ) : etape.id === "notations" ? (
-        <SchemaNotations lignes={notes} onChange={setNotes} />
+        <SchemaNotations
+          lignes={notes}
+          onChange={setNotes}
+          culture={cultureNom}
+          cible={cible}
+          produit={matiereNoms.join(" et ")}
+          plan={planLien}
+        />
       ) : etape.id === "application" ? (
         <SchemaApplication
           doses={dosesAppliquees}
