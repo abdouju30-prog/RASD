@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BoutonImprimer } from "@/components/BoutonImprimer";
+import { PlanDispositif } from "@/components/PlanDispositif";
 import { Schema } from "@/components/Schema";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
@@ -7,12 +8,10 @@ import { questionParId } from "@/lib/procedures";
 
 export const metadata = { title: "Feuille de terrain" };
 
-const MODALITES = ["T0 témoin", "R référence", "E1", "E2"];
-
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string }>;
+  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string }>;
 }) {
   const sp = await searchParams;
   const essai = preparerEssai(sp);
@@ -125,29 +124,7 @@ export default async function Page({
 
         <section>
           <h2>Dispositif — numéro de parcelle</h2>
-          <Schema id="dispositif" />
-          <table className="table-feuille">
-            <thead>
-              <tr>
-                <th>Modalité</th>
-                <th>R1</th>
-                <th>R2</th>
-                <th>R3</th>
-                <th>R4</th>
-              </tr>
-            </thead>
-            <tbody>
-              {MODALITES.map((mod) => (
-                <tr key={mod}>
-                  <td>{mod}</td>
-                  <td className="cellule-vide" />
-                  <td className="cellule-vide" />
-                  <td className="cellule-vide" />
-                  <td className="cellule-vide" />
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <PlanDispositif plan={sp.plan} />
         </section>
 
         <section>

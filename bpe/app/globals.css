@@ -363,6 +363,42 @@ span.bouton {
   background: #e7f0e6;
 }
 
+select.case-mod {
+  min-height: 44px;
+}
+
+.lien-retirer {
+  display: block;
+  margin-top: 0.15rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--warn);
+  font-size: 0.75rem;
+  min-height: 0;
+  cursor: pointer;
+}
+
+.lien-retirer:disabled {
+  opacity: 0.35;
+}
+
+.num-parcelle {
+  display: block;
+  min-height: 1.1rem;
+  margin-top: 0.25rem;
+  border-bottom: 1px solid #1c2416;
+}
+
+.explications {
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+}
+
 .pile-cuve {
   display: grid;
   gap: 0.2rem;

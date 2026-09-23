@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { cultureParNomDe, matiereParIdDe, MELANGES } from "../lib/corpus";
 import { precedentsDe, preparerEssai } from "../lib/essai";
+import { SCHEMAS, ajouterBloc, coderPlan, decoderPlan, retirerBloc, schemaDuPlan } from "../lib/dispositif";
 import { ETAPES } from "../lib/procedures";
 
 const pommier = cultureParNomDe("Pommier");
@@ -28,6 +29,13 @@ assert.deepEqual(
   mildiou.choixMatieres.map((m) => m.nom),
   mildiou.choixMatieres.map((m) => m.nom).slice().sort((a, b) => a.localeCompare(b, "fr"))
 );
+
+assert.equal(SCHEMAS.length, 3);
+assert.equal(schemaDuPlan(SCHEMAS[1].blocs), "sans-reference");
+const plus = ajouterBloc(SCHEMAS[2].blocs);
+assert.equal(plus.length, SCHEMAS[2].blocs.length + 1);
+assert.equal(retirerBloc(plus, 0).length, SCHEMAS[2].blocs.length);
+assert.deepEqual(decoderPlan(coderPlan(SCHEMAS[0].blocs)), SCHEMAS[0].blocs);
 
 const oranger = preparerEssai({ culture: "agrumes-oranger" });
 assert.ok(oranger.cibles.includes("Acariens"));

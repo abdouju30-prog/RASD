@@ -8,7 +8,7 @@ export const metadata = { title: "Procédure" };
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ etape?: string; question?: string; culture?: string; cible?: string; m?: string | string[] }>;
+  searchParams: Promise<{ etape?: string; question?: string; culture?: string; cible?: string; m?: string | string[]; plan?: string }>;
 }) {
   const sp = await searchParams;
   const essai = preparerEssai(sp);
@@ -29,6 +29,7 @@ export default async function Page({
       cibles={essai.cibles}
       groupes={essai.groupesCibles}
       matieres={essai.choixMatieres.map((m) => ({ value: m.id, label: m.nom }))}
+      plan={sp.plan ?? ""}
     />
   );
 }

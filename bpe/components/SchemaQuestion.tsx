@@ -13,6 +13,7 @@ export function SchemaQuestion({
   cultures,
   groupes,
   matieres,
+  plan = "",
 }: {
   question: string;
   cultureId: string;
@@ -21,6 +22,7 @@ export function SchemaQuestion({
   cultures: Choix[];
   groupes: GroupeCible[];
   matieres: Choix[];
+  plan?: string;
 }) {
   const router = useRouter();
   const slots = [0, 1, 2].map((i) => matiereIds[i] ?? "");
@@ -44,6 +46,7 @@ export function SchemaQuestion({
     for (const id of ids) {
       if (id) q.append("m", id);
     }
+    if (plan) q.set("plan", plan);
     router.push(`/procedures?${q}`);
   }
 

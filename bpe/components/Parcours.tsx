@@ -1,8 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Schema } from "./Schema";
+import { SchemaDispositif } from "./SchemaDispositif";
 import { SchemaQuestion } from "./SchemaQuestion";
 import type { Choix } from "./RechercheListe";
+import { SCHEMAS, coderPlan } from "@/lib/dispositif";
 import { ETAPES, questionParId, type Etape } from "@/lib/procedures";
 import type { GroupeCible, Precedent } from "@/lib/essai";
 
@@ -19,6 +22,7 @@ export function Parcours({
   cultures,
   groupes,
   matieres,
+  plan,
 }: {
   etape: Etape;
   question: string;
@@ -33,19 +37,24 @@ export function Parcours({
   cibles: string[];
   groupes: GroupeCible[];
   matieres: Choix[];
+  plan: string;
 }) {
+  const router = useRouter();
   const index = Math.max(0, ETAPES.findIndex((e) => e.id === etape.id));
+  const planLien = plan || (index >= 1 ? coderPlan(SCHEMAS[0].blocs) : "");
   const suivante = ETAPES[index + 1];
   const precedente = ETAPES[index - 1];
   const choix = questionParId(question);
 
-  function href(idEtape: string, q = question) {
+  function href(idEtape: string, q = question, planForce?: string) {
     const params = new URLSearchParams();
     params.set("etape", idEtape);
     if (q) params.set("question", q);
     if (cultureId) params.set("culture", cultureId);
     if (cible) params.set("cible", cible);
     for (const id of matiereIds) params.append("m", id);
+    const choisi = planForce || planLien;
+    if (choisi) params.set("plan", choisi);
     return `/procedures?${params}`;
   }
 
@@ -55,6 +64,7 @@ export function Parcours({
     if (cultureId) params.set("culture", cultureId);
     if (cible) params.set("cible", cible);
     for (const id of matiereIds) params.append("m", id);
+    if (planLien) params.set("plan", planLien);
     const s = params.toString();
     return s ? `/rapport?${s}` : "/rapport";
   }
@@ -87,7 +97,10 @@ export function Parcours({
           cultures={cultures}
           groupes={groupes}
           matieres={matieres}
+          plan={plan}
         />
+      ) : etape.id === "dispositif" ? (
+        <SchemaDispositif plan={plan} onPlan={(suivant) => router.push(href(etape.id, question, suivant))} />
       ) : (
         etape.schemas.map((id) => <Schema key={id} id={id} />)
       )}
