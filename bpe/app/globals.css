@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f4f0e6;
+  --surface: #fffcf6;
+  --ink: #1c2416;
+  --muted: #4d5646;
+  --line: #ddd4c4;
+  --accent: #1f4d32;
+  --accent-fg: #f7fbf6;
+  --fond: #e7f0e6;
+  --warn: #8a4b12;
+  --bad: #8c2f2f;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--accent);
+}
+
+input, select, button, textarea {
+  font: inherit;
+}
+
+.table-bpe {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.table-bpe th {
+  text-align: left;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.table-bpe td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
