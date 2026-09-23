@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Emplois } from "@/components/Emplois";
+import { FormulaireEssai } from "@/components/FormulaireEssai";
 import { CULTURES, MATIERES, MELANGES, cultureParIdDe, matiereParIdDe } from "@/lib/corpus";
 import type { Emploi } from "@/lib/types";
 
@@ -61,7 +62,7 @@ export default async function Page({
           <Link href="/procedures/melange">Mélange</Link>
         </p>
       </div>
-      <form className="grid gap-3 rounded border border-[var(--line)] bg-[var(--surface)] p-4">
+      <FormulaireEssai>
         <label className="grid gap-1 text-sm">
           Culture
           <select name="culture" defaultValue={culture?.id ?? ""} className="rounded border border-[var(--line)] bg-[var(--bg)] px-2 py-2">
@@ -74,9 +75,9 @@ export default async function Page({
           </select>
         </label>
         <label className="grid gap-1 text-sm">
-          Cible
+          Cible{culture ? ` · ${cibles.length}` : ""}
           <select name="cible" defaultValue={cible} className="rounded border border-[var(--line)] bg-[var(--bg)] px-2 py-2">
-            <option value="">Toutes</option>
+            <option value="">{culture ? "Toutes" : "Choisir une culture"}</option>
             {cibles.map((c) => (
               <option key={c} value={c}>
                 {c}
@@ -99,10 +100,10 @@ export default async function Page({
           </label>
         ))}
         <button className="rounded bg-[var(--accent)] px-3 py-2 text-[var(--accent-fg)] sm:w-fit">Préparer</button>
-      </form>
+      </FormulaireEssai>
 
       {culture && (
-        <section className="grid gap-3">
+        <section id="grille" className="grid gap-3">
           <h2 className="text-2xl">Grille</h2>
           <ul className="grid gap-1 text-sm">
             <li>Culture : {culture.nom}</li>
