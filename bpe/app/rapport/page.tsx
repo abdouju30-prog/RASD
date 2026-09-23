@@ -4,7 +4,7 @@ import { PlanDispositif } from "@/components/PlanDispositif";
 import { SchemaCuve } from "@/components/SchemaCuve";
 import { Schema } from "@/components/Schema";
 import { lireApplication } from "@/lib/application";
-import { ECHELLE_PLANTE, GESTES, afficherDate, joursDar, lectureEfficacite, lireNotations, lireTraitement } from "@/lib/notations";
+import { ECHELLE_PLANTE, afficherDate, joursDar, lectureEfficacite, lireNotations, lireTraitement, notationRemplie, rangMoment } from "@/lib/notations";
 import { codesANoter } from "@/lib/dispositif";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
@@ -179,43 +179,46 @@ export default async function Page({
         </section>
 
         <section>
-          <h2>Efficacité</h2>
-          <p>
-            {(essai.matieres.map((m) => m.nom).join(" et ") || "Le produit")} réduit {essai.cible || "la cible"} sur{" "}
-            {essai.culture?.nom || "la culture"} si sa somme est plus basse que T0. Même organe, 10 plantes, pas de
-            pourcentage.
-          </p>
-          <ol className="guide">
-            {GESTES.map((geste) => (
-              <li key={geste}>{geste}</li>
-            ))}
-          </ol>
-          <ul className="echelle">
-            {ECHELLE_PLANTE.map((palier) => (
-              <li key={palier.note}>
-                {palier.note} {palier.sens}
-              </li>
-            ))}
-          </ul>
+          <h2>Notations</h2>
           <p>
             Traitement {afficherDate(traitement) || "……"}
             {darIndex.length ? ` · DAR ${darIndex.join(" · ")}` : ""}
             {darJours !== null ? ` · récolte à J+${darJours}` : ""}
           </p>
-          {notes.map((n, i) => (
-            <div key={i}>
-              <p>
-                <strong>{n.moment || "Date"}</strong>
-                {n.date ? ` · ${afficherDate(n.date)}` : ""}
-                {n.stade ? ` · ${n.stade}` : ""}
-              </p>
-              <p>
-                {modalites.map((code) => `${code} ${n.notes[code] || "……"}`).join(" · ")}
-                {n.selectivite ? ` · symptôme ${n.selectivite}` : ""}
-              </p>
-              <p>{lectureEfficacite(n.notes, essai.cible)}</p>
-            </div>
-          ))}
+          <p>Somme de 10 plantes. {ECHELLE_PLANTE.map((palier) => `${palier.note} ${palier.sens}`).join(" · ")}.</p>
+          <table className="table-feuille">
+            <thead>
+              <tr>
+                <th>Délai</th>
+                <th>Date</th>
+                <th>Stade</th>
+                {modalites.map((code) => (
+                  <th key={code}>{code}</th>
+                ))}
+                <th>Symptôme</th>
+                <th>Lecture</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[...notes].sort((a, b) => rangMoment(a.moment) - rangMoment(b.moment)).map((n) => {
+                const faite = notationRemplie(n);
+                return (
+                  <tr key={n.moment}>
+                    <td>{n.moment}</td>
+                    <td className={n.date ? "" : "cellule-vide"}>{n.date ? afficherDate(n.date) : ""}</td>
+                    <td className={n.stade ? "" : "cellule-vide"}>{n.stade}</td>
+                    {modalites.map((code) => (
+                      <td key={code} className={n.notes[code] ? "" : "cellule-vide"}>
+                        {n.notes[code] ?? ""}
+                      </td>
+                    ))}
+                    <td className={n.selectivite ? "" : "cellule-vide"}>{n.selectivite}</td>
+                    <td>{faite ? lectureEfficacite(n.notes, essai.cible) : "À noter"}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </section>
 
         <section className="signatures">

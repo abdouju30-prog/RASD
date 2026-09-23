@@ -135,7 +135,9 @@ export function roleMoment(moment: string): string {
 }
 
 export function lireNombre(valeur: string): number | null {
-  const n = Number(valeur.trim().replace(",", "."));
+  const texte = valeur.trim().replace(",", ".");
+  if (!texte) return null;
+  const n = Number(texte);
   return Number.isFinite(n) ? n : null;
 }
 
