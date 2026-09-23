@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { codesANoter } from "@/lib/dispositif";
 import {
-  DELAIS,
+  AJOUTS_JOURS,
   ECHELLE_PLANTE,
   GESTES,
   SOMMES,
@@ -11,6 +11,7 @@ import {
   SYMPTOMES,
   afficherDate,
   appliquerDates,
+  insererDelai,
   joursDar,
   lectureEfficacite,
   roleMoment,
@@ -39,6 +40,7 @@ export function SchemaNotations({
   onTraitement: (jour: string) => void;
 }) {
   const [actif, setActif] = useState(0);
+  const [autreJour, setAutreJour] = useState("");
   const modalites = codesANoter(plan);
   const nomCible = cible || "la cible";
   const nomProduit = produit || "le produit";
@@ -46,7 +48,6 @@ export function SchemaNotations({
   const darJours = joursDar(dar);
   const index = Math.min(actif, Math.max(0, lignes.length - 1));
   const ligne = lignes[index];
-  const connus = new Set(DELAIS.map((d) => d.moment));
 
   function poser(suivantes: Notation[], moment?: string) {
     const dates = appliquerDates(suivantes, traitement, darJours);
@@ -65,13 +66,15 @@ export function SchemaNotations({
     maj({ notes: { ...ligne.notes, [code]: valeur } });
   }
 
-  function choisirDelai(moment: string) {
+  function ajouter(jours: number) {
+    if (!Number.isInteger(jours) || jours < 1 || jours > 120) return;
+    const moment = `J+${jours}`;
     const existe = lignes.findIndex((l) => l.moment === moment);
     if (existe >= 0) {
       setActif(existe);
       return;
     }
-    poser([...lignes, { moment, date: "", stade: "", notes: {}, selectivite: "" }], moment);
+    poser(insererDelai(lignes, jours), moment);
   }
 
   if (!ligne) return null;
@@ -95,30 +98,39 @@ export function SchemaNotations({
             }}
           />
         </label>
-        <p className="etiquette">Délais de notation</p>
+        <p className="etiquette">Notations</p>
         <div className="choix-champ">
-          {DELAIS.map((delai) => {
-            const i = lignes.findIndex((l) => l.moment === delai.moment);
+          {lignes.map((l, i) => (
+            <button key={l.moment} type="button" aria-pressed={i === index} onClick={() => setActif(i)}>
+              {l.moment}
+              {l.date ? ` ${afficherDate(l.date)}` : ""}
+            </button>
+          ))}
+        </div>
+        <p className="etiquette">Ajouter une notation après le traitement</p>
+        <div className="choix-champ">
+          {AJOUTS_JOURS.map((jours) => {
+            const moment = `J+${jours}`;
+            const existe = lignes.some((l) => l.moment === moment);
             return (
-              <button
-                key={delai.moment}
-                type="button"
-                className={i >= 0 && i !== index ? "choix-present" : ""}
-                aria-pressed={i === index}
-                onClick={() => choisirDelai(delai.moment)}
-              >
-                {delai.moment}
-                {delai.jours === null && darJours !== null ? ` J+${darJours}` : ""}
+              <button key={jours} type="button" aria-pressed={existe} onClick={() => ajouter(jours)}>
+                {jours} j
               </button>
             );
           })}
-          {lignes
-            .filter((l) => !connus.has(l.moment))
-            .map((l) => (
-              <button key={l.moment} type="button" aria-pressed={l === ligne} onClick={() => choisirDelai(l.moment)}>
-                {l.moment}
-              </button>
-            ))}
+        </div>
+        <div className="ligne-champ">
+          <label className="ligne-champ">
+            <span className="etiquette">Autre délai, jours</span>
+            <input
+              inputMode="numeric"
+              value={autreJour}
+              onChange={(e) => setAutreJour(e.target.value.replace(/\D/g, "").slice(0, 3))}
+            />
+          </label>
+          <button type="button" className="bouton-second" disabled={!autreJour} onClick={() => ajouter(Number(autreJour))}>
+            Ajouter
+          </button>
         </div>
         <p>
           {dar.length

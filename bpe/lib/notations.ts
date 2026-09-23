@@ -9,11 +9,29 @@ export interface Notation {
 export const DELAIS: { moment: string; jours: number | null }[] = [
   { moment: "J0", jours: 0 },
   { moment: "J+7", jours: 7 },
+  { moment: "J+10", jours: 10 },
   { moment: "J+14", jours: 14 },
   { moment: "J+21", jours: 21 },
   { moment: "J+28", jours: 28 },
   { moment: "Récolte", jours: null },
 ];
+
+export const AJOUTS_JOURS = [7, 10, 14, 21, 28];
+
+export function rangMoment(moment: string): number {
+  const jours = joursDuMoment(moment);
+  if (jours !== null) return jours;
+  if (/^récolte$|^recolte$/i.test(moment.trim())) return 10000;
+  return 9000;
+}
+
+export function insererDelai(lignes: Notation[], jours: number): Notation[] {
+  const moment = `J+${jours}`;
+  if (lignes.some((l) => l.moment === moment)) return lignes;
+  return [...lignes, { moment, date: "", stade: "", notes: {}, selectivite: "" }].sort(
+    (a, b) => rangMoment(a.moment) - rangMoment(b.moment),
+  );
+}
 
 export const STADES = ["Végétatif", "Floraison", "Nouaison", "Grossissement", "Maturité"];
 
