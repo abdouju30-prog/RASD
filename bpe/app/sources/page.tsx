@@ -1,5 +1,5 @@
 import { CORPUS } from "@/lib/corpus";
-import { PROCEDURES } from "@/lib/procedures";
+import { ETAPES } from "@/lib/procedures";
 
 export const metadata = { title: "Sources" };
 
@@ -16,8 +16,7 @@ export default function Page() {
         Non repris : noms commerciaux, détenteurs, fournisseurs, numéros d&apos;AMM.
       </p>
       <p>
-        Ajouté ici : {PROCEDURES.length} procédures, dont l&apos;ordre d&apos;introduction en cuve
-        et l&apos;essai en bocal. Ce sont des repères de travail, pas une décision ONSSA.
+        Ajouté ici : un parcours de {ETAPES.length} étapes, jusqu&apos;au bilan imprimable.
       </p>
     </article>
   );

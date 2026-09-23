@@ -9,16 +9,10 @@ export type SchemaId =
   | "feuille";
 
 export interface Etape {
-  titre: string;
-  texte: string;
-  schema?: SchemaId;
-}
-
-export interface Procedure {
   id: string;
   titre: string;
-  resume: string;
-  etapes: Etape[];
+  texte: string;
+  schemas: SchemaId[];
 }
 
 export const ORDRE_CUVE = [
@@ -32,139 +26,63 @@ export const ORDRE_CUVE = [
   "Compléter en eau sous agitation",
 ];
 
-export const PROCEDURES: Procedure[] = [
+export const QUESTIONS = [
+  { id: "efficacite", label: "Efficacité" },
+  { id: "selectivite", label: "Sélectivité" },
+  { id: "les-deux", label: "Les deux" },
+] as const;
+
+export const ETAPES: Etape[] = [
   {
-    id: "cadrage",
-    titre: "Cadrer un essai",
-    resume: "Fixer la culture, la cible et la question avant de lire le spectre.",
-    etapes: [
-      {
-        titre: "La question",
-        texte:
-          "Une culture, un bioagresseur, une matière active ou un mélange. L'essai répond à une question : efficacité, sélectivité, ou les deux.",
-        schema: "question",
-      },
-      {
-        titre: "Ce que le spectre apporte",
-        texte:
-          "Il montre les emplois déjà à l'index : culture, cible, dose, DAR. C'est un précédent pour écrire le protocole. Ce n'est pas une autorisation.",
-      },
-      {
-        titre: "Ce que BPE ne fait pas",
-        texte:
-          "Il ne choisit pas de laboratoire, ne dépose pas de dossier et ne modifie pas Homologa.",
-      },
-    ],
+    id: "question",
+    titre: "Question",
+    texte: "Une culture, une cible, une question.",
+    schemas: [],
   },
   {
-    id: "protocole",
-    titre: "Protocole d'essai",
-    resume: "Grille minimale pour écrire un protocole avant la première application.",
-    etapes: [
-      {
-        titre: "Objectif",
-        texte:
-          "Un objectif principal : efficacité, sélectivité, ou les deux. La culture, le bioagresseur et le stade (BBCH ou équivalent) sont nommés. Le spectre de l'index sert à choisir un couple culture / cible déjà instruit au Maroc.",
-      },
-      {
-        titre: "Dispositif",
-        texte:
-          "Blocs randomisés, répétitions, parcelle utile séparée des bordures. Témoin non traité pour lire l'efficacité. Produit de référence lorsqu'un emploi homologué existe déjà sur le même couple : la dose et le DAR de l'index sont le précédent, pas la modalité imposée.",
-        schema: "dispositif",
-      },
-      {
-        titre: "Application",
-        texte:
-          "Dose, volume de bouillie, matériel, buses, conditions météo, heure. Écarts notés le jour même. Ces repères structurent le protocole ; ils ne retranscrivent pas un article ONSSA.",
-        schema: "application",
-      },
-      {
-        titre: "Notations",
-        texte:
-          "État initial, puis notations calées sur la cinétique du bioagresseur. Sélectivité et symptômes sur la culture, pas seulement le ravageur ou la maladie.",
-        schema: "notations",
-      },
-    ],
+    id: "dispositif",
+    titre: "Dispositif",
+    texte: "4 blocs. T0, R si une référence existe, E1, E2. Numéro de parcelle dans chaque case.",
+    schemas: ["dispositif"],
+  },
+  {
+    id: "doses",
+    titre: "Doses",
+    texte: "Recopier dose et DAR d'index. Écrire la dose appliquée au champ.",
+    schemas: ["doses"],
   },
   {
     id: "melange",
-    titre: "Mélange de matières actives",
-    resume: "Distinguer une association déjà formulée d'un mélange en cuve, et tester la compatibilité physique.",
-    etapes: [
-      {
-        titre: "Deux objets différents",
-        texte:
-          "Une association formulée est un produit qui contient déjà plusieurs matières actives : l'index en recense, avec cultures, cibles, doses et DAR. Un mélange en cuve est préparé dans le pulvérisateur à partir de produits séparés. La présence des molécules, séparément ou ensemble, n'autorise pas le mélange en cuve.",
-      },
-      {
-        titre: "Ce que l'index prouve",
-        texte:
-          "Si BPE trouve une association dont tous les composants choisis font partie, c'est un précédent de formulation déjà à l'index. Sinon, aucun mélange formulé de ces matières actives n'est dans l'extrait. L'essai peut quand même les comparer, chacune dans sa modalité, ou étudier un mélange — après compatibilité physique.",
-      },
-      {
-        titre: "Ordre d'introduction",
-        texte:
-          "Repère de préparation, à valider par l'essai en bocal et par les étiquettes : " +
-          ORDRE_CUVE.join(" ; ") +
-          ". L'agitation ne s'arrête pas. Ce n'est pas une règle ONSSA.",
-        schema: "cuve",
-      },
-      {
-        titre: "Essai en bocal",
-        texte:
-          "Mêmes proportions que la bouillie prévue, avec l'eau du site. Observer au moins 15 minutes : crémage, floculat, précipité, échauffement, séparation. S'il y a une instabilité, ne pas appliquer cette bouillie sur l'essai. Le bocal ne dit rien de la sélectivité ni des résidus.",
-        schema: "bocal",
-      },
-    ],
+    titre: "Cuve",
+    texte: "Cet ordre. Bocal 15 min, eau du site. Instable : ne pas appliquer.",
+    schemas: ["cuve", "bocal"],
   },
   {
-    id: "selectivite",
-    titre: "Efficacité, sélectivité, doses",
-    resume: "Lire le spectre comme un précédent réglementaire, sans inventer de taux d'efficacité.",
-    etapes: [
-      {
-        titre: "Ce qui est publié",
-        texte:
-          "Culture, cible, dose et DAR. Plusieurs doses coexistent quand les lignes de l'index diffèrent : elles sont toutes montrées, aucune n'est choisie à la place d'une autre.",
-        schema: "doses",
-      },
-      {
-        titre: "Ce qui n'est pas publié",
-        texte:
-          "Aucun taux d'efficacité. Ni l'ONSSA ni Homologa n'en fournissent dans cet extrait. BPE n'en calcule pas. Un pourcentage ne peut venir que d'un essai ou d'une fiche dont la source et la date sont conservées hors de cet outil.",
-      },
-      {
-        titre: "DAR",
-        texte:
-          "Le délai avant récolte d'un emploi homologué est un précédent pour le protocole. Il n'autorise pas une récolte commerciale à l'issue d'un essai.",
-      },
-    ],
+    id: "application",
+    titre: "Application",
+    texte: "Dose, volume, buses, météo, écart.",
+    schemas: ["application"],
   },
   {
-    id: "tracabilite",
-    titre: "Traçabilité et rapport",
-    resume: "Tenir les faits d'essai séparés de l'interprétation, et séparés de l'index.",
-    etapes: [
-      {
-        titre: "Avant l'application",
-        texte:
-          "Protocole daté, modalités figées, lots identifiés, certificats des produits d'essai. Une modification après coup est un écart, pas une réécriture.",
-      },
-      {
-        titre: "Pendant",
-        texte:
-          "Données brutes, météo, volume réellement épandu, stade observé, photos rattachées à la parcelle, la modalité, la répétition et la date.",
-      },
-      {
-        titre: "Rapport",
-        texte:
-          "Les faits observés, puis l'interprétation. Le spectre Homologa peut être cité comme précédent de dose et de DAR, avec la date de l'extrait. Il ne remplace pas les résultats de l'essai.",
-        schema: "feuille",
-      },
-    ],
+    id: "notations",
+    titre: "Notations",
+    texte: "J0, J+n, récolte. Note brute et symptôme.",
+    schemas: ["notations"],
   },
 ];
 
-export function procedureParId(id: string): Procedure | undefined {
-  return PROCEDURES.find((p) => p.id === id);
+export const ANCIENNES: Record<string, string> = {
+  cadrage: "question",
+  protocole: "dispositif",
+  selectivite: "doses",
+  melange: "melange",
+  tracabilite: "notations",
+};
+
+export function etapeParId(id: string | undefined): Etape {
+  return ETAPES.find((e) => e.id === id) ?? ETAPES[0];
+}
+
+export function questionParId(id: string | undefined): (typeof QUESTIONS)[number] | undefined {
+  return QUESTIONS.find((q) => q.id === id);
 }

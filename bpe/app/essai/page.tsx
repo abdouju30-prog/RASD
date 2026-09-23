@@ -22,9 +22,7 @@ export default async function Page({
         <h1 className="text-3xl">Préparer un essai</h1>
         <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
           Le formulaire remplit une grille. Il ne dépose rien et n&apos;autorise rien.{" "}
-          <Link href="/procedures/protocole">Protocole</Link>
-          {" · "}
-          <Link href="/procedures/melange">Mélange</Link>
+          <Link href={q ? `/procedures?etape=question&${q}` : "/procedures"}>Parcours</Link>
         </p>
       </div>
       <FormulaireEssai

@@ -11,6 +11,9 @@ export function FormulaireEssai({
   culture,
   cible,
   matiereIds,
+  base = "/essai",
+  extra,
+  masquerSubmit = false,
 }: {
   cultures: Choix[];
   cibles: string[];
@@ -18,18 +21,25 @@ export function FormulaireEssai({
   culture: string;
   cible: string;
   matiereIds: string[];
+  base?: string;
+  extra?: Record<string, string>;
+  masquerSubmit?: boolean;
 }) {
   const router = useRouter();
 
   function aller(next: { culture?: string; cible?: string; m?: string[] }) {
     const q = new URLSearchParams();
+    for (const [cle, valeur] of Object.entries(extra ?? {})) {
+      if (valeur) q.set(cle, valeur);
+    }
     if (next.culture) q.set("culture", next.culture);
     if (next.cible) q.set("cible", next.cible);
     for (const id of next.m ?? []) {
       if (id) q.append("m", id);
     }
     const s = q.toString();
-    router.push(s ? `/essai?${s}#grille` : "/essai");
+    const ancre = base === "/essai" ? "#grille" : "";
+    router.push(s ? `${base}?${s}${ancre}` : base);
   }
 
   function onCible(e: ChangeEvent<HTMLSelectElement>) {
@@ -90,7 +100,9 @@ export function FormulaireEssai({
           />
         </label>
       ))}
-      <button className="rounded bg-[var(--accent)] px-3 py-2 text-[var(--accent-fg)] sm:w-fit">Préparer</button>
+      {!masquerSubmit && (
+        <button className="rounded bg-[var(--accent)] px-3 py-2 text-[var(--accent-fg)] sm:w-fit">Préparer</button>
+      )}
     </form>
   );
 }

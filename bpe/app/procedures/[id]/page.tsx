@@ -1,38 +1,14 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { Schema } from "@/components/Schema";
-import { PROCEDURES, procedureParId } from "@/lib/procedures";
+import { notFound, redirect } from "next/navigation";
+import { ANCIENNES, ETAPES } from "@/lib/procedures";
 
 export function generateStaticParams() {
-  return PROCEDURES.map((p) => ({ id: p.id }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
-  const p = procedureParId((await params).id);
-  return { title: p?.titre ?? "Procédure" };
+  const ids = new Set([...ETAPES.map((e) => e.id), ...Object.keys(ANCIENNES)]);
+  return [...ids].map((id) => ({ id }));
 }
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-  const p = procedureParId((await params).id);
-  if (!p) notFound();
-  return (
-    <article className="grid max-w-3xl gap-4">
-      <p>
-        <Link href="/procedures">Procédures</Link>
-      </p>
-      <h1 className="text-3xl">{p.titre}</h1>
-      <p className="text-[var(--muted)]">{p.resume}</p>
-      <ol className="grid gap-4">
-        {p.etapes.map((e, i) => (
-          <li key={e.titre}>
-            <h2 className="text-xl">
-              {i + 1}. {e.titre}
-            </h2>
-            <p className="mt-1 text-sm leading-6">{e.texte}</p>
-            {e.schema && <Schema id={e.schema} />}
-          </li>
-        ))}
-      </ol>
-    </article>
-  );
+  const id = (await params).id;
+  const etape = ANCIENNES[id] ?? (ETAPES.some((e) => e.id === id) ? id : "");
+  if (!etape) notFound();
+  redirect(`/procedures?etape=${etape}`);
 }

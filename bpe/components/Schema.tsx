@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ORDRE_CUVE, type SchemaId } from "@/lib/procedures";
 
 const TIRAGE = [
@@ -42,9 +41,7 @@ function Question() {
           <span>les deux</span>
         </p>
       </div>
-      <figcaption>
-        On fige la question avant de lire le spectre. Une deuxième question devient un autre essai.
-      </figcaption>
+      <figcaption>Une seule.</figcaption>
     </>
   );
 }
@@ -71,12 +68,7 @@ function Dispositif() {
           </div>
         ))}
       </div>
-      <figcaption>
-        Exemple de tirage à recopier sur la feuille, pas une randomisation officielle. T0 = témoin non
-        traité. R = référence, seulement si un emploi existe déjà. E1 et E2 = modalités d&apos;essai. La
-        notation se fait sur la parcelle utile ; les bordures ne sont pas notées. Écrire le numéro de
-        parcelle dans chaque case.
-      </figcaption>
+      <figcaption>T0 témoin. R référence. E1 et E2 modalités. Numéro de parcelle dans la case.</figcaption>
     </>
   );
 }
@@ -106,10 +98,7 @@ function Application() {
           <span>noté le jour même</span>
         </li>
       </ol>
-      <figcaption>
-        Chaque case se remplit sur la feuille de terrain. Un écart (volume, buse, heure) reste écrit :
-        il ne se corrige pas après coup.
-      </figcaption>
+      <figcaption>À écrire sur la feuille, le jour même.</figcaption>
     </>
   );
 }
@@ -134,10 +123,7 @@ function Notations() {
           <span>symptôme, photo</span>
         </p>
       </div>
-      <figcaption>
-        Deux lectures à chaque date : la cible et la culture. Aucun pourcentage n&apos;est calculé ici.
-        La note brute et le symptôme observé suffisent sur le terrain.
-      </figcaption>
+      <figcaption>Note brute. Pas de pourcentage.</figcaption>
     </>
   );
 }
@@ -154,11 +140,7 @@ function Cuve() {
           </p>
         ))}
       </div>
-      <figcaption>
-        Le 1 est versé en premier : il est au fond de la cuve. Le 8 complète en eau, en haut. L&apos;agitation
-        ne s&apos;arrête pas. Valider par l&apos;essai en bocal et par les étiquettes. Ce n&apos;est pas une règle
-        ONSSA.
-      </figcaption>
+      <figcaption>1 au fond, versé en premier. 8 complète en eau.</figcaption>
     </>
   );
 }
@@ -182,11 +164,7 @@ function Bocal() {
           <p className="legende-bocal">Instable — ne pas appliquer</p>
         </div>
       </div>
-      <figcaption>
-        Même eau que le site, mêmes proportions que la bouillie, au moins 15 minutes. Crémage, floculat,
-        précipité, échauffement ou séparation : cette bouillie ne va pas sur l&apos;essai. Le bocal ne dit
-        rien de la sélectivité ni des résidus.
-      </figcaption>
+      <figcaption>Eau du site, 15 min. Instable : ne pas appliquer.</figcaption>
     </>
   );
 }
@@ -206,11 +184,7 @@ function Doses() {
           <p className="case-mod">récolte d&apos;essai ≠ récolte commerciale</p>
         </div>
       </div>
-      <figcaption>
-        La colonne de gauche se recopie depuis l&apos;extrait. La colonne de droite se remplit le jour de
-        l&apos;application. Plusieurs doses d&apos;index restent toutes visibles : aucune n&apos;est choisie à la place
-        d&apos;une autre.
-      </figcaption>
+      <figcaption>Gauche : index. Droite : dose écrite au champ.</figcaption>
     </>
   );
 }
@@ -236,13 +210,7 @@ function Feuille() {
           <span>brutes, puis signature</span>
         </li>
       </ol>
-      <figcaption>
-        La feuille se remplit au champ, puis s&apos;imprime ou s&apos;enregistre en PDF.{" "}
-        <Link href="/rapport">Feuille vierge</Link>
-        {" · "}
-        <Link href="/essai">depuis la grille d&apos;essai</Link>, culture, cible et précédents de dose sont
-        déjà inscrits.
-      </figcaption>
+      <figcaption>Lieu, parcelles, application, notes, signature.</figcaption>
     </>
   );
 }

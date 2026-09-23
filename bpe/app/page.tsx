@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { CULTURES, MATIERES, MELANGES, CORPUS } from "@/lib/corpus";
-import { PROCEDURES } from "@/lib/procedures";
 
 export default function Page() {
   return (
@@ -36,11 +35,10 @@ export default function Page() {
             formulé, s&apos;il existe.
           </p>
         </Link>
-        <Link href="/procedures/melange" className="rounded border border-[var(--line)] bg-[var(--surface)] p-4 no-underline">
-          <h2 className="text-xl text-[var(--ink)]">Mélanger</h2>
+        <Link href="/procedures" className="rounded border border-[var(--line)] bg-[var(--surface)] p-4 no-underline">
+          <h2 className="text-xl text-[var(--ink)]">Parcours</h2>
           <p className="mt-1 text-sm text-[var(--muted)]">
-            Association déjà à l&apos;index, ou mélange en cuve à tester en bocal.
-            {` ${PROCEDURES.length} procédures.`}
+            Une étape à la fois. La validation ouvre la suivante, jusqu&apos;au bilan.
           </p>
         </Link>
       </section>

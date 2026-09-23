@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BoutonImprimer } from "@/components/BoutonImprimer";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
-import { ORDRE_CUVE } from "@/lib/procedures";
+import { ORDRE_CUVE, questionParId } from "@/lib/procedures";
 
 export const metadata = { title: "Feuille de terrain" };
 
@@ -11,10 +11,11 @@ const MODALITES = ["T0 témoin", "R référence", "E1", "E2"];
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[] }>;
+  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string }>;
 }) {
   const sp = await searchParams;
   const essai = preparerEssai(sp);
+  const question = questionParId(sp.question);
   const precedents = precedentsDe(essai).slice(0, 6);
   const q = parametresEssai(essai.culture?.id ?? "", essai.cible, essai.matieres.map((m) => m.id));
   const retour = q ? `/essai?${q}#grille` : "/essai";
@@ -26,13 +27,12 @@ export default async function Page({
         <p className="text-sm">
           <Link href={retour}>Retour à la grille</Link>
           {" · "}
-          <Link href="/procedures/tracabilite">Procédure rapport</Link>
+          <Link href={`/procedures?etape=notations${q ? `&${q}` : ""}${question ? `&question=${question.id}` : ""}`}>
+            Reprendre le parcours
+          </Link>
         </p>
         <BoutonImprimer />
-        <p className="max-w-2xl text-sm text-[var(--muted)]">
-          Dans la boîte d&apos;impression, choisir « Enregistrer au format PDF » ou une imprimante. La
-          feuille est prévue pour le terrain : les cases vides se remplissent au stylo.
-        </p>
+        <p className="max-w-2xl text-sm text-[var(--muted)]">Enregistrer au format PDF, ou imprimer.</p>
       </div>
 
       <article className="feuille">
@@ -70,7 +70,7 @@ export default async function Page({
             </div>
             <div>
               <dt>Question</dt>
-              <dd className="cases-question">efficacité · sélectivité · les deux</dd>
+              <dd className="cases-question">{question?.label ?? "efficacité · sélectivité · les deux"}</dd>
             </div>
           </dl>
         </section>
