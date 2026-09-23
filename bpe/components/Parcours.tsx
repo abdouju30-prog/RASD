@@ -134,7 +134,12 @@ export function Parcours({
           }
         />
       ) : etape.id === "application" ? (
-        <SchemaApplication doses={dosesAppliquees} saisie={appli} onSaisie={setAppli} />
+        <SchemaApplication
+          doses={dosesAppliquees}
+          saisie={appli}
+          onSaisie={setAppli}
+          onDoses={setDosesAppliquees}
+        />
       ) : etape.id === "melange" ? (
         <SchemaCuve noms={matiereNoms} melanges={melanges} />
       ) : (

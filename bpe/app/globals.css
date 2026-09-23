@@ -42,6 +42,16 @@ input, select, button, textarea {
   max-width: 100%;
 }
 
+input:not([type="hidden"]),
+textarea,
+select.case-mod {
+  border: 1px solid var(--ink);
+  background: #fff;
+  border-radius: 0.35rem;
+  padding: 0.45rem 0.6rem;
+  min-height: 44px;
+}
+
 form input,
 form select,
 form button {
