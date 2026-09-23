@@ -1,6 +1,7 @@
 import { Parcours } from "@/components/Parcours";
 import { CULTURES } from "@/lib/corpus";
 import { lireApplication } from "@/lib/application";
+import { lireNotations } from "@/lib/notations";
 import { precedentsDe, preparerEssai } from "@/lib/essai";
 import { etapeParId } from "@/lib/procedures";
 
@@ -33,6 +34,7 @@ export default async function Page({
       plan={sp.plan ?? ""}
       appliquees={Array.isArray(sp.da) ? sp.da : sp.da ? [sp.da] : []}
       application={lireApplication(sp)}
+      notations={lireNotations(sp)}
     />
   );
 }

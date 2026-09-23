@@ -4,6 +4,7 @@ import { PlanDispositif } from "@/components/PlanDispositif";
 import { SchemaCuve } from "@/components/SchemaCuve";
 import { Schema } from "@/components/Schema";
 import { lireApplication } from "@/lib/application";
+import { lireNotations } from "@/lib/notations";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
 import { enonceQuestion, questionParId } from "@/lib/procedures";
@@ -13,13 +14,14 @@ export const metadata = { title: "Feuille de terrain" };
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string; da?: string | string[] }>;
+  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string; da?: string | string[]; nt?: string | string[] }>;
 }) {
   const sp = await searchParams;
   const essai = preparerEssai(sp);
   const question = questionParId(sp.question);
   const appliquees = Array.isArray(sp.da) ? sp.da : sp.da ? [sp.da] : [];
   const appli = lireApplication(sp);
+  const notes = lireNotations(sp);
   const precedents = precedentsDe(essai).slice(0, 6);
   const q = parametresEssai(essai.culture?.id ?? "", essai.cible, essai.matieres.map((m) => m.id));
   const index = (CORPUS.meta.genereIndex ?? "").slice(0, 10);
@@ -173,10 +175,10 @@ export default async function Page({
 
         <section>
           <h2>Notations brutes</h2>
-          <Schema id="notations" />
           <table className="table-feuille">
             <thead>
               <tr>
+                <th>Moment</th>
                 <th>Date</th>
                 <th>Stade</th>
                 <th>Efficacité</th>
@@ -184,15 +186,13 @@ export default async function Page({
               </tr>
             </thead>
             <tbody>
-              {["J0", "J+n", "Récolte"].map((j) => (
-                <tr key={j}>
-                  <td>
-                    {j}
-                    <span className="cellule-vide bloc-vide" />
-                  </td>
-                  <td className="cellule-vide" />
-                  <td className="cellule-vide" />
-                  <td className="cellule-vide" />
+              {notes.map((n, i) => (
+                <tr key={i}>
+                  <td>{n.moment}</td>
+                  <td className={n.date ? "" : "cellule-vide"}>{n.date}</td>
+                  <td className={n.stade ? "" : "cellule-vide"}>{n.stade}</td>
+                  <td className={n.efficacite ? "" : "cellule-vide"}>{n.efficacite}</td>
+                  <td className={n.selectivite ? "" : "cellule-vide"}>{n.selectivite}</td>
                 </tr>
               ))}
             </tbody>
