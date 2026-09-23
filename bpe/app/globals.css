@@ -257,6 +257,13 @@ span.bouton {
   border-color: var(--accent);
 }
 
+.enonce {
+  margin: 0.75rem 0 0;
+  padding-left: 0.65rem;
+  border-left: 3px solid var(--accent);
+  font-size: 1rem;
+}
+
 .ordre-alpha {
   margin: 0.35rem 0 0;
   font-size: 0.8rem;

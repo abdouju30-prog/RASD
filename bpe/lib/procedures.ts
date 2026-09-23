@@ -86,3 +86,29 @@ export function etapeParId(id: string | undefined): Etape {
 export function questionParId(id: string | undefined): (typeof QUESTIONS)[number] | undefined {
   return QUESTIONS.find((q) => q.id === id);
 }
+
+export function enonceQuestion(opts: {
+  question?: string;
+  culture?: string;
+  cible?: string;
+  matieres: string[];
+}): string {
+  const culture = opts.culture || "cette culture";
+  const cible = opts.cible || "cette cible";
+  const produits = opts.matieres.filter(Boolean);
+  const produit = produits.length ? produits.join(" et ") : "le produit";
+  const deProduit = /^[aeiouéèêàh]/i.test(produit) ? `d'${produit}` : `de ${produit}`;
+  const plusieurs = produits.length > 1;
+  if (opts.question === "efficacite") {
+    return plusieurs
+      ? `Chaque produit (${produit}) est jugé seul contre le témoin non traité, pour ${cible} sur ${culture}. Aucun n'est plus efficace qu'un autre avant l'essai.`
+      : `Efficacité ${deProduit} : baisse de ${cible} sur ${culture}, mesurée seulement contre le témoin non traité (T0).`;
+  }
+  if (opts.question === "selectivite") {
+    return `Sélectivité ${deProduit} sur ${culture} : le résultat est le symptôme observé, pas un taux.`;
+  }
+  if (opts.question === "les-deux") {
+    return `${produit} : réduction de ${cible} sur ${culture} contre le témoin non traité, et symptôme éventuel sur la culture.`;
+  }
+  return "";
+}

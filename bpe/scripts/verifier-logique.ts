@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { cultureParNomDe, matiereParIdDe, MELANGES } from "../lib/corpus";
 import { precedentsDe, preparerEssai } from "../lib/essai";
 import { SCHEMAS, ajouterBloc, coderPlan, decoderPlan, retirerBloc, schemaDuPlan } from "../lib/dispositif";
-import { ETAPES } from "../lib/procedures";
+import { ETAPES, enonceQuestion } from "../lib/procedures";
 
 const pommier = cultureParNomDe("Pommier");
 assert.ok(pommier);
@@ -29,6 +29,16 @@ assert.deepEqual(
   mildiou.choixMatieres.map((m) => m.nom),
   mildiou.choixMatieres.map((m) => m.nom).slice().sort((a, b) => a.localeCompare(b, "fr"))
 );
+
+const phrase = enonceQuestion({
+  question: "efficacite",
+  culture: "Tomate",
+  cible: "Mildiou",
+  matieres: ["Azoxystrobine"],
+});
+assert.ok(phrase.includes("Azoxystrobine"));
+assert.ok(phrase.includes("témoin non traité"));
+assert.ok(!phrase.includes("plus efficace"));
 
 assert.equal(SCHEMAS.length, 3);
 assert.equal(schemaDuPlan(SCHEMAS[1].blocs), "sans-reference");

@@ -2,35 +2,43 @@
 
 import { useRouter } from "next/navigation";
 import { ecrireApplication, type ApplicationSaisie } from "@/lib/application";
-import { QUESTIONS } from "@/lib/procedures";
+import { QUESTIONS, enonceQuestion } from "@/lib/procedures";
 import type { GroupeCible } from "@/lib/essai";
 import { RechercheListe, type Choix } from "./RechercheListe";
 
 export function SchemaQuestion({
   question,
   cultureId,
+  cultureNom = "",
   cible,
   matiereIds,
   cultures,
   groupes,
   matieres,
+  nomsMatieres = [],
   plan = "",
   appliquees = [],
   application,
 }: {
   question: string;
   cultureId: string;
+  cultureNom?: string;
   cible: string;
   matiereIds: string[];
   cultures: Choix[];
   groupes: GroupeCible[];
   matieres: Choix[];
+  nomsMatieres?: string[];
   plan?: string;
   appliquees?: string[];
   application?: ApplicationSaisie;
 }) {
   const router = useRouter();
   const slots = [0, 1, 2].map((i) => matiereIds[i] ?? "");
+  const enonce =
+    question && cultureNom && cible && nomsMatieres.some(Boolean)
+      ? enonceQuestion({ question, culture: cultureNom, cible, matieres: nomsMatieres })
+      : "";
   const cibles: Choix[] = groupes.flatMap((g) =>
     g.noms.map((nom) => ({
       value: nom,
@@ -115,6 +123,7 @@ export function SchemaQuestion({
           </div>
         ))}
       </div>
+      {enonce && <p className="enonce">{enonce}</p>}
     </figure>
   );
 }

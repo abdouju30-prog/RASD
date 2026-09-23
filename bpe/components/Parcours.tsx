@@ -11,7 +11,7 @@ import { SchemaQuestion } from "./SchemaQuestion";
 import type { Choix } from "./RechercheListe";
 import { ecrireApplication, type ApplicationSaisie } from "@/lib/application";
 import { SCHEMAS, coderPlan } from "@/lib/dispositif";
-import { ETAPES, questionParId, type Etape } from "@/lib/procedures";
+import { ETAPES, enonceQuestion, questionParId, type Etape } from "@/lib/procedures";
 import type { GroupeCible, Precedent } from "@/lib/essai";
 
 export function Parcours({
@@ -84,7 +84,9 @@ export function Parcours({
     return s ? `/rapport?${s}` : "/rapport";
   }
 
-  const peutContinuer = etape.id !== "question" || (Boolean(choix) && Boolean(cultureId));
+  const enonce = enonceQuestion({ question, culture: cultureNom, cible, matieres: matiereNoms });
+  const peutContinuer =
+    etape.id !== "question" || (Boolean(choix) && Boolean(cultureId) && Boolean(cible) && matiereIds.length > 0);
 
   return (
     <article className="grid max-w-3xl gap-4">
@@ -106,11 +108,13 @@ export function Parcours({
         <SchemaQuestion
           question={question}
           cultureId={cultureId}
+          cultureNom={cultureNom}
           cible={cible}
           matiereIds={matiereIds}
           cultures={cultures}
           groupes={groupes}
           matieres={matieres}
+          nomsMatieres={matiereNoms}
           plan={plan}
           appliquees={dosesAppliquees}
           application={appli}
@@ -141,7 +145,7 @@ export function Parcours({
       )}
       {etape.id !== "question" && (
         <p className="text-sm">
-          {[cultureNom, cible, choix?.label, matiereNoms.join(", ")].filter(Boolean).join(" · ") || "Culture non choisie"}
+          {enonce || [cultureNom, cible, choix?.label, matiereNoms.join(", ")].filter(Boolean).join(" · ") || "Culture non choisie"}
         </p>
       )}
       <div className="suite">

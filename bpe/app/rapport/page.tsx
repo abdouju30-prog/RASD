@@ -6,7 +6,7 @@ import { Schema } from "@/components/Schema";
 import { lireApplication } from "@/lib/application";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
-import { questionParId } from "@/lib/procedures";
+import { enonceQuestion, questionParId } from "@/lib/procedures";
 
 export const metadata = { title: "Feuille de terrain" };
 
@@ -71,7 +71,14 @@ export default async function Page({
             </div>
             <div>
               <dt>Question</dt>
-              <dd className="cases-question">{question?.label ?? "efficacité · sélectivité · les deux"}</dd>
+              <dd className="cases-question">
+                {enonceQuestion({
+                  question: question?.id,
+                  culture: essai.culture?.nom,
+                  cible: essai.cible,
+                  matieres: essai.matieres.map((m) => m.nom),
+                }) || question?.label || ""}
+              </dd>
             </div>
           </dl>
         </section>
