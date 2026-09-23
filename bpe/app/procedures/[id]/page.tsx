@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Schema } from "@/components/Schema";
 import { PROCEDURES, procedureParId } from "@/lib/procedures";
 
 export function generateStaticParams() {
@@ -15,7 +16,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   const p = procedureParId((await params).id);
   if (!p) notFound();
   return (
-    <article className="grid max-w-2xl gap-4">
+    <article className="grid max-w-3xl gap-4">
       <p>
         <Link href="/procedures">Procédures</Link>
       </p>
@@ -28,6 +29,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
               {i + 1}. {e.titre}
             </h2>
             <p className="mt-1 text-sm leading-6">{e.texte}</p>
+            {e.schema && <Schema id={e.schema} />}
           </li>
         ))}
       </ol>

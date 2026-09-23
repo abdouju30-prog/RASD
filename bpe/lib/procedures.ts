@@ -1,6 +1,17 @@
+export type SchemaId =
+  | "question"
+  | "dispositif"
+  | "application"
+  | "notations"
+  | "cuve"
+  | "bocal"
+  | "doses"
+  | "feuille";
+
 export interface Etape {
   titre: string;
   texte: string;
+  schema?: SchemaId;
 }
 
 export interface Procedure {
@@ -31,6 +42,7 @@ export const PROCEDURES: Procedure[] = [
         titre: "La question",
         texte:
           "Une culture, un bioagresseur, une matière active ou un mélange. L'essai répond à une question : efficacité, sélectivité, ou les deux.",
+        schema: "question",
       },
       {
         titre: "Ce que le spectre apporte",
@@ -58,16 +70,19 @@ export const PROCEDURES: Procedure[] = [
         titre: "Dispositif",
         texte:
           "Blocs randomisés, répétitions, parcelle utile séparée des bordures. Témoin non traité pour lire l'efficacité. Produit de référence lorsqu'un emploi homologué existe déjà sur le même couple : la dose et le DAR de l'index sont le précédent, pas la modalité imposée.",
+        schema: "dispositif",
       },
       {
         titre: "Application",
         texte:
           "Dose, volume de bouillie, matériel, buses, conditions météo, heure. Écarts notés le jour même. Ces repères structurent le protocole ; ils ne retranscrivent pas un article ONSSA.",
+        schema: "application",
       },
       {
         titre: "Notations",
         texte:
           "État initial, puis notations calées sur la cinétique du bioagresseur. Sélectivité et symptômes sur la culture, pas seulement le ravageur ou la maladie.",
+        schema: "notations",
       },
     ],
   },
@@ -92,11 +107,13 @@ export const PROCEDURES: Procedure[] = [
           "Repère de préparation, à valider par l'essai en bocal et par les étiquettes : " +
           ORDRE_CUVE.join(" ; ") +
           ". L'agitation ne s'arrête pas. Ce n'est pas une règle ONSSA.",
+        schema: "cuve",
       },
       {
         titre: "Essai en bocal",
         texte:
           "Mêmes proportions que la bouillie prévue, avec l'eau du site. Observer au moins 15 minutes : crémage, floculat, précipité, échauffement, séparation. S'il y a une instabilité, ne pas appliquer cette bouillie sur l'essai. Le bocal ne dit rien de la sélectivité ni des résidus.",
+        schema: "bocal",
       },
     ],
   },
@@ -109,6 +126,7 @@ export const PROCEDURES: Procedure[] = [
         titre: "Ce qui est publié",
         texte:
           "Culture, cible, dose et DAR. Plusieurs doses coexistent quand les lignes de l'index diffèrent : elles sont toutes montrées, aucune n'est choisie à la place d'une autre.",
+        schema: "doses",
       },
       {
         titre: "Ce qui n'est pas publié",
@@ -141,6 +159,7 @@ export const PROCEDURES: Procedure[] = [
         titre: "Rapport",
         texte:
           "Les faits observés, puis l'interprétation. Le spectre Homologa peut être cité comme précédent de dose et de DAR, avec la date de l'extrait. Il ne remplace pas les résultats de l'essai.",
+        schema: "feuille",
       },
     ],
   },

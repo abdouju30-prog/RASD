@@ -1,55 +1,20 @@
 import Link from "next/link";
 import { Emplois } from "@/components/Emplois";
 import { FormulaireEssai } from "@/components/FormulaireEssai";
-import { CULTURES, MATIERES, MELANGES, cultureParIdDe, matiereParIdDe } from "@/lib/corpus";
-import type { Emploi } from "@/lib/types";
+import { CULTURES } from "@/lib/corpus";
+import { parametresEssai, preparerEssai } from "@/lib/essai";
 
 export const metadata = { title: "Essai" };
-
-function idsDe(m: string | string[] | undefined): string[] {
-  const brut = Array.isArray(m) ? m : m ? [m] : [];
-  return [...new Set(brut.filter(Boolean))].slice(0, 3);
-}
 
 export default async function Page({
   searchParams,
 }: {
   searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[] }>;
 }) {
-  const sp = await searchParams;
-  const culture = sp.culture ? cultureParIdDe(sp.culture) : undefined;
-  const cible = (sp.cible ?? "").trim();
-  const matieres = idsDe(sp.m)
-    .map((id) => matiereParIdDe(id))
-    .filter((x) => x !== undefined);
-  const choixMatieres = culture
-    ? MATIERES.filter((m) => m.cultures.includes(culture.nom))
-    : MATIERES;
-  const cibles = culture
-    ? [...new Set(choixMatieres.flatMap((m) => m.emplois.filter((e) => e.culture === culture.nom).map((e) => e.cible)).filter(Boolean))].sort(
-        (a, b) => a.localeCompare(b, "fr")
-      )
-    : [];
-
-  const emplois: Emploi[] = [];
-  const vus = new Set<string>();
-  const sources = matieres.length ? matieres : culture ? choixMatieres : [];
-  for (const m of sources) {
-    for (const e of m.emplois) {
-      if (culture && e.culture !== culture.nom) continue;
-      if (cible && e.cible !== cible) continue;
-      const k = `${e.culture}/${e.cible}/${e.doses.join("|")}/${e.dar.join("|")}`;
-      if (vus.has(k)) continue;
-      vus.add(k);
-      emplois.push(e);
-    }
-  }
-
-  const melanges =
-    matieres.length >= 2
-      ? MELANGES.filter((mix) => matieres.every((m) => mix.composantIds.includes(m.id)))
-      : [];
+  const essai = preparerEssai(await searchParams);
+  const { culture, cible, matieres, choixMatieres, cibles, emplois, melanges } = essai;
   const apercu = emplois.slice(0, 30);
+  const q = parametresEssai(culture?.id ?? "", cible, matieres.map((m) => m.id));
 
   return (
     <div className="grid gap-6">
@@ -94,6 +59,11 @@ export default async function Page({
               <Link href={`/melanges/${m.id}`}>{m.composants.join(" + ")}</Link>
             </p>
           ))}
+          <p>
+            <Link href={q ? `/rapport?${q}` : "/rapport"} className="bouton">
+              Feuille de terrain (PDF)
+            </Link>
+          </p>
           <h3 className="text-xl">Précédents de dose et de DAR</h3>
           <p className="text-sm text-[var(--muted)]">
             {emplois.length} emploi(s){emplois.length > apercu.length ? `, ${apercu.length} affichés` : ""}.
