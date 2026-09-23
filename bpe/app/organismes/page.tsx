@@ -19,11 +19,11 @@ export default async function Page({
       <p className="text-sm text-[var(--muted)]">
         Registre public, mise à jour {CORPUS.meta.majBpe ?? "—"}. {CORPUS.meta.attributionBpe}
       </p>
-      <form className="flex flex-wrap gap-2">
+      <form className="barre">
         <select
           name="perimetre"
           defaultValue={perimetre}
-          className="min-w-64 flex-1 rounded border border-[var(--line)] bg-[var(--surface)] px-3 py-2"
+          className="rounded border border-[var(--line)] bg-[var(--surface)] px-3 py-2"
         >
           <option value="">Tous les périmètres</option>
           {PERIMETRES.map((p) => (

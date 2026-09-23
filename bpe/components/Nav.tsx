@@ -16,10 +16,10 @@ const LIENS = [
 export function Nav() {
   const chemin = usePathname();
   return (
-    <nav className="flex flex-wrap gap-1">
+    <nav className="nav-bpe" aria-label="Sections">
       <Link
         href="/"
-        className={`rounded px-2 py-1 no-underline ${chemin === "/" ? "bg-[var(--accent)] text-[var(--accent-fg)]" : "text-[var(--ink)]"}`}
+        className={chemin === "/" ? "bg-[var(--accent)] text-[var(--accent-fg)]" : "text-[var(--ink)]"}
       >
         BPE
       </Link>
@@ -29,7 +29,7 @@ export function Nav() {
           <Link
             key={l.href}
             href={l.href}
-            className={`rounded px-2 py-1 no-underline ${actif ? "bg-[var(--accent)] text-[var(--accent-fg)]" : "text-[var(--ink)]"}`}
+            className={actif ? "bg-[var(--accent)] text-[var(--accent-fg)]" : "text-[var(--ink)]"}
           >
             {l.label}
           </Link>

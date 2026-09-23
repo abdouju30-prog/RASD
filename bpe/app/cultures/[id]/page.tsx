@@ -54,11 +54,11 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
               const emplois = m.emplois.filter((e) => e.culture === c.nom);
               return (
                 <tr key={m.id}>
-                  <td>
+                  <td data-label="Matière">
                     <Link href={`/spectre/${m.id}`}>{m.nom}</Link>
                   </td>
-                  <td>{emplois.map((e) => e.cible || "—").join(", ")}</td>
-                  <td>{joindre(emplois.flatMap((e) => e.doses))}</td>
+                  <td data-label="Cibles">{emplois.map((e) => e.cible || "—").join(", ")}</td>
+                  <td data-label="Doses">{joindre(emplois.flatMap((e) => e.doses))}</td>
                 </tr>
               );
             })}

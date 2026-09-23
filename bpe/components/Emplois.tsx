@@ -19,10 +19,10 @@ export function Emplois({ lignes }: { lignes: Emploi[] }) {
         <tbody>
           {lignes.map((e) => (
             <tr key={`${e.culture}/${e.cible}`}>
-              <td>{e.culture}</td>
-              <td>{e.cible || "—"}</td>
-              <td>{joindre(e.doses)}</td>
-              <td>{joindre(e.dar)}</td>
+              <td data-label="Culture">{e.culture}</td>
+              <td data-label="Cible">{e.cible || "—"}</td>
+              <td data-label="Doses">{joindre(e.doses)}</td>
+              <td data-label="DAR">{joindre(e.dar)}</td>
             </tr>
           ))}
         </tbody>

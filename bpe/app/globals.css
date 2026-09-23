@@ -13,10 +13,17 @@
   --bad: #8c2f2f;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background: var(--bg);
   color: var(--ink);
   font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  overflow-wrap: anywhere;
 }
 
 h1, h2, h3 {
@@ -31,6 +38,66 @@ a {
 
 input, select, button, textarea {
   font: inherit;
+  font-size: 1rem;
+  max-width: 100%;
+}
+
+form input,
+form select,
+form button {
+  min-height: 44px;
+}
+
+.nav-bpe {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-bpe::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-bpe a {
+  flex: 0 0 auto;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  background: var(--bg);
+}
+
+.barre {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.barre > * {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .barre {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .barre > input,
+  .barre > select {
+    width: auto;
+    flex: 1 1 12rem;
+  }
+
+  .barre > button {
+    width: auto;
+  }
 }
 
 .table-bpe {
@@ -54,4 +121,48 @@ input, select, button, textarea {
   padding: 0.45rem 0.5rem;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
+}
+
+@media (max-width: 639px) {
+  h1.text-3xl,
+  h1.text-4xl {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  .table-bpe thead {
+    display: none;
+  }
+
+  .table-bpe,
+  .table-bpe tbody,
+  .table-bpe tr,
+  .table-bpe td {
+    display: block;
+    width: 100%;
+  }
+
+  .table-bpe tr {
+    margin-bottom: 0.65rem;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 0.6rem;
+    background: var(--surface);
+  }
+
+  .table-bpe td {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0.35rem 0.75rem;
+    border: 0;
+    padding: 0.2rem 0;
+  }
+
+  .table-bpe td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
 }

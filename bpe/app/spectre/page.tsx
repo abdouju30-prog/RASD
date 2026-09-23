@@ -17,7 +17,7 @@ export default async function Page({
   return (
     <div className="grid gap-4">
       <h1 className="text-3xl">Spectre des matières actives</h1>
-      <form className="flex gap-2">
+      <form className="barre">
         <input
           name="q"
           defaultValue={q}
@@ -41,13 +41,13 @@ export default async function Page({
           <tbody>
             {lignes.map((m) => (
               <tr key={m.id}>
-                <td>
+                <td data-label="Matière">
                   <Link href={`/spectre/${m.id}`}>{m.nom}</Link>
                 </td>
-                <td>{m.categorie ?? "—"}</td>
-                <td>{m.cultures.length}</td>
-                <td>{m.cibles.length}</td>
-                <td>{m.nbLignes}</td>
+                <td data-label="Catégorie">{m.categorie ?? "—"}</td>
+                <td data-label="Cultures">{m.cultures.length}</td>
+                <td data-label="Cibles">{m.cibles.length}</td>
+                <td data-label="Lignes">{m.nbLignes}</td>
               </tr>
             ))}
           </tbody>

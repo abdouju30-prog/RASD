@@ -23,7 +23,7 @@ export default async function Page({
         dans l&apos;extrait.{" "}
         <Link href="/procedures/melange">Procédure de mélange</Link>
       </p>
-      <form className="flex gap-2">
+      <form className="barre">
         <input
           name="q"
           defaultValue={q}
@@ -45,12 +45,12 @@ export default async function Page({
         <tbody>
           {lignes.map((m) => (
             <tr key={m.id}>
-              <td>
+              <td data-label="Composants">
                 <Link href={`/melanges/${m.id}`}>{m.composants.join(" + ")}</Link>
               </td>
-              <td>{m.categorie ?? "—"}</td>
-              <td>{m.cultures.length}</td>
-              <td>{m.nbLignes}</td>
+              <td data-label="Catégorie">{m.categorie ?? "—"}</td>
+              <td data-label="Cultures">{m.cultures.length}</td>
+              <td data-label="Lignes">{m.nbLignes}</td>
             </tr>
           ))}
         </tbody>

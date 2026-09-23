@@ -101,7 +101,7 @@ export default async function Page({
             </select>
           </label>
         ))}
-        <button className="w-fit rounded bg-[var(--accent)] px-3 py-2 text-[var(--accent-fg)]">Préparer</button>
+        <button className="rounded bg-[var(--accent)] px-3 py-2 text-[var(--accent-fg)] sm:w-fit">Préparer</button>
       </form>
 
       {culture && (

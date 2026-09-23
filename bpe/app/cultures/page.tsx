@@ -23,12 +23,12 @@ export default async function Page({
   return (
     <div className="grid gap-4">
       <h1 className="text-3xl">Cultures</h1>
-      <form className="flex flex-wrap gap-2">
+      <form className="barre">
         <input
           name="q"
           defaultValue={q}
           placeholder="Culture"
-          className="min-w-48 flex-1 rounded border border-[var(--line)] bg-[var(--surface)] px-3 py-2"
+          className="rounded border border-[var(--line)] bg-[var(--surface)] px-3 py-2"
         />
         <select
           name="origine"
@@ -55,12 +55,12 @@ export default async function Page({
         <tbody>
           {lignes.map((c) => (
             <tr key={c.id}>
-              <td>
+              <td data-label="Culture">
                 <Link href={`/cultures/${c.id}`}>{c.nom}</Link>
               </td>
-              <td>{c.nbMatieres}</td>
-              <td>{c.perimetres.join(" · ") || "—"}</td>
-              <td>{ORIGINE[c.originePerimetres]}</td>
+              <td data-label="Matières">{c.nbMatieres}</td>
+              <td data-label="Périmètre">{c.perimetres.join(" · ") || "—"}</td>
+              <td data-label="Origine">{ORIGINE[c.originePerimetres]}</td>
             </tr>
           ))}
         </tbody>

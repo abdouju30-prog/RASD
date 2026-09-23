@@ -30,11 +30,11 @@ export function OrganismesListe({ organismes }: { organismes: Organisme[] }) {
               {o.agrement.numero ?? "—"} · {o.agrement.date ?? "—"} → {o.agrement.expiration ?? "—"}
             </p>
             <p className="mt-1 text-sm text-[var(--muted)]">{o.siege}</p>
-            <p className="mt-1 text-sm">
+            <p className="mt-1 break-all text-sm">
               {o.telephone ?? "—"}
               {o.emails.length ? ` · ${o.emails.join(", ")}` : ""}
             </p>
-            <p className="mt-2 text-sm">{o.couverture.join(" · ")}</p>
+            <p className="mt-2 text-sm leading-5">{o.couverture.join(" · ")}</p>
           </li>
         );
       })}
