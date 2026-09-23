@@ -6,11 +6,77 @@ export interface Notation {
   selectivite: string;
 }
 
+export const DELAIS: { moment: string; jours: number | null }[] = [
+  { moment: "J0", jours: 0 },
+  { moment: "J+7", jours: 7 },
+  { moment: "J+14", jours: 14 },
+  { moment: "J+21", jours: 21 },
+  { moment: "J+28", jours: 28 },
+  { moment: "Récolte", jours: null },
+];
+
+export const STADES = ["Végétatif", "Floraison", "Nouaison", "Grossissement", "Maturité"];
+
 export const NOTATIONS_DEFAUT: Notation[] = [
   { moment: "J0", date: "", stade: "", notes: {}, selectivite: "" },
-  { moment: "J+n", date: "", stade: "", notes: {}, selectivite: "" },
+  { moment: "J+7", date: "", stade: "", notes: {}, selectivite: "" },
+  { moment: "J+14", date: "", stade: "", notes: {}, selectivite: "" },
   { moment: "Récolte", date: "", stade: "", notes: {}, selectivite: "" },
 ];
+
+export function joursDuMoment(moment: string): number | null {
+  const nom = moment.trim().toLowerCase();
+  if (nom === "j0") return 0;
+  const m = nom.match(/^j\s*\+\s*(\d+)$/);
+  return m ? Number(m[1]) : null;
+}
+
+export function joursDar(textes: string[]): number | null {
+  const valeurs = textes
+    .map((texte) => texte.match(/(\d{1,3})/))
+    .map((m) => (m ? Number(m[1]) : null))
+    .filter((n): n is number => n !== null && n <= 365);
+  return valeurs.length ? Math.max(...valeurs) : null;
+}
+
+export function offsetMoment(moment: string, darJours: number | null): number | null {
+  const jours = joursDuMoment(moment);
+  if (jours !== null) return jours;
+  if (/^récolte$|^recolte$/i.test(moment.trim())) return darJours;
+  return null;
+}
+
+export function ajouterJours(iso: string, jours: number): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return "";
+  const date = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
+  date.setUTCDate(date.getUTCDate() + jours);
+  return date.toISOString().slice(0, 10);
+}
+
+export function afficherDate(valeur: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(valeur);
+  return m ? `${m[3]}/${m[2]}/${m[1]}` : valeur;
+}
+
+export function appliquerDates(lignes: Notation[], traitement: string, darJours: number | null): Notation[] {
+  if (!traitement) return lignes;
+  return lignes.map((l) => {
+    const offset = offsetMoment(l.moment, darJours);
+    if (offset === null) return l;
+    const date = ajouterJours(traitement, offset);
+    return date ? { ...l, date } : l;
+  });
+}
+
+export function lireTraitement(sp: { jt?: string | string[] }): string {
+  const brut = Array.isArray(sp.jt) ? sp.jt[0] : sp.jt;
+  return brut ?? "";
+}
+
+export function ecrireTraitement(q: URLSearchParams, traitement: string) {
+  if (traitement) q.set("jt", traitement);
+}
 
 export const ECHELLE_PLANTE = [
   { note: "0", sens: "rien" },

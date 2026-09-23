@@ -332,6 +332,17 @@ span.bouton {
   border-color: var(--accent);
 }
 
+.choix-champ button.choix-present {
+  border-color: var(--accent);
+}
+
+details summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 .suite {
   display: flex;
   flex-wrap: wrap;

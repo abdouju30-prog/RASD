@@ -4,7 +4,7 @@ import { PlanDispositif } from "@/components/PlanDispositif";
 import { SchemaCuve } from "@/components/SchemaCuve";
 import { Schema } from "@/components/Schema";
 import { lireApplication } from "@/lib/application";
-import { ECHELLE_PLANTE, GESTES, lectureEfficacite, lireNotations } from "@/lib/notations";
+import { ECHELLE_PLANTE, GESTES, afficherDate, joursDar, lectureEfficacite, lireNotations, lireTraitement } from "@/lib/notations";
 import { codesANoter } from "@/lib/dispositif";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
@@ -15,7 +15,7 @@ export const metadata = { title: "Feuille de terrain" };
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string; da?: string | string[]; nt?: string | string[] }>;
+  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string; da?: string | string[]; nt?: string | string[]; jt?: string | string[] }>;
 }) {
   const sp = await searchParams;
   const essai = preparerEssai(sp);
@@ -23,8 +23,11 @@ export default async function Page({
   const appliquees = Array.isArray(sp.da) ? sp.da : sp.da ? [sp.da] : [];
   const appli = lireApplication(sp);
   const notes = lireNotations(sp);
+  const traitement = lireTraitement(sp);
   const modalites = codesANoter(sp.plan);
   const precedents = precedentsDe(essai).slice(0, 6);
+  const darIndex = [...new Set(precedents.flatMap((p) => p.choixDar))];
+  const darJours = joursDar(darIndex);
   const q = parametresEssai(essai.culture?.id ?? "", essai.cible, essai.matieres.map((m) => m.id));
   const index = (CORPUS.meta.genereIndex ?? "").slice(0, 10);
 
@@ -194,11 +197,16 @@ export default async function Page({
               </li>
             ))}
           </ul>
+          <p>
+            Traitement {afficherDate(traitement) || "……"}
+            {darIndex.length ? ` · DAR ${darIndex.join(" · ")}` : ""}
+            {darJours !== null ? ` · récolte à J+${darJours}` : ""}
+          </p>
           {notes.map((n, i) => (
             <div key={i}>
               <p>
                 <strong>{n.moment || "Date"}</strong>
-                {n.date ? ` · ${n.date}` : ""}
+                {n.date ? ` · ${afficherDate(n.date)}` : ""}
                 {n.stade ? ` · ${n.stade}` : ""}
               </p>
               <p>

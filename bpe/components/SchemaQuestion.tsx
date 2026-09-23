@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { ecrireApplication, type ApplicationSaisie } from "@/lib/application";
-import { ecrireNotations, type Notation } from "@/lib/notations";
+import { ecrireNotations, ecrireTraitement, type Notation } from "@/lib/notations";
 import { QUESTIONS, enonceQuestion } from "@/lib/procedures";
 import type { GroupeCible } from "@/lib/essai";
 import { RechercheListe, type Choix } from "./RechercheListe";
@@ -21,6 +21,7 @@ export function SchemaQuestion({
   appliquees = [],
   application,
   notations = [],
+  traitement = "",
 }: {
   question: string;
   cultureId: string;
@@ -35,6 +36,7 @@ export function SchemaQuestion({
   appliquees?: string[];
   application?: ApplicationSaisie;
   notations?: Notation[];
+  traitement?: string;
 }) {
   const router = useRouter();
   const slots = [0, 1, 2].map((i) => matiereIds[i] ?? "");
@@ -66,6 +68,7 @@ export function SchemaQuestion({
     for (const dose of appliquees) q.append("da", dose);
     if (application) ecrireApplication(q, application);
     if (notations.length) ecrireNotations(q, notations);
+    if (traitement) ecrireTraitement(q, traitement);
     router.push(`/procedures?${q}`);
   }
 

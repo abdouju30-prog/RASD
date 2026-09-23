@@ -11,7 +11,7 @@ import { SchemaNotations } from "./SchemaNotations";
 import { SchemaQuestion } from "./SchemaQuestion";
 import type { Choix } from "./RechercheListe";
 import { ecrireApplication, type ApplicationSaisie } from "@/lib/application";
-import { ecrireNotations, type Notation } from "@/lib/notations";
+import { ecrireNotations, ecrireTraitement, type Notation } from "@/lib/notations";
 import { SCHEMAS, coderPlan } from "@/lib/dispositif";
 import { ETAPES, enonceQuestion, questionParId, type Etape } from "@/lib/procedures";
 import type { GroupeCible, Precedent } from "@/lib/essai";
@@ -33,6 +33,8 @@ export function Parcours({
   appliquees,
   application,
   notations,
+  traitement,
+  delaisIndex,
 }: {
   etape: Etape;
   question: string;
@@ -51,10 +53,13 @@ export function Parcours({
   appliquees: string[];
   application: ApplicationSaisie;
   notations: Notation[];
+  traitement: string;
+  delaisIndex: string[];
 }) {
   const [dosesAppliquees, setDosesAppliquees] = useState(appliquees);
   const [appli, setAppli] = useState(application);
   const [notes, setNotes] = useState(notations);
+  const [jourTraitement, setJourTraitement] = useState(traitement);
   const router = useRouter();
   const index = Math.max(0, ETAPES.findIndex((e) => e.id === etape.id));
   const planLien = plan || (index >= 1 ? coderPlan(SCHEMAS[0].blocs) : "");
@@ -74,6 +79,7 @@ export function Parcours({
     for (const dose of dosesAppliquees) params.append("da", dose);
     ecrireApplication(params, appli);
     ecrireNotations(params, notes);
+    ecrireTraitement(params, jourTraitement);
     return `/procedures?${params}`;
   }
 
@@ -87,6 +93,7 @@ export function Parcours({
     for (const dose of dosesAppliquees) params.append("da", dose);
     ecrireApplication(params, appli);
     ecrireNotations(params, notes);
+    ecrireTraitement(params, jourTraitement);
     const s = params.toString();
     return s ? `/rapport?${s}` : "/rapport";
   }
@@ -126,6 +133,7 @@ export function Parcours({
           appliquees={dosesAppliquees}
           application={appli}
           notations={notes}
+          traitement={jourTraitement}
         />
       ) : etape.id === "dispositif" ? (
         <SchemaDispositif plan={plan} onPlan={(suivant) => router.push(href(etape.id, question, suivant))} />
@@ -149,6 +157,9 @@ export function Parcours({
           cible={cible}
           produit={matiereNoms.join(" et ")}
           plan={planLien}
+          dar={delaisIndex}
+          traitement={jourTraitement}
+          onTraitement={setJourTraitement}
         />
       ) : etape.id === "application" ? (
         <SchemaApplication
