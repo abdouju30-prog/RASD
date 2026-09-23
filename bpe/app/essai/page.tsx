@@ -62,45 +62,14 @@ export default async function Page({
           <Link href="/procedures/melange">Mélange</Link>
         </p>
       </div>
-      <FormulaireEssai>
-        <label className="grid gap-1 text-sm">
-          Culture
-          <select name="culture" defaultValue={culture?.id ?? ""} className="rounded border border-[var(--line)] bg-[var(--bg)] px-2 py-2">
-            <option value="">Choisir</option>
-            {CULTURES.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.nom}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="grid gap-1 text-sm">
-          Cible{culture ? ` · ${cibles.length}` : ""}
-          <select name="cible" defaultValue={cible} className="rounded border border-[var(--line)] bg-[var(--bg)] px-2 py-2">
-            <option value="">{culture ? "Toutes" : "Choisir une culture"}</option>
-            {cibles.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </label>
-        {[0, 1, 2].map((i) => (
-          <label key={i} className="grid gap-1 text-sm">
-            Matière active {i + 1}
-            {i === 0 ? "" : " (facultative)"}
-            <select name="m" defaultValue={matieres[i]?.id ?? ""} className="rounded border border-[var(--line)] bg-[var(--bg)] px-2 py-2">
-              <option value="">—</option>
-              {choixMatieres.map((m) => (
-                <option key={m.id} value={m.id}>
-                  {m.nom}
-                </option>
-              ))}
-            </select>
-          </label>
-        ))}
-        <button className="rounded bg-[var(--accent)] px-3 py-2 text-[var(--accent-fg)] sm:w-fit">Préparer</button>
-      </FormulaireEssai>
+      <FormulaireEssai
+        cultures={CULTURES.map((c) => ({ value: c.id, label: c.nom }))}
+        cibles={cibles}
+        matieres={choixMatieres.map((m) => ({ value: m.id, label: m.nom }))}
+        culture={culture?.id ?? ""}
+        cible={cible}
+        matiereIds={matieres.map((m) => m.id)}
+      />
 
       {culture && (
         <section id="grille" className="grid gap-3">
