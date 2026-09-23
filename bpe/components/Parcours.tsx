@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Schema } from "./Schema";
+import { SchemaCuve } from "./SchemaCuve";
 import { SchemaDoses } from "./SchemaDoses";
 import { SchemaDispositif } from "./SchemaDispositif";
 import { SchemaQuestion } from "./SchemaQuestion";
@@ -77,7 +78,6 @@ export function Parcours({
   }
 
   const peutContinuer = etape.id !== "question" || (Boolean(choix) && Boolean(cultureId));
-  const sansCuve = etape.id === "melange" && matiereIds.length < 2;
 
   return (
     <article className="grid max-w-3xl gap-4">
@@ -121,17 +121,16 @@ export function Parcours({
             })
           }
         />
+      ) : etape.id === "melange" ? (
+        <SchemaCuve noms={matiereNoms} melanges={melanges} />
       ) : (
         etape.schemas.map((id) => <Schema key={id} id={id} />)
       )}
-      {etape.id !== "question" && etape.id !== "doses" && <p>{sansCuve ? "Pas de mélange en cuve." : etape.texte}</p>}
+      {etape.id !== "question" && etape.id !== "doses" && etape.id !== "melange" && <p>{etape.texte}</p>}
       {etape.id !== "question" && (
         <p className="text-sm">
           {[cultureNom, cible, choix?.label, matiereNoms.join(", ")].filter(Boolean).join(" · ") || "Culture non choisie"}
         </p>
-      )}
-      {etape.id === "melange" && melanges.length > 0 && (
-        <p className="text-sm">Déjà formulé : {melanges.join(" ; ")}. Cuve à part.</p>
       )}
       <div className="suite">
         {precedente && (

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BoutonImprimer } from "@/components/BoutonImprimer";
 import { PlanDispositif } from "@/components/PlanDispositif";
+import { SchemaCuve } from "@/components/SchemaCuve";
 import { Schema } from "@/components/Schema";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
@@ -110,13 +111,12 @@ export default async function Page({
         </section>
 
         <section>
-          <h2>Mélange en cuve</h2>
-          {essai.melanges.length > 0 && (
-            <p className="note-feuille">Déjà formulé : {essai.melanges.map((m) => m.composants.join(" + ")).join(" ; ")}.</p>
-          )}
-          <Schema id="cuve" />
-          <Schema id="bocal" />
-          <p className="coche">Bocal fait · Stable · Instable, bouillie non appliquée</p>
+          <h2>{essai.matieres.length >= 2 ? "Mélange en cuve" : "Préparation"}</h2>
+          <SchemaCuve
+            noms={essai.matieres.map((m) => m.nom)}
+            melanges={essai.melanges.map((m) => m.composants.join(" + "))}
+          />
+          {essai.matieres.length >= 2 && <p className="coche">Bocal fait · Stable · Instable, bouillie non appliquée</p>}
         </section>
 
         <section>
