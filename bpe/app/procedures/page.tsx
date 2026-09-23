@@ -27,6 +27,7 @@ export default async function Page({
       precedents={precedentsDe(essai).slice(0, 6)}
       cultures={CULTURES.map((c) => ({ value: c.id, label: c.nom }))}
       cibles={essai.cibles}
+      groupes={essai.groupesCibles}
       matieres={essai.choixMatieres.map((m) => ({ value: m.id, label: m.nom }))}
     />
   );

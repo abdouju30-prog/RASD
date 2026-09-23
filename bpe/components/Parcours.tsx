@@ -5,7 +5,7 @@ import { FormulaireEssai } from "./FormulaireEssai";
 import { Schema } from "./Schema";
 import type { Choix } from "./RechercheListe";
 import { ETAPES, QUESTIONS, questionParId, type Etape } from "@/lib/procedures";
-import type { Precedent } from "@/lib/essai";
+import type { GroupeCible, Precedent } from "@/lib/essai";
 
 export function Parcours({
   etape,
@@ -19,6 +19,7 @@ export function Parcours({
   precedents,
   cultures,
   cibles,
+  groupes,
   matieres,
 }: {
   etape: Etape;
@@ -32,6 +33,7 @@ export function Parcours({
   precedents: Precedent[];
   cultures: Choix[];
   cibles: string[];
+  groupes: GroupeCible[];
   matieres: Choix[];
 }) {
   const router = useRouter();
@@ -97,6 +99,7 @@ export function Parcours({
           <FormulaireEssai
             cultures={cultures}
             cibles={cibles}
+            groupes={groupes}
             matieres={matieres}
             culture={cultureId}
             cible={cible}

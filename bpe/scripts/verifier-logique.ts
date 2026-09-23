@@ -22,6 +22,11 @@ assert.deepEqual(
 assert.ok(ETAPES.every((e) => e.texte.length < 120));
 assert.ok(ETAPES.filter((e) => e.id !== "question").every((e) => e.schemas.length > 0));
 
+const oranger = preparerEssai({ culture: "agrumes-oranger" });
+assert.ok(oranger.cibles.includes("Acariens"));
+assert.ok(oranger.groupesCibles.some((g) => g.titre === "Oranger" && g.noms.length === 2));
+assert.ok(oranger.choixMatieres.length > 10);
+
 const essai = preparerEssai({ culture: pommier.id, m: mix.composantIds.slice(0, 2) });
 assert.equal(essai.culture?.nom, "Pommier");
 assert.equal(essai.matieres.length, 2);

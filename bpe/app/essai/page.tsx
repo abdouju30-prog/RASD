@@ -12,7 +12,7 @@ export default async function Page({
   searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[] }>;
 }) {
   const essai = preparerEssai(await searchParams);
-  const { culture, cible, matieres, choixMatieres, cibles, emplois, melanges } = essai;
+  const { culture, cible, matieres, choixMatieres, cibles, groupesCibles, emplois, melanges } = essai;
   const apercu = emplois.slice(0, 30);
   const q = parametresEssai(culture?.id ?? "", cible, matieres.map((m) => m.id));
 
@@ -28,6 +28,7 @@ export default async function Page({
       <FormulaireEssai
         cultures={CULTURES.map((c) => ({ value: c.id, label: c.nom }))}
         cibles={cibles}
+        groupes={groupesCibles}
         matieres={choixMatieres.map((m) => ({ value: m.id, label: m.nom }))}
         culture={culture?.id ?? ""}
         cible={cible}

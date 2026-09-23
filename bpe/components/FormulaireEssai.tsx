@@ -2,11 +2,13 @@
 
 import { useRouter } from "next/navigation";
 import { ChangeEvent } from "react";
+import type { GroupeCible } from "@/lib/essai";
 import { RechercheListe, type Choix } from "./RechercheListe";
 
 export function FormulaireEssai({
   cultures,
   cibles,
+  groupes = [],
   matieres,
   culture,
   cible,
@@ -17,6 +19,7 @@ export function FormulaireEssai({
 }: {
   cultures: Choix[];
   cibles: string[];
+  groupes?: GroupeCible[];
   matieres: Choix[];
   culture: string;
   cible: string;
@@ -76,11 +79,21 @@ export function FormulaireEssai({
           onChange={onCible}
         >
           <option value="">{culture ? "Toutes" : "Choisir une culture"}</option>
-          {cibles.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
+          {groupes.length
+            ? groupes.map((g) => (
+                <optgroup key={g.titre} label={g.titre}>
+                  {g.noms.map((c) => (
+                    <option key={`${g.titre}/${c}`} value={c}>
+                      {c}
+                    </option>
+                  ))}
+                </optgroup>
+              ))
+            : cibles.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
         </select>
       </label>
       {slots.map((id, i) => (

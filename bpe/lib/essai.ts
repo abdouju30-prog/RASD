@@ -1,5 +1,10 @@
-import { CULTURES, MATIERES, MELANGES, cultureParIdDe, matiereParIdDe } from "./corpus";
+import { MATIERES, MELANGES, cultureParIdDe, cultureParNomDe, matiereParIdDe } from "./corpus";
 import type { Culture, Emploi, Matiere, Melange } from "./types";
+
+export interface GroupeCible {
+  titre: string;
+  noms: string[];
+}
 
 export interface EssaiPret {
   culture?: Culture;
@@ -7,8 +12,20 @@ export interface EssaiPret {
   matieres: Matiere[];
   choixMatieres: Matiere[];
   cibles: string[];
+  groupesCibles: GroupeCible[];
   emplois: Emploi[];
   melanges: Melange[];
+}
+
+function nomsLies(nom: string): string[] {
+  const parent = nom.split(":")[0].trim();
+  if (parent !== nom && cultureParNomDe(parent)) return [nom, parent];
+  return [nom];
+}
+
+function titreCourt(nom: string): string {
+  const partie = nom.split(":")[1];
+  return (partie ?? nom).trim();
 }
 
 export function idsDe(m: string | string[] | undefined): string[] {
@@ -36,25 +53,28 @@ export function preparerEssai(sp: {
   const matieres = idsDe(sp.m)
     .map((id) => matiereParIdDe(id))
     .filter((x) => x !== undefined);
+  const lies = culture ? nomsLies(culture.nom) : [];
   const choixMatieres = culture
-    ? MATIERES.filter((m) => m.cultures.includes(culture.nom))
+    ? MATIERES.filter((m) => lies.some((nom) => m.cultures.includes(nom)))
     : MATIERES;
-  const cibles = culture
-    ? [
-        ...new Set(
-          choixMatieres
-            .flatMap((m) => m.emplois.filter((e) => e.culture === culture.nom).map((e) => e.cible))
-            .filter(Boolean)
-        ),
-      ].sort((a, b) => a.localeCompare(b, "fr"))
-    : [];
+  const groupesCibles: GroupeCible[] = lies.map((nom) => {
+    const noms = [
+      ...new Set(
+        choixMatieres
+          .flatMap((m) => m.emplois.filter((e) => e.culture === nom).map((e) => e.cible))
+          .filter(Boolean)
+      ),
+    ].sort((a, b) => a.localeCompare(b, "fr"));
+    return { titre: titreCourt(nom), noms };
+  }).filter((g) => g.noms.length > 0);
+  const cibles = [...new Set(groupesCibles.flatMap((g) => g.noms))];
 
   const emplois: Emploi[] = [];
   const vus = new Set<string>();
   const sources = matieres.length ? matieres : culture ? choixMatieres : [];
   for (const m of sources) {
     for (const e of m.emplois) {
-      if (culture && e.culture !== culture.nom) continue;
+      if (lies.length && !lies.includes(e.culture)) continue;
       if (cible && e.cible !== cible) continue;
       const k = `${e.culture}/${e.cible}/${e.doses.join("|")}/${e.dar.join("|")}`;
       if (vus.has(k)) continue;
@@ -68,7 +88,7 @@ export function preparerEssai(sp: {
       ? MELANGES.filter((mix) => matieres.every((m) => mix.composantIds.includes(m.id)))
       : [];
 
-  return { culture, cible, matieres, choixMatieres, cibles, emplois, melanges };
+  return { culture, cible, matieres, choixMatieres, cibles, groupesCibles, emplois, melanges };
 }
 
 export interface Precedent {
@@ -86,8 +106,9 @@ export function precedentsDe(essai: EssaiPret): Precedent[] {
     }));
   }
   return essai.matieres.map((m) => {
+    const lies = essai.culture ? nomsLies(essai.culture.nom) : [];
     const lignes = m.emplois.filter((e) => {
-      if (essai.culture && e.culture !== essai.culture.nom) return false;
+      if (lies.length && !lies.includes(e.culture)) return false;
       if (essai.cible && e.cible !== essai.cible) return false;
       return true;
     });
