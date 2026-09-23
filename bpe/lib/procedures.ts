@@ -24,23 +24,23 @@ export const ORDRE_CUVE = [
 export const PROCEDURES: Procedure[] = [
   {
     id: "cadrage",
-    titre: "Cadrer un essai BPE",
-    resume: "Vérifier l'agrément, le périmètre de cultures et l'échéance avant de commander un essai.",
+    titre: "Cadrer un essai",
+    resume: "Fixer la culture, la cible et la question avant de lire le spectre.",
     etapes: [
       {
-        titre: "Ce que BPE désigne ici",
+        titre: "La question",
         texte:
-          "Les bonnes pratiques d'expérimentation : l'organisme qui conduit l'essai d'efficacité doit être agréé, et l'agrément doit couvrir la famille de cultures concernée. Un agrément légumes ne couvre pas l'arboriculture.",
+          "Une culture, un bioagresseur, une matière active ou un mélange. L'essai répond à une question : efficacité, sélectivité, ou les deux.",
       },
       {
-        titre: "D'où vient la liste",
+        titre: "Ce que le spectre apporte",
         texte:
-          "Les organismes et leurs périmètres sont le registre public ONSSA déjà repris dans Homologa, recopié tel quel. Homologa n'est pas modifié. La date de mise à jour du registre est affichée dans Sources. L'attestation d'agrément fait foi, pas cet écran.",
+          "Il montre les emplois déjà à l'index : culture, cible, dose, DAR. C'est un précédent pour écrire le protocole. Ce n'est pas une autorisation.",
       },
       {
-        titre: "Avant de commander",
+        titre: "Ce que BPE ne fait pas",
         texte:
-          "Contrôler le numéro, la date, l'expiration et la couverture. Un agrément expiré ou à moins d'un an est signalé. Confirmer auprès de l'organisme que le périmètre couvre bien la culture de l'essai, surtout si BPE a rattaché la culture par un ajout.",
+          "Il ne choisit pas de laboratoire, ne dépose pas de dossier et ne modifie pas Homologa.",
       },
     ],
   },
@@ -141,28 +141,6 @@ export const PROCEDURES: Procedure[] = [
         titre: "Rapport",
         texte:
           "Les faits observés, puis l'interprétation. Le spectre Homologa peut être cité comme précédent de dose et de DAR, avec la date de l'extrait. Il ne remplace pas les résultats de l'essai.",
-      },
-    ],
-  },
-  {
-    id: "organisme",
-    titre: "Choisir l'organisme",
-    resume: "Filtrer le registre par périmètre, puis vérifier l'attestation.",
-    etapes: [
-      {
-        titre: "Filtre",
-        texte:
-          "Pour une culture rattachée, BPE ne propose que les organismes dont la couverture contient chaque périmètre retenu. Si la culture n'est pas rattachée (adjuvant, « toutes cultures »), la liste complète s'affiche et doit être triée à la main.",
-      },
-      {
-        titre: "Ajouts BPE",
-        texte:
-          "Certaines cultures absentes du mot-clé Homologa sont rattachées ici (framboisier vers les cultures fruitières, épinard vers les légumes, etc.). L'écran le dit. Ce rattachement est une aide, pas une décision ONSSA.",
-      },
-      {
-        titre: "Contact",
-        texte:
-          "Siège, téléphone et courriels sont ceux du registre public. Ils servent à demander un devis d'essai, pas à conclure que l'organisme est disponible.",
       },
     ],
   },

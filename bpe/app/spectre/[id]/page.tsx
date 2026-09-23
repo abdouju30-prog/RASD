@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Emplois } from "@/components/Emplois";
-import { OrganismesListe } from "@/components/OrganismesListe";
 import { MATIERES, cultureParNomDe, matiereParIdDe, melangesDe } from "@/lib/corpus";
-import { organismesPour } from "@/lib/organismes";
 
 export function generateStaticParams() {
   return MATIERES.map((m) => ({ id: m.id }));
@@ -17,7 +15,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const m = matiereParIdDe((await params).id);
   if (!m) notFound();
-  const couverture = organismesPour(m.cultures);
   const melanges = melangesDe(m.id);
 
   return (
@@ -63,20 +60,6 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
             ))}
           </ul>
         )}
-      </section>
-      <section>
-        <h2 className="mb-2 text-2xl">Organismes</h2>
-        {couverture.indetermine ? (
-          <p className="mb-2 text-sm text-[var(--warn)]">
-            Aucun périmètre reconnu sur ces cultures. Liste complète, à trier.
-          </p>
-        ) : (
-          <p className="mb-2 text-sm text-[var(--muted)]">
-            Périmètres : {couverture.perimetres.join(" · ")}
-            {couverture.origines.includes("ajout-bpe") ? " · dont un rattachement ajouté par BPE" : ""}
-          </p>
-        )}
-        <OrganismesListe organismes={couverture.organismes} />
       </section>
     </div>
   );

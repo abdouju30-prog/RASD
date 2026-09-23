@@ -1,5 +1,4 @@
 import { Nav } from "./Nav";
-import { CORPUS } from "@/lib/corpus";
 
 export function Shell({ children }: { children: React.ReactNode }) {
   return (
@@ -11,7 +10,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               Bonnes pratiques d&apos;expérimentation
             </p>
             <p className="hidden text-sm text-[var(--muted)] sm:block">
-              Spectre, mélanges et organismes — lecture seule, Homologa inchangé
+              Spectre, cultures et mélanges — lecture seule, Homologa inchangé
             </p>
           </div>
           <Nav />
@@ -19,7 +18,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
       </header>
       <main className="mx-auto max-w-5xl px-4 py-5">{children}</main>
       <footer className="mx-auto max-w-5xl px-4 pb-16 text-sm text-[var(--muted)]">
-        {CORPUS.meta.avertissement}
+        Lecture seule de l&apos;index. Homologa n&apos;est pas modifié. Doses et DAR sont des
+        précédents, pas une autorisation d&apos;essai.
       </footer>
     </>
   );

@@ -6,7 +6,6 @@ export const CORPUS = corpus as Corpus;
 export const MATIERES: Matiere[] = CORPUS.matieres;
 export const MELANGES: Melange[] = CORPUS.melanges;
 export const CULTURES: Culture[] = CORPUS.cultures;
-export const ORGANISMES = CORPUS.organismes;
 
 const matiereParId = new Map(MATIERES.map((m) => [m.id, m]));
 const melangeParId = new Map(MELANGES.map((m) => [m.id, m]));
@@ -32,7 +31,3 @@ export function cultureParNomDe(nom: string): Culture | undefined {
 export function melangesDe(matiereId: string): Melange[] {
   return MELANGES.filter((m) => m.composantIds.includes(matiereId));
 }
-
-export const PERIMETRES = [
-  ...new Set(ORGANISMES.flatMap((o) => o.couverture)),
-].sort((a, b) => a.localeCompare(b, "fr"));

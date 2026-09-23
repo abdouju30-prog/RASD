@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Emplois } from "@/components/Emplois";
-import { OrganismesListe } from "@/components/OrganismesListe";
 import { CULTURES, MATIERES, MELANGES, cultureParIdDe, matiereParIdDe } from "@/lib/corpus";
-import { organismesPour } from "@/lib/organismes";
 import type { Emploi } from "@/lib/types";
 
 export const metadata = { title: "Essai" };
@@ -50,7 +48,6 @@ export default async function Page({
     matieres.length >= 2
       ? MELANGES.filter((mix) => matieres.every((m) => mix.composantIds.includes(m.id)))
       : [];
-  const couverture = culture ? organismesPour([culture.nom]) : null;
   const apercu = emplois.slice(0, 30);
 
   return (
@@ -109,7 +106,6 @@ export default async function Page({
           <h2 className="text-2xl">Grille</h2>
           <ul className="grid gap-1 text-sm">
             <li>Culture : {culture.nom}</li>
-            <li>Périmètre : {culture.perimetres.join(" · ") || "non rattaché"} ({culture.originePerimetres})</li>
             <li>Cible : {cible || "à préciser"}</li>
             <li>
               Matières : {matieres.length ? matieres.map((m) => m.nom).join(", ") : "non choisies — spectre de la culture"}
@@ -133,11 +129,6 @@ export default async function Page({
             {emplois.length} emploi(s){emplois.length > apercu.length ? `, ${apercu.length} affichés` : ""}.
           </p>
           <Emplois lignes={apercu} />
-          <h3 className="text-xl">Organismes</h3>
-          {couverture?.indetermine && (
-            <p className="text-sm text-[var(--warn)]">Culture non rattachée. Liste complète, à vérifier.</p>
-          )}
-          <OrganismesListe organismes={couverture?.organismes ?? []} />
         </section>
       )}
     </div>

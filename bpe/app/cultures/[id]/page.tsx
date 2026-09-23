@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { OrganismesListe } from "@/components/OrganismesListe";
 import { CULTURES, MATIERES, cultureParIdDe } from "@/lib/corpus";
-import { organismesPour } from "@/lib/organismes";
 import { joindre } from "@/lib/texte";
 
 export function generateStaticParams() {
@@ -14,16 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return { title: c?.nom ?? "Culture" };
 }
 
-const ORIGINE: Record<string, string> = {
-  homologa: "Rattachement repris du mot-clé Homologa.",
-  "ajout-bpe": "Rattachement ajouté par BPE. À confirmer avant de commander l'essai.",
-  "non-rattache": "Aucun périmètre. La liste des organismes n'est pas filtrée.",
-};
-
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const c = cultureParIdDe((await params).id);
   if (!c) notFound();
-  const couverture = organismesPour([c.nom]);
   const matieres = MATIERES.filter((m) => m.cultures.includes(c.nom)).sort((a, b) =>
     a.nom.localeCompare(b.nom, "fr")
   );
@@ -32,9 +23,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     <div className="grid gap-6">
       <div>
         <h1 className="text-3xl">{c.nom}</h1>
-        <p className="mt-1 text-sm text-[var(--muted)]">
-          {c.perimetres.join(" · ") || "Périmètre non reconnu"} · {ORIGINE[c.originePerimetres]}
-        </p>
+        <p className="mt-1 text-sm text-[var(--muted)]">{matieres.length} matière(s) active(s)</p>
       </div>
       <p>
         <Link href={`/essai?culture=${c.id}`}>Préparer un essai sur cette culture</Link>
@@ -64,10 +53,6 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
             })}
           </tbody>
         </table>
-      </section>
-      <section>
-        <h2 className="mb-2 text-2xl">Organismes</h2>
-        <OrganismesListe organismes={couverture.organismes} />
       </section>
     </div>
   );

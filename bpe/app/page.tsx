@@ -1,25 +1,22 @@
 import Link from "next/link";
-import { CULTURES, MATIERES, MELANGES, ORGANISMES, CORPUS } from "@/lib/corpus";
+import { CULTURES, MATIERES, MELANGES, CORPUS } from "@/lib/corpus";
 import { PROCEDURES } from "@/lib/procedures";
 
 export default function Page() {
-  const ajouts = CULTURES.filter((c) => c.originePerimetres === "ajout-bpe").length;
   return (
     <div className="grid gap-6">
       <div>
         <h1 className="text-4xl">BPE</h1>
         <p className="mt-2 max-w-2xl text-[var(--muted)]">
-          Préparer un essai à partir du spectre des cultures et des matières actives,
-          des mélanges déjà formulés, et des organismes agréés. Les procédures et les
-          rattachements de cultures manquants sont ajoutés ici. Homologa reste intact.
+          Spectre des cultures et des matières actives, mélanges formulés, et préparation
+          d&apos;un essai. Homologa reste intact.
         </p>
       </div>
-      <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <dl className="grid grid-cols-3 gap-3">
         {[
-          [MATIERES.length, "Matières actives", "/spectre"],
+          [MATIERES.length, "Matières", "/spectre"],
           [CULTURES.length, "Cultures", "/cultures"],
-          [MELANGES.length, "Mélanges formulés", "/melanges"],
-          [ORGANISMES.length, "Organismes BPE", "/organismes"],
+          [MELANGES.length, "Mélanges", "/melanges"],
         ].map(([n, label, href]) => (
           <Link
             key={String(href)}
@@ -35,20 +32,20 @@ export default function Page() {
         <Link href="/essai" className="rounded border border-[var(--accent)] bg-[var(--fond)] p-4 no-underline">
           <h2 className="text-xl text-[var(--ink)]">Préparer un essai</h2>
           <p className="mt-1 text-sm text-[var(--muted)]">
-            Culture, cible, une à trois matières actives. Précédents de dose, mélange
-            formulé ou non, organismes dont le périmètre couvre.
+            Culture, cible, une à trois matières actives. Précédents de dose et mélange
+            formulé, s&apos;il existe.
           </p>
         </Link>
         <Link href="/procedures/melange" className="rounded border border-[var(--line)] bg-[var(--surface)] p-4 no-underline">
           <h2 className="text-xl text-[var(--ink)]">Mélanger</h2>
           <p className="mt-1 text-sm text-[var(--muted)]">
             Association déjà à l&apos;index, ou mélange en cuve à tester en bocal.
-            {` ${PROCEDURES.length} procédures, ${ajouts} cultures rattachées en plus.`}
+            {` ${PROCEDURES.length} procédures.`}
           </p>
         </Link>
       </section>
       <p className="text-sm text-[var(--muted)]">
-        Index du {CORPUS.meta.genereIndex ?? "—"} · registre BPE {CORPUS.meta.majBpe ?? "—"}
+        Index du {CORPUS.meta.genereIndex ?? "—"}
       </p>
     </div>
   );

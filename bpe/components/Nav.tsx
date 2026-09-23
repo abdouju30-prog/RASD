@@ -7,7 +7,6 @@ const LIENS = [
   { href: "/spectre", label: "Spectre" },
   { href: "/cultures", label: "Cultures" },
   { href: "/melanges", label: "Mélanges" },
-  { href: "/organismes", label: "Organismes" },
   { href: "/procedures", label: "Procédures" },
   { href: "/essai", label: "Essai" },
   { href: "/sources", label: "Sources" },

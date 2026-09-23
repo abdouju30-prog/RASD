@@ -4,21 +4,13 @@ import { contient } from "@/lib/texte";
 
 export const metadata = { title: "Cultures" };
 
-const ORIGINE: Record<string, string> = {
-  homologa: "Homologa",
-  "ajout-bpe": "Ajout BPE",
-  "non-rattache": "Non rattaché",
-};
-
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; origine?: string }>;
+  searchParams: Promise<{ q?: string }>;
 }) {
-  const sp = await searchParams;
-  const q = sp.q ?? "";
-  const origine = sp.origine ?? "";
-  const lignes = CULTURES.filter((c) => contient(c.nom, q) && (!origine || c.originePerimetres === origine));
+  const q = (await searchParams).q ?? "";
+  const lignes = CULTURES.filter((c) => contient(c.nom, q));
 
   return (
     <div className="grid gap-4">
@@ -30,16 +22,6 @@ export default async function Page({
           placeholder="Culture"
           className="rounded border border-[var(--line)] bg-[var(--surface)] px-3 py-2"
         />
-        <select
-          name="origine"
-          defaultValue={origine}
-          className="rounded border border-[var(--line)] bg-[var(--surface)] px-3 py-2"
-        >
-          <option value="">Tous les rattachements</option>
-          <option value="homologa">Mot-clé Homologa</option>
-          <option value="ajout-bpe">Ajout BPE</option>
-          <option value="non-rattache">Non rattaché</option>
-        </select>
         <button className="rounded bg-[var(--accent)] px-3 py-2 text-[var(--accent-fg)]">Filtrer</button>
       </form>
       <p className="text-sm text-[var(--muted)]">{lignes.length} culture(s)</p>
@@ -48,8 +30,6 @@ export default async function Page({
           <tr>
             <th>Culture</th>
             <th>Matières</th>
-            <th>Périmètre BPE</th>
-            <th>Origine</th>
           </tr>
         </thead>
         <tbody>
@@ -59,8 +39,6 @@ export default async function Page({
                 <Link href={`/cultures/${c.id}`}>{c.nom}</Link>
               </td>
               <td data-label="Matières">{c.nbMatieres}</td>
-              <td data-label="Périmètre">{c.perimetres.join(" · ") || "—"}</td>
-              <td data-label="Origine">{ORIGINE[c.originePerimetres]}</td>
             </tr>
           ))}
         </tbody>
