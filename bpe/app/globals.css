@@ -647,8 +647,13 @@ select.case-mod {
   font-weight: 600;
 }
 
-.cellule-vide {
-  height: 1.55rem;
+.cellule-vide,
+.ligne-ecrire {
+  height: 1.7rem;
+}
+
+.case-mod.ligne-ecrire {
+  min-height: 2.2rem;
 }
 
 .bloc-vide {

@@ -104,6 +104,11 @@ export function Parcours({
 
   return (
     <article className="grid max-w-3xl gap-4">
+      {index === 0 && (
+        <a className="bouton-second" href="/rapport?vide=1">
+          Imprimer un bilan vide
+        </a>
+      )}
       <ol className="jalons">
         {ETAPES.map((e, i) => (
           <li key={e.id} className={i === index ? "jalon-cours" : i < index ? "jalon-fait" : ""}>

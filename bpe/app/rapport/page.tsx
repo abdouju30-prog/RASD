@@ -8,6 +8,7 @@ import { ECHELLE_PLANTE, afficherDate, joursDar, lectureEfficacite, lireNotation
 import { codesANoter } from "@/lib/dispositif";
 import { CORPUS } from "@/lib/corpus";
 import { parametresEssai, precedentsDe, preparerEssai } from "@/lib/essai";
+import { FeuilleVide } from "@/components/FeuilleVide";
 import { enonceQuestion, questionParId } from "@/lib/procedures";
 
 export const metadata = { title: "Feuille de terrain" };
@@ -15,9 +16,10 @@ export const metadata = { title: "Feuille de terrain" };
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string; da?: string | string[]; nt?: string | string[]; jt?: string | string[] }>;
+  searchParams: Promise<{ culture?: string; cible?: string; m?: string | string[]; question?: string; plan?: string; da?: string | string[]; nt?: string | string[]; jt?: string | string[]; vide?: string }>;
 }) {
   const sp = await searchParams;
+  if (sp.vide === "1") return <FeuilleVide />;
   const essai = preparerEssai(sp);
   const question = questionParId(sp.question);
   const appliquees = Array.isArray(sp.da) ? sp.da : sp.da ? [sp.da] : [];
