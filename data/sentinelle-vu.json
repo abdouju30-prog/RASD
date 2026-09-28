@@ -1,6 +1,6 @@
 {
  "commentaire": "Date de première apparition de chaque candidate. Fichier tenu par scripts/sentinelle.py ; l'historique git est le journal des nouveautés.",
- "dernierReleve": "2026-09-27",
+ "dernierReleve": "2026-09-28",
  "premiereVue": {
   "0365bbacilussubtilis": "2026-09-07",
   "0423aisavaibacilusntsubspturiniensis": "2026-09-07",
