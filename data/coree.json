@@ -2,25 +2,25 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-09-27",
-  "genere": "2026-09-27T11:17:40",
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-09-29",
+  "genere": "2026-09-29T12:02:21",
   "derniereHomologation": "2026-09-14",
-  "nbLignesUsage": 145276,
-  "nbHomologations": 3989,
+  "nbLignesUsage": 145243,
+  "nbHomologations": 3979,
   "nbSocietes": 98,
   "nbFiliales": 16,
   "nbMatieres": 475,
   "nbMatieresIndex": 107,
   "nbNomsIso": 168,
   "nbHorsIndex": 362,
-  "nbMelanges": 1059,
-  "nbUsages": 30950,
+  "nbMelanges": 1052,
+  "nbUsages": 30933,
   "exclusiviteMediane": 3.1,
   "exclusiviteQuartileHaut": 9.2,
   "nbVerrouillees": 21,
   "partTraduite": 97,
-  "nbFabrique": 3263,
-  "nbImporte": 726,
+  "nbFabrique": 3254,
+  "nbImporte": 725,
   "avertissement": "Registre coréen des produits phytosanitaires. Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. « 제조 » signifie produit fabriqué en Corée, PAS matière active synthétisée sur place : ce registre nomme le titulaire de l'homologation, pas l'usine de synthèse. Les raisons sociales sont romanisées (romanisation révisée) : une poignée pour chercher, pas une identité contractuelle. Ni prix, ni capacité, ni qualité."
  },
  "matieres": [
@@ -133,8 +133,8 @@
    "nomsCoreens": [
     "Acetamiprid"
    ],
-   "nbHomologations": 96,
-   "nbFabrique": 86,
+   "nbHomologations": 95,
+   "nbFabrique": 85,
    "nbImporte": 10,
    "premiere": "1999-01-27",
    "derniere": "2026-08-24",
@@ -434,8 +434,8 @@
    "nomsCoreens": [
     "Carfentrazone-ethyl"
    ],
-   "nbHomologations": 32,
-   "nbFabrique": 29,
+   "nbHomologations": 31,
+   "nbFabrique": 28,
    "nbImporte": 3,
    "premiere": "2001-04-04",
    "derniere": "2015-10-28",
@@ -1586,10 +1586,10 @@
    "nomsCoreens": [
     "Mesotrione"
    ],
-   "nbHomologations": 12,
-   "nbFabrique": 11,
+   "nbHomologations": 11,
+   "nbFabrique": 10,
    "nbImporte": 1,
-   "premiere": "2006-09-29",
+   "premiere": "2007-03-29",
    "derniere": "2021-01-08",
    "societes": [
     "(주)경농",
@@ -3978,26 +3978,6 @@
    ],
    "premiere": "2012-04-12",
    "derniere": "2026-05-04"
-  },
-  {
-   "cle": "Azimsulfuron + Penoxsulam",
-   "composants": [
-    "Azimsulfuron",
-    "Penoxsulam"
-   ],
-   "nbHomologations": 3,
-   "nbSocietes": 2,
-   "societes": [
-    "(주)경농",
-    "(주)동방아그로"
-   ],
-   "nbFabrique": 3,
-   "nbImporte": 0,
-   "usages": [
-    "제초"
-   ],
-   "premiere": "2005-09-30",
-   "derniere": "2008-10-01"
   },
   {
    "cle": "Azoxystrobin + Chlorothalonil",
@@ -6486,6 +6466,25 @@
    "derniere": "2007-10-01"
   },
   {
+   "cle": "Azimsulfuron + Penoxsulam",
+   "composants": [
+    "Azimsulfuron",
+    "Penoxsulam"
+   ],
+   "nbHomologations": 2,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)동방아그로"
+   ],
+   "nbFabrique": 2,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2005-09-30",
+   "derniere": "2008-10-01"
+  },
+  {
    "cle": "Azoxystrobin + Metalaxyl-M",
    "composants": [
     "Azoxystrobin",
@@ -7237,25 +7236,6 @@
    ],
    "premiere": "2013-04-15",
    "derniere": "2018-09-07"
-  },
-  {
-   "cle": "Halosulfuron-methyl + Oxaziclomefone",
-   "composants": [
-    "Halosulfuron-methyl",
-    "Oxaziclomefone"
-   ],
-   "nbHomologations": 2,
-   "nbSocietes": 1,
-   "societes": [
-    "(주)경농"
-   ],
-   "nbFabrique": 1,
-   "nbImporte": 1,
-   "usages": [
-    "제초"
-   ],
-   "premiere": "2006-09-29",
-   "derniere": "2006-09-29"
   },
   {
    "cle": "Halosulfuron-methyl + Pyriminobac-methyl",
@@ -8076,25 +8056,6 @@
    "derniere": "2013-06-21"
   },
   {
-   "cle": "Acetamiprid + Tricyclazole",
-   "composants": [
-    "Acetamiprid",
-    "Tricyclazole"
-   ],
-   "nbHomologations": 1,
-   "nbSocietes": 1,
-   "societes": [
-    "(주)경농"
-   ],
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "usages": [
-    "균충"
-   ],
-   "premiere": "2006-09-29",
-   "derniere": "2006-09-29"
-  },
-  {
    "cle": "Acibenzolar-S-methyl + Azoxystrobin",
    "composants": [
     "Acibenzolar-S-methyl",
@@ -8890,25 +8851,6 @@
    ],
    "premiere": "2015-10-28",
    "derniere": "2015-10-28"
-  },
-  {
-   "cle": "Azimsulfuron + Indanofan",
-   "composants": [
-    "Azimsulfuron",
-    "Indanofan"
-   ],
-   "nbHomologations": 1,
-   "nbSocietes": 1,
-   "societes": [
-    "(주)경농"
-   ],
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "usages": [
-    "제초"
-   ],
-   "premiere": "2006-09-29",
-   "derniere": "2006-09-29"
   },
   {
    "cle": "Azimsulfuron + Mefenacet",
@@ -10194,25 +10136,6 @@
    ],
    "premiere": "2026-03-20",
    "derniere": "2026-03-20"
-  },
-  {
-   "cle": "Bensulfuron-methyl + Indanofan",
-   "composants": [
-    "Bensulfuron-methyl",
-    "Indanofan"
-   ],
-   "nbHomologations": 1,
-   "nbSocietes": 1,
-   "societes": [
-    "(주)경농"
-   ],
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "usages": [
-    "제초"
-   ],
-   "premiere": "2006-09-29",
-   "derniere": "2006-09-29"
   },
   {
    "cle": "Bensulfuron-methyl + MCPA + Mefenacet",
@@ -13583,26 +13506,6 @@
    ],
    "premiere": "2011-11-08",
    "derniere": "2011-11-08"
-  },
-  {
-   "cle": "Carfentrazone-ethyl + Imazosulfuron + Penoxsulam",
-   "composants": [
-    "Carfentrazone-ethyl",
-    "Imazosulfuron",
-    "Penoxsulam"
-   ],
-   "nbHomologations": 1,
-   "nbSocietes": 1,
-   "societes": [
-    "(주)동방아그로"
-   ],
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "usages": [
-    "제초"
-   ],
-   "premiere": "2006-09-29",
-   "derniere": "2006-09-29"
   },
   {
    "cle": "Carfentrazone-ethyl + Mefenacet + Pyrazosulfuron-ethyl",
@@ -20413,25 +20316,6 @@
    "derniere": "2017-05-02"
   },
   {
-   "cle": "Imazosulfuron + Indanofan",
-   "composants": [
-    "Imazosulfuron",
-    "Indanofan"
-   ],
-   "nbHomologations": 1,
-   "nbSocietes": 1,
-   "societes": [
-    "(주)경농"
-   ],
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "usages": [
-    "제초"
-   ],
-   "premiere": "2006-09-29",
-   "derniere": "2006-09-29"
-  },
-  {
    "cle": "Imazosulfuron + MCPA",
    "composants": [
     "Imazosulfuron",
@@ -21612,25 +21496,6 @@
    ],
    "premiere": "2011-11-08",
    "derniere": "2011-11-08"
-  },
-  {
-   "cle": "Mesotrione + Pretilachlor",
-   "composants": [
-    "Mesotrione",
-    "Pretilachlor"
-   ],
-   "nbHomologations": 1,
-   "nbSocietes": 1,
-   "societes": [
-    "신젠타코리아(주)"
-   ],
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "usages": [
-    "제초"
-   ],
-   "premiere": "2006-09-29",
-   "derniere": "2006-09-29"
   },
   {
    "cle": "Metazosulfuron + Oxaziclomefone",
@@ -25596,8 +25461,8 @@
     "premierGenerique": "2000-03-13",
     "premierGeneriqueSociete": "Hankook Samgong",
     "ecartAns": null,
-    "nbSocietes": 2,
-    "nbIndependants": 2
+    "nbSocietes": 1,
+    "nbIndependants": 1
    },
    {
     "matiere": "Azimsulfuron",
@@ -26476,30 +26341,6 @@
     "nbIndependants": 2
    },
    {
-    "matiere": "Oxadiargyl",
-    "iso": null,
-    "premiere": "2006-09-29",
-    "premierTitulaire": "Bayer CropScience Korea",
-    "premierGroupe": "Bayer",
-    "premierGenerique": "2009-09-30",
-    "premierGeneriqueSociete": "Nonghyup Chemical",
-    "ecartAns": 3.0,
-    "nbSocietes": 10,
-    "nbIndependants": 9
-   },
-   {
-    "matiere": "Mesotrione",
-    "iso": "MESOTRIONE",
-    "premiere": "2006-09-29",
-    "premierTitulaire": "Syngenta Korea",
-    "premierGroupe": "Syngenta",
-    "premierGenerique": "2011-11-08",
-    "premierGeneriqueSociete": "Kyung Nong",
-    "ecartAns": 5.2,
-    "nbSocietes": 3,
-    "nbIndependants": 2
-   },
-   {
     "matiere": "Bistrifluron",
     "iso": null,
     "premiere": "2006-09-29",
@@ -26570,6 +26411,18 @@
     "ecartAns": null,
     "nbSocietes": 1,
     "nbIndependants": 1
+   },
+   {
+    "matiere": "Mesotrione",
+    "iso": "MESOTRIONE",
+    "premiere": "2007-03-29",
+    "premierTitulaire": "Syngenta Korea",
+    "premierGroupe": "Syngenta",
+    "premierGenerique": "2011-11-08",
+    "premierGeneriqueSociete": "Kyung Nong",
+    "ecartAns": 4.7,
+    "nbSocietes": 3,
+    "nbIndependants": 2
    },
    {
     "matiere": "Trifloxysulfuron-sodium",
@@ -26930,6 +26783,18 @@
     "ecartAns": null,
     "nbSocietes": 20,
     "nbIndependants": 16
+   },
+   {
+    "matiere": "Oxadiargyl",
+    "iso": null,
+    "premiere": "2008-10-01",
+    "premierTitulaire": "Bayer CropScience Korea",
+    "premierGroupe": "Bayer",
+    "premierGenerique": "2009-09-30",
+    "premierGeneriqueSociete": "Nonghyup Chemical",
+    "ecartAns": 0.9,
+    "nbSocietes": 10,
+    "nbIndependants": 9
    },
    {
     "matiere": "Benalaxyl-M",
@@ -30451,6 +30316,27 @@
    ]
   },
   {
+   "nom": "Oxadiargyl",
+   "iso": null,
+   "nbHomologations": 15,
+   "nbFabrique": 14,
+   "nbImporte": 1,
+   "premiere": "2008-10-01",
+   "derniere": "2025-01-06",
+   "societes": [
+    "(주)경농",
+    "(주)농협케미컬",
+    "(주)동방아그로",
+    "(주)팜한농",
+    "(주)한얼싸이언스",
+    "바이엘크롭사이언스(주)",
+    "인바이오(주)",
+    "지넥스(주)",
+    "팜아그로텍(주)",
+    "한국삼공(주)"
+   ]
+  },
+  {
    "nom": "Iodosulfuron",
    "iso": null,
    "nbHomologations": 1,
@@ -30771,27 +30657,6 @@
    ]
   },
   {
-   "nom": "Oxadiargyl",
-   "iso": null,
-   "nbHomologations": 16,
-   "nbFabrique": 15,
-   "nbImporte": 1,
-   "premiere": "2006-09-29",
-   "derniere": "2025-01-06",
-   "societes": [
-    "(주)경농",
-    "(주)농협케미컬",
-    "(주)동방아그로",
-    "(주)팜한농",
-    "(주)한얼싸이언스",
-    "바이엘크롭사이언스(주)",
-    "인바이오(주)",
-    "지넥스(주)",
-    "팜아그로텍(주)",
-    "한국삼공(주)"
-   ]
-  },
-  {
    "nom": "Cafenstrole",
    "iso": null,
    "nbHomologations": 4,
@@ -30992,8 +30857,8 @@
   {
    "nom": "Penoxsulam",
    "iso": null,
-   "nbHomologations": 76,
-   "nbFabrique": 76,
+   "nbHomologations": 74,
+   "nbFabrique": 74,
    "nbImporte": 0,
    "premiere": "2004-10-18",
    "derniere": "2025-02-06",
@@ -31393,9 +31258,9 @@
   {
    "nom": "Oxaziclomefone",
    "iso": null,
-   "nbHomologations": 21,
-   "nbFabrique": 20,
-   "nbImporte": 1,
+   "nbHomologations": 19,
+   "nbFabrique": 19,
+   "nbImporte": 0,
    "premiere": "2001-12-19",
    "derniere": "2025-11-10",
    "societes": [
@@ -31484,9 +31349,9 @@
   {
    "nom": "Halosulfuron-methyl",
    "iso": null,
-   "nbHomologations": 24,
-   "nbFabrique": 22,
-   "nbImporte": 2,
+   "nbHomologations": 22,
+   "nbFabrique": 21,
+   "nbImporte": 1,
    "premiere": "2001-04-04",
    "derniere": "2015-10-28",
    "societes": [
@@ -31638,8 +31503,8 @@
   {
    "nom": "Azimsulfuron",
    "iso": null,
-   "nbHomologations": 39,
-   "nbFabrique": 39,
+   "nbHomologations": 37,
+   "nbFabrique": 37,
    "nbImporte": 0,
    "premiere": "2000-04-03",
    "derniere": "2017-01-26",
@@ -31654,13 +31519,12 @@
   {
    "nom": "Indanofan",
    "iso": null,
-   "nbHomologations": 4,
-   "nbFabrique": 4,
+   "nbHomologations": 1,
+   "nbFabrique": 1,
    "nbImporte": 0,
    "premiere": "2000-03-13",
-   "derniere": "2006-09-29",
+   "derniere": "2000-03-13",
    "societes": [
-    "(주)경농",
     "한국삼공(주)"
    ]
   },
@@ -31986,8 +31850,8 @@
   {
    "nom": "Imazosulfuron",
    "iso": null,
-   "nbHomologations": 65,
-   "nbFabrique": 64,
+   "nbHomologations": 63,
+   "nbFabrique": 62,
    "nbImporte": 1,
    "premiere": "1997-02-05",
    "derniere": "2026-07-14",
@@ -32977,8 +32841,8 @@
   {
    "nom": "Tricyclazole",
    "iso": null,
-   "nbHomologations": 36,
-   "nbFabrique": 34,
+   "nbHomologations": 35,
+   "nbFabrique": 33,
    "nbImporte": 2,
    "premiere": "1989-03-24",
    "derniere": "2026-08-06",
@@ -33083,8 +32947,8 @@
   {
    "nom": "Bensulfuron-methyl",
    "iso": null,
-   "nbHomologations": 36,
-   "nbFabrique": 36,
+   "nbHomologations": 35,
+   "nbFabrique": 35,
    "nbImporte": 0,
    "premiere": "1988-01-22",
    "derniere": "2026-03-20",
@@ -33350,8 +33214,8 @@
   {
    "nom": "Pretilachlor",
    "iso": null,
-   "nbHomologations": 42,
-   "nbFabrique": 42,
+   "nbHomologations": 41,
+   "nbFabrique": 41,
    "nbImporte": 0,
    "premiere": "1984-04-28",
    "derniere": "2025-08-30",
@@ -34442,10 +34306,10 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 421,
-   "nbFabrique": 400,
-   "nbImporte": 21,
-   "nbMatieres": 209,
+   "nbHomologations": 414,
+   "nbFabrique": 394,
+   "nbImporte": 20,
+   "nbMatieres": 208,
    "matieres": [
     "ABAMECTIN",
     "ACEQUINOCYL",
@@ -34766,8 +34630,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 291,
-   "nbFabrique": 284,
+   "nbHomologations": 290,
+   "nbFabrique": 283,
    "nbImporte": 7,
    "nbMatieres": 184,
    "matieres": [
@@ -35077,8 +34941,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 143,
-   "nbFabrique": 91,
+   "nbHomologations": 142,
+   "nbFabrique": 90,
    "nbImporte": 52,
    "nbMatieres": 65,
    "matieres": [
@@ -35455,8 +35319,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 57,
-   "nbFabrique": 44,
+   "nbHomologations": 56,
+   "nbFabrique": 43,
    "nbImporte": 13,
    "nbMatieres": 37,
    "matieres": [

@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-28T12:46:37",
-  "dernierReleve": "2026-09-28",
+  "genere": "2026-09-29T12:02:27",
+  "dernierReleve": "2026-09-29",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
@@ -6451,8 +6451,8 @@
    ],
    "coree": {
     "nom": "Penoxsulam",
-    "nbHomologations": 76,
-    "nbFabrique": 76,
+    "nbHomologations": 74,
+    "nbFabrique": 74,
     "nbImporte": 0,
     "premiere": "2004-10-18",
     "derniere": "2025-02-06",
@@ -6636,8 +6636,8 @@
    ],
    "coree": {
     "nom": "Tricyclazole",
-    "nbHomologations": 36,
-    "nbFabrique": 34,
+    "nbHomologations": 35,
+    "nbFabrique": 33,
     "nbImporte": 2,
     "premiere": "1989-03-24",
     "derniere": "2026-08-06",
@@ -13850,6 +13850,41 @@
    "nouvelle": false
   },
   {
+   "cle": "ocsadiaril",
+   "nom": "Oxadiargyl",
+   "iso": "OXADIARGYL",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "Oxadiargyl",
+    "nbHomologations": 15,
+    "nbFabrique": 14,
+    "nbImporte": 1,
+    "premiere": "2008-10-01",
+    "derniere": "2025-01-06",
+    "nbSocietes": 10
+   },
+   "france": {
+    "nom": "Oxadiargyl",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 1,
+    "dernierRetrait": "2013-12-19"
+   },
+   "australie": {
+    "nom": "OXADIARGYL",
+    "statut": "absente",
+    "nbProduitsAgricoles": 0,
+    "matiereActiveApprouvee": true
+   },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "iodosulfuron",
    "nom": "Iodosulfuron",
    "iso": "Iodosulfuron",
@@ -14394,41 +14429,6 @@
    },
    "france": null,
    "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "ocsadiaril",
-   "nom": "Oxadiargyl",
-   "iso": "OXADIARGYL",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "Oxadiargyl",
-    "nbHomologations": 16,
-    "nbFabrique": 15,
-    "nbImporte": 1,
-    "premiere": "2006-09-29",
-    "derniere": "2025-01-06",
-    "nbSocietes": 10
-   },
-   "france": {
-    "nom": "Oxadiargyl",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 1,
-    "dernierRetrait": "2013-12-19"
-   },
-   "australie": {
-    "nom": "OXADIARGYL",
-    "statut": "absente",
-    "nbProduitsAgricoles": 0,
-    "matiereActiveApprouvee": true
-   },
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -15223,9 +15223,9 @@
    "titulaires": [],
    "coree": {
     "nom": "Oxaziclomefone",
-    "nbHomologations": 21,
-    "nbFabrique": 20,
-    "nbImporte": 1,
+    "nbHomologations": 19,
+    "nbFabrique": 19,
+    "nbImporte": 0,
     "premiere": "2001-12-19",
     "derniere": "2025-11-10",
     "nbSocietes": 6
@@ -15301,9 +15301,9 @@
    "titulaires": [],
    "coree": {
     "nom": "Halosulfuron-methyl",
-    "nbHomologations": 24,
-    "nbFabrique": 22,
-    "nbImporte": 2,
+    "nbHomologations": 22,
+    "nbFabrique": 21,
+    "nbImporte": 1,
     "premiere": "2001-04-04",
     "derniere": "2015-10-28",
     "nbSocietes": 1
@@ -15478,8 +15478,8 @@
    "titulaires": [],
    "coree": {
     "nom": "Azimsulfuron",
-    "nbHomologations": 39,
-    "nbFabrique": 39,
+    "nbHomologations": 37,
+    "nbFabrique": 37,
     "nbImporte": 0,
     "premiere": "2000-04-03",
     "derniere": "2017-01-26",
@@ -15513,12 +15513,12 @@
    "titulaires": [],
    "coree": {
     "nom": "Indanofan",
-    "nbHomologations": 4,
-    "nbFabrique": 4,
+    "nbHomologations": 1,
+    "nbFabrique": 1,
     "nbImporte": 0,
     "premiere": "2000-03-13",
-    "derniere": "2006-09-29",
-    "nbSocietes": 2
+    "derniere": "2000-03-13",
+    "nbSocietes": 1
    },
    "france": null,
    "australie": null,
@@ -15882,8 +15882,8 @@
    "titulaires": [],
    "coree": {
     "nom": "Imazosulfuron",
-    "nbHomologations": 65,
-    "nbFabrique": 64,
+    "nbHomologations": 63,
+    "nbFabrique": 62,
     "nbImporte": 1,
     "premiere": "1997-02-05",
     "derniere": "2026-07-14",
@@ -17262,8 +17262,8 @@
    "titulaires": [],
    "coree": {
     "nom": "Bensulfuron-methyl",
-    "nbHomologations": 36,
-    "nbFabrique": 36,
+    "nbHomologations": 35,
+    "nbFabrique": 35,
     "nbImporte": 0,
     "premiere": "1988-01-22",
     "derniere": "2026-03-20",
@@ -17675,8 +17675,8 @@
    "titulaires": [],
    "coree": {
     "nom": "Pretilachlor",
-    "nbHomologations": 42,
-    "nbFabrique": 42,
+    "nbHomologations": 41,
+    "nbFabrique": 41,
     "nbImporte": 0,
     "premiere": "1984-04-28",
     "derniere": "2025-08-30",
