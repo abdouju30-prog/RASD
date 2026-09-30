@@ -3,11 +3,11 @@
   "source": "Données E-Phy - Anses",
   "url": "https://www.data.gouv.fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges",
   "licence": "Licence Ouverte / Open Licence",
-  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-22",
-  "majDonnees": "2026-09-22",
-  "genere": "2026-09-29T12:00:20",
+  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-29",
+  "majDonnees": "2026-09-29",
+  "genere": "2026-09-30T11:48:44",
   "nbSubstances": 1337,
-  "nbProduitsPPP": 13567,
+  "nbProduitsPPP": 13568,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
@@ -11263,7 +11263,7 @@
     "D-limonene",
     "huile essentielle d'orange"
    ],
-   "nbProduitsAutorises": 9,
+   "nbProduitsAutorises": 10,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },

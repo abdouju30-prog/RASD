@@ -1,12 +1,12 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-29T12:02:27",
-  "dernierReleve": "2026-09-29",
+  "genere": "2026-09-30T11:50:26",
+  "dernierReleve": "2026-09-30",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
-  "nbNouvelles": 0,
+  "nbNouvelles": 1,
   "nbAvecStatutFrancais": 200,
   "nbAvecStatutAustralien": 172,
   "nbVuesAuBresil": 219,
@@ -495,7 +495,7 @@
    "australie": {
     "nom": "BIFENTHRIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 260,
+    "nbProduitsAgricoles": 261,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -1629,7 +1629,7 @@
    "australie": {
     "nom": "CHLOROTHALONIL",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 85,
+    "nbProduitsAgricoles": 86,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -1745,7 +1745,7 @@
    "australie": {
     "nom": "ATRAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 77,
+    "nbProduitsAgricoles": 76,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -2964,7 +2964,7 @@
    "australie": {
     "nom": "MANCOZEB",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 72,
+    "nbProduitsAgricoles": 71,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3762,7 +3762,7 @@
    "australie": {
     "nom": "FLUMIOXAZIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 32,
+    "nbProduitsAgricoles": 33,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4252,7 +4252,7 @@
    "australie": {
     "nom": "SIMAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 76,
+    "nbProduitsAgricoles": 77,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5863,7 +5863,7 @@
    "australie": {
     "nom": "TRIFLURALIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 80,
+    "nbProduitsAgricoles": 83,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6752,7 +6752,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 65,
+    "nbProduitsAgricoles": 67,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -14972,7 +14972,7 @@
    "australie": {
     "nom": "THIDIAZURON",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 28,
+    "nbProduitsAgricoles": 29,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -15626,7 +15626,7 @@
    "australie": {
     "nom": "DICHLORVOS",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 7,
+    "nbProduitsAgricoles": 6,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -15847,9 +15847,9 @@
    "nouvelle": false
   },
   {
-   "cle": "piracsolat",
-   "nom": "Pyraxolate",
-   "iso": "Pyraxolate",
+   "cle": "pirasolat",
+   "nom": "Pyrazolate",
+   "iso": "Pyrazolate",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -15857,7 +15857,7 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "Pyraxolate",
+    "nom": "Pyrazolate",
     "nbHomologations": 5,
     "nbFabrique": 5,
     "nbImporte": 0,
@@ -15867,8 +15867,8 @@
    },
    "france": null,
    "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
+   "premiereVue": "2026-09-30",
+   "nouvelle": true
   },
   {
    "cle": "imasosulfuron",
@@ -18563,7 +18563,7 @@
    "australie": {
     "nom": "CARBENDAZIM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 26,
+    "nbProduitsAgricoles": 25,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
