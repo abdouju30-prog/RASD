@@ -1,12 +1,12 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-09-30T11:50:26",
-  "dernierReleve": "2026-09-30",
+  "genere": "2026-10-01T12:19:44",
+  "dernierReleve": "2026-10-01",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
-  "nbNouvelles": 1,
+  "nbNouvelles": 0,
   "nbAvecStatutFrancais": 200,
   "nbAvecStatutAustralien": 172,
   "nbVuesAuBresil": 219,
@@ -15868,7 +15868,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-09-30",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "imasosulfuron",
