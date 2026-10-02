@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-01T12:19:44",
-  "dernierReleve": "2026-10-01",
+  "genere": "2026-10-02T11:48:38",
+  "dernierReleve": "2026-10-02",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
@@ -6025,11 +6025,11 @@
    ],
    "coree": {
     "nom": "Thiacloprid",
-    "nbHomologations": 28,
+    "nbHomologations": 29,
     "nbFabrique": 26,
-    "nbImporte": 2,
+    "nbImporte": 3,
     "premiere": "2003-01-14",
-    "derniere": "2026-08-05",
+    "derniere": "2026-10-02",
     "nbSocietes": 17
    },
    "france": {
@@ -18292,12 +18292,12 @@
    "titulaires": [],
    "coree": {
     "nom": "Glyphosate-isopropylammonium",
-    "nbHomologations": 72,
+    "nbHomologations": 73,
     "nbFabrique": 56,
-    "nbImporte": 16,
+    "nbImporte": 17,
     "premiere": "1981-03-02",
-    "derniere": "2026-09-14",
-    "nbSocietes": 28
+    "derniere": "2026-10-02",
+    "nbSocietes": 29
    },
    "france": null,
    "australie": {

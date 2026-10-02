@@ -2,11 +2,11 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-01",
-  "genere": "2026-10-01T12:19:39",
-  "derniereHomologation": "2026-09-14",
-  "nbLignesUsage": 145243,
-  "nbHomologations": 3979,
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-02",
+  "genere": "2026-10-02T11:48:32",
+  "derniereHomologation": "2026-10-02",
+  "nbLignesUsage": 146298,
+  "nbHomologations": 3987,
   "nbSocietes": 98,
   "nbFiliales": 16,
   "nbMatieres": 475,
@@ -19,8 +19,8 @@
   "exclusiviteQuartileHaut": 9.2,
   "nbVerrouillees": 21,
   "partTraduite": 97,
-  "nbFabrique": 3254,
-  "nbImporte": 725,
+  "nbFabrique": 3258,
+  "nbImporte": 729,
   "avertissement": "Registre coréen des produits phytosanitaires. Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. « 제조 » signifie produit fabriqué en Corée, PAS matière active synthétisée sur place : ce registre nomme le titulaire de l'homologation, pas l'usine de synthèse. Les raisons sociales sont romanisées (romanisation révisée) : une poignée pour chercher, pas une identité contractuelle. Ni prix, ni capacité, ni qualité."
  },
  "matieres": [
@@ -133,11 +133,11 @@
    "nomsCoreens": [
     "Acetamiprid"
    ],
-   "nbHomologations": 95,
-   "nbFabrique": 85,
+   "nbHomologations": 96,
+   "nbFabrique": 86,
    "nbImporte": 10,
    "premiere": "1999-01-27",
-   "derniere": "2026-08-24",
+   "derniere": "2026-10-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -145,6 +145,7 @@
     "(주)동방아그로",
     "(주)성심바이오메딕",
     "(주)신농팜케미컬",
+    "(주)위즈팜",
     "(주)유일",
     "(주)장유산업",
     "(주)천지인바이오텍",
@@ -243,11 +244,11 @@
    "nomsCoreens": [
     "Azoxystrobin"
    ],
-   "nbHomologations": 133,
+   "nbHomologations": 134,
    "nbFabrique": 91,
-   "nbImporte": 42,
+   "nbImporte": 43,
    "premiere": "2000-03-13",
-   "derniere": "2026-09-14",
+   "derniere": "2026-10-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -286,6 +287,7 @@
     "에스비성보주식회사",
     "에이치바이오텍",
     "에프엠씨코리아(주)",
+    "유원에코사이언스(주)",
     "인바이오(주)",
     "준아그로",
     "지넥스(주)",
@@ -455,11 +457,11 @@
    "nomsCoreens": [
     "Chlorantraniliprole"
    ],
-   "nbHomologations": 59,
-   "nbFabrique": 44,
-   "nbImporte": 15,
+   "nbHomologations": 61,
+   "nbFabrique": 45,
+   "nbImporte": 16,
    "premiere": "2008-04-07",
-   "derniere": "2026-09-14",
+   "derniere": "2026-10-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -826,16 +828,17 @@
    "nomsCoreens": [
     "Dinotefuran"
    ],
-   "nbHomologations": 34,
+   "nbHomologations": 35,
    "nbFabrique": 30,
-   "nbImporte": 4,
+   "nbImporte": 5,
    "premiere": "2003-01-15",
-   "derniere": "2024-02-08",
+   "derniere": "2026-10-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
     "(주)농협케미컬",
     "(주)성심바이오메딕",
+    "(주)케이씨생명과학",
     "(주)태준아그로텍",
     "(주)팜한농",
     "(주)피에이치엘",
@@ -880,11 +883,11 @@
    "nomsCoreens": [
     "Emamectin benzoate"
    ],
-   "nbHomologations": 107,
-   "nbFabrique": 70,
+   "nbHomologations": 109,
+   "nbFabrique": 72,
    "nbImporte": 37,
    "premiere": "2007-03-29",
-   "derniere": "2026-08-06",
+   "derniere": "2026-10-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -896,6 +899,7 @@
     "(주)새한농",
     "(주)성심바이오메딕",
     "(주)신농팜케미컬",
+    "(주)위즈팜",
     "(주)유일",
     "(주)장유산업",
     "(주)천지인바이오텍",
@@ -904,6 +908,7 @@
     "(주)팜한농",
     "(주)하나바이오",
     "(주)한얼싸이언스",
+    "(주)현농",
     "㈜이엑스아이디",
     "레인보우애그로사이언스(주)",
     "미래아그로",
@@ -2463,12 +2468,13 @@
     "Acetamiprid",
     "Emamectin benzoate"
    ],
-   "nbHomologations": 12,
-   "nbSocietes": 10,
+   "nbHomologations": 13,
+   "nbSocietes": 11,
    "societes": [
     "(주)경농",
     "(주)동방아그로",
     "(주)신농팜케미컬",
+    "(주)위즈팜",
     "(주)케이씨생명과학",
     "(주)태준아그로텍",
     "(주)팜한농",
@@ -2477,13 +2483,13 @@
     "아그리젠토(주)",
     "아다마코리아(주)"
    ],
-   "nbFabrique": 9,
+   "nbFabrique": 10,
    "nbImporte": 3,
    "usages": [
     "살충"
    ],
    "premiere": "2016-04-29",
-   "derniere": "2026-08-06"
+   "derniere": "2026-10-02"
   },
   {
    "cle": "Gibberellic acid + Gibberellin A4+7",
@@ -3167,6 +3173,27 @@
    "derniere": "2018-11-20"
   },
   {
+   "cle": "Chlorantraniliprole + Thiacloprid",
+   "composants": [
+    "Chlorantraniliprole",
+    "Thiacloprid"
+   ],
+   "nbHomologations": 4,
+   "nbSocietes": 3,
+   "societes": [
+    "(주)농협케미컬",
+    "(주)태준아그로텍",
+    "인바이오(주)"
+   ],
+   "nbFabrique": 3,
+   "nbImporte": 1,
+   "usages": [
+    "살충"
+   ],
+   "premiere": "2012-04-09",
+   "derniere": "2026-10-02"
+  },
+  {
    "cle": "Dithianon + Pyraclostrobin",
    "composants": [
     "Dithianon",
@@ -3580,27 +3607,6 @@
    ],
    "premiere": "2010-01-09",
    "derniere": "2021-09-17"
-  },
-  {
-   "cle": "Chlorantraniliprole + Thiacloprid",
-   "composants": [
-    "Chlorantraniliprole",
-    "Thiacloprid"
-   ],
-   "nbHomologations": 3,
-   "nbSocietes": 3,
-   "societes": [
-    "(주)농협케미컬",
-    "(주)태준아그로텍",
-    "인바이오(주)"
-   ],
-   "nbFabrique": 3,
-   "nbImporte": 0,
-   "usages": [
-    "살충"
-   ],
-   "premiere": "2012-04-09",
-   "derniere": "2026-04-20"
   },
   {
    "cle": "Chlorfenapyr + Emamectin benzoate",
@@ -23013,8 +23019,8 @@
     "premierGenerique": "1981-03-02",
     "premierGeneriqueSociete": "Farm Hannong",
     "ecartAns": null,
-    "nbSocietes": 28,
-    "nbIndependants": 24
+    "nbSocietes": 29,
+    "nbIndependants": 25
    },
    {
     "matiere": "Bentazone",
@@ -25029,8 +25035,8 @@
     "premierGenerique": "1997-02-05",
     "premierGeneriqueSociete": "Nonghyup Chemical",
     "ecartAns": null,
-    "nbSocietes": 23,
-    "nbIndependants": 20
+    "nbSocietes": 24,
+    "nbIndependants": 21
    },
    {
     "matiere": "Imazosulfuron",
@@ -25221,8 +25227,8 @@
     "premierGenerique": "1999-01-27",
     "premierGeneriqueSociete": "Kyung Nong",
     "ecartAns": null,
-    "nbSocietes": 32,
-    "nbIndependants": 29
+    "nbSocietes": 33,
+    "nbIndependants": 30
    },
    {
     "matiere": "Triflumizole",
@@ -25377,8 +25383,8 @@
     "premierGenerique": "2000-03-13",
     "premierGeneriqueSociete": "Hankook Samgong",
     "ecartAns": null,
-    "nbSocietes": 46,
-    "nbIndependants": 42
+    "nbSocietes": 47,
+    "nbIndependants": 43
    },
    {
     "matiere": "Cyclosulfamuron",
@@ -25785,8 +25791,8 @@
     "premierGenerique": "2003-01-15",
     "premierGeneriqueSociete": "Nonghyup Chemical",
     "ecartAns": null,
-    "nbSocietes": 14,
-    "nbIndependants": 14
+    "nbSocietes": 15,
+    "nbIndependants": 15
    },
    {
     "matiere": "Clothianidin",
@@ -26373,8 +26379,8 @@
     "premierGenerique": "2009-04-09",
     "premierGeneriqueSociete": "Taejun Agrotech",
     "ecartAns": 2.1,
-    "nbSocietes": 39,
-    "nbIndependants": 36
+    "nbSocietes": 41,
+    "nbIndependants": 38
    },
    {
     "matiere": "Famoxadone",
@@ -31201,11 +31207,11 @@
   {
    "nom": "Thiacloprid",
    "iso": null,
-   "nbHomologations": 28,
+   "nbHomologations": 29,
    "nbFabrique": 26,
-   "nbImporte": 2,
+   "nbImporte": 3,
    "premiere": "2003-01-14",
-   "derniere": "2026-08-05",
+   "derniere": "2026-10-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -31816,11 +31822,11 @@
   {
    "nom": "Lufenuron",
    "iso": null,
-   "nbHomologations": 40,
-   "nbFabrique": 36,
+   "nbHomologations": 41,
+   "nbFabrique": 37,
    "nbImporte": 4,
    "premiere": "1997-02-05",
-   "derniere": "2026-08-26",
+   "derniere": "2026-10-02",
    "societes": [
     "(주)농협케미컬",
     "(주)대유",
@@ -31832,6 +31838,7 @@
     "(주)태준아그로텍",
     "(주)팜한농",
     "(주)한얼싸이언스",
+    "(주)현농",
     "㈜이엑스아이디",
     "레인보우애그로사이언스(주)",
     "미래아그로",
@@ -33833,11 +33840,11 @@
   {
    "nom": "Glyphosate-isopropylammonium",
    "iso": null,
-   "nbHomologations": 72,
+   "nbHomologations": 73,
    "nbFabrique": 56,
-   "nbImporte": 16,
+   "nbImporte": 17,
    "premiere": "1981-03-02",
-   "derniere": "2026-09-14",
+   "derniere": "2026-10-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -33863,6 +33870,7 @@
     "아그로스타(주)",
     "아그리젠토(주)",
     "아다마코리아(주)",
+    "아진케미칼(주)",
     "에스비성보주식회사",
     "유원에코사이언스(주)",
     "인바이오(주)",
@@ -34736,6 +34744,59 @@
    "derniere": "2026-03-20"
   },
   {
+   "cle": "(주)케이씨생명과학",
+   "nom": "(주)케이씨생명과학",
+   "latin": "keissisaengmyeonggwahak",
+   "commercial": "KC Life Science",
+   "groupe": null,
+   "formes": [
+    "S.A."
+   ],
+   "nbHomologations": 148,
+   "nbFabrique": 80,
+   "nbImporte": 68,
+   "nbMatieres": 66,
+   "matieres": [
+    "ABAMECTIN",
+    "ACETAMIPRID",
+    "AZOXYSTROBIN",
+    "BENTAZONE",
+    "BUPROFEZIN",
+    "CAPTAN",
+    "CHLORANTRANILIPROLE",
+    "CYPERMETHRIN",
+    "DELTAMETHRIN",
+    "DIFENOCONAZOLE",
+    "DIMETHOATE",
+    "DIMETHOMORPH",
+    "DINOTEFURAN",
+    "DITHIANON",
+    "EMAMECTIN BENZOATE",
+    "FLONICAMID",
+    "FLUAZINAM",
+    "FLUDIOXONIL",
+    "FORCHLORFENURON",
+    "GIBBERELLIC ACID",
+    "IMIDACLOPRID",
+    "INDOXACARB",
+    "LAMBDA-CYHALOTHRIN",
+    "METALDEHYDE",
+    "OXYFLUORFEN",
+    "PENDIMETHALIN",
+    "PYRACLOSTROBIN",
+    "PYRIDABEN",
+    "PYRIPROXYFEN",
+    "S-METOLACHLOR",
+    "SPINOSAD",
+    "SPIROTETRAMAT",
+    "TEBUCONAZOLE",
+    "TEBUFENOZIDE",
+    "TRIFLOXYSTROBIN"
+   ],
+   "premiere": "1981-03-02",
+   "derniere": "2026-10-02"
+  },
+  {
    "cle": "아그리젠토(주)",
    "nom": "아그리젠토(주)",
    "latin": "ageurijento",
@@ -34789,58 +34850,6 @@
    "derniere": "2026-07-29"
   },
   {
-   "cle": "(주)케이씨생명과학",
-   "nom": "(주)케이씨생명과학",
-   "latin": "keissisaengmyeonggwahak",
-   "commercial": "KC Life Science",
-   "groupe": null,
-   "formes": [
-    "S.A."
-   ],
-   "nbHomologations": 146,
-   "nbFabrique": 79,
-   "nbImporte": 67,
-   "nbMatieres": 65,
-   "matieres": [
-    "ABAMECTIN",
-    "ACETAMIPRID",
-    "AZOXYSTROBIN",
-    "BENTAZONE",
-    "BUPROFEZIN",
-    "CAPTAN",
-    "CHLORANTRANILIPROLE",
-    "CYPERMETHRIN",
-    "DELTAMETHRIN",
-    "DIFENOCONAZOLE",
-    "DIMETHOATE",
-    "DIMETHOMORPH",
-    "DITHIANON",
-    "EMAMECTIN BENZOATE",
-    "FLONICAMID",
-    "FLUAZINAM",
-    "FLUDIOXONIL",
-    "FORCHLORFENURON",
-    "GIBBERELLIC ACID",
-    "IMIDACLOPRID",
-    "INDOXACARB",
-    "LAMBDA-CYHALOTHRIN",
-    "METALDEHYDE",
-    "OXYFLUORFEN",
-    "PENDIMETHALIN",
-    "PYRACLOSTROBIN",
-    "PYRIDABEN",
-    "PYRIPROXYFEN",
-    "S-METOLACHLOR",
-    "SPINOSAD",
-    "SPIROTETRAMAT",
-    "TEBUCONAZOLE",
-    "TEBUFENOZIDE",
-    "TRIFLOXYSTROBIN"
-   ],
-   "premiere": "1981-03-02",
-   "derniere": "2026-08-24"
-  },
-  {
    "cle": "(주)태준아그로텍",
    "nom": "(주)태준아그로텍",
    "latin": "taejunageurotek",
@@ -34849,9 +34858,9 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 93,
+   "nbHomologations": 94,
    "nbFabrique": 62,
-   "nbImporte": 31,
+   "nbImporte": 32,
    "nbMatieres": 51,
    "matieres": [
     "ABAMECTIN",
@@ -34885,7 +34894,7 @@
     "TRIFLOXYSTROBIN"
    ],
    "premiere": "1987-04-15",
-   "derniere": "2026-07-29"
+   "derniere": "2026-10-02"
   },
   {
    "cle": "(주)신농팜케미컬",
@@ -35110,13 +35119,14 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 64,
+   "nbHomologations": 65,
    "nbFabrique": 46,
-   "nbImporte": 18,
-   "nbMatieres": 39,
+   "nbImporte": 19,
+   "nbMatieres": 40,
    "matieres": [
     "ABAMECTIN",
     "ACETAMIPRID",
+    "AZOXYSTROBIN",
     "BENTAZONE",
     "CAPTAN",
     "CHLORANTRANILIPROLE",
@@ -35137,7 +35147,7 @@
     "TEBUCONAZOLE"
    ],
    "premiere": "1981-03-02",
-   "derniere": "2026-09-14"
+   "derniere": "2026-10-02"
   },
   {
    "cle": "팜아그로텍(주)",
@@ -35252,10 +35262,10 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 36,
+   "nbHomologations": 37,
    "nbFabrique": 33,
-   "nbImporte": 3,
-   "nbMatieres": 29,
+   "nbImporte": 4,
+   "nbMatieres": 30,
    "matieres": [
     "ABAMECTIN",
     "ACETAMIPRID",
@@ -35275,7 +35285,7 @@
     "TEBUCONAZOLE"
    ],
    "premiere": "2017-09-20",
-   "derniere": "2025-11-25"
+   "derniere": "2026-10-02"
   },
   {
    "cle": "㈜이엑스아이디",
@@ -35531,6 +35541,35 @@
    "derniere": "2025-12-30"
   },
   {
+   "cle": "(주)위즈팜",
+   "nom": "(주)위즈팜",
+   "latin": "wijeupam",
+   "commercial": null,
+   "groupe": null,
+   "formes": [
+    "S.A."
+   ],
+   "nbHomologations": 19,
+   "nbFabrique": 12,
+   "nbImporte": 7,
+   "nbMatieres": 17,
+   "matieres": [
+    "ACETAMIPRID",
+    "AZOXYSTROBIN",
+    "CHLORANTRANILIPROLE",
+    "EMAMECTIN BENZOATE",
+    "FLONICAMID",
+    "FLUAZINAM",
+    "FLUDIOXONIL",
+    "INDOXACARB",
+    "PYRIDABEN",
+    "SPIROTETRAMAT",
+    "TEBUCONAZOLE"
+   ],
+   "premiere": "2024-05-20",
+   "derniere": "2026-10-02"
+  },
+  {
    "cle": "바이오캠주식회사",
    "nom": "바이오캠주식회사",
    "latin": "baiokaem",
@@ -35642,33 +35681,6 @@
    ],
    "premiere": "2002-10-30",
    "derniere": "2021-01-08"
-  },
-  {
-   "cle": "(주)위즈팜",
-   "nom": "(주)위즈팜",
-   "latin": "wijeupam",
-   "commercial": null,
-   "groupe": null,
-   "formes": [
-    "S.A."
-   ],
-   "nbHomologations": 18,
-   "nbFabrique": 11,
-   "nbImporte": 7,
-   "nbMatieres": 15,
-   "matieres": [
-    "AZOXYSTROBIN",
-    "CHLORANTRANILIPROLE",
-    "FLONICAMID",
-    "FLUAZINAM",
-    "FLUDIOXONIL",
-    "INDOXACARB",
-    "PYRIDABEN",
-    "SPIROTETRAMAT",
-    "TEBUCONAZOLE"
-   ],
-   "premiere": "2024-05-20",
-   "derniere": "2026-05-20"
   },
   {
    "cle": "(주)성심바이오메딕",
@@ -36126,6 +36138,26 @@
    "derniere": "2017-10-19"
   },
   {
+   "cle": "(주)현농",
+   "nom": "(주)현농",
+   "latin": "hyeonnong",
+   "commercial": null,
+   "groupe": null,
+   "formes": [
+    "S.A."
+   ],
+   "nbHomologations": 4,
+   "nbFabrique": 4,
+   "nbImporte": 0,
+   "nbMatieres": 4,
+   "matieres": [
+    "ABAMECTIN",
+    "EMAMECTIN BENZOATE"
+   ],
+   "premiere": "2013-03-22",
+   "derniere": "2026-10-02"
+  },
+  {
    "cle": "스미토모화학아그로서울(주)",
    "nom": "스미토모화학아그로서울(주)",
    "latin": "seumitomohwahakageuroseoul",
@@ -36297,25 +36329,6 @@
    ],
    "premiere": "2024-10-17",
    "derniere": "2025-05-20"
-  },
-  {
-   "cle": "(주)현농",
-   "nom": "(주)현농",
-   "latin": "hyeonnong",
-   "commercial": null,
-   "groupe": null,
-   "formes": [
-    "S.A."
-   ],
-   "nbHomologations": 2,
-   "nbFabrique": 2,
-   "nbImporte": 0,
-   "nbMatieres": 2,
-   "matieres": [
-    "ABAMECTIN"
-   ],
-   "premiere": "2013-03-22",
-   "derniere": "2022-05-04"
   },
   {
    "cle": "아그로프레쉬코리아(유)",
