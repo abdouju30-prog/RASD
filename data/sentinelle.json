@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-06T12:41:37",
-  "dernierReleve": "2026-10-06",
+  "genere": "2026-10-07T12:33:43",
+  "dernierReleve": "2026-10-07",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
@@ -495,7 +495,7 @@
    "australie": {
     "nom": "BIFENTHRIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 261,
+    "nbProduitsAgricoles": 263,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -1745,7 +1745,7 @@
    "australie": {
     "nom": "ATRAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 76,
+    "nbProduitsAgricoles": 77,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3762,7 +3762,7 @@
    "australie": {
     "nom": "FLUMIOXAZIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 33,
+    "nbProduitsAgricoles": 34,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5366,7 +5366,7 @@
    "australie": {
     "nom": "PACLOBUTRAZOL",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 35,
+    "nbProduitsAgricoles": 36,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -15847,9 +15847,9 @@
    "nouvelle": false
   },
   {
-   "cle": "pirasolat",
-   "nom": "Pyrazolate",
-   "iso": "Pyrazolate",
+   "cle": "piracsolat",
+   "nom": "Pyraxolate",
+   "iso": "Pyraxolate",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -15857,7 +15857,7 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "Pyrazolate",
+    "nom": "Pyraxolate",
     "nbHomologations": 5,
     "nbFabrique": 5,
     "nbImporte": 0,
@@ -15867,7 +15867,7 @@
    },
    "france": null,
    "australie": null,
-   "premiereVue": "2026-09-30",
+   "premiereVue": "2026-09-07",
    "nouvelle": false
   },
   {
@@ -17480,7 +17480,7 @@
    "australie": {
     "nom": "MECOPROP",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 1,
+    "nbProduitsAgricoles": 2,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",

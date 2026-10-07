@@ -2,10 +2,10 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-05",
-  "genere": "2026-10-05T13:26:35",
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-07",
+  "genere": "2026-10-07T12:33:38",
   "derniereHomologation": "2026-10-02",
-  "nbLignesUsage": 146298,
+  "nbLignesUsage": 146343,
   "nbHomologations": 3987,
   "nbSocietes": 98,
   "nbFiliales": 16,
@@ -14,7 +14,7 @@
   "nbNomsIso": 168,
   "nbHorsIndex": 362,
   "nbMelanges": 1052,
-  "nbUsages": 30933,
+  "nbUsages": 30951,
   "exclusiviteMediane": 3.1,
   "exclusiviteQuartileHaut": 9.2,
   "nbVerrouillees": 21,
@@ -11243,11 +11243,11 @@
    "derniere": "2011-03-29"
   },
   {
-   "cle": "Benzobicyclon + Penoxsulam + Pyrazolate",
+   "cle": "Benzobicyclon + Penoxsulam + Pyraxolate",
    "composants": [
     "Benzobicyclon",
     "Penoxsulam",
-    "Pyrazolate"
+    "Pyraxolate"
    ],
    "nbHomologations": 1,
    "nbSocietes": 1,
@@ -20437,10 +20437,10 @@
    "derniere": "1999-10-16"
   },
   {
-   "cle": "Imazosulfuron + Pyrazolate + Simetryn",
+   "cle": "Imazosulfuron + Pyraxolate + Simetryn",
    "composants": [
     "Imazosulfuron",
-    "Pyrazolate",
+    "Pyraxolate",
     "Simetryn"
    ],
    "nbHomologations": 1,
@@ -22248,10 +22248,10 @@
    "derniere": "2014-11-04"
   },
   {
-   "cle": "Pretilachlor + Pyrazolate",
+   "cle": "Pretilachlor + Pyraxolate",
    "composants": [
     "Pretilachlor",
-    "Pyrazolate"
+    "Pyraxolate"
    ],
    "nbHomologations": 1,
    "nbSocietes": 1,
@@ -22516,9 +22516,9 @@
    "derniere": "2017-01-26"
   },
   {
-   "cle": "Pyrazolate + Pyrazosulfuron-ethyl + Simetryn",
+   "cle": "Pyraxolate + Pyrazosulfuron-ethyl + Simetryn",
    "composants": [
-    "Pyrazolate",
+    "Pyraxolate",
     "Pyrazosulfuron-ethyl",
     "Simetryn"
    ],
@@ -25075,7 +25075,7 @@
     "nbIndependants": 1
    },
    {
-    "matiere": "Pyrazolate",
+    "matiere": "Pyraxolate",
     "iso": null,
     "premiere": "1997-02-05",
     "premierTitulaire": "Farm Hannong",
@@ -31807,7 +31807,7 @@
    ]
   },
   {
-   "nom": "Pyrazolate",
+   "nom": "Pyraxolate",
    "iso": null,
    "nbHomologations": 5,
    "nbFabrique": 5,
@@ -34696,8 +34696,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 183,
-   "nbFabrique": 174,
+   "nbHomologations": 184,
+   "nbFabrique": 175,
    "nbImporte": 9,
    "nbMatieres": 104,
    "matieres": [
@@ -35393,8 +35393,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 34,
-   "nbFabrique": 34,
+   "nbHomologations": 33,
+   "nbFabrique": 33,
    "nbImporte": 0,
    "nbMatieres": 25,
    "matieres": [
@@ -35413,7 +35413,7 @@
     "PYRACLOSTROBIN",
     "TEBUCONAZOLE"
    ],
-   "premiere": "2012-02-15",
+   "premiere": "2012-12-04",
    "derniere": "2022-01-14"
   },
   {
