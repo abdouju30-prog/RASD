@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-07T12:33:43",
-  "dernierReleve": "2026-10-07",
+  "genere": "2026-10-08T12:43:23",
+  "dernierReleve": "2026-10-08",
   "premierReleve": false,
   "nbCandidates": 476,
   "nbEcarteesIndexMaroc": 37,
@@ -16683,11 +16683,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Flazasulfuron",
-    "nbHomologations": 14,
-    "nbFabrique": 10,
+    "nbHomologations": 15,
+    "nbFabrique": 11,
     "nbImporte": 4,
     "premiere": "1992-04-23",
-    "derniere": "2025-03-07",
+    "derniere": "2026-10-07",
     "nbSocietes": 8
    },
    "france": {

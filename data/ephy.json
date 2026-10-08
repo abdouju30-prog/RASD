@@ -3,18 +3,33 @@
   "source": "Données E-Phy - Anses",
   "url": "https://www.data.gouv.fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges",
   "licence": "Licence Ouverte / Open Licence",
-  "attribution": "Données E-Phy - Anses — mise à jour du 2026-09-29",
-  "majDonnees": "2026-09-29",
-  "genere": "2026-10-07T12:32:02",
+  "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-07",
+  "majDonnees": "2026-10-07",
+  "genere": "2026-10-08T12:41:42",
   "nbSubstances": 1337,
-  "nbProduitsPPP": 13568,
+  "nbProduitsPPP": 13569,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
   "premiereImport": false,
-  "nbChangements": 0,
+  "nbChangements": 2,
   "dateComparaison": "2026-09-29",
-  "changements": []
+  "changements": [
+   {
+    "id": "straight-chain-lepidopteran-pheromones",
+    "nom": "Straight Chain Lepidopteran Pheromones",
+    "type": "disparue",
+    "avant": "autorisée",
+    "apres": null
+   },
+   {
+    "id": "straight-chain-lepidopteran-pheromones-ancienne-approbation",
+    "nom": "Straight Chain Lepidopteran Pheromones_ancienne approbation",
+    "type": "nouvelle",
+    "avant": null,
+    "apres": "indéterminée"
+   }
+  ]
  },
  "substances": [
   {
@@ -1800,7 +1815,7 @@
     "Aureobasidium pullulans souche DSM 14940",
     "Aureobasidium pullulans souche DSM 14941"
    ],
-   "nbProduitsAutorises": 2,
+   "nbProduitsAutorises": 6,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },
@@ -8424,9 +8439,9 @@
     "glyphosate sel monosodium",
     "glyphosate trimesium"
    ],
-   "nbProduitsAutorises": 8,
-   "nbProduitsRetires": 682,
-   "dernierRetrait": "2026-05-20"
+   "nbProduitsAutorises": 7,
+   "nbProduitsRetires": 683,
+   "dernierRetrait": "2026-09-07"
   },
   {
    "id": "gomme-manille",
@@ -14459,8 +14474,75 @@
    "dernierRetrait": null
   },
   {
-   "id": "straight-chain-lepidopteran-pheromones",
-   "nom": "Straight Chain Lepidopteran Pheromones",
+   "id": "straight-chain-lepidopteran-pheromones-sclps-acetates",
+   "nom": "Straight Chain Lepidopteran Pheromones (SCLPs) - Acetates",
+   "cas": null,
+   "etat": "INSCRITE",
+   "variantes": [
+    "(E)-5-decen-1-yl acétate",
+    "(E)-8-dodecen-1-yl acétate",
+    "(E,E)-7,9-dodecadien-1-yl acétate",
+    "(E,E)-8,10-dodecadien-1-yl acétate",
+    "(E,Z)-2,13-octadecadien-1-yl acétate",
+    "(E,Z)-3,13-octadecadien-1-yl acétate",
+    "(E,Z)-3,8-tetradecadien-1-yl acétate",
+    "(E,Z)-7,9-dodecadien-1-yl acétate",
+    "(E,Z,Z)-3,8,11-tetradecatrien-1-yl acétate",
+    "(Z)-11-tetradecen-1-yl acétate",
+    "(Z)-8-dodecen-1-yl acétate",
+    "(Z)-8-tetradecen-1-yl acétate",
+    "(Z)-9-dodecen-1-yl acétate",
+    "(Z)-9-tetradecen-1-yl acétate",
+    "(Z,E)-7,11-hexadecadien-1-yl acétate",
+    "(Z,Z)-7,11-hexadecadien-1-yl acétate",
+    "Straight Chain Lepidopteran Pheromones (SCLPs) - Acetates",
+    "n-dodecyl acétate",
+    "n-hexadecyl acetate",
+    "n-tetradecylacétate"
+   ],
+   "nbProduitsAutorises": 0,
+   "nbProduitsRetires": 0,
+   "dernierRetrait": null
+  },
+  {
+   "id": "straight-chain-lepidopteran-pheromones-sclps-alcohols",
+   "nom": "Straight Chain Lepidopteran Pheromones (SCLPs) - Alcohols",
+   "cas": null,
+   "etat": "INSCRITE",
+   "variantes": [
+    "(E)-5-decen-1-ol",
+    "(E,E)-8,10-dodecadien-1-ol",
+    "(Z)-11-hexadecen-1-ol",
+    "(Z)-8-dodecen-1-ol",
+    "(Z)-8-tetradecen-1-ol",
+    "(Z)-9-tetradecen-1-ol",
+    "Straight Chain Lepidopteran Pheromones (SCLPs) - Alcohols",
+    "dodecan-1-ol",
+    "tetradecan-1-ol"
+   ],
+   "nbProduitsAutorises": 0,
+   "nbProduitsRetires": 0,
+   "dernierRetrait": null
+  },
+  {
+   "id": "straight-chain-lepidopteran-pheromones-sclps-aldehydes",
+   "nom": "Straight Chain Lepidopteran Pheromones (SCLPs) - Aldehydes",
+   "cas": null,
+   "etat": "INSCRITE",
+   "variantes": [
+    "(Z)-11-Hexadecenal",
+    "(Z)-13-Octadecenal",
+    "(Z)-7-Tetradecenal",
+    "(Z)-9-Hexadecenal",
+    "Straight Chain Lepidopteran Pheromones (SCLPs) - Aldehydes"
+   ],
+   "nbProduitsAutorises": 0,
+   "nbProduitsRetires": 0,
+   "dernierRetrait": null
+  },
+  {
+   "id": "straight-chain-lepidopteran-pheromones-ancienne-approbation",
+   "nom": "Straight Chain Lepidopteran Pheromones_ancienne approbation",
    "cas": null,
    "etat": "INSCRITE",
    "variantes": [
@@ -14533,75 +14615,7 @@
     "Z9-dodécenylacétate",
     "n-hexadécylacétate",
     "n-tétradecylacétate (14Ac)",
-    "tétradécan-1-ol",
-    "z-8-dodécenyl acétate"
-   ],
-   "nbProduitsAutorises": 13,
-   "nbProduitsRetires": 1,
-   "dernierRetrait": "2015-12-04"
-  },
-  {
-   "id": "straight-chain-lepidopteran-pheromones-sclps-acetates",
-   "nom": "Straight Chain Lepidopteran Pheromones (SCLPs) - Acetates",
-   "cas": null,
-   "etat": "INSCRITE",
-   "variantes": [
-    "(E)-5-decen-1-yl acétate",
-    "(E)-8-dodecen-1-yl acétate",
-    "(E,E)-7,9-dodecadien-1-yl acétate",
-    "(E,E)-8,10-dodecadien-1-yl acétate",
-    "(E,Z)-2,13-octadecadien-1-yl acétate",
-    "(E,Z)-3,13-octadecadien-1-yl acétate",
-    "(E,Z)-3,8-tetradecadien-1-yl acétate",
-    "(E,Z)-7,9-dodecadien-1-yl acétate",
-    "(E,Z,Z)-3,8,11-tetradecatrien-1-yl acétate",
-    "(Z)-11-tetradecen-1-yl acétate",
-    "(Z)-8-dodecen-1-yl acétate",
-    "(Z)-8-tetradecen-1-yl acétate",
-    "(Z)-9-dodecen-1-yl acétate",
-    "(Z)-9-tetradecen-1-yl acétate",
-    "(Z,E)-7,11-hexadecadien-1-yl acétate",
-    "(Z,Z)-7,11-hexadecadien-1-yl acétate",
-    "Straight Chain Lepidopteran Pheromones (SCLPs) - Acetates",
-    "n-dodecyl acétate",
-    "n-hexadecyl acetate",
-    "n-tetradecylacétate"
-   ],
-   "nbProduitsAutorises": 0,
-   "nbProduitsRetires": 0,
-   "dernierRetrait": null
-  },
-  {
-   "id": "straight-chain-lepidopteran-pheromones-sclps-alcohols",
-   "nom": "Straight Chain Lepidopteran Pheromones (SCLPs) - Alcohols",
-   "cas": null,
-   "etat": "INSCRITE",
-   "variantes": [
-    "(E)-5-decen-1-ol",
-    "(E,E)-8,10-dodecadien-1-ol",
-    "(Z)-11-hexadecen-1-ol",
-    "(Z)-8-dodecen-1-ol",
-    "(Z)-8-tetradecen-1-ol",
-    "(Z)-9-tetradecen-1-ol",
-    "Straight Chain Lepidopteran Pheromones (SCLPs) - Alcohols",
-    "dodecan-1-ol",
-    "tetradecan-1-ol"
-   ],
-   "nbProduitsAutorises": 0,
-   "nbProduitsRetires": 0,
-   "dernierRetrait": null
-  },
-  {
-   "id": "straight-chain-lepidopteran-pheromones-sclps-aldehydes",
-   "nom": "Straight Chain Lepidopteran Pheromones (SCLPs) - Aldehydes",
-   "cas": null,
-   "etat": "INSCRITE",
-   "variantes": [
-    "(Z)-11-Hexadecenal",
-    "(Z)-13-Octadecenal",
-    "(Z)-7-Tetradecenal",
-    "(Z)-9-Hexadecenal",
-    "Straight Chain Lepidopteran Pheromones (SCLPs) - Aldehydes"
+    "tétradécan-1-ol"
    ],
    "nbProduitsAutorises": 0,
    "nbProduitsRetires": 0,
@@ -16390,7 +16404,7 @@
    "variantes": [
     "phosphure de zinc"
    ],
-   "nbProduitsAutorises": 3,
+   "nbProduitsAutorises": 4,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },

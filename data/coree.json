@@ -2,11 +2,11 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-07",
-  "genere": "2026-10-07T12:33:38",
-  "derniereHomologation": "2026-10-02",
-  "nbLignesUsage": 146343,
-  "nbHomologations": 3987,
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-08",
+  "genere": "2026-10-08T12:43:18",
+  "derniereHomologation": "2026-10-07",
+  "nbLignesUsage": 146387,
+  "nbHomologations": 3988,
   "nbSocietes": 98,
   "nbFiliales": 16,
   "nbMatieres": 475,
@@ -14,12 +14,12 @@
   "nbNomsIso": 168,
   "nbHorsIndex": 362,
   "nbMelanges": 1052,
-  "nbUsages": 30951,
+  "nbUsages": 30979,
   "exclusiviteMediane": 3.1,
   "exclusiviteQuartileHaut": 9.2,
   "nbVerrouillees": 21,
   "partTraduite": 97,
-  "nbFabrique": 3258,
+  "nbFabrique": 3259,
   "nbImporte": 729,
   "avertissement": "Registre coréen des produits phytosanitaires. Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. « 제조 » signifie produit fabriqué en Corée, PAS matière active synthétisée sur place : ce registre nomme le titulaire de l'homologation, pas l'usine de synthèse. Les raisons sociales sont romanisées (romanisation révisée) : une poignée pour chercher, pas une identité contractuelle. Ni prix, ni capacité, ni qualité."
  },
@@ -32518,11 +32518,11 @@
   {
    "nom": "Flazasulfuron",
    "iso": null,
-   "nbHomologations": 14,
-   "nbFabrique": 10,
+   "nbHomologations": 15,
+   "nbFabrique": 11,
    "nbImporte": 4,
    "premiere": "1992-04-23",
-   "derniere": "2025-03-07",
+   "derniere": "2026-10-07",
    "societes": [
     "(주)대유",
     "(주)동방아그로",
@@ -34455,8 +34455,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 223,
-   "nbFabrique": 218,
+   "nbHomologations": 224,
+   "nbFabrique": 219,
    "nbImporte": 5,
    "nbMatieres": 120,
    "matieres": [
@@ -34506,7 +34506,7 @@
     "TRINEXAPAC-ETHYL"
    ],
    "premiere": "1981-03-02",
-   "derniere": "2026-08-26"
+   "derniere": "2026-10-07"
   },
   {
    "cle": "한국삼공(주)",
