@@ -40,7 +40,7 @@ import sys
 import unicodedata
 from datetime import date, datetime
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import unquote, urljoin
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _reseau import telecharger  # noqa: E402
@@ -552,7 +552,10 @@ def appliquer_journal(textes: list[dict]) -> tuple[list[dict], int, int]:
                 ancien = {"date": ancien, "url": None}
             t["nouveau"] = False
             t["premiereVue"] = ancien.get("date")
-            if t.get("url") and ancien.get("url") and t["url"] != ancien["url"]:
+            # « é » et « %C3%A9 » désignent le même PDF : comparer les adresses
+            # décodées, sinon un relevé Linux après un relevé Windows marque
+            # tous les textes « mis à jour ».
+            if t.get("url") and ancien.get("url") and unquote(t["url"]) != unquote(ancien["url"]):
                 t["misAJour"] = True
                 nb_maj += 1
                 connues[i] = {"date": ancien.get("date"), "url": t["url"]}
