@@ -1,16 +1,16 @@
 {
  "meta": {
   "source": "eservice.onssa.gov.ma/IndPesticide.aspx",
-  "genere": "2026-09-11T12:24:00",
-  "majIndex": "11/09/2026 12:24:00",
+  "genere": "2026-10-01T11:31:00",
+  "majIndex": "01/10/2026 11:31:00",
   "url": "https://eservice.onssa.gov.ma/IndPesticide.aspx",
   "detenteurDefaut": "PHYTO BEHT",
   "nbDetenteursCouverts": 76,
-  "nbLignesIndex": 5782,
-  "nbProduitsIndex": 1472,
+  "nbLignesIndex": 5790,
+  "nbProduitsIndex": 1473,
   "nbDetenteurs": 76,
-  "nbFiches": 1472,
-  "avertissement": "Index ONSSA importé depuis l'e-service public IndPesticide.aspx (MAJ 11/09/2026 12:24:00). Le pays des fournisseurs est inféré par mots-clés (paysInfere=true) et doit être vérifié avant tout engagement commercial. Aucun prix ne figure dans la source."
+  "nbFiches": 1473,
+  "avertissement": "Index ONSSA importé depuis l'e-service public IndPesticide.aspx (MAJ 01/10/2026 11:31:00). Le pays des fournisseurs est inféré par mots-clés (paysInfere=true) et doit être vérifié avant tout engagement commercial. Aucun prix ne figure dans la source."
  },
  "fournisseurs": [
   {
@@ -43,7 +43,7 @@
    "paysFiable": true,
    "coutFaible": true,
    "multinationale": false,
-   "nbLignesMaroc": 362,
+   "nbLignesMaroc": 369,
    "nbMatieresActives": 93
   },
   {
@@ -362,7 +362,7 @@
    "paysFiable": false,
    "coutFaible": false,
    "multinationale": false,
-   "nbLignesMaroc": 33,
+   "nbLignesMaroc": 32,
    "nbMatieresActives": 12
   },
   {
@@ -894,6 +894,17 @@
    "nbMatieresActives": 2
   },
   {
+   "id": "adama-agriculture-espana-s-a",
+   "nom": "ADAMA AGRICULTURE ESPANA S.A",
+   "pays": "Espagne",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": false,
+   "multinationale": true,
+   "nbLignesMaroc": 11,
+   "nbMatieresActives": 10
+  },
+  {
    "id": "cpcm",
    "nom": "CPCM",
    "pays": "Maroc",
@@ -1002,17 +1013,6 @@
    "multinationale": false,
    "nbLignesMaroc": 10,
    "nbMatieresActives": 8
-  },
-  {
-   "id": "adama-agriculture-espana-s-a",
-   "nom": "ADAMA AGRICULTURE ESPANA S.A",
-   "pays": "Espagne",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": false,
-   "multinationale": true,
-   "nbLignesMaroc": 10,
-   "nbMatieresActives": 10
   },
   {
    "id": "agrichem-uk",
@@ -2294,6 +2294,17 @@
    "id": "elephant-vert",
    "nom": "ELEPHANT VERT",
    "pays": null,
+   "paysInfere": true,
+   "paysFiable": false,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 1,
+   "nbMatieresActives": 1
+  },
+  {
+   "id": "field-protection-sl",
+   "nom": "Field Protection sl",
+   "pays": "Espagne",
    "paysInfere": true,
    "paysFiable": false,
    "coutFaible": false,
@@ -7843,8 +7854,10 @@
    "referentielDoses": [
     "Agrumes / Acariens :: 50 cc/hl :: 28",
     "Concombre / Acariens :: 25 cc/hl :: 1",
+    "Concombre / Acariens :: 25 cc/hl :: 3",
     "Courgette / Acariens :: 25 cc/hl :: 03",
     "Courgette / Acariens :: 25 cc/hl :: 1",
+    "Courgette / Acariens :: 25 cc/hl :: 3",
     "Fraisier / Acariens :: 25 cc/h :: 3",
     "Fraisier / Acariens :: 25 cc/hl :: 03",
     "Fraisier / Acariens :: 25 cc/hl :: 3",
@@ -17391,6 +17404,7 @@
    ],
    "nbHomologations": 2,
    "referentielDoses": [
+    "Betterave à sucre / Adventices Dicotylédones :: 0,625 L/ha :: -",
     "Betterave à sucre / Adventices Dicotylédones :: 2 l/ha :: -",
     "Betterave à sucre / Adventices Graminées annuelles :: 0.625 l/ha :: -",
     "Betterave à sucre / Adventices Graminées annuelles :: 1 l/ha :: -"
@@ -26537,7 +26551,7 @@
     "Oïdium"
    ],
    "produits": [
-    "KARBICURE"
+    "MERANTO SL"
    ],
    "nbHomologations": 1,
    "referentielDoses": [
@@ -31629,7 +31643,7 @@
    ],
    "nbHomologations": 1,
    "referentielDoses": [
-    "Betterave à sucre / Adventices Graminées annuelles :: 1 l/ha :: 75"
+    "Betterave à sucre / Adventices Graminées annuelles :: 0,25 l/ha :: 75"
    ]
   },
   {
@@ -32701,11 +32715,13 @@
    "detenteurs": [
     "AMAROC",
     "CPCM",
+    "GDIRAGRI",
     "PHYTO SIDID"
    ],
    "fournisseurs": [
     "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)",
     "AZUFRERA Y FERTILIZANTES PALLARES S.A",
+    "Field Protection sl",
     "SML Limited"
    ],
    "usages": [
@@ -32723,10 +32739,11 @@
    ],
    "produits": [
     "AFESOUFRE VENTILE 98,5 % DP",
+    "NOVAZUFRE",
     "SOUFRE TRITURE AFEPASA 98,5% DP",
     "SUFFRITE POUDRAGE"
    ],
-   "nbHomologations": 3,
+   "nbHomologations": 4,
    "referentielDoses": [
     "Fraisier / Oïdium :: 20 kg/ha :: NR",
     "Tomate / Oïdium :: 30 kg/ha :: 5",
@@ -36738,7 +36755,7 @@
    "id": "amaroc",
    "nom": "AMAROC",
    "nbProduits": 45,
-   "nbUsages": 192,
+   "nbUsages": 191,
    "nbMatieresActives": 46,
    "categories": [
     "Acaricide",
@@ -36805,7 +36822,7 @@
    "id": "ezzouhour",
    "nom": "EZZOUHOUR",
    "nbProduits": 39,
-   "nbUsages": 152,
+   "nbUsages": 159,
    "nbMatieresActives": 45,
    "categories": [
     "Acaricide",
@@ -36986,7 +37003,7 @@
    "id": "alfachimie",
    "nom": "ALFACHIMIE",
    "nbProduits": 22,
-   "nbUsages": 69,
+   "nbUsages": 70,
    "nbMatieresActives": 27,
    "categories": [
     "Fongicide",
@@ -37092,9 +37109,9 @@
   {
    "id": "gdiragri",
    "nom": "GDIRAGRI",
-   "nbProduits": 15,
-   "nbUsages": 30,
-   "nbMatieresActives": 14,
+   "nbProduits": 16,
+   "nbUsages": 31,
+   "nbMatieresActives": 15,
    "categories": [
     "Fongicide",
     "Herbicide",
@@ -42827,7 +42844,7 @@
      "usage": "Betterave à sucre / Adventices Graminées annuelles",
      "culture": "Betterave à sucre",
      "cible": "Adventices Graminées annuelles",
-     "dose": "1 l/ha",
+     "dose": "0,25 l/ha",
      "dar": "75",
      "nbAppl": "1"
     }
@@ -47784,6 +47801,14 @@
    ],
    "usages": [
     {
+     "usage": "Betterave à sucre / Adventices Dicotylédones",
+     "culture": "Betterave à sucre",
+     "cible": "Adventices Dicotylédones",
+     "dose": "0,625 L/ha",
+     "dar": null,
+     "nbAppl": "3"
+    },
+    {
      "usage": "Betterave à sucre / Adventices Graminées annuelles",
      "culture": "Betterave à sucre",
      "cible": "Adventices Graminées annuelles",
@@ -49502,14 +49527,6 @@
      "dose": "25 cc/hl",
      "dar": "03",
      "nbAppl": "2"
-    },
-    {
-     "usage": "Pêcher / Acariens",
-     "culture": "Pêcher",
-     "cible": "Acariens",
-     "dose": "50 cc/hl",
-     "dar": "14",
-     "nbAppl": "1"
     },
     {
      "usage": "Poivron / Acariens",
@@ -74594,7 +74611,7 @@
    "nomCommercial": "FUNGISEI",
    "categorie": "Fongicide",
    "formulation": "Concentré soluble (SL)",
-   "tox": "N",
+   "tox": "C",
    "amm": "F01-7-011",
    "expiration": "2031-12-22",
    "matieresActives": [
@@ -75882,6 +75899,46 @@
    ],
    "usages": [
     {
+     "usage": "Agrumes / Acariens",
+     "culture": "Agrumes",
+     "cible": "Acariens",
+     "dose": "50 cc/hl",
+     "dar": "28",
+     "nbAppl": "1"
+    },
+    {
+     "usage": "Concombre / Acariens",
+     "culture": "Concombre",
+     "cible": "Acariens",
+     "dose": "25 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Courgette / Acariens",
+     "culture": "Courgette",
+     "cible": "Acariens",
+     "dose": "25 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Fraisier / Acariens",
+     "culture": "Fraisier",
+     "cible": "Acariens",
+     "dose": "25 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Haricot vert / Acariens",
+     "culture": "Haricot vert",
+     "cible": "Acariens",
+     "dose": "25 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
      "usage": "Melon / Acariens",
      "culture": "Melon",
      "cible": "Acariens",
@@ -75895,6 +75952,22 @@
      "cible": "Acariens",
      "dose": "50 cc/hl",
      "dar": "14",
+     "nbAppl": "1"
+    },
+    {
+     "usage": "Poivron / Acariens",
+     "culture": "Poivron",
+     "cible": "Acariens",
+     "dose": "25 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Pommier / Acariens",
+     "culture": "Pommier",
+     "cible": "Acariens",
+     "dose": "50 cc/hl",
+     "dar": "28",
      "nbAppl": "1"
     },
     {
@@ -78434,6 +78507,36 @@
      "dose": "125cc/ha",
      "dar": "3",
      "nbAppl": null
+    }
+   ]
+  },
+  {
+   "id": "gdiragri-novazufre",
+   "detenteur": "GDIRAGRI",
+   "detenteurId": "gdiragri",
+   "nomCommercial": "NOVAZUFRE",
+   "categorie": "Fongicide",
+   "formulation": "Poudre pour poudrage (DP)",
+   "tox": "C",
+   "amm": "F03-9-003",
+   "expiration": "2031-12-23",
+   "matieresActives": [
+    "Soufre(98,5%)"
+   ],
+   "matieresActivesIds": [
+    "soufre-98-5"
+   ],
+   "fournisseurs": [
+    "Field Protection sl"
+   ],
+   "usages": [
+    {
+     "usage": "Tomate / Oïdium",
+     "culture": "Tomate",
+     "cible": "Oïdium",
+     "dose": "30 kg/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
     }
    ]
   },
@@ -102622,10 +102725,10 @@
    ]
   },
   {
-   "id": "spraykem-karbicure",
+   "id": "spraykem-meranto-sl",
    "detenteur": "SPRAYKEM",
    "detenteurId": "spraykem",
-   "nomCommercial": "KARBICURE",
+   "nomCommercial": "MERANTO SL",
    "categorie": "Fongicide",
    "formulation": "Concentré soluble (SL)",
    "tox": null,
@@ -109028,7 +109131,7 @@
    "formulation": "Concentré émulsionnable (EC)",
    "tox": "C",
    "amm": "H12-4-027",
-   "expiration": "2035-02-11",
+   "expiration": "2033-10-17",
    "matieresActives": [
     "Pyriproxyfène(100 g/l)"
    ],
@@ -109224,7 +109327,7 @@
    "formulation": "Concentré émulsionnable (EC)",
    "tox": "C",
    "amm": "H12-4-028",
-   "expiration": "2035-02-11",
+   "expiration": "2033-10-17",
    "matieresActives": [
     "Pyriproxyfène(100 g/l)"
    ],

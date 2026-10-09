@@ -1,8 +1,8 @@
 {
  "meta": {
   "role": "Produits présents dans un index ONSSA antérieur et absents du dernier relevé IndPesticide.aspx. L'e-service ne publie que les AMM en vigueur.",
-  "majConstat": "2026-09-11",
-  "nbProduits": 4
+  "majConstat": "2026-10-09",
+  "nbProduits": 5
  },
  "produits": [
   {
@@ -164,6 +164,70 @@
    ],
    "sortiLe": "2026-09-11",
    "sourceSortie": "FICHIERS PHYTO.xlsx"
+  },
+  {
+   "id": "spraykem-karbicure",
+   "detenteur": "SPRAYKEM",
+   "detenteurId": "spraykem",
+   "nomCommercial": "KARBICURE",
+   "categorie": "Fongicide",
+   "formulation": "Concentré soluble (SL)",
+   "tox": null,
+   "amm": "H02-1-004",
+   "expiration": "2035-10-16",
+   "matieresActives": [
+    "Métalaxyl-M(480 g/l)"
+   ],
+   "matieresActivesIds": [
+    "metalaxyl-m-480-g-l"
+   ],
+   "fournisseurs": [
+    "ALMANDINE CORPORATION SA"
+   ],
+   "usages": [
+    {
+     "usage": "Fraisier / Oïdium",
+     "culture": "Fraisier",
+     "cible": "Oïdium",
+     "dose": "2,5 kg/ha",
+     "dar": "1",
+     "nbAppl": "8"
+    },
+    {
+     "usage": "Framboisier / Oïdium",
+     "culture": "Framboisier",
+     "cible": "Oïdium",
+     "dose": "3 kg/ha",
+     "dar": "1",
+     "nbAppl": "8"
+    },
+    {
+     "usage": "Myrtillier / Oïdium",
+     "culture": "Myrtillier",
+     "cible": "Oïdium",
+     "dose": "3 kg/ha",
+     "dar": "1",
+     "nbAppl": "8"
+    },
+    {
+     "usage": "Poivron / Oïdium",
+     "culture": "Poivron",
+     "cible": "Oïdium",
+     "dose": "200 g/hl",
+     "dar": "1",
+     "nbAppl": "8"
+    },
+    {
+     "usage": "Tomate / Oïdium",
+     "culture": "Tomate",
+     "cible": "Oïdium",
+     "dose": "300 g/hl",
+     "dar": "1",
+     "nbAppl": "8"
+    }
+   ],
+   "sortiLe": "2026-10-09",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
   }
  ]
 }
