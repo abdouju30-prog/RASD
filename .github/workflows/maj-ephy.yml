@@ -167,6 +167,7 @@ jobs:
           git add data/ephy.json data/apvma.json data/bresil.json data/coree.json \
                   data/sentinelle.json data/sentinelle-vu.json
           git commit -m "Veille — actualisation des registres" -m "$RESUME"
+          git pull --rebase --autostash origin master
           git push
 
       - name: Récapitulatif

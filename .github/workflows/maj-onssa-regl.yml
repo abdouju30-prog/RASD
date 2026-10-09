@@ -91,6 +91,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/onssa-reglementation.json data/onssa-reglementation-vu.json data/onssa-listes.json
           git commit -m "Veille — textes et listes ONSSA" -m "$RESUME"
+          git pull --rebase --autostash origin master
           git push
 
       - name: Récapitulatif

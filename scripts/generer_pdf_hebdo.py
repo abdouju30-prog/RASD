@@ -172,11 +172,11 @@ def generer_rapport_pdf():
 
     # ── En-tête principal ──
     story.append(Paragraph("HOMOLOGA · VEILLE RÉGLEMENTAIRE ONSSA", ParagraphStyle("SurTitre", fontName="Helvetica-Bold", fontSize=9, textColor=TEXTE_MUTED, spaceAfter=4)))
-    story.append(Paragraph("Rapport Hebdomadaire des Nouveautés", titre_style))
+    story.append(Paragraph("Rapport Hebdomadaire des Nouveautés (Édition du Jeudi)", titre_style))
     story.append(Spacer(1, 4))
     date_jour = datetime.now().strftime("%d/%m/%Y")
     maj_onssa = meta.get("dateMajOnssa") or "Août 2026"
-    story.append(Paragraph(f"Semaine du {date_jour} · Données extraites de l'index officiel ONSSA (MAJ {maj_onssa}) · Destinataire : <b>{meta.get('emailDestinataire', 'abdouju30@gmail.com')}</b>", sous_titre_style))
+    story.append(Paragraph(f"Édition du Jeudi ({date_jour}) · Données extraites de l'index officiel ONSSA (MAJ {maj_onssa}) · Destinataire : <b>{meta.get('emailDestinataire', 'abdouju30@gmail.com')}</b>", sous_titre_style))
     story.append(Spacer(1, 10))
     story.append(HRFlowable(width="100%", thickness=1.5, color=BLEU_FONCE, spaceAfter=14))
 

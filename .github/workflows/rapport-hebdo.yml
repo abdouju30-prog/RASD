@@ -1,6 +1,7 @@
 name: Veille Hebdomadaire ONSSA & Rapport PDF
 
-# Lundi 07:00 Casablanca. GitHub n'exécute le cron QUE sur master.
+# Jeudi 08:00 Casablanca, une heure après les textes ONSSA (maj-onssa-regl).
+# GitHub n'exécute le cron QUE sur master.
 #
 # Ce job met à jour les catalogues que l'application lit :
 #   E-Phy (Anses), textes ONSSA, listes retraits/restrictions, e-service,
@@ -10,7 +11,7 @@ name: Veille Hebdomadaire ONSSA & Rapport PDF
 on:
   schedule:
     # Chaque lundi à 06:00 UTC (07:00 heure de Rabat)
-    - cron: "0 6 * * 1"
+    - cron: "0 7 * * 4"
   workflow_dispatch:
 
 permissions:
@@ -94,7 +95,9 @@ jobs:
             data/onssa-listes.json \
             data/onssa-eservice.json \
             data/onssa.json \
+            data/onssa-sortis.json \
             data/nouveautes.json \
             data/rapport-hebdo-onssa.pdf
           git commit -m "Veille hebdomadaire — ONSSA, Anses, rapport PDF" || echo "Aucune modification"
+          git pull --rebase --autostash origin master
           git push

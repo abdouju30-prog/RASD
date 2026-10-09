@@ -261,7 +261,7 @@ def generer_journal_nouveautes():
             "dateMajOnssa": maj_onssa,
             "totalEvenements": len(evenements),
             "emailDestinataire": "abdouju30@gmail.com",
-            "frequence": "Hebdomadaire (chaque lundi)",
+            "frequence": "Hebdomadaire (chaque jeudi)",
             "statut": "Actif",
         },
         "statistiques": {

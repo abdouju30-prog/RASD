@@ -1,0 +1,137 @@
+name: Veille — registres étrangers (tous les 15 jours)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Les registres qui bougent lentement et ne portent AUCUN signal réglementaire
+# pour l'ONSSA : ils servent à nommer et situer des fabricants.
+#
+#   ICAMA (Chine)            ~200 requêtes, 10 à 20 min  -> data/icama.json
+#   BKÜ (Turquie)                                         -> data/bku.json
+#   EPA (États-Unis)         établissements producteurs   -> data/epa.json
+#   Catalogue d'État (Russie)                             -> data/russie.json
+#   Registres ouverts        Canada, Japon, Argentine…    -> data/registres-ouverts.json
+#
+# Le 1er et le 16 de chaque mois, 06:00 Casablanca. Chaque registre est
+# indépendant : un site qui ne répond pas (la Russie bloque souvent les
+# serveurs étrangers) n'empêche pas les autres d'être relevés, et le fichier
+# précédent reste en place — jamais remplacé par un relevé vide.
+#
+# Déclenchable à la main (onglet Actions, ou par n8n via l'API GitHub).
+# GitHub n'exécute le cron QUE sur la branche par défaut (master).
+# ─────────────────────────────────────────────────────────────────────────────
+
+on:
+  schedule:
+    - cron: "0 5 1,16 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: maj-registres-etrangers
+  cancel-in-progress: false
+
+jobs:
+  actualiser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dépendances Python
+        run: pip install --quiet certifi xlrd websocket-client pymupdf
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Pont des noms français -> ISO (Chine et Russie en dépendent)
+        run: npx tsx scripts/noms_iso.ts
+
+      - name: ICAMA — Chine
+        id: icama
+        continue-on-error: true
+        timeout-minutes: 45
+        run: python scripts/import_icama.py --sans-iso | tee sortie-etrangers.txt
+      - name: BKÜ — Turquie
+        id: bku
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python scripts/import_bku.py | tee -a sortie-etrangers.txt
+      - name: EPA — États-Unis
+        id: epa
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python scripts/import_epa.py | tee -a sortie-etrangers.txt
+      - name: Catalogue d'État — Russie
+        id: russie
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python scripts/import_gospesticid.py --sans-iso | tee -a sortie-etrangers.txt
+      - name: Registres ouverts — Canada, Japon, Argentine…
+        id: ouverts
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python scripts/import_registres_ouverts.py | tee -a sortie-etrangers.txt
+
+      - name: Bilan par registre
+        id: bilan
+        env:
+          ICAMA: ${{ steps.icama.outcome }}
+          BKU: ${{ steps.bku.outcome }}
+          EPA: ${{ steps.epa.outcome }}
+          RUSSIE: ${{ steps.russie.outcome }}
+          OUVERTS: ${{ steps.ouverts.outcome }}
+        run: |
+          SUIVIS="data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json"
+          # Garde-fou : un relevé deux fois plus petit que le précédent est une
+          # panne du site, pas une évolution du registre — on garde l'ancien.
+          REJETS=""
+          for f in $SUIVIS; do
+            [ -f "$f" ] || continue
+            avant=$(git cat-file -s "HEAD:$f" 2>/dev/null || echo 0)
+            apres=$(stat -c %s "$f")
+            if [ "$avant" -gt 0 ] && [ $((apres * 2)) -lt "$avant" ]; then
+              git checkout -- "$f"
+              REJETS="$REJETS $f"
+            fi
+          done
+          {
+            echo "resume<<EOF"
+            echo "Chine (ICAMA) : $ICAMA"
+            echo "Turquie (BKÜ) : $BKU"
+            echo "États-Unis (EPA) : $EPA"
+            echo "Russie : $RUSSIE"
+            echo "Registres ouverts : $OUVERTS"
+            [ -n "$REJETS" ] && echo "Relevés rejetés (trop petits, ancien fichier conservé) :$REJETS"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          if git diff --quiet -- $SUIVIS; then
+            echo "change=non" >> "$GITHUB_OUTPUT"
+          else
+            echo "change=oui" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commiter la mise à jour
+        if: steps.bilan.outputs.change == 'oui'
+        env:
+          RESUME: ${{ steps.bilan.outputs.resume }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json
+          git commit -m "Veille — registres étrangers" -m "$RESUME"
+          git pull --rebase --autostash origin master
+          git push
+
+      - name: Récapitulatif
+        if: always()
+        env:
+          RESUME: ${{ steps.bilan.outputs.resume }}
+        run: |
+          echo "$RESUME" >> "$GITHUB_STEP_SUMMARY"
+          [ -f sortie-etrangers.txt ] && cat sortie-etrangers.txt >> "$GITHUB_STEP_SUMMARY" || true
