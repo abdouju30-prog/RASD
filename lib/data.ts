@@ -1,4 +1,5 @@
 import indexONSSA from "../data/onssa.json";
+import sortisFile from "../data/onssa-sortis.json";
 import caFile from "../data/ca.json";
 import { ficheDe } from "./reglementaire";
 import { ansesPour } from "./ephy";
@@ -10,6 +11,7 @@ import type {
   MatiereActive,
   MatiereMarche,
   ProduitPortefeuille,
+  ProduitSorti,
 } from "./types";
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -67,6 +69,18 @@ for (const p of PRODUITS) {
 
 export function produitsDe(detenteurId: string): ProduitPortefeuille[] {
   return PRODUITS_PAR_DETENTEUR.get(detenteurId) ?? [];
+}
+
+// ── Produits sortis de l'index ──────────────────────────────────────────────
+//
+// IndPesticide.aspx ne liste que les AMM en vigueur. Les produits qui en sont
+// sortis sont gardés à part (data/onssa-sortis.json) : ils ne comptent ni dans
+// le portefeuille ni dans les usages, mais alimentent les alertes d'AMM.
+
+const SORTIS: ProduitSorti[] = (sortisFile.produits ?? []) as unknown as ProduitSorti[];
+
+export function sortisDe(detenteurId: string): ProduitSorti[] {
+  return SORTIS.filter((p) => p.detenteurId === detenteurId);
 }
 
 // ── Matières actives ────────────────────────────────────────────────────────

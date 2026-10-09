@@ -15,6 +15,7 @@ const ICONE: Record<TypeAlerte, typeof Ban> = {
   onssa_retrait: Ban,
   anses_retrait: ShieldAlert,
   amm_expiree: Ban,
+  sortie_index: RefreshCw,
   amm_echeance: CalendarClock,
   ue_non_renouvelee: Ban,
   ue_echeance_depassee: Timer,
@@ -24,9 +25,10 @@ const ICONE: Record<TypeAlerte, typeof Ban> = {
 };
 
 const LIBELLE: Record<TypeAlerte, string> = {
-  onssa_retrait: "Retrait ONSSA — l'Excel est en retard",
+  onssa_retrait: "Retrait ONSSA — produit encore à l'index",
   anses_retrait: "Retrait ANSES — l'ONSSA suivra",
   amm_expiree: "AMM expirée",
+  sortie_index: "Sorti de l'index ONSSA",
   amm_echeance: "Échéance AMM",
   ue_non_renouvelee: "Approbation UE perdue",
   ue_echeance_depassee: "Échéance UE dépassée",

@@ -1,0 +1,169 @@
+{
+ "meta": {
+  "role": "Produits présents dans un index ONSSA antérieur et absents du dernier relevé IndPesticide.aspx. L'e-service ne publie que les AMM en vigueur.",
+  "majConstat": "2026-09-11",
+  "nbProduits": 4
+ },
+ "produits": [
+  {
+   "id": "phyto-beht-al-katil",
+   "detenteur": "PHYTO BEHT",
+   "detenteurId": "phyto-beht",
+   "nomCommercial": "AL-KATIL",
+   "categorie": "Insecticide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "A",
+   "amm": "F06-1-028",
+   "expiration": "2026-07-25",
+   "matieresActives": [
+    "Alpha-cyperméthrine(250 g/l)"
+   ],
+   "matieresActivesIds": [
+    "alpha-cypermethrine-250-g-l"
+   ],
+   "fournisseurs": [
+    "GHARDA CHEMICALS Ltd"
+   ],
+   "usages": [
+    {
+     "usage": "Tomate / Noctuelles",
+     "culture": "Tomate",
+     "cible": "Noctuelles",
+     "dose": "12,5 cc/hl",
+     "dar": "3",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-09-11",
+   "sourceSortie": "FICHIERS PHYTO.xlsx"
+  },
+  {
+   "id": "phyto-beht-atlantic",
+   "detenteur": "PHYTO BEHT",
+   "detenteurId": "phyto-beht",
+   "nomCommercial": "ATLANTIC",
+   "categorie": "Insecticide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "A",
+   "amm": "F06-6-013",
+   "expiration": "2026-08-09",
+   "matieresActives": [
+    "Alpha-cyperméthrine(250 g/l)"
+   ],
+   "matieresActivesIds": [
+    "alpha-cypermethrine-250-g-l"
+   ],
+   "fournisseurs": [
+    "GHARDA CHEMICALS Ltd"
+   ],
+   "usages": [
+    {
+     "usage": "Tomate / Noctuelles",
+     "culture": "Tomate",
+     "cible": "Noctuelles",
+     "dose": "12,5 cc/hl",
+     "dar": "3",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-09-11",
+   "sourceSortie": "FICHIERS PHYTO.xlsx"
+  },
+  {
+   "id": "sharda-maroc-optizole",
+   "detenteur": "SHARDA MAROC",
+   "detenteurId": "sharda-maroc",
+   "nomCommercial": "OPTIZOLE",
+   "categorie": "Fongicide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": null,
+   "amm": "H06-2-008",
+   "expiration": "2026-08-29",
+   "matieresActives": [
+    "Prothioconazole(250 g/l)"
+   ],
+   "matieresActivesIds": [
+    "prothioconazole-250-g-l"
+   ],
+   "fournisseurs": [
+    "SHARDA CROPCHEM LIMITED"
+   ],
+   "usages": [
+    {
+     "usage": "Blés / Rouille",
+     "culture": "Blés",
+     "cible": "Rouille",
+     "dose": "0,6l/ha",
+     "dar": "35",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Blés / Septoriose",
+     "culture": "Blés",
+     "cible": "Septoriose",
+     "dose": "0,6l/ha",
+     "dar": "35",
+     "nbAppl": "2"
+    }
+   ],
+   "sortiLe": "2026-09-11",
+   "sourceSortie": "FICHIERS PHYTO.xlsx"
+  },
+  {
+   "id": "spraykem-glyster-fort",
+   "detenteur": "SPRAYKEM",
+   "detenteurId": "spraykem",
+   "nomCommercial": "GLYSTER FORT",
+   "categorie": "Herbicide",
+   "formulation": "Concentré soluble (SL)",
+   "tox": "C",
+   "amm": "F07-6-006",
+   "expiration": "2026-07-25",
+   "matieresActives": [
+    "Glyphosate -sel d'isopropylamine(360 g/l)"
+   ],
+   "matieresActivesIds": [
+    "glyphosate-sel-d-isopropylamine-360-g-l"
+   ],
+   "fournisseurs": [
+    "SINON CORPORATION"
+   ],
+   "usages": [
+    {
+     "usage": "Agrumes / Adventices Dicotylédones vivaces",
+     "culture": "Agrumes",
+     "cible": "Adventices Dicotylédones vivaces",
+     "dose": "6 l/ha",
+     "dar": "-",
+     "nbAppl": null
+    },
+    {
+     "usage": "Agrumes / Adventices Graminées annuelles",
+     "culture": "Agrumes",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "3 l/ha",
+     "dar": null,
+     "nbAppl": null
+    },
+    {
+     "usage": "Agrumes / Adventices Graminées vivaces",
+     "culture": "Agrumes",
+     "cible": "Adventices Graminées vivaces",
+     "dose": "6 l/ha",
+     "dar": null,
+     "nbAppl": null
+    },
+    {
+     "usage": "Agrumes / Adventices Dicotylédones annuelles",
+     "culture": "Agrumes",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "3 l/ha",
+     "dar": "-",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-09-11",
+   "sourceSortie": "FICHIERS PHYTO.xlsx"
+  }
+ ]
+}

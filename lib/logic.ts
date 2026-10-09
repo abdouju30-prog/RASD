@@ -1,4 +1,4 @@
-import { CA_RENSEIGNE, matieresDuPortefeuille, produitsDe, usagesDetenteur } from "./data";
+import { CA_RENSEIGNE, matieresDuPortefeuille, produitsDe, sortisDe, usagesDetenteur } from "./data";
 import { restreintePourMatiere, retireePourMatiere } from "./onssa-listes";
 import type { MatiereActive, NiveauRisque, ProduitPortefeuille } from "./types";
 
@@ -233,8 +233,9 @@ export function etatAMM(p: ProduitPortefeuille): { etat: EtatAMM; mois: number |
   return { etat: "valide", mois: m };
 }
 
+/** AMM échues : celles encore listées, et celles sorties de l'index ONSSA. */
 export function ammExpirees(detenteurId: string): ProduitPortefeuille[] {
-  return produitsDe(detenteurId).filter((p) => etatAMM(p).etat === "expirée").sort(
+  return [...produitsDe(detenteurId), ...sortisDe(detenteurId)].filter((p) => etatAMM(p).etat === "expirée").sort(
     (a, b) => (a.expiration ?? "").localeCompare(b.expiration ?? "")
   );
 }

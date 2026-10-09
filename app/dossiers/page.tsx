@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { detenteurActuel } from "@/lib/detenteur";
+import { getMatiere } from "@/lib/data";
 import { ammEcheance, ammExpirees, fmtDate, portefeuilleClasse } from "@/lib/logic";
 import { candidats } from "@/lib/sourcing";
 import { DELAIS_INDICATIFS } from "@/lib/dossier";
@@ -286,7 +287,11 @@ export default async function DossiersPage({
       file: "renouveler",
       titre: p.nomCommercial,
       detail: `AMM ${p.amm ?? "—"} · ${p.usages.length} usage(s) · ${p.fournisseurs.join(", ")}`,
-      href: `/dossiers/generer/${p.matieresActivesIds[0]}?type=renouvellement&produit=${encodeURIComponent(p.nomCommercial)}`,
+      // Un produit sorti de l'index peut porter une matière qui n'y figure plus :
+      // pas de générateur possible, on renvoie vers son alerte.
+      href: getMatiere(p.matieresActivesIds[0])
+        ? `/dossiers/generer/${p.matieresActivesIds[0]}?type=renouvellement&produit=${encodeURIComponent(p.nomCommercial)}`
+        : "/veille",
       rang: 0,
       etiq: `expirée ${fmtDate(p.expiration)}`,
       couleur: "var(--crit)",

@@ -35,6 +35,7 @@ from queue import Empty
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _pays import PAYS_COUT_FAIBLE, est_multinationale, pays_societe  # noqa: E402
+import _sortis  # noqa: E402
 
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "onssa.json"
@@ -718,6 +719,11 @@ def main():
     payload = construire(lignes, {"maj": maj, "nbFiches": len(fiches), "nbListe": nb_liste})
     cible = SORTIE if not args.limit else Path("/tmp/onssa-sample.json")
     cible.parent.mkdir(parents=True, exist_ok=True)
+    if not args.limit and SORTIE.exists():
+        # L'e-service n'affiche que les AMM en vigueur : garder la trace de ce
+        # qui sort avant d'écraser l'index précédent.
+        ancien = _sortis.charger(SORTIE)
+        _sortis.mettre_a_jour(ancien, payload, (ancien.get("meta") or {}).get("source") or "index précédent")
     cible.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
     m = payload["meta"]
     print(f"OK -> {cible}")

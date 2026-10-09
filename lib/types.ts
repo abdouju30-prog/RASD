@@ -108,6 +108,16 @@ export interface ProduitPortefeuille {
   caAnnuel?: number | null; // MAD — optionnel, hors source
 }
 
+/**
+ * Produit d'un index ONSSA antérieur, absent du dernier relevé IndPesticide.
+ * L'e-service ne publie que les AMM en vigueur : sans ce registre, une AMM
+ * échue disparaîtrait sans laisser d'alerte (data/onssa-sortis.json).
+ */
+export interface ProduitSorti extends ProduitPortefeuille {
+  sortiLe: string; // ISO — date du relevé qui a constaté l'absence
+  sourceSortie: string; // index dans lequel le produit figurait encore
+}
+
 export interface IndexONSSA {
   meta: {
     source: string;

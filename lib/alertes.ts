@@ -1,4 +1,4 @@
-import { getMatiere, matieresDuPortefeuille, produitsDe } from "./data";
+import { getMatiere, matieresDuPortefeuille, produitsDe, sortisDe } from "./data";
 import { etatAMM, fmtDate, moisAvant } from "./logic";
 import { restreintePourMatiere, retireePourMatiere } from "./onssa-listes";
 import type { MatiereActive, NiveauRisque, ProduitPortefeuille } from "./types";
@@ -18,6 +18,7 @@ export type TypeAlerte =
   | "onssa_retrait"
   | "anses_retrait"
   | "amm_expiree"
+  | "sortie_index"
   | "amm_echeance"
   | "ue_non_renouvelee"
   | "ue_echeance_depassee"
@@ -42,6 +43,7 @@ const NIV: Record<TypeAlerte, NiveauRisque> = {
   onssa_retrait: "critique",
   anses_retrait: "critique",
   amm_expiree: "critique",
+  sortie_index: "élevé",
   ue_non_renouvelee: "critique",
   onssa_restriction: "élevé",
   ue_echeance_depassee: "élevé",
@@ -61,11 +63,12 @@ const ORDRE_TYPE: Record<TypeAlerte, number> = {
   anses_retrait: 1,
   amm_expiree: 2,
   ue_non_renouvelee: 3,
-  onssa_restriction: 4,
-  ue_echeance_depassee: 5,
-  amm_echeance: 6,
-  ue_echeance_proche: 7,
-  candidate_substitution: 8,
+  sortie_index: 4,
+  onssa_restriction: 5,
+  ue_echeance_depassee: 6,
+  amm_echeance: 7,
+  ue_echeance_proche: 8,
+  candidate_substitution: 9,
 };
 
 function nbUsages(prods: ProduitPortefeuille[]): number {
@@ -127,7 +130,7 @@ export function alertes(detenteurId: string): Alerte[] {
       produits: g.produits,
       usages: nbUsages(g.produits),
       action:
-        "Recouper le PDF ONSSA. Ne pas commercialiser sur la foi de l'Excel. Sécuriser une alternative homologable.",
+        "Recouper le PDF ONSSA. Ne pas commercialiser sur la foi de l'index. Sécuriser une alternative homologable.",
       echeance: r.dateRetrait,
     });
   }
@@ -188,6 +191,35 @@ export function alertes(detenteurId: string): Alerte[] {
         echeance: p.expiration,
       });
     }
+  }
+
+  // 1 bis) Produits sortis de l'index ONSSA. L'e-service ne publie que les AMM
+  // en vigueur : sans ce registre, une AMM échue disparaîtrait sans alerte.
+  // Le motif de la sortie n'est pas publié — on montre la date connue, rien de plus.
+  for (const p of sortisDe(detenteurId)) {
+    const { etat, mois } = etatAMM(p);
+    const ma = p.matieresActivesIds.map((i) => getMatiere(i, detenteurId)).find(Boolean) ?? null;
+    const constat = `Sorti de l'index ONSSA (constaté au relevé du ${fmtDate(p.sortiLe)}).`;
+    const expiree = etat === "expirée";
+    out.push({
+      id: `amm-sortie-${p.id}`,
+      type: expiree ? "amm_expiree" : "sortie_index",
+      niveau: expiree ? "critique" : NIV.sortie_index,
+      titre: `${expiree ? "AMM expirée" : "Sorti de l'index"} · ${p.nomCommercial}`,
+      detail: expiree
+        ? `Homologation ${p.amm ?? "—"} échue le ${fmtDate(p.expiration)}` +
+          (mois !== null ? ` (il y a ${Math.abs(mois)} mois)` : "") +
+          `. ${constat} La commercialisation n'est plus couverte.`
+        : `${constat} L'AMM ${p.amm ?? "—"} courait jusqu'au ${fmtDate(p.expiration)} : ` +
+          `retrait ou suspension possible, motif non publié par l'ONSSA.`,
+      matiere: ma,
+      produits: [p],
+      usages: p.usages.length,
+      action: expiree
+        ? "Déposer un dossier de renouvellement — ou retirer le produit de la vente."
+        : "Vérifier le statut de l'AMM auprès de l'ONSSA avant toute vente.",
+      echeance: p.expiration,
+    });
   }
 
   // 2) Statut ANSES et statut UE des matières actives réellement détenues.

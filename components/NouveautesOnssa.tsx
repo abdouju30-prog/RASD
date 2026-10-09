@@ -170,7 +170,7 @@ function SignauxIntegres({ compact }: { compact: boolean }) {
             background: "color-mix(in srgb, var(--crit) 10%, transparent)",
           }}
         >
-          {NB_COLLISIONS_RETRAIT} encore à l&apos;Excel
+          {NB_COLLISIONS_RETRAIT} encore à l&apos;index
         </span>
       )}
       {!compact && (
@@ -228,7 +228,7 @@ export function NouveautesOnssa({ compact = false }: { compact?: boolean }) {
             >
               eservice.onssa.gov.ma
             </a>
-            . Ce n&apos;est pas l&apos;index des AMM : celui-là vient toujours de l&apos;Excel.
+            . Ce n&apos;est pas l&apos;index des AMM : celui-là est relu sur IndPesticide.aspx.
           </p>
           <SignauxIntegres compact={compact} />
         </div>
