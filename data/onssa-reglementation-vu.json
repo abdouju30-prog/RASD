@@ -1,10 +1,14 @@
 {
  "commentaire": "Date de première apparition de chaque texte ONSSA. Fichier tenu par scripts/import_onssa_reglementation.py ; l'historique git est le journal des nouveautés.",
- "dernierReleve": "2026-09-21",
+ "dernierReleve": "2026-10-09",
  "premiereVue": {
   "1809-89": {
    "date": "2026-09-13",
    "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.1809-89.FR.c1.pdf"
+  },
+  "2-01-416": {
+   "date": "2026-10-09",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation Sectorielle/Intrants Agricoles/Produits Phytopharmaceutiques/DEC.2-01-416.FR.pdf"
   },
   "2-22-136": {
    "date": "2026-09-21",
@@ -53,6 +57,10 @@
   "34-18": {
    "date": "2026-09-13",
    "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/LOI.34-18.FR.pdf"
+  },
+  "42-95": {
+   "date": "2026-10-09",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation Sectorielle/Intrants Agricoles/Produits Phytopharmaceutiques/LOI.42-95.FR.c1.pdf"
   },
   "466-84": {
    "date": "2026-09-13",
@@ -126,6 +134,10 @@
    "date": "2026-09-13",
    "url": "https://eservice.onssa.gov.ma/Docs/AVIS AUX SOCIETES-NOMS COMMERCIAUX DES PPP RETIRES-18-09-2025-18-09-2025 16-27-17.PDF"
   },
+  "circulaire-relative-a-la-phosphine": {
+   "date": "2026-10-09",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation Sectorielle/Intrants Agricoles/Produits Phytopharmaceutiques/Circulaire_phosphine.pdf"
+  },
   "cp-08-dcpv-15": {
    "date": "2026-09-13",
    "url": "https://eservice.onssa.gov.ma/Docs/Code%20de%20proc%C3%A9dures%2008%20DCPV%2015-CODE%20DE%20PROCEDURES-Version%20B%20-%2022-02-2018-28-02-2018%2015-06-34.pdf"
@@ -136,7 +148,7 @@
   },
   "liste-des-revendeurs-des-produits-phytopharmaceutiques": {
    "date": "2026-09-13",
-   "url": "https://eservice.onssa.gov.ma/Docs/Liste des revendeurs des PPP Arrêtée le 03 septembre 2026-03-09-2026 10-54-53.pdf"
+   "url": "https://eservice.onssa.gov.ma/Docs/Liste des revendeurs des PPP Arrêtée le 02 octobre 2026-02-10-2026 15-22-29.pdf"
   },
   "note-de-service-sur-la-mise-en-demeure-des-societes-agreees-pour-la-fabr": {
    "date": "2026-09-13",

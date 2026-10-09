@@ -2,12 +2,12 @@
  "meta": {
   "source": "ONSSA — registres publics eservice.onssa.gov.ma",
   "url": "https://eservice.onssa.gov.ma/Default.aspx",
-  "attribution": "ONSSA — registres publics eservice.onssa.gov.ma — relevé du 2026-09-21",
-  "genere": "2026-09-21T11:14:06",
-  "majSocietes": "17/07/2026",
-  "majBpe": "17/07/2026",
-  "majExpires": "17/07/2026",
-  "nbSocietes": 107,
+  "attribution": "ONSSA — registres publics eservice.onssa.gov.ma — relevé du 2026-10-09",
+  "genere": "2026-10-09T12:55:18",
+  "majSocietes": "02/10/2026",
+  "majBpe": "02/10/2026",
+  "majExpires": "02/10/2026",
+  "nbSocietes": 108,
   "nbBpe": 11,
   "nbExpires": 625,
   "avertissement": "Registres publiés par l'ONSSA. L'Office décline toute responsabilité sur une omission ou une erreur, et rappelle que seules les attestations d'homologation font foi. La liste des produits expirés est un FAIT marocain, à ne pas confondre avec la prédiction tirée du statut français."
@@ -263,12 +263,12 @@
     "CONTACT@AMAROC-AGRO.COM"
    ],
    "agrement": {
-    "numero": "01/2016",
-    "date": "04/04/2016"
+    "numero": "09/2011",
+    "date": "19/07/2011"
    },
-   "activite": "Activité de distribution",
-   "local": "Quartier industriel, Lotissement B, N° 753, Aït Melloul",
-   "ingenieur": "HAFID Otmane"
+   "activite": "Activité d'importation et de distribution",
+   "local": "Secteur I 7, N° 15, Zone Industrielle, Ouled Salah - Nouaceur",
+   "ingenieur": "Mounir SEFIANI"
   },
   {
    "nom": "AMCOTEC",
@@ -348,12 +348,12 @@
     "arzak@arzakagro.ma"
    ],
    "agrement": {
-    "numero": "02/2022",
-    "date": "02/02/2022"
+    "numero": "04/2012",
+    "date": "01/08/2012"
    },
-   "activite": "Activité de distribution",
-   "local": "I1.246 Atlantic Free Zone Amer Souflya",
-   "ingenieur": "BAH Mamadou Bailo"
+   "activite": "Activité d'importation et de distribution",
+   "local": "Lot. N° 130, Zone Industrielle, Had Soualem - Berrechid",
+   "ingenieur": "MOHAMMED KARIM BENMOUSSA"
   },
   {
    "nom": "ASTRACHEM MAROC",
@@ -699,12 +699,12 @@
     "cpcm@cpcm.ma"
    ],
    "agrement": {
-    "numero": "02/2020",
-    "date": "08/07/2020"
+    "numero": "Ag-2000-023",
+    "date": "18/01/2001"
    },
-   "activite": "Activité de distribution",
-   "local": "Lot. 290, Quartier industriel, Aït Melloul",
-   "ingenieur": "MOHAMMED EL MORSLI"
+   "activite": "Activité d'importation et de distribution",
+   "local": "Bd Oukat Badi - 20300 Casablanca",
+   "ingenieur": "Mohamed BENSLIMANE"
   },
   {
    "nom": "DIAGRO CHEM",
@@ -795,12 +795,12 @@
     "contactmaroc@elephantvert.ch"
    ],
    "agrement": {
-    "numero": "11/2015",
-    "date": "08/12/2015"
+    "numero": "06/2015",
+    "date": "13/07/2015"
    },
-   "activite": "Activité d'importation et de distribution",
-   "local": "Bâtiment \"S\", GI5 - GI6, Zone industrielle Agropolis C/R Mejjate, Meknès",
-   "ingenieur": "Nabil ABOULKARAM"
+   "activite": "Activité de fabrication",
+   "local": "Bâtiment \"P\", GI5 - GI6, Zone industrielle Agropolis C/R Majjate, Meknès",
+   "ingenieur": "Hajar ERRAHIMI"
   },
   {
    "nom": "EZZOUHOUR",
@@ -812,12 +812,12 @@
     "info@ezzouhour.ma"
    ],
    "agrement": {
-    "numero": "01/2017",
-    "date": "16/03/2017"
+    "numero": "Ag-2000-025",
+    "date": "18/01/2001"
    },
-   "activite": "Activité de distribution",
-   "local": "Zone industrielle Sidi Slimane Moul Kifane, Lot. 136-152, Meknès",
-   "ingenieur": "FEROUI Manal"
+   "activite": "Activité d'importation et de distribution",
+   "local": "Quartier Industriel Ait Melloul, Lot. 652 - Agadir",
+   "ingenieur": "Fayçal BOUTAGRA"
   },
   {
    "nom": "FERTILEADER",
@@ -1327,6 +1327,23 @@
    "activite": "Activité d'importation et de distribution",
    "local": "Km 40, Route Casablanca-El Jadida, Bir Jdid-Settat",
    "ingenieur": "Anis AIT BOUFTASS"
+  },
+  {
+   "nom": "PRODHYG Sarl",
+   "siege": "Imm 30, Appt 8, Rue Mly Ahmed loukili, HASSAN, RABAT- Absent dans SIPS",
+   "rc": "18597 - Absent dans SIPS",
+   "telephone": "0661175744",
+   "fax": null,
+   "emails": [
+    "prodhyg.sarl@gmail.com"
+   ],
+   "agrement": {
+    "numero": "6/2026",
+    "date": "02/10/2026"
+   },
+   "activite": "Activité d'importation et de distribution",
+   "local": "Lot N°1777, lotissement Bir Rami, Kenitra",
+   "ingenieur": "AMAL GRIOUI"
   },
   {
    "nom": "PROMAGRI",
