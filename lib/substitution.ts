@@ -69,9 +69,35 @@ const LIBELLE_BASE: Record<BaseComparaison, string> = {
  * occupent cinq lignes pour une seule réponse agronomique. Le séparateur est
  * toujours une espace suivie d'un tiret — « Alpha-cyperméthrine » n'en a pas,
  * et reste donc intacte.
+ *
+ * L'index écrit aussi une même substance de plusieurs façons : accents et
+ * finales (« Dimethomorph » / « Diméthomorphe »), ou en anglais (« Paraffin
+ * oil » / « Huile minérale paraffinique »). La clé ignore accents, casse,
+ * ponctuation et « e » final ; les équivalences de langue passent par une
+ * table EXPLICITE — jamais de rapprochement flou entre deux substances.
  */
+const SYNONYMES: Record<string, string> = {
+  paraffinoil: "huiledeparaffin",
+  huilemineraleparaffiniqu: "huiledeparaffin",
+  carboxylicacidspotassiumsalts: "selsdepotassiumdacidegras",
+  acidegrassousformedeselsdepotassium: "selsdepotassiumdacidegras",
+  gibberellicacid: "acidegibberelliqu",
+  naphthaleneaceticacid: "acidealphanaphtylacetiqu",
+  naphthaleneacetamid: "alphanaphtylacetamid",
+  "6benzyladenin": "benzyladenin",
+  mesosulfuronmethyl: "mesosulfuron",
+  iodosulfuromethylsodium: "iodosulfuronmethylsodium",
+};
+
 function famille(molecule: string): string {
-  return molecule.split(/\s+-/)[0].trim();
+  const cle = molecule
+    .split(/\s+-/)[0]
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "")
+    .replace(/e$/, "");
+  return SYNONYMES[cle] ?? cle;
 }
 
 function communs(a: string[], b: Set<string>): number {

@@ -30,11 +30,18 @@ export default async function RadarPage() {
   const top = alertes(d.id).slice(0, 5);
   const produits = produitsDe(d.id);
 
-  const points: MatrixPoint[] = classe
-    .filter((c) => c.risque !== null)
+  // Une molécule détenue à deux concentrations donne deux bulles : on précise
+  // alors la teneur, sinon la matrice affiche deux fois le même nom.
+  const evalues = classe.filter((c) => c.risque !== null);
+  const parMolecule = new Map<string, number>();
+  for (const c of evalues) parMolecule.set(c.ma.molecule, (parMolecule.get(c.ma.molecule) ?? 0) + 1);
+  const points: MatrixPoint[] = evalues
     .map((c) => ({
       id: c.ma.id,
-      nom: c.ma.molecule,
+      nom:
+        (parMolecule.get(c.ma.molecule) ?? 0) > 1
+          ? `${c.ma.molecule} ${c.ma.nom.match(/\(([^)]*)\)\s*$/)?.[1] ?? ""}`.trim()
+          : c.ma.molecule,
       score: c.risque!.score,
       expo: CA_DISPONIBLE && c.expo.ca ? c.expo.ca : c.expo.usages,
     }));
