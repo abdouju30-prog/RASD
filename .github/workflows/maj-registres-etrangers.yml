@@ -15,7 +15,7 @@ name: Veille — registres étrangers (tous les 15 jours)
 # serveurs étrangers) n'empêche pas les autres d'être relevés, et le fichier
 # précédent reste en place — jamais remplacé par un relevé vide.
 #
-# Déclenchable à la main (onglet Actions, ou par n8n via l'API GitHub).
+# Déclenchable à la main depuis l'onglet Actions de GitHub.
 # GitHub n'exécute le cron QUE sur la branche par défaut (master).
 # ─────────────────────────────────────────────────────────────────────────────
 
