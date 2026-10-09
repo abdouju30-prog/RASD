@@ -2,14 +2,14 @@
  "meta": {
   "source": "T.C. Tarım ve Orman Bakanlığı — BKÜ Veri Tabanı",
   "url": "https://bku.tarimorman.gov.tr/BKURuhsat/Index",
-  "attribution": "T.C. Tarım ve Orman Bakanlığı — BKÜ Veri Tabanı — relevé du 2026-09-03",
-  "genere": "2026-09-03T11:20:18",
+  "attribution": "T.C. Tarım ve Orman Bakanlığı — BKÜ Veri Tabanı — relevé du 2026-10-09",
+  "genere": "2026-10-09T13:52:01",
   "nbProduits": 5600,
   "nbSocietes": 104,
-  "nbFabricants": 64,
+  "nbFabricants": 66,
   "nbMatieres": 283,
-  "nbImal": 4459,
-  "nbIthal": 1141,
+  "nbImal": 4476,
+  "nbIthal": 1124,
   "avertissement": "Registre turc des produits de protection des plantes. Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. « İMAL » désigne une fabrication en Turquie, pas nécessairement la synthèse de la matière active — une formulation locale à partir d'un technique importé porte la même mention."
  },
  "societes": [
@@ -17,14 +17,11 @@
    "id": 688,
    "nom": "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
    "adresse": "Gülbahar Sokak Baytok Apartmanı No:12 Daire :8 Kat:3 Kadıköy  İSTANBUL",
-   "nbProduits": 411,
-   "nbImal": 411,
+   "nbProduits": 366,
+   "nbImal": 366,
    "nbIthal": 0,
    "matieres": [
     "2,4-D asite eşdeğer Isooctylester",
-    "2,4-D asite eşdeğer dimethyl amin tuzu",
-    "2- (1-Naphthyl) Acetamıde (NAD)",
-    "2- (1-Naphthyl) Acetic Acid (NAA)",
     "6-Benzyladenine",
     "Abamectin",
     "Aclonifen",
@@ -32,7 +29,6 @@
     "Bentazone",
     "Bifenazate",
     "Boscalid",
-    "Buprofezin",
     "Captan",
     "Carfentrazone-ethyl",
     "Chlorantraniliprole",
@@ -51,7 +47,6 @@
     "Fenamiphos",
     "Fenpyroximate",
     "Fluazinam",
-    "Fludioxonil",
     "Fluometuron",
     "Fluopyram",
     "Fosetyl",
@@ -60,7 +55,6 @@
     "Gibberellic Acid",
     "Gibberellic acid",
     "Gibberellin A4/A7",
-    "Glufosinate-ammonium tuzu",
     "Hymexazole",
     "Imazalil",
     "Imazamox",
@@ -112,14 +106,10 @@
     "Trinexapac-ethyl",
     "Tritosulfuron",
     "Zeta-cypermethrin",
-    "İmazamox",
-    "İndaziflam"
+    "İmazamox"
    ],
    "matieresImal": [
     "2,4-D asite eşdeğer Isooctylester",
-    "2,4-D asite eşdeğer dimethyl amin tuzu",
-    "2- (1-Naphthyl) Acetamıde (NAD)",
-    "2- (1-Naphthyl) Acetic Acid (NAA)",
     "6-Benzyladenine",
     "Abamectin",
     "Aclonifen",
@@ -127,7 +117,6 @@
     "Bentazone",
     "Bifenazate",
     "Boscalid",
-    "Buprofezin",
     "Captan",
     "Carfentrazone-ethyl",
     "Chlorantraniliprole",
@@ -146,7 +135,6 @@
     "Fenamiphos",
     "Fenpyroximate",
     "Fluazinam",
-    "Fludioxonil",
     "Fluometuron",
     "Fluopyram",
     "Fosetyl",
@@ -155,7 +143,6 @@
     "Gibberellic Acid",
     "Gibberellic acid",
     "Gibberellin A4/A7",
-    "Glufosinate-ammonium tuzu",
     "Hymexazole",
     "Imazalil",
     "Imazamox",
@@ -207,8 +194,7 @@
     "Trinexapac-ethyl",
     "Tritosulfuron",
     "Zeta-cypermethrin",
-    "İmazamox",
-    "İndaziflam"
+    "İmazamox"
    ],
    "fabricant": true
   },
@@ -524,8 +510,8 @@
    "id": 1357,
    "nom": "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş.",
    "adresse": "Büyükkayacık OSB Mahallesi 103 Caddesi No:9/1 Selçuklu KONYA",
-   "nbProduits": 210,
-   "nbImal": 200,
+   "nbProduits": 215,
+   "nbImal": 205,
    "nbIthal": 10,
    "matieres": [
     "2,4-D 2-Ethylhexyl ester",
@@ -574,7 +560,8 @@
     "Spinosad",
     "Spirodiclofen",
     "Spiroxamine",
-    "Thiencarbazone-methyl"
+    "Thiencarbazone-methyl",
+    "Thiram"
    ],
    "matieresImal": [
     "2,4-D 2-Ethylhexyl ester",
@@ -621,7 +608,8 @@
     "Spinosad",
     "Spirodiclofen",
     "Spiroxamine",
-    "Thiencarbazone-methyl"
+    "Thiencarbazone-methyl",
+    "Thiram"
    ],
    "fabricant": true
   },
@@ -727,102 +715,6 @@
    "fabricant": true
   },
   {
-   "id": 944,
-   "nom": "CANSA KİMYA SAN. ve TİC.  LTD. ŞTİ.",
-   "adresse": "Tuzla Kimya Sanayicileri Organize Sanayi Bölgesi Melek Aras Bulvarı No: 39 Tepeören - Tuzla İSTANBUL",
-   "nbProduits": 177,
-   "nbImal": 172,
-   "nbIthal": 5,
-   "matieres": [
-    "2,4-D asite eşdeğer Isooctylester",
-    "2,4-D asite eşdeğer dimethyl amin tuzu",
-    "2,4-D asite eşdeğer dimethyl amonyum tuzu",
-    "Abamectin",
-    "Acetamiprid",
-    "Alpha-cypermethrin",
-    "Beta-cyfluthrin",
-    "Boscalid",
-    "Captan",
-    "Clodinafop-propargyl",
-    "Clopyralid",
-    "Cloquintocet-mexyl",
-    "Dicamba",
-    "Diclofop-methyl",
-    "Dodine",
-    "Epoxiconazole",
-    "Ethephon",
-    "Etoxazole",
-    "Flonicamid",
-    "Glyphosate Isopropylamin Tuzu",
-    "Hexythiazox",
-    "Hymexazole",
-    "Kresoxim-methyl",
-    "Mepiquat Chloride",
-    "Metalik bakıra eşdeğer bakır hidroksit",
-    "Metalik bakıra eşdeğer bakır oksiklorid",
-    "Metalik bakıra eşdeğer bordo bulamacı",
-    "Metribuzin",
-    "Oxyfluorfen",
-    "Pinoxaden",
-    "Prochloraz",
-    "Pyraclostrobin",
-    "Pyridaben",
-    "Pyrimethanil",
-    "Pyriproxyfen",
-    "Quizalofop-p-ethyl",
-    "Sodium ortho nitrophenolate",
-    "Sodium para nitropheonolate",
-    "Sodium penta nitroguaiacolate",
-    "Sodıum 5-nitroguaıacolate",
-    "Sodıum o-nitrophenolate",
-    "Sodıum p-nitrophenolate",
-    "Spirodiclofen"
-   ],
-   "matieresImal": [
-    "2,4-D asite eşdeğer Isooctylester",
-    "2,4-D asite eşdeğer dimethyl amin tuzu",
-    "2,4-D asite eşdeğer dimethyl amonyum tuzu",
-    "Abamectin",
-    "Acetamiprid",
-    "Alpha-cypermethrin",
-    "Beta-cyfluthrin",
-    "Boscalid",
-    "Captan",
-    "Clodinafop-propargyl",
-    "Clopyralid",
-    "Cloquintocet-mexyl",
-    "Dicamba",
-    "Diclofop-methyl",
-    "Dodine",
-    "Epoxiconazole",
-    "Ethephon",
-    "Etoxazole",
-    "Flonicamid",
-    "Glyphosate Isopropylamin Tuzu",
-    "Hexythiazox",
-    "Hymexazole",
-    "Kresoxim-methyl",
-    "Mepiquat Chloride",
-    "Metalik bakıra eşdeğer bakır hidroksit",
-    "Metalik bakıra eşdeğer bakır oksiklorid",
-    "Metalik bakıra eşdeğer bordo bulamacı",
-    "Metribuzin",
-    "Oxyfluorfen",
-    "Pinoxaden",
-    "Prochloraz",
-    "Pyraclostrobin",
-    "Pyridaben",
-    "Pyrimethanil",
-    "Pyriproxyfen",
-    "Quizalofop-p-ethyl",
-    "Sodium ortho nitrophenolate",
-    "Sodium para nitropheonolate",
-    "Sodium penta nitroguaiacolate",
-    "Spirodiclofen"
-   ],
-   "fabricant": true
-  },
-  {
    "id": 370,
    "nom": "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
    "adresse": "Toplarönü Sok. No: 16 Anadoluhisarı İSTANBUL",
@@ -922,16 +814,200 @@
    "fabricant": true
   },
   {
+   "id": 944,
+   "nom": "CANSA KİMYA SAN. ve TİC.  LTD. ŞTİ.",
+   "adresse": "Tuzla Kimya Sanayicileri Organize Sanayi Bölgesi Melek Aras Bulvarı No: 39 Tepeören - Tuzla İSTANBUL",
+   "nbProduits": 176,
+   "nbImal": 171,
+   "nbIthal": 5,
+   "matieres": [
+    "2,4-D asite eşdeğer Isooctylester",
+    "2,4-D asite eşdeğer dimethyl amin tuzu",
+    "2,4-D asite eşdeğer dimethyl amonyum tuzu",
+    "Abamectin",
+    "Acetamiprid",
+    "Alpha-cypermethrin",
+    "Beta-cyfluthrin",
+    "Boscalid",
+    "Captan",
+    "Clodinafop-propargyl",
+    "Clopyralid",
+    "Cloquintocet-mexyl",
+    "Dicamba",
+    "Diclofop-methyl",
+    "Dodine",
+    "Epoxiconazole",
+    "Etoxazole",
+    "Flonicamid",
+    "Glyphosate Isopropylamin Tuzu",
+    "Hexythiazox",
+    "Hymexazole",
+    "Kresoxim-methyl",
+    "Mepiquat Chloride",
+    "Metalik bakıra eşdeğer bakır hidroksit",
+    "Metalik bakıra eşdeğer bakır oksiklorid",
+    "Metalik bakıra eşdeğer bordo bulamacı",
+    "Metribuzin",
+    "Oxyfluorfen",
+    "Pinoxaden",
+    "Prochloraz",
+    "Pyraclostrobin",
+    "Pyridaben",
+    "Pyrimethanil",
+    "Pyriproxyfen",
+    "Quizalofop-p-ethyl",
+    "Sodium ortho nitrophenolate",
+    "Sodium para nitropheonolate",
+    "Sodium penta nitroguaiacolate",
+    "Sodıum 5-nitroguaıacolate",
+    "Sodıum o-nitrophenolate",
+    "Sodıum p-nitrophenolate",
+    "Spirodiclofen"
+   ],
+   "matieresImal": [
+    "2,4-D asite eşdeğer Isooctylester",
+    "2,4-D asite eşdeğer dimethyl amin tuzu",
+    "2,4-D asite eşdeğer dimethyl amonyum tuzu",
+    "Abamectin",
+    "Acetamiprid",
+    "Alpha-cypermethrin",
+    "Beta-cyfluthrin",
+    "Boscalid",
+    "Captan",
+    "Clodinafop-propargyl",
+    "Clopyralid",
+    "Cloquintocet-mexyl",
+    "Dicamba",
+    "Diclofop-methyl",
+    "Dodine",
+    "Epoxiconazole",
+    "Etoxazole",
+    "Flonicamid",
+    "Glyphosate Isopropylamin Tuzu",
+    "Hexythiazox",
+    "Hymexazole",
+    "Kresoxim-methyl",
+    "Mepiquat Chloride",
+    "Metalik bakıra eşdeğer bakır hidroksit",
+    "Metalik bakıra eşdeğer bakır oksiklorid",
+    "Metalik bakıra eşdeğer bordo bulamacı",
+    "Metribuzin",
+    "Oxyfluorfen",
+    "Pinoxaden",
+    "Prochloraz",
+    "Pyraclostrobin",
+    "Pyridaben",
+    "Pyrimethanil",
+    "Pyriproxyfen",
+    "Quizalofop-p-ethyl",
+    "Sodium ortho nitrophenolate",
+    "Sodium para nitropheonolate",
+    "Sodium penta nitroguaiacolate",
+    "Spirodiclofen"
+   ],
+   "fabricant": true
+  },
+  {
+   "id": 1213,
+   "nom": "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
+   "adresse": "Kemalpaşa O.S.B Mah. Kazım Karabekir Cad. No:61 Kemalpaşa İZMİR",
+   "nbProduits": 171,
+   "nbImal": 171,
+   "nbIthal": 0,
+   "matieres": [
+    "1-Methylcyclopropene",
+    "2,4-D 2-Ethylhexyl ester",
+    "Abamectin",
+    "Azoxystrobin",
+    "Bentazone",
+    "Boscalid",
+    "Clodinafop-propargyl",
+    "Clofentezine",
+    "Cloquintocet-mexyl",
+    "Cyclanilide",
+    "Cycloxydim",
+    "Deltamethrin",
+    "Difenoconazole",
+    "Ethephon",
+    "Fenhexamid",
+    "Florasulam",
+    "Fludioxonil",
+    "Glyphosate Isopropylamin Tuzu",
+    "Indoxacarb",
+    "Lambda-cyhalothrin",
+    "MCPA",
+    "Mesotrione",
+    "Metalaxyl",
+    "Metalaxyl-m",
+    "Metalik bakıra eşdeğer bakır hidroksit",
+    "Metalik bakıra eşdeğer bakır oksiklorid",
+    "Metalik bakıra eşdeğer bakır sülfat",
+    "Metalik bakıra eşdeğer bordo bulamacı",
+    "Methoxyfenozide",
+    "Nicosulfuron",
+    "Pendimethalin",
+    "Pinoxaden",
+    "Pyraclostrobin",
+    "Quizalofop-p-ethyl",
+    "Spinetoram",
+    "Spiromesifen",
+    "Tebuconazole",
+    "Tebufenpyrad",
+    "Trifloxystrobin"
+   ],
+   "matieresImal": [
+    "1-Methylcyclopropene",
+    "2,4-D 2-Ethylhexyl ester",
+    "Abamectin",
+    "Azoxystrobin",
+    "Bentazone",
+    "Boscalid",
+    "Clodinafop-propargyl",
+    "Clofentezine",
+    "Cloquintocet-mexyl",
+    "Cyclanilide",
+    "Cycloxydim",
+    "Deltamethrin",
+    "Difenoconazole",
+    "Ethephon",
+    "Fenhexamid",
+    "Florasulam",
+    "Fludioxonil",
+    "Glyphosate Isopropylamin Tuzu",
+    "Indoxacarb",
+    "Lambda-cyhalothrin",
+    "MCPA",
+    "Mesotrione",
+    "Metalaxyl",
+    "Metalaxyl-m",
+    "Metalik bakıra eşdeğer bakır hidroksit",
+    "Metalik bakıra eşdeğer bakır oksiklorid",
+    "Metalik bakıra eşdeğer bakır sülfat",
+    "Metalik bakıra eşdeğer bordo bulamacı",
+    "Methoxyfenozide",
+    "Nicosulfuron",
+    "Pendimethalin",
+    "Pinoxaden",
+    "Pyraclostrobin",
+    "Quizalofop-p-ethyl",
+    "Spinetoram",
+    "Spiromesifen",
+    "Tebuconazole",
+    "Tebufenpyrad",
+    "Trifloxystrobin"
+   ],
+   "fabricant": true
+  },
+  {
    "id": 1374,
    "nom": "HEKTAŞ TİCARET TÜRK A.Ş.",
    "adresse": "Gebze Osb Mahallesi 700.Sk. No:711/1 Gebze KOCAELİ",
-   "nbProduits": 175,
-   "nbImal": 170,
+   "nbProduits": 173,
+   "nbImal": 168,
    "nbIthal": 5,
    "matieres": [
     "Abamectin",
     "Azoxystrobin",
-    "Bentazone",
     "Boscalid",
     "Captan",
     "Chlorantraniliprole",
@@ -950,7 +1026,6 @@
     "Flutriafol",
     "Fosetyl-Al",
     "Glyphosate Isopropylamin Tuzu",
-    "Imazamox",
     "Indoxacarb",
     "Kresoxim-methyl",
     "Metalaxyl",
@@ -968,7 +1043,6 @@
     "S-Metolachlor",
     "Spinosad",
     "Tebuconazole",
-    "Tebufenpyrad",
     "Thifensulfuron-methyl",
     "Tribenuron-methyl",
     "Trifloxystrobin"
@@ -976,7 +1050,6 @@
    "matieresImal": [
     "Abamectin",
     "Azoxystrobin",
-    "Bentazone",
     "Boscalid",
     "Captan",
     "Chlorantraniliprole",
@@ -995,7 +1068,6 @@
     "Flutriafol",
     "Fosetyl-Al",
     "Glyphosate Isopropylamin Tuzu",
-    "Imazamox",
     "Indoxacarb",
     "Kresoxim-methyl",
     "Metalaxyl",
@@ -1012,7 +1084,6 @@
     "S-Metolachlor",
     "Spinosad",
     "Tebuconazole",
-    "Tebufenpyrad",
     "Trifloxystrobin"
    ],
    "fabricant": true
@@ -1105,95 +1176,6 @@
     "Spirotetramat",
     "Tebuconazole",
     "Tembotrione"
-   ],
-   "fabricant": true
-  },
-  {
-   "id": 1213,
-   "nom": "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
-   "adresse": "Kemalpaşa O.S.B Mah. Kazım Karabekir Cad. No:61 Kemalpaşa İZMİR",
-   "nbProduits": 161,
-   "nbImal": 161,
-   "nbIthal": 0,
-   "matieres": [
-    "1-Methylcyclopropene",
-    "2,4-D 2-Ethylhexyl ester",
-    "Abamectin",
-    "Azoxystrobin",
-    "Bentazone",
-    "Boscalid",
-    "Clodinafop-propargyl",
-    "Clofentezine",
-    "Cloquintocet-mexyl",
-    "Cyclanilide",
-    "Cycloxydim",
-    "Deltamethrin",
-    "Difenoconazole",
-    "Ethephon",
-    "Fenhexamid",
-    "Florasulam",
-    "Fludioxonil",
-    "Glyphosate Isopropylamin Tuzu",
-    "Indoxacarb",
-    "Lambda-cyhalothrin",
-    "MCPA",
-    "Mesotrione",
-    "Metalaxyl-m",
-    "Metalik bakıra eşdeğer bakır hidroksit",
-    "Metalik bakıra eşdeğer bakır oksiklorid",
-    "Metalik bakıra eşdeğer bakır sülfat",
-    "Metalik bakıra eşdeğer bordo bulamacı",
-    "Methoxyfenozide",
-    "Nicosulfuron",
-    "Pendimethalin",
-    "Pinoxaden",
-    "Pyraclostrobin",
-    "Quizalofop-p-ethyl",
-    "Spinetoram",
-    "Spiromesifen",
-    "Tebuconazole",
-    "Tebufenpyrad",
-    "Trifloxystrobin"
-   ],
-   "matieresImal": [
-    "1-Methylcyclopropene",
-    "2,4-D 2-Ethylhexyl ester",
-    "Abamectin",
-    "Azoxystrobin",
-    "Bentazone",
-    "Boscalid",
-    "Clodinafop-propargyl",
-    "Clofentezine",
-    "Cloquintocet-mexyl",
-    "Cyclanilide",
-    "Cycloxydim",
-    "Deltamethrin",
-    "Difenoconazole",
-    "Ethephon",
-    "Fenhexamid",
-    "Florasulam",
-    "Fludioxonil",
-    "Glyphosate Isopropylamin Tuzu",
-    "Indoxacarb",
-    "Lambda-cyhalothrin",
-    "MCPA",
-    "Mesotrione",
-    "Metalaxyl-m",
-    "Metalik bakıra eşdeğer bakır hidroksit",
-    "Metalik bakıra eşdeğer bakır oksiklorid",
-    "Metalik bakıra eşdeğer bakır sülfat",
-    "Metalik bakıra eşdeğer bordo bulamacı",
-    "Methoxyfenozide",
-    "Nicosulfuron",
-    "Pendimethalin",
-    "Pinoxaden",
-    "Pyraclostrobin",
-    "Quizalofop-p-ethyl",
-    "Spinetoram",
-    "Spiromesifen",
-    "Tebuconazole",
-    "Tebufenpyrad",
-    "Trifloxystrobin"
    ],
    "fabricant": true
   },
@@ -1370,8 +1352,8 @@
    "id": 730,
    "nom": "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
    "adresse": "Dumlupınar Mah. Halil Ağa Cad. No: 9/1 AFYONKARAHİSAR",
-   "nbProduits": 135,
-   "nbImal": 135,
+   "nbProduits": 134,
+   "nbImal": 134,
    "nbIthal": 0,
    "matieres": [
     "Abamectin",
@@ -1388,7 +1370,6 @@
     "Fluazinam",
     "Flubendiamide",
     "Fludioxonil",
-    "Fluopicolide",
     "Fosetyl-Al",
     "Hexythiazox",
     "Isoxaflutole +240 g/l Cyprosulfamide",
@@ -1400,7 +1381,6 @@
     "Metalik bakıra eşdeğer bakır oksit",
     "Metamitron",
     "Methoxyfenozide",
-    "Propamocarb-hydrochloride",
     "Pyrimethanil +125 g/l Fluopyram",
     "Quizalofop-p-ethyl",
     "S-Metolachlor",
@@ -1423,7 +1403,6 @@
     "Fluazinam",
     "Flubendiamide",
     "Fludioxonil",
-    "Fluopicolide",
     "Fosetyl-Al",
     "Hexythiazox",
     "Isoxaflutole +240 g/l Cyprosulfamide",
@@ -1435,7 +1414,6 @@
     "Metalik bakıra eşdeğer bakır oksit",
     "Metamitron",
     "Methoxyfenozide",
-    "Propamocarb-hydrochloride",
     "Pyrimethanil +125 g/l Fluopyram",
     "Quizalofop-p-ethyl",
     "S-Metolachlor",
@@ -1848,8 +1826,8 @@
    "id": 1399,
    "nom": "SUNSET KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ VE TİCARET A.Ş.",
    "adresse": "Organize Sanayi Bölgesi Mah. 2 B Nolu Yol Cad. Fnc Tarım Blok No:6 Bor NİĞDE",
-   "nbProduits": 83,
-   "nbImal": 83,
+   "nbProduits": 79,
+   "nbImal": 79,
    "nbIthal": 0,
    "matieres": [
     "Abamectin",
@@ -1947,6 +1925,51 @@
    "fabricant": true
   },
   {
+   "id": 1539,
+   "nom": "CROPLİNE KİMYA  AŞ.",
+   "adresse": "Büyükkayacık Osb Mah. 102 Cd. No: 14 Selçuklu KONYA",
+   "nbProduits": 60,
+   "nbImal": 60,
+   "nbIthal": 0,
+   "matieres": [
+    "2,4-D asite eşdeğer dimethyl amin tuzu",
+    "2- (1-Naphthyl) Acetamıde (NAD)",
+    "2- (1-Naphthyl) Acetic Acid (NAA)",
+    "Abamectin",
+    "Azoxystrobin",
+    "Bentazone",
+    "Buprofezin",
+    "Fludioxonil",
+    "Glufosinate-ammonium tuzu",
+    "Malathion",
+    "Mefenpyr-diethyl",
+    "Mesosulfuron-methyl",
+    "Metalaxyl-m",
+    "Nicosulfuron",
+    "Pendimethalin",
+    "İndaziflam"
+   ],
+   "matieresImal": [
+    "2,4-D asite eşdeğer dimethyl amin tuzu",
+    "2- (1-Naphthyl) Acetamıde (NAD)",
+    "2- (1-Naphthyl) Acetic Acid (NAA)",
+    "Abamectin",
+    "Azoxystrobin",
+    "Bentazone",
+    "Buprofezin",
+    "Fludioxonil",
+    "Glufosinate-ammonium tuzu",
+    "Malathion",
+    "Mefenpyr-diethyl",
+    "Mesosulfuron-methyl",
+    "Metalaxyl-m",
+    "Nicosulfuron",
+    "Pendimethalin",
+    "İndaziflam"
+   ],
+   "fabricant": true
+  },
+  {
    "id": 1085,
    "nom": "GÜNER TAR. MÜH. GID. HAY. VE İNŞ. TAAHHÜT TURİZM SAN. VE TİC. LTD. ŞTİ.",
    "adresse": "Cumhuriyet Mah. İlbey Güneş Cad. No:14/603 Yüreğir ADANA",
@@ -1989,9 +2012,9 @@
    "id": 1408,
    "nom": "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
    "adresse": "AOSB 3Kısım Mahallesi 25 Cad. No:15 Döşemealtı ANTALYA",
-   "nbProduits": 60,
+   "nbProduits": 56,
    "nbImal": 55,
-   "nbIthal": 5,
+   "nbIthal": 1,
    "matieres": [
     "Azoxystrobin",
     "Boscalid",
@@ -2103,8 +2126,8 @@
    "id": 1418,
    "nom": "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
    "adresse": "Çınarlı Mah .61027 Sk. Sunar Nuri Çomu İş Merkezi Sitesi A Blok NO:18 İç Kapı NO:23 ADANA",
-   "nbProduits": 45,
-   "nbImal": 45,
+   "nbProduits": 50,
+   "nbImal": 50,
    "nbIthal": 0,
    "matieres": [
     "Clodinafop-propargyl",
@@ -2115,10 +2138,12 @@
     "Fosetyl-Al",
     "Hymexazole",
     "Lufenuron",
+    "Mesotrione",
     "Metalaxyl-m",
     "Prothioconazole",
     "Spinetoram",
-    "Spiroxamine"
+    "Spiroxamine",
+    "Terbuthylazine"
    ],
    "matieresImal": [
     "Clodinafop-propargyl",
@@ -2129,47 +2154,12 @@
     "Fosetyl-Al",
     "Hymexazole",
     "Lufenuron",
+    "Mesotrione",
     "Metalaxyl-m",
     "Prothioconazole",
     "Spinetoram",
-    "Spiroxamine"
-   ],
-   "fabricant": true
-  },
-  {
-   "id": 758,
-   "nom": "FERAS KİMYA ZİRAİ İLAÇLAR TARIM ve  HAYVANCILIK NAKLİYE SAN. İÇ ve DIŞ TİC. LTD. ŞTİ.",
-   "adresse": "Kayacık Mah. Konya Org. San. Böl. Lalehan Cad. İkipınar Sok. No: 17  Selçuklu KONYA",
-   "nbProduits": 41,
-   "nbImal": 41,
-   "nbIthal": 0,
-   "matieres": [
-    "Abamectin",
-    "Acetamiprid",
-    "Boscalid",
-    "Cloquintocet-mexyl",
-    "Esfenvalerate",
-    "Etoxazole",
-    "Glyphosate Isopropylamin Tuzu",
-    "Mesotrione",
-    "Metalaxyl",
-    "Nicosulfuron",
-    "Pinoxaden",
-    "Pyraclostrobin"
-   ],
-   "matieresImal": [
-    "Abamectin",
-    "Acetamiprid",
-    "Boscalid",
-    "Cloquintocet-mexyl",
-    "Esfenvalerate",
-    "Etoxazole",
-    "Glyphosate Isopropylamin Tuzu",
-    "Mesotrione",
-    "Metalaxyl",
-    "Nicosulfuron",
-    "Pinoxaden",
-    "Pyraclostrobin"
+    "Spiroxamine",
+    "Terbuthylazine"
    ],
    "fabricant": true
   },
@@ -2227,6 +2217,43 @@
     "30 cm x 100 m Ebatında Mavi Renkli Yapışkan Şerit Tuzak",
     "30 cm x 100 m Ebatında Siyah Renkli Yapışkan Tuzak",
     "30 cm x 100 m ebatında sarı yapışkan şerit tuzak"
+   ],
+   "fabricant": true
+  },
+  {
+   "id": 758,
+   "nom": "FERAS KİMYA ZİRAİ İLAÇLAR TARIM ve  HAYVANCILIK NAKLİYE SAN. İÇ ve DIŞ TİC. LTD. ŞTİ.",
+   "adresse": "Kayacık Mah. Konya Org. San. Böl. Lalehan Cad. İkipınar Sok. No: 17  Selçuklu KONYA",
+   "nbProduits": 37,
+   "nbImal": 37,
+   "nbIthal": 0,
+   "matieres": [
+    "Abamectin",
+    "Acetamiprid",
+    "Boscalid",
+    "Cloquintocet-mexyl",
+    "Esfenvalerate",
+    "Etoxazole",
+    "Glyphosate Isopropylamin Tuzu",
+    "Mesotrione",
+    "Metalaxyl",
+    "Nicosulfuron",
+    "Pinoxaden",
+    "Pyraclostrobin"
+   ],
+   "matieresImal": [
+    "Abamectin",
+    "Acetamiprid",
+    "Boscalid",
+    "Cloquintocet-mexyl",
+    "Esfenvalerate",
+    "Etoxazole",
+    "Glyphosate Isopropylamin Tuzu",
+    "Mesotrione",
+    "Metalaxyl",
+    "Nicosulfuron",
+    "Pinoxaden",
+    "Pyraclostrobin"
    ],
    "fabricant": true
   },
@@ -2385,6 +2412,31 @@
    "fabricant": true
   },
   {
+   "id": 1390,
+   "nom": "ROYAL CHEM TARIM ÜRÜNLERİ İTHALAT İHRACAT SAN.TİC.LTD.ŞTİ.",
+   "adresse": "Odabaşı Mah. Atatürk Blv. No:63/12 Antakya HATAY",
+   "nbProduits": 30,
+   "nbImal": 30,
+   "nbIthal": 0,
+   "matieres": [
+    "Abamectin",
+    "Acetamiprid",
+    "Captan",
+    "Gibberellic acid",
+    "Nicosulfuron",
+    "Tebuconazole"
+   ],
+   "matieresImal": [
+    "Abamectin",
+    "Acetamiprid",
+    "Captan",
+    "Gibberellic acid",
+    "Nicosulfuron",
+    "Tebuconazole"
+   ],
+   "fabricant": true
+  },
+  {
    "id": 992,
    "nom": "GENAGRO TARIM MÜMESSİLLİK ÇEVRE SAĞLIĞI SAN. ve TİC. LTD. ŞTİ.",
    "adresse": "Postahane Mah. Sağlık Sok. Gediz Sitesi No: 4 Tuzla İSTANBUL",
@@ -2439,29 +2491,6 @@
    "fabricant": true
   },
   {
-   "id": 1390,
-   "nom": "ROYAL CHEM TARIM ÜRÜNLERİ İTHALAT İHRACAT SAN.TİC.LTD.ŞTİ.",
-   "adresse": "Odabaşı Mah. Atatürk Blv. No:63/12 Antakya HATAY",
-   "nbProduits": 25,
-   "nbImal": 25,
-   "nbIthal": 0,
-   "matieres": [
-    "Abamectin",
-    "Acetamiprid",
-    "Gibberellic acid",
-    "Nicosulfuron",
-    "Tebuconazole"
-   ],
-   "matieresImal": [
-    "Abamectin",
-    "Acetamiprid",
-    "Gibberellic acid",
-    "Nicosulfuron",
-    "Tebuconazole"
-   ],
-   "fabricant": true
-  },
-  {
    "id": 1383,
    "nom": "TAKİMSAN TARIM KİMYA SAN. VE TİC.A.Ş.",
    "adresse": "Gebze Osb Mahallesi 700. Sk. No:711/1 Gebze KOCAELİ",
@@ -2479,28 +2508,6 @@
     "Metalik bakıra eşdeğer bakır oksiklorid",
     "Pendimethalin",
     "Trifloxystrobin"
-   ],
-   "fabricant": true
-  },
-  {
-   "id": 1376,
-   "nom": "INNOCHEM TARIM İLAÇLARI SAN. VE TİC. A.Ş.",
-   "adresse": "Tarım Mah. Aspendos Blv. Mancalar İş Merkezi Sit. No:98/302 Muratpaşa  ANTALYA",
-   "nbProduits": 25,
-   "nbImal": 20,
-   "nbIthal": 5,
-   "matieres": [
-    "Abamectin",
-    "Aclonifen",
-    "Imazamox",
-    "Nicosulfuron",
-    "Spinetoram"
-   ],
-   "matieresImal": [
-    "Abamectin",
-    "Aclonifen",
-    "Imazamox",
-    "Spinetoram"
    ],
    "fabricant": true
   },
@@ -2582,25 +2589,6 @@
    "fabricant": true
   },
   {
-   "id": 1507,
-   "nom": "AGRİMAX GROUP TARIM VE SAN. LTD.ŞTİ.",
-   "adresse": "Alsancak Mah. Gazi Mustafa Kemal_1Blv. Capıtal İş Merkezi No: 218/220A İç Kapı No: 7  Toroslar MERSİN",
-   "nbProduits": 17,
-   "nbImal": 17,
-   "nbIthal": 0,
-   "matieres": [
-    "Abamectin",
-    "Azoxystrobin",
-    "Chlorantraniliprole"
-   ],
-   "matieresImal": [
-    "Abamectin",
-    "Azoxystrobin",
-    "Chlorantraniliprole"
-   ],
-   "fabricant": true
-  },
-  {
    "id": 1196,
    "nom": "SUNO TARIM SAN. VE TİC. A.Ş.",
    "adresse": "Adalet Mah. Manas Blv. Folkart Towers B Kule No:39 Kat:31/3107  Bayraklı İZMİR",
@@ -2623,6 +2611,25 @@
     "Fosetyl-Al",
     "Hexythiazox",
     "Metalik bakıra eşdeğer bordo bulamacı"
+   ],
+   "fabricant": true
+  },
+  {
+   "id": 1507,
+   "nom": "AGRİMAX GROUP TARIM VE SAN. LTD.ŞTİ.",
+   "adresse": "Alsancak Mah. Gazi Mustafa Kemal_1Blv. Capıtal İş Merkezi No: 218/220A İç Kapı No: 7  Toroslar MERSİN",
+   "nbProduits": 16,
+   "nbImal": 16,
+   "nbIthal": 0,
+   "matieres": [
+    "Abamectin",
+    "Azoxystrobin",
+    "Chlorantraniliprole"
+   ],
+   "matieresImal": [
+    "Abamectin",
+    "Azoxystrobin",
+    "Chlorantraniliprole"
    ],
    "fabricant": true
   },
@@ -2706,6 +2713,24 @@
    "fabricant": true
   },
   {
+   "id": 1376,
+   "nom": "INNOCHEM TARIM İLAÇLARI SAN. VE TİC. A.Ş.",
+   "adresse": "Tarım Mah. Aspendos Blv. Mancalar İş Merkezi Sit. No:98/302 Muratpaşa  ANTALYA",
+   "nbProduits": 15,
+   "nbImal": 10,
+   "nbIthal": 5,
+   "matieres": [
+    "Aclonifen",
+    "Imazamox",
+    "Nicosulfuron"
+   ],
+   "matieresImal": [
+    "Aclonifen",
+    "Imazamox"
+   ],
+   "fabricant": true
+  },
+  {
    "id": 1434,
    "nom": "UPL AGROMED TARIM İLAÇLARI VE TOHUMCULUK SAN. VE TİC. A.Ş.",
    "adresse": "Güzel Cumhuriyet Mah. İncirlik Bulv. No:316 Yüreğir ADANA",
@@ -2724,19 +2749,19 @@
    "fabricant": true
   },
   {
-   "id": 1539,
-   "nom": "CROPLİNE KİMYA  AŞ.",
-   "adresse": "Büyükkayacık Osb Mah. 102 Cd. No: 14 Selçuklu KONYA",
+   "id": 1542,
+   "nom": "INNOCHEM TARIM İLAÇLARI SAN. VE TİC. A.Ş.",
+   "adresse": "Altınova Sinan Mah. Akay Sok. No:4 İç kapı No: 39 Kepez ANTALYA",
    "nbProduits": 10,
    "nbImal": 10,
    "nbIthal": 0,
    "matieres": [
     "Abamectin",
-    "Nicosulfuron"
+    "Spinetoram"
    ],
    "matieresImal": [
     "Abamectin",
-    "Nicosulfuron"
+    "Spinetoram"
    ],
    "fabricant": true
   },
@@ -2944,8 +2969,8 @@
    "id": 1210,
    "nom": "UPL ZİRAAT VE KİMYA SAN. VE TİC. LTD. ŞTİ.",
    "adresse": "Adalet Mah. Manas Blv. No:47 B/3107 Bayraklı İZMİR",
-   "nbProduits": 63,
-   "nbImal": 2,
+   "nbProduits": 62,
+   "nbImal": 1,
    "nbIthal": 61,
    "matieres": [
     "Abamectin",
@@ -2991,12 +3016,29 @@
    "fabricant": true
   },
   {
+   "id": 1540,
+   "nom": "AGRİMAX GROUP TARIM TİC. VE SAN. LTD.ŞTİ.",
+   "adresse": "Alsancak Mah. Gazi Mustafa Kemal 1 Blv. Capıtal İş Merkezi No: 218/220A İç Kapı No: 7  Toroslar MERSİN",
+   "nbProduits": 1,
+   "nbImal": 1,
+   "nbIthal": 0,
+   "matieres": [
+    "Prothioconazole",
+    "Tebuconazole"
+   ],
+   "matieresImal": [
+    "Prothioconazole",
+    "Tebuconazole"
+   ],
+   "fabricant": true
+  },
+  {
    "id": 1416,
    "nom": "SYNGENTA TARIM SAN.VE TİC.A.Ş.",
    "adresse": "Halkapınar Mah. 1203/11 Sk. No:5-7 İç Kapı No:62 Konak İZMİR",
-   "nbProduits": 125,
+   "nbProduits": 121,
    "nbImal": 0,
-   "nbIthal": 125,
+   "nbIthal": 121,
    "matieres": [
     "Abamectin",
     "Acibenzolar-s-methyl",
@@ -3103,32 +3145,6 @@
    "fabricant": false
   },
   {
-   "id": 953,
-   "nom": "NUFARM TURKEY KİMYEVİ MAD. İTH. ve TİC. LTD.ŞTİ.",
-   "adresse": "Mimar Sinan Mah. Mimar Sinan Cad. No:67 K:3 Çekmeköy İSTANBUL",
-   "nbProduits": 52,
-   "nbImal": 0,
-   "nbIthal": 52,
-   "matieres": [
-    "5x10 üzeri 9 Hücreler/g Aureobasidium pullulans",
-    "Azoxystrobin",
-    "Captan",
-    "Dichlorprop-p",
-    "Diflufenican",
-    "Flonicamid",
-    "Fluometuron",
-    "Fosetyl-Al",
-    "Metalik bakıra eşdeğer bakır hidroksit",
-    "Metalik bakıra eşdeğer bazik bakır sülfat",
-    "Metribuzin",
-    "Metsulfuron-methyl",
-    "Pyrimethanil",
-    "Zoxamide"
-   ],
-   "matieresImal": [],
-   "fabricant": false
-  },
-  {
    "id": 1498,
    "nom": "CHICO CROP ZİRAİ VE KİMYEVİ MADDELER SAN. TİC. AŞ.",
    "adresse": "Adelet Mah. Manas Blv. No: 39 iç kapı no: 3107 Bayraklı İZMİR",
@@ -3168,6 +3184,32 @@
     "Penoxsulam",
     "Picoxystrobin",
     "Sulfoxaflor"
+   ],
+   "matieresImal": [],
+   "fabricant": false
+  },
+  {
+   "id": 953,
+   "nom": "NUFARM TURKEY KİMYEVİ MAD. İTH. ve TİC. LTD.ŞTİ.",
+   "adresse": "Mimar Sinan Mah. Mimar Sinan Cad. No:67 K:3 Çekmeköy İSTANBUL",
+   "nbProduits": 48,
+   "nbImal": 0,
+   "nbIthal": 48,
+   "matieres": [
+    "5x10 üzeri 9 Hücreler/g Aureobasidium pullulans",
+    "Azoxystrobin",
+    "Captan",
+    "Dichlorprop-p",
+    "Diflufenican",
+    "Flonicamid",
+    "Fluometuron",
+    "Fosetyl-Al",
+    "Metalik bakıra eşdeğer bakır hidroksit",
+    "Metalik bakıra eşdeğer bazik bakır sülfat",
+    "Metribuzin",
+    "Metsulfuron-methyl",
+    "Pyrimethanil",
+    "Zoxamide"
    ],
    "matieresImal": [],
    "fabricant": false
@@ -3325,6 +3367,21 @@
    "fabricant": false
   },
   {
+   "id": 1502,
+   "nom": "BKS BİYOLOJİK KORUMA SİSTEMLERİ LABORATUVAR HİZMETLERİ TARIM MAKİNE SAN. VE TİC. A.Ş.",
+   "adresse": "Antalya Organize Sanayi Bölgesi 2. Kısım 24. Cad. No: 26  ANTALYA",
+   "nbProduits": 15,
+   "nbImal": 0,
+   "nbIthal": 15,
+   "matieres": [
+    "(E,E)-Trans-8,10-Dodecadien-1ol+Delta Tuzak",
+    "(EZZ-3,8,11 )-Tetradecatrienyl Acetate (95%)+EZ -3,8 -tetradecadienyl acetate (%5) / kapsül+Delta Tuzak",
+    "Methyl (E,E,Z)-2,4,6-dedatrienoate/Dispencer +80mg Methyl 4-(3-(3.3-Dimethyloxiran-2- yl)-1-methylcyclohex-2-en-1-ol/(murgantiol) Dispencer+Levha Tuzak"
+   ],
+   "matieresImal": [],
+   "fabricant": false
+  },
+  {
    "id": 1181,
    "nom": "VAPCO TARIM İLAÇ ÜRETİM PAZARLAMA DAĞITIM VETERİNERLİK İTH.İHR.LTD.ŞTİ.",
    "adresse": "Yaşamkent Mah. 3250 Cad. Pelit Plaza No:6/A/63 Çankaya ANKARA",
@@ -3393,20 +3450,6 @@
    "matieres": [
     "Broflanilide",
     "Imazamox"
-   ],
-   "matieresImal": [],
-   "fabricant": false
-  },
-  {
-   "id": 1502,
-   "nom": "BKS BİYOLOJİK KORUMA SİSTEMLERİ LABORATUVAR HİZMETLERİ TARIM MAKİNE SAN. VE TİC. A.Ş.",
-   "adresse": "Antalya Organize Sanayi Bölgesi 2. Kısım 24. Cad. No: 26  ANTALYA",
-   "nbProduits": 10,
-   "nbImal": 0,
-   "nbIthal": 10,
-   "matieres": [
-    "(E,E)-Trans-8,10-Dodecadien-1ol+Delta Tuzak",
-    "(EZZ-3,8,11 )-Tetradecatrienyl Acetate (95%)+EZ -3,8 -tetradecadienyl acetate (%5) / kapsül+Delta Tuzak"
    ],
    "matieresImal": [],
    "fabricant": false
@@ -3568,19 +3611,6 @@
    "fabricant": false
   },
   {
-   "id": 1015,
-   "nom": "FORWARD CROPPROTECTION ZİRAİ İLAÇ SAN. VE TİC. LTD.ŞTİ.",
-   "adresse": "Dumlupınar Mah. Adnan Menderes Bulv. No:96/5 Yenişehir MERSİN",
-   "nbProduits": 5,
-   "nbImal": 0,
-   "nbIthal": 5,
-   "matieres": [
-    "Quizalofop-p-ethyl"
-   ],
-   "matieresImal": [],
-   "fabricant": false
-  },
-  {
    "id": 1338,
    "nom": "GLYRON KİMYEVİ MADDELER SAN. VE TİC.LTD.ŞTİ.",
    "adresse": "Ataşehir Mah. 8261 Sk. Bertur Konut Yapı Sit. C Blok Apt. No:14/2 Çiğli İZMİR",
@@ -3673,19 +3703,6 @@
    ],
    "matieresImal": [],
    "fabricant": false
-  },
-  {
-   "id": 305,
-   "nom": "UPL ZİRAAT ve KİMYA SAN. ve TİC. LTD. ŞTİ.",
-   "adresse": "Cumhuriyet Bulvarı No: 82/802 Pasaport İZMİR",
-   "nbProduits": 5,
-   "nbImal": 0,
-   "nbIthal": 5,
-   "matieres": [
-    "2,4-D asite eşdeğer dimethyl amin tuzu"
-   ],
-   "matieresImal": [],
-   "fabricant": false
   }
  ],
  "matieres": [
@@ -3759,11 +3776,11 @@
    "cle": "2 1 naphthyl acetamide nad",
    "nom": "2- (1-Naphthyl) Acetamıde (NAD)",
    "societes": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "CROPLİNE KİMYA  AŞ.",
     "GENTA GENEL TARIM ÜRÜNLERİ PAZARLAMA A.Ş."
    ],
    "societesImal": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "CROPLİNE KİMYA  AŞ.",
     "GENTA GENEL TARIM ÜRÜNLERİ PAZARLAMA A.Ş."
    ]
   },
@@ -3771,11 +3788,11 @@
    "cle": "2 1 naphthyl acetic acid naa",
    "nom": "2- (1-Naphthyl) Acetic Acid (NAA)",
    "societes": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "CROPLİNE KİMYA  AŞ.",
     "GENTA GENEL TARIM ÜRÜNLERİ PAZARLAMA A.Ş."
    ],
    "societesImal": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "CROPLİNE KİMYA  AŞ.",
     "GENTA GENEL TARIM ÜRÜNLERİ PAZARLAMA A.Ş."
    ]
   },
@@ -3802,19 +3819,18 @@
    "nom": "2,4-D asite eşdeğer dimethyl amin tuzu",
    "societes": [
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "BİMKO KİMYA GÜBRE SAN. VE TİC. LTD.ŞTİ.",
     "CANSA KİMYA SAN. ve TİC.  LTD. ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
-    "SAFA TARIM TİC.ve SAN. LTD. ŞTİ.",
-    "UPL ZİRAAT ve KİMYA SAN. ve TİC. LTD. ŞTİ."
+    "CROPLİNE KİMYA  AŞ.",
+    "SAFA TARIM TİC.ve SAN. LTD. ŞTİ."
    ],
    "societesImal": [
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "BİMKO KİMYA GÜBRE SAN. VE TİC. LTD.ŞTİ.",
     "CANSA KİMYA SAN. ve TİC.  LTD. ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
+    "CROPLİNE KİMYA  AŞ.",
     "SAFA TARIM TİC.ve SAN. LTD. ŞTİ."
    ]
   },
@@ -4184,6 +4200,7 @@
     "CARAN KİMYA SAN. VE TİC.LTD.ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "ERTAR KİM. TAR. ÜRN. VE ALT. İML. PAZ. SAN. VE TİC. LTD. ŞTİ.",
@@ -4214,6 +4231,7 @@
     "CARAN KİMYA SAN. VE TİC.LTD.ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "ERTAR KİM. TAR. ÜRN. VE ALT. İML. PAZ. SAN. VE TİC. LTD. ŞTİ.",
@@ -4301,9 +4319,9 @@
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
     "BASF TÜRK KİMYA SAN.VE TİC.LTD.ŞTİ.",
     "CHICO CROP ZİRAİ VE KİMYEVİ MADDELER SAN. TİC. AŞ.",
+    "CROPLİNE KİMYA  AŞ.",
     "ENTOSAV İLAÇLAMA İNŞAAT TEMİZLİK VE HİZMET İŞLETMELERİ SAN.TİC.LTD.ŞTİ.",
     "ERTAR KİM. TAR. ÜRN. VE ALT. İML. PAZ. SAN. VE TİC. LTD. ŞTİ.",
-    "HEKTAŞ TİCARET TÜRK A.Ş.",
     "KORUMA KLOR ALKALİ SAN. ve TİC. A.Ş.",
     "MENTA TARIM İLÇ. SAN. VE TİC. LTD. ŞTİ.",
     "SAFA TARIM A.Ş.",
@@ -4315,9 +4333,9 @@
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "ENTOSAV İLAÇLAMA İNŞAAT TEMİZLİK VE HİZMET İŞLETMELERİ SAN.TİC.LTD.ŞTİ.",
     "ERTAR KİM. TAR. ÜRN. VE ALT. İML. PAZ. SAN. VE TİC. LTD. ŞTİ.",
-    "HEKTAŞ TİCARET TÜRK A.Ş.",
     "KORUMA KLOR ALKALİ SAN. ve TİC. A.Ş.",
     "MENTA TARIM İLÇ. SAN. VE TİC. LTD. ŞTİ.",
     "SAFA TARIM A.Ş.",
@@ -4434,8 +4452,8 @@
    "nom": "Buprofezin",
    "societes": [
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
+    "CROPLİNE KİMYA  AŞ.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "GÜNER TAR. MÜH. GID. HAY. VE İNŞ. TAAHHÜT TURİZM SAN. VE TİC. LTD. ŞTİ.",
     "PLATİN KİMYA MÜMESSİLLİK VE DIŞ TİC. A.Ş.",
@@ -4444,8 +4462,8 @@
    ],
    "societesImal": [
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
+    "CROPLİNE KİMYA  AŞ.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "GÜNER TAR. MÜH. GID. HAY. VE İNŞ. TAAHHÜT TURİZM SAN. VE TİC. LTD. ŞTİ.",
     "PLATİN KİMYA MÜMESSİLLİK VE DIŞ TİC. A.Ş.",
@@ -4468,6 +4486,7 @@
     "GENNOVA TARIM İLAÇLARI SANAYİ VE TİCARET A.Ş.",
     "HEKTAŞ TİCARET TÜRK A.Ş.",
     "NUFARM TURKEY KİMYEVİ MAD. İTH. ve TİC. LTD.ŞTİ.",
+    "ROYAL CHEM TARIM ÜRÜNLERİ İTHALAT İHRACAT SAN.TİC.LTD.ŞTİ.",
     "ROYAL-FEN KİMYA TARIM İTHALAT İHRACAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "SAFA TARIM TİC.ve SAN. LTD. ŞTİ.",
     "TANCAN DIŞ TİC.LTD.ŞTİ.",
@@ -4483,6 +4502,7 @@
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
     "GENNOVA TARIM İLAÇLARI SANAYİ VE TİCARET A.Ş.",
     "HEKTAŞ TİCARET TÜRK A.Ş.",
+    "ROYAL CHEM TARIM ÜRÜNLERİ İTHALAT İHRACAT SAN.TİC.LTD.ŞTİ.",
     "ROYAL-FEN KİMYA TARIM İTHALAT İHRACAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
     "SAFA TARIM TİC.ve SAN. LTD. ŞTİ.",
     "VEFA TARIM İLAÇLARI KİMYA ve GIDA SANAYİ TİC. A.Ş."
@@ -5260,7 +5280,6 @@
     "ADAMA TURKEY TARIM SAN. VE TİC.LTD.ŞTİ",
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
-    "CANSA KİMYA SAN. ve TİC.  LTD. ŞTİ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "PLATİN KİMYA MÜMESSİLLİK VE DIŞ TİC. A.Ş."
    ],
@@ -5268,7 +5287,6 @@
     "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
-    "CANSA KİMYA SAN. ve TİC.  LTD. ŞTİ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "PLATİN KİMYA MÜMESSİLLİK VE DIŞ TİC. A.Ş."
    ]
@@ -5556,13 +5574,13 @@
    "nom": "Fludioxonil",
    "societes": [
     "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
     "ASTRANOVA TARIM TİCARET VE SANAYİ A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
     "CORTEVA TURKEY TARIM A.Ş.",
+    "CROPLİNE KİMYA  AŞ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
@@ -5575,12 +5593,12 @@
    ],
    "societesImal": [
     "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
     "ASTRANOVA TARIM TİCARET VE SANAYİ A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
@@ -5606,16 +5624,6 @@
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
     "SAFA TARIM A.Ş."
-   ]
-  },
-  {
-   "cle": "fluopicolide",
-   "nom": "Fluopicolide",
-   "societes": [
-    "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş."
-   ],
-   "societesImal": [
-    "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş."
    ]
   },
   {
@@ -5839,9 +5847,9 @@
    "cle": "glufosinate ammonium tuzu",
    "nom": "Glufosinate-ammonium tuzu",
    "societes": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
+    "CROPLİNE KİMYA  AŞ.",
     "ENTOSAV İLAÇLAMA İNŞAAT TEMİZLİK VE HİZMET İŞLETMELERİ SAN.TİC.LTD.ŞTİ.",
     "MENTA TARIM İLÇ. SAN. VE TİC. LTD. ŞTİ.",
     "ONCROPSCIENCE KİMYA SAN. VE TİC.LTD.ŞTİ.",
@@ -5851,9 +5859,9 @@
     "SUNSET KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ VE TİCARET A.Ş."
    ],
    "societesImal": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
+    "CROPLİNE KİMYA  AŞ.",
     "ENTOSAV İLAÇLAMA İNŞAAT TEMİZLİK VE HİZMET İŞLETMELERİ SAN.TİC.LTD.ŞTİ.",
     "MENTA TARIM İLÇ. SAN. VE TİC. LTD. ŞTİ.",
     "SAFA TARIM A.Ş.",
@@ -6018,7 +6026,6 @@
     "BASF AGRİCULTURAL SOLUTİONS TURKEY KİMYA TİC. AŞ.",
     "BASF TÜRK KİMYA SAN.VE TİC.LTD.ŞTİ.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
-    "HEKTAŞ TİCARET TÜRK A.Ş.",
     "INNOCHEM TARIM İLAÇLARI SAN. VE TİC. A.Ş.",
     "SAFA TARIM A.Ş.",
     "SUNSET KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ VE TİCARET A.Ş."
@@ -6028,7 +6035,6 @@
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
-    "HEKTAŞ TİCARET TÜRK A.Ş.",
     "INNOCHEM TARIM İLAÇLARI SAN. VE TİC. A.Ş.",
     "SAFA TARIM A.Ş.",
     "SUNSET KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ VE TİCARET A.Ş."
@@ -6051,12 +6057,12 @@
    "cle": "indaziflam",
    "nom": "İndaziflam",
    "societes": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "BAYER TÜRK KİMYA SAN. LTD. ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "SAFA TARIM A.Ş."
    ],
    "societesImal": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "CROPLİNE KİMYA  AŞ.",
     "SAFA TARIM A.Ş."
    ]
   },
@@ -6312,6 +6318,7 @@
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "CANDAN ZİRAİ İLAÇ KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
+    "CROPLİNE KİMYA  AŞ.",
     "EDMAR TARIM SAN. VE TİC. A.Ş.",
     "ERTAR KİM. TAR. ÜRN. VE ALT. İML. PAZ. SAN. VE TİC. LTD. ŞTİ.",
     "KORUMA KLOR ALKALİ SAN. ve TİC. A.Ş.",
@@ -6323,6 +6330,7 @@
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "CANDAN ZİRAİ İLAÇ KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
+    "CROPLİNE KİMYA  AŞ.",
     "ERTAR KİM. TAR. ÜRN. VE ALT. İML. PAZ. SAN. VE TİC. LTD. ŞTİ.",
     "KORUMA KLOR ALKALİ SAN. ve TİC. A.Ş.",
     "MENTA TARIM İLÇ. SAN. VE TİC. LTD. ŞTİ.",
@@ -6396,6 +6404,7 @@
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "BAYER TÜRK KİMYA SAN. LTD. ŞTİ.",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
     "SAFA TARIM A.Ş.",
@@ -6405,6 +6414,7 @@
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
     "SAFA TARIM A.Ş.",
@@ -6441,6 +6451,7 @@
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "BAYER TÜRK KİMYA SAN. LTD. ŞTİ.",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
     "SAFA TARIM A.Ş.",
@@ -6451,6 +6462,7 @@
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
     "SAFA TARIM A.Ş.",
@@ -6464,6 +6476,7 @@
     "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "ASTRANOVA TARIM TİCARET VE SANAYİ A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "BİO-AGRO ZİRAİ İLAÇ GÜBRE TEKSTİL MEDİKAL TURİZM SAN. VE TİC.LTD.ŞTİ.",
@@ -6482,6 +6495,7 @@
     "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "ASTRANOVA TARIM TİCARET VE SANAYİ A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "CARAN KİMYA SAN. VE TİC.LTD.ŞTİ.",
@@ -6520,6 +6534,7 @@
    "cle": "metalaxyl",
    "nom": "Metalaxyl",
    "societes": [
+    "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "FERAS KİMYA ZİRAİ İLAÇLAR TARIM ve  HAYVANCILIK NAKLİYE SAN. İÇ ve DIŞ TİC. LTD. ŞTİ.",
@@ -6527,6 +6542,7 @@
     "HEKTAŞ TİCARET TÜRK A.Ş."
    ],
    "societesImal": [
+    "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "FERAS KİMYA ZİRAİ İLAÇLAR TARIM ve  HAYVANCILIK NAKLİYE SAN. İÇ ve DIŞ TİC. LTD. ŞTİ.",
@@ -6544,6 +6560,7 @@
     "ASTRANOVA TARIM TİCARET VE SANAYİ A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
     "GENAGRO TARIM MÜMESSİLLİK ÇEVRE SAĞLIĞI SAN. ve TİC. LTD. ŞTİ.",
@@ -6561,6 +6578,7 @@
     "ASTRANOVA TARIM TİCARET VE SANAYİ A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "CLONE KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
+    "CROPLİNE KİMYA  AŞ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
     "GENAGRO TARIM MÜMESSİLLİK ÇEVRE SAĞLIĞI SAN. ve TİC. LTD. ŞTİ.",
@@ -6826,6 +6844,14 @@
    ]
   },
   {
+   "cle": "methyl e e z 2 4 6 dedatrienoate dispencer 80mg methyl 4 3 3 3 dimethyloxiran 2 yl 1 methylcyclohex 2 en 1 ol murgantiol dispencer levha tuzak",
+   "nom": "Methyl (E,E,Z)-2,4,6-dedatrienoate/Dispencer +80mg Methyl 4-(3-(3.3-Dimethyloxiran-2- yl)-1-methylcyclohex-2-en-1-ol/(murgantiol) Dispencer+Levha Tuzak",
+   "societes": [
+    "BKS BİYOLOJİK KORUMA SİSTEMLERİ LABORATUVAR HİZMETLERİ TARIM MAKİNE SAN. VE TİC. A.Ş."
+   ],
+   "societesImal": []
+  },
+  {
    "cle": "metiram",
    "nom": "Metiram",
    "societes": [
@@ -7059,6 +7085,7 @@
     "CANDAN ZİRAİ İLAÇ KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
     "CHICO CROP ZİRAİ VE KİMYEVİ MADDELER SAN. TİC. AŞ.",
+    "CROPLİNE KİMYA  AŞ.",
     "FMC TURKEY ENDÜSTRİ ÜRÜNLERİ SAN.LTD.ŞTİ.",
     "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş.",
     "TAKİMSAN TARIM KİMYA SAN. VE TİC.A.Ş.",
@@ -7073,6 +7100,7 @@
     "ASTRANOVA TARIM TİCARET VE SANAYİ A.Ş.",
     "CANDAN ZİRAİ İLAÇ KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
+    "CROPLİNE KİMYA  AŞ.",
     "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş.",
     "TAKİMSAN TARIM KİMYA SAN. VE TİC.A.Ş."
    ]
@@ -7286,13 +7314,11 @@
    "nom": "Propamocarb-hydrochloride",
    "societes": [
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
-    "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
-    "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş."
+    "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ."
    ],
    "societesImal": [
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
-    "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
-    "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş."
+    "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ."
    ]
   },
   {
@@ -7358,6 +7384,7 @@
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
+    "AGRİMAX GROUP TARIM TİC. VE SAN. LTD.ŞTİ.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
     "BAYER TÜRK KİMYA SAN. LTD. ŞTİ.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
@@ -7372,6 +7399,7 @@
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
+    "AGRİMAX GROUP TARIM TİC. VE SAN. LTD.ŞTİ.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "HEKTAŞ TİCARET TÜRK A.Ş.",
@@ -7587,7 +7615,6 @@
     "CANSA KİMYA SAN. ve TİC.  LTD. ŞTİ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "FERBİS TARIM TİC. VE SAN. A.Ş.",
-    "FORWARD CROPPROTECTION ZİRAİ İLAÇ SAN. VE TİC. LTD.ŞTİ.",
     "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş."
    ],
    "societesImal": [
@@ -7905,6 +7932,7 @@
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
+    "AGRİMAX GROUP TARIM TİC. VE SAN. LTD.ŞTİ.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
@@ -7926,6 +7954,7 @@
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
+    "AGRİMAX GROUP TARIM TİC. VE SAN. LTD.ŞTİ.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
     "BEASCROP TARIM ÇÖZÜMLERİ LİMİTED ŞİRKETİ",
     "DOĞAL KİMYEVİ MAD. VE ZİR. İLAÇ. SAN. VE TİC. A.Ş.",
@@ -7947,13 +7976,11 @@
    "societes": [
     "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
     "GÜNER TAR. MÜH. GID. HAY. VE İNŞ. TAAHHÜT TURİZM SAN. VE TİC. LTD. ŞTİ.",
-    "HEKTAŞ TİCARET TÜRK A.Ş.",
     "VEFA TARIM İLAÇLARI KİMYA ve GIDA SANAYİ TİC. A.Ş."
    ],
    "societesImal": [
     "ABG ENTERNASYONEL KİMYA SAN. VE TİC. LTD. ŞTİ.",
     "GÜNER TAR. MÜH. GID. HAY. VE İNŞ. TAAHHÜT TURİZM SAN. VE TİC. LTD. ŞTİ.",
-    "HEKTAŞ TİCARET TÜRK A.Ş.",
     "VEFA TARIM İLAÇLARI KİMYA ve GIDA SANAYİ TİC. A.Ş."
    ]
   },
@@ -7999,12 +8026,14 @@
    "nom": "Terbuthylazine",
    "societes": [
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "BASF TÜRK KİMYA SAN.VE TİC.LTD.ŞTİ.",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş.",
     "SYNGENTA TARIM SAN.VE TİC.A.Ş."
    ],
    "societesImal": [
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
+    "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "DEVA AGRO KİMYA TARIM SAN. VE TİC. A.Ş."
    ]
   },
@@ -8089,12 +8118,14 @@
    "societes": [
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
-    "BİMKO KİMYA GÜBRE SAN. VE TİC. LTD.ŞTİ."
+    "BİMKO KİMYA GÜBRE SAN. VE TİC. LTD.ŞTİ.",
+    "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş."
    ],
    "societesImal": [
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "ASTRANOVA TAR. TİC. VE SAN. A.Ş.",
-    "BİMKO KİMYA GÜBRE SAN. VE TİC. LTD.ŞTİ."
+    "BİMKO KİMYA GÜBRE SAN. VE TİC. LTD.ŞTİ.",
+    "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş."
    ]
   },
   {

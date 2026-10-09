@@ -5,15 +5,15 @@
   "miroir": "Ministère de l'agriculture de l'oblast d'Oulianovsk",
   "edition": "4 апреля 2022",
   "attribution": "Минсельхоз России — Государственный каталог пестицидов и агрохимикатов — édition au 4 апреля 2022",
-  "genere": "2026-09-07T09:55:49",
+  "genere": "2026-10-09T13:53:02",
   "nbPages": 852,
   "nbEntrees": 1479,
   "nbSocietes": 229,
   "nbRusses": 165,
   "nbEtrangeres": 50,
   "nbSansSociete": 113,
-  "nbMatieres": 106,
-  "nbMatieresIndex": 168,
+  "nbMatieres": 119,
+  "nbMatieresIndex": 192,
   "parPays": [
    [
     "Russie",
@@ -129,9 +129,12 @@
     "IMAZALIL",
     "IMAZAMOX",
     "IMIDACLOPRID",
+    "METALAXYL",
     "METAMITRON",
     "METSULFURON-METHYL",
     "PENDIMETHALIN",
+    "PHENMEDIPHAM",
+    "PICLORAM",
     "PYRACLOSTROBIN",
     "QUIZALOFOP-P-ETHYL",
     "RIMSULFURON",
@@ -255,6 +258,7 @@
     "METAZACHLOR",
     "METRIBUZIN",
     "METSULFURON-METHYL",
+    "PHENMEDIPHAM",
     "POTASSIUM",
     "PROTHIOCONAZOLE",
     "PYRACLOSTROBIN",
@@ -377,10 +381,12 @@
     "IMIDACLOPRID",
     "INDOXACARB",
     "LAMBDA-CYHALOTHRIN",
+    "MCPA",
     "MESOTRIONE",
     "METALDEHYDE",
     "METRIBUZIN",
     "METSULFURON-METHYL",
+    "PICLORAM",
     "POTASSIUM",
     "QUIZALOFOP-P-ETHYL",
     "TEBUCONAZOLE",
@@ -479,6 +485,7 @@
     "2,4-D 2-ETHYLHEXYL ESTER",
     "ABAMECTIN",
     "AZOXYSTROBIN",
+    "BENZOVINDIFLUPYR",
     "CLODINAFOP-PROPARGYL",
     "COPPER PRESENT AS COPPER OXYCHLORIDE",
     "CYFLUFENAMID",
@@ -498,7 +505,9 @@
     "PINOXADEN",
     "PIRIMIPHOS-METHYL",
     "PROSULFOCARB",
+    "PROSULFURON",
     "S-METOLACHLOR",
+    "SEDAXANE",
     "TEBUCONAZOLE",
     "TEFLUTHRIN",
     "TERBUTHYLAZINE",
@@ -614,6 +623,7 @@
     "LAMBDA-CYHALOTHRIN",
     "MESOTRIONE",
     "METRIBUZIN",
+    "PHENMEDIPHAM",
     "POTASSIUM",
     "PYRACLOSTROBIN",
     "RIMSULFURON",
@@ -718,10 +728,12 @@
     "IMAZAMOX",
     "IMIDACLOPRID",
     "LAMBDA-CYHALOTHRIN",
+    "MCPA",
     "MESOTRIONE",
     "METRIBUZIN",
     "METSULFURON-METHYL",
     "OXYFLUORFEN",
+    "PICLORAM",
     "POTASSIUM",
     "S-METOLACHLOR",
     "SULPHUR",
@@ -824,8 +836,11 @@
     "GLYPHOSATE ACID",
     "IMAZALIL",
     "IMIDACLOPRID",
+    "MCPA",
     "MESOTRIONE",
     "METSULFURON-METHYL",
+    "PHENMEDIPHAM",
+    "PICLORAM",
     "PINOXADEN",
     "POTASSIUM",
     "TEBUCONAZOLE",
@@ -926,8 +941,10 @@
     "FORAMSULFURON",
     "IMIDACLOPRID",
     "IODOSULFURON-METHYL-SODIUM",
+    "MEFENPYR-DIETHYL",
     "MESOSULFURON-METHYL",
     "METRIBUZIN",
+    "PHENMEDIPHAM",
     "PROTHIOCONAZOLE",
     "PYRIMETHANIL",
     "SPIROTETRAMAT",
@@ -1039,6 +1056,7 @@
     "IMAZAMOX",
     "KRESOXIM-METHYL",
     "LAMBDA-CYHALOTHRIN",
+    "PHENMEDIPHAM",
     "POTASSIUM",
     "PYRACLOSTROBIN",
     "RIMSULFURON",
@@ -1111,6 +1129,94 @@
     "17,5 г/л)",
     "8 г/л)",
     "Ария, КС (250 г/л)"
+   ]
+  },
+  {
+   "cle": "ЯРИЛО",
+   "nom": "Ярило",
+   "latin": "Yarilo",
+   "identifie": false,
+   "formes": [
+    "АО",
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 28,
+   "matieres": [
+    "2,4-D 2-ETHYLHEXYL ESTER",
+    "CLODINAFOP-PROPARGYL",
+    "CLOMAZONE",
+    "DICAMBA",
+    "FENOXAPROP-P-ETHYL",
+    "FLORASULAM",
+    "FLUTRIAFOL",
+    "IMAZAMOX",
+    "IMIDACLOPRID",
+    "LAMBDA-CYHALOTHRIN",
+    "METALAXYL",
+    "METRIBUZIN",
+    "METSULFURON-METHYL",
+    "PIRIMIPHOS-METHYL",
+    "POTASSIUM",
+    "RIMSULFURON",
+    "TEBUCONAZOLE",
+    "TRIBENURON-METHYL"
+   ],
+   "matieresRusses": [
+    "2,4-Д (2-этилгексиловый эфир)",
+    "2,4-Д (сложный 2-этилгексиловый эфир) + флорасулам",
+    "Альфа-ципермeтрин",
+    "Ацифлуорфен+кломазон",
+    "Галоксифоп-П-метил",
+    "Дикамба (диметиламинная соль)",
+    "Дикват (дибромид)",
+    "Имазамокс",
+    "Имидаклоприд",
+    "Квизалофоп-П-тефурил",
+    "Лямбда-цигалотрин",
+    "МЦПАкислоты (смесь диметиламинной, калиевой, натриевой солей)",
+    "Манкоцеб + металаксил",
+    "Метрибузин",
+    "Метсульфурон-метил",
+    "Пиримифос-метил+бифентрин",
+    "Полиэтиленгликоль-1500 + полиэтиленгликоль-400 + гуминовые кислоты (калиевые соли)",
+    "Пропиконазол + тебуконазол",
+    "Пропиконазол + ципроконазол",
+    "Римсульфурон",
+    "Трибенурон-метил",
+    "Трифлусульфурон-метил",
+    "Феноксапроп-П-этил + клодинафоп-пропаргил+антидот мефенпир-диэтил",
+    "Феноксапроп-П-этил+антидот мефенпир-диэтил",
+    "Флутриафол"
+   ],
+   "produits": [
+    "(100 г/л)",
+    "(100+27 г/л)",
+    "(104 г/л)",
+    "(140 + 90 + 60 г/л)",
+    "(150 г/л диквата",
+    "(200 + 42г/л)",
+    "(200 г/л)",
+    "(250 г/кг)",
+    "(250 г/л)",
+    "(250 г/л+80 г/л)",
+    "(300 + 200 г/л)",
+    "(300 + 6,25 г/л)",
+    "(40 г/л)",
+    "(400 г/л +10 г/л)",
+    "(480 г/л)",
+    "(50 г/л)",
+    "(500 г/кг)",
+    "(500 г/л)",
+    "(564 г/л)",
+    "(600 г/кг)",
+    "(600 г/л)",
+    "(640 + 80 г/кг)",
+    "(69+75 г/л)",
+    "(750 г/кг)",
+    "4,0 г/л)"
    ]
   },
   {
@@ -1200,93 +1306,6 @@
    ]
   },
   {
-   "cle": "ЯРИЛО",
-   "nom": "Ярило",
-   "latin": "Yarilo",
-   "identifie": false,
-   "formes": [
-    "АО",
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 28,
-   "matieres": [
-    "2,4-D 2-ETHYLHEXYL ESTER",
-    "CLODINAFOP-PROPARGYL",
-    "CLOMAZONE",
-    "DICAMBA",
-    "FENOXAPROP-P-ETHYL",
-    "FLORASULAM",
-    "FLUTRIAFOL",
-    "IMAZAMOX",
-    "IMIDACLOPRID",
-    "LAMBDA-CYHALOTHRIN",
-    "METRIBUZIN",
-    "METSULFURON-METHYL",
-    "PIRIMIPHOS-METHYL",
-    "POTASSIUM",
-    "RIMSULFURON",
-    "TEBUCONAZOLE",
-    "TRIBENURON-METHYL"
-   ],
-   "matieresRusses": [
-    "2,4-Д (2-этилгексиловый эфир)",
-    "2,4-Д (сложный 2-этилгексиловый эфир) + флорасулам",
-    "Альфа-ципермeтрин",
-    "Ацифлуорфен+кломазон",
-    "Галоксифоп-П-метил",
-    "Дикамба (диметиламинная соль)",
-    "Дикват (дибромид)",
-    "Имазамокс",
-    "Имидаклоприд",
-    "Квизалофоп-П-тефурил",
-    "Лямбда-цигалотрин",
-    "МЦПАкислоты (смесь диметиламинной, калиевой, натриевой солей)",
-    "Манкоцеб + металаксил",
-    "Метрибузин",
-    "Метсульфурон-метил",
-    "Пиримифос-метил+бифентрин",
-    "Полиэтиленгликоль-1500 + полиэтиленгликоль-400 + гуминовые кислоты (калиевые соли)",
-    "Пропиконазол + тебуконазол",
-    "Пропиконазол + ципроконазол",
-    "Римсульфурон",
-    "Трибенурон-метил",
-    "Трифлусульфурон-метил",
-    "Феноксапроп-П-этил + клодинафоп-пропаргил+антидот мефенпир-диэтил",
-    "Феноксапроп-П-этил+антидот мефенпир-диэтил",
-    "Флутриафол"
-   ],
-   "produits": [
-    "(100 г/л)",
-    "(100+27 г/л)",
-    "(104 г/л)",
-    "(140 + 90 + 60 г/л)",
-    "(150 г/л диквата",
-    "(200 + 42г/л)",
-    "(200 г/л)",
-    "(250 г/кг)",
-    "(250 г/л)",
-    "(250 г/л+80 г/л)",
-    "(300 + 200 г/л)",
-    "(300 + 6,25 г/л)",
-    "(40 г/л)",
-    "(400 г/л +10 г/л)",
-    "(480 г/л)",
-    "(50 г/л)",
-    "(500 г/кг)",
-    "(500 г/л)",
-    "(564 г/л)",
-    "(600 г/кг)",
-    "(600 г/л)",
-    "(640 + 80 г/кг)",
-    "(69+75 г/л)",
-    "(750 г/кг)",
-    "4,0 г/л)"
-   ]
-  },
-  {
    "cle": "АДАМА РУС",
    "nom": "АДАМА РУС",
    "latin": "Adama",
@@ -1315,6 +1334,7 @@
     "MESOTRIONE",
     "METAZACHLOR",
     "OXYFLUORFEN",
+    "PHENMEDIPHAM",
     "TEBUCONAZOLE"
    ],
    "matieresRusses": [
@@ -1443,6 +1463,8 @@
     "GLYPHOSATE ACID",
     "IMIDACLOPRID",
     "LAMBDA-CYHALOTHRIN",
+    "PHENMEDIPHAM",
+    "PICLORAM",
     "POTASSIUM",
     "RIMSULFURON",
     "TEBUCONAZOLE",
@@ -1527,6 +1549,7 @@
     "IMIDACLOPRID",
     "LAMBDA-CYHALOTHRIN",
     "MALATHION",
+    "PHENMEDIPHAM",
     "S-METOLACHLOR",
     "TERBUTHYLAZINE",
     "THIABENDAZOLE",
@@ -1598,6 +1621,7 @@
     "IMAZAMOX",
     "IMIDACLOPRID",
     "MESOTRIONE",
+    "PHENMEDIPHAM",
     "POTASSIUM",
     "QUIZALOFOP-P-ETHYL",
     "TEBUCONAZOLE"
@@ -1670,6 +1694,7 @@
     "GLYPHOSATE",
     "IMAZAMOX",
     "IMIDACLOPRID",
+    "PICLORAM",
     "THIAMETHOXAM",
     "TRIBENURON-METHYL"
    ],
@@ -1713,6 +1738,71 @@
     "(90 + 90 + 40 г/л)",
     "Гольф, ВК (100 г/л)",
     "Сикурс, ВР (480 г/л)"
+   ]
+  },
+  {
+   "cle": "АГРОХИМИНВЕСТ",
+   "nom": "АгроХимИнвест",
+   "latin": "AgroKhimInvest",
+   "identifie": false,
+   "formes": [
+    "АО",
+    "НПО",
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 17,
+   "matieres": [
+    "BENTAZONE",
+    "CLOPYRALID",
+    "ETHOFUMESATE",
+    "IMAZALIL",
+    "LAMBDA-CYHALOTHRIN",
+    "PHENMEDIPHAM",
+    "PICLORAM",
+    "POTASSIUM",
+    "RIMSULFURON",
+    "TEBUCONAZOLE",
+    "THIABENDAZOLE",
+    "THIAMETHOXAM",
+    "TRIBENURON-METHYL"
+   ],
+   "matieresRusses": [
+    ".",
+    "Альфа-ципермeтрин",
+    "Бентазон",
+    "Дикват (дибромид)",
+    "Имазетапир",
+    "Карбендазим",
+    "Клопиралид",
+    "Клопиралид + пиклорам",
+    "Лямбда-цигалотрин",
+    "МЦПАкислоты (смесь диметиламинной, калиевой, натриевой солей)",
+    "Римсульфурон",
+    "Тиабендазол + тебуконазол + имазалил",
+    "Тиаметоксам",
+    "Трибенурон-метил",
+    "Фомесафен",
+    "Этофумезат + фенмедифам + десмедифам"
+   ],
+   "produits": [
+    "(100 г/л)",
+    "(112+91+71 г/л)",
+    "(150 г/л диквата)",
+    "(240 г/л)",
+    "(250 г/)",
+    "(250 г/кг)",
+    "(250 г/л)",
+    "(267 + 67 г/л)",
+    "(300 г/л)",
+    "(480 г/л)",
+    "(50 г/л)",
+    "(500 г/л)",
+    "(700 г/кг)",
+    "(750 г/кг)",
+    "(80 + 60 + 60 г/л)"
    ]
   },
   {
@@ -1783,129 +1873,6 @@
    ]
   },
   {
-   "cle": "АГРОХИМИНВЕСТ",
-   "nom": "АгроХимИнвест",
-   "latin": "AgroKhimInvest",
-   "identifie": false,
-   "formes": [
-    "АО",
-    "НПО",
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 17,
-   "matieres": [
-    "BENTAZONE",
-    "CLOPYRALID",
-    "ETHOFUMESATE",
-    "IMAZALIL",
-    "LAMBDA-CYHALOTHRIN",
-    "POTASSIUM",
-    "RIMSULFURON",
-    "TEBUCONAZOLE",
-    "THIABENDAZOLE",
-    "THIAMETHOXAM",
-    "TRIBENURON-METHYL"
-   ],
-   "matieresRusses": [
-    ".",
-    "Альфа-ципермeтрин",
-    "Бентазон",
-    "Дикват (дибромид)",
-    "Имазетапир",
-    "Карбендазим",
-    "Клопиралид",
-    "Клопиралид + пиклорам",
-    "Лямбда-цигалотрин",
-    "МЦПАкислоты (смесь диметиламинной, калиевой, натриевой солей)",
-    "Римсульфурон",
-    "Тиабендазол + тебуконазол + имазалил",
-    "Тиаметоксам",
-    "Трибенурон-метил",
-    "Фомесафен",
-    "Этофумезат + фенмедифам + десмедифам"
-   ],
-   "produits": [
-    "(100 г/л)",
-    "(112+91+71 г/л)",
-    "(150 г/л диквата)",
-    "(240 г/л)",
-    "(250 г/)",
-    "(250 г/кг)",
-    "(250 г/л)",
-    "(267 + 67 г/л)",
-    "(300 г/л)",
-    "(480 г/л)",
-    "(50 г/л)",
-    "(500 г/л)",
-    "(700 г/кг)",
-    "(750 г/кг)",
-    "(80 + 60 + 60 г/л)"
-   ]
-  },
-  {
-   "cle": "РАНГОЛИ",
-   "nom": "РАНГОЛИ",
-   "latin": "Rangoli Agrotech",
-   "identifie": true,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": true,
-   "pays": "Inde",
-   "paysFiable": true,
-   "nbHomologations": 15,
-   "matieres": [
-    "BENTAZONE",
-    "CYPERMETHRIN",
-    "DIFENOCONAZOLE",
-    "DIMETHOATE",
-    "IMIDACLOPRID",
-    "METRIBUZIN",
-    "POTASSIUM",
-    "QUIZALOFOP-P-ETHYL",
-    "RIMSULFURON",
-    "S-METOLACHLOR",
-    "TRIBENURON-METHYL"
-   ],
-   "matieresRusses": [
-    ".",
-    "Бентазон",
-    "Галоксифоп-П-метил",
-    "Дикват (дибромид)",
-    "Диметоат",
-    "Дифеноконазол",
-    "Имазетапир",
-    "Имидаклоприд",
-    "Метрибузин",
-    "Пропиконазол + ципроконазол",
-    "Римсульфурон",
-    "С-Метолахлор",
-    "Трибенурон-метил",
-    "Хизалофоп-П-этил",
-    "Хлорпирифос + циперметрин"
-   ],
-   "produits": [
-    "(100 г/л)",
-    "(104 г/л)",
-    "(200 г/л)",
-    "(250 + 80 г/л)",
-    "(250 г/кг)",
-    "(250 г/л)",
-    "(400 г/л)",
-    "(480 г/л)",
-    "(50 г/л)",
-    "(700 г/кг)",
-    "(700 г/л)",
-    "(960 г/л",
-    "/",
-    "ВДГ (750 г/кг)",
-    "циперметрина)"
-   ]
-  },
-  {
    "cle": "БАСФ СЕ",
    "nom": "БАСФ СЕ",
    "latin": "BASF",
@@ -1927,7 +1894,8 @@
     "METAZACHLOR",
     "METRAFENONE",
     "PYRACLOSTROBIN",
-    "SULPHUR"
+    "SULPHUR",
+    "TOPRAMEZONE"
    ],
    "matieresRusses": [
     "Бентазон",
@@ -1988,6 +1956,144 @@
     "(84+250 г/л)",
     "Рекс С, КС (125 г/л)",
     "мг/диспенсер)"
+   ]
+  },
+  {
+   "cle": "АГРУСХИМ",
+   "nom": "АГРУСХИМ",
+   "latin": "AGRUSKHIM",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 25,
+   "matieres": [
+    "2,4-D 2-ETHYLHEXYL ESTER",
+    "BENTAZONE",
+    "CLODINAFOP-PROPARGYL",
+    "CLOPYRALID",
+    "DICAMBA",
+    "DIFENOCONAZOLE",
+    "DIMETHOMORPH",
+    "FENOXAPROP-P-ETHYL",
+    "LAMBDA-CYHALOTHRIN",
+    "PHENMEDIPHAM",
+    "PICLORAM"
+   ],
+   "matieresRusses": [
+    "2,4-Д (диметиламинная соль)",
+    "2,4-Д (малолетучие эфиры С7-С9)",
+    "Алюминия фосфид",
+    "Беномил",
+    "Бентазон",
+    "Биспирибак кислота",
+    "Десмедифам + фенмедифам",
+    "Диазинон",
+    "Дикамба + пиклорам+клопиралид (диметилэтаноламинные соли)",
+    "Дифеноконазол",
+    "Имазетапир",
+    "Клодинафоп-пропаргил + антидот клоквинтосет-мексил",
+    "Клопиралид",
+    "Клотианидин",
+    "Клотианидин + лямбда-цигалотрин",
+    "Лямбда-цигалотрин",
+    "Манкоцеб + диметоморф",
+    "Меди оксихлорид+оксадиксил",
+    "Пропиконазол",
+    "Тифенсульфурон-метил",
+    "Феноксапроп-П-этил + антидот клоквинтосет-мексил",
+    "Хлорпирифос",
+    "Ципроконазол",
+    "Этаметсульфурон-метил+пиклорам"
+   ],
+   "produits": [
+    "(100 г/кг)",
+    "(100 г/л)",
+    "(140 + 100 г/л)",
+    "(150+450 г/кг)",
+    "(250 г/л)",
+    "(300 г/л)",
+    "(350 г/л)",
+    "(400 г/л)",
+    "(480 г/л)",
+    "(50 г/л)",
+    "(500 г/кг)",
+    "(550 г/л)",
+    "(560 г/кг)",
+    "(600 + 90 г/кг)",
+    "(600 г/л)",
+    "(670+130 г/кг)",
+    "(69 + 34,5 г/л)",
+    "(750 г/кг)",
+    "(80 + 20 г/л)",
+    "(80+80 г/л)",
+    "177 г/л)",
+    "Изобен, ВР (480 г/л)",
+    "Нарис, СК (400 г/л)",
+    "Профи, КЭ (250 г/л)"
+   ]
+  },
+  {
+   "cle": "РАНГОЛИ",
+   "nom": "РАНГОЛИ",
+   "latin": "Rangoli Agrotech",
+   "identifie": true,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": true,
+   "pays": "Inde",
+   "paysFiable": true,
+   "nbHomologations": 15,
+   "matieres": [
+    "BENTAZONE",
+    "CYPERMETHRIN",
+    "DIFENOCONAZOLE",
+    "DIMETHOATE",
+    "IMIDACLOPRID",
+    "METRIBUZIN",
+    "POTASSIUM",
+    "QUIZALOFOP-P-ETHYL",
+    "RIMSULFURON",
+    "S-METOLACHLOR",
+    "TRIBENURON-METHYL"
+   ],
+   "matieresRusses": [
+    ".",
+    "Бентазон",
+    "Галоксифоп-П-метил",
+    "Дикват (дибромид)",
+    "Диметоат",
+    "Дифеноконазол",
+    "Имазетапир",
+    "Имидаклоприд",
+    "Метрибузин",
+    "Пропиконазол + ципроконазол",
+    "Римсульфурон",
+    "С-Метолахлор",
+    "Трибенурон-метил",
+    "Хизалофоп-П-этил",
+    "Хлорпирифос + циперметрин"
+   ],
+   "produits": [
+    "(100 г/л)",
+    "(104 г/л)",
+    "(200 г/л)",
+    "(250 + 80 г/л)",
+    "(250 г/кг)",
+    "(250 г/л)",
+    "(400 г/л)",
+    "(480 г/л)",
+    "(50 г/л)",
+    "(700 г/кг)",
+    "(700 г/л)",
+    "(960 г/л",
+    "/",
+    "ВДГ (750 г/кг)",
+    "циперметрина)"
    ]
   },
   {
@@ -2100,9 +2206,9 @@
    ]
   },
   {
-   "cle": "АГРУСХИМ",
-   "nom": "АГРУСХИМ",
-   "latin": "AGRUSKHIM",
+   "cle": "ХИМАГРОМАРКЕТИНГ",
+   "nom": "Химагромаркетинг",
+   "latin": "Khimagromarketing",
    "identifie": false,
    "formes": [
     "ООО"
@@ -2110,69 +2216,42 @@
    "etrangere": false,
    "pays": "Russie",
    "paysFiable": true,
-   "nbHomologations": 25,
+   "nbHomologations": 11,
    "matieres": [
-    "2,4-D 2-ETHYLHEXYL ESTER",
-    "BENTAZONE",
-    "CLODINAFOP-PROPARGYL",
     "CLOPYRALID",
-    "DICAMBA",
-    "DIFENOCONAZOLE",
-    "DIMETHOMORPH",
-    "FENOXAPROP-P-ETHYL",
-    "LAMBDA-CYHALOTHRIN"
+    "ETHOFUMESATE",
+    "FLORASULAM",
+    "FLUTRIAFOL",
+    "GLYPHOSATE",
+    "IMIDACLOPRID",
+    "KRESOXIM-METHYL",
+    "LAMBDA-CYHALOTHRIN",
+    "PHENMEDIPHAM",
+    "THIAMETHOXAM"
    ],
    "matieresRusses": [
-    "2,4-Д (диметиламинная соль)",
-    "2,4-Д (малолетучие эфиры С7-С9)",
-    "Алюминия фосфид",
-    "Беномил",
-    "Бентазон",
-    "Биспирибак кислота",
-    "Десмедифам + фенмедифам",
-    "Диазинон",
-    "Дикамба + пиклорам+клопиралид (диметилэтаноламинные соли)",
-    "Дифеноконазол",
-    "Имазетапир",
-    "Клодинафоп-пропаргил + антидот клоквинтосет-мексил",
+    "2,4-Дкислоты (2-этилгексиловый эфир)+ флорасулам",
+    "Глифосат (калиевая соль)",
+    "Имидаклоприд",
+    "Карбендазим",
     "Клопиралид",
-    "Клотианидин",
-    "Клотианидин + лямбда-цигалотрин",
-    "Лямбда-цигалотрин",
-    "Манкоцеб + диметоморф",
-    "Меди оксихлорид+оксадиксил",
-    "Пропиконазол",
-    "Тифенсульфурон-метил",
-    "Феноксапроп-П-этил + антидот клоквинтосет-мексил",
-    "Хлорпирифос",
-    "Ципроконазол",
-    "Этаметсульфурон-метил+пиклорам"
+    "Крезоксим-метил",
+    "Лямбда-цигалотрин+ тиаметоксам",
+    "Прометрин",
+    "Пропиконазол + крезоксим-метил",
+    "Флутриафол",
+    "Этофумезат + фенмедифам + десмедифам"
    ],
    "produits": [
-    "(100 г/кг)",
-    "(100 г/л)",
-    "(140 + 100 г/л)",
-    "(150+450 г/кг)",
+    "(106 + 141 г/л)",
+    "(112+91+71 г/л)",
+    "(150 + 125 г/л)",
     "(250 г/л)",
+    "(300 + 6,25 г/л)",
     "(300 г/л)",
-    "(350 г/л)",
-    "(400 г/л)",
-    "(480 г/л)",
-    "(50 г/л)",
     "(500 г/кг)",
-    "(550 г/л)",
-    "(560 г/кг)",
-    "(600 + 90 г/кг)",
-    "(600 г/л)",
-    "(670+130 г/кг)",
-    "(69 + 34,5 г/л)",
-    "(750 г/кг)",
-    "(80 + 20 г/л)",
-    "(80+80 г/л)",
-    "177 г/л)",
-    "Изобен, ВР (480 г/л)",
-    "Нарис, СК (400 г/л)",
-    "Профи, КЭ (250 г/л)"
+    "(500 г/л)",
+    "(600 г/л)"
    ]
   },
   {
@@ -2236,6 +2315,61 @@
    ]
   },
   {
+   "cle": "РОСАГРОХИМ",
+   "nom": "РосАгроХим",
+   "latin": "RosAgroKhim",
+   "identifie": false,
+   "formes": [
+    "НПО",
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 14,
+   "matieres": [
+    "ETHOFUMESATE",
+    "IMAZALIL",
+    "LAMBDA-CYHALOTHRIN",
+    "PHENMEDIPHAM",
+    "POTASSIUM",
+    "RIMSULFURON",
+    "TEBUCONAZOLE",
+    "THIABENDAZOLE",
+    "TRIBENURON-METHYL"
+   ],
+   "matieresRusses": [
+    "Альфа-ципермeтрин",
+    "Бродифакум",
+    "Десмедифам + фенмедифам",
+    "Дикват (дибромид)",
+    "Имазетапир",
+    "Карбендазим",
+    "Лямбда-цигалотрин",
+    "Прометрин",
+    "Римсульфурон",
+    "Тебуконазол",
+    "Тиабендазол + тебуконазол + имазалил",
+    "Трибенурон-метил",
+    "Трифлусульфурон-метил",
+    "Этофумезат + фенмедифам + десмедифам"
+   ],
+   "produits": [
+    "(0,05 г/кг)",
+    "(100 г/л)",
+    "(112+91+71 г/л)",
+    "(150 г/л диквата)",
+    "(160 + 160 г/л)",
+    "(250 г/кг)",
+    "(50 г/л)",
+    "(500 г/кг)",
+    "(500 г/л)",
+    "(60 г/л)",
+    "(750 г/кг)",
+    "(80 + 60 + 60 г/л)"
+   ]
+  },
+  {
    "cle": "АГРОХИМ XXI",
    "nom": "АГРОХИМ-XXI",
    "latin": "AGROKHIM-XXI",
@@ -2285,108 +2419,6 @@
     "(500 г/л)",
     "(687 г/кг)",
     "(800 г/л)"
-   ]
-  },
-  {
-   "cle": "ХИМАГРОМАРКЕТИНГ",
-   "nom": "Химагромаркетинг",
-   "latin": "Khimagromarketing",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 11,
-   "matieres": [
-    "CLOPYRALID",
-    "ETHOFUMESATE",
-    "FLORASULAM",
-    "FLUTRIAFOL",
-    "GLYPHOSATE",
-    "IMIDACLOPRID",
-    "KRESOXIM-METHYL",
-    "LAMBDA-CYHALOTHRIN",
-    "THIAMETHOXAM"
-   ],
-   "matieresRusses": [
-    "2,4-Дкислоты (2-этилгексиловый эфир)+ флорасулам",
-    "Глифосат (калиевая соль)",
-    "Имидаклоприд",
-    "Карбендазим",
-    "Клопиралид",
-    "Крезоксим-метил",
-    "Лямбда-цигалотрин+ тиаметоксам",
-    "Прометрин",
-    "Пропиконазол + крезоксим-метил",
-    "Флутриафол",
-    "Этофумезат + фенмедифам + десмедифам"
-   ],
-   "produits": [
-    "(106 + 141 г/л)",
-    "(112+91+71 г/л)",
-    "(150 + 125 г/л)",
-    "(250 г/л)",
-    "(300 + 6,25 г/л)",
-    "(300 г/л)",
-    "(500 г/кг)",
-    "(500 г/л)",
-    "(600 г/л)"
-   ]
-  },
-  {
-   "cle": "РОСАГРОХИМ",
-   "nom": "РосАгроХим",
-   "latin": "RosAgroKhim",
-   "identifie": false,
-   "formes": [
-    "НПО",
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 14,
-   "matieres": [
-    "ETHOFUMESATE",
-    "IMAZALIL",
-    "LAMBDA-CYHALOTHRIN",
-    "POTASSIUM",
-    "RIMSULFURON",
-    "TEBUCONAZOLE",
-    "THIABENDAZOLE",
-    "TRIBENURON-METHYL"
-   ],
-   "matieresRusses": [
-    "Альфа-ципермeтрин",
-    "Бродифакум",
-    "Десмедифам + фенмедифам",
-    "Дикват (дибромид)",
-    "Имазетапир",
-    "Карбендазим",
-    "Лямбда-цигалотрин",
-    "Прометрин",
-    "Римсульфурон",
-    "Тебуконазол",
-    "Тиабендазол + тебуконазол + имазалил",
-    "Трибенурон-метил",
-    "Трифлусульфурон-метил",
-    "Этофумезат + фенмедифам + десмедифам"
-   ],
-   "produits": [
-    "(0,05 г/кг)",
-    "(100 г/л)",
-    "(112+91+71 г/л)",
-    "(150 г/л диквата)",
-    "(160 + 160 г/л)",
-    "(250 г/кг)",
-    "(50 г/л)",
-    "(500 г/кг)",
-    "(500 г/л)",
-    "(60 г/л)",
-    "(750 г/кг)",
-    "(80 + 60 + 60 г/л)"
    ]
   },
   {
@@ -2679,6 +2711,355 @@
    ]
   },
   {
+   "cle": "СФ РЕГИСТРЭЙШН",
+   "nom": "СФ-РЕГИСТРЭЙШН",
+   "latin": "SF-REGISTREYSHN",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 8,
+   "matieres": [
+    "BENTAZONE",
+    "ETHOFUMESATE",
+    "FLUTRIAFOL",
+    "IMAZAMOX",
+    "IMIDACLOPRID",
+    "PHENMEDIPHAM",
+    "RIMSULFURON"
+   ],
+   "matieresRusses": [
+    "Бентазон",
+    "Имазамокс",
+    "Имидаклоприд",
+    "Никосульфурон",
+    "Прометрин",
+    "Римсульфурон",
+    "Флутриафол",
+    "Этофумезат + фенмедифам + десмедифам"
+   ],
+   "produits": [
+    "(112+91+71 г/л)",
+    "(250 г/кг)",
+    "(250 г/л)",
+    "(40 г/л)",
+    "(500 г/л)",
+    "(600 г/л)",
+    "Барон, ВР (480 г/л)"
+   ]
+  },
+  {
+   "cle": "АГРОМИР",
+   "nom": "АГРОМИР",
+   "latin": "AGROMIR",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 7,
+   "matieres": [
+    "CLOPYRALID",
+    "DIMETHOATE",
+    "IMIDACLOPRID",
+    "PICLORAM",
+    "POTASSIUM",
+    "PYRACLOSTROBIN",
+    "THIAMETHOXAM"
+   ],
+   "matieresRusses": [
+    "Альфа-ципермeтрин",
+    "Дикватдибромида (в пересчете на дикват ион)",
+    "Диметоат",
+    "Имидаклоприд",
+    "Клопиралид + пиклорам",
+    "Пираклостробин",
+    "Тиаметоксам"
+   ],
+   "produits": [
+    "(100 г/л)",
+    "(250 г/л)",
+    "(267 + 67 г/л)",
+    "(280 г/л (150 г/л)",
+    "(350 г/л)",
+    "(400 г/л)",
+    "(600 г/л)"
+   ]
+  },
+  {
+   "cle": "АНПП АГРОХИМ ХХ1",
+   "nom": "АНПП «АГРОХИМ-ХХ1",
+   "latin": "ANPP «AGROKHIM-KHKH1",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 7,
+   "matieres": [
+    "AZOXYSTROBIN",
+    "CLOPYRALID",
+    "DIMETHOATE",
+    "FENOXAPROP-P-ETHYL",
+    "FLUAZIFOP-P-BUTYL",
+    "PICLORAM",
+    "TEBUCONAZOLE"
+   ],
+   "matieresRusses": [
+    "Азоксистробин+тебуконазол+ципроконазол",
+    "Диметоат",
+    "Клопиралид + пиклорам",
+    "Прометрин",
+    "Феноксапроп-П-этил + антидот клоквинтосет-мексил",
+    "Флуазифоп-П-бутил"
+   ],
+   "produits": [
+    "(100 + 27 г/л)",
+    "(100+120+40 г/л)",
+    "(150 г/л)",
+    "(267 + 67 г/л)",
+    "(400 г/л)",
+    "(500 г/л)",
+    "(69 + 34,5 г/л)"
+   ]
+  },
+  {
+   "cle": "БАЙЕР КРОПСАЙЕНС АГ ГЕРМАНИЯ",
+   "nom": "Байер КропСайенс АГ (Германия)",
+   "latin": "Bayer",
+   "identifie": true,
+   "formes": [
+    "АГ"
+   ],
+   "etrangere": true,
+   "pays": "Allemagne",
+   "paysFiable": true,
+   "nbHomologations": 6,
+   "matieres": [
+    "2,4-D 2-ETHYLHEXYL ESTER",
+    "FLUDIOXONIL",
+    "IMIDACLOPRID",
+    "IODOSULFURON-METHYL-SODIUM",
+    "METALAXYL",
+    "PROTHIOCONAZOLE",
+    "TEBUCONAZOLE"
+   ],
+   "matieresRusses": [
+    "2,4-Д (2-этилгексиловый эфир) + йодосульфурон-метил-натрия+антидот мефенпир-диэтила",
+    "Имидаклоприд",
+    "Клотианидин + бета-цифлутрин",
+    "Протиоконазол + тебуконазол + флудиоксонил",
+    "Протиоконазол+металаксил",
+    "Тебуконазол"
+   ],
+   "produits": [
+    "(100+20 г/л)",
+    "(120 г/л)",
+    "(285,2 + 5 + 25 г/л)",
+    "(400 + 80 г/л)",
+    "(50 + 10 + 37,5 г/л)",
+    "(700 г/кг)"
+   ]
+  },
+  {
+   "cle": "ДЮПОН НАУКА И ТЕХНОЛОГИИ",
+   "nom": "Дюпон Наука и Технологии",
+   "latin": "DuPont",
+   "identifie": true,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": true,
+   "pays": "États-Unis",
+   "paysFiable": true,
+   "nbHomologations": 19,
+   "matieres": [
+    "DICAMBA",
+    "METSULFURON-METHYL",
+    "OXATHIAPIPROLIN",
+    "RIMSULFURON",
+    "TETRACONAZOLE",
+    "TRIBENURON-METHYL"
+   ],
+   "matieresRusses": [
+    "Дикамба + никосульфурон + римсульфурон",
+    "Меди гидроокись",
+    "Метсульфурон-метил",
+    "Оксамил",
+    "Оксатиапипролин",
+    "Пентиопирад",
+    "Пентиопирад+ципроконазол",
+    "Пикоксистробин + ципроконазол",
+    "Проквиназид",
+    "Проквиназид+тетраконазол",
+    "Римсульфурон + тифенсульфурон-метил",
+    "Тифенсульфурон-метил",
+    "Тифенсульфурон-метил + трибенурон-метил",
+    "Трифлусульфурон-метил",
+    "Фамоксадон + оксатиапипролин",
+    "Фамоксадон + цимоксанил",
+    "Хлорокись меди + цимоксанил",
+    "Циантранилипрол",
+    "Этаметсульфурон-метил"
+   ],
+   "produits": [
+    "(150+60 г/л)",
+    "(160 г/л + 80 г/л)",
+    "(200 + 80 г/л)",
+    "(200 г/л)",
+    "(250 + 250 г/кг)",
+    "(300 + 30 г/л)",
+    "(350 г/кг)",
+    "(375 + 375 г/кг)",
+    "(50 г/кг)",
+    "(500 + 250 г/кг)",
+    "(500 г/кг + 250 г/кг)",
+    "(500 г/кг)",
+    "(550 + 92 + 23 г/кг)",
+    "(600 г/кг)",
+    "(625 г/л)",
+    "(689,5 + 42 г/кг)",
+    "(750 г/кг)",
+    "Талиус, КЭ (200 г/л)"
+   ]
+  },
+  {
+   "cle": "НУФАРМ ГМБХ КО КГ",
+   "nom": "НУФАРМ ГмбХ&Ко.КГ",
+   "latin": "Nufarm GmbH & Co KG",
+   "identifie": true,
+   "formes": [
+    "ГМБХ"
+   ],
+   "etrangere": true,
+   "pays": "Autriche",
+   "paysFiable": true,
+   "nbHomologations": 10,
+   "matieres": [
+    "2,4-D 2-ETHYLHEXYL ESTER",
+    "CHLORMEQUAT PRESENT AS CHLORMEQUAT CHLORIDE",
+    "DICAMBA",
+    "LAMBDA-CYHALOTHRIN",
+    "MCPA",
+    "TERBUTHYLAZINE"
+   ],
+   "matieresRusses": [
+    "2,4-Д (сложный 2-этилгексиловый эфир)",
+    "2,4-Д + дикамба (диметиламинные соли)",
+    "Лямбда-цигалотрин",
+    "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
+    "МЦПА (диметиламинная соль)",
+    "МЦПА + дикамба (диметиламинные соли)",
+    "Меди гидроксид",
+    "Никосульфурон",
+    "Тербутилазин+бромоксинил (смесь эфиров октаноата и гептаноата)",
+    "Хлормекватхлорид"
+   ],
+   "produits": [
+    "(250 +100 г/л)",
+    "(344 + 120 г/л)",
+    "(40 г/л)",
+    "(460 г/л)",
+    "(500 г/л)",
+    "(576 г/кг)",
+    "(750 г/л МЦПА к-ты)",
+    "Кайзо, ВГ (50 г/л)",
+    "Эстет, КЭ (600 г/л)",
+    "дикамбы)"
+   ]
+  },
+  {
+   "cle": "ИПРОХИМ",
+   "nom": "ИПРОХИМ",
+   "latin": "IPROKHIM",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 9,
+   "matieres": [
+    "BENTAZONE",
+    "DICAMBA",
+    "DIMETHOATE",
+    "ETHOFUMESATE",
+    "IMIDACLOPRID",
+    "PHENMEDIPHAM"
+   ],
+   "matieresRusses": [
+    "Бентазон",
+    "Десмедифам + фенмедифам",
+    "Дикамба (диметиламинная соль)",
+    "Диметоат",
+    "Имидаклоприд",
+    "Никосульфурон",
+    "Пропиконазол + ципроконазол",
+    "Трифлусульфурон-метил",
+    "Этофумезат + фенмедифам + десмедифам"
+   ],
+   "produits": [
+    "(160 + 160 г/л)",
+    "(200 г/л)",
+    "(250 + 80 г/л)",
+    "(40 г/л)",
+    "(400 г/л)",
+    "(480 г/л)",
+    "(500 г/кг)",
+    "КЭ (112+91+71)"
+   ]
+  },
+  {
+   "cle": "ЮПЛ",
+   "nom": "ЮПЛ",
+   "latin": "UPL",
+   "identifie": true,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": true,
+   "pays": "Inde",
+   "paysFiable": true,
+   "nbHomologations": 9,
+   "matieres": [
+    "AZOXYSTROBIN",
+    "LAMBDA-CYHALOTHRIN",
+    "METRIBUZIN",
+    "PHENMEDIPHAM",
+    "S-METOLACHLOR",
+    "TEBUCONAZOLE"
+   ],
+   "matieresRusses": [
+    "Азоксистробин+тебуконазол",
+    "Десмедифам + фенмедифам",
+    "Лямбда-цигалотрин",
+    "Магния фосфид",
+    "Манкоцеб",
+    "Манкоцеб + цимоксанил",
+    "Метрибузин",
+    "С-Метолахлор"
+   ],
+   "produits": [
+    "(200 г/л +250 г/л)",
+    "(680 + 50 г/кг)",
+    "(700 г/кг)",
+    "(750 г/кг)",
+    "(80 + 80 г/л)",
+    "(800 г/кг)",
+    "(960 г/л)",
+    "Торег, КЭ (50 г/л)",
+    "г/кг)"
+   ]
+  },
+  {
    "cle": "ГРАНУМ",
    "nom": "ГРАНУМ",
    "latin": "GRANUM",
@@ -2761,123 +3142,6 @@
    ]
   },
   {
-   "cle": "СФ РЕГИСТРЭЙШН",
-   "nom": "СФ-РЕГИСТРЭЙШН",
-   "latin": "SF-REGISTREYSHN",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 8,
-   "matieres": [
-    "BENTAZONE",
-    "ETHOFUMESATE",
-    "FLUTRIAFOL",
-    "IMAZAMOX",
-    "IMIDACLOPRID",
-    "RIMSULFURON"
-   ],
-   "matieresRusses": [
-    "Бентазон",
-    "Имазамокс",
-    "Имидаклоприд",
-    "Никосульфурон",
-    "Прометрин",
-    "Римсульфурон",
-    "Флутриафол",
-    "Этофумезат + фенмедифам + десмедифам"
-   ],
-   "produits": [
-    "(112+91+71 г/л)",
-    "(250 г/кг)",
-    "(250 г/л)",
-    "(40 г/л)",
-    "(500 г/л)",
-    "(600 г/л)",
-    "Барон, ВР (480 г/л)"
-   ]
-  },
-  {
-   "cle": "АГРОМИР",
-   "nom": "АГРОМИР",
-   "latin": "AGROMIR",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 7,
-   "matieres": [
-    "CLOPYRALID",
-    "DIMETHOATE",
-    "IMIDACLOPRID",
-    "POTASSIUM",
-    "PYRACLOSTROBIN",
-    "THIAMETHOXAM"
-   ],
-   "matieresRusses": [
-    "Альфа-ципермeтрин",
-    "Дикватдибромида (в пересчете на дикват ион)",
-    "Диметоат",
-    "Имидаклоприд",
-    "Клопиралид + пиклорам",
-    "Пираклостробин",
-    "Тиаметоксам"
-   ],
-   "produits": [
-    "(100 г/л)",
-    "(250 г/л)",
-    "(267 + 67 г/л)",
-    "(280 г/л (150 г/л)",
-    "(350 г/л)",
-    "(400 г/л)",
-    "(600 г/л)"
-   ]
-  },
-  {
-   "cle": "АНПП АГРОХИМ ХХ1",
-   "nom": "АНПП «АГРОХИМ-ХХ1",
-   "latin": "ANPP «AGROKHIM-KHKH1",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 7,
-   "matieres": [
-    "AZOXYSTROBIN",
-    "CLOPYRALID",
-    "DIMETHOATE",
-    "FENOXAPROP-P-ETHYL",
-    "FLUAZIFOP-P-BUTYL",
-    "TEBUCONAZOLE"
-   ],
-   "matieresRusses": [
-    "Азоксистробин+тебуконазол+ципроконазол",
-    "Диметоат",
-    "Клопиралид + пиклорам",
-    "Прометрин",
-    "Феноксапроп-П-этил + антидот клоквинтосет-мексил",
-    "Флуазифоп-П-бутил"
-   ],
-   "produits": [
-    "(100 + 27 г/л)",
-    "(100+120+40 г/л)",
-    "(150 г/л)",
-    "(267 + 67 г/л)",
-    "(400 г/л)",
-    "(500 г/л)",
-    "(69 + 34,5 г/л)"
-   ]
-  },
-  {
    "cle": "АГРОКОМ",
    "nom": "Агроком",
    "latin": "Agrokom",
@@ -2912,230 +3176,6 @@
     "(600 г/кг)",
     "(69 + 34,5 г/л)",
     "г/л)"
-   ]
-  },
-  {
-   "cle": "БАЙЕР КРОПСАЙЕНС АГ ГЕРМАНИЯ",
-   "nom": "Байер КропСайенс АГ (Германия)",
-   "latin": "Bayer",
-   "identifie": true,
-   "formes": [
-    "АГ"
-   ],
-   "etrangere": true,
-   "pays": "Allemagne",
-   "paysFiable": true,
-   "nbHomologations": 6,
-   "matieres": [
-    "2,4-D 2-ETHYLHEXYL ESTER",
-    "FLUDIOXONIL",
-    "IMIDACLOPRID",
-    "IODOSULFURON-METHYL-SODIUM",
-    "PROTHIOCONAZOLE",
-    "TEBUCONAZOLE"
-   ],
-   "matieresRusses": [
-    "2,4-Д (2-этилгексиловый эфир) + йодосульфурон-метил-натрия+антидот мефенпир-диэтила",
-    "Имидаклоприд",
-    "Клотианидин + бета-цифлутрин",
-    "Протиоконазол + тебуконазол + флудиоксонил",
-    "Протиоконазол+металаксил",
-    "Тебуконазол"
-   ],
-   "produits": [
-    "(100+20 г/л)",
-    "(120 г/л)",
-    "(285,2 + 5 + 25 г/л)",
-    "(400 + 80 г/л)",
-    "(50 + 10 + 37,5 г/л)",
-    "(700 г/кг)"
-   ]
-  },
-  {
-   "cle": "ДЮПОН НАУКА И ТЕХНОЛОГИИ",
-   "nom": "Дюпон Наука и Технологии",
-   "latin": "DuPont",
-   "identifie": true,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": true,
-   "pays": "États-Unis",
-   "paysFiable": true,
-   "nbHomologations": 19,
-   "matieres": [
-    "DICAMBA",
-    "METSULFURON-METHYL",
-    "RIMSULFURON",
-    "TETRACONAZOLE",
-    "TRIBENURON-METHYL"
-   ],
-   "matieresRusses": [
-    "Дикамба + никосульфурон + римсульфурон",
-    "Меди гидроокись",
-    "Метсульфурон-метил",
-    "Оксамил",
-    "Оксатиапипролин",
-    "Пентиопирад",
-    "Пентиопирад+ципроконазол",
-    "Пикоксистробин + ципроконазол",
-    "Проквиназид",
-    "Проквиназид+тетраконазол",
-    "Римсульфурон + тифенсульфурон-метил",
-    "Тифенсульфурон-метил",
-    "Тифенсульфурон-метил + трибенурон-метил",
-    "Трифлусульфурон-метил",
-    "Фамоксадон + оксатиапипролин",
-    "Фамоксадон + цимоксанил",
-    "Хлорокись меди + цимоксанил",
-    "Циантранилипрол",
-    "Этаметсульфурон-метил"
-   ],
-   "produits": [
-    "(150+60 г/л)",
-    "(160 г/л + 80 г/л)",
-    "(200 + 80 г/л)",
-    "(200 г/л)",
-    "(250 + 250 г/кг)",
-    "(300 + 30 г/л)",
-    "(350 г/кг)",
-    "(375 + 375 г/кг)",
-    "(50 г/кг)",
-    "(500 + 250 г/кг)",
-    "(500 г/кг + 250 г/кг)",
-    "(500 г/кг)",
-    "(550 + 92 + 23 г/кг)",
-    "(600 г/кг)",
-    "(625 г/л)",
-    "(689,5 + 42 г/кг)",
-    "(750 г/кг)",
-    "Талиус, КЭ (200 г/л)"
-   ]
-  },
-  {
-   "cle": "НУФАРМ ГМБХ КО КГ",
-   "nom": "НУФАРМ ГмбХ&Ко.КГ",
-   "latin": "Nufarm GmbH & Co KG",
-   "identifie": true,
-   "formes": [
-    "ГМБХ"
-   ],
-   "etrangere": true,
-   "pays": "Autriche",
-   "paysFiable": true,
-   "nbHomologations": 10,
-   "matieres": [
-    "2,4-D 2-ETHYLHEXYL ESTER",
-    "CHLORMEQUAT PRESENT AS CHLORMEQUAT CHLORIDE",
-    "DICAMBA",
-    "LAMBDA-CYHALOTHRIN",
-    "TERBUTHYLAZINE"
-   ],
-   "matieresRusses": [
-    "2,4-Д (сложный 2-этилгексиловый эфир)",
-    "2,4-Д + дикамба (диметиламинные соли)",
-    "Лямбда-цигалотрин",
-    "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
-    "МЦПА (диметиламинная соль)",
-    "МЦПА + дикамба (диметиламинные соли)",
-    "Меди гидроксид",
-    "Никосульфурон",
-    "Тербутилазин+бромоксинил (смесь эфиров октаноата и гептаноата)",
-    "Хлормекватхлорид"
-   ],
-   "produits": [
-    "(250 +100 г/л)",
-    "(344 + 120 г/л)",
-    "(40 г/л)",
-    "(460 г/л)",
-    "(500 г/л)",
-    "(576 г/кг)",
-    "(750 г/л МЦПА к-ты)",
-    "Кайзо, ВГ (50 г/л)",
-    "Эстет, КЭ (600 г/л)",
-    "дикамбы)"
-   ]
-  },
-  {
-   "cle": "ИПРОХИМ",
-   "nom": "ИПРОХИМ",
-   "latin": "IPROKHIM",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 9,
-   "matieres": [
-    "BENTAZONE",
-    "DICAMBA",
-    "DIMETHOATE",
-    "ETHOFUMESATE",
-    "IMIDACLOPRID"
-   ],
-   "matieresRusses": [
-    "Бентазон",
-    "Десмедифам + фенмедифам",
-    "Дикамба (диметиламинная соль)",
-    "Диметоат",
-    "Имидаклоприд",
-    "Никосульфурон",
-    "Пропиконазол + ципроконазол",
-    "Трифлусульфурон-метил",
-    "Этофумезат + фенмедифам + десмедифам"
-   ],
-   "produits": [
-    "(160 + 160 г/л)",
-    "(200 г/л)",
-    "(250 + 80 г/л)",
-    "(40 г/л)",
-    "(400 г/л)",
-    "(480 г/л)",
-    "(500 г/кг)",
-    "КЭ (112+91+71)"
-   ]
-  },
-  {
-   "cle": "ЮПЛ",
-   "nom": "ЮПЛ",
-   "latin": "UPL",
-   "identifie": true,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": true,
-   "pays": "Inde",
-   "paysFiable": true,
-   "nbHomologations": 9,
-   "matieres": [
-    "AZOXYSTROBIN",
-    "LAMBDA-CYHALOTHRIN",
-    "METRIBUZIN",
-    "S-METOLACHLOR",
-    "TEBUCONAZOLE"
-   ],
-   "matieresRusses": [
-    "Азоксистробин+тебуконазол",
-    "Десмедифам + фенмедифам",
-    "Лямбда-цигалотрин",
-    "Магния фосфид",
-    "Манкоцеб",
-    "Манкоцеб + цимоксанил",
-    "Метрибузин",
-    "С-Метолахлор"
-   ],
-   "produits": [
-    "(200 г/л +250 г/л)",
-    "(680 + 50 г/кг)",
-    "(700 г/кг)",
-    "(750 г/кг)",
-    "(80 + 80 г/л)",
-    "(800 г/кг)",
-    "(960 г/л)",
-    "Торег, КЭ (50 г/л)",
-    "г/кг)"
    ]
   },
   {
@@ -3174,6 +3214,112 @@
     "(564 г/л)",
     "(600 г/кг)",
     "Оперкот, КЭ (50 г/л)"
+   ]
+  },
+  {
+   "cle": "ХИМАГРОМАР КЕТИНГ РУ",
+   "nom": "Химагромар-кетинг.РУ",
+   "latin": "Khimagromar-keting.RU",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 6,
+   "matieres": [
+    "FOSETYL-ALUMINIUM",
+    "METALAXYL",
+    "METRIBUZIN",
+    "S-METOLACHLOR",
+    "TEBUCONAZOLE"
+   ],
+   "matieresRusses": [
+    "Алюминия фосэтил",
+    "Манкоцеб + металаксил",
+    "Метрибузин",
+    "С-Метолахлор",
+    "Тебуконазол",
+    "Феноксикарб"
+   ],
+   "produits": [
+    "(250 г/кг)",
+    "(60 г/л)",
+    "(640 + 80 г/кг)",
+    "(700 г/кг)",
+    "(800 г/кг)",
+    "(960 г/л)"
+   ]
+  },
+  {
+   "cle": "ЮНАЙТЕДХИМ ПРОМ",
+   "nom": "ЮНАЙТЕДХИМ-ПРОМ",
+   "latin": "YUNAYTEDKHIM-PROM",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 6,
+   "matieres": [
+    "DICAMBA",
+    "DIMETHOATE",
+    "ETHOFUMESATE",
+    "FENOXAPROP-P-ETHYL",
+    "PHENMEDIPHAM"
+   ],
+   "matieresRusses": [
+    "Галоксифоп-П-метил",
+    "Десмедифам + фенмедифам",
+    "Дикамба (диметиламинная соль)",
+    "Диметоат",
+    "Феноксапроп-П-этил + антидот клоквинтосет-мексил",
+    "Этофумезат + фенмедифам + десмедифам"
+   ],
+   "produits": [
+    "(100 г/л + 27 г/л)",
+    "(104 г/л)",
+    "(112+91+71 г/л)",
+    "(160 + 160 г/л)",
+    "(400 г/л)",
+    "(480 г/л )"
+   ]
+  },
+  {
+   "cle": "АГРОДИМ",
+   "nom": "АГРОДИМ",
+   "latin": "AGRODIM",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 5,
+   "matieres": [
+    "CLODINAFOP-PROPARGYL",
+    "CLOPYRALID",
+    "FENOXAPROP-P-ETHYL",
+    "FLORASULAM",
+    "PICLORAM"
+   ],
+   "matieresRusses": [
+    "Имазетапир",
+    "Клопиралид + пиклорам",
+    "Никосульфурон",
+    "Феноксапроп-П-этил + клодинафоп-пропаргил+антидот мефенпир-диэтил",
+    "Флорасулам"
+   ],
+   "produits": [
+    "(150 г/л)",
+    "(267 + 67 г/л)",
+    "(40 г/л)",
+    "(90 + 90 + 40 г/л)",
+    "Гольф, ВК (100 г/л)"
    ]
   },
   {
@@ -3272,109 +3418,6 @@
     "(420 + 60 г/л)",
     "(564 г/л)",
     "(750 г/кг)"
-   ]
-  },
-  {
-   "cle": "ХИМАГРОМАР КЕТИНГ РУ",
-   "nom": "Химагромар-кетинг.РУ",
-   "latin": "Khimagromar-keting.RU",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 6,
-   "matieres": [
-    "FOSETYL-ALUMINIUM",
-    "METRIBUZIN",
-    "S-METOLACHLOR",
-    "TEBUCONAZOLE"
-   ],
-   "matieresRusses": [
-    "Алюминия фосэтил",
-    "Манкоцеб + металаксил",
-    "Метрибузин",
-    "С-Метолахлор",
-    "Тебуконазол",
-    "Феноксикарб"
-   ],
-   "produits": [
-    "(250 г/кг)",
-    "(60 г/л)",
-    "(640 + 80 г/кг)",
-    "(700 г/кг)",
-    "(800 г/кг)",
-    "(960 г/л)"
-   ]
-  },
-  {
-   "cle": "ЮНАЙТЕДХИМ ПРОМ",
-   "nom": "ЮНАЙТЕДХИМ-ПРОМ",
-   "latin": "YUNAYTEDKHIM-PROM",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 6,
-   "matieres": [
-    "DICAMBA",
-    "DIMETHOATE",
-    "ETHOFUMESATE",
-    "FENOXAPROP-P-ETHYL"
-   ],
-   "matieresRusses": [
-    "Галоксифоп-П-метил",
-    "Десмедифам + фенмедифам",
-    "Дикамба (диметиламинная соль)",
-    "Диметоат",
-    "Феноксапроп-П-этил + антидот клоквинтосет-мексил",
-    "Этофумезат + фенмедифам + десмедифам"
-   ],
-   "produits": [
-    "(100 г/л + 27 г/л)",
-    "(104 г/л)",
-    "(112+91+71 г/л)",
-    "(160 + 160 г/л)",
-    "(400 г/л)",
-    "(480 г/л )"
-   ]
-  },
-  {
-   "cle": "АГРОДИМ",
-   "nom": "АГРОДИМ",
-   "latin": "AGRODIM",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 5,
-   "matieres": [
-    "CLODINAFOP-PROPARGYL",
-    "CLOPYRALID",
-    "FENOXAPROP-P-ETHYL",
-    "FLORASULAM"
-   ],
-   "matieresRusses": [
-    "Имазетапир",
-    "Клопиралид + пиклорам",
-    "Никосульфурон",
-    "Феноксапроп-П-этил + клодинафоп-пропаргил+антидот мефенпир-диэтил",
-    "Флорасулам"
-   ],
-   "produits": [
-    "(150 г/л)",
-    "(267 + 67 г/л)",
-    "(40 г/л)",
-    "(90 + 90 + 40 г/л)",
-    "Гольф, ВК (100 г/л)"
    ]
   },
   {
@@ -3673,6 +3716,62 @@
    ]
   },
   {
+   "cle": "АГРОВИТ",
+   "nom": "Агровит",
+   "latin": "Agrovit",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 3,
+   "matieres": [
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM",
+    "TRIBENURON-METHYL"
+   ],
+   "matieresRusses": [
+    "Галоксифоп-П-метил",
+    "Трибенурон-метил",
+    "Этофумезат + фенмедифам + десмедифам"
+   ],
+   "produits": [
+    "(104 г/л)",
+    "(112+91+71 г/л)",
+    "(750 г/кг)"
+   ]
+  },
+  {
+   "cle": "АГРОХИМ ХХ1",
+   "nom": "Агрохим-ХХ1",
+   "latin": "Agrokhim-KHKH1",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 3,
+   "matieres": [
+    "CLOPYRALID",
+    "IMAZAMOX",
+    "PICLORAM"
+   ],
+   "matieresRusses": [
+    "Дикват (дибромид)",
+    "Имазамокс + имазапир",
+    "Клопиралид + пиклорам"
+   ],
+   "produits": [
+    "(267 + 67 г/л)",
+    "(33 + 15 г/л)",
+    "диквата)"
+   ]
+  },
+  {
    "cle": "АЛЬБАУ ЮРОП САРЛ",
    "nom": "Альбау Юроп Сарл",
    "latin": "Albaugh",
@@ -3786,6 +3885,32 @@
    ]
   },
   {
+   "cle": "ГРУППА КОМПАНИЙ АГРОПРОМ МДТ",
+   "nom": "ГРУППА КОМПАНИЙ «АГРОПРОМ-МДТ",
+   "latin": "GRUPPA KOMPANIY «AGROPROM-MDT",
+   "identifie": false,
+   "formes": [
+    "ОАО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 2,
+   "matieres": [
+    "CLOPYRALID",
+    "FLORASULAM",
+    "PICLORAM"
+   ],
+   "matieresRusses": [
+    "2,4-Дкислоты (2-этилгексиловый эфир)+ флорасулам",
+    "Клопиралид + пиклорам"
+   ],
+   "produits": [
+    "(267 + 67 г/л)",
+    "(300 + 6,25 г/л)"
+   ]
+  },
+  {
    "cle": "КЕМИХИСТОР КФТ",
    "nom": "Кемихистор Кфт",
    "latin": "Kemikhistor Kft",
@@ -3835,6 +3960,52 @@
    "produits": [
     "(312,5 + 187,5 г/л)",
     "(33 + 15 г/л)"
+   ]
+  },
+  {
+   "cle": "АГРО ИННОВАЦИИ",
+   "nom": "АГРО-ИННОВАЦИИ",
+   "latin": "AGRO-INNOVATSII",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 1,
+   "matieres": [
+    "CLOPYRALID",
+    "DICAMBA",
+    "PICLORAM"
+   ],
+   "matieresRusses": [
+    "Дикамба + пиклорам+клопиралид (диметилэтаноламинные соли)"
+   ],
+   "produits": [
+    "177 г/л)"
+   ]
+  },
+  {
+   "cle": "ДАУ АГРОСАЕНСЕС ВЕРТРИБСГЕЗЕЛЬ ШАФТ М Б Х",
+   "nom": "ДАУ АГРОСАЕНСЕС ВЕРТРИБСГЕЗЕЛЬ-ШАФТ М.Б.Х",
+   "latin": "DAU AGROSAENSES VERTRIBSGEZEL-SHAFT M.B.KH",
+   "identifie": false,
+   "formes": [],
+   "etrangere": false,
+   "pays": null,
+   "paysFiable": false,
+   "nbHomologations": 1,
+   "matieres": [
+    "AMINOPYRALID",
+    "CLOPYRALID",
+    "PICLORAM"
+   ],
+   "matieresRusses": [
+    "Клопиралид + пиклорам+аминопиралид"
+   ],
+   "produits": [
+    "(267+80+17 г/л)"
    ]
   },
   {
@@ -4082,60 +4253,6 @@
    ]
   },
   {
-   "cle": "АГРОВИТ",
-   "nom": "Агровит",
-   "latin": "Agrovit",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 3,
-   "matieres": [
-    "ETHOFUMESATE",
-    "TRIBENURON-METHYL"
-   ],
-   "matieresRusses": [
-    "Галоксифоп-П-метил",
-    "Трибенурон-метил",
-    "Этофумезат + фенмедифам + десмедифам"
-   ],
-   "produits": [
-    "(104 г/л)",
-    "(112+91+71 г/л)",
-    "(750 г/кг)"
-   ]
-  },
-  {
-   "cle": "АГРОХИМ ХХ1",
-   "nom": "Агрохим-ХХ1",
-   "latin": "Agrokhim-KHKH1",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 3,
-   "matieres": [
-    "CLOPYRALID",
-    "IMAZAMOX"
-   ],
-   "matieresRusses": [
-    "Дикват (дибромид)",
-    "Имазамокс + имазапир",
-    "Клопиралид + пиклорам"
-   ],
-   "produits": [
-    "(267 + 67 г/л)",
-    "(33 + 15 г/л)",
-    "диквата)"
-   ]
-  },
-  {
    "cle": "ГЛОБАКЕМ НВ",
    "nom": "Глобакем НВ",
    "latin": "Globachem",
@@ -4244,12 +4361,37 @@
    ]
   },
   {
-   "cle": "ГРУППА КОМПАНИЙ АГРОПРОМ МДТ",
-   "nom": "ГРУППА КОМПАНИЙ «АГРОПРОМ-МДТ",
-   "latin": "GRUPPA KOMPANIY «AGROPROM-MDT",
+   "cle": "АГРОБЮРО РУС",
+   "nom": "АГРОБЮРО РУС",
+   "latin": "AGROBYURO RUS",
    "identifie": false,
    "formes": [
-    "ОАО"
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 2,
+   "matieres": [
+    "CLETHODIM",
+    "PHENMEDIPHAM"
+   ],
+   "matieresRusses": [
+    "Десмедифам + фенмедифам",
+    "Клетодим"
+   ],
+   "produits": [
+    "(160 + 160 г/л)",
+    "(240 г/л)"
+   ]
+  },
+  {
+   "cle": "АГРОЭКСПЕРТ ГРУП",
+   "nom": "АгроЭксперт Груп",
+   "latin": "AgroEkspert Grup",
+   "identifie": false,
+   "formes": [
+    "ООО"
    ],
    "etrangere": false,
    "pays": "Russie",
@@ -4257,15 +4399,15 @@
    "nbHomologations": 2,
    "matieres": [
     "CLOPYRALID",
-    "FLORASULAM"
+    "PICLORAM"
    ],
    "matieresRusses": [
-    "2,4-Дкислоты (2-этилгексиловый эфир)+ флорасулам",
-    "Клопиралид + пиклорам"
+    "Клопиралид + пиклорам",
+    "Эпоксиконазол+ципроконазол"
    ],
    "produits": [
-    "(267 + 67 г/л)",
-    "(300 + 6,25 г/л)"
+    "(120+80 г/л)",
+    "(267 + 67 г/л)"
    ]
   },
   {
@@ -4289,6 +4431,31 @@
    "produits": [
     "(480 г/л)",
     "(960 г/л)"
+   ]
+  },
+  {
+   "cle": "НУФАРМ ГМБХ КО КГ АВСТРИЯ",
+   "nom": "НУФАРМ ГмбХ&Ко.КГ (Австрия)",
+   "latin": "Nufarm GmbH & Co KG",
+   "identifie": true,
+   "formes": [
+    "ГМБХ"
+   ],
+   "etrangere": true,
+   "pays": "Autriche",
+   "paysFiable": true,
+   "nbHomologations": 2,
+   "matieres": [
+    "MCPA",
+    "MESOTRIONE"
+   ],
+   "matieresRusses": [
+    "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
+    "Мезотрион"
+   ],
+   "produits": [
+    "(100 г/л)",
+    "(500 г/л МЦПА к-ты)"
    ]
   },
   {
@@ -4342,26 +4509,28 @@
    ]
   },
   {
-   "cle": "АГРО ИННОВАЦИИ",
-   "nom": "АГРО-ИННОВАЦИИ",
-   "latin": "AGRO-INNOVATSII",
-   "identifie": false,
+   "cle": "ШИН ЕТСУ КЕМИКАЛ КО ЛТД",
+   "nom": "Шин-Етсу Кемикал Ко., Лтд",
+   "latin": "Shin-Etsu Chemical",
+   "identifie": true,
    "formes": [
-    "ООО"
+    "ЛТД"
    ],
-   "etrangere": false,
-   "pays": "Russie",
+   "etrangere": true,
+   "pays": "Japon",
    "paysFiable": true,
-   "nbHomologations": 1,
+   "nbHomologations": 2,
    "matieres": [
-    "CLOPYRALID",
-    "DICAMBA"
+    "1-DODECANOL",
+    "POTASSIUM"
    ],
    "matieresRusses": [
-    "Дикамба + пиклорам+клопиралид (диметилэтаноламинные соли)"
+    "(Е,Z)-7,9-Додекадиен-1-ил-ацетат",
+    "Е,Е-8,10-Додекадиен-1-ол+1-додеканол+1-Тетрадеканол"
    ],
    "produits": [
-    "177 г/л)"
+    "(172 мг/диспенсер)",
+    "кг/диспенсер)"
    ]
   },
   {
@@ -4388,24 +4557,49 @@
    ]
   },
   {
-   "cle": "ДАУ АГРОСАЕНСЕС ВЕРТРИБСГЕЗЕЛЬ ШАФТ М Б Х",
-   "nom": "ДАУ АГРОСАЕНСЕС ВЕРТРИБСГЕЗЕЛЬ-ШАФТ М.Б.Х",
-   "latin": "DAU AGROSAENSES VERTRIBSGEZEL-SHAFT M.B.KH",
+   "cle": "АГРОВИТ СЕРВИС",
+   "nom": "Агровит-Сервис",
+   "latin": "Agrovit-Servis",
    "identifie": false,
-   "formes": [],
+   "formes": [
+    "ООО"
+   ],
    "etrangere": false,
-   "pays": null,
-   "paysFiable": false,
+   "pays": "Russie",
+   "paysFiable": true,
    "nbHomologations": 1,
    "matieres": [
-    "AMINOPYRALID",
-    "CLOPYRALID"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "matieresRusses": [
-    "Клопиралид + пиклорам+аминопиралид"
+    "Этофумезат + фенмедифам + десмедифам"
    ],
    "produits": [
-    "(267+80+17 г/л)"
+    "(112+91+71 г/л)"
+   ]
+  },
+  {
+   "cle": "БАСФ СЕ ГЕРМАНИЯ",
+   "nom": "БАСФ СЕ (Германия)",
+   "latin": "BASF",
+   "identifie": true,
+   "formes": [
+    "СЕ"
+   ],
+   "etrangere": true,
+   "pays": "Allemagne",
+   "paysFiable": true,
+   "nbHomologations": 1,
+   "matieres": [
+    "DICAMBA",
+    "TOPRAMEZONE"
+   ],
+   "matieresRusses": [
+    "Дикамба (натриевая соль) + топрамезон"
+   ],
+   "produits": [
+    "(160 + 50 г/л)"
    ]
   },
   {
@@ -4669,54 +4863,6 @@
    ]
   },
   {
-   "cle": "АГРОБЮРО РУС",
-   "nom": "АГРОБЮРО РУС",
-   "latin": "AGROBYURO RUS",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 2,
-   "matieres": [
-    "CLETHODIM"
-   ],
-   "matieresRusses": [
-    "Десмедифам + фенмедифам",
-    "Клетодим"
-   ],
-   "produits": [
-    "(160 + 160 г/л)",
-    "(240 г/л)"
-   ]
-  },
-  {
-   "cle": "АГРОЭКСПЕРТ ГРУП",
-   "nom": "АгроЭксперт Груп",
-   "latin": "AgroEkspert Grup",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 2,
-   "matieres": [
-    "CLOPYRALID"
-   ],
-   "matieresRusses": [
-    "Клопиралид + пиклорам",
-    "Эпоксиконазол+ципроконазол"
-   ],
-   "produits": [
-    "(120+80 г/л)",
-    "(267 + 67 г/л)"
-   ]
-  },
-  {
    "cle": "МИР",
    "nom": "МИР",
    "latin": "MIR",
@@ -4764,30 +4910,6 @@
    ]
   },
   {
-   "cle": "НУФАРМ ГМБХ КО КГ АВСТРИЯ",
-   "nom": "НУФАРМ ГмбХ&Ко.КГ (Австрия)",
-   "latin": "Nufarm GmbH & Co KG",
-   "identifie": true,
-   "formes": [
-    "ГМБХ"
-   ],
-   "etrangere": true,
-   "pays": "Autriche",
-   "paysFiable": true,
-   "nbHomologations": 2,
-   "matieres": [
-    "MESOTRIONE"
-   ],
-   "matieresRusses": [
-    "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
-    "Мезотрион"
-   ],
-   "produits": [
-    "(100 г/л)",
-    "(500 г/л МЦПА к-ты)"
-   ]
-  },
-  {
    "cle": "ХИМ СНАБ",
    "nom": "ХИМ-СНАБ",
    "latin": "KHIM-SNAB",
@@ -4809,30 +4931,6 @@
    "produits": [
     "(360 г/л)",
     "(540 г/л)"
-   ]
-  },
-  {
-   "cle": "ШИН ЕТСУ КЕМИКАЛ КО ЛТД",
-   "nom": "Шин-Етсу Кемикал Ко., Лтд",
-   "latin": "Shin-Etsu Chemical",
-   "identifie": true,
-   "formes": [
-    "ЛТД"
-   ],
-   "etrangere": true,
-   "pays": "Japon",
-   "paysFiable": true,
-   "nbHomologations": 2,
-   "matieres": [
-    "POTASSIUM"
-   ],
-   "matieresRusses": [
-    "(Е,Z)-7,9-Додекадиен-1-ил-ацетат",
-    "Е,Е-8,10-Додекадиен-1-ол+1-додеканол+1-Тетрадеканол"
-   ],
-   "produits": [
-    "(172 мг/диспенсер)",
-    "кг/диспенсер)"
    ]
   },
   {
@@ -4989,6 +5087,28 @@
    ]
   },
   {
+   "cle": "АДФ",
+   "nom": "АДФ",
+   "latin": "ADF",
+   "identifie": false,
+   "formes": [
+    "ООО"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 1,
+   "matieres": [
+    "METALAXYL"
+   ],
+   "matieresRusses": [
+    "Манкоцеб + металаксил"
+   ],
+   "produits": [
+    "(640 + 80 г/кг)"
+   ]
+  },
+  {
    "cle": "АЛЬФА ХИМГРУПП",
    "nom": "АЛЬФА-ХИМГРУПП",
    "latin": "ALFA-KHIMGRUPP",
@@ -5076,50 +5196,6 @@
    ],
    "produits": [
     "(250 г/л)"
-   ]
-  },
-  {
-   "cle": "АГРОВИТ СЕРВИС",
-   "nom": "Агровит-Сервис",
-   "latin": "Agrovit-Servis",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 1,
-   "matieres": [
-    "ETHOFUMESATE"
-   ],
-   "matieresRusses": [
-    "Этофумезат + фенмедифам + десмедифам"
-   ],
-   "produits": [
-    "(112+91+71 г/л)"
-   ]
-  },
-  {
-   "cle": "БАСФ СЕ ГЕРМАНИЯ",
-   "nom": "БАСФ СЕ (Германия)",
-   "latin": "BASF",
-   "identifie": true,
-   "formes": [
-    "СЕ"
-   ],
-   "etrangere": true,
-   "pays": "Allemagne",
-   "paysFiable": true,
-   "nbHomologations": 1,
-   "matieres": [
-    "DICAMBA"
-   ],
-   "matieresRusses": [
-    "Дикамба (натриевая соль) + топрамезон"
-   ],
-   "produits": [
-    "(160 + 50 г/л)"
    ]
   },
   {
@@ -5425,6 +5501,29 @@
    ],
    "produits": [
     "(50 г/л)"
+   ]
+  },
+  {
+   "cle": "РОСТИ",
+   "nom": "Рости",
+   "latin": "Rosti",
+   "identifie": false,
+   "formes": [
+    "ООО",
+    "ТПК"
+   ],
+   "etrangere": false,
+   "pays": "Russie",
+   "paysFiable": true,
+   "nbHomologations": 1,
+   "matieres": [
+    "BENZYLADENINE"
+   ],
+   "matieresRusses": [
+    "Бензиладенина"
+   ],
+   "produits": [
+    "(10 г/л)"
    ]
   },
   {
@@ -6292,26 +6391,6 @@
    ]
   },
   {
-   "cle": "АДФ",
-   "nom": "АДФ",
-   "latin": "ADF",
-   "identifie": false,
-   "formes": [
-    "ООО"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 1,
-   "matieres": [],
-   "matieresRusses": [
-    "Манкоцеб + металаксил"
-   ],
-   "produits": [
-    "(640 + 80 г/кг)"
-   ]
-  },
-  {
    "cle": "АМЕТИСТ",
    "nom": "АМЕТИСТ",
    "latin": "AMETIST",
@@ -7124,27 +7203,6 @@
    ]
   },
   {
-   "cle": "РОСТИ",
-   "nom": "Рости",
-   "latin": "Rosti",
-   "identifie": false,
-   "formes": [
-    "ООО",
-    "ТПК"
-   ],
-   "etrangere": false,
-   "pays": "Russie",
-   "paysFiable": true,
-   "nbHomologations": 1,
-   "matieres": [],
-   "matieresRusses": [
-    "Бензиладенина"
-   ],
-   "produits": [
-    "(10 г/л)"
-   ]
-  },
-  {
    "cle": "РУСЮРОФАРМ",
    "nom": "Русюрофарм",
    "latin": "Rusyurofarm",
@@ -7446,6 +7504,16 @@
  ],
  "matieres": [
   {
+   "iso": "1-DODECANOL",
+   "nomsRusses": [
+    "Е,Е-8,10-Додекадиен-1-ол+1-додеканол+1-Тетрадеканол"
+   ],
+   "nbHomologations": 1,
+   "societes": [
+    "Шин-Етсу Кемикал Ко., Лтд"
+   ]
+  },
+  {
    "iso": "1-METHYLCYCLOPROPENE",
    "nomsRusses": [
     "1-метилциклопропен",
@@ -7676,6 +7744,27 @@
     "Форвард",
     "ШАНС",
     "Щелково Агрохим"
+   ]
+  },
+  {
+   "iso": "BENZOVINDIFLUPYR",
+   "nomsRusses": [
+    "Пропиконазол + бензовиндифлупир",
+    "Пропиконазол + бензовиндифлупир + ципроконазол"
+   ],
+   "nbHomologations": 2,
+   "societes": [
+    "СИНГЕНТА"
+   ]
+  },
+  {
+   "iso": "BENZYLADENINE",
+   "nomsRusses": [
+    "Бензиладенина"
+   ],
+   "nbHomologations": 1,
+   "societes": [
+    "Рости"
    ]
   },
   {
@@ -8785,6 +8874,33 @@
    ]
   },
   {
+   "iso": "MCPA",
+   "nomsRusses": [
+    "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
+    "МЦПА (диметиламинная соль)",
+    "МЦПА (калиевая + натриевая соли)",
+    "МЦПА + дикамба (диметиламинные соли)"
+   ],
+   "nbHomologations": 8,
+   "societes": [
+    "АГРус",
+    "Август",
+    "НУФАРМ ГмбХ&Ко.КГ",
+    "НУФАРМ ГмбХ&Ко.КГ (Австрия)",
+    "ШАНС"
+   ]
+  },
+  {
+   "iso": "MEFENPYR-DIETHYL",
+   "nomsRusses": [
+    "Амидосульфурон + йодосульфурон-метил-натрий + мефенпир-диэтил"
+   ],
+   "nbHomologations": 1,
+   "societes": [
+    "Байер КропСайенс АГ"
+   ]
+  },
+  {
    "iso": "MESOSULFURON-METHYL",
    "nomsRusses": [
     "Йодосульфурон-метил-натрий + мезосульфурон-метил + антидот мефенпир-диэтил"
@@ -8819,6 +8935,21 @@
     "ФРАНДЕСА",
     "ШАНС",
     "Шандонг Вейфанг Рейнбоу Кемикал Ко., Лтд"
+   ]
+  },
+  {
+   "iso": "METALAXYL",
+   "nomsRusses": [
+    "Манкоцеб + металаксил",
+    "Протиоконазол+металаксил"
+   ],
+   "nbHomologations": 4,
+   "societes": [
+    "АДФ",
+    "Байер КропСайенс АГ (Германия)",
+    "Химагромар-кетинг.РУ",
+    "Щелково Агрохим",
+    "Ярило"
    ]
   },
   {
@@ -8913,6 +9044,17 @@
    ]
   },
   {
+   "iso": "OXATHIAPIPROLIN",
+   "nomsRusses": [
+    "Оксатиапипролин",
+    "Фамоксадон + оксатиапипролин"
+   ],
+   "nbHomologations": 2,
+   "societes": [
+    "Дюпон Наука и Технологии"
+   ]
+  },
+  {
    "iso": "OXYFLUORFEN",
    "nomsRusses": [
     "Оксифлуорфен"
@@ -8946,6 +9088,71 @@
    "nbHomologations": 4,
    "societes": [
     "Агрорус и Ко",
+    "Щелково Агрохим"
+   ]
+  },
+  {
+   "iso": "PHENMEDIPHAM",
+   "nomsRusses": [
+    "Десмедифам + фенмедифам",
+    "Десмедифам + фенмедифам + этофумезат",
+    "Этофумезат + фенмедифам + десмедифам",
+    "Этофумезат + фенмедифам + десмедифам + ленацил"
+   ],
+   "nbHomologations": 35,
+   "societes": [
+    "АГРОБЮРО РУС",
+    "АГРУСХИМ",
+    "АГРус",
+    "АДАМА РУС",
+    "Агро Эксперт Груп",
+    "АгроХимИнвест",
+    "Агровит",
+    "Агровит-Сервис",
+    "Байер КропСайенс АГ",
+    "ЗЕМЛЯКОФФ",
+    "ИНТЕР ГРУПП",
+    "ИПРОХИМ",
+    "ЛИСТЕРРА",
+    "РосАгроХим",
+    "СФ-РЕГИСТРЭЙШН",
+    "ТПК Техноэкспорт",
+    "ФРАНДЕСА",
+    "Химагромаркетинг",
+    "Щелково Агрохим",
+    "ЮНАЙТЕДХИМ-ПРОМ",
+    "ЮПЛ"
+   ]
+  },
+  {
+   "iso": "PICLORAM",
+   "nomsRusses": [
+    "2,4-Д (сложный 2-этилгексиловый эфир) +пиклорам + флорасулам",
+    "2,4-Д кислота (2-этилгексиловый эфир) + пиклорам + флорасулам",
+    "Дикамба + пиклорам+клопиралид (диметилэтаноламинные соли)",
+    "Клопиралид (сложный 2-этилгексиловый эфир) + пиклорам + аминопиралид",
+    "Клопиралид + пиклорам",
+    "Клопиралид + пиклорам+аминопиралид",
+    "Мезотрион + никосульфурон+ пиклорам",
+    "Этаметсульфурон-метил+пиклорам"
+   ],
+   "nbHomologations": 15,
+   "societes": [
+    "АГРО-ИННОВАЦИИ",
+    "АГРОДИМ",
+    "АГРОМИР",
+    "АГРУСХИМ",
+    "АГРус",
+    "АНПП «АГРОХИМ-ХХ1",
+    "Август",
+    "АгроХимИнвест",
+    "АгроЭксперт Груп",
+    "Агрохим-ХХ1",
+    "ГРУППА КОМПАНИЙ «АГРОПРОМ-МДТ",
+    "ДАУ АГРОСАЕНСЕС ВЕРТРИБСГЕЗЕЛЬ-ШАФТ М.Б.Х",
+    "ИНТЕР ГРУПП",
+    "Форвард",
+    "ШАНС",
     "Щелково Агрохим"
    ]
   },
@@ -9017,6 +9224,16 @@
    "nbHomologations": 2,
    "societes": [
     "АГРОХИМ-XXI",
+    "СИНГЕНТА"
+   ]
+  },
+  {
+   "iso": "PROSULFURON",
+   "nomsRusses": [
+    "Просульфурон"
+   ],
+   "nbHomologations": 1,
+   "societes": [
     "СИНГЕНТА"
    ]
   },
@@ -9136,6 +9353,14 @@
    ]
   },
   {
+   "iso": "PYROXSULAM",
+   "nomsRusses": [
+    "Пироксулам + клоквинтосет-мексил"
+   ],
+   "nbHomologations": 1,
+   "societes": []
+  },
+  {
    "iso": "QUIZALOFOP-P-ETHYL",
    "nomsRusses": [
     "Клетодим+хизалофоп-п-этил",
@@ -9208,6 +9433,20 @@
     "ШАНС",
     "ЮПЛ",
     "Яровит"
+   ]
+  },
+  {
+   "iso": "SEDAXANE",
+   "nomsRusses": [
+    "Седаксан",
+    "Седаксан + флудиоксонил + тебуконазол",
+    "Тиаметоксам+седаксан+флудиоксонил+тебуконазол",
+    "Тиаметоксам+седаксана+флудиоксонила+тебуконазола",
+    "Флудиоксонил + мефеноксам + седаксан"
+   ],
+   "nbHomologations": 6,
+   "societes": [
+    "СИНГЕНТА"
    ]
   },
   {
@@ -9447,6 +9686,18 @@
     "Химагромаркетинг",
     "ШАНС",
     "Щелково Агрохим"
+   ]
+  },
+  {
+   "iso": "TOPRAMEZONE",
+   "nomsRusses": [
+    "Дикамба (диметиламинная соль) + топрамезон",
+    "Дикамба (натриевая соль) + топрамезон"
+   ],
+   "nbHomologations": 2,
+   "societes": [
+    "БАСФ СЕ",
+    "БАСФ СЕ (Германия)"
    ]
   },
   {
@@ -14107,6 +14358,7 @@
    "matiereRusse": "Тиаметоксам+седаксана+флудиоксонила+тебуконазола",
    "iso": [
     "FLUDIOXONIL",
+    "SEDAXANE",
     "TEBUCONAZOLE",
     "THIAMETHOXAM"
    ],
@@ -15090,7 +15342,9 @@
    "expiration": "02.08.2025",
    "produit": "кг/диспенсер)",
    "matiereRusse": "Е,Е-8,10-Додекадиен-1-ол+1-додеканол+1-Тетрадеканол",
-   "iso": [],
+   "iso": [
+    "1-DODECANOL"
+   ],
    "societes": [
     {
      "nom": "Шин-Етсу Кемикал Ко., Лтд",
@@ -17064,7 +17318,9 @@
    "expiration": "28.05.2029",
    "produit": "(640 + 80 г/кг)",
    "matiereRusse": "Манкоцеб + металаксил",
-   "iso": [],
+   "iso": [
+    "METALAXYL"
+   ],
    "societes": [
     {
      "nom": "Химагромар-кетинг.РУ",
@@ -17080,7 +17336,9 @@
    "expiration": "10.09.2023",
    "produit": "(640 + 80 г/кг)",
    "matiereRusse": "Манкоцеб + металаксил",
-   "iso": [],
+   "iso": [
+    "METALAXYL"
+   ],
    "societes": [
     {
      "nom": "Щелково Агрохим",
@@ -17096,7 +17354,9 @@
    "expiration": "25.01.2027",
    "produit": "(640 + 80 г/кг)",
    "matiereRusse": "Манкоцеб + металаксил",
-   "iso": [],
+   "iso": [
+    "METALAXYL"
+   ],
    "societes": [
     {
      "nom": "АДФ",
@@ -17629,7 +17889,9 @@
    "expiration": "07.10.2030",
    "produit": "(200 г/л)",
    "matiereRusse": "Оксатиапипролин",
-   "iso": [],
+   "iso": [
+    "OXATHIAPIPROLIN"
+   ],
    "societes": [
     {
      "nom": "Дюпон Наука и Технологии",
@@ -18231,7 +18493,9 @@
    "expiration": "23.12.2031",
    "produit": "(250 + 40 г/л)",
    "matiereRusse": "Пропиконазол + бензовиндифлупир",
-   "iso": [],
+   "iso": [
+    "BENZOVINDIFLUPYR"
+   ],
    "societes": [
     {
      "nom": "СИНГЕНТА",
@@ -18247,7 +18511,9 @@
    "expiration": "28.01.2029",
    "produit": "г/л)",
    "matiereRusse": "Пропиконазол + бензовиндифлупир + ципроконазол",
-   "iso": [],
+   "iso": [
+    "BENZOVINDIFLUPYR"
+   ],
    "societes": [
     {
      "nom": "СИНГЕНТА",
@@ -18775,6 +19041,7 @@
    "produit": "(100+20 г/л)",
    "matiereRusse": "Протиоконазол+металаксил",
    "iso": [
+    "METALAXYL",
     "PROTHIOCONAZOLE"
    ],
    "societes": [
@@ -18863,7 +19130,9 @@
    "expiration": "20.02.2030",
    "produit": "(500 г/л)",
    "matiereRusse": "Седаксан",
-   "iso": [],
+   "iso": [
+    "SEDAXANE"
+   ],
    "societes": [
     {
      "nom": "СИНГЕНТА",
@@ -18881,6 +19150,7 @@
    "matiereRusse": "Седаксан + флудиоксонил + тебуконазол",
    "iso": [
     "FLUDIOXONIL",
+    "SEDAXANE",
     "TEBUCONAZOLE"
    ],
    "societes": [
@@ -19805,6 +20075,7 @@
    "matiereRusse": "Тиаметоксам+седаксан+флудиоксонил+тебуконазол",
    "iso": [
     "FLUDIOXONIL",
+    "SEDAXANE",
     "TEBUCONAZOLE",
     "THIAMETHOXAM"
    ],
@@ -20279,7 +20550,9 @@
    "expiration": "27.10.2030",
    "produit": "(300 + 30 г/л)",
    "matiereRusse": "Фамоксадон + оксатиапипролин",
-   "iso": [],
+   "iso": [
+    "OXATHIAPIPROLIN"
+   ],
    "societes": [
     {
      "nom": "Дюпон Наука и Технологии",
@@ -20586,7 +20859,8 @@
    "produit": "(25 + 37,5 + 50 г/л)",
    "matiereRusse": "Флудиоксонил + мефеноксам + седаксан",
    "iso": [
-    "FLUDIOXONIL"
+    "FLUDIOXONIL",
+    "SEDAXANE"
    ],
    "societes": [
     {
@@ -20604,7 +20878,8 @@
    "produit": "(22,5 + 15 + 15 г/л)",
    "matiereRusse": "Флудиоксонил + мефеноксам + седаксан",
    "iso": [
-    "FLUDIOXONIL"
+    "FLUDIOXONIL",
+    "SEDAXANE"
    ],
    "societes": [
     {
@@ -22066,7 +22341,8 @@
    "matiereRusse": "2,4-Д (сложный 2-этилгексиловый эфир) +пиклорам + флорасулам",
    "iso": [
     "2,4-D 2-ETHYLHEXYL ESTER",
-    "FLORASULAM"
+    "FLORASULAM",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -22447,7 +22723,8 @@
    "produit": "(300 + 51 + 6,25 г/л)",
    "matiereRusse": "2,4-Д кислота (2-этилгексиловый эфир) + пиклорам + флорасулам",
    "iso": [
-    "FLORASULAM"
+    "FLORASULAM",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -22553,7 +22830,8 @@
    "produit": "(100 + 25 + 250 г/л)",
    "matiereRusse": "Амидосульфурон + йодосульфурон-метил-натрий + мефенпир-диэтил",
    "iso": [
-    "IODOSULFURON-METHYL-SODIUM"
+    "IODOSULFURON-METHYL-SODIUM",
+    "MEFENPYR-DIETHYL"
    ],
    "societes": [
     {
@@ -23977,7 +24255,9 @@
    "expiration": "31.03.2029",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "ЗемлякоФФ",
@@ -23993,7 +24273,9 @@
    "expiration": "08.12.2030",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "Агро Эксперт Груп",
@@ -24009,7 +24291,9 @@
    "expiration": "15.12.2025",
    "produit": "+ 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "Байер КропСайенс АГ",
@@ -24025,7 +24309,9 @@
    "expiration": "31.03.2024",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "Интер Групп",
@@ -24041,7 +24327,9 @@
    "expiration": "04.06.2024",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "ИПРОХИМ",
@@ -24057,7 +24345,9 @@
    "expiration": "31.01.2029",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "АГРус",
@@ -24073,7 +24363,9 @@
    "expiration": "27.02.2029",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "АДАМА РУС",
@@ -24089,7 +24381,9 @@
    "expiration": "04.02.2024",
    "produit": "(110 + 110 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "Щелково Агрохим",
@@ -24105,7 +24399,9 @@
    "expiration": "29.12.2025",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "АГРОБЮРО РУС",
@@ -24121,7 +24417,9 @@
    "expiration": "16.12.2024",
    "produit": "(80+80 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "АГРУСХИМ",
@@ -24137,7 +24435,9 @@
    "expiration": "22.03.2025",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "ЗемлякоФФ",
@@ -24154,7 +24454,9 @@
    "expiration": "26.04.2027",
    "produit": "(80 + 80 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "ЮПЛ",
@@ -24170,7 +24472,9 @@
    "expiration": "07.11.2027",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "ЮНАЙТЕДХИМ-ПРОМ",
@@ -24186,7 +24490,9 @@
    "expiration": "20.12.2030",
    "produit": "(160 + 160 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам",
-   "iso": [],
+   "iso": [
+    "PHENMEDIPHAM"
+   ],
    "societes": [
     {
      "nom": "РосАгроХим",
@@ -24204,7 +24510,8 @@
    "produit": "(21 + 63 + 126 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам + этофумезат",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -24222,7 +24529,8 @@
    "produit": "(60 + 60 + 60 г/л)",
    "matiereRusse": "Десмедифам + фенмедифам + этофумезат",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -24528,7 +24836,8 @@
    "produit": "(160 г/л + 50 г/л)",
    "matiereRusse": "Дикамба (диметиламинная соль) + топрамезон",
    "iso": [
-    "DICAMBA"
+    "DICAMBA",
+    "TOPRAMEZONE"
    ],
    "societes": [
     {
@@ -24610,7 +24919,8 @@
    "produit": "(160 + 50 г/л)",
    "matiereRusse": "Дикамба (натриевая соль) + топрамезон",
    "iso": [
-    "DICAMBA"
+    "DICAMBA",
+    "TOPRAMEZONE"
    ],
    "societes": [
     {
@@ -24629,7 +24939,8 @@
    "matiereRusse": "Дикамба + пиклорам+клопиралид (диметилэтаноламинные соли)",
    "iso": [
     "CLOPYRALID",
-    "DICAMBA"
+    "DICAMBA",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26353,7 +26664,8 @@
    "produit": "(267 + 67 г/л)",
    "matiereRusse": "Клопиралид + пиклорам",
    "iso": [
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26371,7 +26683,8 @@
    "produit": "(267 + 67 г/л)",
    "matiereRusse": "Клопиралид + пиклорам",
    "iso": [
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26389,7 +26702,8 @@
    "produit": "(267 + 67 г/л)",
    "matiereRusse": "Клопиралид + пиклорам",
    "iso": [
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26407,7 +26721,8 @@
    "produit": "(267 + 67 г/л)",
    "matiereRusse": "Клопиралид + пиклорам",
    "iso": [
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26425,7 +26740,8 @@
    "produit": "(267 + 67 г/л)",
    "matiereRusse": "Клопиралид + пиклорам",
    "iso": [
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26443,7 +26759,8 @@
    "produit": "(267 + 67 г/л)",
    "matiereRusse": "Клопиралид + пиклорам",
    "iso": [
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26467,7 +26784,8 @@
    "produit": "(267 + 67 г/л)",
    "matiereRusse": "Клопиралид + пиклорам",
    "iso": [
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26485,7 +26803,8 @@
    "produit": "(267 + 67 г/л)",
    "matiereRusse": "Клопиралид + пиклорам",
    "iso": [
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26510,7 +26829,8 @@
    "matiereRusse": "Клопиралид + пиклорам+аминопиралид",
    "iso": [
     "AMINOPYRALID",
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26527,7 +26847,8 @@
    "matiereRusse": "Клопиралид (сложный 2-этилгексиловый эфир) + пиклорам + аминопиралид",
    "iso": [
     "AMINOPYRALID",
-    "CLOPYRALID"
+    "CLOPYRALID",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -26834,7 +27155,8 @@
    "produit": "(75 + 37,5 + 17,5 г/л)",
    "matiereRusse": "Мезотрион + никосульфурон+ пиклорам",
    "iso": [
-    "MESOTRIONE"
+    "MESOTRIONE",
+    "PICLORAM"
    ],
    "societes": [
     {
@@ -27567,7 +27889,9 @@
    "expiration": "28.03.2026",
    "produit": "(750 г/л МЦПА к-ты)",
    "matiereRusse": "МЦПА (диметиламинная соль)",
-   "iso": [],
+   "iso": [
+    "MCPA"
+   ],
    "societes": [
     {
      "nom": "НУФАРМ ГмбХ&Ко.КГ",
@@ -27583,7 +27907,9 @@
    "expiration": "09.02.2030",
    "produit": "КГ (Австрия)",
    "matiereRusse": "МЦПА (диметиламинная соль)",
-   "iso": [],
+   "iso": [
+    "MCPA"
+   ],
    "societes": [],
    "blocNonDecoupe": null
   },
@@ -27592,7 +27918,9 @@
    "expiration": "29.03.2028",
    "produit": "(300 г/л)",
    "matiereRusse": "МЦПА (калиевая + натриевая соли)",
-   "iso": [],
+   "iso": [
+    "MCPA"
+   ],
    "societes": [
     {
      "nom": "Август",
@@ -27609,7 +27937,9 @@
    "expiration": "13.03.2029",
    "produit": "(500 г/л МЦПА к-ты)",
    "matiereRusse": "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
-   "iso": [],
+   "iso": [
+    "MCPA"
+   ],
    "societes": [
     {
      "nom": "Нуфарм ГмбХ & Ко КГ (Австрия)",
@@ -27625,7 +27955,9 @@
    "expiration": "08.10.2029",
    "produit": "(500 г/л)",
    "matiereRusse": "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
-   "iso": [],
+   "iso": [
+    "MCPA"
+   ],
    "societes": [
     {
      "nom": "АГРус",
@@ -27641,7 +27973,9 @@
    "expiration": "31.05.2031",
    "produit": "(500 г/л МЦПА к-ты)",
    "matiereRusse": "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
-   "iso": [],
+   "iso": [
+    "MCPA"
+   ],
    "societes": [
     {
      "nom": "ШАНС",
@@ -27657,7 +27991,9 @@
    "expiration": "28.09.2030",
    "produit": "(500 г/л)",
    "matiereRusse": "МЦПА (диметиламинная + калиевая + натриевая соли, смесь)",
-   "iso": [],
+   "iso": [
+    "MCPA"
+   ],
    "societes": [
     {
      "nom": "НУФАРМ ГмбХ & Ко КГ",
@@ -27674,7 +28010,8 @@
    "produit": "дикамбы)",
    "matiereRusse": "МЦПА + дикамба (диметиламинные соли)",
    "iso": [
-    "DICAMBA"
+    "DICAMBA",
+    "MCPA"
    ],
    "societes": [
     {
@@ -28267,7 +28604,9 @@
    "expiration": "19.12.2023",
    "produit": "(45 + 90 г/л)",
    "matiereRusse": "Пироксулам + клоквинтосет-мексил",
-   "iso": [],
+   "iso": [
+    "PYROXSULAM"
+   ],
    "societes": [],
    "blocNonDecoupe": "ДАУ АГРОСАЕНСЕС ВЕРТРИБСГЕ-ЗЕЛЬШАФТ М.Б.Х"
   },
@@ -28664,7 +29003,9 @@
    "expiration": "07.07.2029",
    "produit": "(750 г/кг)",
    "matiereRusse": "Просульфурон",
-   "iso": [],
+   "iso": [
+    "PROSULFURON"
+   ],
    "societes": [
     {
      "nom": "СИНГЕНТА",
@@ -31847,7 +32188,9 @@
    "expiration": "25.10.2026",
    "produit": "(150+450 г/кг)",
    "matiereRusse": "Этаметсульфурон-метил+пиклорам",
-   "iso": [],
+   "iso": [
+    "PICLORAM"
+   ],
    "societes": [
     {
      "nom": "АГРУСХИМ",
@@ -31864,7 +32207,8 @@
    "produit": "(112 + 91 + 71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -31882,7 +32226,8 @@
    "produit": "(112 + 91 + 71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -31900,7 +32245,8 @@
    "produit": "(112 + 91 + 71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -31918,7 +32264,8 @@
    "produit": "КЭ (112+91+71)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -31936,7 +32283,8 @@
    "produit": "(112+91+71)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [],
    "blocNonDecoupe": "(кроме для пучкового товара) Однолетние двудольные (включая виды щирицы) и некоторые однолетние злаковые сорные растения Однократное опрыскивание посевов в фазе 4 настоящих листьев культуры и ранние фазы роста сорных растений. Расход рабочей жидкости – 200 -300 л/га 60(1) -(3) 620 Ко., Лтд"
@@ -31947,7 +32295,8 @@
    "produit": "(112 + 91 + 71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -31966,7 +32315,8 @@
    "produit": "(112 + 91 + 71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -31984,7 +32334,8 @@
    "produit": "(112+91+71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32002,7 +32353,8 @@
    "produit": "(200 + 100 + 100 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32020,7 +32372,8 @@
    "produit": "91 + 71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32038,7 +32391,8 @@
    "produit": "(112 + 91+ 71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32056,7 +32410,8 @@
    "produit": "(112+91+71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32082,7 +32437,8 @@
    "produit": "(112+91+71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [],
    "blocNonDecoupe": "ООО «АЛЬФА-3 Свекла сахарная Однолетние двудольные (включая виды щирицы) и некоторые однолетние злаковые сорняки Опрыскивание посевов в фазе 4 настоящих листьев культуры. Расход рабочей жидкости -200-300 л/га 60(1) -(3) ХИМГРУПП »"
@@ -32093,7 +32449,8 @@
    "produit": "(112+91+71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32117,7 +32474,8 @@
    "produit": "(112+91+71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32135,7 +32493,8 @@
    "produit": "(112+91+71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32153,7 +32512,8 @@
    "produit": "(112+91+71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32171,7 +32531,8 @@
    "produit": "(112+91+71 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32189,7 +32550,8 @@
    "produit": "(80+65+50 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -32207,7 +32569,8 @@
    "produit": "(110 + 90 + 70+40 г/л)",
    "matiereRusse": "Этофумезат + фенмедифам + десмедифам + ленацил",
    "iso": [
-    "ETHOFUMESATE"
+    "ETHOFUMESATE",
+    "PHENMEDIPHAM"
    ],
    "societes": [
     {
@@ -33269,7 +33632,9 @@
    "expiration": "31.01.2029",
    "produit": "(10 г/л)",
    "matiereRusse": "Бензиладенина",
-   "iso": [],
+   "iso": [
+    "BENZYLADENINE"
+   ],
    "societes": [
     {
      "nom": "Рости",
@@ -34500,7 +34865,9 @@
    "expiration": "02.08.2025",
    "produit": "кг/диспенсер)",
    "matiereRusse": "Е,Е-8,10-Додекадиен-1-ол+1-додеканол+1-Тетрадеканол",
-   "iso": [],
+   "iso": [
+    "1-DODECANOL"
+   ],
    "societes": [
     {
      "nom": "Шин-Етсу Кемикал Ко., Лтд",

@@ -3,22 +3,22 @@
   "source": "US EPA — National List of Active Pesticide-Producing Establishments",
   "url": "https://www.epa.gov/compliance/national-list-active-epa-registered-foreign-and-domestic-pesticide-andor-device",
   "licence": "Domaine public (œuvre du gouvernement des États-Unis)",
-  "attribution": "US EPA — National List of Active Pesticide-Producing Establishments — relevé du 2026-09-02",
-  "genere": "2026-09-02T19:03:23",
-  "nbTotal": 19594,
-  "nbEtrangers": 7285,
-  "nbSourcing": 5257,
+  "attribution": "US EPA — National List of Active Pesticide-Producing Establishments — relevé du 2026-10-09",
+  "genere": "2026-10-09T13:52:52",
+  "nbTotal": 19558,
+  "nbEtrangers": 7314,
+  "nbSourcing": 5278,
   "nbPays": 85,
   "avertissement": "Liste des sites de production enregistrés auprès de l'EPA pour produire des pesticides destinés au marché américain. Elle dit QUI produit et OÙ, jamais QUOI : aucune matière active n'y figure. Aucune valeur réglementaire au Maroc, et un enregistrement d'établissement n'atteste d'aucune conformité — l'EPA précise qu'il identifie un lieu de production, rien de plus."
  },
  "parPays": [
   {
    "pays": "Chine",
-   "n": 4053
+   "n": 4072
   },
   {
    "pays": "Canada",
-   "n": 391
+   "n": 392
   },
   {
    "pays": "Inde",
@@ -34,15 +34,15 @@
   },
   {
    "pays": "Royaume-Uni",
-   "n": 196
+   "n": 197
   },
   {
    "pays": "Corée du Sud",
-   "n": 194
+   "n": 195
   },
   {
    "pays": "Allemagne",
-   "n": 157
+   "n": 158
   },
   {
    "pays": "Viêt Nam",
@@ -54,11 +54,11 @@
   },
   {
    "pays": "France",
-   "n": 83
+   "n": 84
   },
   {
    "pays": "Italie",
-   "n": 78
+   "n": 77
   },
   {
    "pays": "Brésil",
@@ -69,12 +69,12 @@
    "n": 72
   },
   {
-   "pays": "Hong Kong",
-   "n": 65
+   "pays": "Pays-Bas",
+   "n": 66
   },
   {
-   "pays": "Pays-Bas",
-   "n": 64
+   "pays": "Hong Kong",
+   "n": 65
   },
   {
    "pays": "Malaisie",
@@ -82,15 +82,15 @@
   },
   {
    "pays": "Thaïlande",
-   "n": 58
+   "n": 59
   },
   {
    "pays": "Israël",
-   "n": 48
+   "n": 47
   },
   {
    "pays": "Afrique du Sud",
-   "n": 38
+   "n": 39
   },
   {
    "pays": "Australie",
@@ -134,7 +134,7 @@
   },
   {
    "pays": "Colombie",
-   "n": 24
+   "n": 25
   },
   {
    "pays": "Pérou",
@@ -145,15 +145,15 @@
    "n": 20
   },
   {
+   "pays": "KHM",
+   "n": 18
+  },
+  {
    "pays": "Suède",
    "n": 17
   },
   {
    "pays": "Danemark",
-   "n": 17
-  },
-  {
-   "pays": "KHM",
    "n": 17
   },
   {
@@ -277,6 +277,10 @@
    "n": 2
   },
   {
+   "pays": "Maroc",
+   "n": 2
+  },
+  {
    "pays": "Émirats arabes unis",
    "n": 2
   },
@@ -318,10 +322,6 @@
   },
   {
    "pays": "NIC",
-   "n": 1
-  },
-  {
-   "pays": "Maroc",
    "n": 1
   },
   {
@@ -556,6 +556,18 @@
    "pays": "Afrique du Sud",
    "paysConnu": true,
    "societe": "DOW AGROSCIENCES SOUTHERN AFRICA (PTY) LTD.",
+   "sourcing": false
+  },
+  {
+   "numero": "106517-ZAF-1",
+   "etablissement": "GREEN TRADING PTY LTD",
+   "adresse": "R566, PLAAS BOKFONTEIN 164",
+   "ville": "BRITS",
+   "region": null,
+   "codePays": "ZAF",
+   "pays": "Afrique du Sud",
+   "paysConnu": true,
+   "societe": "Green Trading PTY Ltd",
    "sourcing": false
   },
   {
@@ -1708,6 +1720,18 @@
    "pays": "Allemagne",
    "paysConnu": true,
    "societe": "Kandelium Care GmbH",
+   "sourcing": false
+  },
+  {
+   "numero": "105802-DEU-1",
+   "etablissement": "KARLSRUHE",
+   "adresse": "SCHENKENBURGSTR. 18",
+   "ville": "KARLSRUHE",
+   "region": null,
+   "codePays": "DEU",
+   "pays": "Allemagne",
+   "paysConnu": true,
+   "societe": "enviolet GmbH",
    "sourcing": false
   },
   {
@@ -3235,18 +3259,6 @@
    "sourcing": false
   },
   {
-   "numero": "93786-AUS-1",
-   "etablissement": "DRASLOVKA SERVICES PTY LTD.",
-   "adresse": "15-17 SECOND AVE.",
-   "ville": "SUNSHINE",
-   "region": null,
-   "codePays": "AUS",
-   "pays": "Australie",
-   "paysConnu": true,
-   "societe": "DRASLOVKA SERVICES PTY LTD.",
-   "sourcing": false
-  },
-  {
    "numero": "101911-AUS-1",
    "etablissement": "ENVIRONMENTAL TREE TECHNOLOGIES PTY LTD",
    "adresse": "13 NARR MAEN DRIVE",
@@ -3292,6 +3304,18 @@
    "pays": "Australie",
    "paysConnu": true,
    "societe": "INTERNATIONAL ANIMAL HEALTH PRODUCTSPTY. LTD. (IAHP)",
+   "sourcing": false
+  },
+  {
+   "numero": "93786-AUS-1",
+   "etablissement": "Intreso Australia Pty Ltd.",
+   "adresse": "15-17 SECOND AVE.",
+   "ville": "SUNSHINE",
+   "region": null,
+   "codePays": "AUS",
+   "pays": "Australie",
+   "paysConnu": true,
+   "societe": "Intreso Australia Pty Ltd.",
    "sourcing": false
   },
   {
@@ -3787,6 +3811,18 @@
    "sourcing": false
   },
   {
+   "numero": "89518-BEL-1",
+   "etablissement": "AQUA FREE INDUSTRIES BV",
+   "adresse": "JOHN COCKERILLSTRAAT 141",
+   "ville": "LOMMEL",
+   "region": null,
+   "codePays": "BEL",
+   "pays": "Belgique",
+   "paysConnu": true,
+   "societe": "AQUA FREE INDUSTRIES BV",
+   "sourcing": false
+  },
+  {
    "numero": "55260-BEL-1",
    "etablissement": "ARYSTA LIFESCIENCE BENELUX",
    "adresse": "RUE DE RENORY 26/1",
@@ -4060,18 +4096,6 @@
    "pays": "Belgique",
    "paysConnu": true,
    "societe": "PALL LIFE SCIENCES BELGIUM B.V. B.A",
-   "sourcing": false
-  },
-  {
-   "numero": "89518-BEL-1",
-   "etablissement": "PRIME WATER BVBA",
-   "adresse": "LODEWIJK de RAETSTRAAT 51",
-   "ville": "LOMMEL",
-   "region": null,
-   "codePays": "BEL",
-   "pays": "Belgique",
-   "paysConnu": true,
-   "societe": "PRIME WATER BVBA",
    "sourcing": false
   },
   {
@@ -9751,6 +9775,18 @@
    "sourcing": false
   },
   {
+   "numero": "106289-CAN-1",
+   "etablissement": "WYCKOMAR CANADA INC.",
+   "adresse": "111 MALCOLM ROAD",
+   "ville": "GUELPH",
+   "region": null,
+   "codePays": "CAN",
+   "pays": "Canada",
+   "paysConnu": true,
+   "societe": "Wyckomar Canada Inc",
+   "sourcing": false
+  },
+  {
    "numero": "748-CAN-1",
    "etablissement": "Westlake Chemical Canada Inc.",
    "adresse": "31 rue de l'industrie",
@@ -10555,6 +10591,18 @@
    "sourcing": true
   },
   {
+   "numero": "100951-CHN-2",
+   "etablissement": "ANHUI BEIANG SMART TECHNOLOGY CO, LTD",
+   "adresse": "NO. 118 NINGXI ROAD, HIGH-TECH ZONE",
+   "ville": "HEFEI",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Beiang Air Tech Ltd",
+   "sourcing": true
+  },
+  {
    "numero": "92655-CHN-1",
    "etablissement": "ANHUI CHIZHOU SINCERITY CHEMICAL CO., LTD.",
    "adresse": "CHEMICAL INDUSTRIAL PARK OF XIANGYU",
@@ -10936,18 +10984,6 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "ANHUI TOPSUN PHARMACEUTICAL CO., LTD.",
-   "sourcing": true
-  },
-  {
-   "numero": "103836-CHN-1",
-   "etablissement": "ANHUI VERINO MANUFACTURING CO., LTD.",
-   "adresse": "52 DONGHE ROAD, QINGYANG DEVELOPMENT ZONE",
-   "ville": "CHIZHOU",
-   "region": null,
-   "codePays": "CHN",
-   "pays": "Chine",
-   "paysConnu": true,
-   "societe": "Venitra Enterprises International Ltd.",
    "sourcing": true
   },
   {
@@ -20091,7 +20127,7 @@
    "codePays": "CHN",
    "pays": "Chine",
    "paysConnu": true,
-   "societe": "Guangdong Cinotex Environmental Sci-Tech Co., ltd.",
+   "societe": "GUANGDONG CINOTEX ENVIRONMENTAL SCI-TECH CO., LTD",
    "sourcing": true
   },
   {
@@ -20368,6 +20404,30 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "Guangdong Huamai Environmental Protection Technology Co., Lt",
+   "sourcing": true
+  },
+  {
+   "numero": "106524-CHN-1",
+   "etablissement": "GUANGDONG HYXION WASHING APPLIANCE MANUFACTURING CO.,LTD.",
+   "adresse": "ROOM 301, BUILDING 2, NO. 2, HAIXIN ROAD, HONGMEI TOWN",
+   "ville": "DONGGUAN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Guangdong Hyxion Washing Appliance Manufacturing Co.,Ltd.",
+   "sourcing": true
+  },
+  {
+   "numero": "106482-CHN-1",
+   "etablissement": "GUANGDONG JIENUO ELECTRIC APPLIANCESCO., LTD",
+   "adresse": "NO. 23 YONGHUI ROAD, NANTOU TOWN",
+   "ville": "ZHONGSHAN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Guangdong Jienuo Electric AppliancesCo., Ltd.",
    "sourcing": true
   },
   {
@@ -21952,6 +22012,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "GUANGZHOU QIDA ENVIROPROTECT EQUIP CO., LTD",
+   "sourcing": true
+  },
+  {
+   "numero": "106527-CHN-1",
+   "etablissement": "GUANGZHOU QILI ENVIRONMENTAL EQUIPMENT CO., LTD.",
+   "adresse": "NO. 27, XILING INDUSTRIAL PARK ROAD,",
+   "ville": "GUANGZHOU",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Guangzhou Qili Environmental Equipment Co., Ltd.",
    "sourcing": true
   },
   {
@@ -24136,6 +24208,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "HeFei Aisen Enterprise Management Co., Ltd.",
+   "sourcing": true
+  },
+  {
+   "numero": "106528-CHN-1",
+   "etablissement": "HEFEI CHAOQIAN NETWORK OPERATIONS CO., LTD.",
+   "adresse": "NO. 3638, SHOP, MALL, ZONE C, HUAFU JUNYUAN, 198 WANGJIANG WEST ROAD, NANQI STREET, SHUSHAN DISTRICT",
+   "ville": "HEFEI",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Hefei Chaoqian Network Operations Co., Ltd.",
    "sourcing": true
   },
   {
@@ -26935,6 +27019,30 @@
    "sourcing": true
   },
   {
+   "numero": "106512-CHN-1",
+   "etablissement": "JIANGMEN LIANGYI LIGHTING CO., LTD",
+   "adresse": "B02,PHASE II,SELF COMPILED A1,KANGXI VILLAGE,SHANGWEI INDUSTRIAL PARK,HETANG TOWN,PENGJIANG",
+   "ville": "JIANGMEN CITY",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Jiangmen Liangyi Lighting Co., Ltd",
+   "sourcing": true
+  },
+  {
+   "numero": "106508-CHN-1",
+   "etablissement": "JIANGMEN LIMEI ELECTRONIC TECHNOLOGY CO., LTD.",
+   "adresse": "6TH FLOOR, FACTORY 5, QINGLAN INDUSTRIAL ZONE, WAIHAI STREET, JIANGHAI DISTRICT, SELF-COMPILED 602",
+   "ville": "JIANGMEN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Jiangmen Limei Electronic Technology Co., Ltd.",
+   "sourcing": true
+  },
+  {
    "numero": "82778-CHN-1",
    "etablissement": "JIANGSU AGROCHEM LABORATORY CO.,LTD",
    "adresse": "No.1218 North Changjiang Rd,Hi-Tech Development Zone",
@@ -29332,6 +29440,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "Jinhua Jindong Zhenyuan jewelry factory",
+   "sourcing": true
+  },
+  {
+   "numero": "106500-CHN-1",
+   "etablissement": "JINHUA PURUI QIANDA TRADING CO., LTD.",
+   "adresse": "ROOM 1203-38, 12TH FLOOR, OFFICE BUILDING, NO.1088 ZHENGHAN SOUTH STREET, XIAOSHUN TOWN",
+   "ville": "JINHUA",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Jinhua Purui Qianda Trading Co., Ltd.",
    "sourcing": true
   },
   {
@@ -32899,15 +33019,15 @@
    "sourcing": true
   },
   {
-   "numero": "99718-CHN-1",
-   "etablissement": "NINGBO EAST CLEANING TOOL CO.,LTD",
-   "adresse": "NO.208 GULIN PART, YINXIAN ROAD, HAISHU DISTRICT, NINGBO",
+   "numero": "105742-CHN-1",
+   "etablissement": "NINGBO EAST CLEANING TOOLS CO. LTD",
+   "adresse": "NO. 208 GULIN PART YINXIAN ROAD",
    "ville": "NINGBO",
    "region": null,
    "codePays": "CHN",
    "pays": "Chine",
    "paysConnu": true,
-   "societe": "Topware International Co.,Ltd",
+   "societe": "Ningbo East Cleaning Tools Co Ltd",
    "sourcing": true
   },
   {
@@ -33004,6 +33124,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "Ningbo Fengya Electrical Appliances Co., Ltd.",
+   "sourcing": true
+  },
+  {
+   "numero": "106511-CHN-1",
+   "etablissement": "NINGBO FETER ELECTRICAL APPLIANCE CO., LTD.",
+   "adresse": "NO. 78, JINGQI ROAD, FUHAI INDUSTRIAL AREA, CIXI CITY ZHEJIANG PROVINCE",
+   "ville": "CIXI",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Ningbo Feter Electrical Appliance Co., Ltd.",
    "sourcing": true
   },
   {
@@ -33244,6 +33376,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "NINGBO RUNNING PRODUCT COMPANY LIMITED",
+   "sourcing": true
+  },
+  {
+   "numero": "92523-CHN-1",
+   "etablissement": "NINGBO HEIGER ELECTRICAL APPLIANCES",
+   "adresse": "CHONGSHOU TOWN INDUSTRIAL",
+   "ville": "CIXI CITY",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "-",
    "sourcing": true
   },
   {
@@ -35331,7 +35475,7 @@
    "codePays": "CHN",
    "pays": "Chine",
    "paysConnu": true,
-   "societe": "AQUIONICS, INC.",
+   "societe": "NUVONIC",
    "sourcing": true
   },
   {
@@ -39367,6 +39511,18 @@
    "sourcing": true
   },
   {
+   "numero": "106493-CHN-1",
+   "etablissement": "SHANGHAI XIYUN OZONETEK CO",
+   "adresse": "BUILDING 5 NO 5 LANE 208 RONGLE EAST ROAD",
+   "ville": "SHANGHAI",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Shanghai Xiyun Ozonetek Co Ltd",
+   "sourcing": true
+  },
+  {
    "numero": "106164-CHN-1",
    "etablissement": "SHANGHAI YIHENG SCIENTIFIC INSTRUMENTS CO., LTD.",
    "adresse": "ROOM 702,NO.966 GONGHEXIN ROAD,JINGAN DISTRICT",
@@ -42537,7 +42693,7 @@
   {
    "numero": "101427-CHN-1",
    "etablissement": "SHENZHEN JINPINDUO TECHNOLOGY CO., LTD",
-   "adresse": "Building B6, Yintian Industry Park, Xixiang Street, Baoan District",
+   "adresse": "2nd Floor,Building B6,Yintian Industrial Zone,Yantian Community, Xixiang Street,Bao'an District",
    "ville": "Shenzhen",
    "region": null,
    "codePays": "CHN",
@@ -43384,6 +43540,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "Shenzhen Longtech Smart Control Co., Ltd",
+   "sourcing": true
+  },
+  {
+   "numero": "106526-CHN-1",
+   "etablissement": "SHENZHEN LUWEI E-COMMERCE CO., LTD.",
+   "adresse": "313, BUILDING 5, PHASE II, NANSHAN YUNGU ENTREPRENEURSHIP PARK, PINGSHAN COMMUNITY, TAOYUAN STREET,",
+   "ville": "SHENZHEN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Shenzhen Luwei E-commerce Co., Ltd.",
    "sourcing": true
   },
   {
@@ -46375,6 +46543,18 @@
    "sourcing": true
   },
   {
+   "numero": "106529-CHN-1",
+   "etablissement": "SHENZHEN YINFENG INNOVATION TECHNOLOGY CO., LTD.",
+   "adresse": "BLOCK A, BUILDING 1, SHANGYUN GARDEN PHASE 2, 4001 RENMIN ROAD, LONGHUA DISTRICT",
+   "ville": "SHENZHEN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Shenzhen Yinfeng Innovation Technology Co., Ltd.",
+   "sourcing": true
+  },
+  {
    "numero": "99332-CHN-1",
    "etablissement": "SHENZHEN YIPINZAN ELECTRONIC COMMERCE CO., LTD.",
    "adresse": "ROOM 202, FLOOR 2, ZHONGZHINEXONE, HELIAN COMMUNITY, LONGHUA STREET",
@@ -47176,6 +47356,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "Shuguang (Shandong) Daily Necessities Co., Ltd.",
+   "sourcing": true
+  },
+  {
+   "numero": "106519-CHN-1",
+   "etablissement": "SHUHAIJINGWEI(SHENZHEN)INFORMATIONTECHNOLOGY CO.,LTD.",
+   "adresse": "ROOM 1102 XUNMEI TECHNOLOGY PLAZA NO8 KEYUAN ROAD SCIENCE PARK COMMUNITY YUEHAI",
+   "ville": "SHENZHEN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Shuhai Jingwei (Shenzhen) Information Technology Co., Ltd.",
    "sourcing": true
   },
   {
@@ -50803,6 +50995,18 @@
    "sourcing": true
   },
   {
+   "numero": "106442-CHN-1",
+   "etablissement": "UQING (SHANGHAI) SPORTS GOODS CO., LTD",
+   "adresse": "#73, NO. 168 ZHONGTIAN ROAD",
+   "ville": "SHANGHAI",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "UQING (SHANGHAI) SPORTS GOODS CO., LTD",
+   "sourcing": true
+  },
+  {
    "numero": "105470-CHN-1",
    "etablissement": "USA SUN PAPER INC",
    "adresse": "YIBEI INDUSTRIAL PARK, SUXI TOWN,",
@@ -52507,6 +52711,18 @@
    "sourcing": true
   },
   {
+   "numero": "106473-CHN-1",
+   "etablissement": "XIAMEN HEDEMAN ELECTRONICS TECHNOLOGY CO., LTD.",
+   "adresse": "15TH BUILDING, NO. 120, HONGTANGTOU 1ST ROAD, TONGAN DISTRICT",
+   "ville": "XIAMEN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Xiamen Hedeman Electronics Technology Co., Ltd.",
+   "sourcing": true
+  },
+  {
    "numero": "93467-CHN-1",
    "etablissement": "XIAMEN HUNTER BIOTECH CO, LTD",
    "adresse": "R710 NO. 22 YILI SONGYO NORTH DISTRICT",
@@ -53044,6 +53260,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "Xuchang Senqi Electrical Co. Ltd.",
+   "sourcing": true
+  },
+  {
+   "numero": "106462-CHN-1",
+   "etablissement": "XUNNENG INTELLIGENT MANUFACTURING ELECTROMECHANICAL CO., LTD.",
+   "adresse": "ZONE A, UNIT 5, NO. 50-1 XIAOLANGHUAN ROAD",
+   "ville": "ZHONGSHAN CITY",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Xunneng Intelligent Manufacturing Electromechanical Co., Ltd",
    "sourcing": true
   },
   {
@@ -55003,6 +55231,18 @@
    "sourcing": true
   },
   {
+   "numero": "97394-CHN-1",
+   "etablissement": "ZHEJIANG  UNIQUALITY NURSING PRODUCTS TECHNOLOGY CO., LTD",
+   "adresse": "NO.68 LUHUI ROAD",
+   "ville": "HUZHOU",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "ZHEJIANG UNIQUALITY NURSING PRODUCTS TECHNOLOGY CO., LTD.",
+   "sourcing": true
+  },
+  {
    "numero": "102758-CHN-1",
    "etablissement": "ZHEJIANG ABORN AUTOMOTIVE SENSOR CO.,LTD",
    "adresse": "No. 66, Hengsan Rd., East Industrial Zone, Tangxia",
@@ -55204,6 +55444,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "ZHEJIANG CHEMICAL INSTITUTE TECHNOLOGY CO., LTD.",
+   "sourcing": true
+  },
+  {
+   "numero": "100065-CHN-2",
+   "etablissement": "ZHEJIANG CINOTEX INTELLIGENT TECHNOLOGY CO., LTD.",
+   "adresse": "ZONE A, MEILI AIRPORT-ORIENTED MANUFACTURING VALLEY",
+   "ville": "JIAXING",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "GUANGDONG CINOTEX ENVIRONMENTAL SCI-TECH CO., LTD",
    "sourcing": true
   },
   {
@@ -56107,6 +56359,18 @@
    "sourcing": true
   },
   {
+   "numero": "106520-CHN-1",
+   "etablissement": "ZHEJIANG TELING LIGHT INDUSTRY GROUP CO., LTD",
+   "adresse": "NO. 608 OUHAI AVENUE, WUTIAN STREET, OUHAI DISTRICT",
+   "ville": "WENZHOU",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "ZHEJIANG TELING LIGHT INDUSTRY GROUP CO., LTD",
+   "sourcing": true
+  },
+  {
    "numero": "69845-CHN-2",
    "etablissement": "ZHEJIANG TIDE CROPSCIENCE CO. LTD.",
    "adresse": "NO. 11 LINHAI ROAD, INDUSTRIAL ZONE, PAOJIANG INDUSTRIAL ZONE",
@@ -56332,18 +56596,6 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "ZHEJIANG YONGKANG MRY INDUSTRY&TRADE CO., LTD.",
-   "sourcing": true
-  },
-  {
-   "numero": "97394-CHN-1",
-   "etablissement": "ZHEJIANG YOUQUAN CARE PRODUCTS TECHNOLOGY CO., LTD",
-   "adresse": "NO.68 LUHUI ROAD",
-   "ville": "HUZHOU",
-   "region": null,
-   "codePays": "CHN",
-   "pays": "Chine",
-   "paysConnu": true,
-   "societe": "ZHEJIANG YOUQUAN CARE PRODUCTS TECHNOLOGY CO., LTD.",
    "sourcing": true
   },
   {
@@ -58495,6 +58747,18 @@
    "sourcing": true
   },
   {
+   "numero": "106406-CHN-1",
+   "etablissement": "ZIBO TIANDAN CHEMICAL CO., LTD",
+   "adresse": "NO.2 OF WEIQI ROAD, QILU CHEMICAL INDUSTRIAL PARK, LINZI DISTRICT",
+   "ville": "ZIBO CITY",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "ZIBO TIANDAN CHEMICAL CO., LTD",
+   "sourcing": true
+  },
+  {
    "numero": "106072-CHN-1",
    "etablissement": "ZISHEN ITECH (SHENZHEN) CO.,LTD.",
    "adresse": "NO.250 DONGZONG ROAD,PINGSHAN COMMUNITY,PINGSHAN STREET,PINGSHAN DISTRICT,SHENZHEN,CHINA.",
@@ -58936,6 +59200,18 @@
    "pays": "Colombie",
    "paysConnu": true,
    "societe": "LIVINGS SYSTEMS TECHNOLOGY S.A.",
+   "sourcing": true
+  },
+  {
+   "numero": "32258-COL-1",
+   "etablissement": "OASIS FLORALIFE COLOMBIA SAS",
+   "adresse": "KILOMETRO 2 VIA FUNZA  SIBERIA",
+   "ville": "FUNZA",
+   "region": null,
+   "codePays": "COL",
+   "pays": "Colombie",
+   "paysConnu": true,
+   "societe": "SMITHERS-OASIS COMPANY",
    "sourcing": true
   },
   {
@@ -59731,6 +60007,18 @@
    "sourcing": false
   },
   {
+   "numero": "106499-KOR-1",
+   "etablissement": "FILCORE",
+   "adresse": "60 SANGIDAEHAK-RO,",
+   "ville": "SIHEUNG-SI",
+   "region": null,
+   "codePays": "KOR",
+   "pays": "Corée du Sud",
+   "paysConnu": true,
+   "societe": "FILCORE.CO.LTD",
+   "sourcing": false
+  },
+  {
    "numero": "103360-KOR-1",
    "etablissement": "GENIECUP INC.",
    "adresse": "514, DONGSUWON-RO, YEONGTONG-GU",
@@ -59900,14 +60188,14 @@
   },
   {
    "numero": "85632-KOR-1",
-   "etablissement": "HENKEL HOME CARE KOREA LTD. (ANSAN FACILITY)",
+   "etablissement": "HENKEL CONSUMER BRANDS KOREA LTD. (ANSAN FACILITY)",
    "adresse": "3 GATBACHI-RO, DANWON-GU",
    "ville": "ANSAN CITY",
    "region": null,
    "codePays": "KOR",
    "pays": "Corée du Sud",
    "paysConnu": true,
-   "societe": "HENKEL HOME CARE KOREA LTD",
+   "societe": "HENKEL CONSUMER BRANDS KOREA LTD.",
    "sourcing": false
   },
   {
@@ -63523,6 +63811,18 @@
    "sourcing": false
   },
   {
+   "numero": "106513-FRA-1",
+   "etablissement": "OXYPHARM",
+   "adresse": "829 RUE MARCEL PAUL",
+   "ville": "CHAMPIGNY-SUR-MARNE",
+   "region": null,
+   "codePays": "FRA",
+   "pays": "France",
+   "paysConnu": true,
+   "societe": "OXY'PHARM",
+   "sourcing": false
+  },
+  {
    "numero": "59230-FRA-1",
    "etablissement": "PARAGERM",
    "adresse": "Z.I.3 EME RUE BP 68",
@@ -64723,18 +65023,6 @@
    "sourcing": false
   },
   {
-   "numero": "103836-HKG-1",
-   "etablissement": "VENITRA ENTERPRISES INTERNATIONAL LTD",
-   "adresse": "906, 9F, CYBERPORT 3, CORE D",
-   "ville": "HONG KONG",
-   "region": null,
-   "codePays": "HKG",
-   "pays": "Hong Kong",
-   "paysConnu": true,
-   "societe": "Venitra Enterprises International Ltd.",
-   "sourcing": false
-  },
-  {
    "numero": "105171-HKG-1",
    "etablissement": "VICTORIOUS AMBER INTERNATIONAL LIMITED",
    "adresse": "UNIT 803, 8F, SHANGHAI INDUSTRIAL INVESTMENT BUILDING, 48-62 HENNESSY ROAD, WANCHAI",
@@ -64768,6 +65056,18 @@
    "pays": "Hong Kong",
    "paysConnu": true,
    "societe": "WELL BRAIN INTERNATIONAL LIMITED",
+   "sourcing": false
+  },
+  {
+   "numero": "106497-HKG-1",
+   "etablissement": "WH GLOBAL FORWARDING (HK) LIMITED",
+   "adresse": "UNIT C, 23F, SOUTHEAST IND BLDG",
+   "ville": "TSUEN WAN",
+   "region": null,
+   "codePays": "HKG",
+   "pays": "Hong Kong",
+   "paysConnu": true,
+   "societe": "WH GLOBAL FORWARDING (HK) LIMITED",
    "sourcing": false
   },
   {
@@ -70147,18 +70447,6 @@
    "sourcing": false
   },
   {
-   "numero": "85125-ISR-1",
-   "etablissement": "WESTHAM CO.",
-   "adresse": "5 HaBanai Str.",
-   "ville": "Hod-Hasharon",
-   "region": null,
-   "codePays": "ISR",
-   "pays": "Israël",
-   "paysConnu": true,
-   "societe": "WESTHAM LTD.",
-   "sourcing": false
-  },
-  {
    "numero": "73573-ISR-1",
    "etablissement": "WETNAPS",
    "adresse": "2 SHAKAM ST",
@@ -70180,18 +70468,6 @@
    "pays": "Italie",
    "paysConnu": true,
    "societe": "3V Chemical Company SpA",
-   "sourcing": false
-  },
-  {
-   "numero": "65787-ITA-1",
-   "etablissement": "A.C.R.A.F S.p.A.",
-   "adresse": "13 Via Pontasso",
-   "ville": "Casella",
-   "region": null,
-   "codePays": "ITA",
-   "pays": "Italie",
-   "paysConnu": true,
-   "societe": "ANGELINI PHARMA INC.",
    "sourcing": false
   },
   {
@@ -73879,6 +74155,18 @@
    "sourcing": false
   },
   {
+   "numero": "103836-KHM-1",
+   "etablissement": "VERINO MANUFACURING(CAMBODIA) CO., LTD",
+   "adresse": "LOT 789, ROAD 127, TBOUNG ANGK VILLAGE, PREY NHEAT",
+   "ville": "KONG PISEI DISTRICT",
+   "region": null,
+   "codePays": "KHM",
+   "pays": "KHM",
+   "paysConnu": false,
+   "societe": "Venitra Enterprises International Ltd.",
+   "sourcing": false
+  },
+  {
    "numero": "88784-CAM-1",
    "etablissement": "VFL Apparel (Cambodia) Ltd.",
    "adresse": "PHUM PREYSALA, SANGKAT KAKAB",
@@ -74692,6 +74980,18 @@
    "pays": "Maroc",
    "paysConnu": true,
    "societe": "Elephant Vert SA",
+   "sourcing": false
+  },
+  {
+   "numero": "106507-MAR-1",
+   "etablissement": "FLUIDRA MANUFACTURING MOROCCO",
+   "adresse": "LOT B - ZONE FRACHE DEXPORTATION TANGER TAC1",
+   "ville": "TANGIER",
+   "region": null,
+   "codePays": "MAR",
+   "pays": "Maroc",
+   "paysConnu": true,
+   "societe": "Fluidra Manufacturing Morocco",
    "sourcing": false
   },
   {
@@ -78367,6 +78667,18 @@
    "sourcing": false
   },
   {
+   "numero": "106282-NLD-1",
+   "etablissement": "NX FILTRATION",
+   "adresse": "HAAKSBERGERSTRAAT 95",
+   "ville": "HENGELO",
+   "region": null,
+   "codePays": "NLD",
+   "pays": "Pays-Bas",
+   "paysConnu": true,
+   "societe": "NXFiltration",
+   "sourcing": false
+  },
+  {
    "numero": "63119-NLD-2",
    "etablissement": "OECOS",
    "adresse": "48A VEILINGWEG",
@@ -78412,6 +78724,18 @@
    "pays": "Pays-Bas",
    "paysConnu": true,
    "societe": "PB INTERNATIONAL",
+   "sourcing": false
+  },
+  {
+   "numero": "105992-NLD-1",
+   "etablissement": "PB TEC",
+   "adresse": "HONDERDLAND 851",
+   "ville": "MAASDIJK",
+   "region": null,
+   "codePays": "NLD",
+   "pays": "Pays-Bas",
+   "paysConnu": true,
+   "societe": "PB Tec",
    "sourcing": false
   },
   {
@@ -79648,6 +79972,18 @@
    "pays": "Royaume-Uni",
    "paysConnu": true,
    "societe": "ANTEC INTERNATIONAL LTD.",
+   "sourcing": false
+  },
+  {
+   "numero": "106502-GBR-1",
+   "etablissement": "APITURA INNOVATION LTD",
+   "adresse": "68 LADY MARGARET GARDENS",
+   "ville": "WARE",
+   "region": null,
+   "codePays": "GBR",
+   "pays": "Royaume-Uni",
+   "paysConnu": true,
+   "societe": "Apitura Innovation Ltd",
    "sourcing": false
   },
   {
@@ -80991,7 +81327,7 @@
    "codePays": "GBR",
    "pays": "Royaume-Uni",
    "paysConnu": true,
-   "societe": "AQUIONICS, INC.",
+   "societe": "NUVONIC",
    "sourcing": false
   },
   {
@@ -84808,6 +85144,18 @@
    "pays": "Thaïlande",
    "paysConnu": true,
    "societe": "Castle Peak Holdings Public Co., Ltd.",
+   "sourcing": true
+  },
+  {
+   "numero": "106169-THA-1",
+   "etablissement": "COFCO BIOCHEMICAL",
+   "adresse": "263 MOO 11 T. NONGBUA",
+   "ville": "BANKHAI RAYONG",
+   "region": null,
+   "codePays": "THA",
+   "pays": "Thaïlande",
+   "paysConnu": true,
+   "societe": "COFCO BIOCHEMICAL(THAILAND)CO.,LTD",
    "sourcing": true
   },
   {
