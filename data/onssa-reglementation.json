@@ -4,67 +4,161 @@
   "url": "https://eservice.onssa.gov.ma/Reglementation_N.aspx",
   "urlConsolidée": "https://www.onssa.gov.ma/reglementation/reglementation-sectorielle/intrants-agricoles/",
   "attribution": "ONSSA — textes réglementaires produits phytopharmaceutiques — relevé du 2026-10-09",
-  "genere": "2026-10-09T12:55:11",
-  "nbTextes": 42,
-  "nbNouveaux": 3,
-  "nbMisAJour": 1,
+  "genere": "2026-10-09T13:41:05",
+  "nbTextes": 33,
+  "nbNouveaux": 0,
+  "nbMisAJour": 9,
   "avertissement": "Textes publiés par l'ONSSA. Seuls les textes du Bulletin Officiel font foi. Cette liste a une valeur documentaire. Elle ne remplace pas l'index phytosanitaire (Excel) : aucune AMM n'y figure.",
   "majEservice": null,
-  "majWww": "2024-10-02",
+  "majWww": null,
   "sourcesJointes": [
-   "eservice",
-   "www",
    "corpus"
   ]
  },
  "textes": [
   {
-   "id": "42-95",
-   "titre": "Loi n°42-95 relative au contrôle et à l'organisation du commerce des pesticides à usage agricole",
+   "id": "34-18",
+   "titre": "Loi n°34-18 relative aux produits phytopharmaceutiques, promulguée par le dahir n°1-21-67 du 14 juillet 2021.",
    "type": "loi",
-   "date": null,
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation Sectorielle/Intrants Agricoles/Produits Phytopharmaceutiques/LOI.42-95.FR.c1.pdf",
+   "date": "2021-07-14",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/LOI.34-18.FR.pdf",
    "source": "www",
    "sources": [
     "www"
    ],
    "langue": "fr",
-   "dateMiseEnLigne": "2016-08-15",
-   "nouveau": true,
-   "misAJour": false,
-   "premiereVue": "2026-10-09"
+   "dateMiseEnLigne": "2021-12-22",
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
   },
   {
-   "id": "2-01-416",
-   "titre": "Décret n°2-01-416",
+   "id": "2290-14",
+   "titre": "Arrêté n°2290-14 du 27 chaabane 1435 (25 juin 2014) fixant les conditions d'emploi de la phosphine liquéfiée pour la désinsectisation par fumigation.",
+   "type": "arrete",
+   "date": "2014-06-25",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.2290-14.FR.pdf",
+   "source": "www",
+   "sources": [
+    "www"
+   ],
+   "langue": "fr",
+   "dateMiseEnLigne": "2015-03-02",
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
+  },
+  {
+   "id": "794-00",
+   "titre": "Arrêté n°794-00 du 03 rebii I 1421 (06 juin 2000) relatif à l'organisation d'une formation d'un examen de qualification au profit des techniciens agricoles pour exercer la vente au détail des pesticides à usage agricole.",
+   "type": "arrete",
+   "date": "2000-06-06",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.794-00.FR.pdf",
+   "source": "www",
+   "sources": [
+    "www"
+   ],
+   "langue": "fr",
+   "dateMiseEnLigne": null,
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
+  },
+  {
+   "id": "2-99-105",
+   "titre": "Décret n°2-99-105 du 18 Moharrem 1420 (05 mai 1999) relatif à l'homologation des produits pesticides à usage agricole.",
    "type": "decret",
-   "date": null,
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation Sectorielle/Intrants Agricoles/Produits Phytopharmaceutiques/DEC.2-01-416.FR.pdf",
+   "date": "1999-05-05",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/DEC.2-99-105.FR.pdf",
    "source": "www",
    "sources": [
     "www"
    ],
    "langue": "fr",
-   "dateMiseEnLigne": "2015-06-26",
-   "nouveau": true,
-   "misAJour": false,
-   "premiereVue": "2026-10-09"
+   "dateMiseEnLigne": null,
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
   },
   {
-   "id": "circulaire-relative-a-la-phosphine",
-   "titre": "Circulaire relative à la phosphine",
-   "type": "circulaire",
-   "date": null,
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation Sectorielle/Intrants Agricoles/Produits Phytopharmaceutiques/Circulaire_phosphine.pdf",
+   "id": "2-99-106",
+   "titre": "Décret n°2-99-106 du 18 Moharrem 1420 (05 mai 1999) relatif à l'exercice des activités d'importation, de fabrication et de commercialisation de produits pesticides à usage agricole.",
+   "type": "decret",
+   "date": "1999-05-05",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/DEC.2-99-106.FR.pdf",
    "source": "www",
    "sources": [
     "www"
    ],
    "langue": "fr",
-   "dateMiseEnLigne": "2013-09-23",
-   "nouveau": true,
-   "misAJour": false,
-   "premiereVue": "2026-10-09"
+   "dateMiseEnLigne": null,
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
+  },
+  {
+   "id": "1809-89",
+   "titre": "Arrêté n°1809-89 du 13 Joumada I 1410 (13 décembre 1989) relatif à la vente et à l'emploi de la deltaméthrine et du piperonyl butoxyde pour la désinsectisation des graines de céréales.",
+   "type": "arrete",
+   "date": "1989-12-13",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.1809-89.FR.c1.pdf",
+   "source": "www",
+   "sources": [
+    "www"
+   ],
+   "langue": "fr",
+   "dateMiseEnLigne": null,
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
+  },
+  {
+   "id": "666-87",
+   "titre": "Arrêté n°666-87 du 04 Chaâbane 1407 (03 avril 1987) réglementant les conditions d'emploi en agriculture, du bromure de méthyle destiné à la désinfection des sols nus, par fumigation.",
+   "type": "arrete",
+   "date": "1987-04-03",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.666-87.FR.pdf",
+   "source": "www",
+   "sources": [
+    "www"
+   ],
+   "langue": "fr",
+   "dateMiseEnLigne": null,
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
+  },
+  {
+   "id": "466-84",
+   "titre": "Arrêté n°466-84 du 15 Joumada II 1404 (19 mars 1984) portant réglementation des pesticides organochlorés.",
+   "type": "arrete",
+   "date": "1984-03-19",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.466-84.FR.pdf",
+   "source": "www",
+   "sources": [
+    "www"
+   ],
+   "langue": "fr",
+   "dateMiseEnLigne": null,
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
+  },
+  {
+   "id": "777-72",
+   "titre": "Arrêté n°777-72 du 21 août 1972 autorisant l'emploi du phosphure d'aluminium pour la désinsectisation des grains de céréales destinés à la semence ou à l'alimentation.",
+   "type": "arrete",
+   "date": "1972-08-21",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/R%C3%A9glementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.777-72.FR.pdf",
+   "source": "www",
+   "sources": [
+    "www"
+   ],
+   "langue": "fr",
+   "dateMiseEnLigne": null,
+   "nouveau": false,
+   "misAJour": true,
+   "premiereVue": "2026-09-13"
   },
   {
    "id": "liste-des-revendeurs-des-produits-phytopharmaceutiques",
@@ -79,7 +173,7 @@
    "langue": "fr",
    "dateMiseEnLigne": "2026-10-02",
    "nouveau": false,
-   "misAJour": true,
+   "misAJour": false,
    "premiereVue": "2026-09-13"
   },
   {
@@ -179,22 +273,6 @@
    "premiereVue": "2026-09-13"
   },
   {
-   "id": "3092-22",
-   "titre": "Arrêté n°3092-22",
-   "type": "arrete",
-   "date": null,
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/2024/02/ARR.3092-22.FR_.c1.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2025-09-16",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-21"
-  },
-  {
    "id": "avis-relatif-aux-exigences-de-la-formation-sur-les-bpe-des-produits-phyt",
    "titre": "Avis relatif aux exigences de la formation sur les BPE des produits phytopharmaceutiques (02/07/2025)",
    "type": "avis",
@@ -206,70 +284,6 @@
    ],
    "langue": "fr",
    "dateMiseEnLigne": "2025-07-02",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "2-22-831",
-   "titre": "Décret n°2-22-831",
-   "type": "decret",
-   "date": null,
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/2024/04/DEC.2-22-831.FR_.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2025-01-31",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-21"
-  },
-  {
-   "id": "2-22-136",
-   "titre": "Décret n°2-22-136",
-   "type": "decret",
-   "date": null,
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation Sectorielle/Produits Alimentaires/Produits d’origine Végétale/Produits de la Minoterie/DEC.2-22-136.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2025-01-31",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-21"
-  },
-  {
-   "id": "2-22-855",
-   "titre": "Décret n°2-22-855 du 20 kaada 1444 (9 juin 2023) pris pour l'application de certaines dispositions de la loi n°34-18 relative aux produits phytopharmaceutiques. Publié au BO n°7206 du 22/06/2023.",
-   "type": "decret",
-   "date": "2023-06-22",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/2023/07/DEC.2-22-855.FR_.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2025-01-29",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "2-22-670",
-   "titre": "Décret n°2-22-670 du 21 rabii II 1444 (16 novembre 2022) fixant la composition et les modalités de fonctionnement de la Commission nationale des produits phytopharmaceutiques.",
-   "type": "decret",
-   "date": "2022-11-16",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/2023/07/DEC.2-22-670.FR_.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2025-01-29",
    "nouveau": false,
    "misAJour": false,
    "premiereVue": "2026-09-13"
@@ -289,22 +303,6 @@
    "nouveau": false,
    "misAJour": false,
    "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "2-22-243",
-   "titre": "Décret n°2-22-243",
-   "type": "decret",
-   "date": null,
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation Sectorielle/Santé Végétale/Contrôle Phytosanitaire/DEC.2-22-243.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2024-09-03",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-21"
   },
   {
    "id": "avis-aux-societes-importatrices-des-produits-phytopharmaceutiques-et-des",
@@ -356,7 +354,7 @@
   },
   {
    "id": "2196-23",
-   "titre": "Arrêté du ministre de l’agriculture, de la pêche maritime, du développement rural et des eaux et forêts n°2196-23 du 7 safar 1445 (24 août 2023) portant approbation du règlement intérieur de la Commission nationale des produits phytopharmaceutiques.",
+   "titre": "Arrêté n°2196-23 du 7 safar 1445 (24 août 2023) portant approbation du règlement intérieur de la Commission nationale des produits phytopharmaceutiques.",
    "type": "arrete",
    "date": "2023-08-24",
    "url": "https://www.onssa.gov.ma/wp-content/uploads/2023/11/ARR.2196-23.FR_.pdf",
@@ -382,6 +380,38 @@
    ],
    "langue": "fr",
    "dateMiseEnLigne": "2023-08-08",
+   "nouveau": false,
+   "misAJour": false,
+   "premiereVue": "2026-09-13"
+  },
+  {
+   "id": "2-22-855",
+   "titre": "Décret n°2-22-855 du 20 kaada 1444 (9 juin 2023) pris pour l'application de certaines dispositions de la loi n°34-18 relative aux produits phytopharmaceutiques. Publié au BO n°7206 du 22/06/2023.",
+   "type": "decret",
+   "date": "2023-06-09",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/2023/07/DEC.2-22-855.FR_.pdf",
+   "source": "www",
+   "sources": [
+    "www"
+   ],
+   "langue": "fr",
+   "dateMiseEnLigne": "2023-07-14",
+   "nouveau": false,
+   "misAJour": false,
+   "premiereVue": "2026-09-13"
+  },
+  {
+   "id": "2-22-670",
+   "titre": "Décret n°2-22-670 du 21 rabii II 1444 (16 novembre 2022) fixant la composition et les modalités de fonctionnement de la Commission nationale des produits phytopharmaceutiques.",
+   "type": "decret",
+   "date": "2022-11-16",
+   "url": "https://www.onssa.gov.ma/wp-content/uploads/2023/07/DEC.2-22-670.FR_.pdf",
+   "source": "www",
+   "sources": [
+    "www"
+   ],
+   "langue": "fr",
+   "dateMiseEnLigne": "2023-07-11",
    "nouveau": false,
    "misAJour": false,
    "premiereVue": "2026-09-13"
@@ -419,38 +449,6 @@
    "premiereVue": "2026-09-13"
   },
   {
-   "id": "2732-22",
-   "titre": "Arrêté n°2732-22",
-   "type": "arrete",
-   "date": null,
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/2023/01/ARR.2732-22.FR_.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2023-01-13",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-21"
-  },
-  {
-   "id": "avis-2-22-855",
-   "titre": "Il est porté à la connaissance des professionnels que le décret n°2-22-855 du 20 kaada 1444 (9 juin 2023) pris pour l’application de certaines dispositions de la loi n°34-18 relative aux produits phytopharmaceutiques, a été publié au Bulletin Officiel n°7206 du 22\\/06\\/2023.",
-   "type": "avis",
-   "date": "2022-07-21",
-   "url": "https://www.onssa.gov.ma/reglementation-sectorielle-produits-phytopharmaceutiques-2/",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": null,
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-21"
-  },
-  {
    "id": "avis-de-rappel-sur-les-conditions-d-application-des-fumigants-des-sols",
    "titre": "Avis de rappel sur les conditions d'application des fumigants des sols",
    "type": "avis",
@@ -483,38 +481,6 @@
    "premiereVue": "2026-09-13"
   },
   {
-   "id": "2290-14",
-   "titre": "Arrêté du ministre de l’agriculture et de la pêche maritime n°2290-14 du 27 chaabane 1435 (25 juin 2014) fixant les conditions d’emploi de la phosphine liquéfiée pour la désinsectisation par fumigation.",
-   "type": "arrete",
-   "date": "2014-06-25",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.2290-14.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2022-03-15",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "34-18",
-   "titre": "Loi n°34-18 relative aux produits phytopharmaceutiques, promulguée par le dahir n°1-21-67 du 14 juillet 2021.",
-   "type": "loi",
-   "date": "2021-07-14",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/LOI.34-18.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2021-12-22",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
    "id": "avis-aux-organismes-agrees-bonnes-pratiques-d-experimentation-bpe",
    "titre": "Avis aux organismes agréés Bonnes Pratiques d'Expérimentation (BPE)",
    "type": "avis",
@@ -526,22 +492,6 @@
    ],
    "langue": "fr",
    "dateMiseEnLigne": "2020-01-16",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "466-84",
-   "titre": "Arrêté du ministre de l’agriculture et de la réforme agraire n°466-84 du 15 Joumada II 1404 (19 mars 1984) portant réglementation des pesticides organochlorés.",
-   "type": "arrete",
-   "date": "1984-03-19",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.466-84.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2019-12-10",
    "nouveau": false,
    "misAJour": false,
    "premiereVue": "2026-09-13"
@@ -590,102 +540,6 @@
    ],
    "langue": "fr",
    "dateMiseEnLigne": "2016-09-20",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "1809-89",
-   "titre": "Arrête du ministre de l’agriculture et de la réforme agraire n°1809-89 du 13 Joumada I 1410 (13 décembre 1989) relatif à la vente et à l’emploi de la deltaméthrine et du piperonyl butoxyde pour la désinsectisation des graines de céréales.",
-   "type": "arrete",
-   "date": "1989-12-13",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.1809-89.FR.c1.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2015-01-14",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "2-99-106",
-   "titre": "Décret n°2-99-106 du 18 Moharrem 1420 (05 mai 1999) relatif à l’exercice des activités d’importation, de fabrication et de commercialisation de produits pesticides à usage agricole.",
-   "type": "decret",
-   "date": "1999-05-05",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/DEC.2-99-106.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2013-10-06",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "2-99-105",
-   "titre": "Décret n°2-99-105 du 18 Moharrem 1420 (05 mai 1999) relatif à l’homologation des produits pesticides à usage agricole.",
-   "type": "decret",
-   "date": "1999-05-05",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/DEC.2-99-105.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2013-10-06",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "794-00",
-   "titre": "Arrêté du ministre de l’agriculture, du développement rural et des pêches maritimes n°794-00 du 03 rebii I 1421 (06 Juin 2000) relatif à l’organisation d’une formation d’un examen de qualification au profit des techniciens agricoles pour exercer la vente au détail des pesticides à usage agricole.",
-   "type": "arrete",
-   "date": "2000-06-06",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.794-00.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2013-10-06",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "666-87",
-   "titre": "Arrêté du ministre de l’agriculture et de la réforme agraire n°666-87 du 04 Chaâbane 1407 (03 avril 1987) réglementant les conditions d’emploi en agriculture, du bromure de méthyle destiné à la désinfection des sols nus, par fumigation.",
-   "type": "arrete",
-   "date": "1987-04-03",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.666-87.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2013-10-06",
-   "nouveau": false,
-   "misAJour": false,
-   "premiereVue": "2026-09-13"
-  },
-  {
-   "id": "777-72",
-   "titre": "Arrêté du ministre de l'agriculture et de la réforme agraire n°777-72 du 21/08/1972 (21 août 1972) autorisant l'emploi du phosphure d'aluminium pour la désinsectisation des grains de céréales destinés à la semence ou à l'alimentation et déterminant les précautions que doivent prendre les personnes qui l'emploient.",
-   "type": "arrete",
-   "date": "1972-08-21",
-   "url": "https://www.onssa.gov.ma/wp-content/uploads/Reglementation/Réglementation%20Sectorielle/Intrants%20Agricoles/Produits%20Phytopharmaceutiques/ARR.777-72.FR.pdf",
-   "source": "www",
-   "sources": [
-    "www"
-   ],
-   "langue": "fr",
-   "dateMiseEnLigne": "2013-10-06",
    "nouveau": false,
    "misAJour": false,
    "premiereVue": "2026-09-13"
