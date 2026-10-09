@@ -27,7 +27,6 @@ export default async function ConstituantPage({ params }: { params: Promise<{ id
         <ArrowLeft size={14} /> Australie
       </Link>
 
-      <div className="fil" style={{ marginTop: 10 }}>Fournisseur · Constituant PUBCRIS</div>
       <h1>{f.libelle}</h1>
       <div style={{ color: "var(--muted)", fontSize: 13.5, marginTop: 6 }}>
         {c.nom}

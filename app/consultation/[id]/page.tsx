@@ -96,7 +96,6 @@ export default async function ConsultationPage({ params }: { params: Promise<{ i
         <ArrowLeft size={14} /> Matière
       </Link>
 
-      <div className="fil" style={{ marginTop: 10 }}>Fournisseur · Consultation</div>
       <h1>Consulter — {c.matiere.nom}</h1>
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, margin: "14px 0 18px" }}>

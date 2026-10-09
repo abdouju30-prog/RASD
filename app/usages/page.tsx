@@ -79,7 +79,6 @@ export default async function UsagesPage({
 
   return (
     <>
-      <div className="fil">Portefeuille · Homologations</div>
       <h1>{titre}</h1>
       <p className="chapeau">
         Substance, culture, ravageur et société — les enregistrements ONSSA correspondants : marque,

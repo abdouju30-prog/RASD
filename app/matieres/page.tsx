@@ -11,7 +11,6 @@ export default async function MatieresPage() {
 
   return (
     <>
-      <div className="fil">Portefeuille · Matières</div>
       <h1>
         Les {classe.length} molécules du portefeuille
       </h1>

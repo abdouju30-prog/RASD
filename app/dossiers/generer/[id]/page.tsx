@@ -68,7 +68,6 @@ export default async function GenererPage({
         <ArrowLeft size={14} /> Dossiers
       </Link>
 
-      <div className="fil" style={{ marginTop: 10 }}>Dossier · 3-B</div>
       <h1>{d.produitNom}</h1>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "8px 0 14px" }}>
         <span className="pill">{ma.nom}</span>

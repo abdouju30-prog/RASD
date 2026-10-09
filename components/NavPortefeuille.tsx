@@ -5,12 +5,10 @@ import { TabNav } from "./TabNav";
 
 /** Radar + Signal + Matières + Produits + Homologations : un seul poste. */
 export function NavPortefeuille({
-  critiques,
   detections,
   matieres,
   produits,
 }: {
-  critiques: number;
   detections: number;
   matieres: number;
   produits: number;
@@ -31,7 +29,6 @@ export function NavPortefeuille({
           id: "vue",
           label: "Vue",
           href: "/",
-          count: critiques,
           active: path === "/",
         },
         {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ChaineNav, type Jauge, type Station } from "@/components/ChaineNav";
+import { ChaineNav, type Station } from "@/components/ChaineNav";
 import { NavAlternative } from "@/components/NavAlternative";
 import { NavPortefeuille } from "@/components/NavPortefeuille";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
@@ -16,7 +16,6 @@ import { NB_LIGNES_CHECKLIST } from "@/lib/dossier";
 import { STATS_SENTINELLE } from "@/lib/sentinelle";
 import { gamme } from "@/lib/gamme";
 import { STATS_MELANGES } from "@/lib/melanges";
-import { STATS_IMPORT } from "@/lib/importation";
 
 export const metadata: Metadata = {
   title: "Homologa — Tour de contrôle réglementaire",
@@ -36,15 +35,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     {
       href: "/",
       nom: "Portefeuille",
-      compteur: `${st.critiques} critiques`,
-      alerte: st.critiques,
+      compteur: `${st.groupes} alertes`,
+      alerte: st.groupesCritiques,
       aliases: ["/veille", "/matieres", "/produits", "/usages"],
     },
     {
       href: "/sourcing",
       nom: "Alternative",
       compteur: `${nbCibles} cibles`,
-      aliases: ["/gamme", "/melanges", "/sentinelle", "/importation"],
+      aliases: ["/pistes", "/gamme", "/melanges", "/sentinelle", "/importation"],
     },
     {
       href: "/fournisseurs",
@@ -57,12 +56,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       nom: "Dossier",
       compteur: `${NB_LIGNES_CHECKLIST} lignes · 3-B`,
     },
-  ];
-
-  const jauges: Jauge[] = [
-    { libelle: "CRITIQUES", valeur: String(st.critiques), ton: "crit" },
-    { libelle: "ÉLEVÉES", valeur: String(st.eleves), ton: "high" },
-    { libelle: "DÉTECTIONS", valeur: String(st.total) },
   ];
 
   return (
@@ -79,7 +72,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ChaineNav
           contexte={`index ONSSA ${fmtDate(META.genere.slice(0, 10))} · e-service ${fmtDate(META_ESERVICE.genere.slice(0, 10))}`}
           stations={stations}
-          jauges={jauges}
+          jauges={[]}
           selecteur={
             <SelecteurDetenteur
               detenteurs={DETENTEURS}
@@ -91,17 +84,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
         <main className="main">
           <NavPortefeuille
-            critiques={st.critiques}
-            detections={st.total}
+            detections={st.groupes}
             matieres={matieresDuPortefeuille(d.id).length}
             produits={produitsDe(d.id).length}
           />
           <NavAlternative
             cibles={nbCibles}
-            gamme={gm.manques.length}
-            melanges={STATS_MELANGES.nbPretes}
-            sentinelle={STATS_SENTINELLE.nbASaisir}
-            importation={STATS_IMPORT.nbBarrieres}
+            pistes={gm.manques.length + STATS_MELANGES.nbPretes + STATS_SENTINELLE.nbASaisir}
           />
           {children}
         </main>

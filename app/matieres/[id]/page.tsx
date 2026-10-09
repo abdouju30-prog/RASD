@@ -65,7 +65,6 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
         <ArrowLeft size={14} /> Matières
       </Link>
 
-      <div className="fil" style={{ marginTop: 10 }}>Portefeuille · Matière</div>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "flex-start" }}>
         <div>
           <h1>{ma.nom}</h1>

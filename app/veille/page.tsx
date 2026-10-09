@@ -1,93 +1,112 @@
 import Link from "next/link";
-import { CalendarClock, Ban, Flag, Timer, RefreshCw, ShieldAlert, Scale } from "lucide-react";
 import { RiskBadge } from "@/components/RiskBadge";
-import { alertes, statsAlertes, type TypeAlerte } from "@/lib/alertes";
+import { alertesGroupees, statsAlertes, LIBELLE_ALERTE } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
 import { META } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
-import { FraicheurEphy } from "@/components/FraicheurEphy";
-import { NouveautesOnssa } from "@/components/NouveautesOnssa";
 import { Aide } from "@/components/Aide";
 import { STATS_EPHY } from "@/lib/ephy";
 import { COUVERTURE } from "@/lib/reglementaire";
 
-const ICONE: Record<TypeAlerte, typeof Ban> = {
-  onssa_retrait: Ban,
-  anses_retrait: ShieldAlert,
-  amm_expiree: Ban,
-  sortie_index: RefreshCw,
-  amm_echeance: CalendarClock,
-  ue_non_renouvelee: Ban,
-  ue_echeance_depassee: Timer,
-  ue_echeance_proche: CalendarClock,
-  onssa_restriction: Scale,
-  candidate_substitution: Flag,
-};
-
-const LIBELLE: Record<TypeAlerte, string> = {
-  onssa_retrait: "Retrait ONSSA — produit encore à l'index",
-  anses_retrait: "Retrait ANSES — l'ONSSA suivra",
-  amm_expiree: "AMM expirée",
-  sortie_index: "Sorti de l'index ONSSA",
-  amm_echeance: "Échéance AMM",
-  ue_non_renouvelee: "Approbation UE perdue",
-  ue_echeance_depassee: "Échéance UE dépassée",
-  ue_echeance_proche: "Échéance UE proche",
-  onssa_restriction: "Restriction d'usage ONSSA",
-  candidate_substitution: "Candidate à la substitution",
-};
+const COULEUR = { critique: "var(--crit)", élevé: "var(--high)", modéré: "var(--mod)", faible: "var(--mod)" };
 
 export default async function VeillePage() {
   const d = await detenteurActuel();
-  const list = alertes(d.id);
+  const groupes = alertesGroupees(d.id);
   const st = statsAlertes(d.id);
 
   return (
     <>
-      <div className="fil">Portefeuille · Alertes</div>
-      <h1>Flux d&apos;alertes</h1>
-      <p style={{ color: "var(--muted)", maxWidth: 720, lineHeight: 1.6, marginTop: 0 }}>
-        Recalculées à chaque affichage. Rien n&apos;est stocké.
+      <h1>Alertes</h1>
+      <p style={{ color: "var(--muted)", fontSize: 13.5, margin: "4px 0 16px" }}>
+        {st.groupesCritiques} critique(s) · {groupes.length} molécule(s) ou produit(s) ·{" "}
+        {st.produitsTouches} produit(s) concerné(s)
       </p>
 
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", margin: "20px 0 8px" }}>
-        <span className="pill">
-          <RefreshCw size={12} /> {st.total} détection(s)
-        </span>
-        <span
-          className="pill"
-          style={{
-            color: "var(--crit)",
-            borderColor: "color-mix(in srgb, var(--crit) 40%, transparent)",
-            background: "color-mix(in srgb, var(--crit) 12%, transparent)",
-          }}
-        >
-          {st.critiques} critique(s)
-        </span>
-        <span
-          className="pill"
-          style={{
-            color: "var(--high)",
-            borderColor: "color-mix(in srgb, var(--high) 40%, transparent)",
-            background: "color-mix(in srgb, var(--high) 12%, transparent)",
-          }}
-        >
-          {st.eleves} élevé(s)
-        </span>
-        <span className="pill">{st.produitsTouches} produit(s) concerné(s)</span>
+      <div style={{ display: "grid", gap: 10 }}>
+        {groupes.map((g) => {
+          // Un signal peut se répéter (deux concentrations) : un libellé une seule fois.
+          const libelles = [...new Set(g.signaux.map((a) => LIBELLE_ALERTE[a.type]))];
+          return (
+            <div
+              key={g.id}
+              className="card"
+              style={{ padding: "14px 18px", borderLeft: `3px solid ${COULEUR[g.niveau]}` }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 16 }}>
+                <div style={{ minWidth: 0 }}>
+                  {g.matiere ? (
+                    <Link
+                      href={`/matieres/${g.matiere.id}`}
+                      className="link-accent"
+                      style={{ fontWeight: 600, fontSize: 15 }}
+                    >
+                      {g.titre}
+                    </Link>
+                  ) : (
+                    <span style={{ fontWeight: 600, fontSize: 15 }}>{g.titre}</span>
+                  )}
+                  <div className="eyebrow" style={{ marginTop: 4 }}>
+                    {libelles.join(" · ")}
+                  </div>
+                </div>
+                <RiskBadge niveau={g.niveau} />
+              </div>
+
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginTop: 10 }}>
+                {g.produits.slice(0, 6).map((p) => (
+                  <span key={p.id} className="pill" style={{ fontWeight: 500 }}>
+                    {p.nomCommercial}
+                  </span>
+                ))}
+                {g.produits.length > 6 && (
+                  <span className="pill" style={{ fontWeight: 500 }}>
+                    +{g.produits.length - 6}
+                  </span>
+                )}
+                <span className="pill" style={{ fontWeight: 500 }}>
+                  {g.usages} usage(s)
+                </span>
+                {g.echeance && (
+                  <span className="pill mono" style={{ fontWeight: 500 }}>
+                    {fmtDate(g.echeance)}
+                  </span>
+                )}
+              </div>
+
+              <div style={{ fontSize: 13, marginTop: 10 }}>→ {g.action}</div>
+
+              <div style={{ marginTop: 8 }}>
+                <Aide titre={`Détail${g.signaux.length > 1 ? ` des ${g.signaux.length} signaux` : ""}`}>
+                  <ul style={{ margin: 0, paddingLeft: 18 }}>
+                    {g.signaux.map((a) => (
+                      <li key={a.id} style={{ marginBottom: 6 }}>
+                        <strong>{a.titre}</strong> — {a.detail}
+                      </li>
+                    ))}
+                  </ul>
+                </Aide>
+              </div>
+            </div>
+          );
+        })}
+        {groupes.length === 0 && (
+          <div className="card" style={{ padding: 30, color: "var(--muted)", fontSize: 14 }}>
+            Aucune alerte. Toutes les AMM du portefeuille sont valides et aucune matière active vérifiée
+            n&apos;est en difficulté réglementaire.
+          </div>
+        )}
       </div>
 
-      <div style={{ margin: "14px 0 12px" }}>
-        <FraicheurEphy />
-      </div>
-
-      <NouveautesOnssa />
-
-      <div style={{ margin: "0 0 16px" }}>
-        <Aide titre="Hiérarchie des signaux, et réserve sur les échéances UE">
+      <div style={{ marginTop: 18 }}>
+        <Aide titre="Comment lire ces alertes">
+          <p>
+            Recalculées à chaque affichage, rien n&apos;est stocké. Une carte réunit tous les signaux
+            d&apos;une même molécule, toutes concentrations confondues.
+          </p>
           <p>
             L&apos;ONSSA s&apos;aligne sur l&apos;ANSES : un retrait français annonce le retrait
-            marocain. Les alertes « retrait ANSES » passent donc en tête, avant le statut UE qui est
+            marocain. Les alertes « retrait France » passent donc en tête, avant le statut UE qui est
             en amont et plus lent. Statut français lu dans E-Phy — {STATS_EPHY.attribution}.
           </p>
           <p>
@@ -96,108 +115,12 @@ export default async function VeillePage() {
             d&apos;exécution : <strong>une échéance dépassée signifie « à recouper d&apos;urgence »,
             pas « substance interdite »</strong>.
           </p>
+          <p>
+            Index source : <span className="mono">{META.source}</span> · {META.nbLignesIndex} lignes ·{" "}
+            {META.nbProduitsIndex} produits · {META.nbDetenteurs} détenteurs.
+          </p>
         </Aide>
       </div>
-
-      <div style={{ display: "grid", gap: 12 }}>
-        {list.map((a) => {
-          const Icon = ICONE[a.type];
-          const color =
-            a.niveau === "critique"
-              ? "var(--crit)"
-              : a.niveau === "élevé"
-              ? "var(--high)"
-              : "var(--mod)";
-          return (
-            <div
-              key={a.id}
-              className="card"
-              style={{ padding: "16px 20px", borderLeft: `3px solid ${color}` }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", gap: 16 }}>
-                <div style={{ minWidth: 0 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
-                    <Icon size={16} color={color} />
-                    <span style={{ fontWeight: 600, fontSize: 15 }}>{a.titre}</span>
-                  </div>
-                  <div className="eyebrow" style={{ marginTop: 5, marginLeft: 25 }}>
-                    {LIBELLE[a.type]}
-                  </div>
-                </div>
-                <RiskBadge niveau={a.niveau} />
-              </div>
-
-              <p
-                style={{
-                  fontSize: 13.5,
-                  color: "var(--muted)",
-                  lineHeight: 1.6,
-                  margin: "11px 0 0 25px",
-                }}
-              >
-                {a.detail}
-              </p>
-
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 8,
-                  alignItems: "center",
-                  margin: "12px 0 0 25px",
-                }}
-              >
-                {a.produits.slice(0, 4).map((p) => (
-                  <span key={p.id} className="pill" style={{ fontWeight: 500 }}>
-                    {p.nomCommercial}
-                  </span>
-                ))}
-                {a.produits.length > 4 && (
-                  <span className="pill" style={{ fontWeight: 500 }}>
-                    +{a.produits.length - 4}
-                  </span>
-                )}
-                <span className="pill" style={{ fontWeight: 500 }}>
-                  {a.usages} usage(s)
-                </span>
-                {a.echeance && (
-                  <span className="pill mono" style={{ fontWeight: 500 }}>
-                    {fmtDate(a.echeance)}
-                  </span>
-                )}
-              </div>
-
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  gap: 14,
-                  margin: "13px 0 0 25px",
-                }}
-              >
-                <span style={{ fontSize: 13, color: "var(--fg)" }}>→ {a.action}</span>
-                {a.matiere && (
-                  <Link href={`/matieres/${a.matiere.id}`} className="link-accent" style={{ fontSize: 13 }}>
-                    Analyser la matière active
-                  </Link>
-                )}
-              </div>
-            </div>
-          );
-        })}
-        {list.length === 0 && (
-          <div className="card" style={{ padding: 30, color: "var(--muted)", fontSize: 14 }}>
-            Aucune alerte. Toutes les AMM du portefeuille sont valides et aucune matière active vérifiée
-            n&apos;est en difficulté réglementaire.
-          </div>
-        )}
-      </div>
-
-      <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 22 }}>
-        Index source : <span className="mono">{META.source}</span> · {META.nbLignesIndex} lignes ·{" "}
-        {META.nbProduitsIndex} produits · {META.nbDetenteurs} détenteurs.
-      </p>
     </>
   );
 }

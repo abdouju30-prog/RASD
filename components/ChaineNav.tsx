@@ -74,7 +74,7 @@ export function ChaineNav({
             className="jauge"
             style={{ textDecoration: path === "/sources" ? "underline" : "none" }}
           >
-            COMPARTIMENTS
+            SOURCES
           </Link>
           {jauges.map((j) => (
             <span key={j.libelle} className={`jauge${j.ton ? " " + j.ton[0] : ""}`}>

@@ -78,7 +78,7 @@ export const LIBELLE_TYPE_ONSSA: Record<TypeTexteOnssa, string> = {
   autre: "Texte",
 };
 
-const JOURS_RECENT = 21;
+const JOURS_RECENT = 30;
 
 function parseIso(s: string | null | undefined): Date | null {
   if (!s) return null;

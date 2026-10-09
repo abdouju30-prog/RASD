@@ -157,7 +157,6 @@ export default async function MelangesPage() {
 
   return (
     <>
-      <div className="fil">Alternative · Mélanges</div>
       <h1 style={{ display: "flex", alignItems: "center", gap: 9 }}>
         <Combine size={19} /> Mélanges
       </h1>

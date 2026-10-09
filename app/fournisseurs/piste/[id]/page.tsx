@@ -26,7 +26,6 @@ export default async function PistePage({ params }: { params: Promise<{ id: stri
         <ArrowLeft size={14} /> Australie
       </Link>
 
-      <div className="fil" style={{ marginTop: 10 }}>Fournisseur · PUBCRIS</div>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "flex-start" }}>
         <div>
           <h1>{p.nom}</h1>

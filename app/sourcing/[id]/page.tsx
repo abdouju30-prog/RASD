@@ -63,7 +63,6 @@ export default async function CandidatPage({ params }: { params: Promise<{ id: s
         <ArrowLeft size={14} /> Cibles
       </Link>
 
-      <div className="fil" style={{ marginTop: 10 }}>Alternative · Cible</div>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "flex-start" }}>
         <div>
           <h1>{c.nom}</h1>

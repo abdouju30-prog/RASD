@@ -3,28 +3,19 @@
 import { usePathname } from "next/navigation";
 import { TabNav } from "./TabNav";
 
-const PREFIXES = ["/sourcing", "/gamme", "/melanges", "/sentinelle", "/importation"];
+const PISTES = ["/pistes", "/gamme", "/melanges", "/sentinelle", "/importation"];
 
 function sous(path: string, href: string) {
   return path === href || path.startsWith(href + "/");
 }
 
-/** Gamme, Mélanges, Sentinelle, Importation : plus dans le ruban, ici sous Alternative. */
-export function NavAlternative({
-  cibles,
-  gamme,
-  melanges,
-  sentinelle,
-  importation,
-}: {
-  cibles: number;
-  gamme: number;
-  melanges: number;
-  sentinelle: number;
-  importation: number;
-}) {
+/**
+ * Sous Alternative : les cibles, et une seule page pour les autres pistes
+ * (Gamme, Mélanges, Sentinelle, Importation), dont chaque détail reste ouvert.
+ */
+export function NavAlternative({ cibles, pistes }: { cibles: number; pistes: number }) {
   const path = usePathname();
-  if (!PREFIXES.some((p) => sous(path, p))) return null;
+  if (!sous(path, "/sourcing") && !PISTES.some((p) => sous(path, p))) return null;
 
   return (
     <TabNav
@@ -37,32 +28,11 @@ export function NavAlternative({
           active: sous(path, "/sourcing"),
         },
         {
-          id: "gamme",
-          label: "Gamme",
-          href: "/gamme",
-          count: gamme,
-          active: sous(path, "/gamme"),
-        },
-        {
-          id: "melanges",
-          label: "Mélanges",
-          href: "/melanges",
-          count: melanges,
-          active: sous(path, "/melanges"),
-        },
-        {
-          id: "sentinelle",
-          label: "Sentinelle",
-          href: "/sentinelle",
-          count: sentinelle,
-          active: sous(path, "/sentinelle"),
-        },
-        {
-          id: "importation",
-          label: "Importation",
-          href: "/importation",
-          count: importation,
-          active: sous(path, "/importation"),
+          id: "pistes",
+          label: "Autres pistes",
+          href: "/pistes",
+          count: pistes,
+          active: PISTES.some((p) => sous(path, p)),
         },
       ]}
     />

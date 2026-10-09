@@ -324,10 +324,87 @@ export function alertes(detenteurId: string): Alerte[] {
   });
 }
 
+/** Libellé court d'un signal, partagé par l'accueil et le flux d'alertes. */
+export const LIBELLE_ALERTE: Record<TypeAlerte, string> = {
+  onssa_retrait: "Retrait ONSSA",
+  anses_retrait: "Retrait France",
+  amm_expiree: "AMM expirée",
+  sortie_index: "Sorti de l'index ONSSA",
+  amm_echeance: "Échéance AMM",
+  ue_non_renouvelee: "UE perdue",
+  ue_echeance_depassee: "Échéance UE dépassée",
+  ue_echeance_proche: "Échéance UE proche",
+  onssa_restriction: "Restriction ONSSA",
+  candidate_substitution: "Candidate à la substitution",
+};
+
+/**
+ * Les signaux d'une même molécule réunis sur une carte.
+ *
+ * Imidaclopride retiré en France ET non renouvelé en UE, à deux
+ * concentrations, faisait quatre cartes pour une seule décision. Seule une
+ * alerte sans aucune molécule lisible reste sur sa propre carte.
+ */
+export interface GroupeAlertes {
+  id: string;
+  titre: string;
+  niveau: NiveauRisque;
+  signaux: Alerte[];
+  matiere: MatiereActive | null;
+  produits: ProduitPortefeuille[];
+  usages: number;
+  action: string;
+  echeance: string | null;
+}
+
+function cleMolecule(molecule: string): string {
+  return molecule.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+}
+
+export function alertesGroupees(detenteurId: string): GroupeAlertes[] {
+  const groupes = new Map<string, GroupeAlertes>();
+  // alertes() est déjà trié par gravité : le premier signal d'un groupe est le plus grave.
+  for (const a of alertes(detenteurId)) {
+    // Un produit sorti de l'index peut porter une matière qui n'y figure plus :
+    // sa molécule se lit alors sur la fiche produit, teneur retirée.
+    const molecule =
+      a.matiere?.molecule ?? a.produits[0]?.matieresActives[0]?.replace(/\s*\(.*$/, "").trim() ?? null;
+    const cle = molecule ? `ma:${cleMolecule(molecule)}` : `al:${a.id}`;
+    let g = groupes.get(cle);
+    if (!g) {
+      g = {
+        id: cle,
+        titre: molecule ?? a.titre,
+        niveau: a.niveau,
+        signaux: [],
+        matiere: a.matiere,
+        produits: [],
+        usages: 0,
+        action: a.action,
+        echeance: a.echeance,
+      };
+      groupes.set(cle, g);
+    }
+    g.signaux.push(a);
+    for (const p of a.produits) {
+      if (!g.produits.some((x) => x.id === p.id)) {
+        g.produits.push(p);
+        g.usages += p.usages.length;
+      }
+    }
+    if (a.echeance && (!g.echeance || a.echeance < g.echeance)) g.echeance = a.echeance;
+  }
+  return [...groupes.values()];
+}
+
 export function statsAlertes(detenteurId: string) {
   const a = alertes(detenteurId);
+  const g = alertesGroupees(detenteurId);
   return {
     total: a.length,
+    /** Cartes affichées : une par molécule. */
+    groupes: g.length,
+    groupesCritiques: g.filter((x) => x.niveau === "critique").length,
     critiques: a.filter((x) => x.niveau === "critique").length,
     eleves: a.filter((x) => x.niveau === "élevé").length,
     produitsTouches: new Set(a.flatMap((x) => x.produits.map((p) => p.id))).size,

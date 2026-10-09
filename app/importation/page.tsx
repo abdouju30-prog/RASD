@@ -59,7 +59,6 @@ export default async function ImportationPage({
 
   return (
     <>
-      <div className="fil">Alternative · Importation</div>
       <h1 style={{ display: "flex", alignItems: "center", gap: 9 }}>
         <ShieldAlert size={19} /> Importation
       </h1>

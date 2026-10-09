@@ -369,7 +369,6 @@ export default async function DossiersPage({
 
   return (
     <>
-      <div className="fil">Dossier</div>
       <h1>À traiter</h1>
       <p className="chapeau">
         Culture et ravageur : ce qui est déjà homologué au Maroc, le mélange déjà vendu ici,

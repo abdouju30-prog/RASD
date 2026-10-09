@@ -18,6 +18,7 @@ import {
   hrefOnssa,
 } from "@/lib/onssa-listes";
 import { fmtDate } from "@/lib/logic";
+import { Aide } from "./Aide";
 
 function Pastille({ t }: { t: TexteOnssa }) {
   if (t.nouveau) {
@@ -183,100 +184,53 @@ function SignauxIntegres({ compact }: { compact: boolean }) {
 }
 
 /**
- * Case « nouveautés ONSSA ».
- *
- * Compact : tour de contrôle — les textes des trois dernières semaines, lien
- * vers le flux. Complet : page Alertes — tout le corpus, les récents en tête.
+ * Case « nouveautés ONSSA » : les textes des 30 derniers jours, une ligne
+ * chacun. Tout le corpus reste dans le volet « Tous les textes ».
  */
-export function NouveautesOnssa({ compact = false }: { compact?: boolean }) {
+export function NouveautesOnssa(_: { compact?: boolean } = {}) {
   const f = fraicheurOnssaTextes();
   const recents = TEXTES_RECENTS;
-  const montre = compact
-    ? [...recents, ...TEXTES_ONSSA.filter((t) => !recents.includes(t))].slice(0, 4)
-    : TEXTES_ONSSA;
 
   return (
-    <section
-      id="textes-onssa"
-      className="card"
-      style={{
-        padding: "14px 18px",
-        margin: compact ? "18px 0 0" : "0 0 16px",
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-        <Scale size={16} color="var(--accent)" style={{ flexShrink: 0, marginTop: 2 }} />
-        <div style={{ minWidth: 0, flex: 1 }}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center" }}>
-            <strong style={{ fontFamily: "var(--tete)", fontSize: 14 }}>Nouveautés ONSSA</strong>
-            <span className="pill" style={{ fontSize: 10.5 }}>
-              {STATS_ONSSA_TEXTES.nbRecents
-                ? `${STATS_ONSSA_TEXTES.nbRecents} récent${STATS_ONSSA_TEXTES.nbRecents > 1 ? "s" : ""}`
-                : `${STATS_ONSSA_TEXTES.nbTextes} textes`}
-            </span>
-            <span className="pill mono" style={{ fontSize: 10.5 }}>
-              relevé {STATS_ONSSA_TEXTES.releveFmt}
-            </span>
+    <section id="textes-onssa" className="card" style={{ padding: "14px 18px", margin: "18px 0 0" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center" }}>
+        <Scale size={15} color="var(--accent)" style={{ flexShrink: 0 }} />
+        <strong style={{ fontFamily: "var(--tete)", fontSize: 14 }}>Nouveautés ONSSA</strong>
+        <span className="pill mono" style={{ fontSize: 10.5 }}>
+          relevé {STATS_ONSSA_TEXTES.releveFmt}
+        </span>
+        {f.etat !== "à jour" && (
+          <span style={{ fontSize: 11.5, color: "var(--high)", display: "inline-flex", alignItems: "center", gap: 4 }}>
+            <RefreshCw size={11} /> relevé {f.etat}
+          </span>
+        )}
+      </div>
+
+      <div style={{ marginTop: 6 }}>
+        {recents.length ? (
+          recents.map((t) => <Ligne key={t.id} t={t} />)
+        ) : (
+          <div style={{ fontSize: 12.5, color: "var(--muted)", padding: "6px 0" }}>
+            Aucun texte publié ces 30 derniers jours.
           </div>
-          <p style={{ margin: "6px 0 0", fontSize: 12, color: "var(--muted)", lineHeight: 1.55 }}>
+        )}
+      </div>
+
+      <SignauxIntegres compact />
+
+      <div style={{ marginTop: 10 }}>
+        <Aide titre={`Tous les textes (${TEXTES_ONSSA.length})`}>
+          <p style={{ marginTop: 0 }}>
             Avis, listes et textes publiés sur{" "}
-            <a
-              href={META_ONSSA_TEXTES.url}
-              target="_blank"
-              rel="noreferrer"
-              className="link-accent"
-            >
+            <a href={META_ONSSA_TEXTES.url} target="_blank" rel="noreferrer" className="link-accent">
               eservice.onssa.gov.ma
             </a>
             . Ce n&apos;est pas l&apos;index des AMM : celui-là est relu sur IndPesticide.aspx.
           </p>
-          <SignauxIntegres compact={compact} />
-        </div>
-      </div>
-
-      <div style={{ marginTop: 8 }}>
-        {montre.map((t) => (
-          <Ligne key={t.id} t={t} />
-        ))}
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 10,
-          alignItems: "center",
-          marginTop: 10,
-          fontSize: 11.5,
-          color: "var(--muted-2)",
-        }}
-      >
-        <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
-          <RefreshCw size={11} />
-          {f.etat === "à jour"
-            ? "Relevé hebdomadaire à jour."
-            : f.etat === "à rafraîchir"
-              ? "Relevé de plus de dix jours — le cron du jeudi a peut-être manqué."
-              : f.etat === "périmée"
-                ? "Relevé périmé. Relancer npm run import:onssa-regl."
-                : "Date de relevé inconnue."}
-        </span>
-        {compact && TEXTES_ONSSA.length > montre.length && (
-          <a href="/veille#textes-onssa" className="link-accent" style={{ marginLeft: "auto" }}>
-            Tous les textes ({TEXTES_ONSSA.length})
-          </a>
-        )}
-        {!compact && (
-          <a
-            href={META_ONSSA_TEXTES.url}
-            target="_blank"
-            rel="noreferrer"
-            className="link-accent"
-            style={{ marginLeft: "auto" }}
-          >
-            Source ONSSA
-          </a>
-        )}
+          {TEXTES_ONSSA.map((t) => (
+            <Ligne key={t.id} t={t} />
+          ))}
+        </Aide>
       </div>
     </section>
   );

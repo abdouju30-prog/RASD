@@ -140,7 +140,6 @@ export default async function SourcingPage({
 
   return (
     <>
-      <div className="fil">Alternative · Cibles</div>
       <h1>Matières actives à importer</h1>
       <p className="chapeau">
         {list.length} cibles — générique déjà à l&apos;ONSSA (voie me-too). Les retraits ANSES

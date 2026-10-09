@@ -58,15 +58,30 @@ function Compartiment({
 }) {
   const t = TON[fiabilite];
   return (
-    <div className="bloc">
-      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 3 }}>
-        {icone}
-        <span style={{ fontFamily: "var(--tete)", fontSize: 14, fontWeight: 600 }}>{nom}</span>
+    <tr>
+      <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+        <span style={{ display: "inline-flex", alignItems: "center", gap: 7, fontWeight: 600 }}>
+          {icone}
+          {nom}
+        </span>
+      </td>
+      <td style={{ verticalAlign: "top" }}>
+        <div style={{ fontSize: 12.5 }}>{role}</div>
+        <Aide titre="Détail">
+          <p style={{ marginTop: 0 }}>{contenu}</p>
+          <p className="mono" style={{ fontSize: 11 }}>{origine}</p>
+          {reserve && <p style={{ color: "var(--high)" }}>{reserve}</p>}
+        </Aide>
+      </td>
+      <td className="mono" style={{ fontSize: 11.5, color: "var(--muted)", verticalAlign: "top" }}>
+        {maj ?? "—"}
+      </td>
+      <td style={{ verticalAlign: "top" }}>
         <span
           className="pill"
           style={{
-            marginLeft: "auto",
             fontSize: 9.5,
+            whiteSpace: "nowrap",
             color: t.couleur,
             borderColor: `color-mix(in srgb, ${t.couleur} 40%, transparent)`,
             background: `color-mix(in srgb, ${t.couleur} 9%, transparent)`,
@@ -74,26 +89,8 @@ function Compartiment({
         >
           {t.libelle}
         </span>
-      </div>
-      <div style={{ fontSize: 11.5, color: "var(--accent)", fontWeight: 600, marginBottom: 8 }}>{role}</div>
-      <div style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.55 }}>{contenu}</div>
-      <div
-        style={{
-          fontSize: 11,
-          color: "var(--muted-2)",
-          marginTop: 9,
-          paddingTop: 8,
-          borderTop: "1px solid var(--border)",
-          lineHeight: 1.5,
-        }}
-      >
-        <span className="mono">{origine}</span>
-        {maj && <> · {maj}</>}
-      </div>
-      {reserve && (
-        <div style={{ fontSize: 11.5, color: "var(--high)", marginTop: 7, lineHeight: 1.5 }}>{reserve}</div>
-      )}
-    </div>
+      </td>
+    </tr>
   );
 }
 
@@ -117,12 +114,8 @@ const TON_ETAT: Record<EtatRegistre, string> = {
 
 function CarteRegistres() {
   return (
-    <div className="section">
-      <div className="card" style={{ padding: "18px 20px" }}>
-        <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <Globe size={14} /> Registres nationaux — {STATS_OCDE.nbIntegres} intégrés,{" "}
-          {STATS_OCDE.nbAtteignables} à ouvrir
-        </div>
+    <Aide titre={`Registres nationaux — ${STATS_OCDE.nbIntegres} intégrés, ${STATS_OCDE.nbAtteignables} à ouvrir`}>
+      <div>
 
         <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "9px 0 4px", lineHeight: 1.6, maxWidth: "88ch" }}>
           L&apos;OCDE compte {STATS_OCDE.nbMembres} membres et {STATS_OCDE.nbAdherents} pays non
@@ -179,95 +172,37 @@ function CarteRegistres() {
           un droit opposable — au même titre que le recoupement australien.
         </p>
       </div>
-    </div>
+    </Aide>
   );
 }
 
 export default function SourcesPage() {
   const f = fraicheurEphy();
   const a = fraicheurApvma();
-  const aRafraichir = f.etat !== "à jour" || a.etat !== "à jour";
 
   return (
     <>
-      <div className="fil">Compartiments</div>
-      <h1>D&apos;où vient chaque chiffre</h1>
-      <p className="chapeau">
-        Les compartiments, trois niveaux de fiabilité.
+      <h1>Sources</h1>
+      <p style={{ color: "var(--muted)", fontSize: 13.5, margin: "4px 0 14px" }}>
+        <RefreshCw size={12} style={{ display: "inline", verticalAlign: -1 }} /> E-Phy{" "}
+        <span style={{ color: f.etat === "à jour" ? "var(--low)" : "var(--mod)" }}>{f.etat}</span>
+        {f.jours !== null && ` (${f.jours} j)`} · APVMA{" "}
+        <span style={{ color: a.etat === "à jour" ? "var(--low)" : "var(--mod)" }}>{a.etat}</span>
+        {a.jours !== null && ` (${a.jours} j)`} · index ONSSA {fmtDate(META.genere.slice(0, 10))} ·
+        mise à jour automatique
       </p>
 
-      <div
-        className="card"
-        style={{
-          padding: "13px 17px",
-          marginTop: 16,
-          display: "flex",
-          gap: 12,
-          alignItems: "flex-start",
-          borderColor: aRafraichir
-            ? "color-mix(in srgb, var(--mod) 40%, transparent)"
-            : "color-mix(in srgb, var(--low) 32%, transparent)",
-        }}
-      >
-        <RefreshCw
-          size={16}
-          color={aRafraichir ? "var(--mod)" : "var(--low)"}
-          style={{ flexShrink: 0, marginTop: 2 }}
-        />
-        <div style={{ fontSize: 12.5, color: "var(--muted)", lineHeight: 1.6, minWidth: 0 }}>
-          <div style={{ display: "flex", gap: 18, flexWrap: "wrap", marginBottom: 7 }}>
-            <span>
-              <strong style={{ color: "var(--fg)" }}>E-Phy</strong>{" "}
-              <span style={{ color: f.etat === "à jour" ? "var(--low)" : "var(--mod)" }}>
-                {f.etat}
-              </span>
-              {f.jours !== null && <span className="mono"> · {f.jours} j</span>}
-            </span>
-            <span>
-              <strong style={{ color: "var(--fg)" }}>APVMA</strong>{" "}
-              <span style={{ color: a.etat === "à jour" ? "var(--low)" : "var(--mod)" }}>
-                {a.etat}
-              </span>
-              {a.jours !== null && <span className="mono"> · {a.jours} j</span>}
-            </span>
-            <span>
-              <strong style={{ color: "var(--fg)" }}>Index ONSSA</strong>{" "}
-              <span className="mono">{fmtDate(META.genere.slice(0, 10))}</span>
-            </span>
-          </div>
-          {aRafraichir ? (
-            <>
-              Une source a pris du retard. Rafraîchir les deux catalogues, commiter ce qui a changé et
-              déployer, en une commande : <span className="mono">npm run maj</span>
-            </>
-          ) : (
-            <>
-              Les deux catalogues publics sont à jour. Pour les rafraîchir manuellement :{" "}
-              <span className="mono">npm run maj</span>
-            </>
-          )}
-          <div style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 7 }}>
-            La mise à jour ne peut pas se déclencher depuis l&apos;application déployée : le
-            système de fichiers y est en lecture seule, et l&apos;archive APVMA fait 23 Mo. Elle
-            tourne chaque jour à 07:00 (Casablanca) via le workflow GitHub{" "}
-            <span className="mono">maj-ephy</span> sur <span className="mono">master</span>
-            {" "}
-            (E-Phy, Australie, Brésil, Corée, sentinelle). Les textes ONSSA
-            (avis, listes, décrets) tournent le jeudi via{" "}
-            <span className="mono">maj-onssa-regl</span>
-            . L&apos;index phytosanitaire est relu depuis{" "}
-            <span className="mono">IndPesticide.aspx</span>
-            {" "}(MAJ affichée par l&apos;ONSSA). L&apos;Anses republie E-Phy dans
-            la nuit de mardi à mercredi : le jeudi, le relevé porte en principe la semaine
-            en cours. Commande manuelle :{" "}
-            <span className="mono">npm run maj</span>.
-          </div>
-        </div>
-      </div>
-
-      <div className="section">
-        <span className="h-title">Les compartiments</span>
-        <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+      <div className="card" style={{ padding: "6px 16px" }}>
+        <table className="tbl">
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>Ce qu&apos;elle apporte</th>
+              <th>Mise à jour</th>
+              <th>Fiabilité</th>
+            </tr>
+          </thead>
+          <tbody>
           <Compartiment
             icone={<Database size={15} color="var(--accent)" />}
             nom="Index ONSSA"
@@ -375,11 +310,13 @@ export default function SourcesPage() {
             fiabilite="deduit"
             reserve="Déclaratif : ce que le fournisseur affirme détenir. Les études doivent être réclamées et lues avant engagement."
           />
-        </div>
+          </tbody>
+        </table>
       </div>
 
-      <div className="section">
-        <span className="h-title">Ce que l&apos;outil n&apos;invente jamais</span>
+      <div className="section" style={{ display: "grid", gap: 8, maxWidth: "92ch" }}>
+
+        <Aide titre="Ce que l'outil n'invente jamais">
         <div className="grille" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
           {[
             ["Le chiffre d'affaires", "Absent de l'index. Optionnel dans data/ca.json. Sans lui, l'exposition se mesure en produits et usages."],
@@ -393,24 +330,22 @@ export default function SourcesPage() {
             </div>
           ))}
         </div>
-      </div>
+        </Aide>
 
-      <div className="section">
-        <Figure titre="La boucle de décision" legende="ce que le ruban de navigation matérialise">
-          <SchemaChaine />
-        </Figure>
-      </div>
+        <Aide titre="Schémas : boucle de décision, dossier 3-B, cibles de prospection">
+          <Figure titre="La boucle de décision" legende="ce que le ruban de navigation matérialise">
+            <SchemaChaine />
+          </Figure>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 12 }}>
+            <Figure titre="Structure du dossier ONSSA" legende={`Annexe 3-B · ${STATS_CHECKLIST.nbItems} lignes`}>
+              <SchemaDossier />
+            </Figure>
+            <Figure titre="Conditions d'une cible de prospection" legende="la troisième est décisive">
+              <SchemaSourcing />
+            </Figure>
+          </div>
+        </Aide>
 
-      <div className="section" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-        <Figure titre="Structure du dossier ONSSA" legende={`Annexe 3-B · ${STATS_CHECKLIST.nbItems} lignes`}>
-          <SchemaDossier />
-        </Figure>
-        <Figure titre="Conditions d'une cible de prospection" legende="la troisième est décisive">
-          <SchemaSourcing />
-        </Figure>
-      </div>
-
-      <div className="section" style={{ display: "grid", gap: 8, maxWidth: "92ch" }}>
         <Aide titre="Pourquoi l'ANSES et pas l'Union européenne">
           <p>
             L&apos;ONSSA s&apos;aligne sur l&apos;ANSES : le retrait d&apos;une matière active en
@@ -439,21 +374,20 @@ export default function SourcesPage() {
 
         <Aide titre="Mise à jour des sources">
           <p>
-            L&apos;Anses republie E-Phy chaque nuit de mardi à mercredi, l&apos;APVMA chaque semaine.
-            Le workflow <span className="mono">maj-ephy</span> les récupère le jeudi et ne commite que
-            si un statut a changé — l&apos;historique git devient le journal de veille.
+            Tout est automatique, par les tâches GitHub : chaque jour pour la France (E-Phy),
+            l&apos;Australie, le Brésil et la Corée ; le jeudi pour les textes, les listes et
+            l&apos;index ONSSA ; le 1er et le 16 du mois pour la Chine, la Turquie, les États-Unis, la
+            Russie et les registres ouverts. Une tâche ne commite que si une donnée a changé :
+            l&apos;historique git est le journal de veille, et chaque commit met le site à jour.
           </p>
           <p>
-            À la main : <span className="mono">npm run import:ephy</span>,{" "}
-            <span className="mono">npm run import:apvma</span>,{" "}
+            À la main si besoin : <span className="mono">npm run veille</span>,{" "}
             <span className="mono">npm run import</span> pour l&apos;index ONSSA.
           </p>
         </Aide>
-      </div>
 
-      <div className="section">
-        <div className="card" style={{ padding: "18px 20px" }}>
-          <div className="h-title">Registres ajoutés — relevé du {META_REGISTRES_OUVERTS.releve}</div>
+        <Aide titre={`Registres ajoutés — relevé du ${META_REGISTRES_OUVERTS.releve}`}>
+        <div>
           <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "8px 0 12px", lineHeight: 1.55, maxWidth: "88ch" }}>
             {META_REGISTRES_OUVERTS.avertissement}
           </p>
@@ -476,8 +410,9 @@ export default function SourcesPage() {
             ))}
           </div>
         </div>
+        </Aide>
+        <CarteRegistres />
       </div>
-      <CarteRegistres />
 
       <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 20 }}>
         <Link href="/" className="link-accent">Retour au radar</Link>

@@ -79,7 +79,6 @@ export default async function ProduitsPage({
         </div>
       )}
 
-      <div className="fil">Portefeuille · Produits</div>
       <h1>
         {portefeuille.length} produits homologués
       </h1>

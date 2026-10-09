@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, ShieldQuestion } from "lucide-react";
+import { AlertTriangle, ShieldQuestion } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { RiskBadge } from "@/components/RiskBadge";
 import { RiskMatrix, type MatrixPoint } from "@/components/RiskMatrix";
 import { matieresDuPortefeuille, produitsDe } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
-import { alertes, anglesMorts, statsAlertes } from "@/lib/alertes";
+import { alertesGroupees, anglesMorts, LIBELLE_ALERTE } from "@/lib/alertes";
 import {
   CA_DISPONIBLE,
   ammEcheance,
@@ -23,11 +23,10 @@ import { RequeteHomologation } from "@/components/RequeteHomologation";
 export default async function RadarPage() {
   const d = await detenteurActuel();
   const classe = portefeuilleClasse(d.id);
-  const st = statsAlertes(d.id);
   const expirees = ammExpirees(d.id);
   const proches = ammEcheance(d.id, 18);
   const morts = anglesMorts(d.id);
-  const top = alertes(d.id).slice(0, 5);
+  const top = alertesGroupees(d.id).slice(0, 5);
   const produits = produitsDe(d.id);
 
   // Une molécule détenue à deux concentrations donne deux bulles : on précise
@@ -52,45 +51,17 @@ export default async function RadarPage() {
 
   return (
     <>
-      <div className="fil">Portefeuille · Vue</div>
       <h1>Tour de contrôle</h1>
 
       <div className="card" style={{ padding: "16px 18px", marginTop: 16 }}>
         <div className="h-title" style={{ marginBottom: 6 }}>
           Recherche homologation
         </div>
-        <p className="chapeau" style={{ marginBottom: 12 }}>
-          Substance, culture, ravageur ou société — enregistrements ONSSA, dose, DAR et échéance d&apos;AMM.
-        </p>
         <RequeteHomologation />
       </div>
 
       <NouveautesOnssa compact />
 
-      {st.critiques > 0 && (
-        <Link
-          href="/veille"
-          className="card"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            padding: "13px 18px",
-            margin: "22px 0 0",
-            borderColor: "color-mix(in srgb, var(--crit) 40%, transparent)",
-            background: "color-mix(in srgb, var(--crit) 8%, transparent)",
-          }}
-        >
-          <AlertTriangle size={17} color="var(--crit)" />
-          <span style={{ fontSize: 14 }}>
-            <strong>{st.critiques} alerte(s) critique(s)</strong> sur {st.total} détections —{" "}
-            {st.produitsTouches} produits concernés.
-          </span>
-          <span className="link-accent" style={{ marginLeft: "auto", fontSize: 13.5 }}>
-            Voir le flux <ArrowRight size={13} style={{ display: "inline", verticalAlign: -2 }} />
-          </span>
-        </Link>
-      )}
 
       <div
         style={{
@@ -189,7 +160,10 @@ export default async function RadarPage() {
                 <RiskBadge niveau={a.niveau} />
               </div>
               <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 6 }}>
-                {a.produits.length} produit(s) · {a.usages} usage(s)
+                {[...new Set(a.signaux.map((s) => LIBELLE_ALERTE[s.type]))].join(" · ")}
+              </div>
+              <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
+                {a.produits.map((p) => p.nomCommercial).join(", ")} · {a.usages} usage(s)
               </div>
               {a.matiere && <AlternativesCompactes alts={alternatives(a.matiere.id, 3)} />}
             </div>
