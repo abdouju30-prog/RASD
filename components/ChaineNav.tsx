@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { EmblemeRasd } from "./EmblemeRasd";
 import { usePathname } from "next/navigation";
 import { Recherche } from "./Recherche";
 
@@ -60,7 +61,7 @@ export function ChaineNav({
     <header className="entete">
       <div className="barre">
         <Link href="/" className="logo" aria-label="Rasd — veille réglementaire">
-          R
+          <EmblemeRasd taille={28} />
         </Link>
         <Link href="/" className="nom">
           Rasd
