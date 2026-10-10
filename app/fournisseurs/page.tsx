@@ -1,3 +1,5 @@
+import { detenteurActuel } from "@/lib/detenteur";
+import { NouvellesUsines } from "@/components/NouvellesUsines";
 import Link from "next/link";
 import { Compass, Factory, Search } from "lucide-react";
 import { FOURNISSEURS, MATIERES } from "@/lib/data";
@@ -6,7 +8,7 @@ import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import { LiensMatieres } from "@/components/LienMatiere";
-import { STATS_ICAMA, USINES_CHINE, licenceLisible } from "@/lib/icama";
+import { STATS_ICAMA, USINES_CHINE, anglaisDe, licenceLisible } from "@/lib/icama";
 import { NomChinois } from "@/components/NomChinois";
 import { NomRusse } from "@/components/NomRusse";
 import { etiquetteRusse } from "@/lib/cyrillique";
@@ -128,6 +130,7 @@ export default async function FournisseursPage({
   searchParams: Promise<{ pays?: string; profil?: string; q?: string; source?: string; tout?: string }>;
 }) {
   const sp = await searchParams;
+  const d = await detenteurActuel();
   const ouvert = REGISTRES_OUVERTS.find((r) => r.id === sp.source) ?? null;
   const source: Source | null = ouvert ? null : estSource(sp.source) ? sp.source : "onssa";
   const etendu = sp.tout === "1";
@@ -180,7 +183,12 @@ export default async function FournisseursPage({
   const CHINE = surMatiere
     ? surMatiere.gisement.chine
     : USINES_CHINE.filter(
-        (u) => !cherche || contient(u.nom) || contient(u.latin ?? "") || contient(u.glose ?? "")
+        (u) =>
+          !cherche ||
+          contient(u.nom) ||
+          contient(u.latin ?? "") ||
+          contient(u.glose ?? "") ||
+          contient(anglaisDe(u.nom)?.nomAnglais ?? "")
       );
   const CHINE_TC = surMatiere?.gisement.chineTc ?? [];
   const TURQUIE = surMatiere
@@ -217,10 +225,7 @@ export default async function FournisseursPage({
   return (
     <>
       <h1>Qui peut porter le dossier</h1>
-      <p className="chapeau">
-        Une molécule, puis une source. Les registres restent tous là ; on n&apos;ouvre que celui
-        qui répond.
-      </p>
+      <NouvellesUsines detenteurId={d.id} />
 
       <form
         action="/fournisseurs"
