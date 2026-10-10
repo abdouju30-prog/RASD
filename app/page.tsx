@@ -18,6 +18,7 @@ import { COUVERTURE } from "@/lib/reglementaire";
 import { alternatives } from "@/lib/substitution";
 import { AlternativesCompactes } from "@/components/Alternatives";
 import { NouveautesOnssa } from "@/components/NouveautesOnssa";
+import { NouvellesUsines } from "@/components/NouvellesUsines";
 import { RequeteHomologation } from "@/components/RequeteHomologation";
 
 export default async function RadarPage() {
@@ -61,6 +62,7 @@ export default async function RadarPage() {
       </div>
 
       <NouveautesOnssa compact />
+      <NouvellesUsines detenteurId={d.id} max={3} />
 
 
       <div
