@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BoutonExport } from "@/components/BoutonExport";
 import { RiskBadge } from "@/components/RiskBadge";
 import { PastilleOnssaMatiere } from "@/components/SignalOnssa";
 import { portefeuilleClasse } from "@/lib/logic";
@@ -14,6 +15,9 @@ export default async function MatieresPage() {
       <h1>
         Les {classe.length} molécules du portefeuille
       </h1>
+      <div style={{ display: "flex", gap: 16, margin: "-4px 0 10px" }}>
+        <BoutonExport table="matieres" />
+      </div>
       <p className="chapeau">
         Extraites de l&apos;index ONSSA, classées par risque réglementaire. L&apos;index complet compte{" "}
         {MATIERES.length} matières actives — les autres se prospectent depuis l&apos;écran{" "}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BoutonExport } from "@/components/BoutonExport";
 import { RiskBadge } from "@/components/RiskBadge";
 import { alertesGroupees, statsAlertes, LIBELLE_ALERTE } from "@/lib/alertes";
 import { fmtDate } from "@/lib/logic";
@@ -18,6 +19,9 @@ export default async function VeillePage() {
   return (
     <>
       <h1>Alertes</h1>
+      <div style={{ display: "flex", gap: 16, margin: "-4px 0 10px" }}>
+        <BoutonExport table="alertes" />
+      </div>
       <p style={{ color: "var(--muted)", fontSize: 13.5, margin: "4px 0 16px" }}>
         {st.groupesCritiques} critique(s) · {groupes.length} molécule(s) ou produit(s) ·{" "}
         {st.produitsTouches} produit(s) concerné(s)
