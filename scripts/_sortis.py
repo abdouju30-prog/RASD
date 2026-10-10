@@ -41,14 +41,17 @@ def mettre_a_jour(ancien: dict, nouveau: dict, source_ancien: str, constat: str 
     sortis = {p["id"]: p for p in registre.get("produits", [])}
 
     ids_nouveaux = {p["id"] for p in nouveau.get("portefeuille", [])}
+    # Un produit dont le numéro d'AMM reste à l'index a changé de nom, il n'est pas sorti
+    # (ex. KARBICURE devenu MERANTO SL sous l'AMM H02-1-004).
+    amm_nouveaux = {p.get("amm") for p in nouveau.get("portefeuille", []) if p.get("amm")}
     ajoutes = 0
     for p in ancien.get("portefeuille", []):
-        if p["id"] in ids_nouveaux or p["id"] in sortis:
+        if p["id"] in ids_nouveaux or p["id"] in sortis or (p.get("amm") and p["amm"] in amm_nouveaux):
             continue
         sortis[p["id"]] = {**p, "sortiLe": constat, "sourceSortie": source_ancien}
         ajoutes += 1
 
-    revenus = [i for i in sortis if i in ids_nouveaux]
+    revenus = [i for i, p in sortis.items() if i in ids_nouveaux or (p.get("amm") and p["amm"] in amm_nouveaux)]
     for i in revenus:
         del sortis[i]
 

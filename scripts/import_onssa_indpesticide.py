@@ -36,6 +36,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _pays import PAYS_COUT_FAIBLE, est_multinationale, pays_societe  # noqa: E402
 import _sortis  # noqa: E402
+import _journal_index  # noqa: E402
 
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "onssa.json"
@@ -724,6 +725,8 @@ def main():
         # qui sort avant d'écraser l'index précédent.
         ancien = _sortis.charger(SORTIE)
         _sortis.mettre_a_jour(ancien, payload, (ancien.get("meta") or {}).get("source") or "index précédent")
+        # Journal : nouveaux produits, sorties, échéances et usages modifiés, datés de la MAJ ONSSA.
+        _journal_index.consigner(ancien, payload, (payload["meta"].get("genere") or "")[:10])
     cible.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
     m = payload["meta"]
     print(f"OK -> {cible}")
