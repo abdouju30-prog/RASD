@@ -22,6 +22,7 @@ import { spectreDe } from "@/lib/usages";
 import { Usages } from "@/components/Usages";
 import { usagesCoreens } from "@/lib/coree-usages";
 import { UsagesCoree } from "@/components/UsagesCoree";
+import { ExportConformite } from "@/components/ExportConformite";
 
 export const dynamic = "force-dynamic";
 
@@ -142,6 +143,8 @@ export default async function MatierePage({ params }: { params: Promise<{ id: st
       <div style={{ marginBottom: 16 }}>
         <UsagesCoree m={usagesCoreens(ma.nom)} culturesMaroc={spectre.cultures} />
       </div>
+
+      <ExportConformite nom={ma.nom} molecule={ma.molecule} cultures={ma.cultures} />
 
       {risque && (
         <div className="card" style={{ padding: "14px 18px", marginBottom: 16 }}>
