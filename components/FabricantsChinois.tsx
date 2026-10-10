@@ -1,5 +1,5 @@
 import { Factory } from "lucide-react";
-import { titulaires, usines, type MatiereIcama } from "@/lib/icama";
+import { licenceLisible, titulaires, usines, type MatiereIcama } from "@/lib/icama";
 import { NomChinois } from "@/components/NomChinois";
 
 // Le registre chinois distingue deux droits que rien d'autre ne distingue :
@@ -33,7 +33,9 @@ function Table({ soc, usine }: { soc: ReturnType<typeof usines>; usine: boolean 
             </td>
             <td style={{ fontSize: 11.5 }}>
               {s.licenceProduction ? (
-                <span className="mono" style={{ color: "var(--low)" }}>{s.licenceProduction}</span>
+                <span className="mono" style={{ color: "var(--low)" }} title={s.licenceProduction}>
+                  {licenceLisible(s.licenceProduction)}
+                </span>
               ) : (
                 <span style={{ color: "var(--mod)" }}>aucune au registre</span>
               )}
@@ -72,7 +74,7 @@ export function FabricantsChinois({
         <>
           <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 14px", lineHeight: 1.55 }}>
             <strong style={{ color: "var(--fg)" }}>{m.societes.length} sociétés</strong> sur{" "}
-            <span className="mono">{m.nomsChinois.join(" · ")}</span>, dont{" "}
+            <span className="mono" title={m.nomsChinois.join(" · ")}>{m.iso}</span>, dont{" "}
             <strong style={{ color: "var(--fg)" }}>{u.length}</strong> avec licence de production —
             des usines, pas des intermédiaires.
           </p>

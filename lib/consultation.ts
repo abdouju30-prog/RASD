@@ -3,7 +3,7 @@ import { candidatParId } from "./sourcing";
 import { TOUS_ITEMS, type ItemLocalise } from "./checklist-onssa";
 import { PACKS } from "./packs-fournisseur";
 import { pistesPour, type Piste } from "./pistes";
-import { fabricantsChinois, usines as usinesChinoises, type SocieteChinoise } from "./icama";
+import { fabricantsChinois, licenceLisible, usines as usinesChinoises, type SocieteChinoise } from "./icama";
 import { fabricantsTurcs, type SocieteTurque } from "./bku";
 import { fabricantsRusses, type SocieteRusse } from "./russie";
 import { etiquetteRusse } from "./cyrillique";
@@ -200,12 +200,11 @@ function depuisRussie(s: SocieteRusse): Candidat {
 function depuisChine(s: SocieteChinoise): Candidat {
   return {
     id: `cn-${s.nom}`,
-    // Le pinyin devant, les caractères han derrière : c'est le premier qui se
-    // recopie dans un courriel de consultation.
-    nom: s.glose ? `${s.glose} — ${s.nom}` : s.latin ? `${s.latin} — ${s.nom}` : s.nom,
+    // En alphabet latin : c'est ce qui se recopie dans un courriel de consultation.
+    nom: s.glose || s.latin || s.nom,
     origine: "chine",
     pays: s.region ? `Chine (${s.region})` : "Chine",
-    motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · licence ${s.licenceProduction}`,
+    motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · ${licenceLisible(s.licenceProduction) ?? "licence non publiée"}`,
     lignesMaroc: null,
     // Le registre chinois ne publie pas d'adresse ; la région, si.
     adresse: s.region ? `${s.region}, Chine` : null,

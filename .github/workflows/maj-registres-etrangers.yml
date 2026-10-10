@@ -43,7 +43,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Dépendances Python
-        run: pip install --quiet certifi xlrd websocket-client pymupdf
+        run: pip install --quiet certifi xlrd websocket-client pymupdf jieba pypinyin
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -57,6 +57,9 @@ jobs:
         continue-on-error: true
         timeout-minutes: 45
         run: python scripts/import_icama.py --sans-iso | tee sortie-etrangers.txt
+      - name: Noms chinois en alphabet latin (pinyin + glose française)
+        if: steps.icama.outcome == 'success'
+        run: python scripts/_chinois.py > /dev/null
       - name: BKÜ — Turquie
         id: bku
         continue-on-error: true
