@@ -103,6 +103,11 @@ jobs:
               REJETS="$REJETS $f"
             fi
           done
+          # Après le garde-fou : journal des nouvelles usines, puis noms anglais
+          # (ils lisent ICAMA, le Brésil, l'EPA, l'Australie et l'index ONSSA).
+          NOUVELLES=$(python scripts/_icama_nouveautes.py | tee -a sortie-etrangers.txt | head -1)
+          python scripts/_noms_anglais.py | tee -a sortie-etrangers.txt
+          DERIVES="data/icama-nouveautes.json data/icama-anglais.json"
           {
             echo "resume<<EOF"
             echo "Chine (ICAMA) : $ICAMA"
@@ -111,9 +116,10 @@ jobs:
             echo "Russie : $RUSSIE"
             echo "Registres ouverts : $OUVERTS"
             [ -n "$REJETS" ] && echo "Relevés rejetés (trop petits, ancien fichier conservé) :$REJETS"
+            echo "$NOUVELLES"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
-          if git diff --quiet -- $SUIVIS; then
+          if git diff --quiet -- $SUIVIS $DERIVES; then
             echo "change=non" >> "$GITHUB_OUTPUT"
           else
             echo "change=oui" >> "$GITHUB_OUTPUT"
@@ -126,7 +132,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json
+          git add data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json data/icama-nouveautes.json data/icama-anglais.json
           git commit -m "Veille — registres étrangers" -m "$RESUME"
           git pull --rebase --autostash origin master
           git push
