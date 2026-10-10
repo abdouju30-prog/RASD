@@ -3,7 +3,7 @@ import { candidatParId } from "./sourcing";
 import { TOUS_ITEMS, type ItemLocalise } from "./checklist-onssa";
 import { PACKS } from "./packs-fournisseur";
 import { pistesPour, type Piste } from "./pistes";
-import { fabricantsChinois, licenceLisible, usines as usinesChinoises, type SocieteChinoise } from "./icama";
+import { anglaisDe, fabricantsChinois, licenceLisible, usines as usinesChinoises, type SocieteChinoise } from "./icama";
 import { fabricantsTurcs, type SocieteTurque } from "./bku";
 import { fabricantsRusses, type SocieteRusse } from "./russie";
 import { etiquetteRusse } from "./cyrillique";
@@ -201,7 +201,7 @@ function depuisChine(s: SocieteChinoise): Candidat {
   return {
     id: `cn-${s.nom}`,
     // En alphabet latin : c'est ce qui se recopie dans un courriel de consultation.
-    nom: s.glose || s.latin || s.nom,
+    nom: anglaisDe(s.nom)?.nomAnglais || s.glose || s.latin || s.nom,
     origine: "chine",
     pays: s.region ? `Chine (${s.region})` : "Chine",
     motif: `Technique${s.teneurMax ? ` ${s.teneurMax}` : ""} · ${licenceLisible(s.licenceProduction) ?? "licence non publiée"}`,
