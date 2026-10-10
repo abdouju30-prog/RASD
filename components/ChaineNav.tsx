@@ -70,6 +70,13 @@ export function ChaineNav({
         <span className="ctx">{contexte}</span>
         <div className="droite">
           <Link
+            href="/actualites"
+            className="jauge"
+            style={{ textDecoration: path === "/actualites" ? "underline" : "none" }}
+          >
+            ACTUALITÉS
+          </Link>
+          <Link
             href="/sources"
             className="jauge"
             style={{ textDecoration: path === "/sources" ? "underline" : "none" }}
