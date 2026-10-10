@@ -8,7 +8,7 @@
     "vérifié — ce n'est pas un oubli de saisie."
   ],
   "meta": {
-    "dateTest": "2026-09-13",
+    "dateTest": "2026-10-10",
     "methode": "GET HTTP des pages Contact et des catalogues produits ; présence de l'e-mail, du téléphone, et de la molécule (ou son absence) dans le HTML."
   },
   "societes": [
@@ -21,8 +21,14 @@
         "Yifan Bio-tech"
       ],
       "parent": "Yifan Biotechnology Group Co., Ltd.",
-      "emails": ["yifan@chinayifan.com", "wendy@yifan-biotech.com"],
-      "telephones": ["+86 158 6808 8686", "+86 577 8663 7855"],
+      "emails": [
+        "yifan@chinayifan.com",
+        "wendy@yifan-biotech.com"
+      ],
+      "telephones": [
+        "+86 158 6808 8686",
+        "+86 577 8663 7855"
+      ],
       "site": "http://www.chinayifan.com/product_en.html",
       "adresse": "#555 Changan Road, Yaoxi Street, Longwan, Wenzhou, Zhejiang (siège groupe). Usine ICAMA : Ningdong, Guangfu Rd 006, Ningxia.",
       "source": "Page Contact Us anglaise du groupe Yifan — Wendy Wu, yifan@chinayifan.com. Catalogue EN Technical products : chinayifan.com/product_en.html.",
@@ -65,8 +71,12 @@
         "Inner Mongolia Yangfan"
       ],
       "parent": "扬帆新材料（浙江）股份有限公司 / SZSE 300637",
-      "emails": ["shoufu@shoufuchem.com"],
-      "telephones": ["+86 571 8890 2507"],
+      "emails": [
+        "shoufu@shoufuchem.com"
+      ],
+      "telephones": [
+        "+86 571 8890 2507"
+      ],
       "site": "https://www.zjyfxc.com/introduce1/64.html",
       "adresse": "Hangzhou : 31 Xincheng Rd, Yangfan Building 5F. Usine ICAMA : Bayin Obo Industrial Park, Alxa, Mongolie-Intérieure 750336.",
       "source": "Page Contact Us officielle Yangfan New Materials (Zhejiang) — usine Inner Mongolia listée, e-mail shoufu@shoufuchem.com, vente intermédiaires +86-571-88902507. HTTP 200 le 2026-09-13.",
@@ -83,7 +93,9 @@
         "url": "https://www.zjyfxc.com/",
         "http": 200,
         "date": "2026-09-13",
-        "pages": ["https://www.zjyfxc.com/introduce1/64.html"],
+        "pages": [
+          "https://www.zjyfxc.com/introduce1/64.html"
+        ],
         "vus": []
       },
       "reserve": "L'activité publique du groupe est les photoinitiateurs et intermédiaires soufrés, pas la protection des cultures. Pas d'aclonifène au catalogue. Le contact est le bureau ventes intermédiaires de Hangzhou — licence ICAMA, pas une offre."
@@ -139,6 +151,108 @@
         ]
       },
       "reserve": "Catalogue public herbicides (product.asp?typeid=103, 2026-09-21) : zéro occurrence de clethodim / cléthodime. Ne pas RFQ le desk comme s'il publiait du cléthodime technique. L'index ONSSA le nomme fournisseur marocain — le site, lui, ne l'affiche pas."
+    },
+    {
+      "nom": "利尔化学股份有限公司",
+      "aliases": [
+        "Lier Huaxue Gufen Youxiangongsi",
+        "Lier Chemical Co. Ltd.",
+        "Lier — chimie, S.A."
+      ],
+      "validite": "Usine ICAMA (licence de production). Trouvée aussi au Brésil, aux États-Unis et au Maroc.",
+      "parent": "Lier Chemical Co., Ltd. (利尔化学, cotée à Shenzhen)",
+      "emails": [
+        "market@lierchem.com"
+      ],
+      "telephones": [
+        "+86 21 5843 1502",
+        "+86 816 284 5140"
+      ],
+      "site": "https://www.lierchem.com/",
+      "adresse": "",
+      "source": "Page d'accueil officielle lierchem.com : e-mail commercial et téléphones (Shanghai 021, Mianyang 0816) présents dans le HTML.",
+      "date": "2026-10-10",
+      "http": {
+        "url": "https://www.lierchem.com/",
+        "status": 200,
+        "date": "2026-10-10"
+      },
+      "reserve": "Contact du groupe ; préciser l'usine et la molécule dans la demande."
+    },
+    {
+      "nom": "广安利尔化学有限公司",
+      "aliases": [
+        "Guangan Lier Huaxue Youxiangongsi",
+        "Guangan Lier Chemical Co., Ltd.",
+        "Guangan Lier — chimie, SARL"
+      ],
+      "validite": "Filiale de production de Lier Chemical (Guang'an, Sichuan). Contact : celui du groupe.",
+      "parent": "Lier Chemical Co., Ltd. (利尔化学, cotée à Shenzhen)",
+      "emails": [
+        "market@lierchem.com"
+      ],
+      "telephones": [
+        "+86 21 5843 1502",
+        "+86 816 284 5140"
+      ],
+      "site": "https://www.lierchem.com/",
+      "adresse": "",
+      "source": "Page d'accueil officielle lierchem.com : e-mail commercial et téléphones (Shanghai 021, Mianyang 0816) présents dans le HTML.",
+      "date": "2026-10-10",
+      "http": {
+        "url": "https://www.lierchem.com/",
+        "status": 200,
+        "date": "2026-10-10"
+      },
+      "reserve": "Contact du groupe ; préciser l'usine et la molécule dans la demande."
+    },
+    {
+      "nom": "江苏丰山生化科技有限公司",
+      "aliases": [
+        "Jiangsu Fengshan Shenghua Keji Youxiangongsi",
+        "Jiangsu Fengshan Group Co., Ltd.",
+        "Fengshan — biochimie, technologies, SARL"
+      ],
+      "parent": "Jiangsu Fengshan Group Co., Ltd. (cotée à Shanghai, 603810)",
+      "emails": [],
+      "telephones": [
+        "+86 515 8337 2088",
+        "+86 515 8337 3012"
+      ],
+      "site": "https://www.fengshangroup.com/contact/",
+      "adresse": "No. 1 Xikang South Road, Dafeng District, Yancheng, Jiangsu 224100",
+      "source": "Page Contact du site officiel fengshangroup.com : deux numéros 0515 (Yancheng) dans le HTML, aucun e-mail publié.",
+      "date": "2026-10-10",
+      "http": {
+        "url": "https://www.fengshangroup.com/contact/",
+        "status": 200,
+        "date": "2026-10-10"
+      },
+      "validite": "Filiale ICAMA du groupe Fengshan. Groupe trouvé aussi en Australie et aux États-Unis.",
+      "reserve": "Pas d'e-mail public : passer par le téléphone ou le formulaire du site. Adresse relevée sur les fiches boursières, pas sur la page Contact."
+    },
+    {
+      "nom": "山东潍坊润丰化工股份有限公司",
+      "aliases": [
+        "Shandong Weifang Runfeng Huagong Gufen Youxiangongsi",
+        "Shandong Weifang Rainbow Chemical Co., Ltd.",
+        "Weifang Runfeng — chimie, S.A.",
+        "Rainbow Agro"
+      ],
+      "parent": "Shandong Weifang Rainbow Chemical Co., Ltd. (Rainbow Agro, cotée à Shenzhen, 301035)",
+      "emails": [],
+      "telephones": [],
+      "site": "https://www.rainbowagro.com/",
+      "adresse": "",
+      "source": "Site officiel indiqué au Pacte mondial de l'ONU ; répond en 200, mais en JavaScript : aucun e-mail ni téléphone lisible dans le HTML.",
+      "date": "2026-10-10",
+      "http": {
+        "url": "https://www.rainbowagro.com/",
+        "status": 200,
+        "date": "2026-10-10"
+      },
+      "validite": "Usine ICAMA ; 14 molécules du portefeuille PHYTO BEHT ; déjà fournisseur à l'index ONSSA, et au Brésil et aux États-Unis.",
+      "reserve": "Contacts à relever à la main sur le site (formulaire) — non saisis faute de preuve dans le HTML."
     }
   ]
 }
