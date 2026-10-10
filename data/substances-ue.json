@@ -1,0 +1,2091 @@
+{
+ "meta": {
+  "source": "EU Pesticides Database — DG SANTE (substances actives)",
+  "genere": "2026-10-10",
+  "nbSubstances": 174
+ },
+ "substances": {
+  "1,3-DICHLOROPROPENE": {
+   "nomUE": "1,3-Dichloropropene (cis)",
+   "cas": [
+    "542-75-6"
+   ],
+   "statut": "Not approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": "NE - Nematicide",
+   "dja": null,
+   "arfd": null
+  },
+  "1-METHYLCYCLOPROPENE": {
+   "nomUE": "1-methylcyclopropene",
+   "cas": [
+    "3100-04-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2019",
+   "expiration": "31/07/2034",
+   "categorie": "PG - Plant growth regulator",
+   "dja": "0.02 mg/kg bw/day",
+   "arfd": "0.12 mg/kg bw"
+  },
+  "2,4-D": {
+   "nomUE": "2,4-D",
+   "cas": [
+    "94-75-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2016",
+   "expiration": "31/12/2030",
+   "categorie": "PG - Plant growth regulator",
+   "dja": "0.02 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "6-BENZYLADENINE": {
+   "nomUE": "6-Benzyladenine",
+   "cas": [
+    "1214-39-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "15/01/2030",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "ABAMECTIN": {
+   "nomUE": "Abamectin (aka avermectin)",
+   "cas": [
+    "71751-41-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/04/2023",
+   "expiration": "31/03/2038",
+   "categorie": null,
+   "dja": "0.0012 mg/kg bw/day",
+   "arfd": "0.0012 mg/kg bw"
+  },
+  "ACEQUINOCYL": {
+   "nomUE": "Acequinocyl",
+   "cas": [
+    "57960-19-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2014",
+   "expiration": "15/11/2026",
+   "categorie": null,
+   "dja": "0.023 mg/kg bw/day",
+   "arfd": "0.08 mg/kg bw"
+  },
+  "ACETAMIPRID": {
+   "nomUE": "Acetamiprid",
+   "cas": [
+    "135410-20-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/03/2018",
+   "expiration": "28/02/2033",
+   "categorie": null,
+   "dja": "0.005 mg/kg bw/day",
+   "arfd": "0.005 mg/kg bw"
+  },
+  "ACIBENZOLAR-S-METHYL": {
+   "nomUE": "Acibenzolar-S-methyl (benzothiadiazole)",
+   "cas": [
+    "135158-54-2"
+   ],
+   "statut": "Not approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": null,
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.03 mg/kg bw"
+  },
+  "ACLONIFEN": {
+   "nomUE": "Aclonifen",
+   "cas": [
+    "74070-46-5"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2009",
+   "expiration": "31/03/2029",
+   "categorie": null,
+   "dja": "0.07 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "ALPHA CYPERMETHRIN": {
+   "nomUE": "Alpha-Cypermethrin (aka alphamethrin)",
+   "cas": [
+    "67375-30-8"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/11/2019",
+   "expiration": "07/06/2021",
+   "categorie": null,
+   "dja": "0.00125 mg/kg bw/day",
+   "arfd": "0.00125 mg/kg bw"
+  },
+  "AMETOCTRADIN": {
+   "nomUE": "Ametoctradin",
+   "cas": [
+    "865318-97-4"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2013",
+   "expiration": "31/05/2028",
+   "categorie": null,
+   "dja": "10.0 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "AMINOPYRALID": {
+   "nomUE": "Aminopyralid",
+   "cas": [
+    "150114-71-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2015",
+   "expiration": "31/05/2027",
+   "categorie": null,
+   "dja": "0.26 mg/kg bw/day",
+   "arfd": "0.26 mg/kg bw"
+  },
+  "AMISULBROM": {
+   "nomUE": "Amisulbrom",
+   "cas": [
+    "348635-87-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/07/2014",
+   "expiration": "15/03/2030",
+   "categorie": null,
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "AZADIRACHTIN": {
+   "nomUE": "Azadirachtin (Margosa extract)",
+   "cas": [
+    "11141-17-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/01/2027",
+   "categorie": null,
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "0.75 mg/kg bw"
+  },
+  "AZOXYSTROBIN": {
+   "nomUE": "Azoxystrobin",
+   "cas": [
+    "131860-33-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "31/05/2027",
+   "categorie": null,
+   "dja": "0.2 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "BENTAZONE": {
+   "nomUE": "Bentazone",
+   "cas": [
+    "25057-89-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2018",
+   "expiration": "31/10/2027",
+   "categorie": null,
+   "dja": "0.09 mg/kg bw/day",
+   "arfd": "1.0 mg/kg bw"
+  },
+  "BENZOVINDIFLUPYR": {
+   "nomUE": "Benzovindiflupyr",
+   "cas": [
+    "1072957-71-1"
+   ],
+   "statut": "Approved",
+   "approbation": "02/03/2016",
+   "expiration": "02/01/2029",
+   "categorie": "FU - Fungicide",
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "BENZYLADENINE": {
+   "nomUE": "6-Benzyladenine",
+   "cas": [
+    "1214-39-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "15/01/2030",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "BIFENAZATE": {
+   "nomUE": "Bifenazate",
+   "cas": [
+    "149877-41-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/07/2022",
+   "expiration": "30/06/2037",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "BIXAFEN": {
+   "nomUE": "Bixafen",
+   "cas": [
+    "581809-46-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/10/2013",
+   "expiration": "31/10/2027",
+   "categorie": "FU - Fungicide",
+   "dja": "0.02 mg/kg bw/day",
+   "arfd": "0.2 mg/kg bw"
+  },
+  "BOSCALID": {
+   "nomUE": "Boscalid (formerly nicobifen)",
+   "cas": [
+    "188425-85-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2008",
+   "expiration": "31/03/2028",
+   "categorie": "FU - Fungicide",
+   "dja": "0.04 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "BUPIRIMATE": {
+   "nomUE": "Bupirimate",
+   "cas": [
+    "41483-43-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/01/2027",
+   "categorie": null,
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "BUPROFEZIN": {
+   "nomUE": "Buprofezin",
+   "cas": [
+    "69327-76-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2011",
+   "expiration": "15/12/2026",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "CAPTAN": {
+   "nomUE": "Captan",
+   "cas": [],
+   "statut": "Approved",
+   "approbation": "01/11/2024",
+   "expiration": "31/10/2039",
+   "categorie": null,
+   "dja": "0.25 mg/kg bw/day",
+   "arfd": "0.9 mg/kg bw"
+  },
+  "CARFENTRAZONE-ETHYL": {
+   "nomUE": "Carfentrazone-ethyl",
+   "cas": [
+    "128639-02-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2018",
+   "expiration": "31/07/2033",
+   "categorie": null,
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "CHLORANTRANILIPROLE": {
+   "nomUE": "Chlorantraniliprole",
+   "cas": [
+    "500008-45-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2014",
+   "expiration": "31/05/2027",
+   "categorie": null,
+   "dja": "1.56 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "CHLORMEQUAT PRESENT AS CHLORMEQUAT CHLORIDE": {
+   "nomUE": "Chlormequat",
+   "cas": [
+    "7003-89-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/12/2009",
+   "expiration": "28/02/2027",
+   "categorie": null,
+   "dja": "0.04 mg/kg bw/day",
+   "arfd": "0.09 mg/kg bw"
+  },
+  "CHLOROPICRIN": {
+   "nomUE": "Chloropicrin",
+   "cas": [
+    "76-06-2"
+   ],
+   "statut": "Not approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": "NE - Nematicide",
+   "dja": "0.001 mg/kg bw/day",
+   "arfd": "0.001 mg/kg bw"
+  },
+  "CLETHODIM": {
+   "nomUE": "Clethodim",
+   "cas": [
+    "99129-21-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "15/12/2027",
+   "categorie": null,
+   "dja": "0.16 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "CLODINAFOP-PROPARGYL": {
+   "nomUE": "Clodinafop",
+   "cas": [
+    "105512-06-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2007",
+   "expiration": "31/07/2027",
+   "categorie": null,
+   "dja": "0.003 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "CLOFENTEZINE": {
+   "nomUE": "Clofentezine",
+   "cas": [
+    "74115-24-5"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/01/2009",
+   "expiration": "11/11/2023",
+   "categorie": "AC - Acaricide",
+   "dja": "0.017 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "CLOMAZONE": {
+   "nomUE": "Clomazone",
+   "cas": [
+    "81777-89-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/11/2008",
+   "expiration": "31/12/2027",
+   "categorie": null,
+   "dja": "0.133 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "CLOPYRALID": {
+   "nomUE": "Clopyralid",
+   "cas": [
+    "1702-17-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/10/2021",
+   "expiration": "30/09/2036",
+   "categorie": null,
+   "dja": "0.15 mg/kg bw/day",
+   "arfd": "0.17 mg/kg bw"
+  },
+  "COPPER PRESENT AS COPPER OXYCHLORIDE": {
+   "nomUE": "Copper oxychloride",
+   "cas": [
+    "1332-65-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2019",
+   "expiration": "30/06/2029",
+   "categorie": null,
+   "dja": null,
+   "arfd": null
+  },
+  "CYANAMIDE": {
+   "nomUE": "Cyanamide (H & Ca cyanamide)",
+   "cas": [
+    "420-04-2"
+   ],
+   "statut": "Not approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": "HB - Herbicide",
+   "dja": "0.002 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "CYANTRANILIPROLE": {
+   "nomUE": "Cyantraniliprole",
+   "cas": [
+    "736994-63-1"
+   ],
+   "statut": "Approved",
+   "approbation": "14/09/2016",
+   "expiration": "14/03/2030",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "CYAZOFAMID": {
+   "nomUE": "Cyazofamid",
+   "cas": [
+    "120116-88-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2021",
+   "expiration": "31/07/2036",
+   "categorie": null,
+   "dja": "0.17 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "CYFLUFENAMID": {
+   "nomUE": "Cyflufenamid",
+   "cas": [
+    "180409-60-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/04/2010",
+   "expiration": "30/06/2027",
+   "categorie": null,
+   "dja": "0.04 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "CYFLUMETOFEN": {
+   "nomUE": "Cyflumetofen",
+   "cas": [
+    "400882-07-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2013",
+   "expiration": "15/10/2027",
+   "categorie": "AC - Acaricide",
+   "dja": "0.17 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "CYHALOFOP-BUTYL": {
+   "nomUE": "Cyhalofop-butyl",
+   "cas": [
+    "122008-85-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/07/2017",
+   "expiration": "30/06/2032",
+   "categorie": null,
+   "dja": "0.003 mg/kg bw/day",
+   "arfd": "0.4 mg/kg bw"
+  },
+  "CYPERMETHRIN": {
+   "nomUE": "Cypermethrin",
+   "cas": [
+    "52315-07-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2022",
+   "expiration": "31/01/2029",
+   "categorie": null,
+   "dja": "0.005 mg/kg bw/day",
+   "arfd": "0.005 mg/kg bw"
+  },
+  "CYPRODINIL": {
+   "nomUE": "Cyprodinil",
+   "cas": [
+    "121552-61-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2007",
+   "expiration": "31/07/2027",
+   "categorie": null,
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "DAZOMET": {
+   "nomUE": "Dazomet",
+   "cas": [
+    "533-74-4"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "30/11/2029",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.03 mg/kg bw"
+  },
+  "DELTAMETHRIN": {
+   "nomUE": "Deltamethrin",
+   "cas": [
+    "52918-63-5"
+   ],
+   "statut": "Approved",
+   "approbation": "01/11/2003",
+   "expiration": "30/06/2028",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.01 mg/kg bw"
+  },
+  "DICAMBA": {
+   "nomUE": "Dicamba",
+   "cas": [
+    "1918-00-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2009",
+   "expiration": "31/03/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.3 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "DICHLORPROP-P": {
+   "nomUE": "Dichlorprop-P",
+   "cas": [
+    "15165-67-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2007",
+   "expiration": "31/10/2027",
+   "categorie": null,
+   "dja": "0.06 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "DIFENOCONAZOLE": {
+   "nomUE": "Difenoconazole",
+   "cas": [
+    "119446-68-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2009",
+   "expiration": "31/01/2028",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.16 mg/kg bw"
+  },
+  "DIFLUBENZURON": {
+   "nomUE": "Diflubenzuron",
+   "cas": [
+    "35367-38-5"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/01/2009",
+   "expiration": "31/12/2020",
+   "categorie": "IN - Insecticide",
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "DIFLUFENICAN": {
+   "nomUE": "Diflufenican",
+   "cas": [
+    "83164-33-4"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2009",
+   "expiration": "31/08/2027",
+   "categorie": null,
+   "dja": "0.2 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "DIMETHENAMID-P": {
+   "nomUE": "Dimethenamid-P",
+   "cas": [
+    "163515-14-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2019",
+   "expiration": "31/08/2034",
+   "categorie": null,
+   "dja": "0.04 mg/kg bw/day",
+   "arfd": "0.08 mg/kg bw"
+  },
+  "DIMETHOATE": {
+   "nomUE": "Dimethoate",
+   "cas": [
+    "60-51-5"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/10/2007",
+   "expiration": "30/06/2019",
+   "categorie": "AC - Acaricide",
+   "dja": null,
+   "arfd": null
+  },
+  "DIMETHOMORPH": {
+   "nomUE": "Dimethomorph",
+   "cas": [
+    "110488-70-5"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/10/2007",
+   "expiration": "20/05/2024",
+   "categorie": null,
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "0.6 mg/kg bw"
+  },
+  "DINOTEFURAN": {
+   "nomUE": "Dinotefuran",
+   "cas": [
+    "165252-70-0"
+   ],
+   "statut": "Not approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": "IN - Insecticide",
+   "dja": null,
+   "arfd": null
+  },
+  "DITHIANON": {
+   "nomUE": "Dithianon",
+   "cas": [
+    "3347-22-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/01/2027",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.12 mg/kg bw"
+  },
+  "DODINE": {
+   "nomUE": "Dodine",
+   "cas": [
+    "2439-10-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "30/06/2028",
+   "categorie": null,
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "EMAMECTIN BENZOATE": {
+   "nomUE": "Emamectin",
+   "cas": [
+    "119791-41-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2014",
+   "expiration": "15/11/2026",
+   "categorie": "IN - Insecticide",
+   "dja": "0.0005 mg/kg bw/day",
+   "arfd": "0.01 mg/kg bw"
+  },
+  "ETHOFUMESATE": {
+   "nomUE": "Ethofumesate",
+   "cas": [
+    "26225-79-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/11/2016",
+   "expiration": "31/10/2031",
+   "categorie": null,
+   "dja": "1.0 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "ETOXAZOLE": {
+   "nomUE": "Etoxazole",
+   "cas": [
+    "153233-91-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2021",
+   "expiration": "31/01/2028",
+   "categorie": null,
+   "dja": "0.04 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "FENHEXAMID": {
+   "nomUE": "Fenhexamid",
+   "cas": [
+    "126833-17-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2016",
+   "expiration": "31/12/2030",
+   "categorie": null,
+   "dja": "0.2 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "FENOXAPROP-P-ETHYL": {
+   "nomUE": "Fenoxaprop-P-ethyl",
+   "cas": [
+    "71283-80-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2009",
+   "expiration": "30/11/2026",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "FENPYRAZAMINE": {
+   "nomUE": "Fenpyrazamine",
+   "cas": [
+    "473798-59-3"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/01/2013",
+   "expiration": "15/01/2025",
+   "categorie": "FU - Fungicide",
+   "dja": "0.13 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "FENPYROXIMATE": {
+   "nomUE": "Fenpyroximate",
+   "cas": [
+    "134098-61-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2009",
+   "expiration": "31/01/2028",
+   "categorie": "AC - Acaricide",
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.02 mg/kg bw"
+  },
+  "FLONICAMID": {
+   "nomUE": "Flonicamid (IKI-220)",
+   "cas": [
+    "158062-67-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2010",
+   "expiration": "30/11/2026",
+   "categorie": "IN - Insecticide",
+   "dja": "0.025 mg/kg bw/day",
+   "arfd": "0.025 mg/kg bw"
+  },
+  "FLORASULAM": {
+   "nomUE": "Florasulam",
+   "cas": [
+    "145701-23-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2016",
+   "expiration": "31/12/2030",
+   "categorie": null,
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "FLORPYRAUXIFEN-BENZYL": {
+   "nomUE": "Florpyrauxifen-benzyl",
+   "cas": [
+    "1390661-72-9"
+   ],
+   "statut": "Approved",
+   "approbation": "24/07/2019",
+   "expiration": "24/07/2029",
+   "categorie": null,
+   "dja": "0.5 mg/kg bw/day",
+   "arfd": null
+  },
+  "FLUAZIFOP-P-BUTYL": {
+   "nomUE": "Fluazifop",
+   "cas": [
+    "69335-91-7"
+   ],
+   "statut": "Not approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": "HB - Herbicide",
+   "dja": null,
+   "arfd": null
+  },
+  "FLUAZINAM": {
+   "nomUE": "Fluazinam",
+   "cas": [
+    "79622-59-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/03/2009",
+   "expiration": "30/11/2027",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.07 mg/kg bw"
+  },
+  "FLUBENDIAMIDE": {
+   "nomUE": "Flubendiamide",
+   "cas": [
+    "272451-65-7"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/09/2014",
+   "expiration": "31/08/2024",
+   "categorie": "IN - Insecticide",
+   "dja": "0.017 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "FLUDIOXONIL": {
+   "nomUE": "Fludioxonil",
+   "cas": [
+    "131341-86-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/11/2008",
+   "expiration": "30/09/2027",
+   "categorie": null,
+   "dja": "0.37 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "FLUOPICOLIDE": {
+   "nomUE": "Fluopicolide",
+   "cas": [
+    "239110-15-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2010",
+   "expiration": "31/01/2029",
+   "categorie": null,
+   "dja": "0.08 mg/kg bw/day",
+   "arfd": "0.18 mg/kg bw"
+  },
+  "FLUOPYRAM": {
+   "nomUE": "Fluopyram",
+   "cas": [
+    "658066-35-4"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2014",
+   "expiration": "15/06/2028",
+   "categorie": "NE - Nematicide",
+   "dja": "0.012 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "FLUPYRADIFURONE": {
+   "nomUE": "Flupyradifurone",
+   "cas": [
+    "951659-40-8"
+   ],
+   "statut": "Approved",
+   "approbation": "09/12/2015",
+   "expiration": "09/06/2029",
+   "categorie": "IN - Insecticide",
+   "dja": "0.064 mg/kg bw/day",
+   "arfd": "0.15 mg/kg bw"
+  },
+  "FLUROXYPYR": {
+   "nomUE": "Fluroxypyr",
+   "cas": [
+    "69377-81-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "15/02/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.8 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "FLUTRIAFOL": {
+   "nomUE": "Flutriafol",
+   "cas": [
+    "76674-21-0"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/05/2021",
+   "categorie": "FU - Fungicide",
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "FLUXAPYROXAD": {
+   "nomUE": "Fluxapyroxad",
+   "cas": [
+    "907204-31-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2013",
+   "expiration": "31/10/2027",
+   "categorie": "FU - Fungicide",
+   "dja": "0.02 mg/kg bw/day",
+   "arfd": "0.25 mg/kg bw"
+  },
+  "FORAMSULFURON": {
+   "nomUE": "Foramsulfuron",
+   "cas": [
+    "173159-57-4"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2020",
+   "expiration": "31/05/2035",
+   "categorie": null,
+   "dja": "0.25 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "FORCHLORFENURON": {
+   "nomUE": "Forchlorfenuron",
+   "cas": [
+    "68157-60-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2018",
+   "expiration": "31/05/2033",
+   "categorie": null,
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "FOSETYL-ALUMINIUM": {
+   "nomUE": "Fosetyl",
+   "cas": [
+    "15845-66-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2007",
+   "expiration": "31/01/2028",
+   "categorie": "FU - Fungicide",
+   "dja": "1.0 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "FOSTHIAZATE": {
+   "nomUE": "Fosthiazate",
+   "cas": [
+    "98886-44-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2004",
+   "expiration": "31/01/2027",
+   "categorie": "NE - Nematicide",
+   "dja": "0.004 mg/kg bw/day",
+   "arfd": "0.005 mg/kg bw"
+  },
+  "GAMMA-CYHALOTHRIN": {
+   "nomUE": "Gamma-cyhalothrin",
+   "cas": [
+    "76703-62-3"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/04/2015",
+   "expiration": "31/03/2025",
+   "categorie": null,
+   "dja": "0.0012 mg/kg bw/day",
+   "arfd": "0.0025 mg/kg bw"
+  },
+  "GERANIOL": {
+   "nomUE": "Geraniol",
+   "cas": [
+    "106-24-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/12/2013",
+   "expiration": "15/04/2028",
+   "categorie": null,
+   "dja": "0.5 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "GIBBERELLIC ACID": {
+   "nomUE": "Gibberellic acid",
+   "cas": [
+    "77-06-5"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2026",
+   "expiration": "31/12/2040",
+   "categorie": "PG - Plant growth regulator",
+   "dja": "0.23 mg/kg bw/day",
+   "arfd": "0.78 mg/kg bw"
+  },
+  "GLYPHOSATE": {
+   "nomUE": "Glyphosate",
+   "cas": [
+    "1071-83-6"
+   ],
+   "statut": "Approved",
+   "approbation": "16/12/2023",
+   "expiration": "15/12/2033",
+   "categorie": "HB - Herbicide",
+   "dja": "0.5 mg/kg bw/day",
+   "arfd": "1.5 mg/kg bw"
+  },
+  "GLYPHOSATE ACID": {
+   "nomUE": "Glyphosate",
+   "cas": [
+    "1071-83-6"
+   ],
+   "statut": "Approved",
+   "approbation": "16/12/2023",
+   "expiration": "15/12/2033",
+   "categorie": "HB - Herbicide",
+   "dja": "0.5 mg/kg bw/day",
+   "arfd": "1.5 mg/kg bw"
+  },
+  "HEXYTHIAZOX": {
+   "nomUE": "Hexythiazox",
+   "cas": [
+    "78587-05-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/01/2027",
+   "categorie": "IN - Insecticide",
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "IMAZALIL": {
+   "nomUE": "Imazalil (aka enilconazole)",
+   "cas": [
+    "35554-44-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "31/05/2027",
+   "categorie": null,
+   "dja": "0.025 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "IMAZALIL SULFATE": {
+   "nomUE": "Imazalil (aka enilconazole)",
+   "cas": [
+    "35554-44-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "31/05/2027",
+   "categorie": null,
+   "dja": "0.025 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "IMAZAMOX": {
+   "nomUE": "Imazamox",
+   "cas": [
+    "114311-32-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/11/2017",
+   "expiration": "30/06/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "3.0 mg/kg bw/day",
+   "arfd": "3.0 mg/kg bw"
+  },
+  "IMIDACLOPRID": {
+   "nomUE": "Imidacloprid",
+   "cas": [
+    "138261-41-3"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/08/2009",
+   "expiration": "01/12/2020",
+   "categorie": "IN - Insecticide",
+   "dja": "0.06 mg/kg bw/day",
+   "arfd": "0.08 mg/kg bw"
+  },
+  "INDOXACARB": {
+   "nomUE": "Indoxacarb",
+   "cas": [
+    "173584-44-6"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/04/2006",
+   "expiration": "19/12/2021",
+   "categorie": "IN - Insecticide",
+   "dja": "0.005 mg/kg bw/day",
+   "arfd": "0.005 mg/kg bw"
+  },
+  "ISOXABEN": {
+   "nomUE": "Isoxaben",
+   "cas": [
+    "82558-50-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/01/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "ISOXAFLUTOLE": {
+   "nomUE": "Isoxaflutole",
+   "cas": [
+    "141112-29-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2019",
+   "expiration": "31/07/2034",
+   "categorie": null,
+   "dja": "0.02 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "KAOLIN, CALCINED": {
+   "nomUE": "Aluminium silicate (aka kaolin)",
+   "cas": [
+    "1332-58-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2009",
+   "expiration": "31/03/2027",
+   "categorie": null,
+   "dja": "Not appl.",
+   "arfd": "Not appl."
+  },
+  "KRESOXIM-METHYL": {
+   "nomUE": "Kresoxim-methyl",
+   "cas": [
+    "143390-89-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "31/05/2027",
+   "categorie": null,
+   "dja": "0.4 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "LAMBDA-CYHALOTHRIN": {
+   "nomUE": "lambda-Cyhalothrin",
+   "cas": [
+    "91465-08-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/04/2016",
+   "expiration": "31/01/2029",
+   "categorie": "IN - Insecticide",
+   "dja": "0.0025 mg/kg bw/day",
+   "arfd": "0.005 mg/kg bw"
+  },
+  "LUFENURON": {
+   "nomUE": "Lufenuron",
+   "cas": [
+    "103055-07-8"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/01/2010",
+   "expiration": "31/12/2019",
+   "categorie": "IN - Insecticide",
+   "dja": "0.015 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "MALATHION": {
+   "nomUE": "Malathion",
+   "cas": [
+    "121-75-5"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2010",
+   "expiration": "15/07/2028",
+   "categorie": "IN - Insecticide",
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "MANDIPROPAMID": {
+   "nomUE": "Mandipropamid",
+   "cas": [
+    "374726-62-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2013",
+   "expiration": "30/06/2029",
+   "categorie": null,
+   "dja": "0.15 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "MCPA": {
+   "nomUE": "MCPA",
+   "cas": [],
+   "statut": "Approved",
+   "approbation": "01/05/2006",
+   "expiration": "31/07/2028",
+   "categorie": "HB - Herbicide",
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "0.15 mg/kg bw"
+  },
+  "MEFENTRIFLUCONAZOLE": {
+   "nomUE": "Mefentrifluconazole",
+   "cas": [
+    "1417782-03-6"
+   ],
+   "statut": "Approved",
+   "approbation": "20/03/2019",
+   "expiration": "20/03/2029",
+   "categorie": null,
+   "dja": "0.035 mg/kg bw/day",
+   "arfd": "0.15 mg/kg bw"
+  },
+  "MESOSULFURON-METHYL": {
+   "nomUE": "Mesosulfuron",
+   "cas": [
+    "400852-66-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/07/2017",
+   "expiration": "30/06/2032",
+   "categorie": null,
+   "dja": "1.0 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "MESOTRIONE": {
+   "nomUE": "Mesotrione",
+   "cas": [],
+   "statut": "Approved",
+   "approbation": "01/06/2017",
+   "expiration": "31/05/2032",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.02 mg/kg bw"
+  },
+  "METAFLUMIZONE": {
+   "nomUE": "Metaflumizone",
+   "cas": [
+    "139968-49-3"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/01/2015",
+   "expiration": "31/12/2024",
+   "categorie": "IN - Insecticide",
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.13 mg/kg bw"
+  },
+  "METALAXYL": {
+   "nomUE": "Metalaxyl",
+   "cas": [
+    "57837-19-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/07/2010",
+   "expiration": "30/06/2029",
+   "categorie": null,
+   "dja": "0.08 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "METALAXYL M": {
+   "nomUE": "Metalaxyl-M",
+   "cas": [
+    "70630-17-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2020",
+   "expiration": "31/05/2035",
+   "categorie": null,
+   "dja": "0.08 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "METALDEHYDE": {
+   "nomUE": "Metaldehyde",
+   "cas": [],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "15/10/2028",
+   "categorie": "MO - Molluscicide",
+   "dja": "0.02 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "METAMITRON": {
+   "nomUE": "Metamitron",
+   "cas": [
+    "41394-05-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2009",
+   "expiration": "30/11/2026",
+   "categorie": "HB - Herbicide",
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "METAZACHLOR": {
+   "nomUE": "Metazachlor",
+   "cas": [
+    "67129-08-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2009",
+   "expiration": "31/05/2029",
+   "categorie": "HB - Herbicide",
+   "dja": "0.08 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "METHOXYFENOZIDE": {
+   "nomUE": "Methoxyfenozide",
+   "cas": [
+    "161050-58-4"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/04/2019",
+   "expiration": "31/03/2026",
+   "categorie": "IN - Insecticide",
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "METOBROMURON": {
+   "nomUE": "Metobromuron",
+   "cas": [
+    "3060-89-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2015",
+   "expiration": "31/05/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.008 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "METRAFENONE": {
+   "nomUE": "Metrafenone",
+   "cas": [
+    "220899-03-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/11/2024",
+   "expiration": "31/10/2039",
+   "categorie": null,
+   "dja": "0.25 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "METRIBUZIN": {
+   "nomUE": "Metribuzin",
+   "cas": [
+    "21087-64-9"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/10/2007",
+   "expiration": "24/11/2024",
+   "categorie": "HB - Herbicide",
+   "dja": "0.0013 mg/kg bw/day",
+   "arfd": "0.002 mg/kg bw"
+  },
+  "METSULFURON-METHYL": {
+   "nomUE": "Metsulfuron-methyl",
+   "cas": [
+    "74223-64-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/04/2016",
+   "expiration": "31/07/2029",
+   "categorie": "HB - Herbicide",
+   "dja": "0.22 mg/kg bw/day",
+   "arfd": "0.25 mg/kg bw"
+  },
+  "MILBEMECTIN": {
+   "nomUE": "Milbemectin",
+   "cas": [],
+   "statut": "Approved",
+   "approbation": "16/11/2025",
+   "expiration": "15/11/2040",
+   "categorie": "IN - Insecticide",
+   "dja": "0.007 mg/kg bw/day",
+   "arfd": "0.03 mg/kg bw"
+  },
+  "MYCLOBUTANIL": {
+   "nomUE": "Myclobutanil",
+   "cas": [
+    "88671-89-0"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/05/2021",
+   "categorie": "FU - Fungicide",
+   "dja": "0.025 mg/kg bw/day",
+   "arfd": "0.31 mg/kg bw"
+  },
+  "NAPROPAMIDE": {
+   "nomUE": "Napropamide",
+   "cas": [
+    "15299-99-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2011",
+   "expiration": "31/03/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.3 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "ORTHOPHENYLPHENOL": {
+   "nomUE": "2-Phenylphenol (incl. sodium salt orthophenyl phenol)",
+   "cas": [
+    "90-43-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2010",
+   "expiration": "15/11/2027",
+   "categorie": "FU - Fungicide",
+   "dja": "0.4 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "OXATHIAPIPROLIN": {
+   "nomUE": "Oxathiapiprolin",
+   "cas": [
+    "1003318-67-9"
+   ],
+   "statut": "Approved",
+   "approbation": "03/03/2017",
+   "expiration": "03/03/2027",
+   "categorie": null,
+   "dja": "0.14 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "OXYFLUORFEN": {
+   "nomUE": "Oxyfluorfen",
+   "cas": [
+    "42874-03-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "31/05/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.003 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "PARAFFIN OIL": {
+   "nomUE": "Paraffin oil/(CAS 8042-47-5)",
+   "cas": [
+    "64741-54-7",
+    "64741-88-4",
+    "64741-89-5",
+    "64741-97-5",
+    "64742-46-7",
+    "64742-55-8",
+    "64742-65-0",
+    "72623-86-0",
+    "8012-95-1",
+    "8042-47-5",
+    "97862-82-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/07/2026",
+   "expiration": "30/06/2041",
+   "categorie": "IN - Insecticide",
+   "dja": "Not appl.",
+   "arfd": "Not appl."
+  },
+  "PENCONAZOLE": {
+   "nomUE": "Penconazole",
+   "cas": [
+    "66246-88-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2010",
+   "expiration": "15/02/2029",
+   "categorie": null,
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "PENDIMETHALIN": {
+   "nomUE": "Pendimethalin",
+   "cas": [
+    "40487-42-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2017",
+   "expiration": "15/01/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.125 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "PHENMEDIPHAM": {
+   "nomUE": "Phenmedipham",
+   "cas": [
+    "13684-63-4"
+   ],
+   "statut": "Approved",
+   "approbation": "01/03/2005",
+   "expiration": "30/09/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "PHOSPHINE": {
+   "nomUE": "Phosphine",
+   "cas": [],
+   "statut": "Approved",
+   "approbation": "01/10/2026",
+   "expiration": "30/09/2041",
+   "categorie": "IN - Insecticide",
+   "dja": "Not appl.",
+   "arfd": "Not appl."
+  },
+  "PICLORAM": {
+   "nomUE": "Picloram",
+   "cas": [
+    "1918-02-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2009",
+   "expiration": "15/02/2028",
+   "categorie": "HB - Herbicide",
+   "dja": "0.3 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "PINOXADEN": {
+   "nomUE": "Pinoxaden",
+   "cas": [
+    "243973-20-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/07/2016",
+   "expiration": "31/12/2029",
+   "categorie": null,
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "PIRIMICARB": {
+   "nomUE": "Pirimicarb",
+   "cas": [
+    "23103-98-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2007",
+   "expiration": "31/07/2027",
+   "categorie": "IN - Insecticide",
+   "dja": "0.035 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "PIRIMIPHOS-METHYL": {
+   "nomUE": "Pirimiphos-methyl",
+   "cas": [
+    "29232-93-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/10/2007",
+   "expiration": "31/01/2027",
+   "categorie": "IN - Insecticide",
+   "dja": "0.004 mg/kg bw/day",
+   "arfd": "0.15 mg/kg bw"
+  },
+  "PROHEXADIONE-CALCIUM": {
+   "nomUE": "Prohexadione",
+   "cas": [
+    "127277-53-6"
+   ],
+   "statut": "Approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": "PG - Plant growth regulator",
+   "dja": "0.2 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "PROPAMOCARB": {
+   "nomUE": "Propamocarb",
+   "cas": [
+    "24579-73-5"
+   ],
+   "statut": "Approved",
+   "approbation": "01/10/2007",
+   "expiration": "31/01/2027",
+   "categorie": null,
+   "dja": "0.29 mg/kg bw/day",
+   "arfd": "1.0 mg/kg bw"
+  },
+  "PROPAQUIZAFOP": {
+   "nomUE": "Propaquizafop",
+   "cas": [
+    "111479-05-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/12/2009",
+   "expiration": "28/02/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.015 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "PROQUINAZID": {
+   "nomUE": "Proquinazid",
+   "cas": [
+    "189278-12-4"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2010",
+   "expiration": "31/12/2027",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.2 mg/kg bw"
+  },
+  "PROSULFOCARB": {
+   "nomUE": "Prosulfocarb",
+   "cas": [
+    "52888-80-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/11/2009",
+   "expiration": "31/01/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.005 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "PROSULFURON": {
+   "nomUE": "Prosulfuron",
+   "cas": [
+    "94125-34-5"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2017",
+   "expiration": "15/06/2026",
+   "categorie": "HB - Herbicide",
+   "dja": "0.02 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "PROTHIOCONAZOLE": {
+   "nomUE": "Prothioconazole",
+   "cas": [
+    "178928-70-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2008",
+   "expiration": "31/03/2027",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.01 mg/kg bw/day"
+  },
+  "PYRACLOSTROBIN": {
+   "nomUE": "Pyraclostrobin",
+   "cas": [
+    "175013-18-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/10/2026",
+   "expiration": "30/09/2041",
+   "categorie": null,
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.03 mg/kg bw"
+  },
+  "PYRAFLUFEN-ETHYL": {
+   "nomUE": "Pyraflufen-ethyl",
+   "cas": [
+    "129630-19-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/04/2016",
+   "expiration": "31/03/2031",
+   "categorie": null,
+   "dja": "0.2 mg/kg bw/day",
+   "arfd": "0.2 mg/kg bw"
+  },
+  "PYRETHRIN": {
+   "nomUE": "Pyrethrins",
+   "cas": [
+    "8003-34-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2009",
+   "expiration": "30/04/2028",
+   "categorie": "IN - Insecticide",
+   "dja": "0.04 mg/kg bw/day",
+   "arfd": "0.2 mg/kg bw"
+  },
+  "PYRIDABEN": {
+   "nomUE": "Pyridaben",
+   "cas": [
+    "96489-71-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2011",
+   "expiration": "31/01/2030",
+   "categorie": "AC - Acaricide",
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "PYRIDATE": {
+   "nomUE": "Pyridate",
+   "cas": [
+    "55512-33-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2016",
+   "expiration": "31/12/2030",
+   "categorie": null,
+   "dja": "0.036 mg/kg bw/day",
+   "arfd": "0.4 mg/kg bw"
+  },
+  "PYRIMETHANIL": {
+   "nomUE": "Pyrimethanil",
+   "cas": [
+    "53112-28-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2026",
+   "expiration": "30/04/2041",
+   "categorie": null,
+   "dja": "0.013 mg/kg bw/day",
+   "arfd": "1.0 mg/kg bw"
+  },
+  "PYRIPROXYFEN": {
+   "nomUE": "Pyriproxyfen",
+   "cas": [
+    "95737-68-1"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2020",
+   "expiration": "31/07/2035",
+   "categorie": null,
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "1.0 mg/kg bw"
+  },
+  "PYROXSULAM": {
+   "nomUE": "Pyroxsulam",
+   "cas": [
+    "422556-08-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2014",
+   "expiration": "30/09/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.9 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "QUIZALOFOP-P-ETHYL": {
+   "nomUE": "Quizalofop-P-ethyl",
+   "cas": [
+    "100646-51-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/12/2009",
+   "expiration": "28/02/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.009 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "QUIZALOFOP-P-TEFURYL": {
+   "nomUE": "Quizalofop-P-tefuryl",
+   "cas": [],
+   "statut": "Approved",
+   "approbation": "01/12/2009",
+   "expiration": "28/02/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.013 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "RIMSULFURON": {
+   "nomUE": "Rimsulfuron (aka renriduron)",
+   "cas": [
+    "122931-48-0"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2007",
+   "expiration": "15/08/2028",
+   "categorie": "HB - Herbicide",
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "S-METOLACHLOR": {
+   "nomUE": "S-Metolachlor",
+   "cas": [
+    "87392-12-9"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/04/2005",
+   "expiration": "22/01/2024",
+   "categorie": "HB - Herbicide",
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "SAFLUFENACIL": {
+   "nomUE": "Saflufenacil",
+   "cas": [
+    "372137-35-4"
+   ],
+   "statut": "Not approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": "HB - Herbicide",
+   "dja": null,
+   "arfd": null
+  },
+  "SEDAXANE": {
+   "nomUE": "Sedaxane",
+   "cas": [
+    "874967-67-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2014",
+   "expiration": "31/10/2027",
+   "categorie": null,
+   "dja": "0.11 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "SPINETORAM": {
+   "nomUE": "Spinetoram",
+   "cas": [],
+   "statut": "Not approved",
+   "approbation": "01/07/2014",
+   "expiration": "30/06/2024",
+   "categorie": "IN - Insecticide",
+   "dja": "0.025 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "SPINOSAD": {
+   "nomUE": "Spinosad",
+   "cas": [
+    "168316-95-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/04/2026",
+   "expiration": "01/04/2041",
+   "categorie": "IN - Insecticide",
+   "dja": "0.024 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "SPIROMESIFEN": {
+   "nomUE": "Spiromesifen",
+   "cas": [
+    "283594-90-1"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/10/2013",
+   "expiration": "30/09/2023",
+   "categorie": "IN - Insecticide",
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "2.0 mg/kg bw"
+  },
+  "SPIROTETRAMAT": {
+   "nomUE": "Spirotetramat",
+   "cas": [
+    "203313-25-1"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/05/2014",
+   "expiration": "30/04/2024",
+   "categorie": null,
+   "dja": "0.05 mg/kg bw/day",
+   "arfd": "1.0 mg/kg bw"
+  },
+  "SPIROXAMINE": {
+   "nomUE": "Spiroxamine",
+   "cas": [
+    "118134-30-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "30/11/2029",
+   "categorie": null,
+   "dja": "0.025 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "SULFOXAFLOR": {
+   "nomUE": "Sulfoxaflor",
+   "cas": [
+    "946578-00-3"
+   ],
+   "statut": "Approved",
+   "approbation": "18/08/2015",
+   "expiration": "18/01/2028",
+   "categorie": null,
+   "dja": "0.04 mg/kg bw/day",
+   "arfd": "0.25 mg/kg bw"
+  },
+  "SULPHUR": {
+   "nomUE": "Sulphur",
+   "cas": [
+    "7704-34-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2010",
+   "expiration": "31/07/2027",
+   "categorie": null,
+   "dja": "Not appl.",
+   "arfd": "Not appl."
+  },
+  "TAU-FLUVALINATE": {
+   "nomUE": "tau-Fluvalinate",
+   "cas": [
+    "102851-06-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/01/2027",
+   "categorie": "IN - Insecticide",
+   "dja": "0.005 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "TEBUCONAZOLE": {
+   "nomUE": "Tebuconazole",
+   "cas": [
+    "107534-96-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2009",
+   "expiration": "31/07/2028",
+   "categorie": null,
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.03 mg/kg bw"
+  },
+  "TEBUFENOZIDE": {
+   "nomUE": "Tebufenozide",
+   "cas": [
+    "112410-23-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2011",
+   "expiration": "31/01/2027",
+   "categorie": "IN - Insecticide",
+   "dja": "0.02 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "TEBUFENPYRAD": {
+   "nomUE": "Tebufenpyrad",
+   "cas": [
+    "119168-77-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/11/2009",
+   "expiration": "31/01/2027",
+   "categorie": "AC - Acaricide",
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.02 mg/kg bw"
+  },
+  "TEFLUTHRIN": {
+   "nomUE": "Tefluthrin",
+   "cas": [
+    "79538-32-2"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "31/05/2027",
+   "categorie": "IN - Insecticide",
+   "dja": "0.005 mg/kg bw/day",
+   "arfd": "0.005 mg/kg bw"
+  },
+  "TERBUTHYLAZINE": {
+   "nomUE": "Terbuthylazine",
+   "cas": [
+    "5915-41-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2012",
+   "expiration": "31/05/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.004 mg/kg bw/day",
+   "arfd": "0.008 mg/kg bw"
+  },
+  "TETRACONAZOLE": {
+   "nomUE": "Tetraconazole",
+   "cas": [
+    "112281-77-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2010",
+   "expiration": "31/03/2027",
+   "categorie": null,
+   "dja": "0.004 mg/kg bw/day",
+   "arfd": "0.05 mg/kg bw"
+  },
+  "THIABENDAZOLE": {
+   "nomUE": "Thiabendazole",
+   "cas": [
+    "148-79-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/04/2017",
+   "expiration": "31/03/2032",
+   "categorie": null,
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "0.1 mg/kg bw"
+  },
+  "THIAMETHOXAM": {
+   "nomUE": "Thiamethoxam",
+   "cas": [
+    "153719-23-4"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/02/2007",
+   "expiration": "30/04/2019",
+   "categorie": "IN - Insecticide",
+   "dja": "0.026 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "THYMOL": {
+   "nomUE": "Thymol",
+   "cas": [
+    "89-83-8"
+   ],
+   "statut": "Approved",
+   "approbation": "01/12/2013",
+   "expiration": "15/04/2028",
+   "categorie": null,
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.08 mg/kg bw"
+  },
+  "TOLCLOFOS-METHYL": {
+   "nomUE": "Tolclofos-methyl",
+   "cas": [
+    "57018-04-9"
+   ],
+   "statut": "Approved",
+   "approbation": "01/09/2019",
+   "expiration": "31/08/2034",
+   "categorie": null,
+   "dja": "0.064 mg/kg bw/day",
+   "arfd": "0.14 mg/kg bw"
+  },
+  "TOPRAMEZONE": {
+   "nomUE": "Topramezone",
+   "cas": [
+    "210631-68-8"
+   ],
+   "statut": "Not approved",
+   "approbation": null,
+   "expiration": null,
+   "categorie": "HB - Herbicide",
+   "dja": "0.001 mg/kg bw/day",
+   "arfd": "0.001 mg/kg bw"
+  },
+  "TRI-ALLATE": {
+   "nomUE": "Tri-allate",
+   "cas": [
+    "2303-17-5"
+   ],
+   "statut": "Approved",
+   "approbation": "01/01/2010",
+   "expiration": "31/03/2027",
+   "categorie": null,
+   "dja": "0.025 mg/kg bw/day",
+   "arfd": "0.6 mg/kg bw"
+  },
+  "TRIBENURON-METHYL": {
+   "nomUE": "Tribenuron (aka metometuron)",
+   "cas": [
+    "106040-48-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/02/2019",
+   "expiration": "30/01/2034",
+   "categorie": null,
+   "dja": "0.01 mg/kg bw/day",
+   "arfd": "0.2 mg/kg bw"
+  },
+  "TRICLOPYR": {
+   "nomUE": "Triclopyr",
+   "cas": [
+    "55335-06-3"
+   ],
+   "statut": "Approved",
+   "approbation": "01/06/2007",
+   "expiration": "31/03/2027",
+   "categorie": "HB - Herbicide",
+   "dja": "0.03 mg/kg bw/day",
+   "arfd": "0.3 mg/kg bw"
+  },
+  "TRIFLOXYSTROBIN": {
+   "nomUE": "Trifloxystrobin",
+   "cas": [
+    "141517-21-7"
+   ],
+   "statut": "Approved",
+   "approbation": "01/08/2018",
+   "expiration": "31/07/2033",
+   "categorie": null,
+   "dja": "0.1 mg/kg bw/day",
+   "arfd": "0.5 mg/kg bw"
+  },
+  "TRINEXAPAC-ETHYL": {
+   "nomUE": "Trinexapac (aka cimetacarb)",
+   "cas": [
+    "104273-73-6"
+   ],
+   "statut": "Approved",
+   "approbation": "01/05/2024",
+   "expiration": "30/04/2039",
+   "categorie": "PG - Plant growth regulator",
+   "dja": "0.32 mg/kg bw/day",
+   "arfd": "Not appl."
+  },
+  "ZETA-CYPERMETHRIN": {
+   "nomUE": "zeta-Cypermethrin",
+   "cas": [
+    "52315-07-8"
+   ],
+   "statut": "Not approved",
+   "approbation": "01/12/2009",
+   "expiration": "01/12/2020",
+   "categorie": "IN - Insecticide",
+   "dja": "0.0015 mg/kg bw/day",
+   "arfd": "0.0015 mg/kg bw"
+  }
+ }
+}
