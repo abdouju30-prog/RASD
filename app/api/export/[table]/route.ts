@@ -4,13 +4,32 @@ import { alertesGroupees, LIBELLE_ALERTE } from "@/lib/alertes";
 import { etatAMM } from "@/lib/logic";
 import { conformite, libelleMoa } from "@/lib/conformite";
 import { reponseCsv } from "@/lib/csv";
+import { ANNUAIRE, REGIONS, dansRegion, type Region } from "@/lib/annuaire";
 
 /**
  * Exports tableur du détenteur choisi : produits, homologations (usages),
  * alertes, matières actives. Mêmes données que l'écran, une ligne par élément.
  */
-export async function GET(_req: Request, { params }: { params: Promise<{ table: string }> }) {
+export async function GET(req: Request, { params }: { params: Promise<{ table: string }> }) {
   const { table } = await params;
+  if (table === "annuaire") {
+    const sp = new URL(req.url).searchParams;
+    const reg = REGIONS.find((r) => r === sp.get("region")) as Region | undefined;
+    const q = (sp.get("q") ?? "").toLowerCase();
+    const min = Number(sp.get("min") ?? "1") || 1;
+    const liste = ANNUAIRE.filter((f) =>
+      (!reg || dansRegion(f, reg)) &&
+      (!sp.get("pays") || f.pays === sp.get("pays")) &&
+      (!sp.get("registre") || f.registres.includes(sp.get("registre")!)) &&
+      f.registres.length >= min &&
+      (!q || f.nom.toLowerCase().includes(q) || f.molecules.some((m) => m.toLowerCase().includes(q))));
+    return reponseCsv(
+      "annuaire-fabricants.csv",
+      ["Fabricant / titulaire", "Pays", "Pays présumé", "Région", "Fournit déjà le Maroc", "Nb registres", "Registres", "Nb molécules", "Molécules"],
+      liste.map((f) => [f.nom, f.pays, f.paysFiable ? "" : "oui", f.region, f.meToo ? "oui" : "", f.registres.length,
+        f.registres.join(", "), f.molecules.length, f.molecules.join(", ")])
+    );
+  }
   const d = await detenteurActuel();
   const slug = d.id;
   const produits = produitsDe(d.id);

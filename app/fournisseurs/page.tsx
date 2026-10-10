@@ -1,5 +1,6 @@
 import { detenteurActuel } from "@/lib/detenteur";
 import { NouvellesUsines } from "@/components/NouvellesUsines";
+import { STATS_ANNUAIRE } from "@/lib/annuaire";
 import Link from "next/link";
 import { Compass, Factory, Search } from "lucide-react";
 import { FOURNISSEURS, MATIERES } from "@/lib/data";
@@ -225,6 +226,10 @@ export default async function FournisseursPage({
   return (
     <>
       <h1>Qui peut porter le dossier</h1>
+      <Link href="/annuaire" className="card" style={{ display: "block", padding: "12px 16px", margin: "8px 0 0", fontSize: 14 }}>
+        <strong>Annuaire mondial : {STATS_ANNUAIRE.nbFabricants.toLocaleString("fr")} fabricants dans {STATS_ANNUAIRE.nbPays} pays</strong>
+        <span style={{ color: "var(--muted)", fontSize: 13 }}> — OCDE, Amérique latine, Chine, Inde, Russie… une ligne par société, tous registres réunis →</span>
+      </Link>
       <NouvellesUsines detenteurId={d.id} />
 
       <form

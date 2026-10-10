@@ -215,7 +215,8 @@ function entrees(): EntreePays[] {
   return out;
 }
 
-const TOUTES = entrees();
+export const TOUTES_ENTREES: EntreePays[] = entrees();
+const TOUTES = TOUTES_ENTREES;
 
 export interface FichePays {
   pays: string;

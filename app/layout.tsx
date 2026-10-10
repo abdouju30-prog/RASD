@@ -49,7 +49,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       href: "/fournisseurs",
       nom: "Fournisseur",
       compteur: `${so.nbGeneriques} génér. · ${so.parPays.length} pays`,
-      aliases: ["/constituants"],
+      aliases: ["/constituants", "/annuaire"],
     },
     {
       href: "/dossiers",

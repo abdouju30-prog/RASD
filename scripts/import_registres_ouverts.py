@@ -26,6 +26,7 @@ import xlrd
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _registres_complements as complements  # noqa: E402
+from _pays import pays_societe  # noqa: E402
 
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "registres-ouverts.json"
@@ -372,6 +373,13 @@ def main() -> None:
         ),
         garder("echa", echa),
     ]
+    # Pays d'origine de chaque titulaire, déduit de la raison sociale (le registre
+    # nomme une société, pas sa nationalité) ; « paysFiable » dit si la règle est sûre.
+    for r in registres:
+        for soc in r.get("societes", []):
+            if "pays" not in soc:
+                pays, fiable = pays_societe(soc["nom"])
+                soc["pays"], soc["paysFiable"] = pays, bool(fiable)
     doc = {
         "meta": {
             "genere": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
