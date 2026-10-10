@@ -1,5 +1,6 @@
 import type { ContactResolu } from "@/lib/contact";
 import type { ContactIcama } from "@/lib/contacts-icama";
+import { licenceLisible } from "@/lib/icama";
 
 /** Coordonnées compactes : e-mail, tél, site, première adresse. */
 export function ContactCell({ c }: { c: ContactResolu }) {
@@ -59,8 +60,8 @@ export function ValiditeIcama({
         {expiration ? ` · jusqu'au ${expiration}` : ""}
       </div>
       {licence && (
-        <div className="mono" style={{ color: "var(--low)" }}>
-          {licence}
+        <div className="mono" style={{ color: "var(--low)" }} title={licence}>
+          {licenceLisible(licence)}
         </div>
       )}
       {c ? (

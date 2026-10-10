@@ -61,7 +61,7 @@ SORTIE = RACINE / "data" / "icama.json"
 
 URL_REG = "https://www.icama.cn/BasicdataSystem/pesticideRegistration/queryselect.do"
 URL_LIC = "https://www.icama.cn/DataCenter/manufacturer/query"
-ATTRIBUTION = "ICAMA — 中国农药信息网"
+ATTRIBUTION = "ICAMA — China Pesticide Information Network"
 
 TECHNIQUE = "原药"  # matière active technique, par opposition aux formulations
 PAUSE = 1.0  # une requête par seconde : le registre est public, pas gratuit à servir

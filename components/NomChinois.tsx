@@ -13,13 +13,11 @@ export function NomChinois({
   const titre = glose?.trim() || latin?.trim() || nom;
   return (
     <div>
-      <div style={{ fontWeight: 500, lineHeight: 1.35 }}>{titre}</div>
+      <div style={{ fontWeight: 500, lineHeight: 1.35 }} title={nom}>
+        {titre}
+      </div>
       <div style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 1 }}>
-        {nom}
-        {region ? <span> · {region}</span> : null}
-        {latin && latin !== nom && latin !== titre ? (
-          <span style={{ marginLeft: 6 }}>{latin}</span>
-        ) : null}
+        {[region, latin && latin !== titre ? latin : null].filter(Boolean).join(" · ")}
       </div>
       <a
         href={`https://www.google.com/search?q=${encodeURIComponent(nom)}`}

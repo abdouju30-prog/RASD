@@ -99,6 +99,26 @@ export function fabricantsChinois(nomONSSA: string): MatiereIcama | null {
  * registre, ni sur le site de la société. Le pinyin reprend chaque caractère
  * du nom han ; collé dans Google, il retrouve l'usine. Le han reste l'identité.
  */
+// Abréviation de province portée par chaque licence : 农药生许（鲁）0013 = licence
+// de production de pesticides, Shandong, n° 0013.
+const PROVINCE_ABREGEE: Record<string, string> = {
+  京: "Pékin", 津: "Tianjin", 冀: "Hebei", 晋: "Shanxi", 蒙: "Mongolie-Intérieure",
+  辽: "Liaoning", 吉: "Jilin", 黑: "Heilongjiang", 沪: "Shanghai", 苏: "Jiangsu",
+  浙: "Zhejiang", 皖: "Anhui", 闽: "Fujian", 赣: "Jiangxi", 鲁: "Shandong",
+  豫: "Henan", 鄂: "Hubei", 湘: "Hunan", 粤: "Guangdong", 桂: "Guangxi",
+  琼: "Hainan", 渝: "Chongqing", 川: "Sichuan", 黔: "Guizhou", 滇: "Yunnan",
+  藏: "Tibet", 陕: "Shaanxi", 甘: "Gansu", 青: "Qinghai", 宁: "Ningxia", 新: "Xinjiang",
+};
+
+/** « 农药生许（鲁）0013 » -> « Lic. Shandong n° 0013 » ; l'original si la forme est inattendue. */
+export function licenceLisible(licence: string | null): string | null {
+  if (!licence) return null;
+  const m = licence.match(/[（(]\s*(\S)\s*[)）]\s*([0-9A-Za-z-]+)/);
+  if (!m) return licence;
+  const province = PROVINCE_ABREGEE[m[1]];
+  return province ? `Lic. ${province} n° ${m[2]}` : `Lic. n° ${m[2]}`;
+}
+
 export function nomCherchable(s: { nom: string; latin: string | null }): string {
   return s.latin?.trim() || s.nom;
 }

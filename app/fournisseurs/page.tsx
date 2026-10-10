@@ -6,7 +6,7 @@ import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import { LiensMatieres } from "@/components/LienMatiere";
-import { STATS_ICAMA, USINES_CHINE } from "@/lib/icama";
+import { STATS_ICAMA, USINES_CHINE, licenceLisible } from "@/lib/icama";
 import { NomChinois } from "@/components/NomChinois";
 import { NomRusse } from "@/components/NomRusse";
 import { etiquetteRusse } from "@/lib/cyrillique";
@@ -618,7 +618,9 @@ export default async function FournisseursPage({
                         resteHref={hrefElargir}
                       />
                     </td>
-                    <td className="mono" style={{ fontSize: 11.5, color: "var(--low)" }}>{u.licenceProduction}</td>
+                    <td className="mono" style={{ fontSize: 11.5, color: "var(--low)" }} title={u.licenceProduction ?? undefined}>
+                      {licenceLisible(u.licenceProduction)}
+                    </td>
                   </tr>
                 ))}
               </tbody>
