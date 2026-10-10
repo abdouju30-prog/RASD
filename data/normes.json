@@ -1,0 +1,381 @@
+{
+ "meta": {
+  "genere": "2026-10-10",
+  "sources": {
+   "fairtrade": {
+    "nom": "Fairtrade — Hazardous Materials List",
+    "url": "https://fairtrade.net/content/dam/fairtrade/fairtrade-international/hazardous-materials-list/Hazardous_Materials_List_EN.pdf",
+    "miseAJour": "2026-06-29"
+   },
+   "rainforest": {
+    "nom": "Rainforest Alliance — Farming Annex (chapitre 4)",
+    "url": "https://knowledge.rainforest-alliance.org/docs/farming-annex"
+   },
+   "bio": {
+    "nom": "Bio UE — Règlement d'exécution (UE) 2021/1165, annexe I",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02021R1165-20250615"
+   },
+   "rotterdam": {
+    "nom": "Convention de Rotterdam — annexe III",
+    "url": "https://www.pic.int/Portals/5/download.aspx?d=UNEP-FAO-RC-CONVTEXT-2023.English.pdf"
+   },
+   "stockholm": {
+    "nom": "Convention de Stockholm — polluants organiques persistants",
+    "url": "https://www.pops.int/TheConvention/ThePOPs/AllPOPs/tabid/2509/Default.aspx"
+   }
+  },
+  "avertissement": "Rapprochement par numéro CAS. Une matière sans CAS connu n'est pas évaluée. Les normes privées ont des exceptions et des conditions : vérifier le document en vigueur avant tout conseil."
+ },
+ "substances": {
+  "1,3-DICHLOROPROPENE": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "1-METHYLCYCLOPROPENE": {},
+  "2,4-D": {},
+  "6-BENZYLADENINE": {},
+  "ABAMECTIN": {
+   "fairtrade": "rouge (dérogations possibles)",
+   "rainforest": "interdite"
+  },
+  "ACEQUINOCYL": {
+   "rainforest": "atténuation"
+  },
+  "ACETAMIPRID": {
+   "fairtrade": "orange",
+   "rainforest": "atténuation"
+  },
+  "ACIBENZOLAR-S-METHYL": {},
+  "ACLONIFEN": {},
+  "ALPHA CYPERMETHRIN": {
+   "fairtrade": "orange",
+   "rainforest": "atténuation"
+  },
+  "AMETOCTRADIN": {},
+  "AMINOPYRALID": {},
+  "AMISULBROM": {
+   "fairtrade": "orange"
+  },
+  "AZADIRACHTIN": {
+   "bio": "extracted from Neem tree seeds ( Azadirachta indica )"
+  },
+  "AZOXYSTROBIN": {
+   "rainforest": "atténuation"
+  },
+  "BENTAZONE": {},
+  "BENZOVINDIFLUPYR": {},
+  "BENZYLADENINE": {},
+  "BIFENAZATE": {},
+  "BIXAFEN": {},
+  "BOSCALID": {},
+  "BUPIRIMATE": {},
+  "BUPROFEZIN": {},
+  "CAPTAN": {},
+  "CARFENTRAZONE-ETHYL": {},
+  "CHLORANTRANILIPROLE": {
+   "fairtrade": "orange"
+  },
+  "CHLORMEQUAT PRESENT AS CHLORMEQUAT CHLORIDE": {},
+  "CHLOROPICRIN": {
+   "fairtrade": "rouge",
+   "rainforest": "atténuation"
+  },
+  "CLETHODIM": {},
+  "CLODINAFOP-PROPARGYL": {},
+  "CLOFENTEZINE": {},
+  "CLOMAZONE": {},
+  "CLOPYRALID": {},
+  "COPPER PRESENT AS COPPER OXYCHLORIDE": {
+   "bio": "autorisée"
+  },
+  "CYANAMIDE": {},
+  "CYANTRANILIPROLE": {},
+  "CYAZOFAMID": {},
+  "CYFLUFENAMID": {
+   "fairtrade": "jaune"
+  },
+  "CYFLUMETOFEN": {},
+  "CYHALOFOP-BUTYL": {},
+  "CYPERMETHRIN": {
+   "fairtrade": "rouge",
+   "rainforest": "atténuation"
+  },
+  "CYPRODINIL": {},
+  "DAZOMET": {
+   "rainforest": "atténuation"
+  },
+  "DELTAMETHRIN": {
+   "fairtrade": "orange",
+   "rainforest": "atténuation",
+   "bio": "only in traps with specific attractants against Bactrocera oleae , Ceratitis capitata and Rhagoletis completa"
+  },
+  "DICAMBA": {},
+  "DICHLORPROP-P": {},
+  "DIFENOCONAZOLE": {},
+  "DIFLUBENZURON": {
+   "rainforest": "atténuation"
+  },
+  "DIFLUFENICAN": {},
+  "DIMETHENAMID-P": {
+   "rainforest": "atténuation"
+  },
+  "DIMETHOATE": {
+   "fairtrade": "orange",
+   "rainforest": "atténuation"
+  },
+  "DIMETHOMORPH": {
+   "rainforest": "interdite"
+  },
+  "DINOTEFURAN": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "DITHIANON": {},
+  "DODINE": {
+   "rainforest": "atténuation"
+  },
+  "EMAMECTIN BENZOATE": {},
+  "ETHOFUMESATE": {},
+  "ETOXAZOLE": {
+   "rainforest": "atténuation"
+  },
+  "FENHEXAMID": {},
+  "FENOXAPROP-P-ETHYL": {},
+  "FENPYRAZAMINE": {},
+  "FENPYROXIMATE": {
+   "rainforest": "atténuation"
+  },
+  "FLONICAMID": {},
+  "FLORASULAM": {},
+  "FLORPYRAUXIFEN-BENZYL": {},
+  "FLUAZIFOP-P-BUTYL": {},
+  "FLUAZINAM": {
+   "rainforest": "atténuation"
+  },
+  "FLUBENDIAMIDE": {},
+  "FLUDIOXONIL": {},
+  "FLUOPICOLIDE": {},
+  "FLUOPYRAM": {
+   "rainforest": "atténuation"
+  },
+  "FLUPYRADIFURONE": {
+   "rainforest": "atténuation"
+  },
+  "FLUROXYPYR": {},
+  "FLUTRIAFOL": {},
+  "FLUXAPYROXAD": {},
+  "FORAMSULFURON": {},
+  "FORCHLORFENURON": {},
+  "FOSETYL-ALUMINIUM": {},
+  "FOSTHIAZATE": {
+   "fairtrade": "jaune"
+  },
+  "GAMMA-CYHALOTHRIN": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "GERANIOL": {
+   "bio": "autorisée"
+  },
+  "GIBBERELLIC ACID": {},
+  "GLYPHOSATE": {
+   "fairtrade": "rouge (dérogations possibles)"
+  },
+  "GLYPHOSATE ACID": {
+   "fairtrade": "rouge (dérogations possibles)"
+  },
+  "HEXYTHIAZOX": {
+   "fairtrade": "jaune"
+  },
+  "IMAZALIL": {
+   "fairtrade": "jaune"
+  },
+  "IMAZALIL SULFATE": {
+   "fairtrade": "jaune"
+  },
+  "IMAZAMOX": {},
+  "IMIDACLOPRID": {
+   "fairtrade": "rouge",
+   "rainforest": "interdite"
+  },
+  "INDOXACARB": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "ISOXABEN": {
+   "rainforest": "atténuation"
+  },
+  "ISOXAFLUTOLE": {
+   "fairtrade": "jaune"
+  },
+  "KAOLIN, CALCINED": {
+   "bio": "autorisée"
+  },
+  "KRESOXIM-METHYL": {
+   "fairtrade": "jaune"
+  },
+  "LAMBDA-CYHALOTHRIN": {
+   "fairtrade": "rouge (dérogations possibles)",
+   "rainforest": "atténuation",
+   "bio": "only in traps with specific attractants against Bactrocera oleae and Ceratitis capitata"
+  },
+  "LUFENURON": {
+   "fairtrade": "orange",
+   "rainforest": "atténuation"
+  },
+  "MALATHION": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "MANDIPROPAMID": {},
+  "MCPA": {},
+  "MEFENTRIFLUCONAZOLE": {},
+  "MESOSULFURON-METHYL": {},
+  "MESOTRIONE": {},
+  "METAFLUMIZONE": {
+   "fairtrade": "jaune"
+  },
+  "METALAXYL": {
+   "rainforest": "atténuation"
+  },
+  "METALAXYL M": {},
+  "METALDEHYDE": {},
+  "METAMITRON": {},
+  "METAZACHLOR": {},
+  "METHOXYFENOZIDE": {},
+  "METOBROMURON": {},
+  "METRAFENONE": {},
+  "METRIBUZIN": {
+   "fairtrade": "rouge",
+   "rainforest": "atténuation"
+  },
+  "METSULFURON-METHYL": {},
+  "MILBEMECTIN": {},
+  "MYCLOBUTANIL": {
+   "rainforest": "atténuation"
+  },
+  "NAPROPAMIDE": {
+   "rainforest": "atténuation"
+  },
+  "ORTHOPHENYLPHENOL": {},
+  "OXATHIAPIPROLIN": {},
+  "OXYFLUORFEN": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "PARAFFIN OIL": {
+   "bio": "autorisée",
+   "rainforest": "atténuation"
+  },
+  "PENCONAZOLE": {},
+  "PENDIMETHALIN": {
+   "rainforest": "atténuation"
+  },
+  "PHENMEDIPHAM": {},
+  "PHOSPHINE": {},
+  "PICLORAM": {},
+  "PINOXADEN": {},
+  "PIRIMICARB": {
+   "fairtrade": "orange",
+   "rainforest": "atténuation"
+  },
+  "PIRIMIPHOS-METHYL": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "PROHEXADIONE-CALCIUM": {},
+  "PROPAMOCARB": {},
+  "PROPAQUIZAFOP": {},
+  "PROQUINAZID": {},
+  "PROSULFOCARB": {},
+  "PROSULFURON": {
+   "rainforest": "atténuation"
+  },
+  "PROTHIOCONAZOLE": {},
+  "PYRACLOSTROBIN": {
+   "rainforest": "atténuation"
+  },
+  "PYRAFLUFEN-ETHYL": {
+   "fairtrade": "jaune"
+  },
+  "PYRETHRIN": {
+   "rainforest": "atténuation",
+   "bio": "autorisée"
+  },
+  "PYRIDABEN": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "PYRIDATE": {},
+  "PYRIMETHANIL": {
+   "fairtrade": "jaune"
+  },
+  "PYRIPROXYFEN": {},
+  "PYROXSULAM": {},
+  "QUIZALOFOP-P-ETHYL": {},
+  "QUIZALOFOP-P-TEFURYL": {},
+  "RIMSULFURON": {},
+  "S-METOLACHLOR": {
+   "rainforest": "atténuation"
+  },
+  "SAFLUFENACIL": {},
+  "SEDAXANE": {
+   "fairtrade": "jaune"
+  },
+  "SPINETORAM": {},
+  "SPINOSAD": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "SPIROMESIFEN": {},
+  "SPIROTETRAMAT": {},
+  "SPIROXAMINE": {},
+  "SULFOXAFLOR": {
+   "fairtrade": "orange"
+  },
+  "SULPHUR": {
+   "bio": "autorisée"
+  },
+  "TAU-FLUVALINATE": {},
+  "TEBUCONAZOLE": {
+   "fairtrade": "jaune"
+  },
+  "TEBUFENOZIDE": {},
+  "TEBUFENPYRAD": {},
+  "TEFLUTHRIN": {
+   "fairtrade": "rouge",
+   "rainforest": "interdite"
+  },
+  "TERBUTHYLAZINE": {},
+  "TETRACONAZOLE": {
+   "fairtrade": "jaune",
+   "rainforest": "atténuation"
+  },
+  "THIABENDAZOLE": {
+   "rainforest": "atténuation"
+  },
+  "THIAMETHOXAM": {
+   "fairtrade": "rouge",
+   "rainforest": "interdite"
+  },
+  "THYMOL": {
+   "bio": "153B and others Pheromones and other semiochemicals"
+  },
+  "TOLCLOFOS-METHYL": {},
+  "TOPRAMEZONE": {},
+  "TRI-ALLATE": {
+   "fairtrade": "rouge",
+   "rainforest": "atténuation"
+  },
+  "TRIBENURON-METHYL": {},
+  "TRICLOPYR": {},
+  "TRIFLOXYSTROBIN": {
+   "rainforest": "atténuation"
+  },
+  "TRINEXAPAC-ETHYL": {},
+  "ZETA-CYPERMETHRIN": {
+   "fairtrade": "rouge",
+   "rainforest": "atténuation"
+  }
+ }
+}
