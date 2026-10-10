@@ -23,6 +23,10 @@ from xml.etree import ElementTree as ET
 
 import xlrd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _registres_complements as complements  # noqa: E402
+
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data" / "registres-ouverts.json"
 CACHE = Path("/tmp/src")
@@ -286,6 +290,20 @@ def echa() -> dict:
     return bloc
 
 
+def garder(id_: str, construire) -> dict:
+    """Relève un registre ; si sa source manque ou échoue, garde le dernier relevé publié."""
+    try:
+        return construire()
+    except Exception as exc:  # noqa: BLE001
+        precedent = json.loads(SORTIE.read_text(encoding="utf-8")) if SORTIE.exists() else {}
+        for r in precedent.get("registres", []):
+            if r.get("id") == id_ and r.get("nbSocietes"):
+                print(f"  {id_:12} source indisponible ({type(exc).__name__}) : dernier relevé conservé")
+                return r
+        print(f"  {id_:12} source indisponible ({type(exc).__name__}) : registre vide")
+        raise
+
+
 def vide(id_: str, pays: str, autorite: str, url: str, nomme: str, avertissement: str, page: str | None = None) -> dict:
     return fiche(id_, pays, autorite, url, nomme, avertissement, [], page)
 
@@ -300,17 +318,19 @@ def main() -> None:
             "La liste des pesticides enregistrés sous l'Insecticides Act, 1968 (fichier au 30 octobre 2025)",
             "Le portail répond 403 depuis l'extérieur, et cibrc.gov.in ne se résout plus. La page officielle publie trois fichiers (liste générale, section 9(3), substances bannies au 31 mars 2024). Aucune société indienne n'est inventée à partir d'un autre registre.",
         ),
-        canada(),
-        vide(
+        garder("canada", canada),
+        garder("colombie", lambda: fiche(
             "colombie",
             "Colombie",
             "ICA — registros nacionales de plaguicidas",
-            "https://www.ica.gov.co/getattachment/Areas/Agricola/Servicios/Regulacion-y-Control-de-Plaguicidas-Quimicos/PUBLICACION-BD_RN-RF-4.pdf.aspx?lang=es-CO",
-            "Le registre national des plaguicidas : produit, entreprise, ingrédient, concentration, cultures",
-            "PDF public de l'ICA (178 pages). Les cellules sont coupées sur plusieurs lignes : en extraire des sociétés produirait des noms tronqués. La source est citée, les lignes ne sont pas inventées.",
+            complements.CO_URL,
+            "Le titulaire colombien et l'ingrédient actif de chaque registre national de plaguicida",
+            "PDF public de l'ICA relu fiche par fiche à partir de la classe du produit ; une fiche "
+            "illisible est écartée. Le titulaire est souvent la filiale locale d'un fabricant.",
+            complements.colombie(),
             "https://www.ica.gov.co/areas/agricola/servicios/regulacion-y-control-de-plaguicidas-quimicos.aspx",
-        ),
-        argentine(),
+        )),
+        garder("argentine", argentine),
         vide(
             "mexique",
             "Mexique",
@@ -320,7 +340,7 @@ def main() -> None:
             "Consultation unitaire, sans fichier ouvert. Le portail gob.mx/cofepris reste la porte d'entrée. Aucune ligne n'est inventée.",
             "https://www.gob.mx/cofepris",
         ),
-        malaisie(),
+        garder("malaisie", malaisie),
         vide(
             "thailande",
             "Thaïlande",
@@ -329,16 +349,18 @@ def main() -> None:
             "Les licences de substances dangereuses agricoles (วัตถุอันตราย)",
             "La page des licences répond, le gestionnaire de fichiers ne publie pas de tableur exploitable. Aucune ligne n'est inventée.",
         ),
-        vide(
+        garder("nz", lambda: fiche(
             "nz",
             "Nouvelle-Zélande",
             "MPI — ACVM Register",
             "https://eatsafe.nzfsa.govt.nz/web/public/acvm-register",
-            "Le titulaire et le nom commercial des produits ACVM",
-            "Registre consultable en ligne, mis à jour le 26 août 2026. Pas d'export ouvert retenu. Aucune ligne n'est inventée.",
-        ),
-        afrique(),
-        japon(),
+            "Le titulaire et les ingrédients des produits de protection des cultures (export « Entire register »)",
+            "Seuls herbicides, fongicides, insecticides, acaricides, régulateurs, bactéricides, molluscicides "
+            "et nématicides sont gardés. Le titulaire peut être un fabricant étranger représenté par un agent néo-zélandais.",
+            complements.nouvelle_zelande(),
+        )),
+        garder("afrique", afrique),
+        garder("japon", japon),
         vide(
             "chili",
             "Chili",
@@ -348,7 +370,7 @@ def main() -> None:
             "Le rapport complet est un tableau Power BI, la page signale une maintenance. Pas de planilla téléchargée. Aucune ligne n'est inventée.",
             "https://app.powerbi.com/view?r=eyJrIjoiNzAxNTc2MjEtYmQ0ZS00YzZkLWJlMGYtNjZhZDE1YzhmYWViIiwidCI6Ijc3ZWNkYTc1LTU4NjQtNDIyYS1hNTM1LTZlYTY3MTU0MDI5YyIsImMiOjR9",
         ),
-        echa(),
+        garder("echa", echa),
     ]
     doc = {
         "meta": {

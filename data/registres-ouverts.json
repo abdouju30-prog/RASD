@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genere": "2026-09-23T10:06:26+00:00",
+  "genere": "2026-10-10T13:24:34+00:00",
   "releve": "2026-09-23",
   "avertissement": "Sources officielles ajoutées après vérification d'accès. Une homologation étrangère n'ouvre ni la voie me-too ni une étude en moins devant l'ONSSA."
  },
@@ -7162,11 +7162,4205 @@
    "autorite": "ICA — registros nacionales de plaguicidas",
    "url": "https://www.ica.gov.co/getattachment/Areas/Agricola/Servicios/Regulacion-y-Control-de-Plaguicidas-Quimicos/PUBLICACION-BD_RN-RF-4.pdf.aspx?lang=es-CO",
    "page": "https://www.ica.gov.co/areas/agricola/servicios/regulacion-y-control-de-plaguicidas-quimicos.aspx",
-   "nomme": "Le registre national des plaguicidas : produit, entreprise, ingrédient, concentration, cultures",
-   "avertissement": "PDF public de l'ICA (178 pages). Les cellules sont coupées sur plusieurs lignes : en extraire des sociétés produirait des noms tronqués. La source est citée, les lignes ne sont pas inventées.",
-   "nbProduits": 0,
-   "nbSocietes": 0,
-   "societes": []
+   "nomme": "Le titulaire colombien et l'ingrédient actif de chaque registre national de plaguicida",
+   "avertissement": "PDF public de l'ICA relu fiche par fiche à partir de la classe du produit ; une fiche illisible est écartée. Le titulaire est souvent la filiale locale d'un fabricant.",
+   "nbProduits": 2382,
+   "nbSocietes": 320,
+   "societes": [
+    {
+     "nom": "RAINBOW AGROSCIENCES S.A.S",
+     "nb": 89,
+     "matieres": [
+      "2,4-D",
+      "2,4-D Dicamba 618 G/Kg",
+      "2,4-D Picloram 61.2 G/Kg",
+      "Abamectina",
+      "Ametrina",
+      "Atrazina",
+      "Atrazina Dicamba 560 G/Kg",
+      "Atrazine Mesotrione 760 G/Kg",
+      "Azoxistrobin",
+      "Azoxystrobin",
+      "Azoxystrobin Cyproconazole 600 G/Kg",
+      "Azoxystrobin Difenoconazole 200 G/L",
+      "Azoystrobin Tebuconazole 490 G/Kg",
+      "Benomyl",
+      "Bensulfuron Methyl",
+      "Bentazon",
+      "Bispyribac Sodio",
+      "Boscalid",
+      "Boscalid Piraclostrobin 252 G/Kg",
+      "Captan",
+      "Carbendazim",
+      "Carbendazim 125 G/L",
+      "Carfentrazone Ethyl",
+      "Cipermetrina",
+      "Cletodim",
+      "Clomazone",
+      "Clorfenapir",
+      "Clorimuron Etil",
+      "Clorpirifos Cipermetrina 500 G/L",
+      "Clothianidin",
+      "Cyhalofop Butil",
+      "Cyproconazole 200 G/L",
+      "Difeconazole",
+      "Difeconazole Rainbow 250 Ec",
+      "Dimethoate",
+      "Dimetomorph",
+      "Dinotefuran",
+      "Emamectin Benzoate",
+      "Epoxiconazol Carbendazim 400 G/Kg",
+      "Epoxiconazole",
+      "Ethephon",
+      "Fipronil",
+      "Fludioxonil Ciprodinil 250G/Kg",
+      "Fludioxonil Metalaxil M 25 G/L",
+      "Fomesafen",
+      "Fosetyl Aluminio",
+      "Glifosato",
+      "Imazamox",
+      "Imidacloprid",
+      "Imidacloprid Betaciflutrina 210 G/L",
+      "Indoxacarb",
+      "Isoprothiolane",
+      "Kresomim Metil",
+      "Lambdacihalotrina",
+      "Lufenuron",
+      "Malathion",
+      "Mancozeb",
+      "Mancozeb Cymoxanil 640 G/Kg",
+      "Mesotrione",
+      "Metalaxyl 640 G/Kg",
+      "Methoxyfenozide",
+      "Metsulfuron Methyl",
+      "Oxadiazon",
+      "Oxifluorfen",
+      "Paraquat",
+      "Pendimetalina",
+      "Penoxsulam",
+      "Picloram Metsulfuron Methyl 240 G/L",
+      "Profoxydim",
+      "Propamocar Hydrochloride",
+      "Propanil",
+      "Propanil Mcpa 600 G/Kg",
+      "Propiconazole",
+      "Propineb",
+      "Propineb Cymoxanil 700 G/Kg",
+      "Pyrimetanil",
+      "Spirotetramat",
+      "Thiacloprid Beta-Cyfluthrin 100 G/L",
+      "Thiametoxam",
+      "Tiametoxam Lambdacihalotrina 141 G/L",
+      "Tridemorf",
+      "Trifloxistrobin Tebuconazole 250 G/Kg",
+      "Trifloxystrobin"
+     ]
+    },
+    {
+     "nom": "SYNGENTA S.A",
+     "nb": 86,
+     "matieres": [
+      "Abamectina",
+      "Acibenzolar-S-Methyl",
+      "Ametrina",
+      "Ametrina Trifloxysulfuron Sodium 731.5 G/Kg",
+      "Atrazina",
+      "Atrazina Mesotrione 60 G/L",
+      "Azoxystrobin",
+      "Azoxystrobin 80 G/L",
+      "Azoxystrobin Difeconazole Thyamethoxam 300 G/L 200 G/L",
+      "Azoxystrobin Isopyrazam 200 G/L",
+      "Azoxystrobin Metalaxil-M 322 G/L",
+      "Azoxystrobin Propicanozole 75 G/L",
+      "Clorotalonil",
+      "Clorotalonil Metalaxil-M 400 G/L",
+      "Clorprofam",
+      "Cyantraniliprole Y Pymetrozine 100 G/Kg",
+      "Cyproconazole",
+      "Cyromazina",
+      "Diafenthiuron",
+      "Difeconazole Madipropamid 250 G/L",
+      "Difenoconazole",
+      "Difenoconazole 200 G/L",
+      "Difenoconazole Cyprodinil 87.2 G/L",
+      "Diquat",
+      "Emamectin Benzoate",
+      "Emamectin Benzoato",
+      "Fenpropidin",
+      "Fluazifop-P-Butyl",
+      "Fludioxolin Metalaxil M Tiabendazol Azoxistrobin 37.5 G/L 30 G/L 300 G/L",
+      "Fludioxonil",
+      "Fludioxonil Azoxystrobin 238.96 G/L",
+      "Fludioxonil Cyprodinil 250 G/Kg",
+      "Flumetralin",
+      "Fomesafen",
+      "Fomesafen Fluazifop-P-Butyl",
+      "Glifosato",
+      "Isopyrazam",
+      "Lambda- Cyhalotrin 141 G/L",
+      "Lambda-Cyhalotrina",
+      "Lambdacihalotrina",
+      "Lambdacihalotrina Chlorantraniliprole 50 G/L",
+      "Lamda Cyhalotrin Thiamethoxam 106 G/L",
+      "Lufenuron",
+      "Mandipropamid",
+      "Mandipropamid Chlorothalonil 40 G/L",
+      "Mandipropamid Cymoxanil 25% W/W",
+      "Mandipropamid Oxathiapipronil 250 G/L",
+      "Mesotrione",
+      "Mesotrione Glifosato 44.81 G/L",
+      "Metalaxil - M 25 G/L",
+      "Metalaxyl M Mancozeb 40 G/Kg",
+      "Metalaxyl-M",
+      "Metalaxyl-M Mancozeb 4% W/W",
+      "Oxadiazon",
+      "Oxathiapiprolin Mandipropamid 250 G/L",
+      "Paraquat",
+      "Penconazole Fenpropidin 50 G/L",
+      "Pirimifos-Metil",
+      "Pretilaclor",
+      "Propiconazole",
+      "Propiconazole Difenoconazole 250 G/L",
+      "Pydiflumetofen Difenoconazole 75 G/L",
+      "Pydiflumetofen Fludioxonil 100 G/L",
+      "Pyribenzoxim",
+      "Sedaxane",
+      "Spiropidion Acetamiprid 300 G/Kg",
+      "Thiabendazole Fludioxonil Thiamethoxam Metalaxyl–M 150 G/ 25 G/L 350 G/L",
+      "Thiamethoxam",
+      "Thiamethoxam 300 G/Kg",
+      "Thiamethoxam Cyantraniliprole",
+      "Thiamethoxam Difenoconazole Fludioxonil 262.5 G/L, 25 G/L",
+      "Thiametoxam",
+      "Thiametoxan",
+      "Tiabendazol",
+      "Tiametoxan",
+      "Trinexapac Ethyl",
+      "Trinexapacethyl"
+     ]
+    },
+    {
+     "nom": "AVGUST COLOMBIA S.A.S",
+     "nb": 75,
+     "matieres": [
+      "2,4 D Picloram 240 G/L",
+      "2,4-D",
+      "2.4-D",
+      "Abamectina",
+      "Ametrina",
+      "Azoxystrobin",
+      "Azoxystrobin Cyproconazole 200.00 G/L",
+      "Azoxystrobin Flutriafol 200 G/L",
+      "Azoxystrobin Tebuconazole 120 G/L",
+      "Benomyl",
+      "Bentazon",
+      "Bispyribac Sodium",
+      "Bistrybac-Sodium",
+      "Captan",
+      "Carbendazim",
+      "Carbendazim Y Tebuconazole 250 G/L",
+      "Chlorantraniliprole",
+      "Cimoxanil Mancozeb 80 G/Kg",
+      "Ciromazina",
+      "Clethodim Haloxyfop-P-Methyl 130 G/L",
+      "Cletodim",
+      "Clorotalonil",
+      "Cyhalofop Butil",
+      "Cyhalofop Butyl Ester",
+      "Cyproconazol",
+      "Cyprodinil Fludioxonil 375 G/Kg",
+      "Difeconazole",
+      "Difenoconazole",
+      "Diflubenzuron",
+      "Diflufenican",
+      "Dimethomorph",
+      "Diuron",
+      "Epoxiconazole",
+      "Epoxiconazole Carbendazim 125 G/L",
+      "Fipronil",
+      "Flutriafol",
+      "Fosetyl Aluminio",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Hexaconazol",
+      "Imidacloprid",
+      "Imidacloprid Lambdacyhalotrina 150 G/L",
+      "Isoprothiolane",
+      "Kasugamicina",
+      "Kresoxim Methyl",
+      "Kresoxim Methyl Epoxiconazol 125 G/L",
+      "Lambda Cihalotrina",
+      "Lambdacihalotrina",
+      "Mancozeb",
+      "Metalaxil",
+      "Metalaxil 640 G/Kg",
+      "Metalaxyl",
+      "Metribuzin",
+      "Metsulfluron Methyl",
+      "Metsulfuron Metil",
+      "Myclobutanil",
+      "Nicosulfuron Thifensulfuron Methyl 600 G/Kg",
+      "Oxadiazon",
+      "Oxyflourfen",
+      "Prochloraz",
+      "Propanil Triclopyr 380 G/L",
+      "Propiconazol",
+      "Propiconazole Tebuconazole 300 G/L",
+      "Pyrimethanil",
+      "Quinclorac",
+      "Tebuconazole",
+      "Terbutrina",
+      "Thiamethoxam"
+     ]
+    },
+    {
+     "nom": "SUMITOMO CHEMICAL COLOMBIA S.A.S",
+     "nb": 71,
+     "matieres": [
+      "2,4 D",
+      "2,4 D 64 G/L",
+      "2,4 D Diclorophenoxy Acetic Acid",
+      "2,4-D",
+      "2,4-D 64 G/L",
+      "Abamectina",
+      "Abamectina Agrogen 1,8% Ec",
+      "Acido Giberelico",
+      "Azufre",
+      "Bispyribac Sodium",
+      "Carbendazim",
+      "Cartap Hydrochloride",
+      "Chlorfenapyr",
+      "Cipermetrina",
+      "Clorpirifos",
+      "Cymoxanil",
+      "Dichlorprop-P-2 Ethylhexyl Ester- 2 Ehe) 40.7 G/L",
+      "Diethofencarb",
+      "Difenoconazole",
+      "Dimetomorph",
+      "Diniconazole-M",
+      "Epoxiconazole",
+      "Epoxiconazole Azoxystrobin 250 G/L",
+      "Ethaboxam",
+      "Etoxazole",
+      "Etoxazple",
+      "Fenpyrazamine",
+      "Flumioxazin",
+      "Fosetyl Aluminio",
+      "Fosfito Mono Y Dibasico De Na Y K 802 G/L",
+      "Fripronil",
+      "Glifosato",
+      "Glifosato 680 G/Kg Equivalente A 747G/L",
+      "Glufosinato De Amonio",
+      "Glyphosate",
+      "Haloxyfop-Metil",
+      "Hidroxido De Cobre",
+      "Imazosulfuron",
+      "Imidacloprid",
+      "Imidacloprid 100 G/L",
+      "Imidacloprid Y Pyriproxyfen 210 G/L",
+      "Iprodione",
+      "Lambda Cyhalotrina",
+      "Lamda Cyhalotrin",
+      "Mancozeb",
+      "Metsulfuron Metil",
+      "Oxadiazon",
+      "Oxolinic Acid",
+      "Paraquat",
+      "Picloram",
+      "Procymidone",
+      "Propamocarb Hidrocloruro",
+      "Propanil",
+      "Pyridalyl",
+      "Pyrimethanil",
+      "Pyriproxyfen",
+      "Tebuconazole",
+      "Tebuconazole Azoxystrobin 160G/L",
+      "Thiamethoxam",
+      "Uniconazole-P",
+      "Viladymicin"
+     ]
+    },
+    {
+     "nom": "UPL COLOMBIA S.A.S",
+     "nb": 70,
+     "matieres": [
+      "2,4,D Acido",
+      "Acephate Imidacloprid .500 G/Kg",
+      "Azoxystrobin",
+      "Azoxystrobin Cyproconazole 200 G/L",
+      "Azoxystrobin Mancozeb Tebuconazole 47 G/Kg 597 G/Kg",
+      "Azufre",
+      "Bifentrina",
+      "Bifenzate",
+      "Bispyribac Sodio",
+      "Carbendazim",
+      "Carbendazim Flutriafol 200 G/Kg",
+      "Cipermetrina",
+      "Clomazone",
+      "Clorotalonil",
+      "Copper Metal Mancozeb 48.6 G/Kg",
+      "Cyhalofop-P-Butil",
+      "Cymox Anil 240 G/Kg",
+      "Deimetomorf",
+      "Deltametrina",
+      "Difeconazol",
+      "Difenoconazol",
+      "Dimetomorf Mancozeb Metalaxyl 115 G/Kg 525 G/Kg",
+      "Dodemorf Acetato",
+      "Fipronil",
+      "Fipronil Beta-Cipermetrina 175 G/L",
+      "Fosetil Aluminio",
+      "Fosetil Aluminio Mancozebc 350 G/Kg",
+      "Glifosato",
+      "Glufosinate De Amonio",
+      "Glufosinato De Amonio",
+      "Hexaconazol",
+      "Imidacloprid",
+      "Iprobenfos",
+      "Isoprothiolane",
+      "Kasugamicina Hidrocloruro Hidrato",
+      "Lamda Cyhalothin",
+      "Lufenuron",
+      "Mancozeb",
+      "Mancozeb 50 G/Kg",
+      "Mancozeb 80 G/Kg",
+      "Mancozeb Chlorotalonil 625 G/Kg",
+      "Mancozeb Cimoxanil 640 G/Kg",
+      "Metalaxil",
+      "Metomyl",
+      "Metribuzina",
+      "Metsulfuron Metil",
+      "Mezcla De Avermectinas B1B Y Avermectina B1A",
+      "Oxadiazon",
+      "Pendimetalina",
+      "Pendimetalina Metribuzin 348 G/L",
+      "Pendimthalin",
+      "Permetrina",
+      "Pirimetanil",
+      "Prochloraz",
+      "Propanil Triclopyr Butoxy Ethyl Ester 380 G/L",
+      "Propiconazol",
+      "Propineb",
+      "Pyrazosulfuron Ethyl",
+      "Pyrazosulfuron Etil",
+      "Quinclorac",
+      "Tebuconazol",
+      "Triadimefon",
+      "Tricyclazol",
+      "Tridemorf"
+     ]
+    },
+    {
+     "nom": "AGROCENTRO COLOMBIA S.A.S",
+     "nb": 65,
+     "matieres": [
+      "2,4-D",
+      "2,4-D Picloram 150 G/L",
+      "2,4-D Picloram 240 G/L",
+      ": Emamectin Benzoate Thiamethoxam 50 G/Kg",
+      "Abamectina",
+      "Acido Giberelico",
+      "Ametrina",
+      "Ametrina Terbutrina 308 G/L",
+      "Atrazina",
+      "Azoxystrobin Difenoconazol 200 G/L",
+      "Azoxystrobin Flutriafol 200 G/L",
+      "Azoxystrobin Tebuconazole 200 G/L",
+      "Bifenazate",
+      "Bispiribac Sodium",
+      "Butaclor",
+      "Carbendazim",
+      "Cipermetrina",
+      "Clomazone",
+      "Clorotalonil",
+      "Cyhalofop Butyl",
+      "Cyproconazole Fipronil Thiamethoxam 300 G/Kg 200 G/Kg",
+      "Difeconazol Propiconazol 250 G/L",
+      "Diflufenican",
+      "Dimethoate",
+      "Dimetomorf",
+      "Dinotefuran",
+      "Fipronil",
+      "Fluroxypyr-Metyl Picloram 80 G/L",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Hexazinona",
+      "Imazalil",
+      "Imidacloprid",
+      "Imidacloprid Bifenthrin 250 G/L",
+      "Imidacloprid Bifentrina 50 G/L",
+      "Isoprotiolane",
+      "Kasugamicyn Hidrocloride",
+      "Kasugamycin",
+      "Kresoxim Metil Tebuconazole 125 G/L",
+      "Mancozeb",
+      "Myclobutanil",
+      "Oxadiazon",
+      "Paraquat",
+      "Paraquat Diuron 200 G/L",
+      "Pendimetalina",
+      "Pendimethalina",
+      "Propanil",
+      "Propiconazol",
+      "Propiconazole Difenoconazole 250 G/L",
+      "Pyraclostrobin Difenoconazole 100 G/L",
+      "Spinosad",
+      "Spiromesifen",
+      "Spirotetramat",
+      "Terbutrina",
+      "Thiabendazole",
+      "Thiamethoxam Emamectin Benzoato",
+      "Thiamethoxan Lambda Cyhalotrina 141 G/L",
+      "Triadimefon",
+      "Tricyclazol",
+      "Trifloxistrobin Tebuconazole 100 G/L",
+      "Trifloxystrobin Tebuconazole 100 G/L"
+     ]
+    },
+    {
+     "nom": "ARYSTA LIFESCIENCE COLOMBIA S.A.S",
+     "nb": 65,
+     "matieres": [
+      ",Triclopyr",
+      "2,4 D Picloram 240 G/L",
+      "Abamectina",
+      "Acequinocyl",
+      "Acetamiprid Cipermetrina 100 G/L",
+      "Alfa Cipermetrina",
+      "Amicarbazone",
+      "Benomil",
+      "Bifenazate",
+      "Captan",
+      "Carbendazim",
+      "Carboxin",
+      "Carboxin Thiram",
+      "Carfentrazone Ethyl",
+      "Cimoxanil 400.0 G/L",
+      "Clethodim",
+      "Clethodim Quizalofop-P-Ethyl 240 G/L",
+      "Cletodim",
+      "Clorotalonil",
+      "Clorotalonil 731.0 G/L",
+      "Clorpirifos",
+      "Clorpirifos Cipermetrina 200 G/L",
+      "Cyenopyrafen",
+      "Cymoxanil Mancozeb 80 G/K/G",
+      "Cypermetrina",
+      "Difenoconazol",
+      "Diflubenzuron",
+      "Dimetomorf Mancozeb 90 G/Kg",
+      "Dimetomorph",
+      "Diuron",
+      "Dodine",
+      "Etridiazole",
+      "Fipronil",
+      "Fosetyl Aluminio",
+      "Glifosato",
+      "Glifosato Isopropilamina",
+      "Glufosinato De Amonio",
+      "Glyphosate 480 G/L Equivalente A 356 G/L",
+      "Hexconazole",
+      "Ipconazole",
+      "Iprodione",
+      "Lufenuron",
+      "Mancozeb",
+      "Oxadiazon",
+      "Paraquat",
+      "Pendimethalina",
+      "Prochloraz",
+      "Profenofos",
+      "Propamocarb",
+      "Propamocarb Clorhidratado",
+      "Propamocarb Cymoxanil 400 G/L",
+      "Propamocarb Hydrocloride Tg 93% Y Dimethomorph Tg 97.5% 92.3 G/L",
+      "Propanil",
+      "Propiconazol",
+      "Propineb",
+      "Pyrimethanil",
+      "Quizalofop -P-Tefuril",
+      "Tebuconazole Fluoxastrobin 325 G/L",
+      "Tebuthiuron",
+      "Thiram 200 G/L",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "ANASAC COLOMBIA LTDA",
+     "nb": 58,
+     "matieres": [
+      "2,4-D",
+      "Abamectina",
+      "Azoxistrobin Ciproconazole Tebuconazole 120 G/L 50 G/L",
+      "Azoxystrobin",
+      "Azoxystrobin Tebuconazole 120G/L",
+      "Azufre",
+      "Benzoato De Emamectina",
+      "Bifentrina",
+      "Bispyribac Sodium",
+      "Cimoxanil",
+      "Clethodim",
+      "Clomazone",
+      "Clorotalonil Difenoconazol 575 G/L",
+      "Cyhalofop Butyl",
+      "Deltamitrina Tcnica 250 G/L",
+      "Difenoconazol",
+      "Difenoconazole 200 G/L",
+      "Diflufenican",
+      "Fipronil",
+      "Fipronil Thiamethoxan 190 G/L",
+      "Fosetyl Aluminio",
+      "Fosfuro De Aluminio",
+      "Fostyl Aluminium",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Imazetapyr",
+      "Imidacloprid",
+      "Imidacloprid 100 G/L",
+      "Imidacloprid Fipronil 350 G/L",
+      "Imidacloprid Lambda- Cyhalotrina",
+      "Imidacloprid Lufenuron 350 G/L",
+      "Imidacloprid Tebuconazole 233 G/Ll",
+      "Lambda Cihalotrina",
+      "Lambda- Cialotrina 228 G/Kg 100",
+      "Lambdacihalotrina",
+      "Mancozeb 335 G/Kg",
+      "Mancozeb 80 G/Kl 640",
+      "Metalaxil",
+      "Metribuzina",
+      "Metsulfuron Metil",
+      "Miclobutanil",
+      "Nocosulfuron",
+      "Oxiclorur O De Cobre 150 G/Kg",
+      "Oxifluorfen",
+      "Penconazole",
+      "Pendimetalina",
+      "Picloram",
+      "Picloram 330 G/L, 398 G/L 90,7G/L",
+      "Piremetanil Difenoconzole 400 G/L",
+      "Pirimifos Metil",
+      "Piriproxifen Acetamprid 100 G/L",
+      "Propiconazol",
+      "Propineb Dimethomorph 600 G/Kg",
+      "Pyrazosulfuron-Etil",
+      "Pyrimethanil",
+      "Quinclorac",
+      "Quizalofop-P-Etil",
+      "Spirodiclofen",
+      "Tebuconazole",
+      "Tebuconazole Azoxystrobin 125 G/L",
+      "Tebuconazole Carbendazim 250 G/L",
+      "Thiametozam Lambda-Cyalotrina 141/G/L"
+     ]
+    },
+    {
+     "nom": "BASF QUIMICA COLOMBIANA S.A",
+     "nb": 54,
+     "matieres": [
+      "Acetamiprid Alfacipermetrina 100 G/L",
+      "Afidopyropen",
+      "Alfacipermetrina",
+      "Alfacipermetrina Teflubenzuron",
+      "Azufre",
+      "Bentazon",
+      "Bentazon Imazamox 600 G/L",
+      "Boscalid",
+      "Broflanilide",
+      "Chlorfenapyr",
+      "Clothianidin",
+      "Dimethomorph",
+      "Dimethomorph Ametoctradin 225 G/L",
+      "Dimethomorph Pyraclostrobin",
+      "Dimetomorf",
+      "Dinotefuran Alfacipermetrina 140G/Kg",
+      "Dodemorph Acetato",
+      "Epoxiconazole",
+      "Epoxiconazole Pyraclostrobin 50 G/L",
+      "Fenpropimorf",
+      "Fenpropimorph Piraclostrobin 375 G/L",
+      "Fluxapiroxad",
+      "Fluxapiroxad Epoxiconazole 62.5 G/L",
+      "Fluxapiroxad Pyraclostrobin 250 G/L",
+      "Fluxapyroxad",
+      "Fluxapyroxad Pyraclostrobin 333 G/L",
+      "Fluxapyroxad Pyraclostrobin Epoxiconazole 50 G/L 81G/L",
+      "Glufosinato De Amonio",
+      "Imazamox",
+      "Imazamox Imazapir 33 G/L",
+      "Kresoxim Methyl 125 G/L",
+      "Kresoxim Metil 200 G/L",
+      "Mefentrifluconazol Fluxapyroxad 200 G/L",
+      "Mefentrifluconazole",
+      "Metaflumizone",
+      "Metiram",
+      "Metiram Ametoctradin 440 G/L",
+      "Metrafenona",
+      "Pendimetalina",
+      "Profoxydim",
+      "Pyraclostrobin",
+      "Pyraclostrobin 252 G/Kg",
+      "Pyraclostrobin 550 G/Kg",
+      "Pyraclostrobin Epoxiconazole 133 G/L",
+      "Pyraclostrobin Epoxiconazole 260 G/L",
+      "Pyraclostrobin Thiophanate Metil Fipronil 25.0 G/L 225..0 G/L",
+      "Saflufenacil",
+      "Saflufenacil Dimethenamida 68 G/L",
+      "Teflubenzuron"
+     ]
+    },
+    {
+     "nom": "DVA DE COLOMBIA LTDA",
+     "nb": 54,
+     "matieres": [
+      "2,4-D",
+      "Abamectina",
+      "Atrazina",
+      "Atrazine Mesotrione 76% W/W",
+      "Azoxystrobin Clorotalonil 80 G/L",
+      "Azoxystrobin Difeconazole 200 G/L",
+      "Azoxystrobin Flutriafol 250 G/L",
+      "Bensulfuron Metil Quinclorac 20 G/Kg",
+      "Bentazon",
+      "Bitertanol",
+      "Boscalid",
+      "Boscalid Pyraclostrobin 25.2% W/W",
+      "Butachlor",
+      "Carbendazim",
+      "Carbendazim Flutriafol 300 G/L",
+      "Cipermetrina",
+      "Clomazone",
+      "Cymoxanyl 700 G/Kg",
+      "Difenoconazol Propiconazole",
+      "Diflufenican",
+      "Dimetoato",
+      "Epoxiconazole",
+      "Epoxiconazole Carbendazim 125 G/L",
+      "Ethefon",
+      "Fipronil",
+      "Fipronil Abamectina",
+      "Fludioxonil Cyprodinil",
+      "Flutriafol",
+      "Fosetyl Aluminio",
+      "Glifosato",
+      "Glifosato 356 G/L Equivalente A 480G En",
+      "Hexazinone",
+      "Imidacloprid",
+      "Imidacloprid Fipronil 200 G/L",
+      "Imidacloprid Tricyclazole 120 G/L",
+      "Isoxaflutole",
+      "Kasugamicina",
+      "Lufenuron",
+      "Oxyfluorfen",
+      "Picloram",
+      "Pirimetanyl",
+      "Propiconazole",
+      "Propineb",
+      "Pyraclostrobin. Epoxiconazole. 58% P/P",
+      "Pyriproxyfen",
+      "Quinclorac",
+      "Spiromesifen",
+      "Tebuconazole",
+      "Tebuconazole Trifloxystrobin 580 G/Kg",
+      "Thidiazuron",
+      "Tradimefon",
+      "Tryciclazole"
+     ]
+    },
+    {
+     "nom": "FMC COLOMBIA S.A.S",
+     "nb": 54,
+     "matieres": [
+      "Abamectina",
+      "Alfacipermetrina",
+      "Ametrina",
+      "Azoxystrobin Fluazinam 375 G/L",
+      "Benalaxil Clorotalonil",
+      "Bifenthrin",
+      "Bifentrin",
+      "Bifentrina Zetacipermetrina 97.75G/L",
+      "Butaclor",
+      "Carfentrazone Ethyl",
+      "Chlorantraniliprole",
+      "Clethodim",
+      "Clomazone",
+      "Clorotalonil",
+      "Clorpirifos",
+      "Cyantraniliprole",
+      "Cyantranliprole",
+      "Cymoxanil 640 G/Kg",
+      "Difenoconazole",
+      "Diflufenican",
+      "Diflufenican Tecnhical",
+      "Dimethoate",
+      "Dimethomorph",
+      "Fenoxaprop-P-Etil",
+      "Fenpropidin",
+      "Fipronil",
+      "Fluazinam",
+      "Flutriafol",
+      "Flutriafol Azoxystrobin 125 G/L",
+      "Fosetyl Aluminio Techinical",
+      "Gamma Cyhalothrina",
+      "Glifosato",
+      "Hexazinona",
+      "Imidacloprid",
+      "Imidacloprid Flutriafol 233 G/L",
+      "Imidacloprid Gamma Cyhalotrina 430 G/L",
+      "Indoxcarb",
+      "Malathion",
+      "Mancozeb",
+      "Metsulfuron Methyl",
+      "Metsulfuron-Methyl",
+      "Novaluron Tecnico",
+      "Permetrina",
+      "Pethoxamide",
+      "Propanil",
+      "Pyriproxyfen",
+      "Sulfentrazone",
+      "Zetacipermetrina"
+     ]
+    },
+    {
+     "nom": "DOW AGROSCIENCES DE COLOMBIA S.A",
+     "nb": 51,
+     "matieres": [
+      "2,4 - D 40 G/L",
+      "2,4-D 15 G/L",
+      "2,4-D 17.3 G/L",
+      "2,4-D 64 G/L",
+      "2,4-D Picloram 150 G/L",
+      "2,4-D Picloram 160 G/L",
+      "Aminopyralid",
+      "Aminopyralid 2,4-D 20 G/L",
+      "Aminopyralid 2,4-D 40 G/L",
+      "Aminopyralid 2,4-D 9 G/L",
+      "Aminopyralid Metsulfuron-Metil 621,3 G/Kg",
+      "Aminopyralid Sal Potasica Y Metsulfuron Metil 621.3 G/Kg",
+      "Cimoxanil 462 G/Ll",
+      "Clorpirifos",
+      "Cyhalofop Butyl",
+      "Cymoxanil",
+      "Diclosulam",
+      "Fenbuconazol",
+      "Fenpicoxamid",
+      "Florpyrauxifen",
+      "Glifosato",
+      "Haloxifop , Metyl Ester",
+      "Mancozeb",
+      "Mancozeb Cymoxanil 640 G/Kg",
+      "Mancozeb Oxicloruro De Cobre 500 G/Kg",
+      "Methoxyfenozide",
+      "Myclobutanil",
+      "Penoxsulam",
+      "Penoxsulam 25 G/L",
+      "Picloram",
+      "Spinetoram",
+      "Spinosad",
+      "Sulfoxaflor"
+     ]
+    },
+    {
+     "nom": "SHARDA COLOMBIA S.A.S",
+     "nb": 51,
+     "matieres": [
+      "2,4-D",
+      "Azoxistrobin",
+      "Azoxistrobin Cyproconazol 200 G/L",
+      "Azoxistrobin Flutriafol 200 G/L",
+      "Azoxystrobin Fluazinam 150 G/L",
+      "Azoxystrobin Flutriafol 200 G/L",
+      "Bispyribac Sodium",
+      "Buprofezin",
+      "Carfentrazone Ethyl",
+      "Clethodim",
+      "Cyhalofop Butyl",
+      "Cyhalofop Butyl Ester",
+      "Cyproconazole",
+      "Diafenturon",
+      "Difenoconazole",
+      "Diflubenzuron",
+      "Diflufenican",
+      "Dimethomorp Chlorothalonil 80 G/Kg",
+      "Dimethomorph",
+      "Diquat Dibromide",
+      "Epoxiconazole Krexoxim Metil 125 G/L",
+      "Fenazaquin",
+      "Fenoxaprop-P-Etil",
+      "Fenpropimorf",
+      "Fentin Hidroxido",
+      "Fipronil",
+      "Fludioxinil Cyprodinil 250 G/Kg",
+      "Fludioxoni Cyprodinil",
+      "Glufosinato De Amonio",
+      "Glyphosate 365G/L Equivalente A 480G/L",
+      "Imidacloprid",
+      "Isoprothiolane",
+      "Kazugamycina",
+      "Lambda- Cyhalothrin",
+      "Lufenuron",
+      "Mancozeb 90 G/L",
+      "Metribuzin",
+      "Pendimethalin",
+      "Permethrin",
+      "Permetrina",
+      "Picloram 240 G/L",
+      "Prochloraz",
+      "Pyraclostrobin Fosetal Aluminio 100 G/L",
+      "Pyrimetanil Clorotalonil 400 G/L",
+      "Quinclorac",
+      "Shardacol S.A.S Pyrazosulfuron",
+      "Shardacol S.A.S Thiamethoxam Flutriafol",
+      "Tebuconazol Clorotalonil 125 G/L"
+     ]
+    },
+    {
+     "nom": "BAYER S.A",
+     "nb": 49,
+     "matieres": [
+      "Beta Cyfluthrin 210 G/L",
+      "Bispyribac Sodium",
+      "Butaclor Oxadiazon 325 G/L",
+      "Deltametrina",
+      "Deltametrina 150 G/L",
+      "Deltametrina Piperonyl Butoxido 25 G/L",
+      "Elosal 720 Sc",
+      "Fenhexamid Tebuconazole 350 G/L",
+      "Fenoxaprop-P-Etil",
+      "Fipronil",
+      "Fipronil Imidacloprid",
+      "Flubendiamide",
+      "Fluopicolide 625 G/L",
+      "Fluopicolide 667 G/Kg 60",
+      "Fluopyram Pyrimethanil 125 G/L",
+      "Fluorypam",
+      "Fosetyl Aluminio Fenamidone 667 G/Kg",
+      "Fosetyl Aluminium",
+      "Imidacloprid",
+      "Imidacloprid Ethiprole 100 G/L",
+      "Imidacloprid Fipronil 180 G/L",
+      "Imidacloprid Thiodicarb 150 G/L",
+      "Imidacloprid, Beta- Cyflutrin 100 G/L",
+      "Indaziflam",
+      "Isotianil",
+      "Isoxaflutole Thiencarbazone- Methyl 225.0 G/L",
+      "Methiocarb",
+      "Metribuzin",
+      "Oxadiazon",
+      "Penflufen",
+      "Pirymetanil",
+      "Propamocarb",
+      "Propamocarb Hci",
+      "Propineb",
+      "Prothioconazole Trifloxystrobin 175 G/L",
+      "Spiromesifen",
+      "Spiromesifen Abamectina",
+      "Spirotetramat",
+      "Spiroxamina",
+      "Spiroxamine",
+      "Tebuconazole",
+      "Tebuconazole Triadimenol 225 G/L",
+      "Thiacloprid",
+      "Thiacloprid Spirotetramat",
+      "Thiodicarb",
+      "Thiodicarb Triflumuron 360 G/L",
+      "Triadimefon",
+      "Trifloxystrobin Cyproconazole 375 G/L",
+      "Trifloxystrobin Tebuconazole 100 G/L",
+      "Triflumuron"
+     ]
+    },
+    {
+     "nom": "INVESA S.A",
+     "nb": 49,
+     "matieres": [
+      "2,4 -D 15 G/L",
+      "2,4-D",
+      "Abamectina",
+      "Ametrina",
+      "Atrazina",
+      "Atrazine",
+      "Azoxystrobin",
+      "Azoxystrobin Flutriafol 125 G/L",
+      "Bifentrina",
+      "Carbendazim",
+      "Cipermetrina",
+      "Cletodim",
+      "Clorpirifos",
+      "Cyhalofop-Butyl",
+      "Cymoxanil",
+      "Difenoconazole",
+      "Difenoconazole Propiconazole 250 G/L",
+      "Dimetomorph",
+      "Diuron",
+      "Fipronil",
+      "Fluroxipyr Metyl",
+      "Flutriafol",
+      "Glifosato",
+      "Glifosato Acido",
+      "Glifosato Sal Amonio",
+      "Glisofato",
+      "Glufosinato De Amonio",
+      "Halosulfuron Methyl",
+      "Imidacloprid",
+      "Imidacloprid Lambdacihalotrina 200 G/L",
+      "Kasugamicina Clorhidratado",
+      "Lufenuron",
+      "Mancozeb",
+      "Mancozeb 930 G/L Pure Mancozeb 800",
+      "Metsulfuron-Methyl",
+      "Oxadiazon",
+      "Paraquat",
+      "Picloram",
+      "Picloram 2,4-D 80 G/L",
+      "Propineb",
+      "Pyrimethanil Iprodione 250 G/L",
+      "Tiametoxam Lambdacihalotrina 140 G/L"
+     ]
+    },
+    {
+     "nom": "DEL MONTE AGROSCIENCES S.A.S",
+     "nb": 38,
+     "matieres": [
+      "Abamectina",
+      "Ametrina",
+      "Atrazina",
+      "Azoxistrobin",
+      "Benomyl",
+      "Bispyribac Sodio",
+      "Captan",
+      "Carbendazim",
+      "Chloromuron-Ethyl",
+      "Clethodim",
+      "Clomazone",
+      "Clorfenapyr",
+      "Clorotalonil",
+      "Clorpirifos Cipermetrina 500 G/L",
+      "Cyhalofop Butil",
+      "Difeconazole",
+      "Difenoconazole Propiconazole 250 G/L",
+      "Diflufenican",
+      "Dimetomorph",
+      "Dinotefuran",
+      "Emamectin Benzoate",
+      "Epoxiconazole",
+      "Ethefon",
+      "Glifosato",
+      "Imidacloprid",
+      "Kresoxim Metil",
+      "Lambda-Cyhalothrin",
+      "Lufenuron",
+      "Mancozeb",
+      "Mancozeb Cymoxanil 640 G/Kg",
+      "Mancozeb Metalaxyl 640 G/Kg",
+      "Metsulfuron Metil",
+      "Oxyfluorfen",
+      "Propineb",
+      "Pyrimethanil",
+      "Tebuconazole",
+      "Tiametoxam Lambdacihalotrina 141 G/L",
+      "Triadimefon"
+     ]
+    },
+    {
+     "nom": "QUIMICOS OMA S.A",
+     "nb": 38,
+     "matieres": [
+      "Abamectina",
+      "Abamectina Fenazaquin 35 G/L",
+      "Bispyribac Sodium",
+      "Bupirimato",
+      "Captan",
+      "Cymoxanil 640 G/Kg",
+      "Cyromazina",
+      "Difeconazol",
+      "Difeconazol Validamicina 50 G/L",
+      "Difenoconazol",
+      "Difenoconazol Kresoxim-Methyl 40 G/L",
+      "Dimethomorph",
+      "Dodemorph Acetate Prochloraz 40 G/L",
+      "Fipronil",
+      "Flufenoxuron",
+      "Fosetyl Aluminio",
+      "Hexaconazol",
+      "Hexaconazol Propiconazol 40 G/L",
+      "Iprodione",
+      "Isoprothiolane",
+      "Kasugamycin",
+      "Kresoxim Methyl",
+      "Kresoxim-Methyl",
+      "Lambdacihalotrina Ciromazina 50 G/L",
+      "Mancozeb",
+      "Metalaxil 640 G/Kg",
+      "Methomyl",
+      "Oxadiazon",
+      "Pendimetalina",
+      "Pirimetanil",
+      "Prochloraz",
+      "Prochloraz 45 G/L",
+      "Propamocarb 300 G/L",
+      "Propamocarb Hcl",
+      "Propamocarb Hcl Metalaxil 350 G/L",
+      "Propanil",
+      "Propineb",
+      "Pyrimethanil 250 G/L 250",
+      "Tetradifon",
+      "Tridemorph"
+     ]
+    },
+    {
+     "nom": "CAMPO CIENCIA AGRO S.A.S",
+     "nb": 36,
+     "matieres": [
+      "2,4-D",
+      "Abamectina",
+      "Acido 2,4D",
+      "Azoxistrobin Difenoconazole 200 G/L",
+      "Azoxystrobin",
+      "Azoxystrobin Cyproconazole 200 G/L",
+      "Bifentrina",
+      "Bispyribac Sodium",
+      "Carbendazim",
+      "Cletodim",
+      "Clorantraniliprole",
+      "Cyhalofop Butyl",
+      "Cymoxanil Mancozeb 80 G/Kg",
+      "Difenoconazole Propiconazole 250 G/L",
+      "Emamectin Benzoate",
+      "Epoxiconazole Carbendazim",
+      "Ethephon",
+      "Fipronil",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Imidacloprid",
+      "Kasugamycin",
+      "Methoxyfenozide",
+      "Metsulfuron Metyl",
+      "Oxadiazon",
+      "Oxifluorfen",
+      "Pendimetalina",
+      "Picloram",
+      "Picloram Fluroxypyr",
+      "Propanil",
+      "Propineb Trifloxystrobin 613 G/Kg",
+      "Quinclorac",
+      "Thiamethoxan Lamba-Cyhalotrin 141 G/L",
+      "Tricyclazol",
+      "Trifloxystrobin Tebuconazole 100 G/L"
+     ]
+    },
+    {
+     "nom": "TRUST QUIMICA S.A.S",
+     "nb": 36,
+     "matieres": [
+      "2,4-D Amina",
+      "Abamectina",
+      "Abamectina Spirodiclopen 10 G/L",
+      "Ametrina",
+      "Azoxystrobin",
+      "Bispyribac Sodium",
+      "Butaclor",
+      "Carbendazim",
+      "Chlorfenapyr",
+      "Cipermetrina",
+      "Clomazone",
+      "Clorotalonil",
+      "Cyhalofop Butyl Ester",
+      "Cymoxanil",
+      "Difenoconazole",
+      "Dimethomorph",
+      "Diuron",
+      "Epoxiconazole Kresoxim Mettyl 125 G/L",
+      "Fosetil Aluminio",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Imidacloprid",
+      "Iprodione",
+      "Lambda Ciahalotrina",
+      "Lufenuron",
+      "Mancozeb",
+      "Oxadiazon",
+      "Paraquat",
+      "Pendimetalina",
+      "Picloram",
+      "Picloram 2,4-D 64 G/L",
+      "Procloraz",
+      "Propamocarb Hydrocloruro",
+      "Propiconazol",
+      "Pyrimethanil"
+     ]
+    },
+    {
+     "nom": "HELM ANDINA S.A.S",
+     "nb": 35,
+     "matieres": [
+      "Abamectina",
+      "Atrazine",
+      "Azoxystrobin",
+      "Azoxystrobin Cyproconazol 200 G/L",
+      "Azoxystrobin Difenoconazole 200 G/L",
+      "Azoxystrobin Tebuconazole 120 G/L",
+      "Butachlor",
+      "Clorimuron Etil",
+      "Clorotalonil",
+      "Cyromazine",
+      "Difenoconazole",
+      "Diflubenzuron",
+      "Dimethoate",
+      "Diquat",
+      "Fluroxypyr Meptyl",
+      "Fosetil - Aluminio",
+      "Glifosato",
+      "Glyphosate",
+      "Imidacloprid",
+      "Imidacloprid Lambdacihalotrina 200 G/L",
+      "Lambda-Cyhalotrina",
+      "Mancozeb Cymoxanil 640 G/Kg",
+      "Mesotrione",
+      "Methomyl",
+      "Metsulfuron Methyl",
+      "Nicosulfuron",
+      "Paraquat Dichloride",
+      "Pendimthalin",
+      "Picloram",
+      "Picloram 80 G/L",
+      "Propiconazol",
+      "Spirodiclofen",
+      "Thiophana-Methyl",
+      "Tridemorph",
+      "Trinexapac-Ethyl"
+     ]
+    },
+    {
+     "nom": "TECNOQUIMICAS S.A",
+     "nb": 32,
+     "matieres": [
+      "2,4-D",
+      "Abamectina",
+      "Azoxystrobin Cyproconazole 200 G/L",
+      "Azoxystrobin Flutriafol 250 G/L",
+      "Bifentrina Fipronil Thiamethoxam 120 G/L 120 G/L",
+      "Bispyribac-Sodium",
+      "Carbendazim",
+      "Clorhidrato De Propanocarb",
+      "Clorotalonil",
+      "Clorpirifos",
+      "Cymoxanil",
+      "Difeconazole 250 G/L 250",
+      "Difenoconazole",
+      "Dimethomorph",
+      "Dimetomorf",
+      "Fipronil",
+      "Fosetil Aluminio",
+      "Glifosato",
+      "Imidacloprid",
+      "Mancozeb",
+      "Methomyl",
+      "Metomyl",
+      "Paraquat",
+      "Picloram 240 G/L",
+      "Prochloraz",
+      "Profenofos",
+      "Propiconazole",
+      "Propineb",
+      "Propineb Cymoxanil",
+      "Quinclorac",
+      "Thiamethoxam Lambdcihalotrina 141 G/L",
+      "Tricyclazol"
+     ]
+    },
+    {
+     "nom": "ROTAM AGRO COLOMBIA S.A.S",
+     "nb": 29,
+     "matieres": [
+      "Abemactina Imidacloprid 300 G/L",
+      "Azoxistrobin",
+      "Azoxystrobin",
+      "Bifentrina",
+      "Carbendazim",
+      "Clomazone",
+      "Diflufenican",
+      "Dinotefuran Etofenprox 150 G/L",
+      "Fenpropimorph",
+      "Fipronil",
+      "Flutolanil Prochloraz 200 G/L",
+      "Imidacloprid",
+      "Imidacloprid Bifenthrin 100 G/",
+      "Iprodione",
+      "Isoprothiolane Pyraclostrobin 210 G/L",
+      "Lambdacihalotrina Lufenuron 100 G/L",
+      "Mancozeb Metalaxyl 640 G/Kg",
+      "Metalaxyl Propamocarb 150 G/Kg",
+      "Oxadiazon",
+      "Picloram 2, 4-D 80 G/L",
+      "Prochloraz",
+      "Pyrimethanil",
+      "Pyriproxyfen",
+      "Quinclorac",
+      "Rimsulfuron",
+      "Tebuconazole 80 G/L",
+      "Thiamethoxam Deltamethrin 100 G/L",
+      "Thiodicarb",
+      "Tricyclazol"
+     ]
+    },
+    {
+     "nom": "ROTAM AGROCHEMICAL COLOMBIA S.A.S",
+     "nb": 29,
+     "matieres": [
+      "Azoxystrobin",
+      "Azufre",
+      "Boscalid",
+      "Carbendazim 125 G/L",
+      "Clethodim",
+      "Clorothalonil",
+      "Cyhalofop-Butil",
+      "Cypermethrin",
+      "Dimethomorph",
+      "Dimethomorph Clorotalonil 500 G/L",
+      "Dimetomorph",
+      "Emamectin Benzoato",
+      "Epoxiconazole",
+      "Glufosinato De Amonio",
+      "Hexazinona",
+      "Lufenuron",
+      "Mancozeb",
+      "Mancozeb 80 G/Kg",
+      "Metalaxil",
+      "Metalaxyl",
+      "Metalaxyl Clorotalonil 90 G/Kg",
+      "Methomyl",
+      "Metribuzina",
+      "Metsulfuron Metil",
+      "Oxyfluorfent",
+      "Rotam S.A.S O Rotam Agrocolombia S.A.S Deltametrina",
+      "Sulfato De Cobre Pentahidratado",
+      "Tebuconazole",
+      "Thiamethoxam",
+      "Triadimefon",
+      "Tridemorf"
+     ]
+    },
+    {
+     "nom": "AGROSER S.A",
+     "nb": 26,
+     "matieres": [
+      "2,4-D 120 G/L",
+      "2,4-D Amina",
+      "Abamectina",
+      "Acido 2,4-D",
+      "Bispyribac Sodico",
+      "Bispyribac Sodium",
+      "Cipermetrina",
+      "Clomazone",
+      "Cyhalofop- Butil",
+      "Difenoconazole",
+      "Dimethomorph",
+      "Diuron",
+      "Glifosato",
+      "Imidacloprid",
+      "Metsulfuron - Methyl",
+      "Oxadiazon",
+      "Picloram",
+      "Picloram, 2,4-D 64 G/L",
+      "Pyrazosulfuron- Etil",
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "CIBOCHEM S.A.S",
+     "nb": 24,
+     "matieres": [
+      "2,4-D",
+      "Abacmetina",
+      "Ametrina",
+      "Atrazina",
+      "Azoxystrobin",
+      "Benomyl",
+      "Bifentrina",
+      "Carbendazim",
+      "Cipermethrin",
+      "Epoxiconazole",
+      "Glifosato",
+      "Imidacloprid",
+      "Lambda-Cyhalotrin",
+      "Mancozeb",
+      "Mesotrione",
+      "Metsulfuron Metil",
+      "Picloram",
+      "Propiconazol",
+      "Propiconazole",
+      "Quinclorac",
+      "Thiamethoxam"
+     ]
+    },
+    {
+     "nom": "ISAGRO COLOMBIA S.A.S",
+     "nb": 24,
+     "matieres": [
+      "Abamectin",
+      "Acido Fosforoso",
+      "Azoxystrobin",
+      "Azoxystrobin Tetraconazole 100 G/L",
+      "Benalaxil-M Clorotalonil 52.6 G/Kg (50) 507.6 G/Kg",
+      "Benalaxim-M",
+      "Caldo Bordeles Mancozeb 47.1 %",
+      "Carbenzamim",
+      "Chlorothalonil",
+      "Clorotalonil",
+      "Deltametrina",
+      "Etoxazole",
+      "Fenpyroximate",
+      "Glifosato",
+      "Imidacloprid",
+      "Iprodione",
+      "Lambdacyhalotrina",
+      "Mancozeb",
+      "Mancozeb 40 G/Kg",
+      "Mancozeb 800",
+      "Mancozeb Cymoxanil 640 G/Kg",
+      "Metam Sodio",
+      "Paraquat",
+      "Propamocarb Hcl",
+      "Tetraconazole Carbendazim 125 G/L"
+     ]
+    },
+    {
+     "nom": "TALANU CHEMICAL LTDA",
+     "nb": 24,
+     "matieres": [
+      "2,4-D",
+      "2,4-D 64 G/L",
+      "Abamectin",
+      "Ametrina",
+      "Atrazina",
+      "Azoxystrobin Difeconazole 200 G/L",
+      "Byspiribac Sodium",
+      "Chlorfenapyr",
+      "Clethodim",
+      "Cyhalofop Butyl",
+      "Cymoxanil Mancozeb 80 G/Kg",
+      "Cymoxanil Propineb 60 G/Kg",
+      "Dimethomorph",
+      "Fipronil",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Lambda Cyhalotrina",
+      "Lufenuron",
+      "Mancozeb Metalaxyl 640 G/Kg",
+      "Metsulfuron Methyl",
+      "Picloram",
+      "Propamocarb Hidrocloruro",
+      "Propiconazol",
+      "Propineb",
+      "Quinclorac"
+     ]
+    },
+    {
+     "nom": "VECOL S.A",
+     "nb": 21,
+     "matieres": [
+      "Atrazina",
+      "Bispyribac Sodium",
+      "Butaclor",
+      "Carbendazim",
+      "Clethodim",
+      "Clomazone",
+      "Cymoxanil 640 G/Kg",
+      "Difenoconazole",
+      "Difenoconazole Propiconazole 250 G/L",
+      "Dimetomorph Propamocarb",
+      "Imidacloprd Tebuconazol 233 G/L",
+      "Imidacloprid",
+      "Lufenuron",
+      "Mancozeb",
+      "Metsulfuron Metil",
+      "Oxadiazon",
+      "Paraquat",
+      "Pendimetalina",
+      "Propineb",
+      "S-Metolachlor",
+      "Tricyclazol"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE RIEGO S.A",
+     "nb": 20,
+     "matieres": [
+      "\"Agroser S.A\" 2,4-D Amina",
+      "\"Agroser S.A\" Carbendazim Isoprotiolane 300 G/L",
+      "\"Agroser S.A\" Diuron Ametrina 400 G/Kg",
+      "\"Agroser S.A\" Fosetyl Aluminio",
+      "\"Agroser S.A\" Glifosato",
+      "\"Agroser S.A\" Glufosinato De Amonio",
+      "\"Agroser S.A\" Msma",
+      "\"Agroser S.A\" Propamocarb Hidrocloruro",
+      "\"Agroser S.A\" Propineb-Cymoxanil 700 G/Kg",
+      "\"Agroser S.A\" Thiodicarb",
+      "\"Agroser S.A\" Validamicina",
+      "Agroser S.A Cipermetrina",
+      "Agroser S.A Diflufenican",
+      "Agroser S.A Fipronil Bifenthrin 200 G/L",
+      "Agroser S.A Fluazifop-P-Butil",
+      "Agroser S.A Mancozeb",
+      "Agroser S.A Spiroxamine",
+      "Agroser S.A Tricyclazole",
+      "Kasugamicina"
+     ]
+    },
+    {
+     "nom": "LABORATORIOS CHALVER DE COLOMBIA S.A",
+     "nb": 20,
+     "matieres": [
+      "2,4-D Acido",
+      "Abamectina",
+      "Acido 2,4 D",
+      "Benomyl",
+      "Bispyribac Sodium",
+      "Butaclor 150 G/L",
+      "Carbendazim",
+      "Clorotalonil",
+      "Clorpirifos",
+      "Clorpyrifos",
+      "Cymoxanil Mancozeb 80 G/Kg",
+      "Cypermetrin",
+      "Difenoconazole",
+      "Glifosato 355 G/Ll Equivalente A 480G/Lt",
+      "Imidacloprid",
+      "Mancozeb",
+      "Mancozeb Metalaxil",
+      "Metsulfuron Methyl 240 G/L",
+      "Metsulfuron Metil",
+      "Oxadiazon",
+      "Pendimetalina",
+      "Picloram",
+      "Picloram 240 G/L"
+     ]
+    },
+    {
+     "nom": "PILARQUIM DE COLOMBIA LTDA",
+     "nb": 20,
+     "matieres": [
+      "Abamectina",
+      "Butaclor",
+      "Carbendazim",
+      "Clorotalonil",
+      "Cyazofamida Cymoxanil 85 G/L",
+      "Dimetomorf Cymoxanil 500 G/Kg",
+      "Fosetyl Aluminio",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Lambdacihalotrina Clothianidin 135 G/L",
+      "Mancozeb",
+      "Metomyl",
+      "Paraquat",
+      "Pilaround",
+      "Propiconazole Azoxystrobin 158 G/L",
+      "S-Metolachlor",
+      "Tebuconazole Pyraclostrobin 230 G/L",
+      "Thiametoxam Thiram Carboxin 160 G/L 110 G/L"
+     ]
+    },
+    {
+     "nom": "RICECO INTERNATIONAL COLOMBIA S.A.S",
+     "nb": 20,
+     "matieres": [
+      "Azoxystrobin Cyproconazole",
+      "Bispyribac Sodium",
+      "Buprofezim",
+      "Ciproconazole",
+      "Clomazone",
+      "Glufosinato De Amonio",
+      "Imidacloprid Lambda Cyhalotrina 125.36 G/L",
+      "Pendimetalina",
+      "Pendimetalina Clomazone 307G/L",
+      "Propamnil",
+      "Propanil",
+      "Propanil Triclopyr 380G/L",
+      "Pyrazosulfuron Etil Pretilaclor 7.5 G/Kg",
+      "Thiamethoxam"
+     ]
+    },
+    {
+     "nom": "POINT DE COLOMBIA S.A.S",
+     "nb": 19,
+     "matieres": [
+      "2,4-D",
+      "Alfacipermetrina",
+      "Azoxystrobin Difeconazole 200 G/L",
+      "Benomil",
+      "Carbendazim",
+      "Cipermetrina",
+      "Cyromazina",
+      "Deltametrina",
+      "Fipronil",
+      "Glifosato",
+      "Imidacloprid",
+      "Iprodione",
+      "Lufenuron",
+      "Mancozeb",
+      "Oxifluorfen",
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "HANSEANDINA LTDA",
+     "nb": 18,
+     "matieres": [
+      "Ametrina",
+      "Atrazina",
+      "Azoxystrobin Flutriafol 200 G/L",
+      "Bentazone",
+      "Carbendazim",
+      "Clorpyrifos",
+      "Cyhalofop Butil Ester",
+      "Diflubenzuron",
+      "Ethephon",
+      "Fludioxonil Cyprodinil 250 G/Kg",
+      "Flutriafol 300 G/L",
+      "Fomesafen",
+      "Mancozeb",
+      "Mancozeb Cymoxanil 640 G/Kg",
+      "Oxicloruro De Cobre Cymoxanil Mancozeb 290 G/Kg, 40 G/Kg",
+      "Propamocarb",
+      "Propamocarb Hidrocloruro"
+     ]
+    },
+    {
+     "nom": "NOVAG S.A.S",
+     "nb": 18,
+     "matieres": [
+      "Acido Oxolinico",
+      "Azoxistrobin Difenoconazole 200 G/L",
+      "Bispyribac Sodium",
+      "Cyhalofop Butil",
+      "Dimethomorph",
+      "Doclofop Methyl",
+      "Glufosinato De Amonio",
+      "Imidacloprid",
+      "Isoprothiolane",
+      "Lambdacialotrina 350 G/L",
+      "Metsulfuron Methyl",
+      "Paclobutrazol",
+      "Penoxsulam",
+      "Propiconazol Difeconazol 250 G//L",
+      "Propiconazole",
+      "Propiconazole Trifloxystrobin 125 G/L",
+      "Tebuconazole Triadimenol 225 G/L",
+      "Tryciclazol"
+     ]
+    },
+    {
+     "nom": "SUMMIT AGRO COLOMBIA S.A.S",
+     "nb": 18,
+     "matieres": [
+      "Acetamiprid",
+      "Dinotefuram",
+      "Etofenprox",
+      "Hymexazol",
+      "Iminoctadine Tris",
+      "Mepanipyrim",
+      "Metamifop",
+      "Metominostrobim Tebuconazole 150 G/L",
+      "Metominostrobin",
+      "Metyl-Thiofanato",
+      "Milbemectin",
+      "Oxyfluorfen",
+      "Tebufenozide",
+      "Thifluzamide",
+      "Triflumizole",
+      "Triforina"
+     ]
+    },
+    {
+     "nom": "RED SURCOS COLOMBIA LTDA",
+     "nb": 17,
+     "matieres": [
+      "2,4-D",
+      "Abamectina",
+      "Bispiribac Sodium",
+      "Butaclor",
+      "Cipermetrina",
+      "Difeconazol",
+      "Diuron",
+      "Fipronil",
+      "Glifosato",
+      "Imidacloprid",
+      "Kasugamicina",
+      "Lambda-Cyhalotrin",
+      "Lambdacialotrina Imidacloprid 100 G/L",
+      "Lambdacihalotrin",
+      "Mancozeb",
+      "Propamocarb Hidrocloruro"
+     ]
+    },
+    {
+     "nom": "ALTRIA CROP CARE S.A.S",
+     "nb": 15,
+     "matieres": [
+      "2,4-D Amina",
+      "Azoxystrobin",
+      "Benomyl",
+      "Bispiribac - Sodium",
+      "Clomazone",
+      "Dimethothomorph",
+      "Fipronil",
+      "Imidacloprid",
+      "Lambdacyhalotrina",
+      "Lufenuron",
+      "Metsufuron Methyl",
+      "Oxadiazon",
+      "Picloram 2,4-D",
+      "Tebuconazole",
+      "Tridemorph"
+     ]
+    },
+    {
+     "nom": "CROP CARE COLOMBIA-SAS",
+     "nb": 15,
+     "matieres": [
+      "2,4 D",
+      "Atrazina",
+      "Bispiribac Sodio",
+      "Cyhalofop Butyl",
+      "Emamectin Benzoate",
+      "Fipronil",
+      "Flutriafol",
+      "Flutriafol Azoxystrobin 250 G/L",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Metomyl",
+      "Metsulfuron Methyl",
+      "Teflubenzuron",
+      "Thiamethoxam Lambda Cyhalotrin 141 G/L"
+     ]
+    },
+    {
+     "nom": "MESSIS S.A.S",
+     "nb": 15,
+     "matieres": [
+      "Abamectina",
+      "Cletodim",
+      "Clorimuron-Ethyl",
+      "Clothianidin",
+      "Difenoconazole",
+      "Diflufenican",
+      "Glufosinato De Amonio",
+      "Halosulfuron Methyl",
+      "Hexazinona",
+      "Isoprothiolane",
+      "Oxadiazon",
+      "Prothioconazol",
+      "Pyraclostrobin",
+      "Thiamethoxam",
+      "Trifloxystrobin"
+     ]
+    },
+    {
+     "nom": "SHARDA COLOMBIA S.A",
+     "nb": 15,
+     "matieres": [
+      "2,4 D",
+      "2,4-D",
+      "Asoxystrobin",
+      "Byspiribac Sodium",
+      "Clomazone",
+      "Diafentiuron",
+      "Dimetomorf Mancozeb 90 G/Kg",
+      "Fipronil",
+      "Flusilazol",
+      "Glifosato",
+      "Lambdacyhalotrina 250 G/L",
+      "Oxyfluorfen",
+      "Picloram 240 G/L",
+      "Propanil",
+      "Thiodicarb"
+     ]
+    },
+    {
+     "nom": "FARMEX S.A.S",
+     "nb": 14,
+     "matieres": [
+      "Acetamiprid Emamectin Benzoate 240 G/Kg",
+      "Bensulfuron Metil Quinclorac 20 G/Kg",
+      "Bentazone",
+      "Boscalid Pyraclostrobin 252 G/Kg",
+      "Carfentrazone Ethyl",
+      "Epoxiconazole Carbendazim 125 G/L",
+      "Etoxazole",
+      "Fluopicolide Propamocarb Hydrochloride 62.5 G/L",
+      "Flutriafol",
+      "Glifosato Dicamba 380 G/L",
+      "Pyrimethanil Iprodione 250 G/L",
+      "Quinclorac",
+      "Spinetoram",
+      "Thiamethoxam Lambdacihalotrina 141 G/L"
+     ]
+    },
+    {
+     "nom": "SEMBRO S.A",
+     "nb": 14,
+     "matieres": [
+      "Acido 2,4-D Picloram 240 G/L",
+      "Ametryn",
+      "Azoxistrobin",
+      "Bispiribac Sodium",
+      "Clomazone",
+      "Cymoxanil",
+      "Flutriafol",
+      "Fosetyl Aluminio",
+      "Imidacloprid",
+      "Mancozeb 80 G/Kg",
+      "Metsulfuron Methyl",
+      "Oxadiazon",
+      "Tebuconazole",
+      "Thiametoxam"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS, SEMILLAS Y EQUIPOS DE RIEGO S.A – AGROSER S.A",
+     "nb": 13,
+     "matieres": [
+      "Boscalid",
+      "Carbendazim",
+      "Carfentrazone-Ethy",
+      "Cyprodinil Fludioxonil 375 G/Kg",
+      "Diquat",
+      "Fluopicolide Propamocarb 62.5 G/L",
+      "Halosulfuron Methyl 750",
+      "Isoprothiolane",
+      "Linuron",
+      "Oxadiazon",
+      "Penoxsulam",
+      "Picloram 2,4-D 15 G/L",
+      "Spiromesifen"
+     ]
+    },
+    {
+     "nom": "DVA DVA DE COLOMBIA LTDA",
+     "nb": 13,
+     "matieres": [
+      "Cyhalofop Butyl",
+      "Cyproconazole",
+      "Difenoconazole",
+      "Glufosinato De Amonio",
+      "Isoprothiolane",
+      "Kresoxym-Metyl",
+      "Lambdacihalotrina",
+      "Mancozeb",
+      "Metsulfuron Methyl",
+      "Pyraclostrobin",
+      "Pyrazosulfuron",
+      "Thiametoxan Lambdacyhalotrina 141 G/L",
+      "Trifloxystrobin"
+     ]
+    },
+    {
+     "nom": "JEBSEN & JESSEN COLOMBIA S.A.S",
+     "nb": 13,
+     "matieres": [
+      "Acetamiprid",
+      "Azoxystrobin Flutriafol",
+      "Bispyribac Sodium",
+      "Clorotalonil Dimetomorf 450 G/L",
+      "Difenoconazole",
+      "Emamectin Benzoato",
+      "Epoxiconazole",
+      "Glifosato",
+      "Haloxiffop-Methyl",
+      "Lambdacihalotrina",
+      "Lambdacihalotrina Thiamethoxam 106 G/L",
+      "Mancozeb",
+      "Tiamethoxam"
+     ]
+    },
+    {
+     "nom": "SAAT ANDINA S.A",
+     "nb": 13,
+     "matieres": [
+      "2,4-D 64 G/L",
+      "Ametrina",
+      "Atrazina",
+      "Azoxystrobin Flutriafol 250.3 G/L",
+      "Carboxin",
+      "Clomazone",
+      "Difenoconazol Y Propiconazol 150 G/L",
+      "Glifosato",
+      "Imidacloprid",
+      "Metsulfuron Metil",
+      "Oxadiazon",
+      "Picloram",
+      "Tebuconazole",
+      "Thiram 200 G/L"
+     ]
+    },
+    {
+     "nom": "DUPONT DE COLOMBIA S.A",
+     "nb": 12,
+     "matieres": [
+      "Aminocyclopyrachlo R",
+      "Cyproconazol 200 G/L",
+      "Famoxadone Cymoxanil 225 G/Kg",
+      "Mancozeb: Cymoxanil: 640 G/Kg",
+      "Metomyl",
+      "Metsulfuron Methyl 39.5%",
+      "Nicosulfuron",
+      "Oxathiapiprolin",
+      "Penthiopyrad",
+      "Picoxystrobin",
+      "Picoxystrobin Ycyproconazol 9.64 % W/W"
+     ]
+    },
+    {
+     "nom": "HELM ANDINA LTDA",
+     "nb": 12,
+     "matieres": [
+      "2,4 D",
+      "Azoxistrobin",
+      "Bispyribac Sodium",
+      "Cyproconazole Thiamethoxam 300 G/Kg",
+      "Dicamba",
+      "Epoxiconazol",
+      "Fenpropimorph",
+      "Fipronil",
+      "Mancozeb",
+      "Picloram",
+      "Quizalofop-Ethyl",
+      "Thiamethoxam"
+     ]
+    },
+    {
+     "nom": "INPROARROZ LTDA",
+     "nb": 12,
+     "matieres": [
+      "Bispyribac Sodio",
+      "Carbendazim",
+      "Cyhalofop Butyl",
+      "Epoxiconaxole",
+      "Flusilazole",
+      "Glifosato 355,6 G/L",
+      "Imidacloprid",
+      "Isoprotiolane",
+      "Kasugamicina",
+      "Lambdacihalotrina",
+      "Pyrazosulfuron Ethyl",
+      "Tricyclazole"
+     ]
+    },
+    {
+     "nom": "SODIAK S.A",
+     "nb": 12,
+     "matieres": [
+      "Azoxistrobin",
+      "Bispyribac Sodio",
+      "Carbendazim",
+      "Clorpirifos",
+      "Fipronil",
+      "Flumorph Mancozeb",
+      "Glifosato",
+      "Halosulfuron Metil",
+      "Lambda Cihalotrina",
+      "Metsulfuron Metil"
+     ]
+    },
+    {
+     "nom": "AGRINET S.A.S",
+     "nb": 11,
+     "matieres": [
+      "Dimetomorph",
+      "Emamecti N Benzoato 200 G/Kg",
+      "Emamectin Benzoate Chlorpirifos 30 G/L",
+      "Emamectin Benzoate Imidacloprid 50 G/Kg",
+      "Fluopyram Fosthiazate 10 G/L",
+      "Glufosinato De Amonio",
+      "Hexaconazole Piraclostrobin",
+      "Metala Xil 420 G/Kg",
+      "Paraquat",
+      "Pyrimetanil Clorotalonil 300 G/Kg",
+      "Spinosad Pyriproxyfen 40 G/L",
+      "Teflubenzuron Emamectin Benzoato 200 G/Kg",
+      "Tiametoxam"
+     ]
+    },
+    {
+     "nom": "CAC COLOMBIA CROPSCIENCE S.A.S",
+     "nb": 11,
+     "matieres": [
+      "2,4-D",
+      "Clorpirifos",
+      "Glifosato",
+      "Glufosinato De Amonio",
+      "Lambdacihalotrina",
+      "Paraquat",
+      "Tebuconazole Trifloxystrobin 500 G/Kg",
+      "Thiamethoxam Lambdacihalotrina 141 G/L",
+      "Tricyclazole"
+     ]
+    },
+    {
+     "nom": "FARMEX SAS",
+     "nb": 11,
+     "matieres": [
+      "Azoxystrobin Cyproconazole 200 G/L",
+      "Bifenthrin",
+      "Boscalid",
+      "Cyprodinil Fludioxonil 375 G/Kg",
+      "Dinotefuran",
+      "Emamectin Benzoate 50 G/Kg",
+      "Flutriafol Azoxystrobin 250 G/L",
+      "Flutriafol Carbendazim 200 G/L",
+      "Glyphosate",
+      "Nicosulfuron",
+      "Trifloxystrobin Tebuconazole 25% W/W"
+     ]
+    },
+    {
+     "nom": "EREDA S.A.S",
+     "nb": 10,
+     "matieres": [
+      "2,4-D",
+      "2.4 D Amina Picloram 205 G/L",
+      "Clorotalonil",
+      "Difenoconazol",
+      "Epoxiconazol",
+      "Glifosinato De Amonio",
+      "Mancozeb",
+      "Metsulfuron Metyl",
+      "Picloram",
+      "Thiamethoxam Lambdcihalotrina 141 G/L"
+     ]
+    },
+    {
+     "nom": "ZELL CHEMIE COLOMBIA LTDA",
+     "nb": 10,
+     "matieres": [
+      "Azoxystrobin Flutriafol 125 G/L",
+      "Bispiribac-Sodio",
+      "Carbendazim",
+      "Cihalofop Butil",
+      "Ciromazina",
+      "Fipronil",
+      "Flutriafol",
+      "Imidacloprid",
+      "Picloram 2,4-D 64 G/L",
+      "Tebuconazol"
+     ]
+    },
+    {
+     "nom": "AGRO LEAD COLOMBIA S.A.S",
+     "nb": 9,
+     "matieres": [
+      "Azoxystrobin",
+      "Clorotalonil",
+      "Cyhalofop Butyl Ester",
+      "Fipronil",
+      "Imidacloprid",
+      "Oxifluorfen",
+      "Thiamethozam Lambda-Cyhalotrina 141 G/L",
+      "Triadimefon"
+     ]
+    },
+    {
+     "nom": "AGROCONSULTORIAS S.A.S",
+     "nb": 9,
+     "matieres": [
+      "Acetamiprid Lambda-Cyhalothrin 20% W/V",
+      "Azoxystrobin Clorotalonil 60 G/L",
+      "Azoxystrobin Flutriafol 250 G/L",
+      "Azoxystrobin Tebuconazole 490 G/Kg",
+      "Epoxiconazol Carbendazim 125 G/L",
+      "Fipronil",
+      "Glifosato",
+      "Oxifluorfen",
+      "Quinclorac"
+     ]
+    },
+    {
+     "nom": "AGROCONSULTORÍAS S.A.S",
+     "nb": 9,
+     "matieres": [
+      "8-Hidroxiquinoleina",
+      "Bensulfuron Metil Quinclorac 20 G/Kg",
+      "Carfentrazone Ethyl",
+      "Ciprodinil Fludioxonil 375 G/Kg",
+      "Flutriafol Carbendazim 200 G/L",
+      "Fosetyl Al",
+      "Imidacloprid Beta-Cyfluthrin 210 G/L",
+      "Tebuconzole Trifloxystrobin 500 G/Kg",
+      "Thiamethoxam Lambda-Cyhalothrin 141 G/L"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE RIEGO S.A- AGROSER S.A",
+     "nb": 9,
+     "matieres": [
+      "Bifentrin",
+      "Chlorantraniliprole",
+      "Dimetoato",
+      "Emamectin Benzoate",
+      "Fenhexamide",
+      "Fenpropimorph",
+      "Glyphosate",
+      "Propiconazole",
+      "Thiamethoxam Lambda-Cyhalothrin 141 G/L"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE RIEGO S.A. - AGROSER S.A",
+     "nb": 9,
+     "matieres": [
+      "Atrazina Ametrina 400 G/Kg",
+      "Benomyl",
+      "Cipermetrina",
+      "Emamectin Benzoate Acetamiprid 50 G/Kg",
+      "Malathion",
+      "Prochloraz",
+      "Propanil"
+     ]
+    },
+    {
+     "nom": "DISTRIBUCIONES ARAMA LTDA",
+     "nb": 9,
+     "matieres": [
+      "2,4-D",
+      "Cipermetrina",
+      "Glifosato",
+      "Glyphosate 356 G/L Equivalente A 480G En",
+      "Metsulfuron Metyl",
+      "Picloram",
+      "Propineb",
+      "Thiametoxam Lambda-Cyhalotrina 142.0 G/L"
+     ]
+    },
+    {
+     "nom": "INPROARROZ S.A",
+     "nb": 9,
+     "matieres": [
+      "2,4-D",
+      "2,4-D Amina",
+      "Bispyribac Sodium",
+      "Butaclor",
+      "Dimethoate",
+      "Oxadiazon",
+      "Oxifluorfen",
+      "Propanil",
+      "Propiconazole"
+     ]
+    },
+    {
+     "nom": "ISHIHARA COLOMBIA LTDA",
+     "nb": 9,
+     "matieres": [
+      "Cyazofamide",
+      "Cyclaniliprole",
+      "Flazasulfuron",
+      "Flonicamid",
+      "Fluazinam",
+      "Fostiazato",
+      "Isofetamid",
+      "Nicosulfuron",
+      "Pyriofenone"
+     ]
+    },
+    {
+     "nom": "LATIN WEST S.A.S",
+     "nb": 9,
+     "matieres": [
+      "Clorpirifos Emamectin Benzoato 290 G/L",
+      "Diafenthiuron Etoxazole 150 G/L",
+      "Emamectin Benzoato Fipronil Bifentrina 50 G/L 100 G/L",
+      "Flumorph Fosetyl – Aluminio 100 G/Kg",
+      "Hexaconazole Pyraclostrobin 50 G/L",
+      "Paraquat",
+      "Teflubenzuron Emamectin Benzoato 200 G/Kg",
+      "Tiametoxam Emamectin Benzoato 200 G/Kg",
+      "Tricyclazole Triadimefon 500 G/Kg"
+     ]
+    },
+    {
+     "nom": "LIONCHEM – LIFESCIENCE S.A.S",
+     "nb": 9,
+     "matieres": [
+      "Bispyribac-Sodium Pyrazosulfuron- Ethyl 150 G/L",
+      "Butachlor Propanil 275 G/L",
+      "Flutriafol",
+      "Imidacloprid",
+      "Oxadiazon",
+      "Picloram 2,4-D 64 G/L",
+      "Quinclorac Cyhalofop-Butyl 100 G/L",
+      "Triadimefon",
+      "Tricyclazole Isoprothiolane 400 G/Kg"
+     ]
+    },
+    {
+     "nom": "PHYTOCARE S.A.S",
+     "nb": 9,
+     "matieres": [
+      "Azocystrobin",
+      "Bupirimate",
+      "Carfentrazone - Ethyl",
+      "Iprodione",
+      "Kresoxim Methyl Spiroxamine 250 G/",
+      "Propamocarb Hydrochloride",
+      "Propamocarb Metalaxyl 350 G/L",
+      "Propineb",
+      "Triadimefon"
+     ]
+    },
+    {
+     "nom": "YASER S.A.S",
+     "nb": 9,
+     "matieres": [
+      "2,4-D",
+      "Abamectin",
+      "Ametrina",
+      "Buprofezin",
+      "Difenoconazole Propiconazole 150 G/L",
+      "Diuron",
+      "Glifosato",
+      "Lambda- Cyhalotrina 106 G/L",
+      "Propineb",
+      "Thiametoxam"
+     ]
+    },
+    {
+     "nom": "AGRIPAC ANDINA S.A.S",
+     "nb": 8,
+     "matieres": [
+      "2,4-D Amina",
+      "Carbendazim",
+      "Cipermetrina",
+      "Difenoconazole",
+      "Glifosato 356G/Lt Equivalente A 480 G/Lt",
+      "Pendimetalina",
+      "Propanil",
+      "Propiconazole"
+     ]
+    },
+    {
+     "nom": "AGRO-LEAD COLOMBIA S.A.S",
+     "nb": 8,
+     "matieres": [
+      "Bispiribac Sodium",
+      "Bispyribac Sodium",
+      "Carbendazim",
+      "Cipermetrina",
+      "Cyhalofop Butil Ester",
+      "Flutriafol",
+      "Glifosato",
+      "Quinclorac"
+     ]
+    },
+    {
+     "nom": "AGROCHEMY S.A.S",
+     "nb": 8,
+     "matieres": [
+      "2,4-D Picloram 240 G/L",
+      "Azoxystrobin Flutriafol 250 G/L",
+      "Fipronil",
+      "Glifosato",
+      "Metsulfuron Methyl",
+      "Quinclorac",
+      "Spiroxamina Myclobutanil 600 G/L",
+      "Thiamethoxam Lambda Cyhalothrin 141 G/L"
+     ]
+    },
+    {
+     "nom": "AGROLAC ANDINA S.A.S",
+     "nb": 8,
+     "matieres": [
+      "Abamectina",
+      "Azoxystrobin",
+      "Clorothalonil",
+      "Diflubenzuron",
+      "Epoxiconazole",
+      "Flutriafol",
+      "Fosetyl Aluminio",
+      "Lambdacihalotrina"
+     ]
+    },
+    {
+     "nom": "BIESTERFELD COLOMBIA LTDA",
+     "nb": 8,
+     "matieres": [
+      "Azoxystrobin Cyproconazole 67 G/Kg",
+      "Azoxystrobin Difenoconazole 200 G/L",
+      "Glufosinato De Amonio",
+      "Hidróxido De Cobre",
+      "Imidacloprid",
+      "Pendimetalina",
+      "Pyraclostrobin Boscalid 128 G/Kg",
+      "Pyraclostrobin Epoxiconazole 133 G/L"
+     ]
+    },
+    {
+     "nom": "GENFAR S.A",
+     "nb": 8,
+     "matieres": [
+      "2,4 D",
+      "2,4 D 400G/Lt Equivale A 480G/Lt En",
+      "2,4 D Dimethylamine Salt 720",
+      "Abamectina",
+      "Clorotalonil",
+      "Glifsato 356 G/L Equivalente A 480G/L",
+      "Imazalil",
+      "Metsulfuron - Methyl",
+      "Picloram"
+     ]
+    },
+    {
+     "nom": "ADAMA ANDINA B.V",
+     "nb": 7,
+     "matieres": [
+      "Sucursal Colombia Indoxacarb Novaluron 240 G/L",
+      "Sucursal Colombia Paraquat",
+      "Sucursal Colombia. Azoxystrobin Tebuconazole 120 G/L",
+      "Sucursal Colombia. Hidroxido De Cobre",
+      "Sucursal Colombia. Prochloraz Tricyclazole 270 G/Litro",
+      "Sucursal Colombia. Propanil"
+     ]
+    },
+    {
+     "nom": "ARYSTA LIFESCIENCES COLOMBIA S.A.S",
+     "nb": 7,
+     "matieres": [
+      "Acefato",
+      "Amitraz",
+      "Difeconazole",
+      "Glifosato",
+      "Glifosato Sal Isopropilamina",
+      "Thiocyclam Hidrogenoxalato"
+     ]
+    },
+    {
+     "nom": "HALCON AGROINDUSTRIAL S.A.S",
+     "nb": 7,
+     "matieres": [
+      "Acetamiprid Lambdacihalotrina 200 G/L",
+      "Boscalid Pyraclostrobin 252 G/Kg",
+      "Difenoconazole Propiconazole 250 G/L",
+      "Ethefon",
+      "Frutiafol Azoxystrobin 250 G/L",
+      "Imidacloprid",
+      "Propamocarb Hcl Fluopicolide 625 G/L"
+     ]
+    },
+    {
+     "nom": "NOURISH GROUP S.A.S",
+     "nb": 7,
+     "matieres": [
+      "Acetamiprid Abamectin 100 G/L",
+      "Acetamiprid Emamectin Benzoate 4,8% P/V",
+      "Azoxystrobin Propiconazole 11,4 % P/V",
+      "Boscalid",
+      "Glyphosate Ammonium Salt",
+      "Imidacloprid Fipronil 400 G/Kg",
+      "Pyriproxyfen Bifentrina 100 G/L"
+     ]
+    },
+    {
+     "nom": "PROQUIMUR S.A.S",
+     "nb": 7,
+     "matieres": [
+      "Boscalid Pyraciostrobin 252 G/L",
+      "Chlorothalonil",
+      "Fipronil",
+      "Prothioconazole Azoxystrobin 175 G/L",
+      "Pyraclostrobin Epoxiconazole 133 G/L",
+      "Trifloxystrobin Tebuconazole 100 G/L"
+     ]
+    },
+    {
+     "nom": "ROTAM AGROCHEMICAL COLOMBIA LTDA",
+     "nb": 7,
+     "matieres": [
+      "Imidacloprid",
+      "Metsufuron Metil",
+      "Metsulfuron Metil",
+      "Oxadiazon",
+      "Pyrazosulfuron Ethyl",
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "TAGROS CHEMICALS ANDINA S.A.S",
+     "nb": 7,
+     "matieres": [
+      "Deltametrina",
+      "Difenoconazole",
+      "Fipronil",
+      "Permetrina",
+      "Pyriproxyfen",
+      "Thiamethoxam"
+     ]
+    },
+    {
+     "nom": "AGRICSERVICES COLOMBIA LTDA",
+     "nb": 6,
+     "matieres": [
+      "Acetamiprid Alfacipermetrina 100 G/L",
+      "Mancozeb",
+      "Mancozeb Cymoxanil 640 G/Kg",
+      "Thiamethoxam"
+     ]
+    },
+    {
+     "nom": "MEZFER CROP CARE COLOMBIA-SAS",
+     "nb": 6,
+     "matieres": [
+      "2,4-D Picloram 240 G/L",
+      "Difenoconazole",
+      "Dimetomorph",
+      "Propiconazole",
+      "Propineb Cymoxanil 700 G/Kg",
+      "Tricyclazole"
+     ]
+    },
+    {
+     "nom": "MINAGRO INDUSTRIA QUIMICA LTDA",
+     "nb": 6,
+     "matieres": [
+      "Brodifacouma",
+      "Carbaryl",
+      "Chlorpyrifos",
+      "Fipronil"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE RIEGO AGROSER S.A",
+     "nb": 5,
+     "matieres": [
+      "Ametrina",
+      "Glifosato",
+      "Paraquat",
+      "Propiconazole Isoprothiolane 100 G/L"
+     ]
+    },
+    {
+     "nom": "ARIB AGROCHEMICAL S.A.S",
+     "nb": 5,
+     "matieres": [
+      "Butaclor",
+      "Emamectin Benzoate",
+      "Fipronil Difeconazole",
+      "Glifosato",
+      "Mancozeb Cymoxanil 64%"
+     ]
+    },
+    {
+     "nom": "BAYER SA",
+     "nb": 5,
+     "matieres": [
+      "Oxadiazon",
+      "Pirymethanil",
+      "Propineb",
+      "Propineb Cymoxanil 700 G/Lg"
+     ]
+    },
+    {
+     "nom": "BIESTERFELD BIESTERFELD COLOMBIA LTDA",
+     "nb": 5,
+     "matieres": [
+      "2,4 D Picloram 240 G/L",
+      "2,4-D",
+      "Carbendazim",
+      "Glifosato",
+      "Glyphosate Amine Salt"
+     ]
+    },
+    {
+     "nom": "CLABE REPRESENTACIONES COLOMBIANAS LTDA",
+     "nb": 5,
+     "matieres": [
+      "\"Claberep Ltda\" Sulfato De Cobre Pentahidratado",
+      "\"Claberep Ltda\" Teflobenzuron",
+      "\"Claberep Ltda\" Thiamethoxan Lambda Cyhalotrin 14.1%",
+      "Bispiribac Sodio"
+     ]
+    },
+    {
+     "nom": "DELMONTE AGROSCIENCES S.A.S",
+     "nb": 5,
+     "matieres": [
+      "Azoxystrobin 80 G/L",
+      "Cyproconazole",
+      "Dimethoate",
+      "Isoprothiolane",
+      "Propiconazole",
+      "Thiamethoxam"
+     ]
+    },
+    {
+     "nom": "DUWEST COLOMBIA S.A.S",
+     "nb": 5,
+     "matieres": [
+      "Cymoxanil",
+      "Famoxadone 300 G/Kg 225",
+      "Mancozeb",
+      "Methomyl"
+     ]
+    },
+    {
+     "nom": "GRUPO QUIMICO ANDINO LTDA",
+     "nb": 5,
+     "matieres": [
+      "Abamectina",
+      "Cipermetrina 500 G/L",
+      "Ciromazina",
+      "Imidacloprid",
+      "Lambdacihalotrina",
+      "Profenophos"
+     ]
+    },
+    {
+     "nom": "ADNICOL S.A.S",
+     "nb": 4,
+     "matieres": [
+      "Buprofezin",
+      "Fenpyroximato",
+      "Isoprotiolane",
+      "Orthosulfamuron"
+     ]
+    },
+    {
+     "nom": "AGRO S.A",
+     "nb": 4,
+     "matieres": [
+      "Abamectina - Mezclas De Avermectinas",
+      "Carbendazim",
+      "Mancozeb",
+      "Oxadiazon"
+     ]
+    },
+    {
+     "nom": "AGROPECUARIA Y SERVICIOS DE LOS LLANOS S.A AGROSELL S.A",
+     "nb": 4,
+     "matieres": [
+      "Butaclor",
+      "Difenoconazole",
+      "Glifosato",
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE RIEGO SA",
+     "nb": 4,
+     "matieres": [
+      "Agroser Sa Fenitrothion",
+      "Agroser Sa Pendimethalin",
+      "Agroser Sa Spinosad",
+      "Agroser Sa Spirotetramat"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE RIEGO-AGROSER S.A",
+     "nb": 4,
+     "matieres": [
+      "Cymoxanil Mancozeb 80 G/Kg",
+      "Difenoconazole Azoxystrobin 200 G/L",
+      "Glifosato",
+      "Picloram"
+     ]
+    },
+    {
+     "nom": "AVGUST COLOMBIA SAS",
+     "nb": 4,
+     "matieres": [
+      "Azoxystrobin",
+      "Difenoconazole 200 G/L",
+      "Emamectin Benzoato",
+      "Pyriproxyfen",
+      "Thidiazuron"
+     ]
+    },
+    {
+     "nom": "CAMPO CIENCIA",
+     "nb": 4,
+     "matieres": [
+      "Agro S.A.S Dimetomorf",
+      "Agro S.A.S Halosulfuron Methyl",
+      "Agro S.A.S Iprodione",
+      "Agro Sas Bifenthrin Imidacloprid 50 G/L"
+     ]
+    },
+    {
+     "nom": "COLINAGRO S.A",
+     "nb": 4,
+     "matieres": [
+      "Azufre",
+      "Azufre Sulfato De Cobre Tribasico 696 G/L",
+      "Imidacloprid"
+     ]
+    },
+    {
+     "nom": "DEL MONTE AGROSCIENCES S A S",
+     "nb": 4,
+     "matieres": [
+      "Fosetyl Aluminio",
+      "Oxadiazon",
+      "Propineb Cymoxanil 700 G/Kg",
+      "Spinosad"
+     ]
+    },
+    {
+     "nom": "DIABONOS DISTRIBUIDORA DE ABONOS – DIABONOS S.A",
+     "nb": 4,
+     "matieres": [
+      "Glifosato",
+      "Picloram",
+      "Picloram 2,4-D 64 G/L"
+     ]
+    },
+    {
+     "nom": "ELECTROQUIMICA WEST S.A",
+     "nb": 4,
+     "matieres": [
+      "Cipermetrina",
+      "Complejo Yodo Polietoxi Polipropoxi Polietoxi-Etanol Acido Yodhídrico 132 G/L",
+      "Diformil Propano",
+      "Propanil"
+     ]
+    },
+    {
+     "nom": "FMC LATINOAMERICA S.A.S",
+     "nb": 4,
+     "matieres": [
+      "Iprodione",
+      "Iprodione Carbendazim 175 G/L",
+      "Prochloraz"
+     ]
+    },
+    {
+     "nom": "JEGO CHEMICALS S.A.S",
+     "nb": 4,
+     "matieres": [
+      "2,4-D Amina",
+      "Bentazone",
+      "Cipermetrina",
+      "Glifosato Acido"
+     ]
+    },
+    {
+     "nom": "LABORATORIOS FARMACEUTICOS GENFAR S.A",
+     "nb": 4,
+     "matieres": [
+      "Butaclor",
+      "Carbendazim",
+      "Deltametrina",
+      "Oxadiazon"
+     ]
+    },
+    {
+     "nom": "NIHON NOHYAKU ANDICA S.A.S",
+     "nb": 4,
+     "matieres": [
+      "Flutolanil",
+      "Isoprotiolane",
+      "Orthosulfamuron",
+      "Tiolfenpyrad"
+     ]
+    },
+    {
+     "nom": "SAFER AGROBIOLOGICOS S.A.S",
+     "nb": 4,
+     "matieres": [
+      "Acido 3 – Indolbutirico Acido 1 – Naftalenacético 2,25 G/Kg",
+      "Polisulfuro De Calcio",
+      "Sulfato De Calcio 18.00% 21.00",
+      "Sulfato De Cobre Pentahidratado"
+     ]
+    },
+    {
+     "nom": "SINO AGRI LEADING BIOSCIENCES COLOMBIA S.A.S",
+     "nb": 4,
+     "matieres": [
+      "Abamectina",
+      "Abamectrina Imidacloprid 28 G/L",
+      "Azoxistrobin Difenoconazol 200 G/L",
+      "Bispiribac Sodio"
+     ]
+    },
+    {
+     "nom": "SUCROP S.A",
+     "nb": 4,
+     "matieres": [
+      "Cyhalofop Butil",
+      "Fipronil",
+      "Oxadiazon",
+      "Pendimetalina"
+     ]
+    },
+    {
+     "nom": "UNDAGRO S.A",
+     "nb": 4,
+     "matieres": [
+      "Abamectina - Mezclas De Avermectinas",
+      "Bispyribac Sodium",
+      "Cymoxanil",
+      "Mancozeb",
+      "Pendimethalin"
+     ]
+    },
+    {
+     "nom": "AGREXCEL S.A.S",
+     "nb": 3,
+     "matieres": [
+      "Dinotefuran",
+      "Flutriafol Tebuconazole 80.3 G/L",
+      "Imidacloprid Lambdacihalotrina 150 G/L"
+     ]
+    },
+    {
+     "nom": "AGRICENSE AGRICENSE LTDA",
+     "nb": 3,
+     "matieres": [
+      "Abamectina",
+      "Carbendazim",
+      "Clorpirifos"
+     ]
+    },
+    {
+     "nom": "AGRICENSE LTDA",
+     "nb": 3,
+     "matieres": [
+      "Azoxystrobin Flutriafol 200 G/L",
+      "Carbendazim",
+      "Metalaxil Mancozeb 8% W/W"
+     ]
+    },
+    {
+     "nom": "AGRINET SAS",
+     "nb": 3,
+     "matieres": [
+      "Flumorph Fosetyl-Aluminium 10%",
+      "Thidiazuron",
+      "Tricyclazole Triadimefon 500 G/Kg"
+     ]
+    },
+    {
+     "nom": "AGROFUTURO COLOMBIA SAS",
+     "nb": 3,
+     "matieres": [
+      "Kasugamicina",
+      "Lambda Cihalotrina",
+      "Tricyclazol"
+     ]
+    },
+    {
+     "nom": "AGROPECUARIA KINAGRO S.A.S",
+     "nb": 3,
+     "matieres": [
+      "2,4-D",
+      "Cipermetrina",
+      "Fipronil"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE RIEGO - AGROSER S.A",
+     "nb": 3,
+     "matieres": [
+      "2,4- D Picloram",
+      "Folpet",
+      "Metolachlor"
+     ]
+    },
+    {
+     "nom": "ALTEO S.A.S",
+     "nb": 3,
+     "matieres": [
+      "Daminozide",
+      "Metaldehido",
+      "Paclobutrazol"
+     ]
+    },
+    {
+     "nom": "ARYSTA LIFESCIENCE COLOMBIA S.A",
+     "nb": 3,
+     "matieres": [
+      "Clorotalonil",
+      "Hexazinone Diuron 132 G/Kg",
+      "Pendimetalina"
+     ]
+    },
+    {
+     "nom": "BANAPLAST S.A.S",
+     "nb": 3,
+     "matieres": [
+      "Bifentrina Pyriproxifen 2 G/Kg",
+      "Clorpirifos"
+     ]
+    },
+    {
+     "nom": "BASF QUIMICA COLOMBIANA SA",
+     "nb": 3,
+     "matieres": [
+      "Fenpropimorf",
+      "Glufosinato De Amonio",
+      "Quinclorac"
+     ]
+    },
+    {
+     "nom": "CERADIS COLOMBIA LTDA",
+     "nb": 3,
+     "matieres": [
+      "Sulfato De Cobre Pentahidratado",
+      "Sulfato De Cobre Pentahidratado Y Fosfito De Potasio 102 G/Kg"
+     ]
+    },
+    {
+     "nom": "CLABE REPRESENTACIONES COLOMBIANAS LTDA- CLABEREP LTDA",
+     "nb": 3,
+     "matieres": [
+      "Hexazinona Diuron 132 G/Kg",
+      "Mancozeb"
+     ]
+    },
+    {
+     "nom": "EMPRESA COLOMBIANA DE PRODUCTOS VETERINARIOS S.A VECOL S.A",
+     "nb": 3,
+     "matieres": [
+      "2,4-D",
+      "Fipronil Lufenuron 200 G/L",
+      "Thiamethoxam Lambda -Cyhalotrin 141 G/L"
+     ]
+    },
+    {
+     "nom": "GOWAN COLOMBIA S.A.S",
+     "nb": 3,
+     "matieres": [
+      "Benzobicyclon",
+      "Fenamidone,",
+      "Propamocarb Hcl 75 G/L",
+      "Zoxamide Cymoxanil 333 G/Kg"
+     ]
+    },
+    {
+     "nom": "GOWAN DE COLOMBIA SAS",
+     "nb": 3,
+     "matieres": [
+      "Dicloran",
+      "Fenazaquin",
+      "Hidroclorato De Formetanato"
+     ]
+    },
+    {
+     "nom": "HALCÓN AGROINDUSTRIAL S.A.S",
+     "nb": 3,
+     "matieres": [
+      "Emamectin Benzoate",
+      "Fosetyl Aluminio",
+      "Mancozeb"
+     ]
+    },
+    {
+     "nom": "QUIMICOS OMA LTDA",
+     "nb": 3,
+     "matieres": [
+      "Chlorfenapyr",
+      "Flusilazol",
+      "Hexithyazox"
+     ]
+    },
+    {
+     "nom": "SKYLINE COLOMBIA S.A.S",
+     "nb": 3,
+     "matieres": [
+      "Glifosato",
+      "Glifosato Sal Monoamonica",
+      "Glufosinato De Amonio"
+     ]
+    },
+    {
+     "nom": "SOLAR CIENCIA AGRICOLA S.A.S",
+     "nb": 3,
+     "matieres": [
+      "6 Benziladenina 10%",
+      "Acido Giberelico",
+      "Ga7",
+      "Ga7 0.34%",
+      "Giberelina Ga4"
+     ]
+    },
+    {
+     "nom": "SUMIKOL S.A.S",
+     "nb": 3,
+     "matieres": [
+      "Cyromazina Lambdacihalotrina 50 G/L",
+      "Imidacloprid",
+      "Metaldehyde"
+     ]
+    },
+    {
+     "nom": "TORREAGRO S.A.S",
+     "nb": 3,
+     "matieres": [
+      "Bispyribac Sodium",
+      "Oxifluorfen",
+      "Tebuconazol"
+     ]
+    },
+    {
+     "nom": "TRUST QUIMICA LTDA",
+     "nb": 3,
+     "matieres": [
+      "2,4-D Amina",
+      "Fipronil",
+      "Metsulfuron Metil"
+     ]
+    },
+    {
+     "nom": "UNIPHOS COLOMBIA PLANT LIMITED",
+     "nb": 3,
+     "matieres": [
+      "Mancozeb"
+     ]
+    },
+    {
+     "nom": "AGRICENSE WP AGRICENSE LTDA",
+     "nb": 2,
+     "matieres": [
+      "Cymoxanil",
+      "Fosetyl-Aluminium",
+      "Mancozeb 80 G/Kg"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS, SEMILLAS Y EQUIPOS DE RIEGO – AGROSER S.A",
+     "nb": 2,
+     "matieres": [
+      "Butachlor",
+      "Carbendazim"
+     ]
+    },
+    {
+     "nom": "AGROQUÍMICOS SEMILLAS Y EQUIPOS DE RIEGO S.A",
+     "nb": 2,
+     "matieres": [
+      "Agroser S.A. Permetrina",
+      "Agroser S.A. Propineb"
+     ]
+    },
+    {
+     "nom": "AGROQUÍMICOS SEMILLAS Y EQUIPOS DE RIEGO S.A.- AGROSER S.A",
+     "nb": 2,
+     "matieres": [
+      "Atrazina",
+      "Thiamethoxam Spirotetramat 110 G/L"
+     ]
+    },
+    {
+     "nom": "ARYSTA LIFESCIENCE DE COLOMBIA S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Fluoxastrobin",
+      "Mancozeb"
+     ]
+    },
+    {
+     "nom": "ASIA AGRO COLOMBIA S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Cyfluthrin",
+      "Pirimiphos-Methyl"
+     ]
+    },
+    {
+     "nom": "C.I BANACOL S.A",
+     "nb": 2,
+     "matieres": [
+      "Chlorothalonil",
+      "Glifosato"
+     ]
+    },
+    {
+     "nom": "CAMPO CIENCIA AGRO SAS",
+     "nb": 2,
+     "matieres": [
+      "Acido Giberelico",
+      "Diflufenican"
+     ]
+    },
+    {
+     "nom": "CEDAR CRYSTAL CHEMICAL S.A",
+     "nb": 2,
+     "matieres": [
+      "Glifosato",
+      "Propanil"
+     ]
+    },
+    {
+     "nom": "CHRYSAL COLOMBIA S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Acido Giberelico",
+      "Acido Indol Butirico"
+     ]
+    },
+    {
+     "nom": "CIBOCHEM SAS",
+     "nb": 2,
+     "matieres": [
+      "Flutriafol Azoxystrobin 125 G/L",
+      "Glufosinato De Amonio"
+     ]
+    },
+    {
+     "nom": "CLABE REPRESENTACIONES COLOMBIANAS-CLABEREP LTDA",
+     "nb": 2,
+     "matieres": [
+      "Carbaryl"
+     ]
+    },
+    {
+     "nom": "CLABEREP LTDA",
+     "nb": 2,
+     "matieres": [
+      "Clabe Representaciones Colombianas Ltda Paclobutrazol",
+      "Clabe Representaciones Colombianas Ltda Pyriproxyfen"
+     ]
+    },
+    {
+     "nom": "CLABEREP LTDA CLABE REPRESENTACIONES COLOMBIANAS LTDA",
+     "nb": 2,
+     "matieres": [
+      "Imazalil",
+      "Metam Sodio"
+     ]
+    },
+    {
+     "nom": "CLABEREP REPRESENTACIONES COLOMBIANAS LTDA",
+     "nb": 2,
+     "matieres": [
+      "\"Claberep Ltda\" Thiram",
+      "\"Claberep Ltda\" Ziram"
+     ]
+    },
+    {
+     "nom": "COLOMBIANA DE PRODUCTOS VETERINARIOS S.A VECOL S.A",
+     "nb": 2,
+     "matieres": [
+      "Azoxystrobin",
+      "Propineb Cymoxanil 700 G/Kg",
+      "Tebuconazole 100 G/L"
+     ]
+    },
+    {
+     "nom": "COMERCIALIZADORA AGRÍCOLA AGROASTRACHEM CIA LTDA",
+     "nb": 2,
+     "matieres": [
+      "Difenoconazole",
+      "Difenoconazole Propiconazole 150 G/L"
+     ]
+    },
+    {
+     "nom": "DEXTRA AGROCOLOMBIA SAS",
+     "nb": 2,
+     "matieres": [
+      "Dimethomorph Pyraclostrobin 7.2% W/V (5.1% W/W)",
+      "Prochloraz"
+     ]
+    },
+    {
+     "nom": "ELECTROFUMIGACION TORO Y CIA LTDA",
+     "nb": 2,
+     "matieres": [
+      "Fenitrothion",
+      "Fosfuro De Aluminio"
+     ]
+    },
+    {
+     "nom": "EMPRESA COLOMBIANA DE PRODUCTOS VETERINARIOS VECOL S.A",
+     "nb": 2,
+     "matieres": [
+      "Clorimuron Ethil",
+      "Pyrimethanil"
+     ]
+    },
+    {
+     "nom": "FMC LATINOAMERICA S.A",
+     "nb": 2,
+     "matieres": [
+      "Bifentrina Inidacloprid 30 G/L",
+      "Carbendazim"
+     ]
+    },
+    {
+     "nom": "FMC LATINOAMERICANA S.A",
+     "nb": 2,
+     "matieres": [
+      "Bifenehrin(A)",
+      "Flutriafol"
+     ]
+    },
+    {
+     "nom": "GILMORE AGRO DE COLOMBIA S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Glifosato",
+      "Glufosinato De Amonio"
+     ]
+    },
+    {
+     "nom": "INSUMOS REBOLLEDO SIOUFI CALI S.A.S",
+     "nb": 2,
+     "matieres": [
+      "2,4-D",
+      "Ametrina"
+     ]
+    },
+    {
+     "nom": "JEGO CHEMICAL S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Carbendazim",
+      "Fipronil"
+     ]
+    },
+    {
+     "nom": "LATIN WEST SAS",
+     "nb": 2,
+     "matieres": [
+      "Dimetomorph",
+      "Metalaxil 420 G/Kg",
+      "Pyrimetanil Clorotalonil 300 G/Kg"
+     ]
+    },
+    {
+     "nom": "LIONCHEM LIFESCIENCE S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Bentazone",
+      "Cypermethrin"
+     ]
+    },
+    {
+     "nom": "MAC LIFE SCIENCE S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Difenoconazole",
+      "Imidacloprid"
+     ]
+    },
+    {
+     "nom": "MADECHEM S.A",
+     "nb": 2,
+     "matieres": [
+      "Carbendazim",
+      "Propiconazol"
+     ]
+    },
+    {
+     "nom": "MAYORISTAS AGRICOLAS S.A",
+     "nb": 2,
+     "matieres": [
+      "Magro S.A Cinamaldehido",
+      "Magro S.A Sulfato De Gentamicina - Clorhidrato De Oxitetraciclina 100 G/Kg"
+     ]
+    },
+    {
+     "nom": "MINERALES EXCLUSIVOS S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Clomazone",
+      "Oxadiazon"
+     ]
+    },
+    {
+     "nom": "NEWBRIDGE AGROCHEM COLOMBIA LTDA",
+     "nb": 2,
+     "matieres": [
+      "Bifenazate",
+      "Glifosato"
+     ]
+    },
+    {
+     "nom": "PROFICOL ANDINA B.V",
+     "nb": 2,
+     "matieres": [
+      "2.4-D 64 G/L",
+      "Sucursal Colombia Azoxystrobin Tebuconazole 120 G/L",
+      "Sucursal Colombia Picloram"
+     ]
+    },
+    {
+     "nom": "RAINBOW AGROSCIENCE S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Epoxiconazole Kresoxim Metil 125 G/L",
+      "Tebuconazol"
+     ]
+    },
+    {
+     "nom": "RAINBOW AGROSCIENCEE S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Epoxiconazole Kresoxim Methyl 400 G/Kg",
+      "Mancozeb"
+     ]
+    },
+    {
+     "nom": "ROTAM AGRO COLOMBIA SAS",
+     "nb": 2,
+     "matieres": [
+      "Abamectina",
+      "Azoxistrobin Tebuconazole 80 G/L"
+     ]
+    },
+    {
+     "nom": "SUNJOY COLOMBIA S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Abamectin Cyromazine 10 G/L",
+      "Fenazaquin"
+     ]
+    },
+    {
+     "nom": "SYNGENTA SA",
+     "nb": 2,
+     "matieres": [
+      "Cyproconazole",
+      "S-Metolachlor"
+     ]
+    },
+    {
+     "nom": "UNDAGRO S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Byspyribac Sodium",
+      "Metaldehido"
+     ]
+    },
+    {
+     "nom": "VECTORS AND PEST MANAGEMENT LTDA",
+     "nb": 2,
+     "matieres": [
+      "Abamectina",
+      "Deltametrina Butoxido De Piperonilo 25 G/L"
+     ]
+    },
+    {
+     "nom": "VENDEDORA DE INSUMOS AGROPECUARIOS S.A",
+     "nb": 2,
+     "matieres": [
+      "Clethodim",
+      "Clorotalonil"
+     ]
+    },
+    {
+     "nom": "WATINUS S.A.S",
+     "nb": 2,
+     "matieres": [
+      "Iprodione",
+      "Oxadiazon"
+     ]
+    },
+    {
+     "nom": "ADN ADELANTE S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Glufosinato De Amonio"
+     ]
+    },
+    {
+     "nom": "AGREXEL S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Azoxystrobin Ciproconazole 200 G/L"
+     ]
+    },
+    {
+     "nom": "AGRIA COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Mancozeb Dimethomorph 600 G/Kg"
+     ]
+    },
+    {
+     "nom": "AGRIBUSINESS S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Complejo Polyoxin"
+     ]
+    },
+    {
+     "nom": "AGRIMORPHO LTDA",
+     "nb": 1,
+     "matieres": [
+      "Azoxystrobin",
+      "Tebuconazole 125 G/L"
+     ]
+    },
+    {
+     "nom": "AGRIPAC ANDINA SAS",
+     "nb": 1,
+     "matieres": [
+      "Abamectina"
+     ]
+    },
+    {
+     "nom": "AGRIPHAR DE COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Propamocarb Clorhidrato"
+     ]
+    },
+    {
+     "nom": "AGRO - LEAD COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Pretilachlor"
+     ]
+    },
+    {
+     "nom": "AGRO LINE S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Mancozeb"
+     ]
+    },
+    {
+     "nom": "AGRO-ARISTI SAS",
+     "nb": 1,
+     "matieres": [
+      "Lambda-Cyhalothrin"
+     ]
+    },
+    {
+     "nom": "AGRO-LEAD COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Oxadiazon"
+     ]
+    },
+    {
+     "nom": "AGROCHEMY AGROCHEMY S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Imidacloprid"
+     ]
+    },
+    {
+     "nom": "AGROCONSULTORIAS S A S",
+     "nb": 1,
+     "matieres": [
+      "Flutriafol"
+     ]
+    },
+    {
+     "nom": "AGROCONSULTORIAS SAS",
+     "nb": 1,
+     "matieres": [
+      "Lambdacyhalotrina"
+     ]
+    },
+    {
+     "nom": "AGRODIA S.A",
+     "nb": 1,
+     "matieres": [
+      "2.4-D"
+     ]
+    },
+    {
+     "nom": "AGROFUTURO COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Bispyribac Sodium"
+     ]
+    },
+    {
+     "nom": "AGROINSUMOS SAN MIGUEL S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Cymoxanil Mancozeb 80 G/Kg"
+     ]
+    },
+    {
+     "nom": "AGROMORPHO LTDA",
+     "nb": 1,
+     "matieres": [
+      "Emamectin Benzoato"
+     ]
+    },
+    {
+     "nom": "AGROQUIICOS SEMILLAS Y EQUIPOS DE RIEGO AGROSER S.A",
+     "nb": 1,
+     "matieres": [
+      "Methomyl"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE REGO S.A",
+     "nb": 1,
+     "matieres": [
+      "Agroser S.A Metalaxyl Mancozeb 80 G/Kg"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS SEMILLAS Y EQUIPOS DE RIEGO S.AAGROSER S.A",
+     "nb": 1,
+     "matieres": [
+      "Glufosinate Ammonium"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS, SEMILLAS Y EQUIPOS DE RIEGO S.A",
+     "nb": 1,
+     "matieres": [
+      "Metalaxyl, Propamocarb Hcl 15.0 % P/P"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS, SEMILLAS Y EQUIPOS DE RIEGO S.A- AGROSER S.A",
+     "nb": 1,
+     "matieres": [
+      "Quinclorac"
+     ]
+    },
+    {
+     "nom": "AGROQUIMICOS, SEMILLAS Y EQUIPOS DE RIEGO S.A. - AGROSER S.A",
+     "nb": 1,
+     "matieres": [
+      "2,4-D"
+     ]
+    },
+    {
+     "nom": "AGROQUÍMICOS SEMILLAS Y EQUIPOS DE RIEGO S.A. AGROSER S.A",
+     "nb": 1,
+     "matieres": [
+      "Clethodim Composicion"
+     ]
+    },
+    {
+     "nom": "AGROSCIENCES DE COLOMBIA S.A",
+     "nb": 1,
+     "matieres": [
+      "Aminopyralid Fluroxpyr 2,4-D 25 G/L 50 G/L"
+     ]
+    },
+    {
+     "nom": "AGROSER AGROSER S.A",
+     "nb": 1,
+     "matieres": [
+      "Pendimetalina"
+     ]
+    },
+    {
+     "nom": "AGROSER SA",
+     "nb": 1,
+     "matieres": [
+      "Ethephon"
+     ]
+    },
+    {
+     "nom": "AGROSERVITEC LTDA",
+     "nb": 1,
+     "matieres": [
+      "Prometryn"
+     ]
+    },
+    {
+     "nom": "ANASAC COLMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Fenhexamid Fludioxinil 300 G/L"
+     ]
+    },
+    {
+     "nom": "ANASC COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Indoxacarb"
+     ]
+    },
+    {
+     "nom": "ARGINET S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Diafenthiuron Etoxazole 150 G/L"
+     ]
+    },
+    {
+     "nom": "ARYSTA LIFESCIENCECOLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Clorotalonil"
+     ]
+    },
+    {
+     "nom": "ARYSTA LIFESCIENCECOLOMBIAS.A.S",
+     "nb": 1,
+     "matieres": [
+      "Diflubenzuron Lambda-Cihalotrina 248 G/L"
+     ]
+    },
+    {
+     "nom": "BASF QUÍMICA COLOMBIANA S.A",
+     "nb": 1,
+     "matieres": [
+      "Topramezone"
+     ]
+    },
+    {
+     "nom": "BAYER CROPSCIENCE S.A",
+     "nb": 1,
+     "matieres": [
+      "Fenamidone, /Mancozeb 100 G/Kg, 500"
+     ]
+    },
+    {
+     "nom": "BENDAZIM DEL MONTE250 SC DEL MONTE AGROSCIENCES S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Epoxiconazole Carbendazim 125 G/L"
+     ]
+    },
+    {
+     "nom": "BIESTERFELD BESTENFELDEN COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Ametrina"
+     ]
+    },
+    {
+     "nom": "C.I. VASCAL LTDA",
+     "nb": 1,
+     "matieres": [
+      "Cipermethrin"
+     ]
+    },
+    {
+     "nom": "CHEMICAL S.A.S",
+     "nb": 1,
+     "matieres": [
+      "2,4-D Picloram 240 G/L"
+     ]
+    },
+    {
+     "nom": "CHEMINOVA AGRO DE COLOMBIA S.A",
+     "nb": 1,
+     "matieres": [
+      "Fipronil"
+     ]
+    },
+    {
+     "nom": "CHRYSAL COLOMBIA S.A",
+     "nb": 1,
+     "matieres": [
+      "Cyflumetofen"
+     ]
+    },
+    {
+     "nom": "CHRYSAL COLOMBIA SA",
+     "nb": 1,
+     "matieres": [
+      "Fludioxonil"
+     ]
+    },
+    {
+     "nom": "COLOMBIANA DE PRODUCTOS VETERINARIOS S.A",
+     "nb": 1,
+     "matieres": [
+      "Vecol S.A. Glifosato"
+     ]
+    },
+    {
+     "nom": "COMERCIALIZADORA INTERNACIONAL VASCAL LTDA",
+     "nb": 1,
+     "matieres": [
+      "\"Ci Vascal Ltda\" Methomyl"
+     ]
+    },
+    {
+     "nom": "COMPAÑÍA AGRICOLA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Coacol Glifosato 540 G/Lcomo Àcido- 662 G/L"
+     ]
+    },
+    {
+     "nom": "CORPORACION DE PLASTICOS AGRICOLAS-CORPOAGRO S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Clorpirifos"
+     ]
+    },
+    {
+     "nom": "CORTEVA AGRISCIENCE COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Tricyclazole"
+     ]
+    },
+    {
+     "nom": "CORTEVA AGRISCIENCE DE COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Aminopyralid Fluroxypy 40 G/L"
+     ]
+    },
+    {
+     "nom": "DATAGRO LTDA",
+     "nb": 1,
+     "matieres": [
+      "Oxido Cuproso"
+     ]
+    },
+    {
+     "nom": "DIFENOCONAZOLE DEL MONTE 325 S DEL MONTE AGROSCIENCES S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Difenoconazole Y Propiconazole 150 G/L"
+     ]
+    },
+    {
+     "nom": "DISCRYSTAL LTDA",
+     "nb": 1,
+     "matieres": [
+      "Abamectina"
+     ]
+    },
+    {
+     "nom": "DISTIBUCIONES ARAMA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Glufosinato De Amonio"
+     ]
+    },
+    {
+     "nom": "DISTRIBUIDORA DE ABONOS – DIABONOS S.A",
+     "nb": 1,
+     "matieres": [
+      "Glifosato"
+     ]
+    },
+    {
+     "nom": "DOW AGROSCIENCE DE COLOMBIA S.A",
+     "nb": 1,
+     "matieres": [
+      "Sulfoxaflor Lambda-Cyhalotrina 100 G/L"
+     ]
+    },
+    {
+     "nom": "DOW AGROSCIENCES DE COLOMBA S.A",
+     "nb": 1,
+     "matieres": [
+      "Aminopyralid 2,4-D 9 G/L"
+     ]
+    },
+    {
+     "nom": "DOW AGROSCIENCES DE COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Glifosato"
+     ]
+    },
+    {
+     "nom": "DUPON DE COLOMBIA S.A",
+     "nb": 1,
+     "matieres": [
+      "Oxamyl"
+     ]
+    },
+    {
+     "nom": "DUPONT DE COLOMBIA SA",
+     "nb": 1,
+     "matieres": [
+      "Famoxadone Oxathiapiprolin 300 G/L"
+     ]
+    },
+    {
+     "nom": "DVA DVA DE COLOMBIALTDA",
+     "nb": 1,
+     "matieres": [
+      "Emamectin Benzoate"
+     ]
+    },
+    {
+     "nom": "EC-DVA DVA DE COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Carfentrazone Ethyl"
+     ]
+    },
+    {
+     "nom": "FEDEARROZ S.A",
+     "nb": 1,
+     "matieres": [
+      "Tiabendafed"
+     ]
+    },
+    {
+     "nom": "FITOGRANOS LTDA",
+     "nb": 1,
+     "matieres": [
+      "Fosfuro De Aluminio"
+     ]
+    },
+    {
+     "nom": "FORAGRO COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Clorpirifos"
+     ]
+    },
+    {
+     "nom": "FRUIT TIME S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Paclobutrazol"
+     ]
+    },
+    {
+     "nom": "GENBRA DE COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Mancozeb"
+     ]
+    },
+    {
+     "nom": "GENBRA DE COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Imidacloprid"
+     ]
+    },
+    {
+     "nom": "GOOD HARVEST CROP PROTECTION S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Glifosato"
+     ]
+    },
+    {
+     "nom": "HALCON AGROINDUSTRIAL LTDA",
+     "nb": 1,
+     "matieres": [
+      "Lambda-Cihalotrina"
+     ]
+    },
+    {
+     "nom": "HANSEANDINA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Diflubenzuron Lambdacihalotrina 400 G/L"
+     ]
+    },
+    {
+     "nom": "HANSEANDNA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Cymoxanil"
+     ]
+    },
+    {
+     "nom": "HELP-INTERNATIONAL TRADING AND SERVICES LTDA",
+     "nb": 1,
+     "matieres": [
+      "Thidiazuron"
+     ]
+    },
+    {
+     "nom": "HENDRIX & DAIL COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Cloropicrina"
+     ]
+    },
+    {
+     "nom": "HENDRIX & DIAL COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Cloropicrina 1,3- Dicloropropeno"
+     ]
+    },
+    {
+     "nom": "INDUSTRIA PRODUCTORA DE ARROZ LTDA",
+     "nb": 1,
+     "matieres": [
+      "\" Inproarroz Ltda\" Azoxystrobin"
+     ]
+    },
+    {
+     "nom": "INDUSTRIA PRODUCTORA DE ARROZ S.A INPROARROZ S.A",
+     "nb": 1,
+     "matieres": [
+      "Cipermetrina"
+     ]
+    },
+    {
+     "nom": "INDUSTRIA PRODUCTORA DE ARROZ- INPROARROZ S.A",
+     "nb": 1,
+     "matieres": [
+      "Lufenuron"
+     ]
+    },
+    {
+     "nom": "INQUIPORT COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Propanil"
+     ]
+    },
+    {
+     "nom": "INSUMOS Y SERVICIOS LTDA",
+     "nb": 1,
+     "matieres": [
+      "Daminozide"
+     ]
+    },
+    {
+     "nom": "INSUMOS&SERVICIOS LTDA",
+     "nb": 1,
+     "matieres": [
+      "Metsufuron Methyl"
+     ]
+    },
+    {
+     "nom": "INVERSIONES JARDINES SIERRA S.A",
+     "nb": 1,
+     "matieres": [
+      "Aceite Mineral"
+     ]
+    },
+    {
+     "nom": "INVESA - INVEQUIMICA S.A",
+     "nb": 1,
+     "matieres": [
+      "2,4-D 115 G/L",
+      "Picloram"
+     ]
+    },
+    {
+     "nom": "INVESA SA",
+     "nb": 1,
+     "matieres": [
+      "Glufosinato De Amonio"
+     ]
+    },
+    {
+     "nom": "ISAGRO COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Etofenprox"
+     ]
+    },
+    {
+     "nom": "JEBSEN & JESSEN COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Cyprodinil Boscalid"
+     ]
+    },
+    {
+     "nom": "KABALA TRADING COMPANY CI S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Dicloropropeno Cloropicrina 803 G/L"
+     ]
+    },
+    {
+     "nom": "KATAN TECH COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Cloruro De 3 (Trimethoxisili) Propil- Octadecyl-Dimetil Amonio (Siquat)"
+     ]
+    },
+    {
+     "nom": "LA CORPORACION DEL AGRO S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Iprodiona"
+     ]
+    },
+    {
+     "nom": "LIMOR AGROPROTECCION S.A",
+     "nb": 1,
+     "matieres": [
+      "Propanil"
+     ]
+    },
+    {
+     "nom": "M.A COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Metsufuron Methyl"
+     ]
+    },
+    {
+     "nom": "MAC LIFE SCIENCE SAS",
+     "nb": 1,
+     "matieres": [
+      "Propamocarb Hidrocloruro"
+     ]
+    },
+    {
+     "nom": "MAPLOS COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Teflubenzuron"
+     ]
+    },
+    {
+     "nom": "MATABABOSA",
+     "nb": 1,
+     "matieres": [
+      "Superabono S.A.S Metaldehido"
+     ]
+    },
+    {
+     "nom": "MAYORISTAS AGRICOLAS MAGRO S.A",
+     "nb": 1,
+     "matieres": [
+      "Oxicloruro De Cobre Cloruro De Oxatetraciclina 450 G/Kg"
+     ]
+    },
+    {
+     "nom": "MEZFER ANDINA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Fluopicolide Propamocarb Hcl 62.5 G/L"
+     ]
+    },
+    {
+     "nom": "MEZFER MEZFER DE COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Carbendazim"
+     ]
+    },
+    {
+     "nom": "MINERALES EXCLUSIVOS S.A",
+     "nb": 1,
+     "matieres": [
+      "Bispyribac Sodium"
+     ]
+    },
+    {
+     "nom": "MITSUBISHI COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Pyrazosulfuron Ethyl"
+     ]
+    },
+    {
+     "nom": "MITSUI & CO (COLOMBIA) LTDA",
+     "nb": 1,
+     "matieres": [
+      "Hidroxido De Cobre"
+     ]
+    },
+    {
+     "nom": "MITSUI & CO. (COLOMBIA) LTDA",
+     "nb": 1,
+     "matieres": [
+      "Cyflufenamid"
+     ]
+    },
+    {
+     "nom": "MITSUI CO COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Dazomet"
+     ]
+    },
+    {
+     "nom": "NEW BRIDGE AGROCHEM COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Paraquat"
+     ]
+    },
+    {
+     "nom": "NIHON NOHYAKU ANDINA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Pyraflufen Ethyl"
+     ]
+    },
+    {
+     "nom": "NIHON NOHYAKY ANDICA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Pyrifluquinazon"
+     ]
+    },
+    {
+     "nom": "NUFARM COLOMBIA S.A",
+     "nb": 1,
+     "matieres": [
+      "Propanil"
+     ]
+    },
+    {
+     "nom": "OXYAGRO S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Acido Oxolinico"
+     ]
+    },
+    {
+     "nom": "OXYAGRO SAS",
+     "nb": 1,
+     "matieres": [
+      "Acido Alfa Naftalenacetico (Ana)"
+     ]
+    },
+    {
+     "nom": "PHYTOCARE AVGUST COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Clomazone"
+     ]
+    },
+    {
+     "nom": "POINT DE COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Mycrobutanil"
+     ]
+    },
+    {
+     "nom": "PONT DE COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Lambda-Cyhalotrina",
+      "Thiamethoxam 106 G/L"
+     ]
+    },
+    {
+     "nom": "PROFICOL S.A",
+     "nb": 1,
+     "matieres": [
+      "Lamda Cyhalotrin"
+     ]
+    },
+    {
+     "nom": "QUIMICA SAGAL DE COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Imidacloprid"
+     ]
+    },
+    {
+     "nom": "RAINBOW AGROCIENCES S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Clorotalonil"
+     ]
+    },
+    {
+     "nom": "RICECO INTERNACIONAL COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Propanil Clomazones 456 G/L"
+     ]
+    },
+    {
+     "nom": "RICECO INTERNATIONAL COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Propanil"
+     ]
+    },
+    {
+     "nom": "ROTAM AGRO CHEMICAL COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Imidacloprid Abamectina 300 G/L"
+     ]
+    },
+    {
+     "nom": "ROTAM AGROCHEMICAL COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Picloram 2,4-D 15 G/L"
+     ]
+    },
+    {
+     "nom": "ROTAM AGROCOLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Tebuconazole Carbendazim 125 G/L"
+     ]
+    },
+    {
+     "nom": "ROTAN AGRO COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Pyrazosulfuron Etil"
+     ]
+    },
+    {
+     "nom": "SEMBRO SEMBRO S.A",
+     "nb": 1,
+     "matieres": [
+      "Hexazinone"
+     ]
+    },
+    {
+     "nom": "SHARDA DE COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Spinosad Abamectina 120 G/L"
+     ]
+    },
+    {
+     "nom": "SINO - AGRI LEADING BIOSCIENCES COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Glufosinato De Amonio"
+     ]
+    },
+    {
+     "nom": "SL-DVA DVA DE COLOMBIA LTDA",
+     "nb": 1,
+     "matieres": [
+      "Picloram 2,4-D 60G/L"
+     ]
+    },
+    {
+     "nom": "STOCKTON COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Difenoconazole Tea Tree Oil 200 G/L"
+     ]
+    },
+    {
+     "nom": "SUMITOMO CORPORATION",
+     "nb": 1,
+     "matieres": [
+      "Colombia S.A.S Pyrimidifen"
+     ]
+    },
+    {
+     "nom": "SUSPENDIDO RES No 098422 03-06-2021 SEMBRO S.A",
+     "nb": 1,
+     "matieres": [
+      "Fipronil"
+     ]
+    },
+    {
+     "nom": "SUSPENDIDO RES No.098423 03-06-2021 QUIMICOS OMA S.A",
+     "nb": 1,
+     "matieres": [
+      "Lambdacyhalotrina Fipronil 60 G/L"
+     ]
+    },
+    {
+     "nom": "SUSPENDIDO RES. No..098424 03-06-2021 SHARDA COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Imidacloprid Fipronil 250 G/L"
+     ]
+    },
+    {
+     "nom": "TAGROS CHEMICALS ANDINA S.A",
+     "nb": 1,
+     "matieres": [
+      "Cipermetrina"
+     ]
+    },
+    {
+     "nom": "TAGROS CHEMICALS ANDINA SAS",
+     "nb": 1,
+     "matieres": [
+      "Lambda-Cyhalotrina Thiamethoxam 10.6% W/V"
+     ]
+    },
+    {
+     "nom": "TAPAZOL CHEMICAL WORKS S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Sulfato De Cobre Pentahidratado"
+     ]
+    },
+    {
+     "nom": "TECNOQUIMICAS SA",
+     "nb": 1,
+     "matieres": [
+      "Azoxystrobin Difenoconazole 200 G/L"
+     ]
+    },
+    {
+     "nom": "TEMPORALMENTE RES. No 077473 DEL 14-10-2020 ESTALION WG BAYER S.A",
+     "nb": 1,
+     "matieres": [
+      "Ethoxysulfuron",
+      "Iodosulfuron Methyl Sodium 125 G/Kg"
+     ]
+    },
+    {
+     "nom": "UNICROP COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Clorotalonil"
+     ]
+    },
+    {
+     "nom": "UPL COLOMBIA SAS",
+     "nb": 1,
+     "matieres": [
+      "Azufre",
+      "Tebuconazol E 70% W/W"
+     ]
+    },
+    {
+     "nom": "UPL DE COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Azoxystrobin Tebuconazole 120 G/Kg"
+     ]
+    },
+    {
+     "nom": "VECOL SL",
+     "nb": 1,
+     "matieres": [
+      "2,4-D 64 G/L",
+      "Vecol S.A Picloram"
+     ]
+    },
+    {
+     "nom": "VECOL VECOL S.A",
+     "nb": 1,
+     "matieres": [
+      "Metsulfuron- Methyl",
+      "Picloram"
+     ]
+    },
+    {
+     "nom": "VENDEDORA DE INSUMOS AGROPECARIOS S.A",
+     "nb": 1,
+     "matieres": [
+      "Cymoxanil Propamocarb 50 G/L"
+     ]
+    },
+    {
+     "nom": "VENDEDORA DE INSUMOS AGROPECUARIOS S.A. VIA S.A",
+     "nb": 1,
+     "matieres": [
+      "Dimetomorf"
+     ]
+    },
+    {
+     "nom": "VENDEDORA DE INSUMOS AGROPECUARIOS SA-VIA SA",
+     "nb": 1,
+     "matieres": [
+      "Glyfosato"
+     ]
+    },
+    {
+     "nom": "VICAR DE COLOMBIA S.A",
+     "nb": 1,
+     "matieres": [
+      "Abamectina"
+     ]
+    },
+    {
+     "nom": "VOCAGRO COLOMBIA S.A.S",
+     "nb": 1,
+     "matieres": [
+      "Bicarbonato De Potasio"
+     ]
+    }
+   ]
   },
   {
    "id": "argentine",
@@ -11417,11 +15611,2438 @@
    "autorite": "MPI — ACVM Register",
    "url": "https://eatsafe.nzfsa.govt.nz/web/public/acvm-register",
    "page": "https://eatsafe.nzfsa.govt.nz/web/public/acvm-register",
-   "nomme": "Le titulaire et le nom commercial des produits ACVM",
-   "avertissement": "Registre consultable en ligne, mis à jour le 26 août 2026. Pas d'export ouvert retenu. Aucune ligne n'est inventée.",
-   "nbProduits": 0,
-   "nbSocietes": 0,
-   "societes": []
+   "nomme": "Le titulaire et les ingrédients des produits de protection des cultures (export « Entire register »)",
+   "avertissement": "Seuls herbicides, fongicides, insecticides, acaricides, régulateurs, bactéricides, molluscicides et nématicides sont gardés. Le titulaire peut être un fabricant étranger représenté par un agent néo-zélandais.",
+   "nbProduits": 17775,
+   "nbSocietes": 155,
+   "societes": [
+    {
+     "nom": "Shandong Rainbow International Co., Limited",
+     "nb": 1556,
+     "matieres": [
+      "2,4-D",
+      "2,4-Db",
+      "Abamectin",
+      "Acephate",
+      "Acetochlor",
+      "Alachlor",
+      "Aminopyralid",
+      "Amitrole",
+      "Asulam",
+      "Atrazine",
+      "Azoxystrobin",
+      "Bentazone",
+      "Bifenthrin",
+      "Boscalid",
+      "Bromacil",
+      "Bromoxynil Octanoate",
+      "Captan",
+      "Carbendazim",
+      "Carfentrazone-Ethyl",
+      "Chlorantraniliprole",
+      "Chlorethephon",
+      "Chloridazon",
+      "Chlormequat-Chloride",
+      "Chlorothalonil",
+      "Clethodim",
+      "Clomazone",
+      "Clopyralid",
+      "Clothianidin",
+      "Cyproconazole",
+      "Cyprodinil",
+      "Desmedipham",
+      "Diazinon",
+      "Dicamba",
+      "Difenoconazole",
+      "Diflubenzuron",
+      "Diflufenican",
+      "Dimethomorph",
+      "Diquat",
+      "Diquat Dibromide",
+      "Dithianon",
+      "Diuron",
+      "Dodine",
+      "Emamectin Benzoate",
+      "Epoxiconazole",
+      "Ethofumesate",
+      "Etoxazole",
+      "Fenhexamid",
+      "Fenoxaprop-P Ethyl",
+      "Fenpyroximate",
+      "Fipronil",
+      "Flazasulfuron",
+      "Flonicamid",
+      "Fluazifop-P-Butyl",
+      "Fluazinam",
+      "Fludioxonil",
+      "Flufenacet",
+      "Flumetsulam",
+      "Fluopicolide",
+      "Fluopyram",
+      "Fluroxypyr",
+      "Folpet",
+      "Fosetyl-Aluminium",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Hexazinone",
+      "Imazethapyr",
+      "Imidacloprid",
+      "Indoxacarb",
+      "Iodosulfuron-Methyl-Sodium",
+      "Iprodione",
+      "Isoproturon",
+      "Kasugamycin",
+      "Lambda-Cyhalothrin",
+      "Linuron",
+      "Mancozeb",
+      "Mcpa",
+      "Mcpb",
+      "Mefenpyr-Diethyl",
+      "Mepiquat-Chloride",
+      "Mesotrione",
+      "Metalaxyl-M",
+      "Metaldehyde",
+      "Metamitron",
+      "Methomyl",
+      "Methoxyfenozide",
+      "Metribuzin",
+      "Metsulfuron-Methyl",
+      "Myclobutanil",
+      "Nicosulfuron",
+      "Oryzalin",
+      "Oxadiazon",
+      "Oxyfluorfen",
+      "Paraquat",
+      "Paraquat Dichloride",
+      "Penconazole",
+      "Permethrin",
+      "Phenmedipham",
+      "Picloram",
+      "Picoxystrobin",
+      "Pinoxaden",
+      "Pirimicarb",
+      "Pirimiphos-Methyl",
+      "Prochloraz",
+      "Procymidone",
+      "Prohexadione-Calcium",
+      "Prometryn",
+      "Propamocarb Hydrochloride",
+      "Propiconazole",
+      "Propyzamide",
+      "Prothioconazole",
+      "Pymetrozine",
+      "Pyraclostrobin",
+      "Pyrimethanil",
+      "Pyriproxyfen",
+      "S-Metolachlor",
+      "Saflufenacil",
+      "Simazine",
+      "Spinosad",
+      "Spiromesifen",
+      "Spirotetramat",
+      "Spiroxamine",
+      "Sulfentrazone",
+      "Tebuconazole",
+      "Terbuthylazine",
+      "Thiacloprid",
+      "Thiamethoxam",
+      "Thifensulfuron-Methyl",
+      "Thiophanate-Methyl",
+      "Thiram",
+      "Topramezone",
+      "Triadimenol",
+      "Tribenuron-Methyl",
+      "Triclopyr",
+      "Trifloxystrobin",
+      "Trifluralin",
+      "Trinexapac-Ethyl",
+      "Triticonazole"
+     ]
+    },
+    {
+     "nom": "Adria New Zealand Ltd",
+     "nb": 1282,
+     "matieres": [
+      "2,4-D",
+      "Abamectin",
+      "Acetochlor",
+      "Alpha-Cypermethrin",
+      "Aminopyralid",
+      "Asulam",
+      "Atrazine",
+      "Azoxystrobin",
+      "Bentazone",
+      "Bixafen",
+      "Boscalid",
+      "Bupirimate",
+      "Buprofezin",
+      "Captan",
+      "Carbendazim",
+      "Carfentrazone-Ethyl",
+      "Chlorantraniliprole",
+      "Chlorethephon",
+      "Chloridazon",
+      "Chlorothalonil",
+      "Chlorpropham",
+      "Clethodim",
+      "Clomazone",
+      "Clopyralid",
+      "Clothianidin",
+      "Cyanazine",
+      "Cyantraniliprole",
+      "Cyazofamid",
+      "Cymoxanil",
+      "Cyproconazole",
+      "Cyprodinil",
+      "Dazomet",
+      "Deltamethrin",
+      "Desmedipham",
+      "Dicamba",
+      "Difenoconazole",
+      "Diflufenican",
+      "Dimethomorph",
+      "Diquat Present As Diquat Dibromide",
+      "Dithianon",
+      "Dodine",
+      "Emamectin Benzoate",
+      "Epoxiconazole",
+      "Ethofumesate",
+      "Etoxazole",
+      "Fenhexamid",
+      "Fenoxaprop-P Ethyl",
+      "Fenpyroximate",
+      "Fipronil",
+      "Fluazinam",
+      "Fludioxonil",
+      "Flufenacet",
+      "Flumetsulam",
+      "Fluopicolide",
+      "Fluopyram",
+      "Fluroxypyr",
+      "Flusulfamide",
+      "Fluxapyroxad",
+      "Folpet",
+      "Fosetyl-Aluminium",
+      "Glufosinate-Ammonium",
+      "Haloxyfop-P",
+      "Hexazinone",
+      "Imazethapyr",
+      "Imidacloprid",
+      "Indoxacarb",
+      "Iodosulfuron-Methyl-Sodium",
+      "Iprodione",
+      "Lambda-Cyhalothrin",
+      "Linuron",
+      "Lufenuron",
+      "Mancozeb",
+      "Mcpa",
+      "Mepiquat-Chloride",
+      "Mesotrione",
+      "Metalaxyl",
+      "Metalaxyl-M",
+      "Metaldehyde",
+      "Metamitron",
+      "Methoxyfenozide",
+      "Metribuzin",
+      "Metsulfuron-Methyl",
+      "Myclobutanil",
+      "Nicosulfuron",
+      "Oxadiazon",
+      "Oxyfluorfen",
+      "Penconazole",
+      "Pendimethalin",
+      "Phenmedipham",
+      "Phosphorous Acid",
+      "Picloram",
+      "Pinoxaden",
+      "Pirimicarb",
+      "Prochloraz",
+      "Prohexadione-Calcium",
+      "Propamocarb Hydrochloride",
+      "Propyzamide",
+      "Prothioconazole",
+      "Pymetrozine",
+      "Pyraclostrobin",
+      "Pyrimethanil",
+      "Pyriproxyfen",
+      "Pyroxsulam",
+      "Quinoxyfen",
+      "Saflufenacil",
+      "Spinosad",
+      "Spiromesifen",
+      "Spirotetramat",
+      "Spiroxamine",
+      "Sulfentrazone",
+      "Tebuconazole",
+      "Terbuthylazine",
+      "Terbutryn",
+      "Thiacloprid",
+      "Thifensulfuron-Methyl",
+      "Topramezone",
+      "Triadimenol",
+      "Tribenuron-Methyl",
+      "Trifloxystrobin",
+      "Trifluralin",
+      "Trinexapac-Ethyl"
+     ]
+    },
+    {
+     "nom": "Adama New Zealand Limited",
+     "nb": 1048,
+     "matieres": [
+      "1-Naphthylacetic Acid",
+      "Abamectin",
+      "Alachlor",
+      "Ammonium Thiosulphate",
+      "Atrazine",
+      "Azoxystrobin",
+      "Bifenthrin",
+      "Bromacil",
+      "Bromoxynil",
+      "Bromoxynil Octanoate",
+      "Bupirimate",
+      "Buprofezin",
+      "Calcium Polysulfide",
+      "Captan",
+      "Carbendazim",
+      "Chlorantraniliprole",
+      "Chlorethephon",
+      "Chlorothalonil",
+      "Chlorotoluron",
+      "Clethodim",
+      "Clodinafop-Propargyl",
+      "Clofentezine",
+      "Copper (I) Oxide",
+      "Cydia Pomonellla Granulosis Virus, Mexican Strain",
+      "Cyprodinil",
+      "Desmedipham",
+      "Diazinon",
+      "Dicamba",
+      "Diflufenican",
+      "Dimethomorph",
+      "Distillates (Petroleum), Hydrotreated Light Paraffinic",
+      "Diuron",
+      "Dodine",
+      "Emamectin Benzoate",
+      "Epicoccum Nigrum H342",
+      "Epoxiconazole",
+      "Ethofumesate",
+      "Fenhexamid",
+      "Fluazinam",
+      "Fludioxonil",
+      "Fluensulfone",
+      "Fluroxypyr",
+      "Flusilazole",
+      "Folpet",
+      "Forchlorfenuron",
+      "Gibberellic Acid",
+      "Gibberellin A4/A7",
+      "Glyphosate",
+      "Hydrogen Cyanamide",
+      "Ioxynil",
+      "Iron",
+      "Isoproturon",
+      "Linuron",
+      "Mcpa",
+      "Mcpb",
+      "Mesotrione",
+      "Metamitron",
+      "Mineral Oil",
+      "N6-Benzyladenine",
+      "Nicosulfuron",
+      "Novaluron",
+      "Oils-Mineral-Insecticidal",
+      "Oxyfluorfen",
+      "Pantoea Agglomerans, Strain P10C",
+      "Paraquat",
+      "Pendimethalin",
+      "Phenmedipham",
+      "Phosphorous Acid",
+      "Pirimicarb",
+      "Prochloraz",
+      "Prohexadione-Calcium",
+      "Prothioconazole",
+      "Quizalofop-P-Ethyl",
+      "Spiroxamine",
+      "Tau-Fluvalinate",
+      "Tebuconazole",
+      "Tebufenozide",
+      "Terbuthylazine",
+      "Thidiazuron",
+      "Triadimenol",
+      "Trifluralin",
+      "Trinexapac-Ethyl"
+     ]
+    },
+    {
+     "nom": "Agsin Pte Limited",
+     "nb": 805,
+     "matieres": [
+      "2,4-D Present As 2,4D Ethylhexyl Ester",
+      "2,4-D Present As The 2,4-D Diethanolamine And Dimethylamine Salts",
+      "Acetochlor",
+      "Alachlor",
+      "Alpha-Cypermethrin",
+      "Atrazine",
+      "Bentazone",
+      "Bifenthrin",
+      "Buprofezin",
+      "Captan",
+      "Carfentrazone-Ethyl",
+      "Chlorethephon",
+      "Chlorothalonil",
+      "Clethodim",
+      "Clopyralid",
+      "Clopyralid Present As Clopyralid Monoethanolamine",
+      "Clothianidin",
+      "Desmedipham",
+      "Diazinon",
+      "Dicamba",
+      "Diflubenzuron",
+      "Diquat",
+      "Diuron",
+      "Ethofumesate",
+      "Fipronil",
+      "Flamprop-M-Isopropyl",
+      "Flumetsulam",
+      "Gibberellic Acid",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Hexazinone",
+      "Imidacloprid",
+      "Indoxacarb",
+      "Iron Sodium Edta",
+      "Mancozeb",
+      "Mcpa",
+      "Mcpb",
+      "Mecoprop",
+      "Mepiquat-Chloride",
+      "Mesotrione",
+      "Metaldehyde",
+      "Metamitron",
+      "Metribuzin",
+      "Metsulfuron-Methyl",
+      "Paraquat",
+      "Permethrin",
+      "Phenmedipham",
+      "Picloram",
+      "Picloram Present As Picloram Monoethanolamine",
+      "Pirimiphos-Methyl",
+      "Prometryn",
+      "Propazine",
+      "Propiconazole",
+      "Prothioconazole",
+      "Pyraclostrobin",
+      "Saflufenacil",
+      "Simazine",
+      "Sulphur",
+      "Tebuconazole",
+      "Terbuthylazine",
+      "Thifensulfuron-Methyl",
+      "Topramezone",
+      "Tribenuron-Methyl",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Nufarm Limited",
+     "nb": 780,
+     "matieres": [
+      "2,4-D",
+      "2,4-Db",
+      "Acetochlor",
+      "Aminopyralid",
+      "Amisulbrom",
+      "Asulam",
+      "Atrazine",
+      "Aureobasidium Pullulans (Dsm 14940 And Dsm 14941)",
+      "Azoxystrobin",
+      "Bentazone",
+      "Bromoxynil",
+      "Captan",
+      "Carboxin",
+      "Carfentrazone-Ethyl",
+      "Chlorethephon",
+      "Chlormequat-Chloride",
+      "Chlorothalonil",
+      "Chlorsulfuron",
+      "Chromobacterium Subtsugae (Strain Praa4-1T)",
+      "Clethodim",
+      "Clomazone",
+      "Clopyralid",
+      "Copper",
+      "Copper Hydroxide",
+      "Diazinon",
+      "Dicamba",
+      "Dichlorprop-P",
+      "Difenoconazole",
+      "Diflubenzuron",
+      "Fluazinam",
+      "Flumetsulam",
+      "Fluroxypyr",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Halosulfuron-Methyl",
+      "Haloxyfop-P",
+      "Hydrogen Cyanamide",
+      "Imazethapyr",
+      "Imidacloprid",
+      "Ioxynil",
+      "Lambda-Cyhalothrin",
+      "Mcpa",
+      "Mcpb",
+      "Mecoprop",
+      "Mecoprop-P",
+      "Mepiquat-Chloride",
+      "Mesotrione",
+      "Metaldehyde",
+      "Metsulfuron-Methyl",
+      "Nicosulfuron",
+      "Paclobutrazol",
+      "Permethrin",
+      "Picloram",
+      "Pirimiphos-Methyl",
+      "Propachlor",
+      "Prothioconazole",
+      "Pymetrozine",
+      "Tebuconazole",
+      "Thifensulfuron-Methyl",
+      "Thiram",
+      "Tri-Allate",
+      "Tribenuron-Methyl",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Kenso Corporation (M) Sdn Bhd",
+     "nb": 751,
+     "matieres": [
+      "2,4-D",
+      "Acetochlor",
+      "Alachlor",
+      "Alpha-Cypermethrin",
+      "Aminopyralid",
+      "Amitrole",
+      "Atrazine",
+      "Azoxystrobin",
+      "Bentazone",
+      "Bifenthrin",
+      "Boscalid",
+      "Butoxyethyl Triclopyr",
+      "Carbendazim",
+      "Chlorantraniliprole",
+      "Chlorethephon",
+      "Clethodim",
+      "Clopyralid",
+      "Cyprodinil",
+      "Desmedipham",
+      "Diazinon",
+      "Difenoconazole",
+      "Diquat",
+      "Diuron",
+      "Epoxiconazole",
+      "Ethofumesate",
+      "Fipronil",
+      "Flonicamid",
+      "Fluazinam",
+      "Fludioxonil",
+      "Flumetsulam",
+      "Fluroxypyr",
+      "Gibberellic Acid",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Hexazinone",
+      "Imidacloprid",
+      "Indoxacarb",
+      "Ioxynil",
+      "Iprodione",
+      "Lambda-Cyhalothrin",
+      "Linuron",
+      "Mancozeb",
+      "Mcpa",
+      "Mcpb",
+      "Mesotrione",
+      "Metamitron",
+      "Metribuzin",
+      "Metsulfuron-Methyl",
+      "Oxyfluorfen",
+      "Paraquat",
+      "Pendimethalin",
+      "Phenmedipham",
+      "Phosphorous Acid",
+      "Picloram",
+      "Propiconazole",
+      "Prothioconazole",
+      "Pyraclostrobin",
+      "S-Metolachlor",
+      "Saflufenacil",
+      "Spirotetramat",
+      "Sulphur",
+      "Tebuconazole",
+      "Terbuthylazine",
+      "Triclopyr",
+      "Trifloxystrobin",
+      "Trifluralin"
+     ]
+    },
+    {
+     "nom": "Bayer New Zealand Limited",
+     "nb": 674,
+     "matieres": [
+      "Bacillus Subtilis Qst 713",
+      "Bixafen",
+      "Bromoxynil",
+      "Chlorethephon",
+      "Cyproconazole",
+      "Deltamethrin",
+      "Desmedipham",
+      "Diflufenican",
+      "Ethofumesate",
+      "Fenhexamid",
+      "Fenoxaprop-P-Ethyl",
+      "Flufenacet",
+      "Fluopicolide",
+      "Fluopyram",
+      "Fluoxapiprolin",
+      "Flupyradifurone",
+      "Foramsulfuron",
+      "Fosetyl-Aluminium",
+      "Glyphosate",
+      "Imidacloprid",
+      "Indaziflam",
+      "Iodosulfuron-Methyl-Sodium",
+      "Isoflucypram",
+      "Mesosulfuron Methyl",
+      "Metamitron",
+      "Metribuzin",
+      "Penflufen",
+      "Phenmedipham",
+      "Propamocarb Hydrochloride",
+      "Prothioconazole",
+      "Pyrimethanil",
+      "Pyroxasulfone",
+      "Spiromesifen",
+      "Spirotetramat",
+      "Spiroxamine",
+      "Tebuconazole",
+      "Tetraniliprole",
+      "Thiacloprid",
+      "Thiencarbazone-Methyl",
+      "Triadimenol",
+      "Trifloxystrobin"
+     ]
+    },
+    {
+     "nom": "Nutrien Ag Solutions Limited",
+     "nb": 653,
+     "matieres": [
+      "2,4-D",
+      "2,4-D 2-Ethylhexyl Ester",
+      "Acetochlor",
+      "Alachlor",
+      "Atrazine",
+      "Azoxystrobin",
+      "Bentazone",
+      "Bromoxynil Octanoate",
+      "Carfentrazone-Ethyl",
+      "Chlorethephon",
+      "Chlormequat-Chloride",
+      "Clethodim",
+      "Clomazone",
+      "Clopyralid",
+      "Desmedipham",
+      "Diazinon",
+      "Dicamba",
+      "Diflufenican",
+      "Diquat",
+      "Epoxiconazole",
+      "Ethofumesate",
+      "Fenoxaprop-P Ethyl",
+      "Flufenacet",
+      "Flumetsulam",
+      "Fluroxypyr",
+      "Folpet",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Iodosulfuron-Methyl-Sodium",
+      "Lambda-Cyhalothrin",
+      "Mcpa",
+      "Mcpb",
+      "Mefenpyr-Diethyl",
+      "Mepiquat-Chloride",
+      "Metaldehyde",
+      "Metamitron",
+      "Metsulfuron-Methyl",
+      "Oxyfluorfen",
+      "Paraquat",
+      "Permethrin",
+      "Phenmedipham",
+      "Picloram",
+      "Pinoxaden",
+      "Pirimicarb",
+      "Pirimiphos-Methyl",
+      "Prochloraz",
+      "Propyzamide",
+      "Prothioconazole",
+      "Pyraclostrobin",
+      "Tebuconazole",
+      "Terbuthylazine",
+      "Triclopyr",
+      "Trifluralin",
+      "Trinexapac-Ethyl"
+     ]
+    },
+    {
+     "nom": "Arxada NZ Limited",
+     "nb": 622,
+     "matieres": [
+      "Acetochlor",
+      "Alachlor",
+      "Amitrole",
+      "Bentazone",
+      "Bupirimate",
+      "Buprofezin",
+      "Carbendazim",
+      "Chlorothalonil",
+      "Clethodim",
+      "Clomazone",
+      "Copper",
+      "Cyanazine",
+      "Cyproconazole",
+      "Desmedipham",
+      "Difenoconazole",
+      "Diflubenzuron",
+      "Diflufenican",
+      "Dimethomorph",
+      "Dodine",
+      "Ethofumesate",
+      "Fenoxaprop-P Ethyl",
+      "Flamprop-M-Isopropyl",
+      "Fluazinam",
+      "Fludioxonil",
+      "Flufenacet",
+      "Flumetsulam",
+      "Fluroxypyr",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Isoproturon",
+      "Lambda-Cyhalothrin",
+      "Mcpa",
+      "Mecoprop-P",
+      "Mesotrione",
+      "Metalaxyl",
+      "Metaldehyde",
+      "Metamitron",
+      "Metribuzin",
+      "Nicosulfuron",
+      "Oxadiazon",
+      "Oxyfluorfen",
+      "Phenmedipham",
+      "Phosphorous Acid",
+      "Picloram",
+      "Picloram Present As Picloram Monoethanolamine",
+      "Polyoxin D Zinc Salt",
+      "Prometryn",
+      "Propyzamide",
+      "Pyrethrins",
+      "Pyrimethanil",
+      "Quaternary Ammonium Compounds, Benzyl-C12-C14-Alkyldimethyl Chlorides",
+      "Salicylic Acid",
+      "Terbuthylazine",
+      "Thiacloprid",
+      "Triadimenol",
+      "Triclopyr Triethylamine",
+      "Trifloxystrobin"
+     ]
+    },
+    {
+     "nom": "PGG Wrightson Limited",
+     "nb": 602,
+     "matieres": [
+      "2,4-D",
+      "Acetochlor",
+      "Alachlor",
+      "Amitrole",
+      "Atrazine",
+      "Bentazone",
+      "Benzalkonium Chloride",
+      "Boracic Acid",
+      "Captan",
+      "Chloridazon",
+      "Chlorothalonil",
+      "Copper Hydroxide",
+      "Cyanazine",
+      "Desmedipham",
+      "Diazinon",
+      "Dicamba",
+      "Diflufenican",
+      "Dithianon",
+      "Epoxiconazole",
+      "Ethofumesate",
+      "Fluazinam",
+      "Folpet",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Hexazinone",
+      "Isoproturon",
+      "Linuron",
+      "Maleic Hydrazide",
+      "Mancozeb",
+      "Mcpa",
+      "Mcpb",
+      "Mesotrione",
+      "Metaldehyde",
+      "Metamitron",
+      "Metsulfuron-Methyl",
+      "N6-Benzyladenine",
+      "Octhilinone",
+      "Oxyfluorfen",
+      "Paclobutrazol",
+      "Phenmedipham",
+      "Picloram",
+      "Prometryn",
+      "Propiconazole",
+      "Salicylic Acid",
+      "Sulphur",
+      "Tebuconazole",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Syngenta Crop Protection Limited",
+     "nb": 561,
+     "matieres": [
+      "Abamectin",
+      "Azoxystrobin",
+      "Benzovindiflupyr",
+      "Chlorantraniliprole",
+      "Chlorothalonil",
+      "Cyantraniliprole",
+      "Cymoxanil",
+      "Cyproconazole",
+      "Cyprodinil",
+      "Difenoconazole",
+      "Diquat",
+      "Emamectin Benzoate",
+      "Fluazifop-P-Butyl",
+      "Fludioxonil",
+      "Glyphosate",
+      "Isopyrazam",
+      "Lambda-Cyhalothrin",
+      "Lufenuron",
+      "Mancozeb",
+      "Mandipropamid",
+      "Mesotrione",
+      "Metalaxyl-M",
+      "Paraquat",
+      "Penconazole",
+      "Pinoxaden",
+      "Pirimicarb",
+      "Propiconazole",
+      "Prosulfocarb",
+      "Pydiflumetofen",
+      "Pymetrozine",
+      "S-Metolachlor",
+      "Sedaxane",
+      "Sulphur",
+      "Thiabendazole",
+      "Thiamethoxam",
+      "Trinexapac-Ethyl"
+     ]
+    },
+    {
+     "nom": "UPL New Zealand Limited",
+     "nb": 475,
+     "matieres": [
+      "Acephate",
+      "Alachlor",
+      "Aluminium Phosphide",
+      "Asulam",
+      "Aureobasidium Pullulans Ybca5",
+      "Bacillus Subtilis",
+      "Bifenthrin",
+      "Bordeaux Mixture",
+      "Buprofezin",
+      "Captan",
+      "Carfentrazone-Ethyl",
+      "Chloridazon",
+      "Clethodim",
+      "Clomazone",
+      "Cyanazine",
+      "Cyflufenamid",
+      "Cymoxanil",
+      "Desmedipham",
+      "Dichlobenil",
+      "Dodine",
+      "Etridiazole",
+      "Fatty Acids (Potassium Salts)",
+      "Fatty Acids C6-12, Me Esters",
+      "Flusulfamide",
+      "Glufosinate-Ammonium",
+      "Ipconazole",
+      "Kasugamycin",
+      "Maleic Hydrazide",
+      "Mancozeb",
+      "Mandipropamid",
+      "Metalaxyl",
+      "Metamitron",
+      "Paraffin Oil",
+      "Phenmedipham",
+      "Pirimiphos-Methyl",
+      "Potassium Bicarbonate",
+      "Prometryn",
+      "Sulphur",
+      "Triclopyr",
+      "Ziram"
+     ]
+    },
+    {
+     "nom": "Danken New Zealand Limited",
+     "nb": 455,
+     "matieres": [
+      "2,4-D",
+      "Acetochlor",
+      "Atrazine",
+      "Azoxystrobin",
+      "Bentazone",
+      "Chlorantraniliprole",
+      "Clethodim",
+      "Clopyralid",
+      "Desmedipham",
+      "Dicamba",
+      "Ethofumesate",
+      "Flumetsulam",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Hexazinone",
+      "Imidacloprid",
+      "Mcpa",
+      "Mcpb",
+      "Mesotrione",
+      "Metamitron",
+      "Metsulfuron-Methyl",
+      "Paraquat",
+      "Phenmedipham",
+      "Picloram",
+      "Prothioconazole",
+      "Terbuthylazine",
+      "Tribenuron-Methyl",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Yongnong Biosciences Co., Limited",
+     "nb": 412,
+     "matieres": [
+      "2,4-D",
+      "Atrazine",
+      "Azoxystrobin",
+      "Boscalid",
+      "Chlorothalonil",
+      "Chlorsulfuron",
+      "Copper Hydroxide",
+      "Cyprodinil",
+      "Desmedipham",
+      "Diazinon",
+      "Dicamba",
+      "Emamectin Benzoate",
+      "Ethofumesate",
+      "Fipronil",
+      "Fluazinam",
+      "Fludioxonil",
+      "Flumetsulam",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Hexazinone",
+      "Imidacloprid",
+      "Indoxacarb",
+      "Lambda-Cyhalothrin",
+      "Mancozeb",
+      "Mcpa",
+      "Mcpb",
+      "Mesotrione",
+      "Metamitron",
+      "Methoxyfenozide",
+      "Metribuzin",
+      "Metsulfuron-Methyl",
+      "Nicosulfuron",
+      "Phenmedipham",
+      "Picloram",
+      "Prothioconazole",
+      "Pyraclostrobin",
+      "Tebuconazole",
+      "Terbuthylazine",
+      "Triclopyr",
+      "Trifloxystrobin"
+     ]
+    },
+    {
+     "nom": "AgStar New Zealand Pty Limited",
+     "nb": 382,
+     "matieres": [
+      "2,4-D",
+      "Abamectin",
+      "Acetochlor",
+      "Atrazine",
+      "Captan",
+      "Carfentrazone-Ethyl",
+      "Clethodim",
+      "Clopyralid",
+      "Diazinon",
+      "Dicamba",
+      "Diquat",
+      "Dithianon",
+      "Emamectin Benzoate",
+      "Fluazinam",
+      "Flumetsulam",
+      "Fluroxypyr",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Kasugamycin",
+      "Mancozeb",
+      "Mcpa",
+      "Mcpb",
+      "Mesotrione",
+      "Metaldehyde",
+      "Methoxyfenozide",
+      "Nicosulfuron",
+      "Paraquat",
+      "Picloram",
+      "Spirotetramat",
+      "Spiroxamine",
+      "Sulphur",
+      "Tebuconazole",
+      "Thifensulfuron-Methyl",
+      "Tribenuron-Methyl",
+      "Triclopyr",
+      "Trifluralin",
+      "Trinexapac-Ethyl"
+     ]
+    },
+    {
+     "nom": "Sipcam New Zealand Limited",
+     "nb": 356,
+     "matieres": [
+      "1-Methyl Cyclopropene",
+      "Abamectin",
+      "Bacillus Thuringiensis Var Kurstaki (H-3A,3B, Hd 263)",
+      "Butoxyethyl Triclopyr",
+      "Chlorantraniliprole",
+      "Clethodim",
+      "Clopyralid",
+      "Cyprodinil",
+      "Difenoconazole",
+      "Distillates (Petroleum), Hydrotreated Light Paraffinic",
+      "Dithianon",
+      "Dodine",
+      "Ethofumesate",
+      "Etoxazole",
+      "Fenpyroximate",
+      "Fluazinam",
+      "Fludioxonil",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Hexazinone",
+      "Hydrogen Cyanamide",
+      "Mcpa",
+      "Mcpb",
+      "Metamitron",
+      "Metsulfuron-Methyl",
+      "Milbemectin",
+      "Picloram",
+      "Pirimicarb",
+      "Prohexadione-Calcium",
+      "Terbuthylazine",
+      "Triclopyr",
+      "Triforine"
+     ]
+    },
+    {
+     "nom": "Ravensdown Limited",
+     "nb": 354,
+     "matieres": [
+      "2,4-D",
+      "2,4-D Present As 2,4D Ethylhexyl Ester",
+      "Acetochlor",
+      "Atrazine",
+      "Azoxystrobin",
+      "Bentazone",
+      "Chlorethephon",
+      "Clethodim",
+      "Clopyralid",
+      "Dicamba",
+      "Diflubenzuron",
+      "Epoxiconazole",
+      "Ethofumesate",
+      "Flumetsulam",
+      "Gibberellic Acid",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Mcpa",
+      "Mcpb",
+      "Mecoprop",
+      "Mepiquat-Chloride",
+      "Metsulfuron-Methyl",
+      "Picloram",
+      "Simazine",
+      "Terbuthylazine",
+      "Thifensulfuron-Methyl",
+      "Tribenuron-Methyl",
+      "Triclopyr",
+      "Trifluralin"
+     ]
+    },
+    {
+     "nom": "BASF New Zealand Limited",
+     "nb": 353,
+     "matieres": [
+      "Ametoctradin",
+      "Bacillus Amyloliquefaciens",
+      "Bacillus Firmus (Strain I-1582)",
+      "Bentazone",
+      "Boscalid",
+      "Chlorethephon",
+      "Chlormequat-Chloride",
+      "Clothianidin",
+      "Cypermethrin",
+      "Dimethenamid - P",
+      "Dimethomorph",
+      "Dithianon",
+      "Epoxiconazole",
+      "Fluxapyroxad",
+      "Glufosinate-Ammonium",
+      "Kresoxim-Methyl",
+      "Mcpb",
+      "Mefentrifluconazole",
+      "Mepiquat-Chloride",
+      "Metiram",
+      "Metrafenone",
+      "Pendimethalin",
+      "Prochloraz",
+      "Prohexadione-Calcium",
+      "Pyraclostrobin",
+      "Saflufenacil",
+      "Sulphur",
+      "Topramezone",
+      "Triticonazole"
+     ]
+    },
+    {
+     "nom": "Corteva Agriscience New Zealand Limited",
+     "nb": 353,
+     "matieres": [
+      "Aminopyralid",
+      "Clopyralid",
+      "Copper Hydroxide",
+      "Cyantraniliprole",
+      "Cymoxanil",
+      "Fenpicoxamid",
+      "Fenpyroximate",
+      "Florasulam",
+      "Flumetsulam",
+      "Fluroxypyr",
+      "Halauxifen-Methyl",
+      "Haloxyfop-P",
+      "Methoxyfenozide",
+      "Oxathiapiprolin",
+      "Penthiopyrad",
+      "Picloram",
+      "Picoxystrobin",
+      "Propyzamide",
+      "Proquinazid",
+      "Pyroxsulam",
+      "Spinetoram",
+      "Spinosad",
+      "Sulfoxaflor",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Agri Solutions Limited",
+     "nb": 320,
+     "matieres": [
+      "1,4-Dimethylnaphthalene",
+      "Abamectin",
+      "Alachlor",
+      "Amitrole",
+      "Azoxystrobin",
+      "Bromoxynil",
+      "Carbendazim",
+      "Chlorethephon",
+      "Chlormequat-Chloride",
+      "Clethodim",
+      "Clomazone",
+      "Clopyralid",
+      "Cymoxanil",
+      "Difenoconazole",
+      "Diflufenican",
+      "Diquat",
+      "Ethofumesate",
+      "Flonicamid",
+      "Fluazinam",
+      "Folpet",
+      "Indoxacarb",
+      "Lambda-Cyhalothrin",
+      "Mepiquat-Chloride",
+      "Metaldehyde",
+      "Metamitron",
+      "Oxadiazon",
+      "Pencycuron",
+      "Picloram",
+      "Prochloraz",
+      "Procymidone",
+      "Prometryn",
+      "Propiconazole",
+      "Prothioconazole",
+      "Thiram",
+      "Tri-Allate",
+      "Trinexapac-Ethyl"
+     ]
+    },
+    {
+     "nom": "DuluxGroup (New Zealand) Pty Limited",
+     "nb": 295,
+     "matieres": [
+      "Azadirachtin",
+      "Calcium Polysulfide",
+      "Canola Oil",
+      "Copper",
+      "Copper Oxychloride",
+      "Fatty Acids (Potassium Salts)",
+      "Fatty Acids, C8-18 And C18-Unsatd",
+      "Metaldehyde",
+      "Myclobutanil",
+      "Nonanoic Acid",
+      "Oils-Mineral-Insecticidal",
+      "Piperonyl Butoxide",
+      "Potassium Bicarbonate",
+      "Pyrethrins",
+      "Rotenone",
+      "Sulphur",
+      "Tau-Fluvalinate"
+     ]
+    },
+    {
+     "nom": "AGPRO (N.Z.) Limited",
+     "nb": 274,
+     "matieres": [
+      "2,4-D",
+      "2,4-D Present As 2,4D Ethylhexyl Ester",
+      "Atrazine",
+      "Azoxystrobin",
+      "Chlorpropham",
+      "Cyprodinil",
+      "Fludioxonil",
+      "Flumetsulam",
+      "Glyphosate",
+      "Imidacloprid",
+      "Mcpa",
+      "Mcpb",
+      "Mesotrione",
+      "Metaldehyde",
+      "Metsulfuron-Methyl",
+      "Nicosulfuron",
+      "Picloram",
+      "Tebuconazole",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Agsin PTE Limited",
+     "nb": 263,
+     "matieres": [
+      "2,4-D",
+      "2,4-D Present As 2,4D Ethylhexyl Ester",
+      "Acetochlor",
+      "Alpha-Cypermethrin",
+      "Bentazone",
+      "Cyprodinil",
+      "Fatty Acids",
+      "Fludioxonil",
+      "Flumetsulam",
+      "Glyphosate",
+      "Iron Sodium Edta",
+      "Lufenuron",
+      "Mcpa",
+      "Mcpb",
+      "Nicosulfuron",
+      "Picloram",
+      "Picoxystrobin",
+      "Pirimicarb",
+      "S-Metolachlor",
+      "Tribenuron-Methyl",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Donaghys Limited",
+     "nb": 213,
+     "matieres": [
+      "2,4-D",
+      "2,4-D Present As 2,4D Ethylhexyl Ester",
+      "Acetochlor",
+      "Atrazine",
+      "Bacillus Subtilis",
+      "Carbendazim",
+      "Chloridazon",
+      "Clopyralid",
+      "Ethofumesate",
+      "Flumetsulam",
+      "Gibberellic Acid",
+      "Glyphosate",
+      "Mcpa",
+      "Metamitron",
+      "Metsulfuron-Methyl",
+      "Picloram",
+      "Tebuconazole",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "FMC New Zealand Limited",
+     "nb": 207,
+     "matieres": [
+      "Abamectin",
+      "Acrinathrin",
+      "Carfentrazone-Ethyl",
+      "Chlorantraniliprole",
+      "Chlorsulfuron",
+      "Clomazone",
+      "Cyantraniliprole",
+      "Fenoxaprop-P Ethyl",
+      "Fluthiacet-Methyl",
+      "Indoxacarb",
+      "Iprodione",
+      "Maldison",
+      "Prochloraz",
+      "Sulfentrazone",
+      "Thifensulfuron-Methyl",
+      "Tribenuron-Methyl",
+      "Triflusulfuron-Methyl"
+     ]
+    },
+    {
+     "nom": "Trical NZ Limited",
+     "nb": 200,
+     "matieres": [
+      "1,3-Dichloropropene",
+      "Chloropicrin",
+      "Methyl Bromide"
+     ]
+    },
+    {
+     "nom": "Zhejiang Xinan Chemical Industrial Group Co. Limited",
+     "nb": 186,
+     "matieres": [
+      "Carbendazim",
+      "Chlorantraniliprole",
+      "Chlorothalonil",
+      "Chlorsulfuron",
+      "Clethodim",
+      "Diuron",
+      "Fenoxaprop-P Ethyl",
+      "Fluazinam",
+      "Fluroxypyr",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Metribuzin",
+      "Prothioconazole",
+      "Pyraclostrobin",
+      "S-Metolachlor",
+      "Saflufenacil",
+      "Spirotetramat",
+      "Sulfentrazone",
+      "Tebuconazole",
+      "Trifloxystrobin"
+     ]
+    },
+    {
+     "nom": "Rainbow & Brown Limited",
+     "nb": 174,
+     "matieres": [
+      "2,4-D",
+      "Aminopyralid",
+      "Dicamba",
+      "Flumetsulam",
+      "Gibberellic Acid",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Haloxyfop-P-Methyl",
+      "Mcpa",
+      "Mcpb",
+      "Metsulfuron-Methyl",
+      "Picloram",
+      "Thifensulfuron-Methyl",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Grosafe Chemicals Limited",
+     "nb": 160,
+     "matieres": [
+      "Acetochlor",
+      "Atrazine",
+      "Azadirachtin",
+      "Azoxystrobin",
+      "Captan",
+      "Copper Hydroxide",
+      "Emamectin Benzoate",
+      "Methoxyfenozide",
+      "Metiram",
+      "Spinosad",
+      "Spirotetramat",
+      "Sulphur",
+      "Sulphur Present As Polysulphide Sulphur",
+      "Thiacloprid"
+     ]
+    },
+    {
+     "nom": "Zhejiang Xinan Chemical Industrial Group Co., Limited",
+     "nb": 147,
+     "matieres": [
+      "2,4-D",
+      "Acetochlor",
+      "Azoxystrobin",
+      "Bentazone",
+      "Carfentrazone-Ethyl",
+      "Clopyralid",
+      "Dicamba",
+      "Diflufenican",
+      "Diquat",
+      "Glyphosate",
+      "Glyphosate Monoammonium Salt",
+      "Hexazinone",
+      "Indoxacarb",
+      "Mesotrione",
+      "Nicosulfuron",
+      "Picloram",
+      "Prothioconazole",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Agroquimicos De Lavente, SA",
+     "nb": 117,
+     "matieres": [
+      "1,3-Dichloropropene",
+      "Chloropicrin"
+     ]
+    },
+    {
+     "nom": "Sumitomo Chemical Australia Pty Limited",
+     "nb": 116,
+     "matieres": [
+      "Aviglycine Hydrochloride",
+      "Bacillus Thuringiensis Var Kurstaki (H-3A,3B Hd1)",
+      "Clothianidin",
+      "Etoxazole",
+      "Fenpyrazamine",
+      "Flumioxazin",
+      "Gibberellic Acid",
+      "Gibberellin A4/A7",
+      "Mandestrobin",
+      "N6-Benzyladenine",
+      "Procymidone",
+      "Pyrethrins",
+      "Pyriproxyfen",
+      "Uniconazole-P"
+     ]
+    },
+    {
+     "nom": "Kiwicare Corporation Limited",
+     "nb": 110,
+     "matieres": [
+      "Fatty Acids, C8-10",
+      "Glyphosate",
+      "Oils-Mineral-Insecticidal",
+      "Picloram",
+      "Pyrethrins",
+      "Sulphur",
+      "Tribasic Copper Sulphate",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Agrobeats Tech Co., Ltd",
+     "nb": 102,
+     "matieres": [
+      "Azoxystrobin",
+      "Bifenthrin",
+      "Clopyralid",
+      "Cyprodinil",
+      "Fludioxonil",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Haloxyfop-P",
+      "Hexazinone",
+      "Metsulfuron-Methyl",
+      "Prothioconazole",
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "CropSure New Zealand Pty Limited",
+     "nb": 96,
+     "matieres": [
+      "2,4-D",
+      "Clethodim",
+      "Clomazone",
+      "Clopyralid",
+      "Diquat",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Mcpa",
+      "Mcpb",
+      "Metsulfuron-Methyl"
+     ]
+    },
+    {
+     "nom": "Ningbo Sunjoy Agroscience Co. Limited",
+     "nb": 85,
+     "matieres": [
+      "Bentazone",
+      "Chlorantraniliprole",
+      "Difenoconazole",
+      "Haloxyfop-P-Methyl",
+      "Indoxacarb",
+      "Metamitron",
+      "Methoxyfenozide",
+      "Nicosulfuron",
+      "Prothioconazole",
+      "Saflufenacil"
+     ]
+    },
+    {
+     "nom": "Hailir Pesticides and Chemicals Group Co., Limited",
+     "nb": 79,
+     "matieres": [
+      "Azoxystrobin",
+      "Chlorantraniliprole",
+      "Clothianidin",
+      "Emamectin Benzoate",
+      "Glufosinate-Ammonium",
+      "Pinoxaden",
+      "Prothioconazole",
+      "Pyraclostrobin",
+      "Spirotetramat"
+     ]
+    },
+    {
+     "nom": "ISK New Zealand Limited",
+     "nb": 71,
+     "matieres": [
+      "Cyazofamid",
+      "Flazasulfuron",
+      "Flonicamid",
+      "Fluazinam",
+      "Isofetamid",
+      "Pyriofenone"
+     ]
+    },
+    {
+     "nom": "Gowan Crop Protection Limited",
+     "nb": 62,
+     "matieres": [
+      "Dicloran",
+      "Fenamidone",
+      "Formetanate",
+      "Pencycuron",
+      "Quinoxyfen",
+      "Trifluralin"
+     ]
+    },
+    {
+     "nom": "AGPRO (NZ) Limited",
+     "nb": 60,
+     "matieres": [
+      "Azoxystrobin",
+      "Epoxiconazole",
+      "Glufosinate-Ammonium",
+      "Glyphosate",
+      "Prochloraz",
+      "Prothioconazole"
+     ]
+    },
+    {
+     "nom": "Evossentials Limited",
+     "nb": 49,
+     "matieres": [
+      "Bacillus Amyloliquefaciens",
+      "Diquat",
+      "Glyphosate",
+      "Mancozeb",
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "Valent BioSciences LLC",
+     "nb": 48,
+     "matieres": [
+      "Bacillus Thuringiensis Var Aizawai (Abbott 1857)",
+      "Bacillus Thuringiensis Var Kurstaki (H-3A,3B Hd1)",
+      "Bacillus Thuringiensis Var. Kurstaki Hd-1 (Atcc-1275, Strain Abts-351)",
+      "Gibberellin A4/A7",
+      "N6-Benzyladenine"
+     ]
+    },
+    {
+     "nom": "Evergreen Garden Care New Zealand Limited",
+     "nb": 45,
+     "matieres": [
+      "Iron Sodium Edta",
+      "Metaldehyde",
+      "Pyrethrins"
+     ]
+    },
+    {
+     "nom": "NZ Tulip Limited",
+     "nb": 45,
+     "matieres": [
+      "1,3-Dichloropropene",
+      "Chloropicrin"
+     ]
+    },
+    {
+     "nom": "Key Industries Limited",
+     "nb": 44,
+     "matieres": [
+      "Cydia Pomonellla Granulosis Virus, Mexican Strain",
+      "Phosphorous Acid",
+      "Pyrethrins",
+      "Streptomycin"
+     ]
+    },
+    {
+     "nom": "Cellora Limited",
+     "nb": 43,
+     "matieres": [
+      "Beauveria Bassiana (K4B3), Blastospores",
+      "Iron Sodium Edta",
+      "Saponin Adjuvant",
+      "Verticillium Lecanii"
+     ]
+    },
+    {
+     "nom": "Dechra Veterinary Products NZ Limited",
+     "nb": 42,
+     "matieres": [
+      "Miconazole Nitrate",
+      "Polymyxin B Sulfate",
+      "Prednisolone Acetate"
+     ]
+    },
+    {
+     "nom": "Agrimm Technologies Ltd",
+     "nb": 40,
+     "matieres": [
+      "Trichoderma Atroviride",
+      "Trichoderma Atroviride (Strain Lu132)",
+      "Trichoderma Atroviride (Strains Ag1, Ag2, Ag3, Ag5, Ag11, Ag15)"
+     ]
+    },
+    {
+     "nom": "AgroFresh New Zealand Limited",
+     "nb": 38,
+     "matieres": [
+      "1-Methyl Cyclopropene"
+     ]
+    },
+    {
+     "nom": "Certis Belchim NV",
+     "nb": 38,
+     "matieres": [
+      "Fatty Acids (Potassium Salts)",
+      "Metobromuron",
+      "Potassium Bicarbonate"
+     ]
+    },
+    {
+     "nom": "Bio-Start Limited",
+     "nb": 36,
+     "matieres": [
+      "Bacillus Amyloliquefaciens Bs1B",
+      "Potassium Bicarbonate",
+      "Serratia Entomophila (Strain 626)"
+     ]
+    },
+    {
+     "nom": "Botry-Zen (2010) Limited",
+     "nb": 36,
+     "matieres": [
+      "Chitosan",
+      "Soya Bean Oil",
+      "Ulocladium Oudemansii",
+      "Ulocladium Oudemansii Strain U3"
+     ]
+    },
+    {
+     "nom": "BOC Limited",
+     "nb": 35,
+     "matieres": [
+      "Ethyl Formate",
+      "Permethrin",
+      "Pyrethrins"
+     ]
+    },
+    {
+     "nom": "Tessenderlo Kerley Inc",
+     "nb": 34,
+     "matieres": [
+      "Carbaryl",
+      "Linuron",
+      "Terbacil"
+     ]
+    },
+    {
+     "nom": "Agritrade (part of PGG Wrightson Limited)",
+     "nb": 33,
+     "matieres": [
+      "Benzalkonium Chloride",
+      "Gibberellic Acid",
+      "Glufosinate-Ammonium"
+     ]
+    },
+    {
+     "nom": "Fruitfed Supplies - Part of PGG Wrightson Limited",
+     "nb": 33,
+     "matieres": [
+      "Carbendazim",
+      "Copper Oxychloride",
+      "Gibberellin A4/A7"
+     ]
+    },
+    {
+     "nom": "Eastman Chemical Australia Pty Ltd",
+     "nb": 32,
+     "matieres": [
+      "Metam Sodium"
+     ]
+    },
+    {
+     "nom": "Fruitfed Supplies (part of PGG Wrightson Ltd)",
+     "nb": 32,
+     "matieres": [
+      "Chloridazon",
+      "Chlorpropham",
+      "Copper Oxychloride"
+     ]
+    },
+    {
+     "nom": "Fine Agrochemicals Limited",
+     "nb": 31,
+     "matieres": [
+      "1-Methyl Cyclopropene",
+      "Gibberellic Acid",
+      "Prohexadione-Calcium",
+      "Uniconazole-P"
+     ]
+    },
+    {
+     "nom": "De Sangosse SAS",
+     "nb": 30,
+     "matieres": [
+      "Iron Phosphate",
+      "Metaldehyde"
+     ]
+    },
+    {
+     "nom": "Post Harvest Solutions Limited",
+     "nb": 30,
+     "matieres": [
+      "3-Bromo-1-Chloro-5,5-Dimethylhydantoin"
+     ]
+    },
+    {
+     "nom": "Genera Limited",
+     "nb": 29,
+     "matieres": [
+      "Aluminium Phosphide",
+      "Ethyl Formate"
+     ]
+    },
+    {
+     "nom": "7 Worlds Ag New Zealand Pty Limited",
+     "nb": 27,
+     "matieres": [
+      "Pyrimethanil",
+      "Spinosad",
+      "Spirotetramat"
+     ]
+    },
+    {
+     "nom": "Azelis New Zealand Limited",
+     "nb": 27,
+     "matieres": [
+      "Cyproconazole",
+      "Iodocarb",
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "Industrial Quimica Key, S.A",
+     "nb": 27,
+     "matieres": [
+      "Abamectin",
+      "Deltamethrin"
+     ]
+    },
+    {
+     "nom": "Renovo Technologies Limited",
+     "nb": 27,
+     "matieres": [
+      "Spinosad"
+     ]
+    },
+    {
+     "nom": "Agronomist NZ Limited",
+     "nb": 26,
+     "matieres": [
+      "Chlorantraniliprole",
+      "Glyphosate",
+      "Prothioconazole"
+     ]
+    },
+    {
+     "nom": "Almandine Corporation SA",
+     "nb": 26,
+     "matieres": [
+      "Clodinafop-Propargyl",
+      "Fludioxonil",
+      "Metalaxyl-M"
+     ]
+    },
+    {
+     "nom": "Opti Holdings Limited",
+     "nb": 26,
+     "matieres": [
+      "Boscalid",
+      "Prohexadione-Calcium",
+      "Pyraclostrobin"
+     ]
+    },
+    {
+     "nom": "PGG Wrightson Seeds Limited",
+     "nb": 26,
+     "matieres": [
+      "Maldison",
+      "Thiram"
+     ]
+    },
+    {
+     "nom": "Amalgamated Hardware Merchants Ltd",
+     "nb": 24,
+     "matieres": [
+      "Metaldehyde",
+      "Rotenone"
+     ]
+    },
+    {
+     "nom": "Eden Research Plc",
+     "nb": 24,
+     "matieres": [
+      "Eugenol",
+      "Geraniol",
+      "Thymol"
+     ]
+    },
+    {
+     "nom": "Sulfur Solutions Limited",
+     "nb": 24,
+     "matieres": [
+      "Calcium Polysulfide"
+     ]
+    },
+    {
+     "nom": "Borie Industries S.A.S.U",
+     "nb": 23,
+     "matieres": [
+      "Iron Phosphate",
+      "Metaldehyde"
+     ]
+    },
+    {
+     "nom": "Shandong Aoweite Biotechnology Co Ltd",
+     "nb": 23,
+     "matieres": [
+      "1-Methyl Cyclopropene"
+     ]
+    },
+    {
+     "nom": "Vita (Europe) Limited",
+     "nb": 23,
+     "matieres": [
+      "Oxalic Acid Dihydrate",
+      "Tau-Fluvalinate",
+      "Thymol"
+     ]
+    },
+    {
+     "nom": "Genera Ltd",
+     "nb": 20,
+     "matieres": [
+      "Methyl Bromide"
+     ]
+    },
+    {
+     "nom": "Mebrom NZ Limited",
+     "nb": 18,
+     "matieres": [
+      "Methyl Bromide"
+     ]
+    },
+    {
+     "nom": "PCT Holdings Pty Ltd",
+     "nb": 18,
+     "matieres": [
+      "Abamectin"
+     ]
+    },
+    {
+     "nom": "AgNova Technologies Pty Ltd",
+     "nb": 17,
+     "matieres": [
+      "Ioxynil"
+     ]
+    },
+    {
+     "nom": "Agrocura Limited",
+     "nb": 17,
+     "matieres": [
+      "Bentazone",
+      "Chlorantraniliprole"
+     ]
+    },
+    {
+     "nom": "American Chemet Corporation",
+     "nb": 16,
+     "matieres": [
+      "Copper (I) Oxide"
+     ]
+    },
+    {
+     "nom": "Chemicals LAIF S.p.A",
+     "nb": 16,
+     "matieres": [
+      "Oxalic Acid Dihydrate",
+      "Thymol"
+     ]
+    },
+    {
+     "nom": "Cytec Australia Holdings Pty Ltd",
+     "nb": 16,
+     "matieres": [
+      "Phosphine"
+     ]
+    },
+    {
+     "nom": "GreenPro Solutions Pty Limited",
+     "nb": 16,
+     "matieres": [
+      "Pine Oil"
+     ]
+    },
+    {
+     "nom": "Imtrade New Zealand Limited",
+     "nb": 16,
+     "matieres": [
+      "Picloram",
+      "Triclopyr"
+     ]
+    },
+    {
+     "nom": "Industrias Quimicas del Valles S.A",
+     "nb": 16,
+     "matieres": [
+      "Copper"
+     ]
+    },
+    {
+     "nom": "Jiangsu Good Harvest Weien Agrochemical Co. Limited",
+     "nb": 16,
+     "matieres": [
+      "Glyphosate"
+     ]
+    },
+    {
+     "nom": "PBR Trading International cc",
+     "nb": 16,
+     "matieres": [
+      "Indolebutyric Acid"
+     ]
+    },
+    {
+     "nom": "Rainbow Agroscience New Zealand Limited",
+     "nb": 16,
+     "matieres": [
+      "Asulam",
+      "Clethodim"
+     ]
+    },
+    {
+     "nom": "SML Aus Pty Limited",
+     "nb": 16,
+     "matieres": [
+      "Sulphur"
+     ]
+    },
+    {
+     "nom": "YM-Fab Chemicals Limited",
+     "nb": 16,
+     "matieres": [
+      "3-Bromo-1-Chloro-5,5-Dimethylhydantoin"
+     ]
+    },
+    {
+     "nom": "Sprayshop Limited",
+     "nb": 15,
+     "matieres": [
+      "2,4-D",
+      "Gibberellic Acid"
+     ]
+    },
+    {
+     "nom": "Biological Solutions Ltd",
+     "nb": 14,
+     "matieres": [
+      "Bacillus Subtilis Atcc 6051",
+      "Streptomyces Lydicus"
+     ]
+    },
+    {
+     "nom": "Roam Technology NV",
+     "nb": 14,
+     "matieres": [
+      "Hydrogen Peroxide"
+     ]
+    },
+    {
+     "nom": "Vernado Group Limited",
+     "nb": 14,
+     "matieres": [
+      "1-Triacontanol",
+      "Gibberellic Acid"
+     ]
+    },
+    {
+     "nom": "Boma Trading Limited Trading as PharmoChem Company",
+     "nb": 11,
+     "matieres": [
+      "Magnesium Phosphide"
+     ]
+    },
+    {
+     "nom": "AgChem 4 Farmers Limited",
+     "nb": 9,
+     "matieres": [
+      "Isoproturon"
+     ]
+    },
+    {
+     "nom": "Biolchim New Zealand Limited",
+     "nb": 9,
+     "matieres": [
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "Chemicals Direct Pty Ltd",
+     "nb": 9,
+     "matieres": [
+      "Paclobutrazol"
+     ]
+    },
+    {
+     "nom": "Detia Freyberg GmbH",
+     "nb": 9,
+     "matieres": [
+      "Aluminium Phosphide"
+     ]
+    },
+    {
+     "nom": "Elanco Australasia Pty Limited",
+     "nb": 9,
+     "matieres": [
+      "Cyromazine"
+     ]
+    },
+    {
+     "nom": "Envirofume Limited",
+     "nb": 9,
+     "matieres": [
+      "Aluminium Phosphide"
+     ]
+    },
+    {
+     "nom": "F2C Agroscience Limited",
+     "nb": 9,
+     "matieres": [
+      "Prochloraz"
+     ]
+    },
+    {
+     "nom": "Hebei Guanlong Agrochemical Co., Limited",
+     "nb": 9,
+     "matieres": [
+      "Captan"
+     ]
+    },
+    {
+     "nom": "Max Stanton Moore",
+     "nb": 9,
+     "matieres": [
+      "Tebuconazole"
+     ]
+    },
+    {
+     "nom": "Veto-pharma S.A.S",
+     "nb": 9,
+     "matieres": [
+      "Amitraz"
+     ]
+    },
+    {
+     "nom": "Aceto Life Sciences, L.L.C",
+     "nb": 8,
+     "matieres": [
+      "Chlorpropham"
+     ]
+    },
+    {
+     "nom": "ACT AGRO CHEM PVT.LTD",
+     "nb": 8,
+     "matieres": [
+      "Sulphur"
+     ]
+    },
+    {
+     "nom": "Active Bio-Tech Limited",
+     "nb": 8,
+     "matieres": [
+      "Gibberellic Acid"
+     ]
+    },
+    {
+     "nom": "Agmax Industries Limited",
+     "nb": 8,
+     "matieres": [
+      "Metsulfuron-Methyl"
+     ]
+    },
+    {
+     "nom": "AgNova Technologies NZ Ltd",
+     "nb": 8,
+     "matieres": [
+      "Oxyfluorfen"
+     ]
+    },
+    {
+     "nom": "Andermatt BioVet AG",
+     "nb": 8,
+     "matieres": [
+      "Thymol"
+     ]
+    },
+    {
+     "nom": "Biotis Life Science Pty Limited",
+     "nb": 8,
+     "matieres": [
+      "Glyphosate Present As Glyphosate Isopropylamine"
+     ]
+    },
+    {
+     "nom": "Certis USA LLC",
+     "nb": 8,
+     "matieres": [
+      "Bacillus Thuringiensis Var Kurstaki (H-3A,3B, Sa-11)"
+     ]
+    },
+    {
+     "nom": "CropSure New Zealand Pty Ltd",
+     "nb": 8,
+     "matieres": [
+      "Dicamba"
+     ]
+    },
+    {
+     "nom": "ECOGRAPE/SUSTAIN-ABILITY LIMITED",
+     "nb": 8,
+     "matieres": [
+      "Azadirachtin"
+     ]
+    },
+    {
+     "nom": "Fintran Australia Pty Limited",
+     "nb": 8,
+     "matieres": [
+      "Ethyl Formate"
+     ]
+    },
+    {
+     "nom": "Floratech International Limited",
+     "nb": 8,
+     "matieres": [
+      "1-Methyl Cyclopropene"
+     ]
+    },
+    {
+     "nom": "Hoag Products Limited",
+     "nb": 8,
+     "matieres": [
+      "Propham"
+     ]
+    },
+    {
+     "nom": "INTRESO NZ LIMITED",
+     "nb": 8,
+     "matieres": [
+      "Ethyl Formate"
+     ]
+    },
+    {
+     "nom": "Laboratorios Calier, S.A",
+     "nb": 8,
+     "matieres": [
+      "Amitraz"
+     ]
+    },
+    {
+     "nom": "Max(Rudong) Chemicals Co., Ltd",
+     "nb": 8,
+     "matieres": [
+      "Prohexadione-Calcium"
+     ]
+    },
+    {
+     "nom": "Micro-Nutrients NZ Ltd",
+     "nb": 8,
+     "matieres": [
+      "Copper Chelated By Tetraethylenepentamine (Tepa)"
+     ]
+    },
+    {
+     "nom": "Mitsui & Co (NZ) Limited",
+     "nb": 8,
+     "matieres": [
+      "Thiophanate-Methyl"
+     ]
+    },
+    {
+     "nom": "Native Neem Limited",
+     "nb": 8,
+     "matieres": [
+      "Azadirachtin"
+     ]
+    },
+    {
+     "nom": "Nature Haven Limited",
+     "nb": 8,
+     "matieres": [
+      "Azadirachtin"
+     ]
+    },
+    {
+     "nom": "NOD Apiary Products Limited",
+     "nb": 8,
+     "matieres": [
+      "Formic Acid"
+     ]
+    },
+    {
+     "nom": "Novozymes BioAg, Inc",
+     "nb": 8,
+     "matieres": [
+      "Streptomyces Lydicus"
+     ]
+    },
+    {
+     "nom": "Nutrichem Company Limited",
+     "nb": 8,
+     "matieres": [
+      "Oxyfluorfen"
+     ]
+    },
+    {
+     "nom": "OAT Agrio Co., Limited",
+     "nb": 8,
+     "matieres": [
+      "Potassium Bicarbonate"
+     ]
+    },
+    {
+     "nom": "Orion Agriscience Limited",
+     "nb": 8,
+     "matieres": [
+      "Fluroxypyr"
+     ]
+    },
+    {
+     "nom": "Pest Control Solutions Limited",
+     "nb": 8,
+     "matieres": [
+      "Maldison"
+     ]
+    },
+    {
+     "nom": "Seed and Field Services Limited",
+     "nb": 8,
+     "matieres": [
+      "Mancozeb"
+     ]
+    },
+    {
+     "nom": "Southwell Products Limited",
+     "nb": 8,
+     "matieres": [
+      "Chlorine Dioxide"
+     ]
+    },
+    {
+     "nom": "Stefes GmbH",
+     "nb": 8,
+     "matieres": [
+      "Methabenzthiazuron"
+     ]
+    },
+    {
+     "nom": "Stockton (Israel) Limited",
+     "nb": 8,
+     "matieres": [
+      "Tea Tree Oil"
+     ]
+    },
+    {
+     "nom": "Sumil Chemical Industries Pvt. Limited",
+     "nb": 8,
+     "matieres": [
+      "Sulphur"
+     ]
+    },
+    {
+     "nom": "Waikaitu Limited",
+     "nb": 8,
+     "matieres": [
+      "Saponin Adjuvant"
+     ]
+    },
+    {
+     "nom": "Yara UK Limited",
+     "nb": 8,
+     "matieres": [
+      "Ammonium Thiosulphate"
+     ]
+    },
+    {
+     "nom": "Agrenz Limited",
+     "nb": 7,
+     "matieres": [
+      "Bacillus Thuringiensis Var Kurstaki (H-3A,3B, Hd 263)"
+     ]
+    },
+    {
+     "nom": "Agrion Crop Solutions Pty Limited",
+     "nb": 7,
+     "matieres": [
+      "Methyl Canolate"
+     ]
+    },
+    {
+     "nom": "Agrownomics Limited",
+     "nb": 7,
+     "matieres": [
+      "1-Triacontanol"
+     ]
+    },
+    {
+     "nom": "Animal Control Technologies (Australia) Pty Limited",
+     "nb": 7,
+     "matieres": [
+      "Metaldehyde"
+     ]
+    },
+    {
+     "nom": "Aongatete Avocados Limited",
+     "nb": 7,
+     "matieres": [
+      "Phosphorous Acid"
+     ]
+    },
+    {
+     "nom": "Clifton Biologicals Ltd",
+     "nb": 7,
+     "matieres": [
+      "Agrobacterium Radiobacter"
+     ]
+    },
+    {
+     "nom": "Elanco New Zealand",
+     "nb": 7,
+     "matieres": [
+      "Flumethrin"
+     ]
+    },
+    {
+     "nom": "Hilado Pty Ltd",
+     "nb": 7,
+     "matieres": [
+      "Bacillus Thuringiensis Var Aizawai/Kurstaki"
+     ]
+    },
+    {
+     "nom": "Lucebni Zavody Draslovka A.S. Kolin",
+     "nb": 7,
+     "matieres": [
+      "Hydrogen Cyanide"
+     ]
+    },
+    {
+     "nom": "Pan Pacific Nutrients Limited",
+     "nb": 7,
+     "matieres": [
+      "Gibberellic Acid"
+     ]
+    },
+    {
+     "nom": "PF Consultants 2020 Limited",
+     "nb": 7,
+     "matieres": [
+      "Iron Phosphate"
+     ]
+    },
+    {
+     "nom": "Rural Research Ltd",
+     "nb": 7,
+     "matieres": [
+      "Gibberellic Acid"
+     ]
+    },
+    {
+     "nom": "Suntec (NZ) Ltd",
+     "nb": 7,
+     "matieres": [
+      "Neem Seed Kernel Extract"
+     ]
+    },
+    {
+     "nom": "Ministry for Primary Industries",
+     "nb": 5,
+     "matieres": [
+      "Dichlorvos"
+     ]
+    },
+    {
+     "nom": "Wet and Forget Limited",
+     "nb": 4,
+     "matieres": [
+      "Palm Oil Derived Fatty Acids"
+     ]
+    }
+   ]
   },
   {
    "id": "afrique",
