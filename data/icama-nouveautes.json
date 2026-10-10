@@ -1,0 +1,196 @@
+{
+ "meta": {
+  "role": "Sociétés chinoises apparues sur une matière active entre deux relevés ICAMA (homologation de matière technique). « usine » = licence de production.",
+  "dernierConstat": "2026-10-09",
+  "fenetreJours": 365,
+  "nbEvenements": 31
+ },
+ "evenements": [
+  {
+   "date": "2026-10-09",
+   "iso": "SAFLUFENACIL",
+   "societe": "湖北优世康生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "SAFLUFENACIL",
+   "societe": "山东越兴生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "SAFLUFENACIL",
+   "societe": "山东海利尔化工有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "SAFLUFENACIL",
+   "societe": "宁夏一帆生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "SAFLUFENACIL",
+   "societe": "兰升生物科技集团股份有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "S-METOLACHLOR",
+   "societe": "山东奥坤作物科学股份有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "PYRIPROXYFEN",
+   "societe": "陕西诺正生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "PYRIPROXYFEN",
+   "societe": "湖北优世康生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "PROTHIOCONAZOLE",
+   "societe": "武威联硕生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUXAPYROXAD",
+   "societe": "长青（湖北）生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUXAPYROXAD",
+   "societe": "浙江宇龙生物科技股份有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUXAPYROXAD",
+   "societe": "河北成悦化工有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUOPYRAM",
+   "societe": "陕西泰合利华工业有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUOPYRAM",
+   "societe": "长青（湖北）生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUOPYRAM",
+   "societe": "重庆华歌生物化学有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUOPYRAM",
+   "societe": "贵阳中精科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUOPYRAM",
+   "societe": "武穴市旭日化工有限责任公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUOPYRAM",
+   "societe": "好客（山东）纳米科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLUOPYRAM",
+   "societe": "内蒙古中高化工有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLONICAMID",
+   "societe": "山东奥坤作物科学股份有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "FLONICAMID",
+   "societe": "内蒙古灵圣作物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "ETOXAZOLE",
+   "societe": "湖北易普乐生物科技股份有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "DINOTEFURAN",
+   "societe": "辽宁优创植物保护有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "CYFLUMETOFEN",
+   "societe": "宁夏一帆生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "CYANTRANILIPROLE",
+   "societe": "湖北优世康生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "CYANTRANILIPROLE",
+   "societe": "浙江埃森化学有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "CYANTRANILIPROLE",
+   "societe": "南京华洲药业有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "CYANTRANILIPROLE",
+   "societe": "兰升生物科技集团股份有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "CHLORANTRANILIPROLE",
+   "societe": "安徽广信成辰科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "BIFENAZATE",
+   "societe": "陕西诺正生物科技有限公司",
+   "usine": true
+  },
+  {
+   "date": "2026-10-09",
+   "iso": "AMINOPYRALID",
+   "societe": "陕西诺正生物科技有限公司",
+   "usine": true
+  }
+ ]
+}
