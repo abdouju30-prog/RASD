@@ -1,0 +1,955 @@
+{
+ "meta": {
+  "genere": "2026-10-10",
+  "sources": {
+   "FRAC": "https://media.croplife.org.au/2026/07/CropLife_2026-FungicideActivityGroupTable.pdf",
+   "IRAC": "https://media.croplife.org.au/2026/07/CropLife_2026_Insecticide_ActiveConList.pdf",
+   "HRAC": "https://hracglobal.com/getdoc.php?file=2026-Herbicide-MoA-Classification-Master-List-without-Molecular-Structures.xlsx"
+  },
+  "avertissement": "Groupes mondiaux FRAC, IRAC et HRAC. Un groupe absent n'est pas déduit."
+ },
+ "matieres": {
+  "2,4-D": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "Phenoxycarboxylates"
+   }
+  },
+  "2,4-D 2-ETHYLHEXYL ESTER": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "Phenoxycarboxylates"
+   }
+  },
+  "ABAMECTIN": {
+   "IRAC": {
+    "groupe": "6",
+    "libelle": null
+   }
+  },
+  "ACEQUINOCYL": {
+   "IRAC": {
+    "groupe": "20B",
+    "libelle": null
+   }
+  },
+  "ACETAMIPRID": {
+   "IRAC": {
+    "groupe": "4A",
+    "libelle": null
+   }
+  },
+  "ACLONIFEN": {
+   "HRAC": {
+    "groupe": "32",
+    "ancien": "S/F3",
+    "libelle": "Inhibition of Solanesyl Diphosphate Synthase (SDPS)",
+    "famille": "Diphenyl ether"
+   }
+  },
+  "ALPHA CYPERMETHRIN": {
+   "IRAC": {
+    "groupe": "3A",
+    "libelle": null
+   }
+  },
+  "AMETOCTRADIN": {
+   "FRAC": {
+    "groupe": "45",
+    "libelle": "QoSI - fungicides"
+   }
+  },
+  "AMINOPYRALID": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "6-Chloropicolinates"
+   }
+  },
+  "AMISULBROM": {
+   "FRAC": {
+    "groupe": "21",
+    "libelle": "Qil - fungicides"
+   }
+  },
+  "AZADIRACHTIN": {
+   "IRAC": {
+    "groupe": "UN",
+    "libelle": null
+   }
+  },
+  "AZOXYSTROBIN": {
+   "FRAC": {
+    "groupe": "11",
+    "libelle": "QoI - fungicides"
+   }
+  },
+  "BEAUVERIA BASSIANA": {
+   "IRAC": {
+    "groupe": "UN",
+    "libelle": null
+   }
+  },
+  "BENZOVINDIFLUPYR": {
+   "FRAC": {
+    "groupe": "7",
+    "libelle": "SDHI – fungicides"
+   }
+  },
+  "BIFENAZATE": {
+   "IRAC": {
+    "groupe": "20",
+    "libelle": null
+   }
+  },
+  "BIXAFEN": {
+   "FRAC": {
+    "groupe": "7",
+    "libelle": "SDHI – fungicides"
+   }
+  },
+  "BOSCALID": {
+   "FRAC": {
+    "groupe": "7",
+    "libelle": "SDHI – fungicides"
+   }
+  },
+  "BUPIRIMATE": {
+   "FRAC": {
+    "groupe": "8",
+    "libelle": "Hydroxy-(2-amino-)"
+   }
+  },
+  "BUPROFEZIN": {
+   "IRAC": {
+    "groupe": "16",
+    "libelle": null
+   }
+  },
+  "CARFENTRAZONE-ETHYL": {
+   "HRAC": {
+    "groupe": "14",
+    "ancien": "E",
+    "libelle": "Inhibition of Protoporphyrinogen Oxidase (PPO)",
+    "famille": "N-Phenyltriazolinones"
+   }
+  },
+  "CHLORANTRANILIPROLE": {
+   "IRAC": {
+    "groupe": "28",
+    "libelle": null
+   }
+  },
+  "CHLOROPICRIN": {
+   "IRAC": {
+    "groupe": "8B",
+    "libelle": null
+   }
+  },
+  "CLETHODIM": {
+   "HRAC": {
+    "groupe": "1",
+    "ancien": "A",
+    "libelle": "Inhibition of Acetyl CoA Carboxylase (ACCase)",
+    "famille": "Cyclohexanediones (DIMs)"
+   }
+  },
+  "CLODINAFOP-PROPARGYL": {
+   "HRAC": {
+    "groupe": "1",
+    "ancien": "A",
+    "libelle": "Inhibition of Acetyl CoA Carboxylase (ACCase)",
+    "famille": "Aryloxyphenoxypropionates (FOPs)"
+   }
+  },
+  "CLOFENTEZINE": {
+   "IRAC": {
+    "groupe": "10A",
+    "libelle": null
+   }
+  },
+  "CLOMAZONE": {
+   "HRAC": {
+    "groupe": "13",
+    "ancien": "F4",
+    "libelle": "Inhibition of Deoxy-D-Xylulose Phosphate Synthase (DXPS)",
+    "famille": "Isoxazolidinones"
+   }
+  },
+  "CLOPYRALID": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "6-Chloropicolinates"
+   }
+  },
+  "COPPER PRESENT AS COPPER OXYCHLORIDE": {
+   "FRAC": {
+    "groupe": "M1",
+    "libelle": "Multi-site activity"
+   }
+  },
+  "CYANTRANILIPROLE": {
+   "IRAC": {
+    "groupe": "28",
+    "libelle": null
+   }
+  },
+  "CYAZOFAMID": {
+   "FRAC": {
+    "groupe": "21",
+    "libelle": "Qil - fungicides"
+   }
+  },
+  "CYFLUFENAMID": {
+   "FRAC": {
+    "groupe": "U6",
+    "libelle": "Unknown phenyl-"
+   }
+  },
+  "CYHALOFOP-BUTYL": {
+   "HRAC": {
+    "groupe": "1",
+    "ancien": "A",
+    "libelle": "Inhibition of Acetyl CoA Carboxylase (ACCase)",
+    "famille": "Aryloxyphenoxypropionates (FOPs)"
+   }
+  },
+  "CYPRODINIL": {
+   "FRAC": {
+    "groupe": "9",
+    "libelle": "AP - fungicides"
+   }
+  },
+  "DICAMBA": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "Benzoates"
+   }
+  },
+  "DIFENOCONAZOLE": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "DIFLUBENZURON": {
+   "IRAC": {
+    "groupe": "15",
+    "libelle": null
+   }
+  },
+  "DIFLUFENICAN": {
+   "HRAC": {
+    "groupe": "12",
+    "ancien": "F1",
+    "libelle": "Inhibition of Phytoene Desaturase (PDS)",
+    "famille": "Phenylethers"
+   }
+  },
+  "DIMETHOATE": {
+   "IRAC": {
+    "groupe": "1B",
+    "libelle": null
+   }
+  },
+  "DIMETHOMORPH": {
+   "FRAC": {
+    "groupe": "40",
+    "libelle": "CAA - fungicides"
+   }
+  },
+  "DINOTEFURAN": {
+   "IRAC": {
+    "groupe": "4A",
+    "libelle": null
+   }
+  },
+  "DITHIANON": {
+   "FRAC": {
+    "groupe": "M9",
+    "libelle": "Multi-site activity"
+   }
+  },
+  "DODINE": {
+   "FRAC": {
+    "groupe": "U12",
+    "libelle": "Cell membrane"
+   }
+  },
+  "EMAMECTIN BENZOATE": {
+   "IRAC": {
+    "groupe": "6",
+    "libelle": null
+   }
+  },
+  "ETHOFUMESATE": {
+   "HRAC": {
+    "groupe": "15",
+    "ancien": "K3/N",
+    "libelle": "Inhibition of Very Long-Chain Fatty Acid Synthesis (VLCFA)",
+    "famille": "Benzofuranes"
+   }
+  },
+  "ETOXAZOLE": {
+   "IRAC": {
+    "groupe": "10B",
+    "libelle": null
+   }
+  },
+  "FENHEXAMID": {
+   "FRAC": {
+    "groupe": "17",
+    "libelle": "KRI - fungicides (keto"
+   }
+  },
+  "FENPYRAZAMINE": {
+   "FRAC": {
+    "groupe": "17",
+    "libelle": "KRI - fungicides (keto"
+   }
+  },
+  "FENPYROXIMATE": {
+   "IRAC": {
+    "groupe": "21A",
+    "libelle": null
+   }
+  },
+  "FLONICAMID": {
+   "IRAC": {
+    "groupe": "29",
+    "libelle": null
+   }
+  },
+  "FLORASULAM": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Triazolopyrimidines - Type 1"
+   }
+  },
+  "FLUAZINAM": {
+   "FRAC": {
+    "groupe": "29",
+    "libelle": "Uncouplers of"
+   }
+  },
+  "FLUBENDIAMIDE": {
+   "IRAC": {
+    "groupe": "28",
+    "libelle": null
+   }
+  },
+  "FLUDIOXONIL": {
+   "FRAC": {
+    "groupe": "12",
+    "libelle": "PP - fungicides"
+   }
+  },
+  "FLUOPICOLIDE": {
+   "FRAC": {
+    "groupe": "43",
+    "libelle": "Benzamides"
+   }
+  },
+  "FLUOPYRAM": {
+   "FRAC": {
+    "groupe": "7",
+    "libelle": "SDHI – fungicides"
+   }
+  },
+  "FLUROXYPYR": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "Pyridyloxycarboxylates"
+   }
+  },
+  "FLUTRIAFOL": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "FLUXAPYROXAD": {
+   "FRAC": {
+    "groupe": "7",
+    "libelle": "SDHI – fungicides"
+   }
+  },
+  "FORAMSULFURON": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Sulfonylureas"
+   }
+  },
+  "FOSETYL-ALUMINIUM": {
+   "FRAC": {
+    "groupe": "P07",
+    "libelle": "Phosphonates"
+   }
+  },
+  "GAMMA-CYHALOTHRIN": {
+   "IRAC": {
+    "groupe": "3A",
+    "libelle": null
+   }
+  },
+  "GLYPHOSATE": {
+   "HRAC": {
+    "groupe": "9",
+    "ancien": "G",
+    "libelle": "Inhibition of Enolpyruvyl Shikimate Phosphate Synthase",
+    "famille": "Glycine"
+   }
+  },
+  "GLYPHOSATE ACID": {
+   "HRAC": {
+    "groupe": "9",
+    "ancien": "G",
+    "libelle": "Inhibition of Enolpyruvyl Shikimate Phosphate Synthase",
+    "famille": "Glycine"
+   }
+  },
+  "HEXYTHIAZOX": {
+   "IRAC": {
+    "groupe": "10A",
+    "libelle": null
+   }
+  },
+  "IMAZALIL": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "IMAZALIL SULFATE": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "IMAZAMOX": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Imidazolinones"
+   }
+  },
+  "IMIDACLOPRID": {
+   "IRAC": {
+    "groupe": "4A",
+    "libelle": null
+   }
+  },
+  "INDOXACARB": {
+   "IRAC": {
+    "groupe": "22A",
+    "libelle": null
+   }
+  },
+  "ISOXABEN": {
+   "HRAC": {
+    "groupe": "29",
+    "ancien": "L",
+    "libelle": "Inhibition of Cellulose Synthesis",
+    "famille": "Benzamide"
+   }
+  },
+  "ISOXAFLUTOLE": {
+   "HRAC": {
+    "groupe": "27",
+    "ancien": "F2",
+    "libelle": "Inhibition of Hydroxyphenyl Pyruvate Dioxygenase (HPPD)",
+    "famille": "Isoxazole"
+   }
+  },
+  "KRESOXIM-METHYL": {
+   "FRAC": {
+    "groupe": "11",
+    "libelle": "QoI - fungicides"
+   }
+  },
+  "LAMBDA-CYHALOTHRIN": {
+   "IRAC": {
+    "groupe": "3A",
+    "libelle": null
+   }
+  },
+  "LUFENURON": {
+   "IRAC": {
+    "groupe": "15",
+    "libelle": null
+   }
+  },
+  "MALATHION": {
+   "IRAC": {
+    "groupe": "1B",
+    "libelle": null
+   }
+  },
+  "MANDIPROPAMID": {
+   "FRAC": {
+    "groupe": "40",
+    "libelle": "CAA - fungicides"
+   }
+  },
+  "MCPA": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "Phenoxycarboxylates"
+   }
+  },
+  "MEFENTRIFLUCONAZOLE": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "MESOSULFURON-METHYL": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Sulfonylureas"
+   }
+  },
+  "MESOTRIONE": {
+   "HRAC": {
+    "groupe": "27",
+    "ancien": "F2",
+    "libelle": "Inhibition of Hydroxyphenyl Pyruvate Dioxygenase (HPPD)",
+    "famille": "Triketones"
+   }
+  },
+  "METAFLUMIZONE": {
+   "IRAC": {
+    "groupe": "22B",
+    "libelle": null
+   }
+  },
+  "METALAXYL": {
+   "FRAC": {
+    "groupe": "4",
+    "libelle": "PA - fungicides"
+   }
+  },
+  "METALAXYL M": {
+   "FRAC": {
+    "groupe": "4",
+    "libelle": "PA - fungicides"
+   }
+  },
+  "METAMITRON": {
+   "HRAC": {
+    "groupe": "5",
+    "ancien": "C1",
+    "libelle": "Inhibition of Photosynthesis at PSII - D1 Serine 264 binders (and other non-histidine 215 binders)",
+    "famille": "Triazinones"
+   }
+  },
+  "METAZACHLOR": {
+   "HRAC": {
+    "groupe": "15",
+    "ancien": "K3",
+    "libelle": "Inhibition of Very Long-Chain Fatty Acid Synthesis (VLCFA)",
+    "famille": "α-Chloroacetamides"
+   }
+  },
+  "METHOXYFENOZIDE": {
+   "IRAC": {
+    "groupe": "18",
+    "libelle": null
+   }
+  },
+  "METOBROMURON": {
+   "HRAC": {
+    "groupe": "5",
+    "ancien": "C2",
+    "libelle": "Inhibition of Photosynthesis at PSII - D1 Serine 264 binders (and other non-histidine 215 binders)",
+    "famille": "Ureas"
+   }
+  },
+  "METRAFENONE": {
+   "FRAC": {
+    "groupe": "50",
+    "libelle": "Actin disruption aryl-"
+   }
+  },
+  "METRIBUZIN": {
+   "HRAC": {
+    "groupe": "5",
+    "ancien": "C1",
+    "libelle": "Inhibition of Photosynthesis at PSII - D1 Serine 264 binders (and other non-histidine 215 binders)",
+    "famille": "Triazinones"
+   }
+  },
+  "METSULFURON-METHYL": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Sulfonylureas"
+   }
+  },
+  "MILBEMECTIN": {
+   "IRAC": {
+    "groupe": "6",
+    "libelle": null
+   }
+  },
+  "MYCLOBUTANIL": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "NAPROPAMIDE": {
+   "HRAC": {
+    "groupe": "0",
+    "ancien": "Z/K3",
+    "libelle": "Unknown",
+    "famille": "Acetamides"
+   }
+  },
+  "OXATHIAPIPROLIN": {
+   "FRAC": {
+    "groupe": "49",
+    "libelle": "OSBPI-fungicides"
+   }
+  },
+  "OXYFLUORFEN": {
+   "HRAC": {
+    "groupe": "14",
+    "ancien": "E",
+    "libelle": "Inhibition of Protoporphyrinogen Oxidase (PPO)",
+    "famille": "Diphenyl ethers"
+   }
+  },
+  "PENCONAZOLE": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "PENDIMETHALIN": {
+   "HRAC": {
+    "groupe": "3",
+    "ancien": "K1",
+    "libelle": "Inhibition of Microtubule Assembly - α-Tubulin",
+    "famille": "Dinitroanilines "
+   }
+  },
+  "PHENMEDIPHAM": {
+   "HRAC": {
+    "groupe": "5",
+    "ancien": "C1",
+    "libelle": "Inhibition of Photosynthesis at PSII - D1 Serine 264 binders (and other non-histidine 215 binders)",
+    "famille": "Phenylcarbamates"
+   }
+  },
+  "PHOSPHINE": {
+   "IRAC": {
+    "groupe": "24A",
+    "libelle": null
+   }
+  },
+  "PICLORAM": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "6-Chloropicolinates"
+   }
+  },
+  "PINOXADEN": {
+   "HRAC": {
+    "groupe": "1",
+    "ancien": "A",
+    "libelle": "Inhibition of Acetyl CoA Carboxylase (ACCase)",
+    "famille": "Phenylpyrazoline (DEN)"
+   }
+  },
+  "PIRIMICARB": {
+   "IRAC": {
+    "groupe": "1A",
+    "libelle": null
+   }
+  },
+  "PIRIMIPHOS-METHYL": {
+   "IRAC": {
+    "groupe": "1B",
+    "libelle": null
+   }
+  },
+  "POTASSIUM": {
+   "FRAC": {
+    "groupe": "M2",
+    "libelle": "Multi-site activity"
+   }
+  },
+  "PROPAMOCARB": {
+   "FRAC": {
+    "groupe": "28",
+    "libelle": "Carbamates"
+   }
+  },
+  "PROPAQUIZAFOP": {
+   "HRAC": {
+    "groupe": "1",
+    "ancien": "A",
+    "libelle": "Inhibition of Acetyl CoA Carboxylase (ACCase)",
+    "famille": "Aryloxyphenoxypropionates (FOPs)"
+   }
+  },
+  "PROQUINAZID": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "FRAC"
+   }
+  },
+  "PROSULFOCARB": {
+   "HRAC": {
+    "groupe": "15",
+    "ancien": "K3/N",
+    "libelle": "Inhibition of Very Long-Chain Fatty Acid Synthesis (VLCFA)",
+    "famille": "Thiocarbamates"
+   }
+  },
+  "PROSULFURON": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Sulfonylureas"
+   }
+  },
+  "PROTHIOCONAZOLE": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "PYRACLOSTROBIN": {
+   "FRAC": {
+    "groupe": "11",
+    "libelle": "QoI - fungicides"
+   }
+  },
+  "PYRAFLUFEN-ETHYL": {
+   "HRAC": {
+    "groupe": "14",
+    "ancien": "E",
+    "libelle": "Inhibition of Protoporphyrinogen Oxidase (PPO)",
+    "famille": "Phenylpyrazoles"
+   }
+  },
+  "PYRIDABEN": {
+   "IRAC": {
+    "groupe": "21A",
+    "libelle": null
+   }
+  },
+  "PYRIDATE": {
+   "HRAC": {
+    "groupe": "6",
+    "ancien": "C3",
+    "libelle": "Inhibition of Photosynthesis at PSII - D1 Histidine 215 binders",
+    "famille": "Phenyl-pyridazines"
+   }
+  },
+  "PYRIMETHANIL": {
+   "FRAC": {
+    "groupe": "9",
+    "libelle": "AP - fungicides"
+   }
+  },
+  "PYRIPROXYFEN": {
+   "IRAC": {
+    "groupe": "7C",
+    "libelle": null
+   }
+  },
+  "PYROXSULAM": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Triazolopyrimidines - Type 2"
+   }
+  },
+  "RIMSULFURON": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Sulfonylureas"
+   }
+  },
+  "SAFLUFENACIL": {
+   "HRAC": {
+    "groupe": "14",
+    "ancien": "E",
+    "libelle": "Inhibition of Protoporphyrinogen Oxidase (PPO)",
+    "famille": "N-Phenylimides"
+   }
+  },
+  "SEDAXANE": {
+   "FRAC": {
+    "groupe": "7",
+    "libelle": "SDHI – fungicides"
+   }
+  },
+  "SPINETORAM": {
+   "IRAC": {
+    "groupe": "5",
+    "libelle": null
+   }
+  },
+  "SPINOSAD": {
+   "IRAC": {
+    "groupe": "5",
+    "libelle": null
+   }
+  },
+  "SPIROMESIFEN": {
+   "IRAC": {
+    "groupe": "23",
+    "libelle": null
+   }
+  },
+  "SPIROTETRAMAT": {
+   "IRAC": {
+    "groupe": "23",
+    "libelle": null
+   }
+  },
+  "SPIROXAMINE": {
+   "FRAC": {
+    "groupe": "2",
+    "libelle": "FRAC"
+   }
+  },
+  "SULFOXAFLOR": {
+   "IRAC": {
+    "groupe": "4C",
+    "libelle": null
+   }
+  },
+  "SULPHUR": {
+   "FRAC": {
+    "groupe": "M2",
+    "libelle": "Multi-site activity"
+   }
+  },
+  "TAU-FLUVALINATE": {
+   "IRAC": {
+    "groupe": "3A",
+    "libelle": null
+   }
+  },
+  "TEBUCONAZOLE": {
+   "FRAC": {
+    "groupe": "3",
+    "libelle": "DMI - fungicides"
+   }
+  },
+  "TEBUFENOZIDE": {
+   "IRAC": {
+    "groupe": "18",
+    "libelle": null
+   }
+  },
+  "TEBUFENPYRAD": {
+   "IRAC": {
+    "groupe": "21A",
+    "libelle": null
+   }
+  },
+  "TERBUTHYLAZINE": {
+   "HRAC": {
+    "groupe": "5",
+    "ancien": "C1",
+    "libelle": "Inhibition of Photosynthesis at PSII - D1 Serine 264 binders (and other non-histidine 215 binders)",
+    "famille": "Triazines"
+   }
+  },
+  "THIABENDAZOLE": {
+   "FRAC": {
+    "groupe": "1",
+    "libelle": "MBC - fungicides"
+   }
+  },
+  "THIAMETHOXAM": {
+   "IRAC": {
+    "groupe": "4A",
+    "libelle": null
+   }
+  },
+  "TOLCLOFOS-METHYL": {
+   "FRAC": {
+    "groupe": "14",
+    "libelle": "AH - fungicides"
+   }
+  },
+  "TOPRAMEZONE": {
+   "HRAC": {
+    "groupe": "27",
+    "ancien": "F2",
+    "libelle": "Inhibition of Hydroxyphenyl Pyruvate Dioxygenase (HPPD)",
+    "famille": "Pyrazoles"
+   }
+  },
+  "TRI-ALLATE": {
+   "HRAC": {
+    "groupe": "15",
+    "ancien": "K3/N",
+    "libelle": "Inhibition of Very Long-Chain Fatty Acid Synthesis (VLCFA)",
+    "famille": "Thiocarbamates"
+   }
+  },
+  "TRIBENURON-METHYL": {
+   "HRAC": {
+    "groupe": "2",
+    "ancien": "B",
+    "libelle": "Inhibition of Acetolactate Synthase (ALS)",
+    "famille": "Sulfonylureas"
+   }
+  },
+  "TRICLOPYR": {
+   "HRAC": {
+    "groupe": "4",
+    "ancien": "O",
+    "libelle": "Auxin Mimics",
+    "famille": "Pyridyloxycarboxylates"
+   }
+  },
+  "TRIFLOXYSTROBIN": {
+   "FRAC": {
+    "groupe": "11",
+    "libelle": "QoI - fungicides"
+   }
+  },
+  "ZETA-CYPERMETHRIN": {
+   "IRAC": {
+    "groupe": "3A",
+    "libelle": null
+   }
+  }
+ }
+}
