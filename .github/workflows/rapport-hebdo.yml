@@ -77,6 +77,21 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: python scripts/envoyer_rapport_hebdo.py
 
+      # Alerte du portefeuille par Resend : alertes critiques, mouvements de
+      # l'index sur ses produits et ses molécules, textes ONSSA, usines chinoises.
+      # Sans le secret RESEND_API_KEY, l'étape écrit un aperçu et n'envoie rien.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Alerte hebdomadaire par courriel (Resend)
+        continue-on-error: true
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_DESTINATAIRE: abdouju30@gmail.com
+        run: npx tsx scripts/alerte_hebdo.ts
+
       - name: Archivage du PDF en artefact GitHub
         uses: actions/upload-artifact@v4
         with:
@@ -96,6 +111,7 @@ jobs:
             data/onssa-eservice.json \
             data/onssa.json \
             data/onssa-sortis.json \
+            data/onssa-journal.json \
             data/nouveautes.json \
             data/rapport-hebdo-onssa.pdf
           git commit -m "Veille hebdomadaire — ONSSA, Anses, rapport PDF" || echo "Aucune modification"
