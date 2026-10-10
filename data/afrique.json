@@ -1,0 +1,1058 @@
+{
+ "meta": {
+  "genere": "2026-10-10",
+  "tunisie": {
+   "nom": "Tunisie — DGSVCIA, liste des produits pesticides homologués",
+   "date": "2023-04-19",
+   "url": "https://catalog.agridata.tn/dataset/583ceab9-fba3-481c-bf9d-0d12edcec48d/resource/cf3723c4-6996-4793-9a04-314ba5b3cd53/download/liste-des-produits-pesticides-homologues_ver.finale-19-avril-2023.pdf"
+  },
+  "sahel": {
+   "nom": "Sahel — Comité sahélien des pesticides, liste globale des pesticides autorisés",
+   "date": "2025-10",
+   "url": "https://insah.cilss.int/wp-content/uploads/2026/09/Liste-globale-des-Pesticides-Autorises-par-le-CSP-Octobre-2025.pdf"
+  },
+  "nonCouverts": [
+   "Algérie (aucune liste publique en ligne)"
+  ]
+ },
+ "matieres": {
+  "1,4-Diaminobutane": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "2,4-D": {
+   "tunisie": {
+    "n": 2
+   },
+   "sahel": {
+    "n": 14
+   }
+  },
+  "AUREOBASIDIUM PULLULANS": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Abamectine": {
+   "tunisie": {
+    "n": 18
+   },
+   "sahel": {
+    "n": 9
+   }
+  },
+  "Acibenzolar-S-méthyl": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Acide gibbérellique": {
+   "tunisie": {
+    "n": 10
+   }
+  },
+  "Aclonifene": {
+   "tunisie": {
+    "n": 2
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Acétamipride": {
+   "tunisie": {
+    "n": 4
+   },
+   "sahel": {
+    "n": 40
+   }
+  },
+  "Alpha-cyperméthrine": {
+   "sahel": {
+    "n": 4
+   }
+  },
+  "Amidosulfuron": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Aminopyralide": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Amisulbrom": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Amétoctradine": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Azadirachtine": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Azoxystrobine": {
+   "tunisie": {
+    "n": 30
+   },
+   "sahel": {
+    "n": 5
+   }
+  },
+  "Bacillus amyloliquefaciens souche FZB24": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Bacillus subtilis": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Bacillus thuringiensis": {
+   "tunisie": {
+    "n": 5
+   },
+   "sahel": {
+    "n": 4
+   }
+  },
+  "Beauveria bassiana": {
+   "tunisie": {
+    "n": 2
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Beauveria bassiana souche ATCC 74040": {
+   "tunisie": {
+    "n": 2
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Beauveria bassiana souche GHA": {
+   "tunisie": {
+    "n": 2
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Bentazone": {
+   "tunisie": {
+    "n": 9
+   }
+  },
+  "Bifenazate": {
+   "tunisie": {
+    "n": 4
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Boscalide": {
+   "tunisie": {
+    "n": 7
+   }
+  },
+  "Bupirimate": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Captane": {
+   "tunisie": {
+    "n": 9
+   }
+  },
+  "Carfentrazone éthyl": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Chlorantraniliprole": {
+   "tunisie": {
+    "n": 6
+   },
+   "sahel": {
+    "n": 4
+   }
+  },
+  "Chlorméquat": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Chlorotoluron": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Chlortoluron": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "Clodinafop-propargyl": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Clofentézine": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Clomazone": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Clopyralid": {
+   "tunisie": {
+    "n": 5
+   }
+  },
+  "Cloquintocet-mexyl": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Cloquintocet-méxyl": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Cléthodime": {
+   "tunisie": {
+    "n": 6
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Cuivre": {
+   "tunisie": {
+    "n": 47
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Cyanamide hydrogène": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Cyantraniliprole": {
+   "tunisie": {
+    "n": 4
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Cyazofamid": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Cyflufénamide": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Cyflumetofen": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Cyhalofop butyl": {
+   "sahel": {
+    "n": 3
+   }
+  },
+  "Cymoxanil": {
+   "tunisie": {
+    "n": 16
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Cyperméthrine": {
+   "tunisie": {
+    "n": 8
+   },
+   "sahel": {
+    "n": 24
+   }
+  },
+  "Cyprodinil": {
+   "tunisie": {
+    "n": 3
+   }
+  },
+  "Deltaméthrine": {
+   "tunisie": {
+    "n": 11
+   },
+   "sahel": {
+    "n": 7
+   }
+  },
+  "Dicamba": {
+   "tunisie": {
+    "n": 3
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Diflubenzuron": {
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Diflufenican": {
+   "tunisie": {
+    "n": 7
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Difénoconazole": {
+   "tunisie": {
+    "n": 27
+   },
+   "sahel": {
+    "n": 5
+   }
+  },
+  "Dimethenamid-p": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Dimethomorph": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Diméthoate": {
+   "tunisie": {
+    "n": 1,
+    "restriction": "utilisation uniquement pour les campagnes nationales"
+   }
+  },
+  "Diméthomorphe": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Dinotefuran": {
+   "tunisie": {
+    "n": 1
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Dithianon": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "Dodine": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Emamectin benzoate": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "Etoxazole": {
+   "tunisie": {
+    "n": 1
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Fenazaquin": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Fenhexamid": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Fenpyrazamine": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Fenpyroximate": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Flonicamid": {
+   "tunisie": {
+    "n": 1
+   },
+   "sahel": {
+    "n": 4
+   }
+  },
+  "Florasulame": {
+   "tunisie": {
+    "n": 6
+   }
+  },
+  "Fluazifop-P-butyl": {
+   "tunisie": {
+    "n": 4
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Fluazinam": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "Flubendiamide": {
+   "tunisie": {
+    "n": 2
+   },
+   "sahel": {
+    "n": 5
+   }
+  },
+  "Fludioxonil": {
+   "tunisie": {
+    "n": 8
+   }
+  },
+  "Flufenacet": {
+   "tunisie": {
+    "n": 3
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Fluopicolide": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Fluopyram": {
+   "tunisie": {
+    "n": 4
+   },
+   "sahel": {
+    "n": 3
+   }
+  },
+  "Fluoxastrobine": {
+   "tunisie": {
+    "n": 3
+   }
+  },
+  "Flupyradifurone": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Fluroxypyr": {
+   "tunisie": {
+    "n": 4
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Flutriafol": {
+   "tunisie": {
+    "n": 8
+   }
+  },
+  "Fluxapyroxade": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Folpel": {
+   "tunisie": {
+    "n": 6
+   }
+  },
+  "Fosétyl-Aluminium": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Fénoxaprop-p-éthyl": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Gamma-cyhalothrine": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Glyphosate": {
+   "tunisie": {
+    "n": 34
+   },
+   "sahel": {
+    "n": 54
+   }
+  },
+  "Géraniol": {
+   "sahel": {
+    "n": 1
+   }
+  },
+  "HUILE DE PARAFFINE": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Hexythiazox": {
+   "tunisie": {
+    "n": 7
+   }
+  },
+  "Huile de colza": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Huile essentielle d'orange": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Hydrolysat de protéines": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Hyméxazol": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Imazamox": {
+   "tunisie": {
+    "n": 2
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Imidaclopride": {
+   "tunisie": {
+    "n": 2,
+    "restriction": "utilisation uniquement pour les campagnes nationales"
+   },
+   "sahel": {
+    "n": 14
+   }
+  },
+  "Indoxacarb": {
+   "tunisie": {
+    "n": 11
+   },
+   "sahel": {
+    "n": 16
+   }
+  },
+  "Iprovalicarbe": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Isoxaben": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Isoxaflutole": {
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Kresoxim-méthyl": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "Lambda cyhalothrine": {
+   "tunisie": {
+    "n": 14
+   },
+   "sahel": {
+    "n": 23
+   }
+  },
+  "Laminarine": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Lenacile": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Lufénuron": {
+   "sahel": {
+    "n": 3
+   }
+  },
+  "Malathion": {
+   "tunisie": {
+    "n": 1,
+    "restriction": "utilisation uniquement pour les campagnes nationales"
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Mandipropamide": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "Mefentrifluconazole": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "Meptyldinocap": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Mesosulfuron-methyl": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Mesotrione": {
+   "sahel": {
+    "n": 3
+   }
+  },
+  "Metaflumizone": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Metconazole": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Metrafenone": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Metsulfuron-méthyle": {
+   "tunisie": {
+    "n": 7
+   }
+  },
+  "Milbémectine": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Myclobutanil": {
+   "tunisie": {
+    "n": 7
+   }
+  },
+  "Mésosulfuron": {
+   "tunisie": {
+    "n": 5
+   }
+  },
+  "Métalaxyl": {
+   "tunisie": {
+    "n": 11
+   },
+   "sahel": {
+    "n": 4
+   }
+  },
+  "Métalaxyl-M": {
+   "tunisie": {
+    "n": 6
+   },
+   "sahel": {
+    "n": 3
+   }
+  },
+  "Métaldéhyde": {
+   "tunisie": {
+    "n": 8
+   }
+  },
+  "Métam-sodium": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Méthoxyfénozide": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Métribuzine": {
+   "tunisie": {
+    "n": 12
+   }
+  },
+  "Nicosulfuron": {
+   "sahel": {
+    "n": 18
+   }
+  },
+  "Oxathiapiprolin": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Oxyfluorfène": {
+   "tunisie": {
+    "n": 8
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Penconazole": {
+   "tunisie": {
+    "n": 3
+   }
+  },
+  "Pendiméthaline": {
+   "tunisie": {
+    "n": 6
+   },
+   "sahel": {
+    "n": 16
+   }
+  },
+  "Phenmédiphame": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Phenothiol": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Phosphure d'aluminium": {
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Pinoxaden": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "Potassium hydrogène carbonate": {
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Prohexadione-calcium": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Propamocarbe HCl": {
+   "tunisie": {
+    "n": 6
+   }
+  },
+  "Propaquizafop": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Proquinazide": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Prosulfocarbe": {
+   "tunisie": {
+    "n": 6
+   }
+  },
+  "Prosulfuron": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Prothioconazole": {
+   "tunisie": {
+    "n": 10
+   }
+  },
+  "Pyraclostrobine": {
+   "tunisie": {
+    "n": 9
+   }
+  },
+  "Pyraflufen-éthyl": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Pyridate": {
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Pyrimicarbe": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Pyrimiphos-méthyl": {
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Pyriméthanil": {
+   "tunisie": {
+    "n": 5
+   }
+  },
+  "Pyriproxyfène": {
+   "tunisie": {
+    "n": 6,
+    "restriction": "deux application au maximum par cycle de culture"
+   }
+  },
+  "Pyroxsulame": {
+   "tunisie": {
+    "n": 5
+   }
+  },
+  "Pyréthrine": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Pythium oligandrum": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Quinmérac": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Quizalofop-P-éthyl": {
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Rimsulfuron": {
+   "sahel": {
+    "n": 2
+   }
+  },
+  "S-métolachlore": {
+   "sahel": {
+    "n": 4
+   }
+  },
+  "Saflufénacil": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Sedaxane": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Soufre": {
+   "tunisie": {
+    "n": 27
+   }
+  },
+  "Spinetoram": {
+   "tunisie": {
+    "n": 1
+   },
+   "sahel": {
+    "n": 3
+   }
+  },
+  "Spinosade": {
+   "tunisie": {
+    "n": 3
+   },
+   "sahel": {
+    "n": 4
+   }
+  },
+  "Spiromésifène": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Spirotetramat": {
+   "tunisie": {
+    "n": 1
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Spiroxamine": {
+   "tunisie": {
+    "n": 3
+   }
+  },
+  "Sulfate tétracuivrique tricalcique": {
+   "tunisie": {
+    "n": 9
+   },
+   "sahel": {
+    "n": 1
+   }
+  },
+  "Sulfoxaflor": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Tefluthrine": {
+   "tunisie": {
+    "n": 2
+   }
+  },
+  "Terbuthylazine": {
+   "tunisie": {
+    "n": 2
+   },
+   "sahel": {
+    "n": 3
+   }
+  },
+  "Thiabendazole": {
+   "tunisie": {
+    "n": 3
+   }
+  },
+  "Thiamethoxam": {
+   "tunisie": {
+    "n": 2,
+    "restriction": "Utilisation uniquement pour les traitements des semences"
+   },
+   "sahel": {
+    "n": 12
+   }
+  },
+  "Thifensulfuron méthyle": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Tribénuron-méthyle": {
+   "tunisie": {
+    "n": 10
+   }
+  },
+  "Trichoderma harzianum Rifai souche ICC 012": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Trichoderma harzianum Rifai souche KRL-AG2": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Triclopyr": {
+   "sahel": {
+    "n": 5
+   }
+  },
+  "Trifloxystrobine": {
+   "tunisie": {
+    "n": 3
+   },
+   "sahel": {
+    "n": 2
+   }
+  },
+  "Triflusulfuron-méthyl": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Tébuconazole": {
+   "tunisie": {
+    "n": 32
+   },
+   "sahel": {
+    "n": 4
+   }
+  },
+  "Tébufenpyrad": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Zirame": {
+   "tunisie": {
+    "n": 1
+   }
+  },
+  "Zoxamide": {
+   "tunisie": {
+    "n": 4
+   }
+  },
+  "métazachlor": {
+   "tunisie": {
+    "n": 5
+   }
+  }
+ }
+}
