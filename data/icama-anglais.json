@@ -1,0 +1,740 @@
+{
+ "meta": {
+  "role": "Nom anglais des usines chinoises de l'ICAMA, retrouvé dans les registres brésilien, américain, australien et marocain. « probable » = à vérifier.",
+  "genere": "2026-10-10",
+  "nbUsines": 503,
+  "nbConfirmes": 81,
+  "nbProbables": 3,
+  "nbIntrouvables": 419
+ },
+ "usines": {
+  "上虞颖泰精细化工有限公司": {
+   "nomAnglais": "Shangyu Nutrichem Co., Ltd.",
+   "niveau": "probable",
+   "regle": "ville « shangyu » + 7 molécules en commun au Brésil",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "佳木斯黑龙农药有限公司": {
+   "nomAnglais": "Jiamusi Heilong Agricultural and Industrial Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « jiamusi heilong »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "兰升生物科技集团股份有限公司": {
+   "nomAnglais": "Hebei Lansheng Biotech Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « lansheng »",
+   "registres": [
+    "Australie",
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "内蒙古兴发科技有限公司": {
+   "nomAnglais": "Xingfa Australia Pty Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « xingfa »",
+   "registres": [
+    "Australie"
+   ]
+  },
+  "内蒙古永太化学有限公司": {
+   "nomAnglais": "Inner Mongolia Yongtai Chemical Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « yongtai »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "内蒙古百灵科技有限公司": {
+   "nomAnglais": "Bailing Agrochemical Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « bailing »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "利尔化学股份有限公司": {
+   "nomAnglais": "Lier Chemical Co. Ltd.",
+   "niveau": "probable",
+   "regle": "ville « lier » + 5 molécules en commun au Brésil",
+   "registres": [
+    "Brésil",
+    "Maroc",
+    "États-Unis"
+   ]
+  },
+  "南通利华农化有限公司": {
+   "nomAnglais": "Nantong Lihua Agrochemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « nantong lihua »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "南通施壮化工有限公司": {
+   "nomAnglais": "Nantong Shizhuang Chemical Co. Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « nantong shizhuang »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "合肥星宇化学有限责任公司": {
+   "nomAnglais": "Hefei Xingyu Chemical Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « hefei xingyu »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "吴桥农药有限公司": {
+   "nomAnglais": "Wuqiao Pesticides Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « wuqiao »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "响水中山生物科技有限公司": {
+   "nomAnglais": "Xiangshui Zhongshan Bioscience Co. Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « xiangshui zhongshan »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "四川润尔科技有限公司": {
+   "nomAnglais": "Sichuan Runer Technology Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « runer »",
+   "registres": [
+    "Australie",
+    "États-Unis"
+   ]
+  },
+  "如东众意化工有限公司": {
+   "nomAnglais": "Rudong Zhongyi Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « rudong zhongyi »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "威海韩孚生化药业有限公司": {
+   "nomAnglais": "Weihai Hanfu Biochemical Medicine Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « weihai hanfu »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "宁夏瑞泰科技股份有限公司": {
+   "nomAnglais": "Ningxia Ruitai Technology Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « ruitai »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "安徽丰乐农化有限责任公司": {
+   "nomAnglais": "Anhui Fengle Agrochemical Co. Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « fengle »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "安徽久易农业股份有限公司": {
+   "nomAnglais": "Anhui JiuYi Agriculture Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « jiuyi »",
+   "registres": [
+    "Australie",
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "安徽华星化工有限公司": {
+   "nomAnglais": "Anhui Huaxing Chemical Industry Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « huaxing »",
+   "registres": [
+    "Australie",
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "安徽富田农化有限公司": {
+   "nomAnglais": "Anhui Futian Agrochemical Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « futian »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "安徽弘峰精细化工有限公司": {
+   "nomAnglais": "Anhui Hongfeng Fine Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « hongfeng »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "安徽景宏植保有限公司": {
+   "nomAnglais": "Laohekou Jinghong Chemicals Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « jinghong »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "安徽科立华化工有限公司": {
+   "nomAnglais": "Anhui Kelihua Chemical Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « kelihua »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "安阳市安林生物化工有限责任公司": {
+   "nomAnglais": "Anyang Anlin Biochemistry",
+   "niveau": "confirmé",
+   "regle": "marque « anyang anlin »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "山东华阳农药化工集团有限公司": {
+   "nomAnglais": "Shandong Huayang Pesticide Chemical Industry Group Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « huayang »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "山东德浩化学有限公司": {
+   "nomAnglais": "Shandong Dehao Chemical Co Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « dehao »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "山东恒东生物科技有限公司": {
+   "nomAnglais": "Shandong Hengdong Biotechnology Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « hengdong »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "山东汇盟生物科技股份有限公司": {
+   "nomAnglais": "Shandong Huimeng Bio-tech Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « huimeng »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "山东潍坊双星农药有限公司": {
+   "nomAnglais": "Shandong Weifang Shuangxing Pesticide Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « weifang shuangxing »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "山东潍坊润丰化工股份有限公司": {
+   "nomAnglais": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+   "niveau": "probable",
+   "regle": "ville « weifang » + 23 molécules en commun au Brésil",
+   "registres": [
+    "Brésil",
+    "Maroc",
+    "États-Unis"
+   ]
+  },
+  "山东科源化工有限公司": {
+   "nomAnglais": "Shandong Keyuan Chemical Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « keyuan »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "广安利尔化学有限公司": {
+   "nomAnglais": "Guangan Lier Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « guangan lier »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "康欣生物科技有限公司": {
+   "nomAnglais": "Hubei Kangxin Agro Industry Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « kangxin »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "张掖市大弓农化有限公司": {
+   "nomAnglais": "Zhangye Dagong Pesticide Chemistry Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « zhangye dagong »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "成武泰和化工有限公司": {
+   "nomAnglais": "Chengwu Taihe Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « chengwu taihe »",
+   "registres": [
+    "Australie"
+   ]
+  },
+  "新沂市永诚化工有限公司": {
+   "nomAnglais": "Xinyi Yongcheng Chemical Industrial Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « xinyi yongcheng »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "江苏丰山生化科技有限公司": {
+   "nomAnglais": "Jiangsu Fengshan Group Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « fengshan »",
+   "registres": [
+    "Australie",
+    "États-Unis"
+   ]
+  },
+  "江苏丰登作物保护股份有限公司": {
+   "nomAnglais": "Jiangsu Fengdeng Crop Science Co. Ltd..",
+   "niveau": "confirmé",
+   "regle": "marque « fengdeng »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江苏优士化学有限公司": {
+   "nomAnglais": "Jiangsu Yangnong Chemical Co., Ltd-youshi",
+   "niveau": "confirmé",
+   "regle": "marque « youshi »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "江苏健谷化工有限公司": {
+   "nomAnglais": "Jiangsu Jiangu Chemical Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « jiangu »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "江苏宝灵化工股份有限公司": {
+   "nomAnglais": "Jiangsu Baoling Chemical Company Limited",
+   "niveau": "confirmé",
+   "regle": "marque « baoling »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江苏富鼎化学有限公司": {
+   "nomAnglais": "Jiangsu Fuding Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « fuding »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "江苏常隆农化有限公司": {
+   "nomAnglais": "Jiangsu Changlong Chemicals Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « changlong »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江苏快达农化股份有限公司": {
+   "nomAnglais": "Jiangsu Kuaida Agrochemical Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « kuaida »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江苏春江润田农化有限公司": {
+   "nomAnglais": "Jiangsu Chunjiang Runtian Agrochemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « chunjiang runtian »",
+   "registres": [
+    "Brésil"
+   ]
+  },
+  "江苏永安化工有限公司": {
+   "nomAnglais": "Jiangsu Yongan Chemical Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « yongan »",
+   "registres": [
+    "Australie",
+    "États-Unis"
+   ]
+  },
+  "江苏润泽农化有限公司": {
+   "nomAnglais": "Jiangsu Runze Agrochemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « runze »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "江苏澄阳作物科技有限公司": {
+   "nomAnglais": "Jiangsu Chengyang Crop Science Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « chengyang »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江苏瑞祥化工有限公司": {
+   "nomAnglais": "Jiangsu Ruixiang Cheinical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « ruixiang »",
+   "registres": [
+    "Brésil"
+   ]
+  },
+  "江苏省南通宝叶化工有限公司": {
+   "nomAnglais": "Nantong Baoye Chemical Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « nantong baoye »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "江苏蓝丰生物化工有限公司": {
+   "nomAnglais": "Jiangsu Lanfeng Biochemical Co. Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « lanfeng »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江西天宇化工有限公司": {
+   "nomAnglais": "Jiangxi Tianyu Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « tianyu »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江西禾田科技有限公司": {
+   "nomAnglais": "Lianyungang Hetian Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « hetian »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江西禾益化工股份有限公司": {
+   "nomAnglais": "Jiangxi Heyi Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « heyi »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "江阴苏利化学股份有限公司": {
+   "nomAnglais": "Jiangyin Suli Chemical Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « jiangyin suli »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "池州飞昊达化工有限公司": {
+   "nomAnglais": "Chizhou Feihaoda Chemical Company, Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « chizhou feihaoda »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "河北万全宏宇化工有限责任公司": {
+   "nomAnglais": "Hebei Wanquan Hongyu Chemicals Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « wanquan hongyu »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "河北兰润植保科技有限公司": {
+   "nomAnglais": "Hebei Lanrun Plant Protection Technology Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « lanrun »",
+   "registres": [
+    "Australie",
+    "États-Unis"
+   ]
+  },
+  "河北双吉化工有限公司": {
+   "nomAnglais": "Hebei Shuangji Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « shuangji »",
+   "registres": [
+    "Brésil"
+   ]
+  },
+  "河北省石家庄宝丰化工有限公司": {
+   "nomAnglais": "Shijiazhuang Baofeng Chemical Co. Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « shijiazhuang baofeng »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "河北省石家庄市绿丰化工有限公司": {
+   "nomAnglais": "Shijiazhuang Lvfeng Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « shijiazhuang lvfeng »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "河北野田农用化学有限公司": {
+   "nomAnglais": "Hebei Yetian Agrochemicals CO. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « yetian »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "河南金鹏化工有限公司": {
+   "nomAnglais": "Henan Jinpeng Chemicals Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « jinpeng »",
+   "registres": [
+    "Brésil"
+   ]
+  },
+  "浙江东风化工有限公司": {
+   "nomAnglais": "Binhai New Dongfeng Pharmaceutical Chemical Co Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « dongfeng »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "浙江富农生物科技有限公司": {
+   "nomAnglais": "ZheJiang Funong Biotech Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « funong »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "浙江新安化工集团股份有限公司": {
+   "nomAnglais": "Zhejiang Xinan Chemical Industrial Group Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « xinan »",
+   "registres": [
+    "Australie",
+    "Brésil",
+    "Maroc",
+    "États-Unis"
+   ]
+  },
+  "湖北仙隆化工股份有限公司": {
+   "nomAnglais": "Hubei Xianlong Chemical Industry Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « xianlong »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "湖北汇达科技发展有限公司": {
+   "nomAnglais": "Handan Huida Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « huida »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "湖南昊华化工股份有限公司": {
+   "nomAnglais": "Hunan Haohua Chemical Co. Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « haohua »",
+   "registres": [
+    "Brésil"
+   ]
+  },
+  "湖南比德生化科技股份有限公司": {
+   "nomAnglais": "Hunan Bide Biochemical Technology Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « bide »",
+   "registres": [
+    "Australie",
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "湖南沅江赤蜂农化有限公司": {
+   "nomAnglais": "Hunan Yuanjiang Chifeng Agricultural Chemical Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « yuanjiang chifeng »",
+   "registres": [
+    "Brésil"
+   ]
+  },
+  "潍坊茂源生物科技有限公司": {
+   "nomAnglais": "Weifang Maoyuan Biotechnology Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « weifang maoyuan »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "烟台科达化工有限公司": {
+   "nomAnglais": "Yantai Keda Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « yantai keda »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "甘肃华实生物科技有限公司": {
+   "nomAnglais": "Huashi Bioscience Llc",
+   "niveau": "confirmé",
+   "regle": "marque « huashi »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "甘肃瑞东化工有限公司": {
+   "nomAnglais": "Gansu Ruidong Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « ruidong »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "盐城辉煌化工有限公司": {
+   "nomAnglais": "Yancheng HuiHuang Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « yancheng huihuang »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "辽宁众辉生物科技有限公司": {
+   "nomAnglais": "Liaoning Zhonghui Biotechnology Co.,Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « zhonghui »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "辽宁升联生物科技有限公司": {
+   "nomAnglais": "Liaoning Shenglian Biotechnology Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « shenglian »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "通化农药化工股份有限公司": {
+   "nomAnglais": "Tonghua Pesticide Chemical Industry Stock Co. Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « tonghua »",
+   "registres": [
+    "Brésil"
+   ]
+  },
+  "邯郸市瑞田农药有限公司": {
+   "nomAnglais": "Handan Ruitian Pesticide Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « handan ruitian »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "重庆华歌生物化学有限公司": {
+   "nomAnglais": "Chongqing Huage Biochemistry Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « huage »",
+   "registres": [
+    "États-Unis"
+   ]
+  },
+  "青岛恒宁生物科技有限公司": {
+   "nomAnglais": "Qingdao Hengning Biotechnology Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « qingdao hengning »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "鹤壁全丰生物科技有限公司": {
+   "nomAnglais": "Hebi Quanfeng Biological Technology Co., Ltd",
+   "niveau": "confirmé",
+   "regle": "marque « hebi quanfeng »",
+   "registres": [
+    "Brésil",
+    "États-Unis"
+   ]
+  },
+  "黄龙生物科技（辽宁）有限公司": {
+   "nomAnglais": "Huanglong Biotech (liaoning) Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « huanglong »",
+   "registres": [
+    "États-Unis"
+   ]
+  }
+ }
+}

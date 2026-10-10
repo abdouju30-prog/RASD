@@ -1,4 +1,5 @@
 import icamaFile from "../data/icama.json";
+import anglaisFile from "../data/icama-anglais.json";
 import { apparierApvma } from "./apvma";
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -119,8 +120,28 @@ export function licenceLisible(licence: string | null): string | null {
   return province ? `Lic. ${province} n° ${m[2]}` : `Lic. n° ${m[2]}`;
 }
 
+// ── Nom anglais ─────────────────────────────────────────────────────────────
+// scripts/_noms_anglais.py retrouve la raison sociale anglaise d'une usine dans
+// les registres brésilien, américain, australien et marocain : « confirmé » par
+// les mots de marque, « probable » par la ville et le catalogue de molécules.
+
+export interface NomAnglais {
+  nomAnglais: string;
+  niveau: "confirmé" | "probable";
+  regle: string;
+  /** Registres étrangers où la société figure déjà. */
+  registres: string[];
+}
+
+const ANGLAIS = (anglaisFile.usines ?? {}) as Record<string, NomAnglais>;
+export const STATS_ANGLAIS = anglaisFile.meta;
+
+export function anglaisDe(nom: string): NomAnglais | null {
+  return ANGLAIS[nom] ?? null;
+}
+
 export function nomCherchable(s: { nom: string; latin: string | null }): string {
-  return s.latin?.trim() || s.nom;
+  return ANGLAIS[s.nom]?.nomAnglais || s.latin?.trim() || s.nom;
 }
 
 /** Usines confirmées : homologation TC **et** licence de production. */
@@ -178,12 +199,10 @@ export interface UsineChinoise {
 /**
  * Sociétés chinoises classées par couverture de l'index marocain.
  *
- * ⚠️ Aucun rapprochement avec l'index ONSSA n'est possible ici, et il ne faut
- * pas faire semblant : l'ICAMA écrit les raisons sociales en caractères
- * chinois, l'index marocain en alphabet latin. « SHANDONG WEIFANG RAINBOW
- * CHEMICALS CO.,LTD » et 山东潍坊润丰化工股份有限公司 sont la même société,
- * mais aucune règle automatique ne peut l'établir. Un rapprochement demanderait
- * une table de correspondance saisie à la main.
+ * L'ICAMA écrit les raisons sociales en caractères chinois, l'index marocain
+ * en alphabet latin. Le rapprochement passe par data/icama-anglais.json
+ * (voir anglaisDe) : partiel et prudent — une usine sans nom anglais n'est
+ * pas absente des autres registres, elle n'y a pas été reconnue.
  */
 function construireUsines(): UsineChinoise[] {
   const par = new Map<string, UsineChinoise>();
