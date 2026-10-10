@@ -1,5 +1,5 @@
 import { Factory } from "lucide-react";
-import { licenceLisible, titulaires, usines, type MatiereIcama } from "@/lib/icama";
+import { anglaisDe, licenceLisible, titulaires, usines, type MatiereIcama } from "@/lib/icama";
 import { NomChinois } from "@/components/NomChinois";
 
 // Le registre chinois distingue deux droits que rien d'autre ne distingue :
@@ -57,13 +57,23 @@ export function FabricantsChinois({
   /** Plafond d'affichage : le glyphosate compte plus de 100 détenteurs. */
   max?: number;
 }) {
-  const u = m ? usines(m) : [];
+  const parExport = (s: { nom: string }) => anglaisDe(s.nom)?.registres.length ?? 0;
+  const u = m ? [...usines(m)].sort((a, b) => parExport(b) - parExport(a)) : [];
   const t = m ? titulaires(m) : [];
 
   return (
     <div className="card" style={{ padding: "18px 20px" }}>
       <div className="h-title" style={{ display: "flex", alignItems: "center", gap: 8 }}>
         <Factory size={14} /> Fabricants chinois — registre ICAMA
+        {m && (
+          <a
+            href={`/api/usines-chine/${encodeURIComponent(m.iso)}`}
+            className="link-accent"
+            style={{ marginLeft: "auto", fontSize: 12.5, fontWeight: 500 }}
+          >
+            Télécharger pour une demande de prix (Excel)
+          </a>
+        )}
       </div>
 
       {!m ? (
