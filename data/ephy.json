@@ -5,31 +5,16 @@
   "licence": "Licence Ouverte / Open Licence",
   "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-07",
   "majDonnees": "2026-10-07",
-  "genere": "2026-10-09T12:51:17",
+  "genere": "2026-10-10T11:47:23",
   "nbSubstances": 1337,
   "nbProduitsPPP": 13569,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
   "premiereImport": false,
-  "nbChangements": 2,
-  "dateComparaison": "2026-09-15",
-  "changements": [
-   {
-    "id": "straight-chain-lepidopteran-pheromones",
-    "nom": "Straight Chain Lepidopteran Pheromones",
-    "type": "disparue",
-    "avant": "autorisée",
-    "apres": null
-   },
-   {
-    "id": "straight-chain-lepidopteran-pheromones-ancienne-approbation",
-    "nom": "Straight Chain Lepidopteran Pheromones_ancienne approbation",
-    "type": "nouvelle",
-    "avant": null,
-    "apres": "indéterminée"
-   }
-  ]
+  "nbChangements": 0,
+  "dateComparaison": "2026-10-07",
+  "changements": []
  },
  "substances": [
   {
