@@ -106,7 +106,7 @@ class Moteur:
             f"wss://{HOTE}/public/app/{APP}",
             timeout=90,
             origin=f"https://{HOTE}",
-            header=["User-Agent: Homologa/1.0 (veille reglementaire)"],
+            header=["User-Agent: Rasd/1.0 (veille reglementaire)"],
             sslopt={"cert_reqs": ssl.CERT_REQUIRED},
         )
         self.seq = 0

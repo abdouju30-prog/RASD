@@ -113,7 +113,7 @@ def telecharger(frais: bool = False) -> Path:
         return CACHE
     print("  téléchargement de l'export « 농약제품 목록 »…")
     req = urllib.request.Request(URL_XLSX, headers={
-        "User-Agent": "Mozilla/5.0 (compatible; Homologa/1.0; veille reglementaire)",
+        "User-Agent": "Mozilla/5.0 (compatible; Rasd/1.0; veille reglementaire)",
         "Referer": URL_PAGE,
     })
     with urllib.request.urlopen(req, timeout=300) as r:

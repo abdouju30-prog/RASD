@@ -18,7 +18,7 @@ import { gamme } from "@/lib/gamme";
 import { STATS_MELANGES } from "@/lib/melanges";
 
 export const metadata: Metadata = {
-  title: "Homologa — Tour de contrôle réglementaire",
+  title: "Rasd — veille réglementaire phytosanitaire",
   description: "Radar réglementaire, prospection de matières actives et usine à dossiers ONSSA",
 };
 

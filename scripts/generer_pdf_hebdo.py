@@ -1,5 +1,5 @@
 """
-Générateur de rapport hebdomadaire PDF officiel — Homologa
+Générateur de rapport hebdomadaire PDF officiel — Rasd
 Synthèse des nouveautés réglementaires ONSSA, produits, revendeurs, cultures et usages.
 
 Sortie : data/rapport-hebdo-onssa.pdf
@@ -32,7 +32,7 @@ DATA_DIR = RACINE / "data"
 FICHIER_NOUVEAUTES = DATA_DIR / "nouveautes.json"
 PDF_SORTIE = DATA_DIR / "rapport-hebdo-onssa.pdf"
 
-# Palette Homologa
+# Palette Rasd
 BLEU_FONCE = colors.HexColor("#0d5c73")
 BLEU_CLAIR = colors.HexColor("#eaf3f6")
 ROUGE_CRIT = colors.HexColor("#ad0f36")
@@ -68,7 +68,7 @@ class NumerotationCanvas(canvas.Canvas):
 
         # En-tête courant (sauf page 1)
         if self._pageNumber > 1:
-            self.drawString(20 * mm, 287 * mm, "Homologa · Rapport Hebdomadaire Réglementaire ONSSA")
+            self.drawString(20 * mm, 287 * mm, "Rasd · Rapport Hebdomadaire Réglementaire ONSSA")
             self.setStrokeColor(GRIS_BORD)
             self.setLineWidth(0.5)
             self.line(20 * mm, 284 * mm, 190 * mm, 284 * mm)
@@ -171,7 +171,7 @@ def generer_rapport_pdf():
     story = []
 
     # ── En-tête principal ──
-    story.append(Paragraph("HOMOLOGA · VEILLE RÉGLEMENTAIRE ONSSA", ParagraphStyle("SurTitre", fontName="Helvetica-Bold", fontSize=9, textColor=TEXTE_MUTED, spaceAfter=4)))
+    story.append(Paragraph("RASD · VEILLE RÉGLEMENTAIRE ONSSA", ParagraphStyle("SurTitre", fontName="Helvetica-Bold", fontSize=9, textColor=TEXTE_MUTED, spaceAfter=4)))
     story.append(Paragraph("Rapport Hebdomadaire des Nouveautés (Édition du Jeudi)", titre_style))
     story.append(Spacer(1, 4))
     date_jour = datetime.now().strftime("%d/%m/%Y")
@@ -345,7 +345,7 @@ def generer_rapport_pdf():
         story.append(t_r)
 
     story.append(Spacer(1, 20))
-    story.append(Paragraph("Avertissement : Ce rapport est généré automatiquement par Homologa pour la veille interne. Seules les attestations d'homologation délivrées par l'ONSSA font foi au plan juridique.", ParagraphStyle("Avertissement", fontName="Helvetica-Oblique", fontSize=8, textColor=TEXTE_MUTED)))
+    story.append(Paragraph("Avertissement : Ce rapport est généré automatiquement par Rasd pour la veille interne. Seules les attestations d'homologation délivrées par l'ONSSA font foi au plan juridique.", ParagraphStyle("Avertissement", fontName="Helvetica-Oblique", fontSize=8, textColor=TEXTE_MUTED)))
 
     doc.build(story, canvasmaker=NumerotationCanvas)
     print(f"OK -> PDF généré : {PDF_SORTIE} ({PDF_SORTIE.stat().st_size // 1024} Ko)")

@@ -24,7 +24,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-ENTETES = {"User-Agent": "Homologa/1.0 (veille reglementaire)"}
+ENTETES = {"User-Agent": "Rasd/1.0 (veille reglementaire)"}
 
 
 def _contexte_certifi():

@@ -101,7 +101,7 @@ async function envoyer() {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: process.env.EMAIL_EXPEDITEUR ?? "Veille Homologa <onboarding@resend.dev>",
+      from: process.env.EMAIL_EXPEDITEUR ?? "Veille Rasd <onboarding@resend.dev>",
       to: [process.env.EMAIL_DESTINATAIRE ?? "abdouju30@gmail.com"],
       subject: sujet,
       html,

@@ -40,14 +40,14 @@ def envoyer_rapport():
         generer_rapport_pdf()
 
     date_str = datetime.now().strftime("%d/%m/%Y")
-    sujet = f"📊 Homologa · Rapport Hebdomadaire Réglementaire ONSSA — Semaine du {date_str}"
+    sujet = f"📊 Rasd · Rapport Hebdomadaire Réglementaire ONSSA — Semaine du {date_str}"
 
     corps_html = f"""
     <html>
       <body style="font-family: Arial, sans-serif; color: #0e1a20; line-height: 1.6;">
         <div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #dde4e8; border-radius: 8px;">
           <div style="background-color: #0d5c73; padding: 14px 20px; border-radius: 6px 6px 0 0; color: white;">
-            <h2 style="margin: 0; font-size: 18px;">Homologa · Veille Réglementaire Hebdomadaire</h2>
+            <h2 style="margin: 0; font-size: 18px;">Rasd · Veille Réglementaire Hebdomadaire</h2>
             <p style="margin: 4px 0 0; font-size: 12px; opacity: 0.9;">Relevé officiel ONSSA & Marché Phytosanitaire Maroc</p>
           </div>
           <div style="padding: 20px 10px;">
@@ -63,8 +63,8 @@ def envoyer_rapport():
             </ul>
             <p>Le document complet est joint au présent courriel.</p>
             <p style="font-size: 11.5px; color: #4a5a63; margin-top: 25px; border-top: 1px solid #dde4e8; padding-top: 12px;">
-              Homologa — Tour de contrôle réglementaire agricole.<br/>
-              Pour toute consultation interactive en ligne, accédez à votre espace sur le portail Homologa.
+              Rasd — Tour de contrôle réglementaire agricole.<br/>
+              Pour toute consultation interactive en ligne, accédez à votre espace sur le portail Rasd.
             </p>
           </div>
         </div>

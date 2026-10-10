@@ -59,11 +59,11 @@ export function ChaineNav({
   return (
     <header className="entete">
       <div className="barre">
-        <Link href="/" className="logo" aria-label="Homologa — radar réglementaire">
-          H
+        <Link href="/" className="logo" aria-label="Rasd — veille réglementaire">
+          R
         </Link>
         <Link href="/" className="nom">
-          Homologa
+          Rasd
         </Link>
         {selecteur}
         <Recherche />

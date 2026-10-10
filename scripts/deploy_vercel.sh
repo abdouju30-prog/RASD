@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
-# Déploiement production de Homologa sur Vercel.
+# Déploiement production de Rasd sur Vercel.
 #
 # Prérequis — secrets Cloud Agent (injectés dans un NOUVEAU run uniquement) :
 #   VERCEL_TOKEN       token Vercel (obligatoire)
