@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { BoutonExport } from "@/components/BoutonExport";
 import { PRODUITS, produitsDe } from "@/lib/data";
 import { detenteurActuel } from "@/lib/detenteur";
+import { historiqueProduit } from "@/lib/actualites";
 import { CA_DISPONIBLE, etatAMM, fmtDate, fmtMAD } from "@/lib/logic";
 
 const COULEUR = {
@@ -82,6 +84,10 @@ export default async function ProduitsPage({
       <h1>
         {portefeuille.length} produits homologués
       </h1>
+      <div style={{ display: "flex", gap: 16, margin: "-4px 0 10px" }}>
+        <BoutonExport table="produits" />
+        <BoutonExport table="homologations" />
+      </div>
       <p style={{ color: "var(--muted)", maxWidth: 700, lineHeight: 1.6, marginTop: 0 }}>
         Classés par échéance d&apos;AMM, la plus proche en premier. Données extraites de l&apos;index
         ONSSA — aucune saisie manuelle.
@@ -129,6 +135,13 @@ export default async function ProduitsPage({
                       {p.formulation ?? "—"}
                       {p.tox ? ` · tox ${p.tox}` : ""}
                     </div>
+                    {historiqueProduit(p.id).length > 0 && (
+                      <div style={{ fontSize: 11, color: "var(--accent)", marginTop: 2 }}>
+                        {historiqueProduit(p.id)
+                          .map((h) => `${h.type} ${fmtDate(h.date)}${h.type === "nouveau" ? "" : ` (${h.detail})`}`)
+                          .join(" · ")}
+                      </div>
+                    )}
                   </td>
                   <td style={{ fontSize: 13, color: "var(--muted)" }}>{p.categorie ?? "—"}</td>
                   <td style={{ fontSize: 12.5 }}>
