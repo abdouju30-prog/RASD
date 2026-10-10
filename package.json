@@ -21,6 +21,10 @@
     "import:agrofit": "python scripts/import_agrofit.py",
     "import:russie": "python scripts/import_gospesticid.py",
     "import:coree": "python scripts/import_psis.py",
+    "import:lmr": "python scripts/import_lmr_ue.py",
+    "import:normes": "python scripts/import_normes.py",
+    "import:moa": "python scripts/import_modes_action.py",
+    "import:afrique": "python scripts/import_afrique.py",
     "veille": "python scripts/import_ephy.py && python scripts/import_apvma.py && python scripts/import_agrofit.py --frais && python scripts/import_psis.py --frais && python scripts/sentinelle.py"
   },
   "dependencies": {
