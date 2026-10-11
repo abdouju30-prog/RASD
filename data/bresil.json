@@ -2,9 +2,9 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-10",
-  "genere": "2026-10-10T11:48:01",
-  "nbHomologations": 2991,
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-11",
+  "genere": "2026-10-11T12:00:24",
+  "nbHomologations": 2989,
   "nbUsines": 542,
   "nbMatieres": 80,
   "nbMatieresIndex": 192,
@@ -424,7 +424,7 @@
    "nomsPt": [
     "cletodim"
    ],
-   "nbHomologations": 51,
+   "nbHomologations": 50,
    "teneurMax": 980.0,
    "usines": [
     "ADAMA AGRICULTURAL SOLUTIONS LTD.|ISRAEL",
@@ -959,7 +959,7 @@
     "glifosato",
     "glifosato-sal de amônio"
    ],
-   "nbHomologations": 73,
+   "nbHomologations": 72,
    "teneurMax": 980.0,
    "usines": [
     "ADAMA AGRICULTURAL SOLUTIONS LTD.|ISRAEL",
@@ -979,7 +979,6 @@
     "GUANG'AN CHENGXIN CHEMICAL CO., LTD|CHINA, REPUBLICA POPULAR",
     "HUBEI TRISUN CHEMICALS CO., LTD.|CHINA, REPUBLICA POPULAR",
     "JIANGSU GOOD HARVEST|CHINA, REPUBLICA POPULAR",
-    "JIANGSU ZHENJIANG JIANGNAN CHEMICALS FACTORY CO., LTD|CHINA, REPUBLICA POPULAR",
     "JINGMA CHEMICALS CO., LTD.|CHINA, REPUBLICA POPULAR",
     "MONSANTO ARGENTINA S.A.I.C|ARGENTINA",
     "MONSANTO ARGENTINA S.R.L.|ARGENTINA",
@@ -2615,13 +2614,14 @@
   {
    "nomPt": "lufenurom",
    "groupeChimique": "benzoiluréia",
-   "nbHomologations": 34,
+   "nbHomologations": 35,
    "teneurMax": 980.0,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
     "Agroallianz S.A",
+    "Agrobeats Defensivos Agrícolas Ltda",
     "Ameribrás Indústria e Comércio Ltda.",
     "Ascenza Brasil Ltda - Hortolândia/SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
@@ -2645,6 +2645,10 @@
     "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
    ],
    "fabricants": [
+    {
+     "nom": "Anhui Biocompounds Chemical Co. Ltd.",
+     "pays": "Chine"
+    },
     {
      "nom": "Dezhou Luba Fine Chemical Co. Ltd",
      "pays": "Chine"
@@ -6274,37 +6278,6 @@
    ]
   },
   {
-   "nomPt": "imazamoxi",
-   "groupeChimique": "imidazolinona",
-   "nbHomologations": 5,
-   "teneurMax": 980.0,
-   "titulaires": [
-    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Trustchem Brazil Agroscience Sociedade Unipessoal Ltda - São Paulo/SP"
-   ],
-   "fabricants": [
-    {
-     "nom": "Basf Corporation",
-     "pays": "États-Unis"
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Trust Crop Protection Technology Co., Ltd",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Weifang Cynda Chemical Co., Ltd.",
-     "pays": "Chine"
-    }
-   ]
-  },
-  {
    "nomPt": "tiram",
    "groupeChimique": "dimetilditiocarbamato",
    "nbHomologations": 5,
@@ -6330,6 +6303,36 @@
     {
      "nom": "Taminco N.V.",
      "pays": "Belgique"
+    }
+   ]
+  },
+  {
+   "nomPt": "imazamoxi",
+   "groupeChimique": "imidazolinona",
+   "nbHomologations": 4,
+   "teneurMax": 980.0,
+   "titulaires": [
+    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "Cropchem Ltda - Porto Alegre",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Trustchem Brazil Agroscience Sociedade Unipessoal Ltda - São Paulo/SP"
+   ],
+   "fabricants": [
+    {
+     "nom": "Basf Corporation",
+     "pays": "États-Unis"
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Trust Crop Protection Technology Co., Ltd",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Weifang Cynda Chemical Co., Ltd.",
+     "pays": "Chine"
     }
    ]
   },
@@ -6773,7 +6776,7 @@
     "Cropchem Ltda - Porto Alegre",
     "Helm do Brasil Mercantil - São Paulo/SP",
     "Iharabras S.A. Indústria Químicas - Sorocaba",
-    "Nellty do Brasil Com. Imp. Exp. de Prod. Químicos Ltda"
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA"
    ],
    "fabricants": [
     {
@@ -9716,7 +9719,7 @@
     "tebutiurom",
     "trifluralina"
    ],
-   "nbHomologations": 45,
+   "nbHomologations": 44,
    "titulaires": [
     "Adama Brasil S.A.- Londrina/PR",
     "Dominus Química Ltda. - ME",
@@ -11109,9 +11112,9 @@
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "Cropchem Ltda - Porto Alegre",
-    "Nellty do Brasil Com. Imp. Exp. de Prod. Químicos Ltda",
     "Nortox S.A. - Arapongas",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA"
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
+    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
    ]
   },
   {
@@ -12248,7 +12251,7 @@
     "imazapir",
     "imazetapir"
    ],
-   "nbHomologations": 38,
+   "nbHomologations": 37,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
@@ -12292,7 +12295,7 @@
     "Cropchem Ltda - Porto Alegre",
     "Helm do Brasil Mercantil - São Paulo/SP",
     "Iharabras S.A. Indústria Químicas - Sorocaba",
-    "Nellty do Brasil Com. Imp. Exp. de Prod. Químicos Ltda"
+    "Nortox S.A. - Arapongas"
    ]
   },
   {
@@ -12343,7 +12346,7 @@
     "tiobencarbe",
     "tiodicarbe"
    ],
-   "nbHomologations": 23,
+   "nbHomologations": 22,
    "titulaires": [
     "Adama Brasil S.A.- Londrina/PR",
     "CCAB Agro S.A.   São Paulo",
@@ -14462,28 +14465,6 @@
    ]
   },
   {
-   "id": "ZHEJIANG XINAN CHEMICAL INDUSTRIAL GROUP CO., LTD|CHINA, REPUBLICA POPULAR",
-   "nom": "Zhejiang Xinan Chemical Industrial Group Co., Ltd",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [
-    "Jiande City"
-   ],
-   "matieres": [
-    "GLYPHOSATE"
-   ],
-   "matieresPt": [
-    "glifosato"
-   ],
-   "nbHomologations": 5,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba"
-   ]
-  },
-  {
    "id": "DINAGRO AGROPECUÁRIA LTDA.|BRASIL",
    "nom": "Dinagro Agropecuária Ltda.",
    "pays": "Brésil",
@@ -14708,6 +14689,28 @@
     "CCAB Agro S.A.   São Paulo",
     "Cropchem Ltda - Porto Alegre",
     "Nortox S.A. - Arapongas"
+   ]
+  },
+  {
+   "id": "ZHEJIANG XINAN CHEMICAL INDUSTRIAL GROUP CO., LTD|CHINA, REPUBLICA POPULAR",
+   "nom": "Zhejiang Xinan Chemical Industrial Group Co., Ltd",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [
+    "Jiande City"
+   ],
+   "matieres": [
+    "GLYPHOSATE"
+   ],
+   "matieresPt": [
+    "glifosato"
+   ],
+   "nbHomologations": 4,
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "Nortox S.A. - Arapongas",
+    "Ouro Fino Química S.A. - Uberaba"
    ]
   },
   {
@@ -15269,23 +15272,6 @@
    "titulaires": [
     "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
     "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP"
-   ]
-  },
-  {
-   "id": "FUJIAN SANNONG GROUP CO., LTD|CHINA, REPUBLICA POPULAR",
-   "nom": "Fujian Sannong Group Co., Ltd",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "GLYPHOSATE"
-   ],
-   "matieresPt": [
-    "glifosato"
-   ],
-   "nbHomologations": 2,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR"
    ]
   },
   {
@@ -16164,6 +16150,23 @@
    ]
   },
   {
+   "id": "FUJIAN SANNONG GROUP CO., LTD|CHINA, REPUBLICA POPULAR",
+   "nom": "Fujian Sannong Group Co., Ltd",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "GLYPHOSATE"
+   ],
+   "matieresPt": [
+    "glifosato"
+   ],
+   "nbHomologations": 1,
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR"
+   ]
+  },
+  {
    "id": "FUTURE FUEL CHEMICAL COMPANY|ESTADOS UNIDOS",
    "nom": "Future Fuel chemical Company",
    "pays": "États-Unis",
@@ -16435,23 +16438,6 @@
    "nbHomologations": 1,
    "titulaires": [
     "Iharabras S.A. Indústria Químicas - Sorocaba"
-   ]
-  },
-  {
-   "id": "JIANGSU ZHENJIANG JIANGNAN CHEMICALS FACTORY CO., LTD|CHINA, REPUBLICA POPULAR",
-   "nom": "Jiangsu Zhenjiang Jiangnan Chemicals Factory Co., Ltd",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "GLYPHOSATE"
-   ],
-   "matieresPt": [
-    "glifosato"
-   ],
-   "nbHomologations": 1,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR"
    ]
   },
   {
@@ -19008,6 +18994,21 @@
    "nbHomologations": 1,
    "titulaires": [
     "AMVAC do Brasil Importação e Comércio de Insumos Agrícolas Ltda"
+   ]
+  },
+  {
+   "id": "ANHUI BIOCOMPOUNDS CHEMICAL CO. LTD.|CHINA, REPUBLICA POPULAR",
+   "nom": "Anhui Biocompounds Chemical Co. Ltd.",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [],
+   "matieresPt": [
+    "lufenurom"
+   ],
+   "nbHomologations": 1,
+   "titulaires": [
+    "Agrobeats Defensivos Agrícolas Ltda"
    ]
   },
   {

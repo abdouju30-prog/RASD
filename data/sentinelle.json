@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-10T11:49:09",
-  "dernierReleve": "2026-10-10",
+  "genere": "2026-10-11T12:01:41",
+  "dernierReleve": "2026-10-11",
   "premierReleve": false,
   "nbCandidates": 472,
   "nbEcarteesIndexMaroc": 24,
@@ -1178,8 +1178,13 @@
    "nomPt": "lufenurom",
    "groupeChimique": "benzoiluréia",
    "teneurMax": 980.0,
-   "nbHomologationsBr": 34,
+   "nbHomologationsBr": 35,
    "fabricants": [
+    {
+     "nom": "Anhui Biocompounds Chemical Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
     {
      "nom": "Dezhou Luba Fine Chemical Co. Ltd",
      "pays": "Chine",
@@ -1271,14 +1276,14 @@
     "Adama Brasil S.A.- Londrina/PR",
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
     "Agroallianz S.A",
+    "Agrobeats Defensivos Agrícolas Ltda",
     "Ameribrás Indústria e Comércio Ltda.",
     "Ascenza Brasil Ltda - Hortolândia/SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
     "Cropchem Ltda - Porto Alegre",
-    "DVerde Comércio, Importação e Exportação Ltda.",
-    "Globachem Proteção de Cultivos do Brasil Ltda. - Campinas/SP"
+    "DVerde Comércio, Importação e Exportação Ltda."
    ],
    "coree": null,
    "france": null,
@@ -6072,49 +6077,6 @@
    "nouvelle": false
   },
   {
-   "cle": "imasamocsi",
-   "nom": "imazamoxi",
-   "iso": null,
-   "nomPt": "imazamoxi",
-   "groupeChimique": "imidazolinona",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 5,
-   "fabricants": [
-    {
-     "nom": "Basf Corporation",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Trust Crop Protection Technology Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Weifang Cynda Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Trustchem Brazil Agroscience Sociedade Unipessoal Ltda - São Paulo/SP"
-   ],
-   "coree": null,
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
    "cle": "tiram",
    "nom": "tiram",
    "iso": "THIRAM",
@@ -6171,6 +6133,48 @@
     "nbProduitsAgricoles": 30,
     "matiereActiveApprouvee": true
    },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "imasamocsi",
+   "nom": "imazamoxi",
+   "iso": null,
+   "nomPt": "imazamoxi",
+   "groupeChimique": "imidazolinona",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 4,
+   "fabricants": [
+    {
+     "nom": "Basf Corporation",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Trust Crop Protection Technology Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Weifang Cynda Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "Cropchem Ltda - Porto Alegre",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Trustchem Brazil Agroscience Sociedade Unipessoal Ltda - São Paulo/SP"
+   ],
+   "coree": null,
+   "france": null,
+   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -6850,7 +6854,7 @@
     "Cropchem Ltda - Porto Alegre",
     "Helm do Brasil Mercantil - São Paulo/SP",
     "Iharabras S.A. Indústria Químicas - Sorocaba",
-    "Nellty do Brasil Com. Imp. Exp. de Prod. Químicos Ltda"
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA"
    ],
    "coree": null,
    "france": null,
