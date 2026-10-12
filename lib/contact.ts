@@ -4,6 +4,7 @@ import { ficheFournisseur, toutesLesFiches } from "./packs-fournisseur";
 import { USINES_TURQUES } from "./bku";
 import { IndexNoms } from "./noms";
 import { contactIcama } from "./contacts-icama";
+import { contactSociete } from "./contacts-societes";
 
 // ────────────────────────────────────────────────────────────────────────────
 // COORDONNÉES FOURNISSEUR
@@ -13,6 +14,7 @@ import { contactIcama } from "./contacts-icama";
 //
 //   1. Fiche saisie (brochure / site officiel) — e-mail, tél, site, siège
 //   2. Pages Contact ICAMA retestées par HTTP (groupes chinois)
+//   2 bis. Site officiel des fabricants prioritaires, page Contact relue par HTTP
 //   3. ONSSA e-service — agrément marocain (souvent le bureau local)
 //   4. EPA — adresse d'établissement de production
 //   5. BKÜ Turquie — adresse du titulaire İMAL
@@ -26,6 +28,8 @@ export interface ContactResolu {
   telephones: string[];
   site: string | null;
   adresses: { texte: string; source: string }[];
+  /** Page d'où viennent e-mail et téléphone du site officiel, et date de relecture. */
+  preuve: { url: string; date: string } | null;
   /** true dès qu'on a un e-mail ou un téléphone. */
   joignable: boolean;
 }
@@ -59,13 +63,15 @@ export function contactDe(nom: string, idOnssa?: string): ContactResolu {
   const tr = INDEX_TURC.exact(nom) ?? INDEX_TURC.proches(nom, 1)[0] ?? null;
 
   const ic = contactIcama(nom);
-  const emails = uniq([fiche?.contact?.email, ...(ic?.emails ?? []), ...(agr?.emails ?? [])]);
+  const so = contactSociete(nom);
+  const emails = uniq([fiche?.contact?.email, ...(ic?.emails ?? []), ...(so?.emails ?? []), ...(agr?.emails ?? [])]);
   const telephones = uniq([
     fiche?.contact?.telephone,
     ...(ic?.telephones ?? []),
+    ...(so?.telephones ?? []),
     agr?.telephone,
   ]);
-  const site = fiche?.contact?.site ?? ic?.site ?? null;
+  const site = fiche?.contact?.site ?? ic?.site ?? so?.site ?? null;
 
   const adresses: { texte: string; source: string }[] = [];
   const push = (texte: string | null | undefined, source: string) => {
@@ -91,6 +97,7 @@ export function contactDe(nom: string, idOnssa?: string): ContactResolu {
     telephones,
     site,
     adresses,
+    preuve: so?.sources?.[0] ? { url: so.sources[0], date: so.verifie } : null,
     joignable: emails.length > 0 || telephones.length > 0,
   };
 }

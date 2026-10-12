@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ANNUAIRE, REGIONS, STATS_ANNUAIRE, dansRegion, type Region } from "@/lib/annuaire";
+import { contactDe } from "@/lib/contact";
+import { ContactCell } from "@/components/Contact";
 
 export const dynamic = "force-dynamic";
 
@@ -8,7 +10,7 @@ const PLAFOND = 200;
 export default async function AnnuairePage({
   searchParams,
 }: {
-  searchParams: Promise<{ region?: string; pays?: string; q?: string; registre?: string; min?: string; tout?: string }>;
+  searchParams: Promise<{ region?: string; pays?: string; q?: string; registre?: string; min?: string; contact?: string; tout?: string }>;
 }) {
   const sp = await searchParams;
   const reg = REGIONS.find((r) => r === sp.region) as Region | undefined;
@@ -21,6 +23,7 @@ export default async function AnnuairePage({
   if (sp.registre) liste = liste.filter((f) => f.registres.includes(sp.registre!));
   if (min > 1) liste = liste.filter((f) => f.registres.length >= min);
   if (q) liste = liste.filter((f) => f.nom.toLowerCase().includes(q) || f.molecules.some((m) => m.toLowerCase().includes(q)));
+  if (sp.contact === "1") liste = liste.filter((f) => contactDe(f.nom).joignable);
 
   const parPays = new Map<string, number>();
   for (const f of liste) parPays.set(f.pays, (parPays.get(f.pays) ?? 0) + 1);
@@ -30,13 +33,13 @@ export default async function AnnuairePage({
 
   const lien = (o: Record<string, string | undefined>) => {
     const p = new URLSearchParams();
-    for (const [k, v] of Object.entries({ region: sp.region, pays: sp.pays, q: sp.q, registre: sp.registre, min: sp.min, ...o }))
+    for (const [k, v] of Object.entries({ region: sp.region, pays: sp.pays, q: sp.q, registre: sp.registre, min: sp.min, contact: sp.contact, ...o }))
       if (v) p.set(k, v);
     const s = p.toString();
     return s ? `/annuaire?${s}` : "/annuaire";
   };
   const exportHref = `/api/export/annuaire?${new URLSearchParams(
-    Object.entries({ region: sp.region, pays: sp.pays, q: sp.q, registre: sp.registre, min: sp.min })
+    Object.entries({ region: sp.region, pays: sp.pays, q: sp.q, registre: sp.registre, min: sp.min, contact: sp.contact })
       .filter(([, v]) => v) as [string, string][]
   ).toString()}`;
 
@@ -79,6 +82,10 @@ export default async function AnnuairePage({
           <option value="2">au moins 2 registres</option>
           <option value="3">au moins 3 registres (exporte déjà largement)</option>
         </select>
+        <select name="contact" defaultValue={sp.contact ?? ""} style={{ padding: "7px 8px", border: "1px solid var(--border)", borderRadius: 6 }}>
+          <option value="">Avec ou sans coordonnées</option>
+          <option value="1">Avec e-mail ou téléphone</option>
+        </select>
         <button type="submit" style={{ padding: "7px 14px", borderRadius: 6, border: "1px solid var(--accent)", background: "var(--accent)", color: "#fff", fontWeight: 600 }}>
           Filtrer
         </button>
@@ -104,6 +111,7 @@ export default async function AnnuairePage({
               <th>Pays</th>
               <th>Registres</th>
               <th>Molécules</th>
+              <th>Contact</th>
             </tr>
           </thead>
           <tbody>
@@ -125,6 +133,9 @@ export default async function AnnuairePage({
                 <td style={{ fontSize: 11.5, color: "var(--muted)" }}>
                   {f.molecules.length ? `${f.molecules.length} — ${f.molecules.slice(0, 5).join(", ")}${f.molecules.length > 5 ? "…" : ""}` : "—"}
                 </td>
+                <td>
+                  <ContactCell c={contactDe(f.nom)} nom={f.nom} />
+                </td>
               </tr>
             ))}
           </tbody>
@@ -141,6 +152,8 @@ export default async function AnnuairePage({
       <p style={{ fontSize: 11.5, color: "var(--muted-2)", marginTop: 12, lineHeight: 1.6 }}>
         Registres réunis : Maroc (ONSSA), Brésil, Chine (ICAMA), États-Unis (EPA), Australie, Corée, Turquie, Russie,
         Canada, Colombie, Nouvelle-Zélande, Argentine, Japon, Malaisie, Afrique du Sud, Union européenne (ECHA).
+        Les coordonnées sont celles que la société publie (site officiel relu par HTTP, registres, ONSSA) ;
+        le lien LinkedIn ouvre une recherche avec votre compte, rien n&apos;y est relevé.
         Une société est rapprochée sur sa raison sociale ; le pays « présumé » est celui du registre quand le nom ne
         dit pas la nationalité (filiale ou distributeur local). Une homologation étrangère n&apos;ouvre aucune voie
         me-too devant l&apos;ONSSA : seule la mention « fournit déjà le Maroc » le fait.

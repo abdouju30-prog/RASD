@@ -9,7 +9,7 @@ import { ficheFournisseur } from "@/lib/packs-fournisseur";
 import { PISTES_NOUVELLES, STATS_PISTES } from "@/lib/pistes";
 import { EtiquetteLien, ReservePistes } from "@/components/PistesFournisseur";
 import { LiensMatieres } from "@/components/LienMatiere";
-import { STATS_ICAMA, USINES_CHINE, anglaisDe, licenceLisible } from "@/lib/icama";
+import { STATS_ICAMA, USINES_CHINE, anglaisDe, licenceLisible, nomCherchable } from "@/lib/icama";
 import { NomChinois } from "@/components/NomChinois";
 import { NomRusse } from "@/components/NomRusse";
 import { etiquetteRusse } from "@/lib/cyrillique";
@@ -499,7 +499,7 @@ export default async function FournisseursPage({
                         {mas.length === 0 && <span style={{ color: "var(--muted-2)" }}>—</span>}
                       </td>
                       <td>
-                        <ContactCell c={contactDe(f.nom, f.id)} />
+                        <ContactCell c={contactDe(f.nom, f.id)} nom={f.nom} />
                       </td>
                     </tr>
                   );
@@ -582,7 +582,7 @@ export default async function FournisseursPage({
                           <NomChinois nom={u.nom} latin={u.latin} glose={u.glose} />
                         </td>
                         <td>
-                          <ContactCell c={contactDe(u.nom)} />
+                          <ContactCell c={contactDe(u.nom)} nom={nomCherchable(u)} />
                         </td>
                         <td>
                           <ValiditeIcama

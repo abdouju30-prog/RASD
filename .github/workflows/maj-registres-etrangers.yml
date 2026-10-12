@@ -95,6 +95,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python scripts/import_modes_action.py | tee -a sortie-etrangers.txt
+      - name: Coordonnées des fabricants — sites officiels
+        id: contacts
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python scripts/import_contacts_societes.py | tail -1 | tee -a sortie-etrangers.txt
 
       - name: Bilan par registre
         id: bilan
@@ -107,6 +112,7 @@ jobs:
           LMR: ${{ steps.lmr.outcome }}
           NORMES: ${{ steps.normes.outcome }}
           MOA: ${{ steps.moa.outcome }}
+          CONTACTS: ${{ steps.contacts.outcome }}
         run: |
           SUIVIS="data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json"
           # Garde-fou : un relevé deux fois plus petit que le précédent est une
@@ -125,7 +131,7 @@ jobs:
           # (ils lisent ICAMA, le Brésil, l'EPA, l'Australie et l'index ONSSA).
           NOUVELLES=$(python scripts/_icama_nouveautes.py | tee -a sortie-etrangers.txt | head -1)
           python scripts/_noms_anglais.py | tee -a sortie-etrangers.txt
-          DERIVES="data/icama-nouveautes.json data/icama-anglais.json data/lmr-ue.json data/normes.json data/substances-ue.json data/modes-action.json"
+          DERIVES="data/icama-nouveautes.json data/icama-anglais.json data/lmr-ue.json data/normes.json data/substances-ue.json data/modes-action.json data/contacts-societes.json"
           {
             echo "resume<<EOF"
             echo "Chine (ICAMA) : $ICAMA"
@@ -134,6 +140,7 @@ jobs:
             echo "Russie : $RUSSIE"
             echo "Registres ouverts : $OUVERTS"
             echo "LMR UE : $LMR · normes : $NORMES · modes d'action : $MOA"
+            echo "Coordonnées des fabricants : $CONTACTS"
             [ -n "$REJETS" ] && echo "Relevés rejetés (trop petits, ancien fichier conservé) :$REJETS"
             echo "$NOUVELLES"
             echo "EOF"
@@ -151,7 +158,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json data/icama-nouveautes.json data/icama-anglais.json data/lmr-ue.json data/normes.json data/substances-ue.json data/modes-action.json
+          git add data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json data/icama-nouveautes.json data/icama-anglais.json data/lmr-ue.json data/normes.json data/substances-ue.json data/modes-action.json data/contacts-societes.json
           git commit -m "Veille — registres étrangers" -m "$RESUME"
           git pull --rebase --autostash origin master
           git push

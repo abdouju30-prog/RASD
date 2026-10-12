@@ -5,6 +5,8 @@ import { etatAMM } from "@/lib/logic";
 import { conformite, libelleMoa } from "@/lib/conformite";
 import { reponseCsv } from "@/lib/csv";
 import { ANNUAIRE, REGIONS, dansRegion, type Region } from "@/lib/annuaire";
+import { contactDe } from "@/lib/contact";
+import { lienLinkedIn } from "@/lib/contacts-societes";
 
 /**
  * Exports tableur du détenteur choisi : produits, homologations (usages),
@@ -17,7 +19,8 @@ export async function GET(req: Request, { params }: { params: Promise<{ table: s
     const reg = REGIONS.find((r) => r === sp.get("region")) as Region | undefined;
     const q = (sp.get("q") ?? "").toLowerCase();
     const min = Number(sp.get("min") ?? "1") || 1;
-    const liste = ANNUAIRE.filter((f) =>
+    const liste = ANNUAIRE.map((f) => ({ ...f, c: contactDe(f.nom) })).filter((f) =>
+      (sp.get("contact") !== "1" || f.c.joignable) &&
       (!reg || dansRegion(f, reg)) &&
       (!sp.get("pays") || f.pays === sp.get("pays")) &&
       (!sp.get("registre") || f.registres.includes(sp.get("registre")!)) &&
@@ -25,9 +28,11 @@ export async function GET(req: Request, { params }: { params: Promise<{ table: s
       (!q || f.nom.toLowerCase().includes(q) || f.molecules.some((m) => m.toLowerCase().includes(q))));
     return reponseCsv(
       "annuaire-fabricants.csv",
-      ["Fabricant / titulaire", "Pays", "Pays présumé", "Région", "Fournit déjà le Maroc", "Nb registres", "Registres", "Nb molécules", "Molécules"],
+      ["Fabricant / titulaire", "Pays", "Pays présumé", "Région", "Fournit déjà le Maroc", "Nb registres", "Registres",
+        "Nb molécules", "Molécules", "E-mail", "Téléphone", "Site", "Source du contact", "Recherche LinkedIn"],
       liste.map((f) => [f.nom, f.pays, f.paysFiable ? "" : "oui", f.region, f.meToo ? "oui" : "", f.registres.length,
-        f.registres.join(", "), f.molecules.length, f.molecules.join(", ")])
+        f.registres.join(", "), f.molecules.length, f.molecules.join(", "), f.c.emails.join(", "),
+        f.c.telephones.join(", "), f.c.site ?? "", f.c.preuve?.url ?? "", lienLinkedIn(f.nom)])
     );
   }
   const d = await detenteurActuel();

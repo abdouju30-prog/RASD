@@ -1,0 +1,725 @@
+{
+ "_lisezmoi": [
+  "Un site officiel par ligne et les raisons sociales des registres qu'il couvre.",
+  "Ajouter une ligne puis lancer : python scripts/import_contacts_societes.py <mot>"
+ ],
+ "sites": [
+  {
+   "site": "https://www.syngenta.com",
+   "noms": [
+    "SYNGENTA CROP PROTECTION AG",
+    "Syngenta Limited"
+   ]
+  },
+  {
+   "site": "https://www.upl-ltd.com",
+   "noms": [
+    "UPL LIMITED",
+    "ARYSTA LIFESCIENCE BENELUX SPRL",
+    "CEREXAGRI IBIRICA SA",
+    "ARYSTA LIFESCIENCE NETHERLANDS B.V.",
+    "ARYSTA LIFESCIENCE SAS"
+   ]
+  },
+  {
+   "site": "https://www.bayer.com",
+   "noms": [
+    "BAYER AG",
+    "BAYER CROPSCIENCE AG",
+    "Monsanto Company"
+   ]
+  },
+  {
+   "site": "https://www.basf.com",
+   "noms": [
+    "BASF Agricultural Solutions Deutschland GmbH",
+    "BASF AGRO BV",
+    "BASF SE",
+    "BASF Agricultural Solutions US LLC",
+    "BASF AGROCHEMICAL PRODUCTS BV",
+    "BASF AG"
+   ]
+  },
+  {
+   "site": "https://nufarm.com",
+   "noms": [
+    "NUFARM SAS",
+    "NUFARM UK LTD"
+   ]
+  },
+  {
+   "site": "https://www.corteva.com",
+   "noms": [
+    "Corteva Agriscience international Sàrl",
+    "CORTEVA AGRISCIENCE LLC"
+   ]
+  },
+  {
+   "site": "https://www.iqvagro.com",
+   "noms": [
+    "INDUSTRIAS QUIMICAS DEL VALLES (IQV)"
+   ]
+  },
+  {
+   "site": "https://www.fmc.com",
+   "noms": [
+    "FMC IP Technology LLC Vernier Branch",
+    "CHEMINOVA A/S",
+    "FMC Agriculture solution AS",
+    "FMC CHEMICAL SPRL",
+    "CHEMINOVA DEUTSCHLAND GMBH & Co. KG, FMC AGRICULTURAL SOLUTIONS",
+    "CHEMINOVA AGRO S.A",
+    "FMC INTERNATIONAL SWIZERLAND SARL",
+    "FMC CORPORATION"
+   ]
+  },
+  {
+   "site": "https://www.albaugh.com",
+   "noms": [
+    "Albaugh TKI d,o.o.,",
+    "Albaugh Europe",
+    "Albaugh Mexico",
+    "ALBAUGH, LLC."
+   ]
+  },
+  {
+   "site": "https://www.seipasa.com",
+   "noms": [
+    "SEIPASA"
+   ]
+  },
+  {
+   "site": "https://www.agria.bg",
+   "noms": [
+    "AGRIA SA"
+   ]
+  },
+  {
+   "site": "https://www.sipcaminagra.es",
+   "noms": [
+    "SIPCAM INAGRA SA"
+   ]
+  },
+  {
+   "site": "https://cosaco.de",
+   "noms": [
+    "Cosaco GmbH"
+   ]
+  },
+  {
+   "site": "https://www.certisbelchim.com",
+   "noms": [
+    "CERTIS BELCHIM N.V"
+   ]
+  },
+  {
+   "site": "https://www.globachem.com",
+   "noms": [
+    "GLOBACHEM"
+   ]
+  },
+  {
+   "site": "https://www.lainco.com",
+   "noms": [
+    "LAINCO SA"
+   ]
+  },
+  {
+   "site": "https://www.manica.com",
+   "noms": [
+    "MANICA SPA"
+   ]
+  },
+  {
+   "site": "https://www.certisbio.com",
+   "noms": [
+    "CERTIS USA, LLC"
+   ]
+  },
+  {
+   "site": "https://www.cbceurope.it",
+   "noms": [
+    "CBC EUROPE S.r.l."
+   ]
+  },
+  {
+   "site": "https://www.futurecobioscience.com",
+   "noms": [
+    "FUTURECO BIOSCIENCE"
+   ]
+  },
+  {
+   "site": "https://www.rallis.com",
+   "noms": [
+    "RALLIS INDIA LTD"
+   ]
+  },
+  {
+   "site": "https://www.nisso-chem.de",
+   "noms": [
+    "NISSO CHEMICAL EUROPE GMBH"
+   ]
+  },
+  {
+   "site": "https://www.biopreparaty.eu",
+   "noms": [
+    "BIOPREPARATY SPOL. SRO"
+   ]
+  },
+  {
+   "site": "https://www.oat-agrio.co.jp/en/",
+   "noms": [
+    "OAT Agrio Co., Ltd."
+   ]
+  },
+  {
+   "site": "https://www.gspcrop.com",
+   "noms": [
+    "GSP CROP SCIENCE LIMITED"
+   ]
+  },
+  {
+   "site": "https://www.barclay.ie",
+   "noms": [
+    "BARCLAY CHEMICALS MANUFACTURING LTD"
+   ]
+  },
+  {
+   "site": "https://www.quimetal.cl",
+   "noms": [
+    "QUIMETAL INDUSTRIAL SA"
+   ]
+  },
+  {
+   "site": "https://www.sulphurmills.com",
+   "noms": [
+    "SML Limited"
+   ]
+  },
+  {
+   "site": "https://www.sinon.com.tw",
+   "noms": [
+    "SINON CORPORATION"
+   ]
+  },
+  {
+   "site": "https://www.biobestgroup.com",
+   "noms": [
+    "BIOBEST GROUP N.V"
+   ]
+  },
+  {
+   "site": "https://www.ascenza.com",
+   "noms": [
+    "ASCENZA AGRO"
+   ]
+  },
+  {
+   "site": "https://www.finchimica.it",
+   "noms": [
+    "Finchimica S.p.A"
+   ]
+  },
+  {
+   "site": "https://www.parijatagrochemicals.com",
+   "noms": [
+    "PARIJAT INDUSTRIES (INDIA) LTD",
+    "PARIJAT INDUSTRIE (INDIA) PVT. LTD"
+   ]
+  },
+  {
+   "site": "https://www.desangosse.com",
+   "noms": [
+    "DE SANGOSSE"
+   ]
+  },
+  {
+   "site": "https://www.safatarim.com.tr",
+   "noms": [
+    "SAFA TARIM AS"
+   ]
+  },
+  {
+   "site": "https://www.pilarquim.com",
+   "noms": [
+    "PILARQUIM (SHANGHAI) CO., LTD"
+   ]
+  },
+  {
+   "site": "https://www.jhbiotech.com",
+   "noms": [
+    "JH BIOTECH INC"
+   ]
+  },
+  {
+   "site": "https://www.krishirasayan.com",
+   "noms": [
+    "KRISHI RASAYAN EXPORTS PVT LTD"
+   ]
+  },
+  {
+   "site": "https://www.afepasa.com",
+   "noms": [
+    "AZUFRERA Y FERTILIZANTES PALLARES S.A",
+    "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)"
+   ]
+  },
+  {
+   "site": "https://www.adama.com",
+   "noms": [
+    "ADAMA AGRICULTURE ESPANA S.A",
+    "ADAMA CELSIUS B.V."
+   ]
+  },
+  {
+   "site": "https://www.sumichem.co.in",
+   "noms": [
+    "SUMITOMO CHEMICAL INDIA LIMITED"
+   ]
+  },
+  {
+   "site": "https://www.agrokanesho.co.jp",
+   "noms": [
+    "AGRO KANESHO CO,. LTD"
+   ]
+  },
+  {
+   "site": "https://www.agrauxine.com",
+   "noms": [
+    "Agrauxine"
+   ]
+  },
+  {
+   "site": "https://qemetica.com",
+   "noms": [
+    "QEMETICA AGRICULTURAL SOLUTIONS SPAIN SLU"
+   ]
+  },
+  {
+   "site": "https://www.andermatt.com",
+   "noms": [
+    "ANDERMATT BIOCONTROL AG"
+   ]
+  },
+  {
+   "site": "https://www.brandt.co",
+   "noms": [
+    "BRANDT CONSOLIDATED, INC."
+   ]
+  },
+  {
+   "site": "https://www.iskweb.co.jp/eng/",
+   "noms": [
+    "ISHIHARA SANGYO KAISHA"
+   ]
+  },
+  {
+   "site": "https://www.marronebio.com",
+   "noms": [
+    "MARRONE BIO INNOVATIONS USA"
+   ]
+  },
+  {
+   "site": "https://www.vapco.net",
+   "noms": [
+    "VETERINARY AND AGRICULTURAL PRODUCTS MFG.CO.LTD",
+    "VAPCO"
+   ]
+  },
+  {
+   "site": "https://www.rotam.com",
+   "noms": [
+    "ROTAM AGROCHEMICAL CO LTD"
+   ]
+  },
+  {
+   "site": "https://sanagrow.com",
+   "noms": [
+    "SAN Agrow Holding GmbH"
+   ]
+  },
+  {
+   "site": "https://www.citrosol.com",
+   "noms": [
+    "PRODUCTOS CITROSOL, S.A"
+   ]
+  },
+  {
+   "site": "https://cropnosys.com",
+   "noms": [
+    "CROPNOSYS INDIA PRIVATE LIMITED"
+   ]
+  },
+  {
+   "site": "https://www.sumitomo-chem.co.jp/english/",
+   "noms": [
+    "SUMITOMO",
+    "SUMITOMO CHEMICAL COMPANY, LTD."
+   ]
+  },
+  {
+   "site": "https://www.envu.com",
+   "noms": [
+    "2022 Environmental Science FR SAS"
+   ]
+  },
+  {
+   "site": "https://www.indofil.com",
+   "noms": [
+    "INDOFIL INDUSTRIES LIMITED",
+    "INDOFIL CHEMICAL"
+   ]
+  },
+  {
+   "site": "https://www.tagros.com",
+   "noms": [
+    "TAGROS CHEMICALS INDIA"
+   ]
+  },
+  {
+   "site": "https://xeda.com",
+   "noms": [
+    "XEDA INTERNATIONAL SA"
+   ]
+  },
+  {
+   "site": "https://www.nichino.co.jp/en/",
+   "noms": [
+    "NIHON NOHYAKU CO., LTD"
+   ]
+  },
+  {
+   "site": "https://www.wynca.com",
+   "noms": [
+    "Zhejiang Xinan Chemical Industrial Group Co,Ltd.",
+    "NINGXIA WYNCA TECHNOLOGY CO., LTD",
+    "新安化工"
+   ]
+  },
+  {
+   "site": "https://www.sedq.es",
+   "noms": [
+    "SEDQ HEALTHY CROPS, S.L."
+   ]
+  },
+  {
+   "site": "https://www.alzchem.com",
+   "noms": [
+    "ALZCHEM TROSTBERG GMBH"
+   ]
+  },
+  {
+   "site": "https://www.servalesa.com",
+   "noms": [
+    "SERVALESA S.L"
+   ]
+  },
+  {
+   "site": "https://www.arkema.com",
+   "noms": [
+    "ARKEMA"
+   ]
+  },
+  {
+   "site": "https://www.naclind.com",
+   "noms": [
+    "NACL Industries Limited"
+   ]
+  },
+  {
+   "site": "https://www.ceradis.com",
+   "noms": [
+    "CERADIS B.V"
+   ]
+  },
+  {
+   "site": "https://www.suterra.com",
+   "noms": [
+    "SUTERRA EUROPE BIOCONTROL SL"
+   ]
+  },
+  {
+   "site": "https://www.isagro.com",
+   "noms": [
+    "ISAGRO SpA"
+   ]
+  },
+  {
+   "site": "https://biotepp.com",
+   "noms": [
+    "BIOTEPP INC"
+   ]
+  },
+  {
+   "site": "https://www.evonik.com",
+   "noms": [
+    "EVONIK DEGUSSA GMBH"
+   ]
+  },
+  {
+   "site": "https://www.betaren.ru",
+   "noms": [
+    "Schelkovo Agrohim JSC",
+    "Щелково Агрохим"
+   ]
+  },
+  {
+   "site": "https://www.bioiberica.com",
+   "noms": [
+    "BIOIBERICA"
+   ]
+  },
+  {
+   "site": "https://www.heranba.co.in",
+   "noms": [
+    "HERANBA INDUSTRIES LTD"
+   ]
+  },
+  {
+   "site": "https://www.diachem.it",
+   "noms": [
+    "DIACHEM SPA"
+   ]
+  },
+  {
+   "site": "https://www.willowood.com",
+   "noms": [
+    "WILLOWOOD USA"
+   ]
+  },
+  {
+   "site": "https://www.nichino-europe.com",
+   "noms": [
+    "NICHINO EUROPE Co., Ltd"
+   ]
+  },
+  {
+   "site": "https://www.dcm-info.com",
+   "noms": [
+    "DE CEUSTER MESTSTOFFEN NV"
+   ]
+  },
+  {
+   "site": "https://www.m2i-lifesciences.com",
+   "noms": [
+    "M2i Bio control"
+   ]
+  },
+  {
+   "site": "https://www.imerys.com",
+   "noms": [
+    "IMERYS REFRACTORY MINERALS CLERAC"
+   ]
+  },
+  {
+   "site": "https://www.hextar.com",
+   "noms": [
+    "HEXTAR CHEMICALS SDN. BHD"
+   ]
+  },
+  {
+   "site": "https://www.avgust.com",
+   "noms": [
+    "JSC AUGUST INC",
+    "Август"
+   ]
+  },
+  {
+   "site": "https://www.nippon-soda.co.jp/e/",
+   "noms": [
+    "NIPPON SODA CO., LTD"
+   ]
+  },
+  {
+   "site": "https://www.lanxess.com",
+   "noms": [
+    "LANXESS CORPORATION"
+   ]
+  },
+  {
+   "site": "https://www.endura.it",
+   "noms": [
+    "ENDURA S.P.A."
+   ]
+  },
+  {
+   "site": "https://www.babolna-bio.com",
+   "noms": [
+    "BABOLNA BIOENVIRONMENTAL CENTRE PRIVATE LIMITED COMPANY"
+   ]
+  },
+  {
+   "site": "https://www.farmhannong.com",
+   "noms": [
+    "FarmHannong Co.,Ltd."
+   ]
+  },
+  {
+   "site": "https://www.novonesis.com",
+   "noms": [
+    "NOVOZYMES BIOAG, INC.",
+    "Novozymes Biologicals Inc"
+   ]
+  },
+  {
+   "site": "https://www.kumiai-chem.co.jp/english/",
+   "noms": [
+    "KUMIAI CHEMICAL INDUSTRY CO. LTD"
+   ]
+  },
+  {
+   "site": "https://www.troycorp.com",
+   "noms": [
+    "TROY CHEMICAL CORPORATION"
+   ]
+  },
+  {
+   "site": "https://www.thor.com",
+   "noms": [
+    "THOR GMBH"
+   ]
+  },
+  {
+   "site": "https://www.arxada.com",
+   "noms": [
+    "ARXADA, LLC"
+   ]
+  },
+  {
+   "site": "https://www.neudorff.de",
+   "noms": [
+    "W. NEUDORFF GMBH KG"
+   ]
+  },
+  {
+   "site": "https://www.shinetsu.co.jp/en/",
+   "noms": [
+    "SHIN-ETSU CHEMICAL CO., LTD"
+   ]
+  },
+  {
+   "site": "https://www.pelgar.co.uk",
+   "noms": [
+    "PELGAR INTERNATIONAL. LTD"
+   ]
+  },
+  {
+   "site": "https://www.sanitized.com",
+   "noms": [
+    "SANITIZED (USA) INC."
+   ]
+  },
+  {
+   "site": "https://www.atul.co.in",
+   "noms": [
+    "Atul Ltd"
+   ]
+  },
+  {
+   "site": "https://www.coromandel.biz",
+   "noms": [
+    "Coromandel International Limited"
+   ]
+  },
+  {
+   "site": "https://www.veto-pharma.com",
+   "noms": [
+    "VETO-PHARMA SAS"
+   ]
+  },
+  {
+   "site": "https://www.lierchem.com",
+   "noms": [
+    "Lier Chemical Co.,Ltd",
+    "GUANGAN LIER CHEMICAL CO., LTD",
+    "利尔化学"
+   ]
+  },
+  {
+   "site": "http://www.nanjingagrochem.com/",
+   "noms": [
+    "NANJING AGROCHEMICAL CO.; LTD",
+    "Nanging Agrochemical CO"
+   ]
+  },
+  {
+   "site": "https://www.rainbowagro.com",
+   "noms": [
+    "SHANDONG WEIFANG RAINBOW CHEMICALS CO.,LTD",
+    "SHANDONG WEIFANG RAINBOW CHEMICAL CO., Ltd",
+    "RAINBOW AGROSCIENCES (PANAMA), S.A."
+   ]
+  },
+  {
+   "site": "https://www.koppert.com",
+   "noms": [
+    "KOPPERT BV"
+   ]
+  },
+  {
+   "site": "https://www.probelte.es",
+   "noms": [
+    "PROBELTE S.A"
+   ]
+  },
+  {
+   "site": "https://gcp.gowanco.com/",
+   "noms": [
+    "GOWAN CROP PROTECTION LIMITED"
+   ]
+  },
+  {
+   "site": "https://sumitomo-chem-agro.com/",
+   "noms": [
+    "SUMITOMO CHEMICALS AGRO EUROPE SAS"
+   ]
+  },
+  {
+   "site": "https://dva.com/global/agro/",
+   "noms": [
+    "DVA AGRO"
+   ]
+  },
+  {
+   "site": "https://www.key.es",
+   "noms": [
+    "INDUSTRIAL QUIMICA KEY (IQK)"
+   ]
+  },
+  {
+   "site": "https://www.afrasa.es",
+   "noms": [
+    "INDUSTRIAS AFRASA, S.A",
+    "AFRASA"
+   ]
+  },
+  {
+   "site": "https://www.manicacobre.com",
+   "noms": [
+    "INDUSTRIAS OMICRON (GROUPE MANICA)"
+   ]
+  },
+  {
+   "site": "http://en.binnong.com/",
+   "noms": [
+    "SHANDONG BINNONG TECHNLOGY CO., LTD",
+    "Shandong Binnong Technology Co Ltd",
+    "滨农科技"
+   ]
+  },
+  {
+   "site": "http://www.veyong.com/",
+   "noms": [
+    "HEBEI VEYONG BIO-CHEMICAL CO. LTD",
+    "威远"
+   ]
+  },
+  {
+   "site": "http://www.zschem.com/",
+   "noms": [
+    "Zhejiang Zhongshan Chemical Industry Group., Ltd",
+    "中山化工"
+   ]
+  }
+ ]
+}

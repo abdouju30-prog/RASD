@@ -1,11 +1,28 @@
 import type { ContactResolu } from "@/lib/contact";
 import type { ContactIcama } from "@/lib/contacts-icama";
 import { licenceLisible } from "@/lib/icama";
+import { lienLinkedIn } from "@/lib/contacts-societes";
 
-/** Coordonnées compactes : e-mail, tél, site, première adresse. */
-export function ContactCell({ c }: { c: ContactResolu }) {
+/** Recherche LinkedIn (export, homologation) — ouverte avec le compte de l'utilisateur. */
+function LienLinkedIn({ nom }: { nom: string }) {
+  return (
+    <a
+      href={lienLinkedIn(nom)}
+      target="_blank"
+      rel="noreferrer"
+      className="link-accent"
+      style={{ fontSize: 11 }}
+      title="Personnes export / homologation de cette société sur LinkedIn (votre compte)"
+    >
+      LinkedIn
+    </a>
+  );
+}
+
+/** Coordonnées compactes : e-mail, tél, site, première adresse ; lien LinkedIn si le nom est donné. */
+export function ContactCell({ c, nom }: { c: ContactResolu; nom?: string }) {
   if (!c.joignable && !c.site && c.adresses.length === 0) {
-    return <span style={{ color: "var(--muted-2)" }}>—</span>;
+    return nom ? <LienLinkedIn nom={nom} /> : <span style={{ color: "var(--muted-2)" }}>—</span>;
   }
   const hrefSite = !c.site ? null : c.site.startsWith("http") ? c.site : `https://${c.site}`;
   return (
@@ -27,13 +44,25 @@ export function ContactCell({ c }: { c: ContactResolu }) {
       {hrefSite && (
         <div>
           <a href={hrefSite} className="link-accent" target="_blank" rel="noreferrer">
-            {c.site}
+            {(c.site ?? "").replace(/^https?:\/\//, "").replace(/\/$/, "")}
           </a>
         </div>
       )}
       {c.adresses[0] && (
         <div style={{ color: "var(--muted-2)", marginTop: 2 }} title={c.adresses[0].source}>
           {c.adresses[0].texte}
+        </div>
+      )}
+      {(c.preuve || nom) && (
+        <div style={{ fontSize: 11, marginTop: 2, color: "var(--muted-2)" }}>
+          {c.preuve && (
+            <a href={c.preuve.url} target="_blank" rel="noreferrer" style={{ color: "inherit" }}
+              title="Page Contact du site officiel d'où viennent l'e-mail et le téléphone">
+              site officiel, relu le {c.preuve.date.split("-").reverse().join("/")}
+            </a>
+          )}
+          {c.preuve && nom && " · "}
+          {nom && <LienLinkedIn nom={nom} />}
         </div>
       )}
     </div>

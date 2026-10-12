@@ -6,6 +6,9 @@ import { USINES_CHINE, anglaisDe } from "./icama";
 import { USINES_TURQUES } from "./bku";
 import { ANNUAIRE_PISTES } from "./pistes";
 import { PRODUCTEURS_RUSSES } from "./russie";
+import { cleFabricant } from "./cle";
+
+export { cleFabricant };
 
 // ────────────────────────────────────────────────────────────────────────────
 // ANNUAIRE MONDIAL DES FABRICANTS — une société, une ligne, tous ses registres.
@@ -106,19 +109,6 @@ export function dansRegion(f: Fabricant, r: Region): boolean {
   if (r === "Amérique latine") return AMERIQUE_LATINE.has(f.pays);
   if (r === "OCDE") return OCDE.has(f.pays);
   return f.region === r;
-}
-
-const FORMES = new Set(["co", "ltd", "limited", "inc", "incorporated", "corp", "corporation", "company",
-  "sa", "sas", "s", "a", "ltda", "gmbh", "ag", "bv", "nv", "pvt", "private", "pty", "plc", "llc", "srl",
-  "spa", "kg", "jsc", "ooo", "zao", "oao", "pjsc", "the", "and", "de", "cv", "sl", "sac", "sae", "kft",
-  "sro", "as", "ab", "oy", "lda", "cia", "cie", "et", "eirl", "sdn", "bhd", "tbk", "pte"]);
-
-export function cleFabricant(nom: string): string {
-  const mots = nom
-    .normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
-    .replace(/\(.*?\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim().split(" ")
-    .filter((m) => m && !FORMES.has(m));
-  return mots.join(" ");
 }
 
 const AGRO = /chem|agro|agri|pestic|crop|bio|scien|pharm|insectic|herbic|fungic|plant|nong|seed|fertil|kimya|tarim|quimic|veter|garden|hua|yao/i;
