@@ -2,11 +2,11 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-11",
-  "genere": "2026-10-11T12:01:36",
-  "derniereHomologation": "2026-10-07",
-  "nbLignesUsage": 146387,
-  "nbHomologations": 3988,
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-12",
+  "genere": "2026-10-12T14:16:15",
+  "derniereHomologation": "2026-10-10",
+  "nbLignesUsage": 146573,
+  "nbHomologations": 3989,
   "nbSocietes": 98,
   "nbFiliales": 16,
   "nbMatieres": 475,
@@ -14,9 +14,9 @@
   "nbNomsIso": 192,
   "nbHorsIndex": 352,
   "nbMelanges": 1052,
-  "nbUsages": 30979,
+  "nbUsages": 30980,
   "partTraduite": 97,
-  "nbFabrique": 3259,
+  "nbFabrique": 3260,
   "nbImporte": 729,
   "avertissement": "Registre coréen des produits phytosanitaires. Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. « 제조 » signifie produit fabriqué en Corée, PAS matière active synthétisée sur place : ce registre nomme le titulaire de l'homologation, pas l'usine de synthèse. Les raisons sociales sont romanisées (romanisation révisée) : une poignée pour chercher, pas une identité contractuelle. Ni prix, ni capacité, ni qualité."
  },
@@ -11487,11 +11487,11 @@
    "derniere": "2011-03-29"
   },
   {
-   "cle": "Benzobicyclon + Penoxsulam + Pyraxolate",
+   "cle": "Benzobicyclon + Penoxsulam + Pyrazolate",
    "composants": [
     "Benzobicyclon",
     "Penoxsulam",
-    "Pyraxolate"
+    "Pyrazolate"
    ],
    "nbHomologations": 1,
    "nbSocietes": 1,
@@ -20681,10 +20681,10 @@
    "derniere": "1999-10-16"
   },
   {
-   "cle": "Imazosulfuron + Pyraxolate + Simetryn",
+   "cle": "Imazosulfuron + Pyrazolate + Simetryn",
    "composants": [
     "Imazosulfuron",
-    "Pyraxolate",
+    "Pyrazolate",
     "Simetryn"
    ],
    "nbHomologations": 1,
@@ -22492,10 +22492,10 @@
    "derniere": "2014-11-04"
   },
   {
-   "cle": "Pretilachlor + Pyraxolate",
+   "cle": "Pretilachlor + Pyrazolate",
    "composants": [
     "Pretilachlor",
-    "Pyraxolate"
+    "Pyrazolate"
    ],
    "nbHomologations": 1,
    "nbSocietes": 1,
@@ -22760,9 +22760,9 @@
    "derniere": "2017-01-26"
   },
   {
-   "cle": "Pyraxolate + Pyrazosulfuron-ethyl + Simetryn",
+   "cle": "Pyrazolate + Pyrazosulfuron-ethyl + Simetryn",
    "composants": [
-    "Pyraxolate",
+    "Pyrazolate",
     "Pyrazosulfuron-ethyl",
     "Simetryn"
    ],
@@ -25387,14 +25387,15 @@
   {
    "nom": "Pyridalyl",
    "iso": null,
-   "nbHomologations": 7,
-   "nbFabrique": 7,
+   "nbHomologations": 8,
+   "nbFabrique": 8,
    "nbImporte": 0,
    "premiere": "2004-04-03",
-   "derniere": "2018-09-07",
+   "derniere": "2026-10-10",
    "societes": [
     "(주)경농",
     "(주)동방아그로",
+    "(주)한얼싸이언스",
     "에스비성보주식회사",
     "인바이오(주)"
    ]
@@ -26214,7 +26215,7 @@
    ]
   },
   {
-   "nom": "Pyraxolate",
+   "nom": "Pyrazolate",
    "iso": null,
    "nbHomologations": 5,
    "nbFabrique": 5,
@@ -28789,10 +28790,10 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 224,
-   "nbFabrique": 219,
+   "nbHomologations": 225,
+   "nbFabrique": 220,
    "nbImporte": 5,
-   "nbMatieres": 120,
+   "nbMatieres": 121,
    "matieres": [
     "ABAMECTIN",
     "ACETAMIPRID",
@@ -28846,7 +28847,7 @@
     "TRINEXAPAC-ETHYL"
    ],
    "premiere": "1981-03-02",
-   "derniere": "2026-10-07"
+   "derniere": "2026-10-10"
   },
   {
    "cle": "한국삼공(주)",
