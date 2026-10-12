@@ -86,7 +86,7 @@ def envoyer_rapport():
     encoders.encode_base64(part)
     part.add_header(
         "Content-Disposition",
-        f"attachment; filename=Homologa_Rapport_Hebdo_{datetime.now().strftime('%Y%m%d')}.pdf",
+        f"attachment; filename=Rasd_Rapport_Hebdo_{datetime.now().strftime('%Y%m%d')}.pdf",
     )
     msg.attach(part)
 
