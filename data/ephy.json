@@ -3,9 +3,9 @@
   "source": "Données E-Phy - Anses",
   "url": "https://www.data.gouv.fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges",
   "licence": "Licence Ouverte / Open Licence",
-  "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-07",
-  "majDonnees": "2026-10-07",
-  "genere": "2026-10-13T13:24:27",
+  "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-13",
+  "majDonnees": "2026-10-13",
+  "genere": "2026-10-14T11:02:41",
   "nbSubstances": 1337,
   "nbProduitsPPP": 13569,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
@@ -2118,8 +2118,7 @@
    "cas": null,
    "etat": "INSCRITE",
    "variantes": [
-    "Bacillus thuringiensis subsp. Kurstaki strain EG 2348",
-    "Bacillus thuringiensis subsp. kurstaki EG2348"
+    "Bacillus thuringiensis subsp. Kurstaki souche EG 2348"
    ],
    "nbProduitsAutorises": 3,
    "nbProduitsRetires": 0,

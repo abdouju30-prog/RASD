@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-13T13:26:30",
-  "dernierReleve": "2026-10-13",
+  "genere": "2026-10-14T11:04:38",
+  "dernierReleve": "2026-10-14",
   "premierReleve": false,
   "nbCandidates": 472,
   "nbEcarteesIndexMaroc": 24,
@@ -2863,7 +2863,7 @@
    "australie": {
     "nom": "MANCOZEB",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 71,
+    "nbProduitsAgricoles": 72,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5703,7 +5703,7 @@
    "australie": {
     "nom": "TRIFLURALIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 83,
+    "nbProduitsAgricoles": 85,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5864,7 +5864,7 @@
    "australie": {
     "nom": "IPRODIONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 43,
+    "nbProduitsAgricoles": 44,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6639,7 +6639,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 67,
+    "nbProduitsAgricoles": 71,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11314,7 +11314,7 @@
    "australie": {
     "nom": "ESFENVALERATE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 22,
+    "nbProduitsAgricoles": 23,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11785,7 +11785,7 @@
    "australie": {
     "nom": "INPYRFLUXAM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 1,
+    "nbProduitsAgricoles": 2,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -14082,7 +14082,7 @@
    "australie": {
     "nom": "CUPROUS OXIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 32,
+    "nbProduitsAgricoles": 33,
     "matiereActiveApprouvee": false
    },
    "premiereVue": "2026-09-07",
