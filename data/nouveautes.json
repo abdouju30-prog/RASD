@@ -2,24 +2,24 @@
   "meta": {
     "source": "ONSSA (eservice.onssa.gov.ma) & E-Phy",
     "urlIndex": "https://eservice.onssa.gov.ma/IndPesticide.aspx",
-    "dateGeneration": "2026-09-21T11:11:40",
+    "dateGeneration": "2026-10-15T12:22:15",
     "dateMajOnssa": "Août 2026",
-    "totalEvenements": 50,
+    "totalEvenements": 51,
     "emailDestinataire": "abdouju30@gmail.com",
-    "frequence": "Hebdomadaire (chaque lundi)",
+    "frequence": "Hebdomadaire (chaque jeudi)",
     "statut": "Actif"
   },
   "statistiques": {
     "nbNouveauxProduits": 0,
-    "nbNouvellesSocietes": 14,
+    "nbNouvellesSocietes": 15,
     "nbNouveauxUsages": 6,
     "nbRetraitsExpires": 30,
     "totalProduitsEnLigne": 1473
   },
   "evenements": [
     {
-      "id": "evt-45",
-      "date": "2026-09-21",
+      "id": "evt-46",
+      "date": "2026-10-15",
       "categorie": "usage",
       "titre": "Usage & Culture : Tomate × Tuta absoluta (Mineuse de la tomate)",
       "description": "Insecticide de référence : Chlorantraniliprole. Nouvelles spécialités et extensions d'usages homologuées.",
@@ -38,8 +38,8 @@
       }
     },
     {
-      "id": "evt-46",
-      "date": "2026-09-21",
+      "id": "evt-47",
+      "date": "2026-10-15",
       "categorie": "usage",
       "titre": "Usage & Culture : Agrumes × Ceratitis capitata (Mouche méditerranéenne des fruits)",
       "description": "Insecticide de référence : Spinosad. Mise à jour des délais avant récolte (DAR) et pièges.",
@@ -58,8 +58,8 @@
       }
     },
     {
-      "id": "evt-47",
-      "date": "2026-09-21",
+      "id": "evt-48",
+      "date": "2026-10-15",
       "categorie": "usage",
       "titre": "Usage & Culture : Olivier × Bactrocera oleae (Mouche de l'olive)",
       "description": "Insecticide de référence : Deltaméthrine. Renouvellement d'AMM et protocoles de traitement préventif.",
@@ -78,8 +78,8 @@
       }
     },
     {
-      "id": "evt-48",
-      "date": "2026-09-21",
+      "id": "evt-49",
+      "date": "2026-10-15",
       "categorie": "usage",
       "titre": "Usage & Culture : Vigne × Plasmopara viticola (Mildiou de la vigne)",
       "description": "Fongicide de référence : Folpel + Fosétyl-Al. Associations prêtes à l'emploi autorisées en pulvérisation.",
@@ -98,8 +98,8 @@
       }
     },
     {
-      "id": "evt-49",
-      "date": "2026-09-21",
+      "id": "evt-50",
+      "date": "2026-10-15",
       "categorie": "usage",
       "titre": "Usage & Culture : Céréales (Blé) × Septoria tritici (Septoriose du blé)",
       "description": "Fongicide de référence : Prothioconazole. Extension de spectre homologuée pour traitement foliaire.",
@@ -118,8 +118,8 @@
       }
     },
     {
-      "id": "evt-50",
-      "date": "2026-09-21",
+      "id": "evt-51",
+      "date": "2026-10-15",
       "categorie": "usage",
       "titre": "Usage & Culture : Fraise & Petits fruits × Tetranychus urticae (Acarien tisserand)",
       "description": "Acaricide de référence : Acéquinocyl. Nouveaux seuils de résidus autorisés pour exportation UE.",
@@ -138,7 +138,7 @@
       }
     },
     {
-      "id": "evt-15",
+      "id": "evt-16",
       "date": "2026-03-29",
       "categorie": "retrait",
       "titre": "Homologation expirée : ALMECTIN™ (PROTECO)",
@@ -158,7 +158,7 @@
       }
     },
     {
-      "id": "evt-16",
+      "id": "evt-17",
       "date": "2026-03-17",
       "categorie": "retrait",
       "titre": "Homologation expirée : KALENKOA (BAYER SA)",
@@ -178,7 +178,7 @@
       }
     },
     {
-      "id": "evt-17",
+      "id": "evt-18",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : ZANTARA 216 EC (BAYER SA)",
@@ -198,7 +198,7 @@
       }
     },
     {
-      "id": "evt-18",
+      "id": "evt-19",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : VERTIGO 018 EC (PROTECO)",
@@ -218,7 +218,7 @@
       }
     },
     {
-      "id": "evt-19",
+      "id": "evt-20",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : TREATSOIL-51 (AGRO SPRAY TECHNIC)",
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "evt-20",
+      "id": "evt-21",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : TRANSIT (ARZAK SEEDS TRADE)",
@@ -258,7 +258,7 @@
       }
     },
     {
-      "id": "evt-21",
+      "id": "evt-22",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : TOPAXOS (AGRO SPRAY TECHNIC)",
@@ -278,7 +278,7 @@
       }
     },
     {
-      "id": "evt-22",
+      "id": "evt-23",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : SULPHUR 98 DP (COMPTOIR AGRICOLE DU SOUSS)",
@@ -298,7 +298,7 @@
       }
     },
     {
-      "id": "evt-23",
+      "id": "evt-24",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : SOUFRO PLUS 80 WG (ARZAK SEEDS TRADE)",
@@ -318,7 +318,7 @@
       }
     },
     {
-      "id": "evt-24",
+      "id": "evt-25",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : SOFREVAL WG (BODOR)",
@@ -338,7 +338,7 @@
       }
     },
     {
-      "id": "evt-25",
+      "id": "evt-26",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : SCHOLAR 230 SC (SYNGENTA MAROC)",
@@ -358,7 +358,7 @@
       }
     },
     {
-      "id": "evt-26",
+      "id": "evt-27",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : ROUNDUP TURBO (ALFACHIMIE)",
@@ -378,7 +378,7 @@
       }
     },
     {
-      "id": "evt-27",
+      "id": "evt-28",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : RIVAL 607 SL (PHILEA)",
@@ -398,7 +398,7 @@
       }
     },
     {
-      "id": "evt-28",
+      "id": "evt-29",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : OXYFEN EC (SOPROCHIBA)",
@@ -418,7 +418,7 @@
       }
     },
     {
-      "id": "evt-29",
+      "id": "evt-30",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : MORPHEE 71,3 WG (SAOAS)",
@@ -438,7 +438,7 @@
       }
     },
     {
-      "id": "evt-30",
+      "id": "evt-31",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : MEGATHOATE (ACI EQUIPMENTS)",
@@ -458,7 +458,7 @@
       }
     },
     {
-      "id": "evt-31",
+      "id": "evt-32",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : MAXCEL (AGRO SPRAY TECHNIC)",
@@ -478,7 +478,7 @@
       }
     },
     {
-      "id": "evt-32",
+      "id": "evt-33",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : K-OBIOL ULV 6 (DYNACOME)",
@@ -498,7 +498,7 @@
       }
     },
     {
-      "id": "evt-33",
+      "id": "evt-34",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : K-OBIOL EC 25 PB (AGRICHIMIE)",
@@ -518,7 +518,7 @@
       }
     },
     {
-      "id": "evt-34",
+      "id": "evt-35",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : KEMALEX (ARZAK SEEDS TRADE)",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "id": "evt-35",
+      "id": "evt-36",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : HEXY STAR (SOPROCHIBA)",
@@ -558,7 +558,7 @@
       }
     },
     {
-      "id": "evt-36",
+      "id": "evt-37",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : HECTOR 20 SL (ARZAK SEEDS TRADE)",
@@ -578,7 +578,7 @@
       }
     },
     {
-      "id": "evt-37",
+      "id": "evt-38",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : FUNGICURE SL (UNIVERS HORTICOLE)",
@@ -598,7 +598,7 @@
       }
     },
     {
-      "id": "evt-38",
+      "id": "evt-39",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : ECO-BLUE 50 (ASTRACHEM MAROC)",
@@ -618,7 +618,7 @@
       }
     },
     {
-      "id": "evt-39",
+      "id": "evt-40",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : CYPRUX (LAKORALE)",
@@ -638,7 +638,7 @@
       }
     },
     {
-      "id": "evt-40",
+      "id": "evt-41",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : CUIVROBOR (PROTECTAGRI)",
@@ -658,7 +658,7 @@
       }
     },
     {
-      "id": "evt-41",
+      "id": "evt-42",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : COSAVET-DF (COMPTOIR AGRICOLE DU SOUSS)",
@@ -678,7 +678,7 @@
       }
     },
     {
-      "id": "evt-42",
+      "id": "evt-43",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : BOOM SUPER (ARZAK SEEDS TRADE)",
@@ -698,7 +698,7 @@
       }
     },
     {
-      "id": "evt-43",
+      "id": "evt-44",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : ALPHATORE 10 EC (AGREVA)",
@@ -718,7 +718,7 @@
       }
     },
     {
-      "id": "evt-44",
+      "id": "evt-45",
       "date": "2026-03-16",
       "categorie": "retrait",
       "titre": "Homologation expirée : ALIETTE FLASH (BAYER SA)",
@@ -870,7 +870,7 @@
       }
     },
     {
-      "id": "evt-14",
+      "id": "evt-15",
       "date": "12/03/2026",
       "categorie": "societe",
       "titre": "Agrément revendeur/importateur : SOPHYNAD",
@@ -936,7 +936,7 @@
       }
     },
     {
-      "id": "evt-13",
+      "id": "evt-14",
       "date": "03/04/2024",
       "categorie": "societe",
       "titre": "Agrément revendeur/importateur : SCPC SAPEL",
@@ -1043,6 +1043,28 @@
         "siege": "11, Rue Wahda, Res Imam Ali, Appart 2- Casablanca",
         "ingenieur": "BENAMAR NADA",
         "telephone": "0666766064/0666715708"
+      }
+    },
+    {
+      "id": "evt-13",
+      "date": "02/10/2026",
+      "categorie": "societe",
+      "titre": "Agrément revendeur/importateur : PRODHYG Sarl",
+      "description": "PRODHYG Sarl (Imm 30, Appt 8, Rue Mly Ahmed loukili, HASSAN, RABAT- Absent dans SIPS) détient l'agrément n° 6/2026 pour l'activité : Activité d'importation et de distribution. Ingénieur responsable : AMAL GRIOUI.",
+      "tags": [
+        "Revendeur agréé",
+        "Agrément ONSSA",
+        "Imm 30, Appt 8, Rue Mly Ahmed loukili, HASSAN, RABAT- Absent dans SIPS"
+      ],
+      "criticite": "info",
+      "details": {
+        "societe": "PRODHYG Sarl",
+        "agrement": "6/2026",
+        "date": "02/10/2026",
+        "activite": "Activité d'importation et de distribution",
+        "siege": "Imm 30, Appt 8, Rue Mly Ahmed loukili, HASSAN, RABAT- Absent dans SIPS",
+        "ingenieur": "AMAL GRIOUI",
+        "telephone": "0661175744"
       }
     }
   ]
