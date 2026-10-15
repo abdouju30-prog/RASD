@@ -2,8 +2,8 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-14",
-  "genere": "2026-10-14T11:03:20",
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-15",
+  "genere": "2026-10-15T10:46:38",
   "nbHomologations": 2990,
   "nbUsines": 542,
   "nbMatieres": 80,
@@ -12150,7 +12150,7 @@
     "fomesafem",
     "haloxifope-P-metílico"
    ],
-   "nbHomologations": 53,
+   "nbHomologations": 52,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
@@ -17467,32 +17467,6 @@
    ]
   },
   {
-   "id": "SHANDONG LUBA CHEMICAL CO., LTD|CHINA, REPUBLICA POPULAR",
-   "nom": "Shandong Luba Chemical Co., Ltd",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [
-    "Fabrica"
-   ],
-   "matieres": [],
-   "matieresPt": [
-    "Fluroxipir-meptílico",
-    "haloxifope-P-metílico"
-   ],
-   "nbHomologations": 11,
-   "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agrogill Chemicals Ltda",
-    "CCAB Agro S.A.   São Paulo",
-    "Helm do Brasil Mercantil - São Paulo/SP",
-    "Nortox S.A. - Arapongas",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
-    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
-   ]
-  },
-  {
    "id": "JIANGSU INSTITUTE OF ECOMONESN CO., LTD.|CHINA, REPUBLICA POPULAR",
    "nom": "Jiangsu Institute of Ecomonesn CO., LTD.",
    "pays": "Chine",
@@ -17538,6 +17512,31 @@
     "Ouro Fino Química S.A. - Uberaba",
     "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP",
     "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
+   ]
+  },
+  {
+   "id": "SHANDONG LUBA CHEMICAL CO., LTD|CHINA, REPUBLICA POPULAR",
+   "nom": "Shandong Luba Chemical Co., Ltd",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [
+    "Fabrica"
+   ],
+   "matieres": [],
+   "matieresPt": [
+    "Fluroxipir-meptílico",
+    "haloxifope-P-metílico"
+   ],
+   "nbHomologations": 10,
+   "titulaires": [
+    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agrogill Chemicals Ltda",
+    "CCAB Agro S.A.   São Paulo",
+    "Helm do Brasil Mercantil - São Paulo/SP",
+    "Nortox S.A. - Arapongas",
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
     "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
    ]
   },

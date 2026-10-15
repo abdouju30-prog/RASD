@@ -5,7 +5,7 @@
   "licence": "Licence Ouverte / Open Licence",
   "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-13",
   "majDonnees": "2026-10-13",
-  "genere": "2026-10-14T11:02:41",
+  "genere": "2026-10-15T10:45:51",
   "nbSubstances": 1337,
   "nbProduitsPPP": 13569,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
@@ -13,7 +13,7 @@
  "diff": {
   "premiereImport": false,
   "nbChangements": 0,
-  "dateComparaison": "2026-10-07",
+  "dateComparaison": "2026-10-13",
   "changements": []
  },
  "substances": [
