@@ -2,7 +2,7 @@
  "meta": {
   "source": "EU Pesticides Database — DG SANTE",
   "url": "https://food.ec.europa.eu/plants/pesticides/eu-pesticides-database_en",
-  "genere": "2026-10-10",
+  "genere": "2026-10-16",
   "nbProduits": 52,
   "nbResidus": 174,
   "avertissement": "LMR en mg/kg. Une valeur suivie de « LQ » est fixée à la limite de quantification : aucune tolérance. Vérifier la définition du résidu et la LMR du pays de destination avant toute exportation."

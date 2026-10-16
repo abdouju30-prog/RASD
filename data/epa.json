@@ -3,11 +3,11 @@
   "source": "US EPA — National List of Active Pesticide-Producing Establishments",
   "url": "https://www.epa.gov/compliance/national-list-active-epa-registered-foreign-and-domestic-pesticide-andor-device",
   "licence": "Domaine public (œuvre du gouvernement des États-Unis)",
-  "attribution": "US EPA — National List of Active Pesticide-Producing Establishments — relevé du 2026-10-09",
-  "genere": "2026-10-09T13:52:52",
-  "nbTotal": 19558,
-  "nbEtrangers": 7314,
-  "nbSourcing": 5278,
+  "attribution": "US EPA — National List of Active Pesticide-Producing Establishments — relevé du 2026-10-16",
+  "genere": "2026-10-16T09:50:37",
+  "nbTotal": 19564,
+  "nbEtrangers": 7315,
+  "nbSourcing": 5279,
   "nbPays": 85,
   "avertissement": "Liste des sites de production enregistrés auprès de l'EPA pour produire des pesticides destinés au marché américain. Elle dit QUI produit et OÙ, jamais QUOI : aucune matière active n'y figure. Aucune valeur réglementaire au Maroc, et un enregistrement d'établissement n'atteste d'aucune conformité — l'EPA précise qu'il identifie un lieu de production, rien de plus."
  },
@@ -26,7 +26,7 @@
   },
   {
    "pays": "Mexique",
-   "n": 223
+   "n": 224
   },
   {
    "pays": "Japon",
@@ -75556,6 +75556,18 @@
    "pays": "Mexique",
    "paysConnu": true,
    "societe": "04 GLOBAL TRADING USA LLC",
+   "sourcing": true
+  },
+  {
+   "numero": "5813-MEX-2",
+   "etablissement": "CLOROX DE MEXICO S DE RL DE CV",
+   "adresse": "FERNANDO MONTES DE OCA # 22",
+   "ville": "TLALNEPANTLA DE BAZ",
+   "region": null,
+   "codePays": "MEX",
+   "pays": "Mexique",
+   "paysConnu": true,
+   "societe": "CLOROX CO., THE",
    "sourcing": true
   },
   {

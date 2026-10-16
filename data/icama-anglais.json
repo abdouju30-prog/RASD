@@ -1,11 +1,11 @@
 {
  "meta": {
   "role": "Nom anglais des usines chinoises de l'ICAMA, retrouvé dans les registres brésilien, américain, australien et marocain. « probable » = à vérifier.",
-  "genere": "2026-10-10",
+  "genere": "2026-10-16",
   "nbUsines": 503,
-  "nbConfirmes": 81,
+  "nbConfirmes": 82,
   "nbProbables": 3,
-  "nbIntrouvables": 419
+  "nbIntrouvables": 418
  },
  "usines": {
   "上虞颖泰精细化工有限公司": {
@@ -707,6 +707,16 @@
    "niveau": "confirmé",
    "regle": "marque « huage »",
    "registres": [
+    "États-Unis"
+   ]
+  },
+  "镇江江南化工有限公司": {
+   "nomAnglais": "Zhenjiang Jiangnan Chemical Co., Ltd.",
+   "niveau": "confirmé",
+   "regle": "marque « zhenjiang jiangnan »",
+   "registres": [
+    "Australie",
+    "Brésil",
     "États-Unis"
    ]
   },

@@ -2,8 +2,8 @@
  "meta": {
   "source": "T.C. Tarım ve Orman Bakanlığı — BKÜ Veri Tabanı",
   "url": "https://bku.tarimorman.gov.tr/BKURuhsat/Index",
-  "attribution": "T.C. Tarım ve Orman Bakanlığı — BKÜ Veri Tabanı — relevé du 2026-10-09",
-  "genere": "2026-10-09T13:52:01",
+  "attribution": "T.C. Tarım ve Orman Bakanlığı — BKÜ Veri Tabanı — relevé du 2026-10-16",
+  "genere": "2026-10-16T09:50:07",
   "nbProduits": 5600,
   "nbSocietes": 104,
   "nbFabricants": 66,
@@ -17,8 +17,8 @@
    "id": 688,
    "nom": "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
    "adresse": "Gülbahar Sokak Baytok Apartmanı No:12 Daire :8 Kat:3 Kadıköy  İSTANBUL",
-   "nbProduits": 366,
-   "nbImal": 366,
+   "nbProduits": 361,
+   "nbImal": 361,
    "nbIthal": 0,
    "matieres": [
     "2,4-D asite eşdeğer Isooctylester",
@@ -50,7 +50,6 @@
     "Fluometuron",
     "Fluopyram",
     "Fosetyl",
-    "Fosetyl-Al",
     "Fosthiazate",
     "Gibberellic Acid",
     "Gibberellic acid",
@@ -138,7 +137,6 @@
     "Fluometuron",
     "Fluopyram",
     "Fosetyl",
-    "Fosetyl-Al",
     "Fosthiazate",
     "Gibberellic Acid",
     "Gibberellic acid",
@@ -1826,8 +1824,8 @@
    "id": 1399,
    "nom": "SUNSET KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ VE TİCARET A.Ş.",
    "adresse": "Organize Sanayi Bölgesi Mah. 2 B Nolu Yol Cad. Fnc Tarım Blok No:6 Bor NİĞDE",
-   "nbProduits": 79,
-   "nbImal": 79,
+   "nbProduits": 84,
+   "nbImal": 84,
    "nbIthal": 0,
    "matieres": [
     "Abamectin",
@@ -1845,6 +1843,7 @@
     "Lambda-cyhalothrin",
     "Metalik bakıra eşdeğer bakır sülfat",
     "Milbemectin",
+    "Pyrimethanil",
     "Pyriproxyfen",
     "S-Metolachlor",
     "Spinetoram",
@@ -1866,6 +1865,7 @@
     "Lambda-cyhalothrin",
     "Metalik bakıra eşdeğer bakır sülfat",
     "Milbemectin",
+    "Pyrimethanil",
     "Pyriproxyfen",
     "S-Metolachlor",
     "Spinetoram",
@@ -2969,9 +2969,9 @@
    "id": 1210,
    "nom": "UPL ZİRAAT VE KİMYA SAN. VE TİC. LTD. ŞTİ.",
    "adresse": "Adalet Mah. Manas Blv. No:47 B/3107 Bayraklı İZMİR",
-   "nbProduits": 62,
+   "nbProduits": 58,
    "nbImal": 1,
-   "nbIthal": 61,
+   "nbIthal": 57,
    "matieres": [
     "Abamectin",
     "Acetamiprid",
@@ -3145,6 +3145,34 @@
    "fabricant": false
   },
   {
+   "id": 953,
+   "nom": "NUFARM TURKEY KİMYEVİ MAD. İTH. ve TİC. LTD.ŞTİ.",
+   "adresse": "Mimar Sinan Mah. Mimar Sinan Cad. No:67 K:3 Çekmeköy İSTANBUL",
+   "nbProduits": 53,
+   "nbImal": 0,
+   "nbIthal": 53,
+   "matieres": [
+    "5x10 üzeri 9 Hücreler/g Aureobasidium pullulans",
+    "Azoxystrobin",
+    "Captan",
+    "Dichlorprop-p",
+    "Diflufenican",
+    "Flonicamid",
+    "Fluometuron",
+    "Fluopyram",
+    "Fosetyl-Al",
+    "Metalik bakıra eşdeğer bakır hidroksit",
+    "Metalik bakıra eşdeğer bazik bakır sülfat",
+    "Metribuzin",
+    "Metsulfuron-methyl",
+    "Pyrimethanil",
+    "Tebuconazole",
+    "Zoxamide"
+   ],
+   "matieresImal": [],
+   "fabricant": false
+  },
+  {
    "id": 1498,
    "nom": "CHICO CROP ZİRAİ VE KİMYEVİ MADDELER SAN. TİC. AŞ.",
    "adresse": "Adelet Mah. Manas Blv. No: 39 iç kapı no: 3107 Bayraklı İZMİR",
@@ -3189,38 +3217,12 @@
    "fabricant": false
   },
   {
-   "id": 953,
-   "nom": "NUFARM TURKEY KİMYEVİ MAD. İTH. ve TİC. LTD.ŞTİ.",
-   "adresse": "Mimar Sinan Mah. Mimar Sinan Cad. No:67 K:3 Çekmeköy İSTANBUL",
-   "nbProduits": 48,
-   "nbImal": 0,
-   "nbIthal": 48,
-   "matieres": [
-    "5x10 üzeri 9 Hücreler/g Aureobasidium pullulans",
-    "Azoxystrobin",
-    "Captan",
-    "Dichlorprop-p",
-    "Diflufenican",
-    "Flonicamid",
-    "Fluometuron",
-    "Fosetyl-Al",
-    "Metalik bakıra eşdeğer bakır hidroksit",
-    "Metalik bakıra eşdeğer bazik bakır sülfat",
-    "Metribuzin",
-    "Metsulfuron-methyl",
-    "Pyrimethanil",
-    "Zoxamide"
-   ],
-   "matieresImal": [],
-   "fabricant": false
-  },
-  {
    "id": 1451,
    "nom": "ADAMA TURKEY TARIM SAN. VE TİC.LTD.ŞTİ",
    "adresse": "Kazımdirik Mah. 296 Sk. No:8 İç kapı No: 515 Bornova İZMİR",
-   "nbProduits": 43,
+   "nbProduits": 42,
    "nbImal": 0,
-   "nbIthal": 43,
+   "nbIthal": 42,
    "matieres": [
     "Azoxystrobin",
     "Clethodim",
@@ -3229,7 +3231,6 @@
     "Ethephon",
     "Flazasulfuron",
     "Fluazinam",
-    "Fluometuron",
     "Metamitron",
     "Pendimethalin",
     "Propaquizafop",
@@ -5612,7 +5613,6 @@
    "cle": "fluometuron",
    "nom": "Fluometuron",
    "societes": [
-    "ADAMA TURKEY TARIM SAN. VE TİC.LTD.ŞTİ",
     "AGROBEST GRUP TARIM İLAÇLARI TOHUMCULUK İMALAT İTHALAT İHRACAT SAN. VE TİC.A.Ş.",
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGRİ SCİENCES TARIM VE İLAÇ ÜRÜNLERİ SAN. VE TİC.LTD.ŞTİ.",
@@ -5633,7 +5633,8 @@
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROTEZ TARIM SAN. VE TİC.A.Ş.",
     "BAYER TÜRK KİMYA SAN. LTD. ŞTİ.",
-    "HEKTAŞ TİCARET TÜRK A.Ş."
+    "HEKTAŞ TİCARET TÜRK A.Ş.",
+    "NUFARM TURKEY KİMYEVİ MAD. İTH. ve TİC. LTD.ŞTİ."
    ],
    "societesImal": [
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
@@ -5741,7 +5742,6 @@
    "cle": "fosetyl al",
    "nom": "Fosetyl-Al",
    "societes": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "CANDAN ZİRAİ İLAÇ KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
@@ -5756,7 +5756,6 @@
     "SUNO TARIM SAN. VE TİC. A.Ş."
    ],
    "societesImal": [
-    "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
     "AGROMİA KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ TİCARET ANONİM ŞİRKETİ",
     "CANDAN ZİRAİ İLAÇ KİMYA TARIM SAN. VE TİC.LTD.ŞTİ.",
     "CHEMİDOR TARIM VE TİCARET LİMİTED ŞİRKETİ",
@@ -7489,7 +7488,8 @@
     "NUFARM TURKEY KİMYEVİ MAD. İTH. ve TİC. LTD.ŞTİ.",
     "ONCROPSCIENCE KİMYA SAN. VE TİC.LTD.ŞTİ.",
     "PLATİN KİMYA MÜMESSİLLİK VE DIŞ TİC. A.Ş.",
-    "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş."
+    "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş.",
+    "SUNSET KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ VE TİCARET A.Ş."
    ],
    "societesImal": [
     "AGROFARM KİMYA SAN.VE TİC. A.Ş.",
@@ -7499,7 +7499,8 @@
     "CANSA KİMYA SAN. ve TİC.  LTD. ŞTİ.",
     "HEKTAŞ TİCARET TÜRK A.Ş.",
     "PLATİN KİMYA MÜMESSİLLİK VE DIŞ TİC. A.Ş.",
-    "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş."
+    "SECTOR TARIM KİMYA GIDA PAZARLAMA SAN. VE TİC.A.Ş.",
+    "SUNSET KİMYA TARIM ÜRÜNLERİ VE ALETLERİ İMALAT PAZARLAMA SANAYİ VE TİCARET A.Ş."
    ]
   },
   {
@@ -7942,6 +7943,7 @@
     "IQV TURKEY ZİRAİ ÜRÜNLER TİC.LTD.ŞTİ.",
     "KORUMA KLOR ALKALİ SAN. ve TİC. A.Ş.",
     "LARİS TARIM ÜRÜNLERİ İTHALAT VE TİC.LTD.ŞTİ.",
+    "NUFARM TURKEY KİMYEVİ MAD. İTH. ve TİC. LTD.ŞTİ.",
     "PLATİN KİMYA MÜMESSİLLİK VE DIŞ TİC. A.Ş.",
     "ROYAL CHEM TARIM ÜRÜNLERİ İTHALAT İHRACAT SAN.TİC.LTD.ŞTİ.",
     "SAFA TARIM A.Ş.",

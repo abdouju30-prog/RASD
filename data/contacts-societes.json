@@ -6,7 +6,7 @@
   "n'est recherchée : ce sont les adresses de contact que la société publie."
  ],
  "meta": {
-  "dateTest": "2026-10-12",
+  "dateTest": "2026-10-16",
   "nbSites": 112,
   "nbJoignables": 71
  },
@@ -16,7 +16,7 @@
    "noms": [
     "2022 Environmental Science FR SAS"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -28,7 +28,7 @@
     "ADAMA AGRICULTURE ESPANA S.A",
     "ADAMA CELSIUS B.V."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+972732321000",
@@ -44,7 +44,7 @@
    "noms": [
     "Agrauxine"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+33241778077"
@@ -60,7 +60,7 @@
    "noms": [
     "AGRIA SA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@agria.bg"
    ],
@@ -76,7 +76,7 @@
    "noms": [
     "AGRO KANESHO CO,. LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "03-5224-8003"
@@ -94,7 +94,7 @@
     "Albaugh Mexico",
     "ALBAUGH, LLC."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -105,7 +105,7 @@
    "noms": [
     "ALZCHEM TROSTBERG GMBH"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@alzchem.com"
    ],
@@ -124,7 +124,7 @@
    "noms": [
     "ANDERMATT BIOCONTROL AG"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "contact@andermatt.com"
    ],
@@ -138,11 +138,11 @@
    "statut": "ok"
   },
   {
-   "site": "https://www.arkema.com/global/en/",
+   "site": "https://www.arkema.com/",
    "noms": [
     "ARKEMA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -153,7 +153,7 @@
    "noms": [
     "ARXADA, LLC"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -164,7 +164,7 @@
    "noms": [
     "ASCENZA AGRO"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info.espana@ascenza.com",
     "info.portugal@ascenza.com"
@@ -204,7 +204,7 @@
     "AZUFRERA Y FERTILIZANTES PALLARES S.A",
     "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "afepasa@afepasa.com"
    ],
@@ -222,7 +222,7 @@
    "noms": [
     "BABOLNA BIOENVIRONMENTAL CENTRE PRIVATE LIMITED COMPANY"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -233,7 +233,7 @@
    "noms": [
     "BARCLAY CHEMICALS MANUFACTURING LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+018112900"
@@ -245,7 +245,7 @@
    "statut": "ok"
   },
   {
-   "site": "https://www.basf.com/ma/fr",
+   "site": "https://www.basf.com/us/en",
    "noms": [
     "BASF Agricultural Solutions Deutschland GmbH",
     "BASF AGRO BV",
@@ -254,7 +254,7 @@
     "BASF AGROCHEMICAL PRODUCTS BV",
     "BASF AG"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -282,7 +282,7 @@
    "noms": [
     "BIOBEST GROUP N.V"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -293,7 +293,7 @@
    "noms": [
     "BIOIBERICA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+34934904908",
@@ -311,7 +311,7 @@
    "noms": [
     "BIOPREPARATY SPOL. SRO"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+420 608 208 649",
@@ -328,7 +328,7 @@
    "noms": [
     "BIOTEPP INC"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http injoignable"
   },
   {
@@ -336,7 +336,7 @@
    "noms": [
     "BRANDT CONSOLIDATED, INC."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -347,10 +347,10 @@
    "noms": [
     "CBC EUROPE S.r.l."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
-    "infobiogard@cbceurope.it",
-    "sales@cbceurope.it"
+    "sales@cbceurope.it",
+    "infobiogard@cbceurope.it"
    ],
    "telephones": [
     "035335313",
@@ -368,7 +368,7 @@
    "noms": [
     "CERADIS B.V"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@ceradis.com",
     "ceradis.colombia@ceradis.com"
@@ -387,7 +387,7 @@
    "noms": [
     "CERTIS BELCHIM N.V"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@certisbelchim.com"
    ],
@@ -406,10 +406,10 @@
    "noms": [
     "CERTIS USA, LLC"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
-    "customerservice@certisbio.com",
-    "info@certisbio.com"
+    "info@certisbio.com",
+    "customerservice@certisbio.com"
    ],
    "telephones": [
     "8002505024",
@@ -427,7 +427,7 @@
    "noms": [
     "Coromandel International Limited"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+9102646645941",
@@ -445,7 +445,7 @@
     "Corteva Agriscience international Sàrl",
     "CORTEVA AGRISCIENCE LLC"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -456,7 +456,7 @@
    "noms": [
     "Cosaco GmbH"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http injoignable"
   },
   {
@@ -464,7 +464,7 @@
    "noms": [
     "CROPNOSYS INDIA PRIVATE LIMITED"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http injoignable"
   },
   {
@@ -490,7 +490,7 @@
    "noms": [
     "DE SANGOSSE"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -501,7 +501,7 @@
    "noms": [
     "DIACHEM SPA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@diachemagro.com",
     "export@diachemagro.com"
@@ -521,7 +521,7 @@
    "noms": [
     "DVA AGRO"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+49 (0) 40 / 8222 85 5",
@@ -538,7 +538,7 @@
    "noms": [
     "ENDURA S.P.A."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@endura.it",
     "customerservice@endura.it"
@@ -558,7 +558,7 @@
    "noms": [
     "EVONIK DEGUSSA GMBH"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -569,7 +569,7 @@
    "noms": [
     "FarmHannong Co.,Ltd."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -608,7 +608,7 @@
     "FMC INTERNATIONAL SWIZERLAND SARL",
     "FMC CORPORATION"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+1 215 229-6000",
@@ -625,7 +625,7 @@
    "noms": [
     "FUTURECO BIOSCIENCE"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@futurecobioscience.com"
    ],
@@ -643,14 +643,14 @@
    "noms": [
     "GLOBACHEM"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "globachem@globachem.com"
    ],
    "telephones": [
     "+32011785717",
     "+4401625238967",
-    "1932546033"
+    "+551932546033"
    ],
    "sources": [
     "https://globachem.com/en/contact/",
@@ -663,7 +663,7 @@
    "noms": [
     "GOWAN CROP PROTECTION LIMITED"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http 403"
   },
   {
@@ -671,7 +671,7 @@
    "noms": [
     "GSP CROP SCIENCE LIMITED"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http 404"
   },
   {
@@ -680,7 +680,7 @@
     "HEBEI VEYONG BIO-CHEMICAL CO. LTD",
     "威远"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+86-311-85915999"
@@ -695,7 +695,7 @@
    "noms": [
     "HERANBA INDUSTRIES LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "sales@heranba.com"
    ],
@@ -712,7 +712,7 @@
    "noms": [
     "HEXTAR CHEMICALS SDN. BHD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@hextar.com"
    ],
@@ -728,7 +728,7 @@
    "noms": [
     "IMERYS REFRACTORY MINERALS CLERAC"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http 403"
   },
   {
@@ -737,7 +737,7 @@
     "INDOFIL INDUSTRIES LIMITED",
     "INDOFIL CHEMICAL"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@indofil.com"
    ],
@@ -754,7 +754,7 @@
    "noms": [
     "INDUSTRIAL QUIMICA KEY (IQK)"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+34973310102",
@@ -773,7 +773,7 @@
     "INDUSTRIAS AFRASA, S.A",
     "AFRASA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -784,7 +784,7 @@
    "noms": [
     "INDUSTRIAS OMICRON (GROUPE MANICA)"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@manicacobre.com",
     "info@industriasomicron.com"
@@ -804,7 +804,7 @@
    "noms": [
     "INDUSTRIAS QUIMICAS DEL VALLES (IQV)"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "international@iqvagro.com",
     "iqv@iqvagro.com"
@@ -825,7 +825,7 @@
    "noms": [
     "ISAGRO SpA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "isagro@isagro.com"
    ],
@@ -842,7 +842,7 @@
    "noms": [
     "ISHIHARA SANGYO KAISHA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+81-6-6444-1451"
@@ -857,7 +857,7 @@
    "noms": [
     "JH BIOTECH INC"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@jhbiotech.com",
     "orders@jhbiotech.com"
@@ -878,7 +878,7 @@
     "JSC AUGUST INC",
     "Август"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "agro@avgust.com",
     "agrolabsaransk@avgust.com",
@@ -899,7 +899,7 @@
    "noms": [
     "KOPPERT BV"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@koppert.nl"
    ],
@@ -916,7 +916,7 @@
    "noms": [
     "KRISHI RASAYAN EXPORTS PVT LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@krishirasayan.com"
    ],
@@ -935,7 +935,7 @@
    "noms": [
     "KUMIAI CHEMICAL INDUSTRY CO. LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -946,7 +946,7 @@
    "noms": [
     "LAINCO SA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "lainco@lainco.com"
    ],
@@ -966,10 +966,10 @@
    "noms": [
     "LANXESS CORPORATION"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
-    "receptioncee@lanxess.com",
     "info@lanxess.com",
+    "receptioncee@lanxess.com",
     "lanxess-info@lanxess.com",
     "recepcion-lanxess@lanxess.com"
    ],
@@ -991,7 +991,7 @@
     "GUANGAN LIER CHEMICAL CO., LTD",
     "利尔化学"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1002,7 +1002,7 @@
    "noms": [
     "M2i Bio control"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1033,7 +1033,7 @@
    "noms": [
     "MARRONE BIO INNOVATIONS USA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http injoignable"
   },
   {
@@ -1041,7 +1041,7 @@
    "noms": [
     "NACL Industries Limited"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1053,7 +1053,7 @@
     "NANJING AGROCHEMICAL CO.; LTD",
     "Nanging Agrochemical CO"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1064,7 +1064,7 @@
    "noms": [
     "NICHINO EUROPE Co., Ltd"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@nichino-europe.com"
    ],
@@ -1082,7 +1082,7 @@
    "noms": [
     "NIHON NOHYAKU CO., LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1093,7 +1093,7 @@
    "noms": [
     "NIPPON SODA CO., LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1104,7 +1104,7 @@
    "noms": [
     "NISSO CHEMICAL EUROPE GMBH"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "information@nisso-chem.de"
    ],
@@ -1121,7 +1121,7 @@
     "NOVOZYMES BIOAG, INC.",
     "Novozymes Biologicals Inc"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1155,7 +1155,7 @@
    "noms": [
     "OAT Agrio Co., Ltd."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1167,7 +1167,7 @@
     "PARIJAT INDUSTRIES (INDIA) LTD",
     "PARIJAT INDUSTRIE (INDIA) PVT. LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "contact@parijat.in"
    ],
@@ -1184,7 +1184,7 @@
    "noms": [
     "PELGAR INTERNATIONAL. LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@pelgar.co.uk"
    ],
@@ -1204,7 +1204,7 @@
    "noms": [
     "PILARQUIM (SHANGHAI) CO., LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "global-sales@pilarquim.com",
     "admin@pilarquim.com"
@@ -1219,22 +1219,19 @@
    "statut": "ok"
   },
   {
-   "site": "https://probelte.com/",
+   "site": "https://www.probelte.es",
    "noms": [
     "PROBELTE S.A"
    ],
-   "verifie": "2026-10-12",
-   "emails": [],
-   "telephones": [],
-   "sources": [],
-   "statut": "site sans coordonnées lisibles"
+   "verifie": "2026-10-16",
+   "statut": "http 202"
   },
   {
    "site": "https://www.citrosol.com/",
    "noms": [
     "PRODUCTOS CITROSOL, S.A"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "citrosol@citrosol.com"
    ],
@@ -1252,7 +1249,7 @@
    "noms": [
     "QEMETICA AGRICULTURAL SOLUTIONS SPAIN SLU"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "commercial.qg@qemetica.com"
    ],
@@ -1271,7 +1268,7 @@
    "noms": [
     "QUIMETAL INDUSTRIAL SA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "comercial@quimetal.cl"
    ],
@@ -1289,7 +1286,7 @@
    "noms": [
     "RALLIS INDIA LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "02262327400",
@@ -1307,7 +1304,7 @@
    "noms": [
     "ROTAM AGROCHEMICAL CO LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1318,7 +1315,7 @@
    "noms": [
     "SAFA TARIM AS"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http injoignable"
   },
   {
@@ -1326,7 +1323,7 @@
    "noms": [
     "SAN Agrow Holding GmbH"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http injoignable"
   },
   {
@@ -1334,7 +1331,7 @@
    "noms": [
     "SANITIZED (USA) INC."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@sanitized.com",
     "sanitized.india@sanitized.com"
@@ -1355,7 +1352,7 @@
     "Schelkovo Agrohim JSC",
     "Щелково Агрохим"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@betaren.ru",
     "info@lipetsk.betaren.ru",
@@ -1379,7 +1376,7 @@
    "noms": [
     "SEDQ HEALTHY CROPS, S.L."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "comercial@sedq.es"
    ],
@@ -1397,7 +1394,7 @@
    "noms": [
     "SEIPASA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+34 962 541 163",
@@ -1413,7 +1410,7 @@
    "noms": [
     "SERVALESA S.L"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "servalesa@servalesa.com"
    ],
@@ -1433,7 +1430,7 @@
     "Shandong Binnong Technology Co Ltd",
     "滨农科技"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+86-543-3368839"
@@ -1451,7 +1448,7 @@
     "SHANDONG WEIFANG RAINBOW CHEMICAL CO., Ltd",
     "RAINBOW AGROSCIENCES (PANAMA), S.A."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1462,7 +1459,7 @@
    "noms": [
     "SHIN-ETSU CHEMICAL CO., LTD"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1494,7 +1491,7 @@
    "noms": [
     "SIPCAM INAGRA SA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http injoignable"
   },
   {
@@ -1502,7 +1499,7 @@
    "noms": [
     "SML Limited"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "sml@sml-ltd.com"
    ],
@@ -1520,7 +1517,7 @@
     "SUMITOMO",
     "SUMITOMO CHEMICAL COMPANY, LTD."
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "0120-782-031"
@@ -1535,7 +1532,7 @@
    "noms": [
     "SUMITOMO CHEMICAL INDIA LIMITED"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@sumichem.co.in",
     "customer_service@sumichem.co.in"
@@ -1556,7 +1553,7 @@
    "noms": [
     "SUMITOMO CHEMICALS AGRO EUROPE SAS"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "contact@sumitomo-chemical.eu"
    ],
@@ -1573,7 +1570,7 @@
    "noms": [
     "SUTERRA EUROPE BIOCONTROL SL"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "customercare@suterra.com"
    ],
@@ -1591,7 +1588,7 @@
     "SYNGENTA CROP PROTECTION AG",
     "Syngenta Limited"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [
     "+41 61 323 11 11"
@@ -1606,7 +1603,7 @@
    "noms": [
     "TAGROS CHEMICALS INDIA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@tagros.com",
     "marketing@tagros.com",
@@ -1624,7 +1621,7 @@
    "noms": [
     "THOR GMBH"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@thor.com",
     "info@thor-my.com",
@@ -1644,7 +1641,7 @@
    "noms": [
     "TROY CHEMICAL CORPORATION"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1659,7 +1656,7 @@
     "ARYSTA LIFESCIENCE NETHERLANDS B.V.",
     "ARYSTA LIFESCIENCE SAS"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "enquire.india@upl-ltd.com",
     "global.enquires@upl-ltd.com"
@@ -1676,7 +1673,7 @@
     "VETERINARY AND AGRICULTURAL PRODUCTS MFG.CO.LTD",
     "VAPCO"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "vapco@vapco.net"
    ],
@@ -1691,7 +1688,7 @@
    "noms": [
     "VETO-PHARMA SAS"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "info@vetopharma.com"
    ],
@@ -1706,7 +1703,7 @@
    "noms": [
     "W. NEUDORFF GMBH KG"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1717,7 +1714,7 @@
    "noms": [
     "WILLOWOOD USA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1728,7 +1725,7 @@
    "noms": [
     "XEDA INTERNATIONAL SA"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "statut": "http injoignable"
   },
   {
@@ -1738,7 +1735,7 @@
     "NINGXIA WYNCA TECHNOLOGY CO., LTD",
     "新安化工"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [],
    "telephones": [],
    "sources": [],
@@ -1750,7 +1747,7 @@
     "Zhejiang Zhongshan Chemical Industry Group., Ltd",
     "中山化工"
    ],
-   "verifie": "2026-10-12",
+   "verifie": "2026-10-16",
    "emails": [
     "office1@zschem.com"
    ],

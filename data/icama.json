@@ -2,12 +2,12 @@
  "meta": {
   "source": "ICAMA — China Pesticide Information Network",
   "url": "https://www.icama.cn/BasicdataSystem/pesticideRegistration/queryselect.do",
-  "attribution": "ICAMA — China Pesticide Information Network — relevé du 2026-10-09",
-  "genere": "2026-10-09T13:49:50",
+  "attribution": "ICAMA — China Pesticide Information Network — relevé du 2026-10-16",
+  "genere": "2026-10-16T09:48:21",
   "nbMatieres": 136,
   "nbSocietes": 503,
   "nbFabricants": 443,
-  "nbLicencesProduction": 1933,
+  "nbLicencesProduction": 1934,
   "nomsIsoInterroges": 192,
   "avertissement": "Registre chinois des homologations de matière active technique (原药) et des licences de production. Aucune valeur réglementaire au Maroc : une homologation chinoise n'ouvre pas la voie me-too et ne remplace aucune étude de l'Annexe 3-B. Sert à identifier et qualifier un fabricant, rien d'autre. Une société sans licence de production peut n'être que titulaire, pas producteur. Ni prix, ni capacité, ni audit qualité.",
   "latinisation": "Raisons sociales transcrites en pinyin (jieba + pypinyin). Le pinyin transcrit les sons, il ne retrouve pas la marque déposée : sert à chercher et à reconnaître, pas à identifier dans un contrat."
@@ -27192,7 +27192,7 @@
    "entreprise": "山东大农药业有限公司",
    "licence": "农药生许（鲁）0026",
    "expiration": "2028-04-04",
-   "perimetre": "颗粒剂、水分散粒剂、乳油、水乳剂、悬浮剂"
+   "perimetre": "颗粒剂、水分散粒剂、乳油、水乳剂、悬浮剂、微乳剂、可溶液剂"
   },
   {
    "entreprise": "山东大成生物化工有限公司",
@@ -28499,7 +28499,7 @@
   {
    "entreprise": "广东真格生物科技有限公司",
    "licence": "农药生许（粤）0018",
-   "expiration": "2026-12-16",
+   "expiration": "2031-12-16",
    "perimetre": "乳油、微乳剂、热雾剂、水剂、可溶液剂、水乳剂、悬浮剂、颗粒剂、可湿性粉剂、水分散粒剂、超低容量液剂(2021-12-17)、可分散油悬浮剂(..."
   },
   {
@@ -28511,7 +28511,7 @@
   {
    "entreprise": "广东秉正作物科技有限公司",
    "licence": "农药生许（粤）0088",
-   "expiration": "2026-12-06",
+   "expiration": "2031-12-06",
    "perimetre": "乳油、悬浮剂、可溶液剂、水剂、水乳剂、微乳剂、水分散粒剂、可湿性粉剂、饵剂、颗粒剂"
   },
   {
@@ -30557,8 +30557,8 @@
   {
    "entreprise": "江西巴菲特化工有限公司",
    "licence": "农药生许（赣）0001",
-   "expiration": "2028-04-26",
-   "perimetre": "悬浮剂（含除草剂和植物生长调节剂）、悬浮种衣剂、可分散油悬浮剂（含除草剂）、乳油（含除草剂）、水乳剂（含除草剂）、水剂（含除草剂和植物生长调..."
+   "expiration": "2031-09-19",
+   "perimetre": "悬浮剂（含除草剂和植物生长调节剂）、悬浮种衣剂、可分散油悬浮剂（含除草剂）、乳油(含除草剂）、水乳剂(含除草剂）、水剂(含除草剂和植物生长调..."
   },
   {
    "entreprise": "江西帅达生物科技有限公司",
@@ -31023,6 +31023,12 @@
    "perimetre": "水乳剂、悬浮剂、微乳剂（2025-12-26）、水剂（2025-12-26）、可溶液剂（2025-12-26）"
   },
   {
+   "entreprise": "河北中仁化肥集团有限公司",
+   "licence": "农药生许（冀）0182",
+   "expiration": "2031-10-15",
+   "perimetre": "颗粒剂"
+  },
+  {
    "entreprise": "河北中保绿农作物科技有限公司",
    "licence": "农药生许（冀）0010",
    "expiration": "2028-04-09",
@@ -31188,7 +31194,7 @@
    "entreprise": "河北天发生物科技有限公司",
    "licence": "农药生许（冀）0066",
    "expiration": "2029-01-10",
-   "perimetre": "水剂、悬浮剂、水乳剂、乳油、颗粒剂"
+   "perimetre": "水剂、悬浮剂、水乳剂、乳油、颗粒剂、可溶液剂（2026-10-10）、微乳剂（2026-10-10）、可分散油悬浮剂（2026-10-10）..."
   },
   {
    "entreprise": "河北天顺生物工程有限公司",
@@ -31805,8 +31811,8 @@
   {
    "entreprise": "河南蕴农植保科技有限公司",
    "licence": "农药生许（豫）0117",
-   "expiration": "2026-11-01",
-   "perimetre": "颗粒剂、水乳剂、可湿性粉剂、水分散粒剂、悬浮剂、可溶液剂、乳油、可溶粒剂、可溶粉剂、水剂"
+   "expiration": "2031-10-13",
+   "perimetre": "微囊悬浮剂、微囊悬浮-悬浮剂、颗粒剂、水乳剂、可湿性粉剂、水分散粒剂、悬浮剂、可溶液剂、乳油、可溶粒剂、可溶粉剂、水剂。"
   },
   {
    "entreprise": "河南豫之星作物保护有限公司",
@@ -33317,7 +33323,7 @@
   {
    "entreprise": "甘肃滨农科技有限公司",
    "licence": "农药生许（甘）0013",
-   "expiration": "2026-11-14",
+   "expiration": "2031-11-14",
    "perimetre": "草铵膦"
   },
   {
@@ -34884,7 +34890,7 @@
    "entreprise": "陕西格丽达生物科技有限公司",
    "licence": "农药生许（陕）0046",
    "expiration": "2030-11-19",
-   "perimetre": "原药：S-诱抗素 母药：甲基营养型芽孢杆菌"
+   "perimetre": "原药：S-诱抗素、吡唑醚菌酯、春雷霉素、啶虫眯、多杀霉素、霜霉威盐酸盐、霜脲氰、萎锈灵等8个。 母药：甲基营养型芽孢杆菌、多抗霉素、宁南霉素..."
   },
   {
    "entreprise": "陕西汤普森生物科技有限公司",
@@ -34944,12 +34950,12 @@
    "entreprise": "陕西西大华特科技实业有限公司",
    "licence": "农药生许（陕）0016",
    "expiration": "2028-05-01",
-   "perimetre": "制剂：颗粒剂、可湿性粉剂、水分散粒剂、可溶液剂、水剂、水乳剂、悬浮剂、涂抹剂、悬浮种衣剂、种子处理悬浮剂等10个。限制除草剂、杀鼠剂、植物生..."
+   "perimetre": "制剂：颗粒剂、可湿性粉剂、水分散粒剂、可溶液剂、水剂、乳油、可分散液剂、水乳剂、微乳剂、悬浮剂、微囊悬浮剂、可分散油悬浮剂、悬乳剂、微囊悬浮..."
   },
   {
    "entreprise": "陕西诺正生物科技有限公司",
    "licence": "农药生许（陕）0041",
-   "expiration": "2026-12-12",
+   "expiration": "2031-12-12",
    "perimetre": "原药:苄氨基嘌呤、吡丙醚、苯酰菌胺、吡蚜酮、苯唑草酮、吡唑醚菌酯、虫螨腈、丁氟螨酯、丁醚脲、d-柠檬烯、啶酰菌胺、啶氧菌酯、噁唑菌酮、砜吡..."
   },
   {
