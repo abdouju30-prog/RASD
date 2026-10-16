@@ -67,6 +67,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
+        {/* Application installable (16/10/2026). Site derrière la connexion Vercel : le manifeste est
+            lu avec la session (use-credentials), sinon Brave ou Chrome ne crée qu'un raccourci.
+            Next.js ne met use-credentials qu'en préproduction, d'où ce lien écrit à la main. */}
+        <link rel="manifest" href="/manifest.webmanifest" crossOrigin="use-credentials" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <meta name="theme-color" content="#0d5c73" />
       </head>
       <body>
         <ChaineNav
