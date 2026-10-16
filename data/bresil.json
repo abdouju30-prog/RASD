@@ -2,8 +2,8 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-15",
-  "genere": "2026-10-15T10:46:38",
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-16",
+  "genere": "2026-10-16T10:33:46",
   "nbHomologations": 2990,
   "nbUsines": 542,
   "nbMatieres": 80,
@@ -10019,7 +10019,7 @@
     "piraclostrobina",
     "tiametoxam"
    ],
-   "nbHomologations": 42,
+   "nbHomologations": 41,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
