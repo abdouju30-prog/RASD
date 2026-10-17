@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-16T10:35:08",
-  "dernierReleve": "2026-10-16",
+  "genere": "2026-10-17T10:04:45",
+  "dernierReleve": "2026-10-17",
   "premierReleve": false,
   "nbCandidates": 472,
   "nbEcarteesIndexMaroc": 24,
@@ -1387,13 +1387,13 @@
     "Agro Import do Brasil Ltda. - Porto Alegre/RS",
     "Albaugh Agro Brasil Ltda.- São Paulo",
     "Ascenza Brasil Ltda - Hortolândia/SP",
-    "Bayer S.A. - São Paulo/ SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
     "Cropchem Ltda - Porto Alegre",
     "GSP Agroquímica do Brasil Ltda - Porto Alegra/RS",
-    "Hemani Agro do Brasil Ltda"
+    "Hemani Agro do Brasil Ltda",
+    "Nortox S.A. - Arapongas"
    ],
    "coree": null,
    "france": null,

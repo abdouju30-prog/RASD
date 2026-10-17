@@ -2,8 +2,8 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-16",
-  "genere": "2026-10-16T10:33:46",
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-17",
+  "genere": "2026-10-17T10:03:39",
   "nbHomologations": 2990,
   "nbUsines": 542,
   "nbMatieres": 80,
@@ -2730,7 +2730,6 @@
     "Agro Import do Brasil Ltda. - Porto Alegre/RS",
     "Albaugh Agro Brasil Ltda.- São Paulo",
     "Ascenza Brasil Ltda - Hortolândia/SP",
-    "Bayer S.A. - São Paulo/ SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
@@ -2742,6 +2741,7 @@
     "Prophyto Comercio e Serviços Ltda.  São Paulo/SP",
     "Proventis Lifescience Defensivos Agrícolas Ltda",
     "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Sumitomo Corporation do Brasil S.A. - São Paulo/SP",
     "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP",
     "Tide do Brasil Ltda - Porto Alegre/RS",
     "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
@@ -11254,7 +11254,8 @@
    "titulaires": [
     "Bayer S.A. - São Paulo/ SP",
     "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
-    "Monsanto do Brasil Ltda - São Paulo"
+    "Monsanto do Brasil Ltda - São Paulo",
+    "Sumitomo Corporation do Brasil S.A. - São Paulo/SP"
    ]
   },
   {
@@ -13081,7 +13082,8 @@
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
     "Bayer S.A. - São Paulo/ SP",
     "Prentiss Química Ltda. - Campo Largo/PR",
-    "Solagro Soluções Agrícolas Ltda - São Paulo/SP"
+    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
+    "Sumitomo Corporation do Brasil S.A. - São Paulo/SP"
    ]
   },
   {
@@ -14374,9 +14376,9 @@
    "nbHomologations": 5,
    "titulaires": [
     "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Bayer S.A. - São Paulo/ SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "Ouro Fino Química S.A. - Uberaba",
+    "Sumitomo Corporation do Brasil S.A. - São Paulo/SP",
     "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP"
    ]
   },
