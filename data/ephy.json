@@ -3,18 +3,27 @@
   "source": "Données E-Phy - Anses",
   "url": "https://www.data.gouv.fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges",
   "licence": "Licence Ouverte / Open Licence",
-  "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-13",
-  "majDonnees": "2026-10-13",
-  "genere": "2026-10-20T10:50:52",
+  "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-20",
+  "majDonnees": "2026-10-20",
+  "genere": "2026-10-21T11:03:10",
   "nbSubstances": 1337,
-  "nbProduitsPPP": 13569,
+  "nbProduitsPPP": 13572,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
   "premiereImport": false,
-  "nbChangements": 0,
+  "nbChangements": 1,
   "dateComparaison": "2026-10-13",
-  "changements": []
+  "changements": [
+   {
+    "id": "straight-chain-lepidopteran-pheromones-ancienne-approbation",
+    "nom": "Straight Chain Lepidopteran Pheromones_ancienne approbation",
+    "type": "statut",
+    "avant": "indéterminée",
+    "apres": "autorisée",
+    "dernierRetrait": null
+   }
+  ]
  },
  "substances": [
   {
@@ -2604,7 +2613,7 @@
     "bentazone-DEA",
     "bentazone-Na"
    ],
-   "nbProduitsAutorises": 2,
+   "nbProduitsAutorises": 3,
    "nbProduitsRetires": 38,
    "dernierRetrait": "2024-01-19"
   },
@@ -4421,7 +4430,7 @@
    "variantes": [
     "cloquintocet-mexyl"
    ],
-   "nbProduitsAutorises": 21,
+   "nbProduitsAutorises": 22,
    "nbProduitsRetires": 9,
    "dernierRetrait": "2026-07-09"
   },
@@ -7461,7 +7470,7 @@
    "variantes": [
     "florasulame"
    ],
-   "nbProduitsAutorises": 33,
+   "nbProduitsAutorises": 34,
    "nbProduitsRetires": 8,
    "dernierRetrait": "2025-05-07"
   },
@@ -10151,7 +10160,7 @@
     "Mesotrione",
     "mésotrione"
    ],
-   "nbProduitsAutorises": 27,
+   "nbProduitsAutorises": 28,
    "nbProduitsRetires": 3,
    "dernierRetrait": "2026-06-12"
   },
@@ -10997,7 +11006,7 @@
     "Nicosulfuron",
     "nicosulfuron"
    ],
-   "nbProduitsAutorises": 19,
+   "nbProduitsAutorises": 20,
    "nbProduitsRetires": 9,
    "dernierRetrait": "2026-06-12"
   },
@@ -13339,7 +13348,7 @@
    "variantes": [
     "pyroxsulam"
    ],
-   "nbProduitsAutorises": 4,
+   "nbProduitsAutorises": 5,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },
@@ -14601,7 +14610,7 @@
     "n-tétradecylacétate (14Ac)",
     "tétradécan-1-ol"
    ],
-   "nbProduitsAutorises": 0,
+   "nbProduitsAutorises": 1,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },
