@@ -2,8 +2,8 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-21",
-  "genere": "2026-10-21T11:03:14",
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-22",
+  "genere": "2026-10-22T11:02:59",
   "nbHomologations": 2990,
   "nbUsines": 542,
   "nbMatieres": 80,
@@ -1341,7 +1341,6 @@
    "teneurMax": 980.0,
    "usines": [
     "ADAMA AGRICULTURAL SOLUTIONS LTD.|ISRAEL",
-    "ADAMA BRASIL S.A.|BRASIL",
     "ANHUI JIUYI AGRICULTURE CO., LTD.|CHINA, REPUBLICA POPULAR",
     "BAYER AG|ALEMANHA",
     "BAYER CROPSCIENCE LP|ESTADOS UNIDOS",
@@ -10215,53 +10214,6 @@
    ]
   },
   {
-   "id": "ADAMA BRASIL S.A.|BRASIL",
-   "nom": "Adama Brasil S.A.",
-   "pays": "Brésil",
-   "paysBrut": "BRASIL",
-   "sites": [
-    "Taquari"
-   ],
-   "matieres": [
-    "2,4-D",
-    "AZOXYSTROBIN",
-    "CLETHODIM",
-    "GLYPHOSATE",
-    "PROTHIOCONAZOLE",
-    "TEBUCONAZOLE"
-   ],
-   "matieresPt": [
-    "2,4-D",
-    "Azoxistrobina",
-    "Picoxistrobina",
-    "Protioconazol",
-    "amitraz",
-    "cletodim",
-    "clorotalonil",
-    "cresoxim-metílico",
-    "diurom",
-    "epoxiconazol",
-    "flumetralina",
-    "glifosato",
-    "hexazinona",
-    "imazaquim",
-    "imazetapir",
-    "lactofem",
-    "propanil",
-    "propargito",
-    "propiconazol",
-    "tebuconazol",
-    "tebutiurom",
-    "trifluralina"
-   ],
-   "nbHomologations": 26,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Proventis Lifescience Defensivos Agrícolas Ltda",
-    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
-   ]
-  },
-  {
    "id": "GSP CROP SCIENCE LIMITED|ÍNDIA",
    "nom": "GSP Crop Science Limited",
    "pays": "Inde",
@@ -10713,6 +10665,51 @@
     "Nortox S.A. - Arapongas",
     "Ouro Fino Química S.A. - Uberaba",
     "Red Surcos do Brasil Comércio Agropecuário Ltda"
+   ]
+  },
+  {
+   "id": "ADAMA BRASIL S.A.|BRASIL",
+   "nom": "Adama Brasil S.A.",
+   "pays": "Brésil",
+   "paysBrut": "BRASIL",
+   "sites": [
+    "Taquari"
+   ],
+   "matieres": [
+    "2,4-D",
+    "AZOXYSTROBIN",
+    "CLETHODIM",
+    "GLYPHOSATE",
+    "TEBUCONAZOLE"
+   ],
+   "matieresPt": [
+    "2,4-D",
+    "Azoxistrobina",
+    "Picoxistrobina",
+    "amitraz",
+    "cletodim",
+    "clorotalonil",
+    "cresoxim-metílico",
+    "diurom",
+    "epoxiconazol",
+    "flumetralina",
+    "glifosato",
+    "hexazinona",
+    "imazaquim",
+    "imazetapir",
+    "lactofem",
+    "propanil",
+    "propargito",
+    "propiconazol",
+    "tebuconazol",
+    "tebutiurom",
+    "trifluralina"
+   ],
+   "nbHomologations": 25,
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Proventis Lifescience Defensivos Agrícolas Ltda",
+    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
    ]
   },
   {
@@ -12383,12 +12380,12 @@
     "Albaugh Agro Brasil Ltda.- São Paulo",
     "Ameribrás Indústria e Comércio Ltda.",
     "Ascenza Brasil Ltda - Hortolândia/SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "Cropchem Ltda - Porto Alegre",
     "Globachem Proteção de Cultivos do Brasil Ltda. - Campinas/SP",
     "Nortox S.A. - Arapongas",
-    "Proregistros Registros de Produtos Ltda - EPP"
+    "Proregistros Registros de Produtos Ltda - EPP",
+    "Proventis Lifescience Defensivos Agrícolas Ltda"
    ]
   },
   {
@@ -14447,26 +14444,6 @@
    ]
   },
   {
-   "id": "ZHEJIANG HETIAN CHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
-   "nom": "Zhejiang Hetian Chemical Co., Ltd.",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "FLUAZINAM"
-   ],
-   "matieresPt": [
-    "fluazinam"
-   ],
-   "nbHomologations": 5,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "CCAB Agro S.A.   São Paulo",
-    "Nortox S.A. - Arapongas",
-    "Sinochem Agro do Brasil Ltda."
-   ]
-  },
-  {
    "id": "DINAGRO AGROPECUÁRIA LTDA.|BRASIL",
    "nom": "Dinagro Agropecuária Ltda.",
    "pays": "Brésil",
@@ -14690,6 +14667,25 @@
     "Ascenza Brasil Ltda - Hortolândia/SP",
     "CCAB Agro S.A.   São Paulo",
     "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas"
+   ]
+  },
+  {
+   "id": "ZHEJIANG HETIAN CHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
+   "nom": "Zhejiang Hetian Chemical Co., Ltd.",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "FLUAZINAM"
+   ],
+   "matieresPt": [
+    "fluazinam"
+   ],
+   "nbHomologations": 4,
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "CCAB Agro S.A.   São Paulo",
     "Nortox S.A. - Arapongas"
    ]
   },

@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-21T11:04:24",
-  "dernierReleve": "2026-10-21",
+  "genere": "2026-10-22T11:04:09",
+  "dernierReleve": "2026-10-22",
   "premierReleve": false,
   "nbCandidates": 472,
   "nbEcarteesIndexMaroc": 24,
@@ -490,7 +490,7 @@
    "australie": {
     "nom": "BIFENTHRIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 263,
+    "nbProduitsAgricoles": 264,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -1951,7 +1951,7 @@
    "australie": {
     "nom": "HEXAZINONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 50,
+    "nbProduitsAgricoles": 51,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5703,7 +5703,7 @@
    "australie": {
     "nom": "TRIFLURALIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 85,
+    "nbProduitsAgricoles": 87,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6130,7 +6130,7 @@
    "australie": {
     "nom": "THIRAM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 30,
+    "nbProduitsAgricoles": 36,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6639,7 +6639,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 71,
+    "nbProduitsAgricoles": 73,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11065,7 +11065,7 @@
    "australie": {
     "nom": "PYRIOFENONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 1,
+    "nbProduitsAgricoles": 2,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -14082,7 +14082,7 @@
    "australie": {
     "nom": "CUPROUS OXIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 33,
+    "nbProduitsAgricoles": 32,
     "matiereActiveApprouvee": false
    },
    "premiereVue": "2026-09-07",
@@ -14765,7 +14765,7 @@
    "australie": {
     "nom": "NOVALURON",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 7,
+    "nbProduitsAgricoles": 9,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -18345,7 +18345,7 @@
    "australie": {
     "nom": "CARBENDAZIM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 25,
+    "nbProduitsAgricoles": 27,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
