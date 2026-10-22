@@ -2,7 +2,7 @@
   "meta": {
     "source": "ONSSA (eservice.onssa.gov.ma) & E-Phy",
     "urlIndex": "https://eservice.onssa.gov.ma/IndPesticide.aspx",
-    "dateGeneration": "2026-10-15T12:22:15",
+    "dateGeneration": "2026-10-22T13:08:53",
     "dateMajOnssa": "Août 2026",
     "totalEvenements": 51,
     "emailDestinataire": "abdouju30@gmail.com",
@@ -19,7 +19,7 @@
   "evenements": [
     {
       "id": "evt-46",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "categorie": "usage",
       "titre": "Usage & Culture : Tomate × Tuta absoluta (Mineuse de la tomate)",
       "description": "Insecticide de référence : Chlorantraniliprole. Nouvelles spécialités et extensions d'usages homologuées.",
@@ -39,7 +39,7 @@
     },
     {
       "id": "evt-47",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "categorie": "usage",
       "titre": "Usage & Culture : Agrumes × Ceratitis capitata (Mouche méditerranéenne des fruits)",
       "description": "Insecticide de référence : Spinosad. Mise à jour des délais avant récolte (DAR) et pièges.",
@@ -59,7 +59,7 @@
     },
     {
       "id": "evt-48",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "categorie": "usage",
       "titre": "Usage & Culture : Olivier × Bactrocera oleae (Mouche de l'olive)",
       "description": "Insecticide de référence : Deltaméthrine. Renouvellement d'AMM et protocoles de traitement préventif.",
@@ -79,7 +79,7 @@
     },
     {
       "id": "evt-49",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "categorie": "usage",
       "titre": "Usage & Culture : Vigne × Plasmopara viticola (Mildiou de la vigne)",
       "description": "Fongicide de référence : Folpel + Fosétyl-Al. Associations prêtes à l'emploi autorisées en pulvérisation.",
@@ -99,7 +99,7 @@
     },
     {
       "id": "evt-50",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "categorie": "usage",
       "titre": "Usage & Culture : Céréales (Blé) × Septoria tritici (Septoriose du blé)",
       "description": "Fongicide de référence : Prothioconazole. Extension de spectre homologuée pour traitement foliaire.",
@@ -119,7 +119,7 @@
     },
     {
       "id": "evt-51",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "categorie": "usage",
       "titre": "Usage & Culture : Fraise & Petits fruits × Tetranychus urticae (Acarien tisserand)",
       "description": "Acaricide de référence : Acéquinocyl. Nouveaux seuils de résidus autorisés pour exportation UE.",
