@@ -2,13 +2,13 @@
  "meta": {
   "source": "ONSSA — registres publics eservice.onssa.gov.ma",
   "url": "https://eservice.onssa.gov.ma/Default.aspx",
-  "attribution": "ONSSA — registres publics eservice.onssa.gov.ma — relevé du 2026-10-09",
-  "genere": "2026-10-09T12:55:18",
+  "attribution": "ONSSA — registres publics eservice.onssa.gov.ma — relevé du 2026-10-24",
+  "genere": "2026-10-24T09:08:05",
   "majSocietes": "02/10/2026",
   "majBpe": "02/10/2026",
   "majExpires": "02/10/2026",
   "nbSocietes": 108,
-  "nbBpe": 11,
+  "nbBpe": 10,
   "nbExpires": 625,
   "avertissement": "Registres publiés par l'ONSSA. L'Office décline toute responsabilité sur une omission ou une erreur, et rappelle que seules les attestations d'homologation font foi. La liste des produits expirés est un FAIT marocain, à ne pas confondre avec la prédiction tirée du statut français."
  },
@@ -1817,35 +1817,6 @@
     "Cultures ornementales",
     "Cultures tropicales",
     "Zones non cultivées (excepté les arbres forestiers)",
-    "Désinfection des sols",
-    "Traitement des produits récoltés (entreposage)"
-   ],
-   "couvertureNonReconnue": null
-  },
-  {
-   "nom": "ASC COMPANY",
-   "siege": "N° 169 Bis 1, ZI Sidi Slimane Moule Kifane, El Menzah-50000- Meknès-- Meknès",
-   "rc": "52511 - Meknès",
-   "telephone": "0660220662",
-   "fax": "0535503745",
-   "emails": [
-    "bouchraboutallaka@asc-company.com"
-   ],
-   "agrement": {
-    "numero": "BPE 06/2021",
-    "date": "21/10/2021",
-    "expiration": "20/10/2026"
-   },
-   "couverture": [
-    "Cultures fruitières",
-    "Cultures légumières et plantes aromatiques et médicinales",
-    "Grandes cultures",
-    "Cultures ornementales",
-    "Cultures tropicales",
-    "Zones non cultivées (excepté les arbres forestiers)",
-    "Milieu forestier",
-    "Traitement des semences",
-    "Production de matériel végétal de multiplication",
     "Désinfection des sols",
     "Traitement des produits récoltés (entreposage)"
    ],

@@ -1,6 +1,6 @@
 {
  "commentaire": "Date de première apparition de chaque texte ONSSA. Fichier tenu par scripts/import_onssa_reglementation.py ; l'historique git est le journal des nouveautés.",
- "dernierReleve": "2026-10-22",
+ "dernierReleve": "2026-10-24",
  "premiereVue": {
   "1809-89": {
    "date": "2026-09-13",
@@ -128,7 +128,7 @@
   },
   "avis-sur-le-programme-de-reexamen-des-produits-phytopharmaceutiques": {
    "date": "2026-09-13",
-   "url": "https://eservice.onssa.gov.ma/Docs/AVIS-REEXAMEN DES PRODUITS PHYTOPHARMACEUTIQUES-MAI 2026-02-06-2026 12-30-02.pdf"
+   "url": "https://eservice.onssa.gov.ma/Docs/Programme de réexamen des produits phytopharmaceutiques AVIS N 790 BIS MAJ (2)-13-10-2026 09-27-02.pdf"
   },
   "avis-sur-les-noms-commerciaux-des-produits-phytopharmaceutiques-retires": {
    "date": "2026-09-13",
