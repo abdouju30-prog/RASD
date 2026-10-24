@@ -4,6 +4,7 @@ import { ChaineNav, type Station } from "@/components/ChaineNav";
 import { NavAlternative } from "@/components/NavAlternative";
 import { NavPortefeuille } from "@/components/NavPortefeuille";
 import { FraicheurEphy } from "@/components/FraicheurEphy";
+import { InstallerApp } from "@/components/InstallerApp";
 import { SelecteurDetenteur } from "@/components/SelecteurDetenteur";
 import { choisirDetenteur } from "./actions";
 import { DETENTEURS, META, matieresDuPortefeuille, produitsDe } from "@/lib/data";
@@ -100,6 +101,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           />
           {children}
         </main>
+        <InstallerApp />
       </body>
     </html>
   );
