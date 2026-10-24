@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ANNUAIRE, REGIONS, STATS_ANNUAIRE, dansRegion, type Region } from "@/lib/annuaire";
 import { contactDe } from "@/lib/contact";
 import { ContactCell } from "@/components/Contact";
+import { MoleculesFabricant } from "@/components/MoleculesFabricant";
 
 export const dynamic = "force-dynamic";
 
@@ -131,7 +132,7 @@ export default async function AnnuairePage({
                 </td>
                 <td style={{ fontSize: 11.5, color: "var(--muted)" }}>{f.registres.join(" · ")}</td>
                 <td style={{ fontSize: 11.5, color: "var(--muted)" }}>
-                  {f.molecules.length ? `${f.molecules.length} — ${f.molecules.slice(0, 5).join(", ")}${f.molecules.length > 5 ? "…" : ""}` : "—"}
+                  <MoleculesFabricant molecules={f.molecules} />
                 </td>
                 <td>
                   <ContactCell c={contactDe(f.nom)} nom={f.nom} />
