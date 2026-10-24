@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Sprout } from "lucide-react";
 import { RequeteHomologation } from "@/components/RequeteHomologation";
 import { molecules } from "@/lib/formulation";
+import { ATTRIBUTION_EPHY, usagesFrance } from "@/lib/ephy-usages";
 import {
   hrefUsages,
   inventaireCibles,
@@ -55,6 +56,17 @@ export default async function UsagesPage({
   const actif = Boolean(culture || cible || matiere || societe);
   const resultat = actif
     ? listerEnregistrements({ culture, cible, matiere, societe: societe || null, statut })
+    : null;
+
+  // Même requête côté France : le texte saisi sert quand le libellé ONSSA n'a pas été résolu.
+  const france = actif
+    ? usagesFrance({
+        culture: culture ?? (cultureSaisie || null),
+        cible: cible ?? (cibleSaisie || null),
+        matiere,
+        societe: null,
+        statut,
+      })
     : null;
 
   const titre =
@@ -263,6 +275,75 @@ export default async function UsagesPage({
             )}
           </div>
         </>
+      )}
+
+      {france && (
+        <div style={{ marginTop: 28 }}>
+          <h2 style={{ fontSize: 16, margin: 0 }}>En France — E-Phy (Anses)</h2>
+          <p style={{ fontSize: 12.5, color: "var(--muted)", margin: "6px 0 0", maxWidth: "95ch", lineHeight: 1.6 }}>
+            Usages autorisés en France pour les mêmes critères. Ce ne sont pas des homologations
+            marocaines : l&apos;ONSSA s&apos;aligne sur l&apos;ANSES, il ne la reprend pas. Le vocabulaire
+            (cultures, cibles) est celui de l&apos;Anses et le rapprochement se fait sur le texte.
+            {societe ? " Le filtre société ne s'applique pas à la France." : ""}
+          </p>
+          {france.total === 0 ? (
+            <p style={{ fontSize: 13.5, color: "var(--muted)", marginTop: 12 }}>Aucun usage E-Phy pour ces critères.</p>
+          ) : (
+            <>
+              <p style={{ fontSize: 13, color: "var(--muted)", margin: "12px 0 0" }}>
+                {france.total} usage(s) · {france.nbProduits} produit(s).
+              </p>
+              <div className="card" style={{ marginTop: 10, overflow: "auto" }}>
+                <table className="tbl">
+                  <thead>
+                    <tr>
+                      <th>Produit</th>
+                      <th>N° AMM (FR)</th>
+                      <th>Titulaire</th>
+                      <th>Substances</th>
+                      <th>Culture</th>
+                      <th>Cible</th>
+                      <th>Dose</th>
+                      <th style={{ textAlign: "right" }}>DAR (j)</th>
+                      <th style={{ textAlign: "right" }}>Appl.</th>
+                      <th>Statut</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {france.lignes.map((u, i) => (
+                      <tr key={`${u.a}|${u.c}|${u.k}|${i}`}>
+                        <td style={{ fontWeight: 600 }}>
+                          {u.p}
+                          <div className="mono" style={{ fontWeight: 400, fontSize: 11, color: "var(--muted-2)" }}>{u.f}</div>
+                        </td>
+                        <td className="mono" style={{ fontSize: 12 }}>{u.a}</td>
+                        <td style={{ fontSize: 12.5 }}>{u.t}</td>
+                        <td style={{ fontSize: 12 }}>{u.s}</td>
+                        <td style={{ fontSize: 12.5 }}>{u.c}</td>
+                        <td style={{ fontSize: 12.5 }}>
+                          {u.k}
+                          <div className="mono" style={{ fontSize: 11, color: "var(--muted-2)" }}>{u.tr}</div>
+                        </td>
+                        <td className="mono" style={{ fontSize: 12 }}>{u.d || "—"}</td>
+                        <td className="mono" style={{ textAlign: "right", fontSize: 12 }}>{u.dar || "—"}</td>
+                        <td className="mono" style={{ textAlign: "right", fontSize: 12 }}>{u.n || "—"}</td>
+                        <td style={{ fontSize: 12, color: u.e === "retrait" ? "var(--crit)" : "var(--muted)" }}>
+                          {u.e === "retrait" ? "retiré" : "autorisé"}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                {france.total > france.lignes.length && (
+                  <p style={{ fontSize: 11.5, color: "var(--muted-2)", margin: "8px 16px 12px" }}>
+                    {france.total - france.lignes.length} autres lignes. Affinez la requête.
+                  </p>
+                )}
+              </div>
+            </>
+          )}
+          <p style={{ fontSize: 11, color: "var(--muted-2)", marginTop: 8 }}>{ATTRIBUTION_EPHY}. Produits professionnels.</p>
+        </div>
       )}
     </>
   );

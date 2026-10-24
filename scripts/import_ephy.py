@@ -183,8 +183,51 @@ def substances_du_produit(champ):
     return out
 
 
+SORTIE_USAGES = RACINE / "data" / "ephy-usages.json"
+
+
+def ecrire_usages(zf, maj):
+    """Usages français (culture / traitement / cible, dose, DAR) des produits professionnels.
+
+    Sert l'écran /usages : sous les enregistrements ONSSA, ce que la France
+    autorise pour la même culture, maladie ou matière active. Amateurs exclus
+    (jardin). L'état « Retrait » est gardé : il dit qu'un usage a disparu.
+    """
+    lignes = lire_csv(zf, "usages_des_produits_autorises")
+    out = []
+    for r in lignes:
+        if (r.get("gamme usage") or "").strip() != "Professionnel":
+            continue
+        parts = (r.get("identifiant usage") or "").split("*")
+        if len(parts) < 3:
+            continue
+        dose = (r.get("dose retenue") or "").strip()
+        unite = (r.get("dose retenue unite") or "").strip()
+        out.append({
+            "p": r.get("nom produit", "").strip(),
+            "a": r.get("numero AMM", "").strip(),
+            "t": r.get("titulaire", "").strip(),
+            "s": " | ".join(dict.fromkeys(x.strip() for x in (r.get("Substances actives") or "").split("|") if x.strip())),
+            "f": (r.get("fonctions") or "").strip(),
+            "c": parts[0].strip(),
+            "tr": parts[1].strip(),
+            "k": parts[2].strip(),
+            "d": f"{dose} {unite}".strip(),
+            "dar": (r.get("delai avant recolte jour") or "").strip(),
+            "n": (r.get("nombre max d'application") or "").strip(),
+            "e": "retrait" if (r.get("etat usage") or "").startswith("Retrait") else "autorise",
+        })
+    SORTIE_USAGES.write_text(
+        json.dumps({"majDonnees": maj, "attribution": f"{ATTRIBUTION} — mise à jour du {maj or 'date inconnue'}", "usages": out},
+                   ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    print(f"  {len(out)} usages professionnels -> {SORTIE_USAGES.name}")
+
+
 def main():
     zf, maj = charger_archive(sys.argv)
+    ecrire_usages(zf, maj)
 
     subs = lire_csv(zf, "substance_active")
     prods = lire_csv(zf, "produits_utf8")
