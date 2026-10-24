@@ -22,17 +22,11 @@ export default async function ProduitsPage({
   const d = await detenteurActuel();
   const portefeuille = produitsDe(d.id);
 
-  // Le « q » vient de la recherche transverse. L'écran est celui du détenteur
-  // courant : un produit d'une autre société n'y figure pas, et il vaut mieux
-  // le dire que de laisser croire à une absence.
+  // Le « q » vient de la recherche transverse : il porte sur TOUS les produits de
+  // l'index, quelle que soit la société choisie, et non sur son seul portefeuille.
   const cherche = (sp.q ?? "").trim().toLowerCase();
-  const trouveAilleurs =
-    cherche && !portefeuille.some((p) => p.nomCommercial.toLowerCase().includes(cherche))
-      ? PRODUITS.find((p) => p.nomCommercial.toLowerCase().includes(cherche)) ?? null
-      : null;
-
   const filtre = cherche
-    ? portefeuille.filter((p) => p.nomCommercial.toLowerCase().includes(cherche))
+    ? PRODUITS.filter((p) => p.nomCommercial.toLowerCase().includes(cherche))
     : portefeuille;
   const list = [...filtre].sort((a, b) =>
     (a.expiration ?? "9999").localeCompare(b.expiration ?? "9999")
@@ -50,30 +44,13 @@ export default async function ProduitsPage({
             alignItems: "center",
             gap: 10,
             fontSize: 13,
-            borderColor: trouveAilleurs
-              ? "color-mix(in srgb, var(--mod) 40%, transparent)"
-              : "color-mix(in srgb, var(--accent) 38%, transparent)",
-            background: trouveAilleurs
-              ? "color-mix(in srgb, var(--mod) 8%, transparent)"
-              : "var(--accent-fond)",
+            borderColor: "color-mix(in srgb, var(--accent) 38%, transparent)",
+            background: "var(--accent-fond)",
           }}
         >
           <span style={{ color: "var(--muted)", lineHeight: 1.55 }}>
-            {trouveAilleurs ? (
-              <>
-                <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> n&apos;est pas au
-                portefeuille de {d.nom} — ce produit appartient à{" "}
-                <strong style={{ color: "var(--fg)" }}>{trouveAilleurs.detenteur}</strong>.{" "}
-                <Link href={`/detenteur/${trouveAilleurs.detenteurId}`} className="link-accent">
-                  Basculer sur cette société
-                </Link>
-              </>
-            ) : (
-              <>
-                Filtré sur <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> —{" "}
-                {list.length} produit(s).
-              </>
-            )}
+            Recherche <strong style={{ color: "var(--fg)" }}>« {sp.q} »</strong> dans tous les produits —{" "}
+            {list.length} résultat(s).
           </span>
           <Link href="/produits" className="link-accent" style={{ marginLeft: "auto", whiteSpace: "nowrap" }}>
             Tout afficher
@@ -82,7 +59,7 @@ export default async function ProduitsPage({
       )}
 
       <h1>
-        {portefeuille.length} produits homologués
+        {cherche ? `${list.length} produit(s) trouvé(s)` : `${portefeuille.length} produits homologués`}
       </h1>
       <div style={{ display: "flex", gap: 16, margin: "-4px 0 10px" }}>
         <BoutonExport table="produits" />
@@ -120,6 +97,7 @@ export default async function ProduitsPage({
               <th>AMM</th>
               <th>Expiration</th>
               <th>Usages</th>
+              <th>Société</th>
               <th>Fournisseur</th>
               {CA_DISPONIBLE && <th>CA</th>}
             </tr>
@@ -168,6 +146,7 @@ export default async function ProduitsPage({
                     )}
                   </td>
                   <td className="mono">{p.usages.length}</td>
+                  <td style={{ fontSize: 12.5 }}>{p.detenteur}</td>
                   <td style={{ fontSize: 12, color: "var(--muted)" }}>{p.fournisseurs.join(", ")}</td>
                   {CA_DISPONIBLE && (
                     <td className="mono">{p.caAnnuel != null ? fmtMAD(p.caAnnuel) : "—"}</td>
