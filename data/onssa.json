@@ -1,16 +1,16 @@
 {
  "meta": {
   "source": "eservice.onssa.gov.ma/IndPesticide.aspx",
-  "genere": "2026-10-01T11:31:00",
-  "majIndex": "01/10/2026 11:31:00",
+  "genere": "2026-10-20T10:49:00",
+  "majIndex": "20/10/2026 10:49:00",
   "url": "https://eservice.onssa.gov.ma/IndPesticide.aspx",
   "detenteurDefaut": "PHYTO BEHT",
   "nbDetenteursCouverts": 76,
-  "nbLignesIndex": 5790,
-  "nbProduitsIndex": 1473,
+  "nbLignesIndex": 5736,
+  "nbProduitsIndex": 1456,
   "nbDetenteurs": 76,
-  "nbFiches": 1473,
-  "avertissement": "Index ONSSA importé depuis l'e-service public IndPesticide.aspx (MAJ 01/10/2026 11:31:00). Le pays des fournisseurs est inféré par mots-clés (paysInfere=true) et doit être vérifié avant tout engagement commercial. Aucun prix ne figure dans la source."
+  "nbFiches": 1456,
+  "avertissement": "Index ONSSA importé depuis l'e-service public IndPesticide.aspx (MAJ 20/10/2026 10:49:00). Le pays des fournisseurs est inféré par mots-clés (paysInfere=true) et doit être vérifié avant tout engagement commercial. Aucun prix ne figure dans la source."
  },
  "fournisseurs": [
   {
@@ -21,8 +21,8 @@
    "paysFiable": true,
    "coutFaible": false,
    "multinationale": true,
-   "nbLignesMaroc": 577,
-   "nbMatieresActives": 94
+   "nbLignesMaroc": 559,
+   "nbMatieresActives": 86
   },
   {
    "id": "upl-limited",
@@ -43,8 +43,8 @@
    "paysFiable": true,
    "coutFaible": true,
    "multinationale": false,
-   "nbLignesMaroc": 369,
-   "nbMatieresActives": 93
+   "nbLignesMaroc": 368,
+   "nbMatieresActives": 92
   },
   {
    "id": "bayer-ag",
@@ -54,8 +54,8 @@
    "paysFiable": true,
    "coutFaible": false,
    "multinationale": true,
-   "nbLignesMaroc": 326,
-   "nbMatieresActives": 78
+   "nbLignesMaroc": 322,
+   "nbMatieresActives": 75
   },
   {
    "id": "basf-agricultural-solutions-deutschland-gmbh",
@@ -65,8 +65,8 @@
    "paysFiable": true,
    "coutFaible": false,
    "multinationale": true,
-   "nbLignesMaroc": 201,
-   "nbMatieresActives": 22
+   "nbLignesMaroc": 237,
+   "nbMatieresActives": 24
   },
   {
    "id": "shyam-chemicals-pvt-ltd",
@@ -87,7 +87,7 @@
    "paysFiable": true,
    "coutFaible": true,
    "multinationale": false,
-   "nbLignesMaroc": 169,
+   "nbLignesMaroc": 171,
    "nbMatieresActives": 21
   },
   {
@@ -186,7 +186,7 @@
    "paysFiable": true,
    "coutFaible": false,
    "multinationale": false,
-   "nbLignesMaroc": 82,
+   "nbLignesMaroc": 88,
    "nbMatieresActives": 4
   },
   {
@@ -197,8 +197,8 @@
    "paysFiable": true,
    "coutFaible": false,
    "multinationale": true,
-   "nbLignesMaroc": 79,
-   "nbMatieresActives": 20
+   "nbLignesMaroc": 74,
+   "nbMatieresActives": 19
   },
   {
    "id": "agria-sa",
@@ -210,17 +210,6 @@
    "multinationale": false,
    "nbLignesMaroc": 73,
    "nbMatieresActives": 15
-  },
-  {
-   "id": "almandine-corporation-sa",
-   "nom": "ALMANDINE CORPORATION SA",
-   "pays": "Espagne",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": false,
-   "multinationale": false,
-   "nbLignesMaroc": 65,
-   "nbMatieresActives": 14
   },
   {
    "id": "sipcam-inagra-sa",
@@ -278,15 +267,15 @@
    "nbMatieresActives": 8
   },
   {
-   "id": "globachem",
-   "nom": "GLOBACHEM",
-   "pays": "Belgique",
+   "id": "almandine-corporation-sa",
+   "nom": "ALMANDINE CORPORATION SA",
+   "pays": "Espagne",
    "paysInfere": true,
    "paysFiable": true,
    "coutFaible": false,
    "multinationale": false,
    "nbLignesMaroc": 45,
-   "nbMatieresActives": 16
+   "nbMatieresActives": 13
   },
   {
    "id": "lainco-sa",
@@ -298,17 +287,6 @@
    "multinationale": false,
    "nbLignesMaroc": 45,
    "nbMatieresActives": 12
-  },
-  {
-   "id": "basf-se",
-   "nom": "BASF SE",
-   "pays": "Allemagne",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": false,
-   "multinationale": true,
-   "nbLignesMaroc": 40,
-   "nbMatieresActives": 13
   },
   {
    "id": "ngc-agrosciences-intl-co-limited",
@@ -331,6 +309,17 @@
    "multinationale": false,
    "nbLignesMaroc": 37,
    "nbMatieresActives": 5
+  },
+  {
+   "id": "globachem",
+   "nom": "GLOBACHEM",
+   "pays": "Belgique",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 36,
+   "nbMatieresActives": 12
   },
   {
    "id": "manica-spa",
@@ -597,6 +586,17 @@
    "nbMatieresActives": 9
   },
   {
+   "id": "basf-se",
+   "nom": "BASF SE",
+   "pays": "Allemagne",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": false,
+   "multinationale": true,
+   "nbLignesMaroc": 20,
+   "nbMatieresActives": 8
+  },
+  {
    "id": "dva-agro",
    "nom": "DVA AGRO",
    "pays": "Allemagne",
@@ -628,6 +628,17 @@
    "multinationale": false,
    "nbLignesMaroc": 19,
    "nbMatieresActives": 1
+  },
+  {
+   "id": "parijat-industries-india-ltd",
+   "nom": "PARIJAT INDUSTRIES (INDIA) LTD",
+   "pays": "Inde",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": true,
+   "multinationale": false,
+   "nbLignesMaroc": 18,
+   "nbMatieresActives": 3
   },
   {
    "id": "tris-hispania-s-l",
@@ -663,17 +674,6 @@
    "nbMatieresActives": 2
   },
   {
-   "id": "ascenza-agro",
-   "nom": "ASCENZA AGRO",
-   "pays": "Portugal",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": false,
-   "multinationale": false,
-   "nbLignesMaroc": 16,
-   "nbMatieresActives": 12
-  },
-  {
    "id": "finchimica-s-p-a",
    "nom": "Finchimica S.p.A",
    "pays": "Italie",
@@ -683,17 +683,6 @@
    "multinationale": false,
    "nbLignesMaroc": 16,
    "nbMatieresActives": 4
-  },
-  {
-   "id": "parijat-industries-india-ltd",
-   "nom": "PARIJAT INDUSTRIES (INDIA) LTD",
-   "pays": "Inde",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": true,
-   "multinationale": false,
-   "nbLignesMaroc": 16,
-   "nbMatieresActives": 1
   },
   {
    "id": "fmc-agriculture-solution-as",
@@ -718,17 +707,6 @@
    "nbMatieresActives": 2
   },
   {
-   "id": "de-sangosse",
-   "nom": "DE SANGOSSE",
-   "pays": "France",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": false,
-   "multinationale": false,
-   "nbLignesMaroc": 15,
-   "nbMatieresActives": 7
-  },
-  {
    "id": "safa-tarim-as",
    "nom": "SAFA TARIM AS",
    "pays": "Turquie",
@@ -743,17 +721,6 @@
    "id": "shandong-weifang-rainbow-chemical-co-ltd",
    "nom": "SHANDONG WEIFANG RAINBOW CHEMICAL CO., Ltd",
    "pays": "Chine",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": true,
-   "multinationale": false,
-   "nbLignesMaroc": 15,
-   "nbMatieresActives": 6
-  },
-  {
-   "id": "parijat-industrie-india-pvt-ltd",
-   "nom": "PARIJAT INDUSTRIE (INDIA) PVT. LTD",
-   "pays": "Inde",
    "paysInfere": true,
    "paysFiable": true,
    "coutFaible": true,
@@ -784,17 +751,6 @@
    "nbMatieresActives": 11
   },
   {
-   "id": "pilarquim-shanghai-co-ltd",
-   "nom": "PILARQUIM (SHANGHAI) CO., LTD",
-   "pays": "Chine",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": true,
-   "multinationale": false,
-   "nbLignesMaroc": 14,
-   "nbMatieresActives": 2
-  },
-  {
    "id": "parikh-entreprises-lmd",
    "nom": "PARIKH ENTREPRISES LMD",
    "pays": "Inde",
@@ -815,6 +771,17 @@
    "multinationale": false,
    "nbLignesMaroc": 14,
    "nbMatieresActives": 3
+  },
+  {
+   "id": "parijat-industrie-india-pvt-ltd",
+   "nom": "PARIJAT INDUSTRIE (INDIA) PVT. LTD",
+   "pays": "Inde",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": true,
+   "multinationale": false,
+   "nbLignesMaroc": 13,
+   "nbMatieresActives": 6
   },
   {
    "id": "sumi-agro-sas",
@@ -848,6 +815,28 @@
    "multinationale": false,
    "nbLignesMaroc": 12,
    "nbMatieresActives": 5
+  },
+  {
+   "id": "pilarquim-shanghai-co-ltd",
+   "nom": "PILARQUIM (SHANGHAI) CO., LTD",
+   "pays": "Chine",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": true,
+   "multinationale": false,
+   "nbLignesMaroc": 12,
+   "nbMatieresActives": 1
+  },
+  {
+   "id": "ascenza-agro",
+   "nom": "ASCENZA AGRO",
+   "pays": "Portugal",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 12,
+   "nbMatieresActives": 8
   },
   {
    "id": "upl-limited-arysta-lifescience-s-a-s",
@@ -903,6 +892,17 @@
    "multinationale": true,
    "nbLignesMaroc": 11,
    "nbMatieresActives": 10
+  },
+  {
+   "id": "qemetica-agricultural-solutions-spain-slu",
+   "nom": "QEMETICA AGRICULTURAL SOLUTIONS SPAIN SLU",
+   "pays": "Espagne",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 11,
+   "nbMatieresActives": 7
   },
   {
    "id": "cpcm",
@@ -1026,17 +1026,6 @@
    "nbMatieresActives": 1
   },
   {
-   "id": "qemetica-agricultural-solutions-spain-slu",
-   "nom": "QEMETICA AGRICULTURAL SOLUTIONS SPAIN SLU",
-   "pays": "Espagne",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": false,
-   "multinationale": false,
-   "nbLignesMaroc": 10,
-   "nbMatieresActives": 6
-  },
-  {
    "id": "nitrofarm-s-a",
    "nom": "NITROFARM S.A",
    "pays": null,
@@ -1145,6 +1134,17 @@
    "multinationale": false,
    "nbLignesMaroc": 9,
    "nbMatieresActives": 1
+  },
+  {
+   "id": "de-sangosse",
+   "nom": "DE SANGOSSE",
+   "pays": "France",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 8,
+   "nbMatieresActives": 6
   },
   {
    "id": "veterinary-and-agricultural-products-mfg-co-ltd",
@@ -1367,17 +1367,6 @@
    "nbMatieresActives": 2
   },
   {
-   "id": "ica-international-chemicals",
-   "nom": "ICA International Chemicals",
-   "pays": "Italie",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": false,
-   "multinationale": false,
-   "nbLignesMaroc": 6,
-   "nbMatieresActives": 2
-  },
-  {
    "id": "cev-sa",
    "nom": "CEV, SA",
    "pays": "Espagne",
@@ -1488,17 +1477,6 @@
    "nbMatieresActives": 5
   },
   {
-   "id": "afepasa-azufrera-y-fertilizantes-pallares-sa",
-   "nom": "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)",
-   "pays": "Espagne",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": false,
-   "multinationale": false,
-   "nbLignesMaroc": 5,
-   "nbMatieresActives": 4
-  },
-  {
    "id": "alzchem-trostberg-gmbh",
    "nom": "ALZCHEM TROSTBERG GMBH",
    "pays": "Allemagne",
@@ -1585,17 +1563,6 @@
    "multinationale": false,
    "nbLignesMaroc": 4,
    "nbMatieresActives": 2
-  },
-  {
-   "id": "nissan-chemical-europe-sarl",
-   "nom": "NISSAN Chemical Europe Sarl",
-   "pays": "France",
-   "paysInfere": true,
-   "paysFiable": false,
-   "coutFaible": false,
-   "multinationale": false,
-   "nbLignesMaroc": 4,
-   "nbMatieresActives": 1
   },
   {
    "id": "isagro-spa",
@@ -1708,17 +1675,6 @@
    "nbMatieresActives": 1
   },
   {
-   "id": "proplan-plant-protection-company-s-l",
-   "nom": "PROPLAN PLANT PROTECTION COMPANY,S.L",
-   "pays": null,
-   "paysInfere": true,
-   "paysFiable": false,
-   "coutFaible": false,
-   "multinationale": false,
-   "nbLignesMaroc": 3,
-   "nbMatieresActives": 3
-  },
-  {
    "id": "microcide-limited",
    "nom": "MICROCIDE LIMITED",
    "pays": null,
@@ -1796,6 +1752,28 @@
    "nbMatieresActives": 2
   },
   {
+   "id": "menno-chemie-vertrieb-gmbh",
+   "nom": "MENNO CHEMIE-VERTRIEB GmbH",
+   "pays": "Allemagne",
+   "paysInfere": true,
+   "paysFiable": false,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 3,
+   "nbMatieresActives": 1
+  },
+  {
+   "id": "ica-international-chemicals",
+   "nom": "ICA International Chemicals",
+   "pays": "Italie",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 3,
+   "nbMatieresActives": 2
+  },
+  {
    "id": "laboratorios-agrochem-s-l",
    "nom": "LABORATORIOS AGROCHEM S.L.,",
    "pays": "Espagne",
@@ -1816,6 +1794,17 @@
    "multinationale": false,
    "nbLignesMaroc": 3,
    "nbMatieresActives": 1
+  },
+  {
+   "id": "afepasa-azufrera-y-fertilizantes-pallares-sa",
+   "nom": "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)",
+   "pays": "Espagne",
+   "paysInfere": true,
+   "paysFiable": true,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 3,
+   "nbMatieresActives": 2
   },
   {
    "id": "petronas-lubricants-belgium-nv",
@@ -1875,6 +1864,17 @@
   {
    "id": "agrocura-ltd",
    "nom": "AGROCURA LTD",
+   "pays": null,
+   "paysInfere": true,
+   "paysFiable": false,
+   "coutFaible": false,
+   "multinationale": false,
+   "nbLignesMaroc": 2,
+   "nbMatieresActives": 2
+  },
+  {
+   "id": "proplan-plant-protection-company-s-l",
+   "nom": "PROPLAN PLANT PROTECTION COMPANY,S.L",
    "pays": null,
    "paysInfere": true,
    "paysFiable": false,
@@ -1953,17 +1953,6 @@
    "id": "shanghai-leini-chemical-industry-co-ltd",
    "nom": "SHANGHAI LEINI CHEMICAL INDUSTRY CO., Ltd",
    "pays": "Chine",
-   "paysInfere": true,
-   "paysFiable": true,
-   "coutFaible": true,
-   "multinationale": false,
-   "nbLignesMaroc": 2,
-   "nbMatieresActives": 1
-  },
-  {
-   "id": "willowood-usa",
-   "nom": "WILLOWOOD USA",
-   "pays": "Inde",
    "paysInfere": true,
    "paysFiable": true,
    "coutFaible": true,
@@ -3784,37 +3773,6 @@
    ]
   },
   {
-   "id": "6-benzyladenine-100-g-l",
-   "nom": "6-benzyladénine(100 g/l)",
-   "molecule": "6-benzyladénine",
-   "categorie": "Régulateur de croissance",
-   "detenteurs": [
-    "SOPROCHIBA"
-   ],
-   "fournisseurs": [
-    "GLOBACHEM"
-   ],
-   "usages": [
-    "Poirier / Régulation de la fructification",
-    "Pommier / Régulation de la fructification"
-   ],
-   "cultures": [
-    "Poirier",
-    "Pommier"
-   ],
-   "cibles": [
-    "Régulation de la fructification"
-   ],
-   "produits": [
-    "GLOBARRYLL 100"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Poirier / Régulation de la fructification :: 1,34 l/ha de haie :: NR",
-    "Pommier / Régulation de la fructification :: 1 l/ha de haie :: NR"
-   ]
-  },
-  {
    "id": "6-benzyladenine-2",
    "nom": "6-benzyladénine(2%)",
    "molecule": "6-benzyladénine",
@@ -4587,6 +4545,40 @@
    ]
   },
   {
+   "id": "acide-benzoique-90-g-l",
+   "nom": "Acide benzoïque(90 g/l)",
+   "molecule": "Acide benzoïque",
+   "categorie": "Fongicide-Bactéricide",
+   "detenteurs": [
+    "MARBAR"
+   ],
+   "fournisseurs": [
+    "MENNO CHEMIE-VERTRIEB GmbH"
+   ],
+   "usages": [
+    "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Bactéries et champignons pathogènes",
+    "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Bactéries et champignons pathogènes et virus et viroïdes nuisibles",
+    "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Virus et viroïdes nuisibles"
+   ],
+   "cultures": [
+    "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels."
+   ],
+   "cibles": [
+    "Bactéries et champignons pathogènes",
+    "Bactéries et champignons pathogènes et virus et viroïdes nuisibles",
+    "Virus et viroïdes nuisibles"
+   ],
+   "produits": [
+    "MENNO® FLORADES"
+   ],
+   "nbHomologations": 1,
+   "referentielDoses": [
+    "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Bactéries et champignons pathogènes :: 20 mL/L (soit 2 L/HL)(contact 4 h) :: N.A",
+    "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Bactéries et champignons pathogènes et virus et viroïdes nuisibles :: 40 mL/L (soit 4 L/HL) :: N.A",
+    "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Virus et viroïdes nuisibles :: 40 mL/L (soit 4 L/HL) (contact 16 h) :: N.A"
+   ]
+  },
+  {
    "id": "acide-beta-indole-butyrique-aib-0-4",
    "nom": "Acide beta indole-butyrique (AIB)(0,4%)",
    "molecule": "Acide beta indole-butyrique",
@@ -4659,11 +4651,9 @@
    "categorie": "Régulateur de croissance",
    "detenteurs": [
     "ARZAK SEEDS TRADE",
-    "PROMAGRI",
-    "SOPROCHIBA"
+    "PROMAGRI"
    ],
    "fournisseurs": [
-    "GLOBACHEM",
     "UPL LIMITED"
    ],
    "usages": [
@@ -4691,10 +4681,9 @@
    "produits": [
     "AGIB",
     "ARGIB",
-    "GIBB3",
     "PROGIB"
    ],
-   "nbHomologations": 4,
+   "nbHomologations": 3,
    "referentielDoses": [
     "Agrumes: Clémentinier / Action sur le grossissement des fruits :: 1 tb/hl :: -",
     "Agrumes: Clémentinier / Action sur le processus de la nouaison :: 1 tb/hl :: -",
@@ -5211,12 +5200,10 @@
     "CPCM",
     "FERTILINK",
     "KEMAGRO",
-    "MARPHYT",
     "NEWPROTECT",
     "PHILEA"
    ],
    "fournisseurs": [
-    "BASF AGRO BV",
     "GHARDA CHEMICALS Ltd",
     "MEGHMANI ORGANICS LTD",
     "ORSANI INC."
@@ -5225,7 +5212,6 @@
     "Betterave à sucre / Casside",
     "Betterave à sucre / Cléone mendiant",
     "Betterave à sucre / Noctuelles",
-    "Betterave à sucre / Prodenia",
     "Betterave à sucre / Taupins",
     "Tomate / Noctuelles"
    ],
@@ -5237,13 +5223,11 @@
     "Casside",
     "Cléone mendiant",
     "Noctuelles",
-    "Prodenia",
     "Taupins"
    ],
    "produits": [
     "ALPHA 10",
     "CASALPHA 10% EC",
-    "CONCORD 100 EC",
     "DEFI",
     "KEMAX 10EC",
     "KHATAR",
@@ -5252,18 +5236,15 @@
     "RAFALE",
     "SCANDAR 10 EC"
    ],
-   "nbHomologations": 10,
+   "nbHomologations": 9,
    "referentielDoses": [
     "Betterave à sucre / Casside :: 100 cc/ha :: -",
     "Betterave à sucre / Casside :: 100 cc/ha :: 21",
     "Betterave à sucre / Cléone mendiant :: 150 cc/ha :: 21",
     "Betterave à sucre / Noctuelles :: 100 cc/ha :: 21",
-    "Betterave à sucre / Prodenia :: 150 cc/ha :: 21",
     "Betterave à sucre / Taupins :: 150 cc /ha :: 21",
-    "Betterave à sucre / Taupins :: 250 cc/ha (une application au stade cotylédone et la deuxième application deux semaines après la pre :: 21",
     "Tomate / Noctuelles :: 100 cc/ha :: -",
     "Tomate / Noctuelles :: 100 cc/ha :: 3",
-    "Tomate / Noctuelles :: 12,5 cc/hl :: 3",
     "Tomate / Noctuelles :: 12,5cc/hl :: 3",
     "Tomate / Noctuelles :: 15 cc/hl :: 3"
    ]
@@ -5666,40 +5647,6 @@
     "Pomme de terre / Mildiou :: 1,2 l/ha :: 7",
     "Tomate / Mildiou :: 1,5 l/ha :: 3",
     "Vigne / Mildiou :: 1,5 l/ha :: 28"
-   ]
-  },
-  {
-   "id": "ametoctradine-300-g-l",
-   "nom": "Amétoctradine(300 g/l)",
-   "molecule": "Amétoctradine",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "BASF MAROC"
-   ],
-   "fournisseurs": [
-    "BASF SE"
-   ],
-   "usages": [
-    "Pomme de terre / Mildiou",
-    "Tomate / Mildiou",
-    "Vigne / Mildiou"
-   ],
-   "cultures": [
-    "Pomme de terre",
-    "Tomate",
-    "Vigne"
-   ],
-   "cibles": [
-    "Mildiou"
-   ],
-   "produits": [
-    "ORVEGO"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Pomme de terre / Mildiou :: 0,8 l/ha :: 7",
-    "Tomate / Mildiou :: 0,8 l/ha :: 3",
-    "Vigne / Mildiou :: 0,8 l/ha :: 28"
    ]
   },
   {
@@ -6206,7 +6153,6 @@
     "PHYTO BEHT",
     "PROCHIMAGRO",
     "PROMAGRI",
-    "PROTECO",
     "RAINBOW AGROSCIENCES",
     "SAOAS",
     "SIPP",
@@ -6218,7 +6164,6 @@
    ],
    "fournisseurs": [
     "AAKO B.V",
-    "ALMANDINE CORPORATION SA",
     "Albaugh Europe",
     "Albaugh TKI d,o.o.,",
     "GLOBACHEM",
@@ -6316,13 +6261,11 @@
     "AMISTAR SC",
     "ARISTO",
     "ARSENAL 25SC",
-    "ASSAMA 250 SC",
     "AZOFIX",
     "AZOSTAR",
     "AZOXI 25 SC",
     "AZOXI TOP",
     "AZOXSTAR",
-    "AZUR 250 SC",
     "BAYAD-PRO",
     "DIAGONAL",
     "ESCORT 250",
@@ -6349,12 +6292,11 @@
     "TITOR 25 SC",
     "ZOXYBIN 25 SC"
    ],
-   "nbHomologations": 37,
+   "nbHomologations": 35,
    "referentielDoses": [
     "Asperge / Rouille :: 1 l/ha :: -",
     "Blés / Rouille :: 0,8 L/ha :: 42",
     "Blés / Rouille :: 0,8 l/ha :: 42",
-    "Blés / Rouille :: 0,8l/ha :: 42",
     "Blés / Rouille :: 0.8 L/ha :: 42",
     "Blés / Rouille :: 0.8 l/ha :: 42",
     "Blés / Rouille brune :: 0,8 l/ha :: 42",
@@ -6372,7 +6314,6 @@
     "Concombre / Oïdium :: 0,6 l/ha :: 14",
     "Courge / Oïdium :: 75 cc/hl :: 3",
     "Courgette / Mildiou :: 0,8 l/ha :: 3",
-    "Courgette / Oïdium :: 0,6 l/ha :: 3",
     "Courgette / Oïdium :: 0,8 l/ha :: 3",
     "Courgette / Oïdium :: 0.8 L/ha :: 3",
     "Courgette / Oïdium :: 75 cc/hl :: 3",
@@ -6410,7 +6351,9 @@
     "Tomate / Alternariose :: 50 cc/hl :: 3",
     "Tomate / Mildiou :: 50 cc/hl :: -",
     "Tomate / Mildiou :: 50 cc/hl :: 3",
-    "Tomate / Oïdium :: 50 cc/hl :: 3"
+    "Tomate / Oïdium :: 50 cc/hl :: 3",
+    "Tomate / Oïdium :: 50 cc/hl :: 3 j",
+    "Vigne / Mildiou :: 0,8 l/ha :: 30"
    ]
   },
   {
@@ -6767,6 +6710,7 @@
    "molecule": "Bacillus subtilis",
    "categorie": "Fongicide",
    "detenteurs": [
+    "AGRIMATCO",
     "CPCM",
     "ELEPHANT VERT MAROC"
    ],
@@ -6850,10 +6794,11 @@
     "Rouilles"
    ],
    "produits": [
+    "CASCADIA",
     "DUMPER",
     "FUNGISEI"
    ],
-   "nbHomologations": 2,
+   "nbHomologations": 3,
    "referentielDoses": [
     "Avocatier / Anthracnose :: 2 l/ha :: Non requis",
     "Avocatier / Pourriture grise :: 2 l/ha :: Non requis",
@@ -6864,10 +6809,12 @@
     "Fraisier / Pourriture grise (Botrytis cinerea) :: 3 l/ha :: NR",
     "Fraisier / Pourriture grise :: 3 l/ha :: Non requis",
     "Framboisier / Anthracnose :: 2 l/ha :: Non requis",
+    "Framboisier / Anthracnose :: 2L/ha :: Non requis",
     "Framboisier / Anthracnose :: 2l/ha :: Non requis",
     "Framboisier / Oïdium :: 2 l/ha :: Non requis",
     "Framboisier / Oïdium :: 2l/ha :: Non requis",
     "Framboisier / Pourriture grise (Botrytis cinerea) :: 2l/ha :: Non requis",
+    "Framboisier / Pourriture grise :: 2 L/ha :: Non requis",
     "Framboisier / Pourriture grise :: 2 l/ha :: Non requis",
     "Framboisier / Rouille :: 2 l/ha :: Non requis",
     "Grenadier / Oïdium :: 1-3 l/ha :: Non requis",
@@ -6882,6 +6829,7 @@
     "Myrtillier / Oïdium :: 2 l/ha :: Non requis",
     "Myrtillier / Oïdium :: 2l/ha :: Non requis",
     "Myrtillier / Pourriture grise :: 2 l/ha :: Non requis",
+    "Myrtillier / Pourriture grise :: 3 L/ha :: Non requis",
     "Myrtillier / Pourriture grise :: 3l/ha :: NR",
     "Myrtillier / Rouilles :: 2 l/ha :: Non raquis",
     "Mûrier / Anthracnose :: 2 l/ha :: Non requis",
@@ -6894,10 +6842,12 @@
     "Plantes aromatiques: Persil / Oïdium :: 2 l/ha :: non raquis",
     "Plantes aromatiques: Romarin / Oïdium :: 2 l/ha :: non requis",
     "Plantes aromatiques:Coriandre / Oïdium :: 2 l/ha :: non requis",
+    "Poivron / Oïdium :: 3 L/ha :: Non requis",
     "Poivron / Oïdium :: 3 l/ha :: N.R",
     "Poivron / Oïdium :: 3 l/ha :: Non requis",
     "Radis / Alternariose :: 2 l/ha :: Non requis",
     "Tomate / Pourriture grise (Botrytis cinerea) :: 3 l/ha :: N R",
+    "Tomate / Pourriture grise :: 3 L/ha :: Non requis",
     "Tomate / Pourriture grise :: 3 l/ha :: Non requis",
     "Vigne / Oïdium :: 3 l/ha :: NR",
     "Vigne / Oïdium :: 3 l/ha :: Non requis"
@@ -7973,37 +7923,6 @@
    ]
   },
   {
-   "id": "bixafen-75g-l",
-   "nom": "Bixafen(75g/l)",
-   "molecule": "Bixafen",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "BAYER SA"
-   ],
-   "fournisseurs": [
-    "BAYER AG"
-   ],
-   "usages": [
-    "Blés / Rouilles",
-    "Blés / Septoriose"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Rouilles",
-    "Septoriose"
-   ],
-   "produits": [
-    "CAYUNIS EC 325"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Rouilles :: 0.8 l/ha :: -",
-    "Blés / Septoriose :: 0.8 l/ha :: --"
-   ]
-  },
-  {
    "id": "boscalide-200-g-l",
    "nom": "Boscalide(200 g/l)",
    "molecule": "Boscalide",
@@ -8222,9 +8141,10 @@
    "produits": [
     "BALIZOR",
     "BIGALO",
+    "GRINGO",
     "SIGNUM WG"
    ],
-   "nbHomologations": 3,
+   "nbHomologations": 4,
    "referentielDoses": [
     "Chou de Bruxelles / Pourriture grise :: 1 kg/ha :: 14",
     "Fraisier / Pourriture grise :: 150 g/hl :: 3",
@@ -8835,52 +8755,6 @@
     "Pomme de terre / Mildiou :: 0,19 kg/hl :: 30",
     "Pommier / Tavelure :: 0,19 kg/hl :: 15",
     "Tomate / Mildiou :: 0,19 kg/hl :: 30"
-   ]
-  },
-  {
-   "id": "carboxylic-acids-potassium-salts-479-8-g-l",
-   "nom": "Carboxylic acids potassium salts(479.8 g/l)",
-   "molecule": "Carboxylic acids potassium salts",
-   "categorie": "Insecticide-Acaricide",
-   "detenteurs": [
-    "BAYER SA"
-   ],
-   "fournisseurs": [
-    "DE SANGOSSE"
-   ],
-   "usages": [
-    "Haricot vert / Acariens",
-    "Poivron / Acariens",
-    "Poivron / Mouche blanche",
-    "Poivron / Thrips",
-    "Tomate / Acariose bronzée",
-    "Tomate / Mineuse (Tuta absoluta)",
-    "Tomate / Mouche blanche"
-   ],
-   "cultures": [
-    "Haricot vert",
-    "Poivron",
-    "Tomate"
-   ],
-   "cibles": [
-    "Acariens",
-    "Acariose bronzée",
-    "Mineuse (Tuta absoluta)",
-    "Mouche blanche",
-    "Thrips"
-   ],
-   "produits": [
-    "FLIPPER EW 479.8"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Haricot vert / Acariens :: 10 l/ha :: Non requis",
-    "Poivron / Acariens :: 10 l/ha :: Non requis",
-    "Poivron / Mouche blanche :: 10 l/ha :: Non requis",
-    "Poivron / Thrips :: 10l/ha :: Non requis",
-    "Tomate / Acariose bronzée :: 10 l/ha :: Non requis",
-    "Tomate / Mineuse (Tuta absoluta) :: 10 l/ha :: Non requis",
-    "Tomate / Mouche blanche :: 10 l/ha :: Non requis"
    ]
   },
   {
@@ -9635,6 +9509,7 @@
     "ALMANDINE CORPORATION SA",
     "Lier Chemical Co.,Ltd",
     "PARIJAT INDUSTRIE (INDIA) PVT. LTD",
+    "PARIJAT INDUSTRIES (INDIA) LTD",
     "SINON CORPORATION"
    ],
    "usages": [
@@ -9698,37 +9573,6 @@
    ],
    "nbHomologations": 1,
    "referentielDoses": [
-    "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
-   ]
-  },
-  {
-   "id": "clodinafop-propargyl-30-g-l",
-   "nom": "Clodinafop-propargyl(30 g/l)",
-   "molecule": "Clodinafop-propargyl",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "SYNGENTA MAROC"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones annuelles",
-    "Blés / Adventices Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones annuelles",
-    "Adventices Graminées annuelles"
-   ],
-   "produits": [
-    "SWIPE"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones annuelles :: 1l/ha :: -",
     "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
    ]
   },
@@ -10054,65 +9898,6 @@
    ]
   },
   {
-   "id": "cloquintocet-mexyl-100-g-kg",
-   "nom": "Cloquintocet-mexyl(100 g/kg)",
-   "molecule": "Cloquintocet-mexyl",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "MARBAR-CHIMIE"
-   ],
-   "fournisseurs": [
-    "ASCENZA AGRO"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "produits": [
-    "KACIK"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones et Graminées annuelles :: 200 g/ha :: ---"
-   ]
-  },
-  {
-   "id": "cloquintocet-mexyl-safener-11-25-g-l",
-   "nom": "Cloquintocet-méxyl (Safener)(11,25 g/l)",
-   "molecule": "Cloquintocet-méxyl",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "SYNGENTA MAROC"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones annuelles",
-    "Blés / Adventices Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones annuelles",
-    "Adventices Graminées annuelles"
-   ],
-   "produits": [
-    "NAVIGATOR"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones annuelles :: 1 l/ha :: -",
-    "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
-   ]
-  },
-  {
    "id": "cloquintocet-mexyl-safener-12-5-g-l",
    "nom": "Cloquintocet-méxyl (Safener)(12,5 g/l)",
    "molecule": "Cloquintocet-méxyl",
@@ -10253,6 +10038,7 @@
     "ALMANDINE CORPORATION SA",
     "Lier Chemical Co.,Ltd",
     "PARIJAT INDUSTRIE (INDIA) PVT. LTD",
+    "PARIJAT INDUSTRIES (INDIA) LTD",
     "SINON CORPORATION"
    ],
    "usages": [
@@ -10289,37 +10075,6 @@
     "Blés / Adventices Graminées annuelles :: 0,25 l/ha :: 75",
     "Blés / Adventices Graminées annuelles :: 0,25l/ha :: 75",
     "Blés / Adventices Graminées annuelles :: 0.25 l/ha :: 75 jours"
-   ]
-  },
-  {
-   "id": "cloquintocet-mexyl-safener-7-5-g-l",
-   "nom": "Cloquintocet-méxyl (Safener)(7,5 g/l)",
-   "molecule": "Cloquintocet-méxyl",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "SYNGENTA MAROC"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones annuelles",
-    "Blés / Adventices Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones annuelles",
-    "Adventices Graminées annuelles"
-   ],
-   "produits": [
-    "SWIPE"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones annuelles :: 1l/ha :: -",
-    "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
    ]
   },
   {
@@ -11691,34 +11446,6 @@
    "referentielDoses": [
     "Pomme de terre / Mildiou :: 2,5 kg/ha :: 15",
     "Vigne / Mildiou :: 2,5 kg/ha :: 28"
-   ]
-  },
-  {
-   "id": "cuivre-oxychlorure-de-cuivre-4",
-   "nom": "Cuivre - oxychlorure de cuivre(4%)",
-   "molecule": "Cuivre - oxychlorure de cuivre",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "BODOR"
-   ],
-   "fournisseurs": [
-    "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)"
-   ],
-   "usages": [
-    "Vigne / Oïdium"
-   ],
-   "cultures": [
-    "Vigne"
-   ],
-   "cibles": [
-    "Oïdium"
-   ],
-   "produits": [
-    "CUPRISOUFRE AFEPASA"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Vigne / Oïdium :: 500 g/hl :: 15"
    ]
   },
   {
@@ -14908,7 +14635,7 @@
    ],
    "fournisseurs": [
     "2022 Environmental Science FR SAS",
-    "PROPLAN PLANT PROTECTION COMPANY,S.L"
+    "QEMETICA AGRICULTURAL SOLUTIONS SPAIN SLU"
    ],
    "usages": [
     "Locaux de stockage / Mouche d'étable",
@@ -15566,34 +15293,6 @@
    "referentielDoses": [
     "Olivier / Adventices Dicotylédones annuelles :: 3 l/ha :: -",
     "Olivier / Adventices Graminées annuelles :: 3 l/ha :: -"
-   ]
-  },
-  {
-   "id": "diflufenican-400-g-kg",
-   "nom": "Diflufenican(400 g/kg)",
-   "molecule": "Diflufenican",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "MARBAR-CHIMIE"
-   ],
-   "fournisseurs": [
-    "ASCENZA AGRO"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "produits": [
-    "KACIK"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones et Graminées annuelles :: 200 g/ha :: ---"
    ]
   },
   {
@@ -16577,40 +16276,6 @@
    "nbHomologations": 1,
    "referentielDoses": [
     "Vigne / Mildiou :: 1,5 kg/ha :: 42"
-   ]
-  },
-  {
-   "id": "dimethomorphe-225-g-l",
-   "nom": "Diméthomorphe(225 g/l)",
-   "molecule": "Diméthomorphe",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "BASF MAROC"
-   ],
-   "fournisseurs": [
-    "BASF SE"
-   ],
-   "usages": [
-    "Pomme de terre / Mildiou",
-    "Tomate / Mildiou",
-    "Vigne / Mildiou"
-   ],
-   "cultures": [
-    "Pomme de terre",
-    "Tomate",
-    "Vigne"
-   ],
-   "cibles": [
-    "Mildiou"
-   ],
-   "produits": [
-    "ORVEGO"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Pomme de terre / Mildiou :: 0,8 l/ha :: 7",
-    "Tomate / Mildiou :: 0,8 l/ha :: 3",
-    "Vigne / Mildiou :: 0,8 l/ha :: 28"
    ]
   },
   {
@@ -18221,34 +17886,6 @@
    ]
   },
   {
-   "id": "florasulame-20-g-kg",
-   "nom": "Florasulame(20 g/kg)",
-   "molecule": "Florasulame",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "MARBAR-CHIMIE"
-   ],
-   "fournisseurs": [
-    "ASCENZA AGRO"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "produits": [
-    "KACIK"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones et Graminées annuelles :: 200 g/ha :: ---"
-   ]
-  },
-  {
    "id": "florasulame-200-g-kg",
    "nom": "Florasulame(200 g/kg)",
    "molecule": "Florasulame",
@@ -18282,33 +17919,26 @@
    "molecule": "Florasulame",
    "categorie": "Herbicide",
    "detenteurs": [
-    "PROCHIMAGRO",
-    "SYNGENTA MAROC"
+    "PROCHIMAGRO"
    ],
    "fournisseurs": [
-    "Corteva Agriscience international Sàrl",
-    "SYNGENTA CROP PROTECTION AG"
+    "Corteva Agriscience international Sàrl"
    ],
    "usages": [
-    "Blés / Adventices Dicotylédones annuelles",
-    "Blés / Adventices Graminées annuelles"
+    "Blés / Adventices Dicotylédones annuelles"
    ],
    "cultures": [
     "Blés"
    ],
    "cibles": [
-    "Adventices Dicotylédones annuelles",
-    "Adventices Graminées annuelles"
+    "Adventices Dicotylédones annuelles"
    ],
    "produits": [
-    "MUSTANG FORTE",
-    "NAVIGATOR"
+    "MUSTANG FORTE"
    ],
-   "nbHomologations": 2,
+   "nbHomologations": 1,
    "referentielDoses": [
-    "Blés / Adventices Dicotylédones annuelles :: 0.5 l/ha :: 90 jours",
-    "Blés / Adventices Dicotylédones annuelles :: 1 l/ha :: -",
-    "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
+    "Blés / Adventices Dicotylédones annuelles :: 0.5 l/ha :: 90 jours"
    ]
   },
   {
@@ -18369,37 +17999,6 @@
    "referentielDoses": [
     "Blés / Adventices Dicotylédones annuelles :: 0,6 L/ha :: 75",
     "Blés / Adventices Dicotylédones annuelles :: 0,6 l/ha :: 75"
-   ]
-  },
-  {
-   "id": "florasulame-7-5-g-l",
-   "nom": "Florasulame(7,5 g/l)",
-   "molecule": "Florasulame",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "SYNGENTA MAROC"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones annuelles",
-    "Blés / Adventices Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones annuelles",
-    "Adventices Graminées annuelles"
-   ],
-   "produits": [
-    "SWIPE"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones annuelles :: 1l/ha :: -",
-    "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
    ]
   },
   {
@@ -18472,12 +18071,10 @@
    "molecule": "Fluazifop-P-butyl",
    "categorie": "Herbicide",
    "detenteurs": [
-    "ACI EQUIPMENTS",
     "SOPROCHIBA",
     "SYNGENTA MAROC"
    ],
    "fournisseurs": [
-    "SHARDA CROPCHEM LIMITED",
     "SYNGENTA CROP PROTECTION AG",
     "TARKIM BITKI KORUMA SAN. VE TIC A.S"
    ],
@@ -18522,11 +18119,10 @@
     "Adventices Graminées vivaces"
    ],
    "produits": [
-    "FLUENT 150 EC",
     "FUSILADE FORTE",
     "SAFOP"
    ],
-   "nbHomologations": 3,
+   "nbHomologations": 2,
    "referentielDoses": [
     "Ail / Adventices Graminées annuelles :: 1,25 l/ha :: 28",
     "Ail / Adventices Graminées vivaces :: 2,5 l/ha :: 28",
@@ -19381,9 +18977,10 @@
     "Oïdium"
    ],
    "produits": [
+    "LUNA MAX",
     "LUNA SECURE"
    ],
-   "nbHomologations": 1,
+   "nbHomologations": 2,
    "referentielDoses": [
     "Vigne / Oïdium :: 1l/ha :: 35"
    ]
@@ -20558,15 +20155,12 @@
    "molecule": "Gibbérellines A4-A7",
    "categorie": "Régulateur de croissance",
    "detenteurs": [
-    "ALFACHIMIE",
-    "SOPROCHIBA"
+    "ALFACHIMIE"
    ],
    "fournisseurs": [
-    "FINE AGROCHEMICAL LTD",
-    "GLOBACHEM"
+    "FINE AGROCHEMICAL LTD"
    ],
    "usages": [
-    "Poirier / Amélioration de rendement",
     "Poirier / Régulation de la fructification",
     "Pommier / Rugosité de la pleure"
    ],
@@ -20575,20 +20169,16 @@
     "Pommier"
    ],
    "cibles": [
-    "Amélioration de rendement",
     "Rugosité de la pleure",
     "Régulation de la fructification"
    ],
    "produits": [
-    "GIBB PLUS",
     "NOVAGIB"
    ],
-   "nbHomologations": 2,
+   "nbHomologations": 1,
    "referentielDoses": [
-    "Poirier / Amélioration de rendement :: 700 cc/ha de haie :: NR",
     "Poirier / Régulation de la fructification :: 0,7 l/hl de haie :: NR",
-    "Pommier / Rugosité de la pleure :: 0,3-0,6 l/ha de haie :: NR",
-    "Pommier / Rugosité de la pleure :: 30 cc/hl :: NR"
+    "Pommier / Rugosité de la pleure :: 0,3-0,6 l/ha de haie :: NR"
    ]
   },
   {
@@ -23510,34 +23100,6 @@
    ]
   },
   {
-   "id": "iodosulfuron-methyl-sodium-50-g-kg",
-   "nom": "Iodosulfuron-méthyl-sodium(50 g/kg)",
-   "molecule": "Iodosulfuron-méthyl-sodium",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "MARBAR-CHIMIE"
-   ],
-   "fournisseurs": [
-    "ASCENZA AGRO"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "produits": [
-    "KACIK"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones et Graminées annuelles :: 200 g/ha :: ---"
-   ]
-  },
-  {
    "id": "iodosulfuron-methyl-sodium-7-5-g-l",
    "nom": "Iodosulfuron-méthyl-sodium(7,5 g/l)",
    "molecule": "Iodosulfuron-méthyl-sodium",
@@ -24878,16 +24440,13 @@
     "Mildiou"
    ],
    "produits": [
-    "AMPEXIO",
     "CARIAL FLEX"
    ],
-   "nbHomologations": 2,
+   "nbHomologations": 1,
    "referentielDoses": [
     "Melon / Mildiou :: 0,6 kg/ha :: 3",
     "Pomme de terre / Mildiou :: 0,6 kg/ha :: 21 j",
     "Tomate / Mildiou :: 0,6 kg/ha :: 3 j",
-    "Tomate / Mildiou :: 0.5 kg/ha :: 3",
-    "Vigne / Mildiou :: 0,5 kg/hl :: 21",
     "Vigne / Mildiou :: 0,6 kg/ha :: 21 j"
    ]
   },
@@ -25648,7 +25207,7 @@
     "BASF MAROC"
    ],
    "fournisseurs": [
-    "BASF SE"
+    "BASF Agricultural Solutions Deutschland GmbH"
    ],
    "usages": [
     "Blés / Rouille",
@@ -26123,37 +25682,6 @@
     "Poivron / Oïdium :: 30 cc/hl :: 3",
     "Tomate / Oïdium :: 30 cc/hl :: 3",
     "Vigne / Oïdium :: 125 cc/ha :: 14"
-   ]
-  },
-  {
-   "id": "myclobutanil-25",
-   "nom": "Myclobutanil(25%)",
-   "molecule": "Myclobutanil",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "PROTECTAGRI"
-   ],
-   "fournisseurs": [
-    "PILARQUIM (SHANGHAI) CO., LTD"
-   ],
-   "usages": [
-    "Tomate / Oïdium",
-    "Vigne / Oïdium"
-   ],
-   "cultures": [
-    "Tomate",
-    "Vigne"
-   ],
-   "cibles": [
-    "Oïdium"
-   ],
-   "produits": [
-    "PILARSYS"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Tomate / Oïdium :: 25 cc/hl :: 3",
-    "Vigne / Oïdium :: 120 cc/ha :: 14"
    ]
   },
   {
@@ -27535,34 +27063,6 @@
    ]
   },
   {
-   "id": "oxyfluorfene-1-5-l-ha",
-   "nom": "Oxyfluorfène(1.5 l/ha)",
-   "molecule": "Oxyfluorfène",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "PHILEA"
-   ],
-   "fournisseurs": [
-    "AGRIA SA"
-   ],
-   "usages": [
-    "Oignon / Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "cultures": [
-    "Oignon"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones et Graminées annuelles"
-   ],
-   "produits": [
-    "SMERCH"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Oignon / Adventices Dicotylédones et Graminées annuelles :: 1.5 l/ha :: 60 jours"
-   ]
-  },
-  {
    "id": "oxyfluorfene-240-g-l",
    "nom": "Oxyfluorfène(240 g/l)",
    "molecule": "Oxyfluorfène",
@@ -27643,6 +27143,7 @@
     "ROLEN",
     "SAMOUDAN",
     "SHAROXY",
+    "SMERCH",
     "TAEKWONDO",
     "THIOLUS SUPER",
     "TOTOFEN",
@@ -27650,7 +27151,7 @@
     "TOYOTO AGRO 240 EC",
     "TWIN-PRO"
    ],
-   "nbHomologations": 24,
+   "nbHomologations": 25,
    "referentielDoses": [
     "Agrumes / Adventices Dicotylédones :: 3 l/ha :: -",
     "Agrumes / Adventices Dicotylédones :: 3l/ha :: -",
@@ -27724,37 +27225,6 @@
     "Olivier / Adventices Dicotylédones :: 6 l/ha :: 21",
     "Olivier / Adventices Graminées :: 6 l/ha :: 21",
     "Olivier / Adventices annuelles :: 2 l/ha :: 21"
-   ]
-  },
-  {
-   "id": "oxyfluorfene-41",
-   "nom": "Oxyfluorfène(41%)",
-   "molecule": "Oxyfluorfène",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "AGRO SPRAY TECHNIC"
-   ],
-   "fournisseurs": [
-    "WILLOWOOD USA"
-   ],
-   "usages": [
-    "Canne à sucre / Adventices Dicotylédones annuelles",
-    "Canne à sucre / Adventices Graminées annuelles"
-   ],
-   "cultures": [
-    "Canne à sucre"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones annuelles",
-    "Adventices Graminées annuelles"
-   ],
-   "produits": [
-    "GOLAZO 4 SC"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Canne à sucre / Adventices Dicotylédones annuelles :: 0,75 l/ha :: -",
-    "Canne à sucre / Adventices Graminées annuelles :: 0,75 l/ha :: -"
    ]
   },
   {
@@ -27954,12 +27424,10 @@
    "categorie": "Fongicide",
    "detenteurs": [
     "ARZAK SEEDS TRADE",
-    "SOPROCHIBA",
     "SYNGENTA MAROC"
    ],
    "fournisseurs": [
     "DVA AGRO",
-    "GLOBACHEM",
     "SYNGENTA CROP PROTECTION AG"
    ],
    "usages": [
@@ -27993,10 +27461,9 @@
    ],
    "produits": [
     "BAYOUD 10 EC",
-    "TOPAS 100 EC",
-    "TOPENCO 100 EC"
+    "TOPAS 100 EC"
    ],
-   "nbHomologations": 3,
+   "nbHomologations": 2,
    "referentielDoses": [
     "Concombre / Oïdium :: 15 cc/hl :: 3",
     "Cornichon / Oïdium :: 0,5 l/ha :: 3",
@@ -28004,13 +27471,11 @@
     "Fraisier / Oïdium :: 25 cc/hl :: 3",
     "Framboisier / Oïdium :: 0,4 l/ha :: 3",
     "Melon / Oïdium :: 15 cc/hl :: 3",
-    "Melon / Oïdium :: 15 cc/hl :: 7",
     "Nectarinier / Oïdium :: 25 cc/hl :: 14",
     "Pommier / Oïdium :: 25 cc/hl :: 14",
     "Pêcher / Oïdium :: 25 cc/hl :: 14",
     "Tomate / Oïdium :: 15-25 cc/hl :: 3",
     "Tomate / Oïdium :: 25 cc/hl :: 3",
-    "Tomate / Oïdium :: 25 cc/hl :: 7",
     "Vigne / Oïdium :: 15-25 cc/hl :: 30",
     "Vigne / Oïdium :: 25 cc/hl :: 30"
    ]
@@ -28128,34 +27593,20 @@
    "detenteurs": [
     "ACI EQUIPMENTS",
     "ARZAK SEEDS TRADE",
-    "BASF MAROC",
     "EZZOUHOUR"
    ],
    "fournisseurs": [
-    "BASF SE",
     "Finchimica S.p.A",
     "GSP CROP SCIENCE LIMITED",
     "SHARDA CROPCHEM LIMITED"
    ],
    "usages": [
-    "Arachide / Adventices Dicotylédones annuelles",
-    "Arachide / Adventices Graminées annuelles",
-    "Cotonnier / Adventices Dicotylédones annuelles",
-    "Cotonnier / Adventices Graminées annuelles",
     "Maïs / Adventices Dicotylédones et Graminées annuelles",
-    "Poivron / Adventices Dicotylédones annuelles",
-    "Poivron / Adventices Graminées annuelles",
-    "Tomate / Adventices Dicotylédones annuelles",
-    "Tomate / Adventices Graminées annuelles",
     "Tournesol / Adventices Dicotylédones annuelles",
     "Tournesol / Adventices Graminées annuelles"
    ],
    "cultures": [
-    "Arachide",
-    "Cotonnier",
     "Maïs",
-    "Poivron",
-    "Tomate",
     "Tournesol"
    ],
    "cibles": [
@@ -28166,20 +27617,11 @@
    "produits": [
     "PENDIFAST",
     "PENDINOVA",
-    "PENDOFORT",
-    "PROWL"
+    "PENDOFORT"
    ],
-   "nbHomologations": 4,
+   "nbHomologations": 3,
    "referentielDoses": [
-    "Arachide / Adventices Dicotylédones annuelles :: 4 l/ha :: -",
-    "Arachide / Adventices Graminées annuelles :: 4 l/ha :: -",
-    "Cotonnier / Adventices Dicotylédones annuelles :: 4 l/ha :: -",
-    "Cotonnier / Adventices Graminées annuelles :: 4 l/ha :: -",
     "Maïs / Adventices Dicotylédones et Graminées annuelles :: 4 l/ha :: -",
-    "Poivron / Adventices Dicotylédones annuelles :: 4 l/ha :: -",
-    "Poivron / Adventices Graminées annuelles :: 4 l/ha :: -",
-    "Tomate / Adventices Dicotylédones annuelles :: 4 l/ha :: -",
-    "Tomate / Adventices Graminées annuelles :: 4 l/ha :: -",
     "Tournesol / Adventices Dicotylédones annuelles :: 4 l/ha :: -",
     "Tournesol / Adventices Graminées annuelles :: 4 l/ha :: -"
    ]
@@ -28809,68 +28251,6 @@
    ],
    "nbHomologations": 1,
    "referentielDoses": [
-    "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
-   ]
-  },
-  {
-   "id": "pinoxaden-30-g-l",
-   "nom": "Pinoxaden(30 g/l)",
-   "molecule": "Pinoxaden",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "SYNGENTA MAROC"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones annuelles",
-    "Blés / Adventices Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones annuelles",
-    "Adventices Graminées annuelles"
-   ],
-   "produits": [
-    "SWIPE"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones annuelles :: 1l/ha :: -",
-    "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
-   ]
-  },
-  {
-   "id": "pinoxaden-45-g-l",
-   "nom": "Pinoxaden(45 g/l)",
-   "molecule": "Pinoxaden",
-   "categorie": "Herbicide",
-   "detenteurs": [
-    "SYNGENTA MAROC"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    "Blés / Adventices Dicotylédones annuelles",
-    "Blés / Adventices Graminées annuelles"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Adventices Dicotylédones annuelles",
-    "Adventices Graminées annuelles"
-   ],
-   "produits": [
-    "NAVIGATOR"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Adventices Dicotylédones annuelles :: 1 l/ha :: -",
     "Blés / Adventices Graminées annuelles :: 1 l/ha :: -"
    ]
   },
@@ -30182,7 +29562,7 @@
     "BASF MAROC"
    ],
    "fournisseurs": [
-    "BASF SE"
+    "BASF Agricultural Solutions Deutschland GmbH"
    ],
    "usages": [
     "Blés / Rouille",
@@ -30289,9 +29669,10 @@
    "produits": [
     "BALIZOR",
     "BIGALO",
+    "GRINGO",
     "SIGNUM WG"
    ],
-   "nbHomologations": 3,
+   "nbHomologations": 4,
    "referentielDoses": [
     "Chou de Bruxelles / Pourriture grise :: 1 kg/ha :: 14",
     "Fraisier / Pourriture grise :: 150 g/hl :: 3",
@@ -30465,44 +29846,6 @@
     "Agrumes / Adventices Dicotylédones annuelles :: 0.8 l/ha :: 7",
     "Olivier / Adventices Dicotylédones annuelles :: 0.8 l/ha :: 7",
     "Pomme de terre / Défanage :: 0.8 l/ha :: 14"
-   ]
-  },
-  {
-   "id": "pyridabene-100-g-l",
-   "nom": "Pyridabène(100 g/l)",
-   "molecule": "Pyridabène",
-   "categorie": "Insecticide-Acaricide",
-   "detenteurs": [
-    "BASF MAROC"
-   ],
-   "fournisseurs": [
-    "NISSAN Chemical Europe Sarl"
-   ],
-   "usages": [
-    "Agrumes / Acariens",
-    "Fraisier / Acariens",
-    "Pommier / Acariens",
-    "Tomate / Mouche blanche"
-   ],
-   "cultures": [
-    "Agrumes",
-    "Fraisier",
-    "Pommier",
-    "Tomate"
-   ],
-   "cibles": [
-    "Acariens",
-    "Mouche blanche"
-   ],
-   "produits": [
-    "NEXTER 10 SC"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Agrumes / Acariens :: 150 cc/hl :: 14",
-    "Fraisier / Acariens :: 150 cc/hl :: 3",
-    "Pommier / Acariens :: 200 cc/hl :: 14",
-    "Tomate / Mouche blanche :: 150 cc/hl :: 3"
    ]
   },
   {
@@ -30986,14 +30329,13 @@
     "PENBOTEC 400 SC",
     "PREMIUM 40 SC",
     "PROBINO",
-    "PROTECTOR 400 SC",
     "PYRROLE",
     "PYRUS 400 SC",
     "SIMBA",
     "STRENGHT",
     "TITRALAC"
    ],
-   "nbHomologations": 11,
+   "nbHomologations": 10,
    "referentielDoses": [
     "Agrumes: Fruits / Maladies de conservation des fruits :: 1 l/hl de cire :: Non requis",
     "Agrumes: Fruits / Pourriture des fruits (Penicillium digitatum) :: 1l/hl de cire :: Non requis",
@@ -32165,34 +31507,6 @@
    ]
   },
   {
-   "id": "soufre-60",
-   "nom": "Soufre(60%)",
-   "molecule": "Soufre",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "BODOR"
-   ],
-   "fournisseurs": [
-    "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)"
-   ],
-   "usages": [
-    "Vigne / Oïdium"
-   ],
-   "cultures": [
-    "Vigne"
-   ],
-   "cibles": [
-    "Oïdium"
-   ],
-   "produits": [
-    "CUPRISOUFRE AFEPASA"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Vigne / Oïdium :: 500 g/hl :: 15"
-   ]
-  },
-  {
    "id": "soufre-640-g-l",
    "nom": "Soufre(640 g/l)",
    "molecule": "Soufre",
@@ -33328,37 +32642,6 @@
    ]
   },
   {
-   "id": "spiroxamine-150g-l",
-   "nom": "Spiroxamine(150g/l)",
-   "molecule": "Spiroxamine",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "BAYER SA"
-   ],
-   "fournisseurs": [
-    "BAYER AG"
-   ],
-   "usages": [
-    "Blés / Rouilles",
-    "Blés / Septoriose"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Rouilles",
-    "Septoriose"
-   ],
-   "produits": [
-    "CAYUNIS EC 325"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Rouilles :: 0.8 l/ha :: -",
-    "Blés / Septoriose :: 0.8 l/ha :: --"
-   ]
-  },
-  {
    "id": "spiroxamine-200-g-l",
    "nom": "Spiroxamine(200 g/l)",
    "molecule": "Spiroxamine",
@@ -33379,9 +32662,10 @@
     "Oïdium"
    ],
    "produits": [
+    "LUNA MAX",
     "LUNA SECURE"
    ],
-   "nbHomologations": 1,
+   "nbHomologations": 2,
    "referentielDoses": [
     "Vigne / Oïdium :: 1l/ha :: 35"
    ]
@@ -35006,37 +34290,6 @@
    ]
   },
   {
-   "id": "trifloxystrobine-100g-l",
-   "nom": "Trifloxystrobine(100g/l)",
-   "molecule": "Trifloxystrobine",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "BAYER SA"
-   ],
-   "fournisseurs": [
-    "BAYER AG"
-   ],
-   "usages": [
-    "Blés / Rouilles",
-    "Blés / Septoriose"
-   ],
-   "cultures": [
-    "Blés"
-   ],
-   "cibles": [
-    "Rouilles",
-    "Septoriose"
-   ],
-   "produits": [
-    "CAYUNIS EC 325"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Blés / Rouilles :: 0.8 l/ha :: -",
-    "Blés / Septoriose :: 0.8 l/ha :: --"
-   ]
-  },
-  {
    "id": "trifloxystrobine-250-g-l",
    "nom": "Trifloxystrobine(250 g/l)",
    "molecule": "Trifloxystrobine",
@@ -36355,37 +35608,6 @@
    ]
   },
   {
-   "id": "zoxamide-240-g-kg",
-   "nom": "Zoxamide(240 g/kg)",
-   "molecule": "Zoxamide",
-   "categorie": "Fongicide",
-   "detenteurs": [
-    "SYNGENTA MAROC"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    "Tomate / Mildiou",
-    "Vigne / Mildiou"
-   ],
-   "cultures": [
-    "Tomate",
-    "Vigne"
-   ],
-   "cibles": [
-    "Mildiou"
-   ],
-   "produits": [
-    "AMPEXIO"
-   ],
-   "nbHomologations": 1,
-   "referentielDoses": [
-    "Tomate / Mildiou :: 0.5 kg/ha :: 3",
-    "Vigne / Mildiou :: 0,5 kg/hl :: 21"
-   ]
-  },
-  {
    "id": "zoxamide-300-g-l",
    "nom": "Zoxamide(300 g/l)",
    "molecule": "Zoxamide",
@@ -36621,8 +35843,8 @@
   {
    "id": "arzak-seeds-trade",
    "nom": "ARZAK SEEDS TRADE",
-   "nbProduits": 98,
-   "nbUsages": 309,
+   "nbProduits": 97,
+   "nbUsages": 306,
    "nbMatieresActives": 74,
    "categories": [
     "Adjuvant",
@@ -36637,9 +35859,9 @@
   {
    "id": "syngenta-maroc",
    "nom": "SYNGENTA MAROC",
-   "nbProduits": 75,
-   "nbUsages": 436,
-   "nbMatieresActives": 97,
+   "nbProduits": 72,
+   "nbUsages": 430,
+   "nbMatieresActives": 89,
    "categories": [
     "Acridicide",
     "Fongicide",
@@ -36650,23 +35872,6 @@
     "Insecticide-Acridicide",
     "Insecticide-Fongicide",
     "Nématicide",
-    "Régulateur de croissance"
-   ]
-  },
-  {
-   "id": "basf-maroc",
-   "nom": "BASF MAROC",
-   "nbProduits": 60,
-   "nbUsages": 243,
-   "nbMatieresActives": 67,
-   "categories": [
-    "Adjuvant pour Herbicides",
-    "Bactéricide",
-    "Fongicide",
-    "Herbicide",
-    "Insecticide",
-    "Insecticide-Acaricide",
-    "Phéromones",
     "Régulateur de croissance"
    ]
   },
@@ -36690,11 +35895,27 @@
    ]
   },
   {
+   "id": "basf-maroc",
+   "nom": "BASF MAROC",
+   "nbProduits": 58,
+   "nbUsages": 242,
+   "nbMatieresActives": 63,
+   "categories": [
+    "Adjuvant pour Herbicides",
+    "Bactéricide",
+    "Fongicide",
+    "Herbicide",
+    "Insecticide",
+    "Phéromones",
+    "Régulateur de croissance"
+   ]
+  },
+  {
    "id": "bayer-sa",
    "nom": "BAYER SA",
-   "nbProduits": 56,
-   "nbUsages": 246,
-   "nbMatieresActives": 93,
+   "nbProduits": 55,
+   "nbUsages": 238,
+   "nbMatieresActives": 89,
    "categories": [
     "Fongicide",
     "Herbicide",
@@ -36707,9 +35928,9 @@
   {
    "id": "soprochiba",
    "nom": "SOPROCHIBA",
-   "nbProduits": 52,
-   "nbUsages": 162,
-   "nbMatieresActives": 46,
+   "nbProduits": 48,
+   "nbUsages": 153,
+   "nbMatieresActives": 42,
    "categories": [
     "Acaricide",
     "Acridicide",
@@ -36723,9 +35944,9 @@
   {
    "id": "agro-spray-technic",
    "nom": "AGRO SPRAY TECHNIC",
-   "nbProduits": 46,
-   "nbUsages": 222,
-   "nbMatieresActives": 50,
+   "nbProduits": 45,
+   "nbUsages": 220,
+   "nbMatieresActives": 49,
    "categories": [
     "Fongicide",
     "Herbicide",
@@ -36737,25 +35958,10 @@
    ]
   },
   {
-   "id": "proteco",
-   "nom": "PROTECO",
-   "nbProduits": 46,
-   "nbUsages": 113,
-   "nbMatieresActives": 46,
-   "categories": [
-    "Acaricide",
-    "Fongicide",
-    "Herbicide",
-    "Insecticide",
-    "Insecticide-Acaricide",
-    "Régulateur de croissance"
-   ]
-  },
-  {
    "id": "amaroc",
    "nom": "AMAROC",
    "nbProduits": 45,
-   "nbUsages": 191,
+   "nbUsages": 193,
    "nbMatieresActives": 46,
    "categories": [
     "Acaricide",
@@ -36766,6 +35972,21 @@
     "Insecticide",
     "Insecticide-Acaricide",
     "Nématicide-Fumigant",
+    "Régulateur de croissance"
+   ]
+  },
+  {
+   "id": "proteco",
+   "nom": "PROTECO",
+   "nbProduits": 44,
+   "nbUsages": 93,
+   "nbMatieresActives": 45,
+   "categories": [
+    "Acaricide",
+    "Fongicide",
+    "Herbicide",
+    "Insecticide",
+    "Insecticide-Acaricide",
     "Régulateur de croissance"
    ]
   },
@@ -36804,9 +36025,9 @@
   {
    "id": "agrimatco",
    "nom": "AGRIMATCO",
-   "nbProduits": 40,
-   "nbUsages": 223,
-   "nbMatieresActives": 50,
+   "nbProduits": 41,
+   "nbUsages": 229,
+   "nbMatieresActives": 51,
    "categories": [
     "Acaricide",
     "Adjuvant",
@@ -36852,9 +36073,9 @@
   {
    "id": "aci-equipments",
    "nom": "ACI EQUIPMENTS",
-   "nbProduits": 37,
-   "nbUsages": 82,
-   "nbMatieresActives": 37,
+   "nbProduits": 36,
+   "nbUsages": 81,
+   "nbMatieresActives": 36,
    "categories": [
     "Fongicide",
     "Herbicide",
@@ -36984,22 +36205,6 @@
    ]
   },
   {
-   "id": "marbar-chimie",
-   "nom": "MARBAR-CHIMIE",
-   "nbProduits": 23,
-   "nbUsages": 94,
-   "nbMatieresActives": 30,
-   "categories": [
-    "Acaricide",
-    "Fongicide",
-    "Fongicide-Bactéricide",
-    "Herbicide",
-    "Insecticide",
-    "Insecticide-Acaricide",
-    "Régulateur de croissance"
-   ]
-  },
-  {
    "id": "alfachimie",
    "nom": "ALFACHIMIE",
    "nbProduits": 22,
@@ -37009,6 +36214,22 @@
     "Fongicide",
     "Herbicide",
     "Herbicide-Régulateur de croissance",
+    "Insecticide",
+    "Insecticide-Acaricide",
+    "Régulateur de croissance"
+   ]
+  },
+  {
+   "id": "marbar-chimie",
+   "nom": "MARBAR-CHIMIE",
+   "nbProduits": 22,
+   "nbUsages": 93,
+   "nbMatieresActives": 26,
+   "categories": [
+    "Acaricide",
+    "Fongicide",
+    "Fongicide-Bactéricide",
+    "Herbicide",
     "Insecticide",
     "Insecticide-Acaricide",
     "Régulateur de croissance"
@@ -37146,9 +36367,9 @@
   {
    "id": "bodor",
    "nom": "BODOR",
-   "nbProduits": 12,
-   "nbUsages": 40,
-   "nbMatieresActives": 11,
+   "nbProduits": 11,
+   "nbUsages": 39,
+   "nbMatieresActives": 9,
    "categories": [
     "Fongicide",
     "Fongicide-Bactéricide",
@@ -37222,9 +36443,9 @@
   {
    "id": "protectagri",
    "nom": "PROTECTAGRI",
-   "nbProduits": 9,
-   "nbUsages": 22,
-   "nbMatieresActives": 10,
+   "nbProduits": 8,
+   "nbUsages": 20,
+   "nbMatieresActives": 9,
    "categories": [
     "Fongicide",
     "Herbicide",
@@ -37359,6 +36580,18 @@
    ]
   },
   {
+   "id": "marbar",
+   "nom": "MARBAR",
+   "nbProduits": 3,
+   "nbUsages": 8,
+   "nbMatieresActives": 3,
+   "categories": [
+    "Fongicide-Bactéricide",
+    "Insecticide",
+    "Régulateur de croissance"
+   ]
+  },
+  {
    "id": "agrivivos",
    "nom": "AGRIVIVOS",
    "nbProduits": 2,
@@ -37409,28 +36642,6 @@
    "nbMatieresActives": 2,
    "categories": [
     "Herbicide"
-   ]
-  },
-  {
-   "id": "marbar",
-   "nom": "MARBAR",
-   "nbProduits": 2,
-   "nbUsages": 5,
-   "nbMatieresActives": 2,
-   "categories": [
-    "Insecticide",
-    "Régulateur de croissance"
-   ]
-  },
-  {
-   "id": "marphyt",
-   "nom": "MARPHYT",
-   "nbProduits": 2,
-   "nbUsages": 6,
-   "nbMatieresActives": 2,
-   "categories": [
-    "Herbicide",
-    "Insecticide"
    ]
   },
   {
@@ -37552,6 +36763,16 @@
    "nbMatieresActives": 1,
    "categories": [
     "Insecticide"
+   ]
+  },
+  {
+   "id": "marphyt",
+   "nom": "MARPHYT",
+   "nbProduits": 1,
+   "nbUsages": 1,
+   "nbMatieresActives": 1,
+   "categories": [
+    "Herbicide"
    ]
   },
   {
@@ -38257,36 +37478,6 @@
    ]
   },
   {
-   "id": "aci-equipments-fluent-150-ec",
-   "detenteur": "ACI EQUIPMENTS",
-   "detenteurId": "aci-equipments",
-   "nomCommercial": "FLUENT 150 EC",
-   "categorie": "Herbicide",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "F11-4-002",
-   "expiration": "2026-10-13",
-   "matieresActives": [
-    "Fluazifop-P-butyl(150 g/l)"
-   ],
-   "matieresActivesIds": [
-    "fluazifop-p-butyl-150-g-l"
-   ],
-   "fournisseurs": [
-    "SHARDA CROPCHEM LIMITED"
-   ],
-   "usages": [
-    {
-     "usage": "Fève / Adventices Graminées annuelles",
-     "culture": "Fève",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "0,75 l/ha",
-     "dar": "56",
-     "nbAppl": null
-    }
-   ]
-  },
-  {
    "id": "aci-equipments-glicare",
    "detenteur": "ACI EQUIPMENTS",
    "detenteurId": "aci-equipments",
@@ -38379,7 +37570,7 @@
     "deltamethrine-2-5"
    ],
    "fournisseurs": [
-    "PROPLAN PLANT PROTECTION COMPANY,S.L"
+    "QEMETICA AGRICULTURAL SOLUTIONS SPAIN SLU"
    ],
    "usages": [
     {
@@ -41793,6 +40984,76 @@
    ]
   },
   {
+   "id": "agrimatco-cascadia",
+   "detenteur": "AGRIMATCO",
+   "detenteurId": "agrimatco",
+   "nomCommercial": "CASCADIA",
+   "categorie": "Fongicide",
+   "formulation": "Concentré soluble (SL)",
+   "tox": "C",
+   "amm": "H05-5-024",
+   "expiration": "2036-07-01",
+   "matieresActives": [
+    "Bacillus subtilis (souche IAB/BS03)(10^8 CFU/mL)"
+   ],
+   "matieresActivesIds": [
+    "bacillus-subtilis-souche-iab-bs03-10-8-cfu-ml"
+   ],
+   "fournisseurs": [
+    "SEIPASA"
+   ],
+   "usages": [
+    {
+     "usage": "Framboisier / Anthracnose",
+     "culture": "Framboisier",
+     "cible": "Anthracnose",
+     "dose": "2L/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Framboisier / Oïdium",
+     "culture": "Framboisier",
+     "cible": "Oïdium",
+     "dose": "2l/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Framboisier / Pourriture grise",
+     "culture": "Framboisier",
+     "cible": "Pourriture grise",
+     "dose": "2 L/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Myrtillier / Pourriture grise",
+     "culture": "Myrtillier",
+     "cible": "Pourriture grise",
+     "dose": "3 L/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Poivron / Oïdium",
+     "culture": "Poivron",
+     "cible": "Oïdium",
+     "dose": "3 L/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Tomate / Pourriture grise",
+     "culture": "Tomate",
+     "cible": "Pourriture grise",
+     "dose": "3 L/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    }
+   ]
+  },
+  {
    "id": "agrimatco-cobox",
    "detenteur": "AGRIMATCO",
    "detenteurId": "agrimatco",
@@ -45135,44 +44396,6 @@
    ]
   },
   {
-   "id": "agro-spray-technic-golazo-4-sc",
-   "detenteur": "AGRO SPRAY TECHNIC",
-   "detenteurId": "agro-spray-technic",
-   "nomCommercial": "GOLAZO 4 SC",
-   "categorie": "Herbicide",
-   "formulation": "Suspension concentrée (SC)",
-   "tox": "C",
-   "amm": "F03-6-007",
-   "expiration": "2026-10-17",
-   "matieresActives": [
-    "Oxyfluorfène(41%)"
-   ],
-   "matieresActivesIds": [
-    "oxyfluorfene-41"
-   ],
-   "fournisseurs": [
-    "WILLOWOOD USA"
-   ],
-   "usages": [
-    {
-     "usage": "Canne à sucre / Adventices Dicotylédones annuelles",
-     "culture": "Canne à sucre",
-     "cible": "Adventices Dicotylédones annuelles",
-     "dose": "0,75 l/ha",
-     "dar": null,
-     "nbAppl": null
-    },
-    {
-     "usage": "Canne à sucre / Adventices Graminées annuelles",
-     "culture": "Canne à sucre",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "0,75 l/ha",
-     "dar": null,
-     "nbAppl": null
-    }
-   ]
-  },
-  {
    "id": "agro-spray-technic-grainprotect",
    "detenteur": "AGRO SPRAY TECHNIC",
    "detenteurId": "agro-spray-technic",
@@ -47163,7 +46386,7 @@
     "cloquintocet-mexyl-safener-60-g-l"
    ],
    "fournisseurs": [
-    "PARIJAT INDUSTRIE (INDIA) PVT. LTD"
+    "PARIJAT INDUSTRIES (INDIA) LTD"
    ],
    "usages": [
     {
@@ -49241,11 +48464,27 @@
      "nbAppl": "1"
     },
     {
+     "usage": "Figuier de barbarie / Cochenilles à carmin",
+     "culture": "Figuier de barbarie",
+     "cible": "Cochenilles à carmin",
+     "dose": "35 cc/hl",
+     "dar": "7",
+     "nbAppl": "1"
+    },
+    {
      "usage": "Tomate / Mouche blanche",
      "culture": "Tomate",
      "cible": "Mouche blanche",
      "dose": "25cc/hl",
      "dar": "3",
+     "nbAppl": "1"
+    },
+    {
+     "usage": "Vigne / Cochenille farineuse",
+     "culture": "Vigne",
+     "cible": "Cochenille farineuse",
+     "dose": "35 cc/hl",
+     "dar": "45",
      "nbAppl": "1"
     }
    ]
@@ -56053,52 +55292,6 @@
    ]
   },
   {
-   "id": "arzak-seeds-trade-protector-400-sc",
-   "detenteur": "ARZAK SEEDS TRADE",
-   "detenteurId": "arzak-seeds-trade",
-   "nomCommercial": "PROTECTOR 400 SC",
-   "categorie": "Fongicide",
-   "formulation": "Suspension concentrée (SC)",
-   "tox": "C",
-   "amm": "F05-5-016",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Pyriméthanil(400 g/l)"
-   ],
-   "matieresActivesIds": [
-    "pyrimethanil-400-g-l"
-   ],
-   "fournisseurs": [
-    "ICA International Chemicals"
-   ],
-   "usages": [
-    {
-     "usage": "Agrumes: Fruits / Pourriture des fruits (Penicillium sp.)",
-     "culture": "Agrumes: Fruits",
-     "cible": "Pourriture des fruits (Penicillium sp.)",
-     "dose": "1000 cc/hl lustrage à la cire (enrobage)",
-     "dar": "NR",
-     "nbAppl": null
-    },
-    {
-     "usage": "Agrumes: Fruits / Pourriture des fruits (Penicillium sp.)",
-     "culture": "Agrumes: Fruits",
-     "cible": "Pourriture des fruits (Penicillium sp.)",
-     "dose": "250 cc/hl (drencher)",
-     "dar": "NR",
-     "nbAppl": null
-    },
-    {
-     "usage": "Vigne / Pourriture grise",
-     "culture": "Vigne",
-     "cible": "Pourriture grise",
-     "dose": "2 l/ha",
-     "dar": "21",
-     "nbAppl": "1"
-    }
-   ]
-  },
-  {
    "id": "arzak-seeds-trade-rama",
    "detenteur": "ARZAK SEEDS TRADE",
    "detenteurId": "arzak-seeds-trade",
@@ -58389,6 +57582,158 @@
    ]
   },
   {
+   "id": "basf-maroc-gringo",
+   "detenteur": "BASF MAROC",
+   "detenteurId": "basf-maroc",
+   "nomCommercial": "GRINGO",
+   "categorie": "Fongicide",
+   "formulation": "Granulé à disperser dans l'eau (WG)",
+   "tox": "C",
+   "amm": "H11-5-022",
+   "expiration": "2033-10-17",
+   "matieresActives": [
+    "Boscalide(26, 7%)",
+    "Pyraclostrobine(6,7%)"
+   ],
+   "matieresActivesIds": [
+    "boscalide-26-7",
+    "pyraclostrobine-6-7"
+   ],
+   "fournisseurs": [
+    "BASF Agricultural Solutions Deutschland GmbH"
+   ],
+   "usages": [
+    {
+     "usage": "Chou de Bruxelles / Pourriture grise",
+     "culture": "Chou de Bruxelles",
+     "cible": "Pourriture grise",
+     "dose": "1 kg/ha",
+     "dar": "14",
+     "nbAppl": null
+    },
+    {
+     "usage": "Fraisier / Pourriture grise",
+     "culture": "Fraisier",
+     "cible": "Pourriture grise",
+     "dose": "150 g/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Framboisier / Oïdium",
+     "culture": "Framboisier",
+     "cible": "Oïdium",
+     "dose": "0,75 kg/ha",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Framboisier / Pourriture grise",
+     "culture": "Framboisier",
+     "cible": "Pourriture grise",
+     "dose": "1,5 kg/ha",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Haricot vert / Rouille",
+     "culture": "Haricot vert",
+     "cible": "Rouille",
+     "dose": "125 g/hl",
+     "dar": "3",
+     "nbAppl": null
+    },
+    {
+     "usage": "Laitue / Pourriture grise",
+     "culture": "Laitue",
+     "cible": "Pourriture grise",
+     "dose": "1,5 kg/ha",
+     "dar": "14",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Laitue / Sclerotiniose",
+     "culture": "Laitue",
+     "cible": "Sclerotiniose",
+     "dose": "1,5 kg/ha",
+     "dar": "14",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Myrtillier / Pourriture grise",
+     "culture": "Myrtillier",
+     "cible": "Pourriture grise",
+     "dose": "0,5 kg/ha",
+     "dar": "14",
+     "nbAppl": "-"
+    },
+    {
+     "usage": "Oignon / Pourriture grise",
+     "culture": "Oignon",
+     "cible": "Pourriture grise",
+     "dose": "1 kg/ha",
+     "dar": "14",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Plantes aromatiques - excepté la menthe - / Pourriture grise",
+     "culture": "Plantes aromatiques - excepté la menthe -",
+     "cible": "Pourriture grise",
+     "dose": "150 g/hl",
+     "dar": "14",
+     "nbAppl": null
+    },
+    {
+     "usage": "Plantes aromatiques - excepté la menthe - / Rhizoctone",
+     "culture": "Plantes aromatiques - excepté la menthe -",
+     "cible": "Rhizoctone",
+     "dose": "150 g/hl",
+     "dar": "14",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Plantes aromatiques - excepté la menthe - / Sclerotiniose",
+     "culture": "Plantes aromatiques - excepté la menthe -",
+     "cible": "Sclerotiniose",
+     "dose": "150 g/hl",
+     "dar": "14",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Poivron / Oïdium",
+     "culture": "Poivron",
+     "cible": "Oïdium",
+     "dose": "125 g/hl",
+     "dar": "3",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Poivron / Pourriture grise",
+     "culture": "Poivron",
+     "cible": "Pourriture grise",
+     "dose": "125 g/hl",
+     "dar": "3",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Tomate / Cladosporiose",
+     "culture": "Tomate",
+     "cible": "Cladosporiose",
+     "dose": "125 g/hl",
+     "dar": "3",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Tomate / Pourriture grise",
+     "culture": "Tomate",
+     "cible": "Pourriture grise",
+     "dose": "125 g/hl",
+     "dar": "3",
+     "nbAppl": "-"
+    }
+   ]
+  },
+  {
    "id": "basf-maroc-heat-wg",
    "detenteur": "BASF MAROC",
    "detenteurId": "basf-maroc",
@@ -58751,60 +58096,6 @@
    ]
   },
   {
-   "id": "basf-maroc-nexter-10-sc",
-   "detenteur": "BASF MAROC",
-   "detenteurId": "basf-maroc",
-   "nomCommercial": "NEXTER 10 SC",
-   "categorie": "Insecticide-Acaricide",
-   "formulation": "Suspension concentrée (SC)",
-   "tox": "A",
-   "amm": "F03-1-005",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Pyridabène(100 g/l)"
-   ],
-   "matieresActivesIds": [
-    "pyridabene-100-g-l"
-   ],
-   "fournisseurs": [
-    "NISSAN Chemical Europe Sarl"
-   ],
-   "usages": [
-    {
-     "usage": "Agrumes / Acariens",
-     "culture": "Agrumes",
-     "cible": "Acariens",
-     "dose": "150 cc/hl",
-     "dar": "14",
-     "nbAppl": null
-    },
-    {
-     "usage": "Fraisier / Acariens",
-     "culture": "Fraisier",
-     "cible": "Acariens",
-     "dose": "150 cc/hl",
-     "dar": "3",
-     "nbAppl": null
-    },
-    {
-     "usage": "Pommier / Acariens",
-     "culture": "Pommier",
-     "cible": "Acariens",
-     "dose": "200 cc/hl",
-     "dar": "14",
-     "nbAppl": null
-    },
-    {
-     "usage": "Tomate / Mouche blanche",
-     "culture": "Tomate",
-     "cible": "Mouche blanche",
-     "dose": "150 cc/hl",
-     "dar": "3",
-     "nbAppl": null
-    }
-   ]
-  },
-  {
    "id": "basf-maroc-optimo-duo",
    "detenteur": "BASF MAROC",
    "detenteurId": "basf-maroc",
@@ -58823,7 +58114,7 @@
     "pyraclostrobine-130-g-l"
    ],
    "fournisseurs": [
-    "BASF SE"
+    "BASF Agricultural Solutions Deutschland GmbH"
    ],
    "usages": [
     {
@@ -58841,54 +58132,6 @@
      "dose": "0,5 L/ha",
      "dar": "42",
      "nbAppl": "2"
-    }
-   ]
-  },
-  {
-   "id": "basf-maroc-orvego",
-   "detenteur": "BASF MAROC",
-   "detenteurId": "basf-maroc",
-   "nomCommercial": "ORVEGO",
-   "categorie": "Fongicide",
-   "formulation": "Suspension concentrée (SC)",
-   "tox": "C",
-   "amm": "F11-0-020",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Amétoctradine(300 g/l)",
-    "Diméthomorphe(225 g/l)"
-   ],
-   "matieresActivesIds": [
-    "ametoctradine-300-g-l",
-    "dimethomorphe-225-g-l"
-   ],
-   "fournisseurs": [
-    "BASF SE"
-   ],
-   "usages": [
-    {
-     "usage": "Pomme de terre / Mildiou",
-     "culture": "Pomme de terre",
-     "cible": "Mildiou",
-     "dose": "0,8 l/ha",
-     "dar": "7",
-     "nbAppl": null
-    },
-    {
-     "usage": "Tomate / Mildiou",
-     "culture": "Tomate",
-     "cible": "Mildiou",
-     "dose": "0,8 l/ha",
-     "dar": "3",
-     "nbAppl": null
-    },
-    {
-     "usage": "Vigne / Mildiou",
-     "culture": "Vigne",
-     "cible": "Mildiou",
-     "dose": "0,8 l/ha",
-     "dar": "28",
-     "nbAppl": "3"
     }
    ]
   },
@@ -59000,108 +58243,6 @@
      "cible": "Pourriture grise (Botrytis cinerea)",
      "dose": "80 g/hl",
      "dar": "14",
-     "nbAppl": null
-    }
-   ]
-  },
-  {
-   "id": "basf-maroc-prowl",
-   "detenteur": "BASF MAROC",
-   "detenteurId": "basf-maroc",
-   "nomCommercial": "PROWL",
-   "categorie": "Herbicide",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "B02-7-006",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Pendiméthaline(330 g/l)"
-   ],
-   "matieresActivesIds": [
-    "pendimethaline-330-g-l"
-   ],
-   "fournisseurs": [
-    "BASF SE"
-   ],
-   "usages": [
-    {
-     "usage": "Arachide / Adventices Dicotylédones annuelles",
-     "culture": "Arachide",
-     "cible": "Adventices Dicotylédones annuelles",
-     "dose": "4 l/ha",
-     "dar": "-",
-     "nbAppl": null
-    },
-    {
-     "usage": "Arachide / Adventices Graminées annuelles",
-     "culture": "Arachide",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "4 l/ha",
-     "dar": null,
-     "nbAppl": null
-    },
-    {
-     "usage": "Cotonnier / Adventices Dicotylédones annuelles",
-     "culture": "Cotonnier",
-     "cible": "Adventices Dicotylédones annuelles",
-     "dose": "4 l/ha",
-     "dar": "-",
-     "nbAppl": null
-    },
-    {
-     "usage": "Cotonnier / Adventices Graminées annuelles",
-     "culture": "Cotonnier",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "4 l/ha",
-     "dar": null,
-     "nbAppl": null
-    },
-    {
-     "usage": "Poivron / Adventices Dicotylédones annuelles",
-     "culture": "Poivron",
-     "cible": "Adventices Dicotylédones annuelles",
-     "dose": "4 l/ha",
-     "dar": "-",
-     "nbAppl": null
-    },
-    {
-     "usage": "Poivron / Adventices Graminées annuelles",
-     "culture": "Poivron",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "4 l/ha",
-     "dar": null,
-     "nbAppl": null
-    },
-    {
-     "usage": "Tomate / Adventices Dicotylédones annuelles",
-     "culture": "Tomate",
-     "cible": "Adventices Dicotylédones annuelles",
-     "dose": "4 l/ha",
-     "dar": "-",
-     "nbAppl": null
-    },
-    {
-     "usage": "Tomate / Adventices Graminées annuelles",
-     "culture": "Tomate",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "4 l/ha",
-     "dar": null,
-     "nbAppl": null
-    },
-    {
-     "usage": "Tournesol / Adventices Dicotylédones annuelles",
-     "culture": "Tournesol",
-     "cible": "Adventices Dicotylédones annuelles",
-     "dose": "4 l/ha",
-     "dar": "-",
-     "nbAppl": null
-    },
-    {
-     "usage": "Tournesol / Adventices Graminées annuelles",
-     "culture": "Tournesol",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "4 l/ha",
-     "dar": null,
      "nbAppl": null
     }
    ]
@@ -60895,48 +60036,6 @@
    ]
   },
   {
-   "id": "bayer-sa-cayunis-ec-325",
-   "detenteur": "BAYER SA",
-   "detenteurId": "bayer-sa",
-   "nomCommercial": "CAYUNIS EC 325",
-   "categorie": "Fongicide",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "H12-0-009",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Bixafen(75g/l)",
-    "Spiroxamine(150g/l)",
-    "Trifloxystrobine(100g/l)"
-   ],
-   "matieresActivesIds": [
-    "bixafen-75g-l",
-    "spiroxamine-150g-l",
-    "trifloxystrobine-100g-l"
-   ],
-   "fournisseurs": [
-    "BAYER AG"
-   ],
-   "usages": [
-    {
-     "usage": "Blés / Rouilles",
-     "culture": "Blés",
-     "cible": "Rouilles",
-     "dose": "0.8 l/ha",
-     "dar": "-",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Blés / Septoriose",
-     "culture": "Blés",
-     "cible": "Septoriose",
-     "dose": "0.8 l/ha",
-     "dar": "--",
-     "nbAppl": "2"
-    }
-   ]
-  },
-  {
    "id": "bayer-sa-challenge-600-sc",
    "detenteur": "BAYER SA",
    "detenteurId": "bayer-sa",
@@ -61735,84 +60834,6 @@
    ]
   },
   {
-   "id": "bayer-sa-flipper-ew-479-8",
-   "detenteur": "BAYER SA",
-   "detenteurId": "bayer-sa",
-   "nomCommercial": "FLIPPER EW 479.8",
-   "categorie": "Insecticide-Acaricide",
-   "formulation": "Emulsion de type aqueux (EW)",
-   "tox": "C",
-   "amm": "H10-0-001",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Carboxylic acids potassium salts(479.8 g/l)"
-   ],
-   "matieresActivesIds": [
-    "carboxylic-acids-potassium-salts-479-8-g-l"
-   ],
-   "fournisseurs": [
-    "DE SANGOSSE"
-   ],
-   "usages": [
-    {
-     "usage": "Haricot vert / Acariens",
-     "culture": "Haricot vert",
-     "cible": "Acariens",
-     "dose": "10 l/ha",
-     "dar": "Non requis",
-     "nbAppl": "3"
-    },
-    {
-     "usage": "Poivron / Acariens",
-     "culture": "Poivron",
-     "cible": "Acariens",
-     "dose": "10 l/ha",
-     "dar": "Non requis",
-     "nbAppl": "3"
-    },
-    {
-     "usage": "Poivron / Mouche blanche",
-     "culture": "Poivron",
-     "cible": "Mouche blanche",
-     "dose": "10 l/ha",
-     "dar": "Non requis",
-     "nbAppl": "3"
-    },
-    {
-     "usage": "Poivron / Thrips",
-     "culture": "Poivron",
-     "cible": "Thrips",
-     "dose": "10l/ha",
-     "dar": "Non requis",
-     "nbAppl": "3"
-    },
-    {
-     "usage": "Tomate / Acariose bronzée",
-     "culture": "Tomate",
-     "cible": "Acariose bronzée",
-     "dose": "10 l/ha",
-     "dar": "Non requis",
-     "nbAppl": "3"
-    },
-    {
-     "usage": "Tomate / Mineuse (Tuta absoluta)",
-     "culture": "Tomate",
-     "cible": "Mineuse (Tuta absoluta)",
-     "dose": "10 l/ha",
-     "dar": "Non requis",
-     "nbAppl": "3"
-    },
-    {
-     "usage": "Tomate / Mouche blanche",
-     "culture": "Tomate",
-     "cible": "Mouche blanche",
-     "dose": "10 l/ha",
-     "dar": "Non requis",
-     "nbAppl": "3"
-    }
-   ]
-  },
-  {
    "id": "bayer-sa-hussar-evolution",
    "detenteur": "BAYER SA",
    "detenteurId": "bayer-sa",
@@ -62142,6 +61163,38 @@
      "cible": "Pourriture grise",
      "dose": "50 cc/hl",
      "dar": "3",
+     "nbAppl": "2"
+    }
+   ]
+  },
+  {
+   "id": "bayer-sa-luna-max",
+   "detenteur": "BAYER SA",
+   "detenteurId": "bayer-sa",
+   "nomCommercial": "LUNA MAX",
+   "categorie": "Fongicide",
+   "formulation": "Suspension-émulsion (SE)",
+   "tox": "C",
+   "amm": "F11-9-023",
+   "expiration": "2035-05-19",
+   "matieresActives": [
+    "Fluopyram(75 g/l)",
+    "Spiroxamine(200 g/l)"
+   ],
+   "matieresActivesIds": [
+    "fluopyram-75-g-l",
+    "spiroxamine-200-g-l"
+   ],
+   "fournisseurs": [
+    "BAYER AG"
+   ],
+   "usages": [
+    {
+     "usage": "Vigne / Oïdium",
+     "culture": "Vigne",
+     "cible": "Oïdium",
+     "dose": "1l/ha",
+     "dar": "35",
      "nbAppl": "2"
     }
    ]
@@ -64418,38 +63471,6 @@
      "cible": "Mouche blanche",
      "dose": "1.5L/ha",
      "dar": "1",
-     "nbAppl": null
-    }
-   ]
-  },
-  {
-   "id": "bodor-cuprisoufre-afepasa",
-   "detenteur": "BODOR",
-   "detenteurId": "bodor",
-   "nomCommercial": "CUPRISOUFRE AFEPASA",
-   "categorie": "Fongicide",
-   "formulation": "Poudre pour poudrage (DP)",
-   "tox": "C",
-   "amm": "E11-7-057",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Cuivre - oxychlorure de cuivre(4%)",
-    "Soufre(60%)"
-   ],
-   "matieresActivesIds": [
-    "cuivre-oxychlorure-de-cuivre-4",
-    "soufre-60"
-   ],
-   "fournisseurs": [
-    "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)"
-   ],
-   "usages": [
-    {
-     "usage": "Vigne / Oïdium",
-     "culture": "Vigne",
-     "cible": "Oïdium",
-     "dose": "500 g/hl",
-     "dar": "15",
      "nbAppl": null
     }
    ]
@@ -80881,6 +79902,52 @@
    ]
   },
   {
+   "id": "marbar-menno-florades",
+   "detenteur": "MARBAR",
+   "detenteurId": "marbar",
+   "nomCommercial": "MENNO® FLORADES",
+   "categorie": "Fongicide-Bactéricide",
+   "formulation": "Concentré soluble (SL)",
+   "tox": null,
+   "amm": "H11-5-009",
+   "expiration": "2030-07-01",
+   "matieresActives": [
+    "Acide benzoïque(90 g/l)"
+   ],
+   "matieresActivesIds": [
+    "acide-benzoique-90-g-l"
+   ],
+   "fournisseurs": [
+    "MENNO CHEMIE-VERTRIEB GmbH"
+   ],
+   "usages": [
+    {
+     "usage": "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Bactéries et champignons pathogènes",
+     "culture": "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels.",
+     "cible": "Bactéries et champignons pathogènes",
+     "dose": "20 mL/L (soit 2 L/HL)(contact 4 h)",
+     "dar": "N.A",
+     "nbAppl": "1 désinfection"
+    },
+    {
+     "usage": "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Bactéries et champignons pathogènes et virus et viroïdes nuisibles",
+     "culture": "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels.",
+     "cible": "Bactéries et champignons pathogènes et virus et viroïdes nuisibles",
+     "dose": "40 mL/L (soit 4 L/HL)",
+     "dar": "N.A",
+     "nbAppl": "1 désinfection"
+    },
+    {
+     "usage": "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels. / Virus et viroïdes nuisibles",
+     "culture": "Traitements généraux Désinfection Locaux de stockage; Surfaces et matériels.",
+     "cible": "Virus et viroïdes nuisibles",
+     "dose": "40 mL/L (soit 4 L/HL) (contact 16 h)",
+     "dar": "N.A",
+     "nbAppl": "1 désinfection"
+    }
+   ]
+  },
+  {
    "id": "marbar-chimie-admiral-10-ec",
    "detenteur": "MARBAR-CHIMIE",
    "detenteurId": "marbar-chimie",
@@ -81503,42 +80570,6 @@
    ]
   },
   {
-   "id": "marbar-chimie-kacik",
-   "detenteur": "MARBAR-CHIMIE",
-   "detenteurId": "marbar-chimie",
-   "nomCommercial": "KACIK",
-   "categorie": "Herbicide",
-   "formulation": "Granulé à disperser dans l'eau (WG)",
-   "tox": "C",
-   "amm": "F02-9-002",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Cloquintocet-mexyl(100 g/kg)",
-    "Diflufenican(400 g/kg)",
-    "Florasulame(20 g/kg)",
-    "Iodosulfuron-méthyl-sodium(50 g/kg)"
-   ],
-   "matieresActivesIds": [
-    "cloquintocet-mexyl-100-g-kg",
-    "diflufenican-400-g-kg",
-    "florasulame-20-g-kg",
-    "iodosulfuron-methyl-sodium-50-g-kg"
-   ],
-   "fournisseurs": [
-    "ASCENZA AGRO"
-   ],
-   "usages": [
-    {
-     "usage": "Blés / Adventices Dicotylédones et Graminées annuelles",
-     "culture": "Blés",
-     "cible": "Adventices Dicotylédones et Graminées annuelles",
-     "dose": "200 g/ha",
-     "dar": "---",
-     "nbAppl": "1"
-    }
-   ]
-  },
-  {
    "id": "marbar-chimie-malvin-80-wg",
    "detenteur": "MARBAR-CHIMIE",
    "detenteurId": "marbar-chimie",
@@ -82149,68 +81180,6 @@
      "dose": "6 (2x3) l/ha",
      "dar": null,
      "nbAppl": "2"
-    }
-   ]
-  },
-  {
-   "id": "marphyt-concord-100-ec",
-   "detenteur": "MARPHYT",
-   "detenteurId": "marphyt",
-   "nomCommercial": "CONCORD 100 EC",
-   "categorie": "Insecticide",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "B07-5-004",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Alpha-cyperméthrine(100 g/l)"
-   ],
-   "matieresActivesIds": [
-    "alpha-cypermethrine-100-g-l"
-   ],
-   "fournisseurs": [
-    "BASF AGRO BV"
-   ],
-   "usages": [
-    {
-     "usage": "Betterave à sucre / Casside",
-     "culture": "Betterave à sucre",
-     "cible": "Casside",
-     "dose": "100 cc/ha",
-     "dar": "21",
-     "nbAppl": null
-    },
-    {
-     "usage": "Betterave à sucre / Cléone mendiant",
-     "culture": "Betterave à sucre",
-     "cible": "Cléone mendiant",
-     "dose": "150 cc/ha",
-     "dar": "21",
-     "nbAppl": null
-    },
-    {
-     "usage": "Betterave à sucre / Prodenia",
-     "culture": "Betterave à sucre",
-     "cible": "Prodenia",
-     "dose": "150 cc/ha",
-     "dar": "21",
-     "nbAppl": null
-    },
-    {
-     "usage": "Betterave à sucre / Taupins",
-     "culture": "Betterave à sucre",
-     "cible": "Taupins",
-     "dose": "250 cc/ha (une application au stade cotylédone et la deuxième application deux semaines après la pre",
-     "dar": "21",
-     "nbAppl": null
-    },
-    {
-     "usage": "Tomate / Noctuelles",
-     "culture": "Tomate",
-     "cible": "Noctuelles",
-     "dose": "12,5 cc/hl",
-     "dar": "3",
-     "nbAppl": null
     }
    ]
   },
@@ -84437,10 +83406,10 @@
    "amm": "H11-1-013",
    "expiration": "2035-10-17",
    "matieresActives": [
-    "Oxyfluorfène(1.5 l/ha)"
+    "Oxyfluorfène(240 g/L)"
    ],
    "matieresActivesIds": [
-    "oxyfluorfene-1-5-l-ha"
+    "oxyfluorfene-240-g-l"
    ],
    "fournisseurs": [
     "AGRIA SA"
@@ -90899,108 +89868,6 @@
    ]
   },
   {
-   "id": "proteco-assama-250-sc",
-   "detenteur": "PROTECO",
-   "detenteurId": "proteco",
-   "nomCommercial": "ASSAMA 250 SC",
-   "categorie": "Fongicide",
-   "formulation": "Suspension concentrée (SC)",
-   "tox": "C",
-   "amm": "F09-7-004",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Azoxystrobine(250 g/l)"
-   ],
-   "matieresActivesIds": [
-    "azoxystrobine-250-g-l"
-   ],
-   "fournisseurs": [
-    "ALMANDINE CORPORATION SA"
-   ],
-   "usages": [
-    {
-     "usage": "Blés / Rouilles",
-     "culture": "Blés",
-     "cible": "Rouilles",
-     "dose": "0,8 l/ha",
-     "dar": "42",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Blés / Septoriose",
-     "culture": "Blés",
-     "cible": "Septoriose",
-     "dose": "0,8 l/ha",
-     "dar": "42",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Courgette / Oïdium",
-     "culture": "Courgette",
-     "cible": "Oïdium",
-     "dose": "0,6 l/ha",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Fraisier / Oïdium",
-     "culture": "Fraisier",
-     "cible": "Oïdium",
-     "dose": "0,8 l/ha",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Haricot vert / Anthracnose",
-     "culture": "Haricot vert",
-     "cible": "Anthracnose",
-     "dose": "1 l/ha",
-     "dar": "7",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Poivron / Oïdium",
-     "culture": "Poivron",
-     "cible": "Oïdium",
-     "dose": "50 cc/hl",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Pomme de terre / Mildiou",
-     "culture": "Pomme de terre",
-     "cible": "Mildiou",
-     "dose": "75 cc/hl",
-     "dar": "30",
-     "nbAppl": "3"
-    },
-    {
-     "usage": "Tomate / Mildiou",
-     "culture": "Tomate",
-     "cible": "Mildiou",
-     "dose": "50 cc/hl",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Tomate / Oïdium",
-     "culture": "Tomate",
-     "cible": "Oïdium",
-     "dose": "50 cc/hl",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Vigne / Mildiou",
-     "culture": "Vigne",
-     "cible": "Mildiou",
-     "dose": "75 cc/hl",
-     "dar": "30",
-     "nbAppl": "2"
-    }
-   ]
-  },
-  {
    "id": "proteco-assama-top-325-sc",
    "detenteur": "PROTECO",
    "detenteurId": "proteco",
@@ -91037,108 +89904,6 @@
      "dose": "75 cc/hl",
      "dar": "3",
      "nbAppl": null
-    }
-   ]
-  },
-  {
-   "id": "proteco-azur-250-sc",
-   "detenteur": "PROTECO",
-   "detenteurId": "proteco",
-   "nomCommercial": "AZUR 250 SC",
-   "categorie": "Fongicide",
-   "formulation": "Suspension concentrée (SC)",
-   "tox": "C",
-   "amm": "F06-1-013",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Azoxystrobine(250 g/l)"
-   ],
-   "matieresActivesIds": [
-    "azoxystrobine-250-g-l"
-   ],
-   "fournisseurs": [
-    "ALMANDINE CORPORATION SA"
-   ],
-   "usages": [
-    {
-     "usage": "Blés / Rouille",
-     "culture": "Blés",
-     "cible": "Rouille",
-     "dose": "0,8l/ha",
-     "dar": "42",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Blés / Septoriose",
-     "culture": "Blés",
-     "cible": "Septoriose",
-     "dose": "0,8l/ha",
-     "dar": "42",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Courgette / Oïdium",
-     "culture": "Courgette",
-     "cible": "Oïdium",
-     "dose": "0,6 l/ha",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Fraisier / Oïdium",
-     "culture": "Fraisier",
-     "cible": "Oïdium",
-     "dose": "0,8 l/ha",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Haricot vert / Anthracnose",
-     "culture": "Haricot vert",
-     "cible": "Anthracnose",
-     "dose": "1l/ha",
-     "dar": "7",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Poivron / Oïdium",
-     "culture": "Poivron",
-     "cible": "Oïdium",
-     "dose": "50 cc/hl",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Pomme de terre / Mildiou",
-     "culture": "Pomme de terre",
-     "cible": "Mildiou",
-     "dose": "75 cc/hl",
-     "dar": "30",
-     "nbAppl": "3"
-    },
-    {
-     "usage": "Tomate / Mildiou",
-     "culture": "Tomate",
-     "cible": "Mildiou",
-     "dose": "50 cc/hl",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Tomate / Oïdium",
-     "culture": "Tomate",
-     "cible": "Oïdium",
-     "dose": "50 cc/hl",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Vigne / Mildiou",
-     "culture": "Vigne",
-     "cible": "Mildiou",
-     "dose": "75 cc/hl",
-     "dar": "30",
-     "nbAppl": "2"
     }
    ]
   },
@@ -92935,44 +91700,6 @@
      "dose": "25 cc/hl",
      "dar": "3",
      "nbAppl": "3"
-    }
-   ]
-  },
-  {
-   "id": "protectagri-pilarsys",
-   "detenteur": "PROTECTAGRI",
-   "detenteurId": "protectagri",
-   "nomCommercial": "PILARSYS",
-   "categorie": "Fongicide",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "F11-1-009",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Myclobutanil(25%)"
-   ],
-   "matieresActivesIds": [
-    "myclobutanil-25"
-   ],
-   "fournisseurs": [
-    "PILARQUIM (SHANGHAI) CO., LTD"
-   ],
-   "usages": [
-    {
-     "usage": "Tomate / Oïdium",
-     "culture": "Tomate",
-     "cible": "Oïdium",
-     "dose": "25 cc/hl",
-     "dar": "3",
-     "nbAppl": null
-    },
-    {
-     "usage": "Vigne / Oïdium",
-     "culture": "Vigne",
-     "cible": "Oïdium",
-     "dose": "120 cc/ha",
-     "dar": "14",
-     "nbAppl": null
     }
    ]
   },
@@ -100421,82 +99148,6 @@
    ]
   },
   {
-   "id": "soprochiba-gibb-plus",
-   "detenteur": "SOPROCHIBA",
-   "detenteurId": "soprochiba",
-   "nomCommercial": "GIBB PLUS",
-   "categorie": "Régulateur de croissance",
-   "formulation": "Concentré soluble (SL)",
-   "tox": "N",
-   "amm": "F03-2-012",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Gibbérellines A4-A7(10 g/l)"
-   ],
-   "matieresActivesIds": [
-    "gibberellines-a4-a7-10-g-l"
-   ],
-   "fournisseurs": [
-    "GLOBACHEM"
-   ],
-   "usages": [
-    {
-     "usage": "Poirier / Amélioration de rendement",
-     "culture": "Poirier",
-     "cible": "Amélioration de rendement",
-     "dose": "700 cc/ha de haie",
-     "dar": "NR",
-     "nbAppl": null
-    },
-    {
-     "usage": "Pommier / Rugosité de la pleure",
-     "culture": "Pommier",
-     "cible": "Rugosité de la pleure",
-     "dose": "30 cc/hl",
-     "dar": "NR",
-     "nbAppl": "1-4"
-    }
-   ]
-  },
-  {
-   "id": "soprochiba-gibb3",
-   "detenteur": "SOPROCHIBA",
-   "detenteurId": "soprochiba",
-   "nomCommercial": "GIBB3",
-   "categorie": "Régulateur de croissance",
-   "formulation": "Tablettes solubles dans l’eau (ST)",
-   "tox": "N",
-   "amm": "E04-6-012",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Acide gibbérellique(10%)"
-   ],
-   "matieresActivesIds": [
-    "acide-gibberellique-10"
-   ],
-   "fournisseurs": [
-    "GLOBACHEM"
-   ],
-   "usages": [
-    {
-     "usage": "Agrumes: Clémentinier / Action sur le grossissement des fruits",
-     "culture": "Agrumes: Clémentinier",
-     "cible": "Action sur le grossissement des fruits",
-     "dose": "1 tb/hl",
-     "dar": "-",
-     "nbAppl": null
-    },
-    {
-     "usage": "Agrumes: Clémentinier / Action sur le processus de la nouaison",
-     "culture": "Agrumes: Clémentinier",
-     "cible": "Action sur le processus de la nouaison",
-     "dose": "1 tb/hl",
-     "dar": "-",
-     "nbAppl": null
-    }
-   ]
-  },
-  {
    "id": "soprochiba-gibbalin",
    "detenteur": "SOPROCHIBA",
    "detenteurId": "soprochiba",
@@ -100625,44 +99276,6 @@
      "dose": "50 cc/hl",
      "dar": "3",
      "nbAppl": "3"
-    }
-   ]
-  },
-  {
-   "id": "soprochiba-globarryll-100",
-   "detenteur": "SOPROCHIBA",
-   "detenteurId": "soprochiba",
-   "nomCommercial": "GLOBARRYLL 100",
-   "categorie": "Régulateur de croissance",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "F03-2-014",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "6-benzyladénine(100 g/l)"
-   ],
-   "matieresActivesIds": [
-    "6-benzyladenine-100-g-l"
-   ],
-   "fournisseurs": [
-    "GLOBACHEM"
-   ],
-   "usages": [
-    {
-     "usage": "Poirier / Régulation de la fructification",
-     "culture": "Poirier",
-     "cible": "Régulation de la fructification",
-     "dose": "1,34 l/ha de haie",
-     "dar": "NR",
-     "nbAppl": null
-    },
-    {
-     "usage": "Pommier / Régulation de la fructification",
-     "culture": "Pommier",
-     "cible": "Régulation de la fructification",
-     "dose": "1 l/ha de haie",
-     "dar": "NR",
-     "nbAppl": null
     }
    ]
   },
@@ -101803,52 +100416,6 @@
      "dose": "5 kg/ha",
      "dar": "NR",
      "nbAppl": "1"
-    }
-   ]
-  },
-  {
-   "id": "soprochiba-topenco-100-ec",
-   "detenteur": "SOPROCHIBA",
-   "detenteurId": "soprochiba",
-   "nomCommercial": "TOPENCO 100 EC",
-   "categorie": "Fongicide",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "E05-6-014",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Penconazole(100 g/l)"
-   ],
-   "matieresActivesIds": [
-    "penconazole-100-g-l"
-   ],
-   "fournisseurs": [
-    "GLOBACHEM"
-   ],
-   "usages": [
-    {
-     "usage": "Melon / Oïdium",
-     "culture": "Melon",
-     "cible": "Oïdium",
-     "dose": "15 cc/hl",
-     "dar": "7",
-     "nbAppl": null
-    },
-    {
-     "usage": "Tomate / Oïdium",
-     "culture": "Tomate",
-     "cible": "Oïdium",
-     "dose": "25 cc/hl",
-     "dar": "7",
-     "nbAppl": null
-    },
-    {
-     "usage": "Vigne / Oïdium",
-     "culture": "Vigne",
-     "cible": "Oïdium",
-     "dose": "25 cc/hl",
-     "dar": "30",
-     "nbAppl": null
     }
    ]
   },
@@ -103917,46 +102484,6 @@
    ]
   },
   {
-   "id": "syngenta-maroc-ampexio",
-   "detenteur": "SYNGENTA MAROC",
-   "detenteurId": "syngenta-maroc",
-   "nomCommercial": "AMPEXIO",
-   "categorie": "Fongicide",
-   "formulation": "Granulé à disperser dans l'eau (WG)",
-   "tox": "C",
-   "amm": "H06-1-007",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Mandipropamide(250 g/kg)",
-    "Zoxamide(240 g/kg)"
-   ],
-   "matieresActivesIds": [
-    "mandipropamide-250-g-kg",
-    "zoxamide-240-g-kg"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    {
-     "usage": "Tomate / Mildiou",
-     "culture": "Tomate",
-     "cible": "Mildiou",
-     "dose": "0.5 kg/ha",
-     "dar": "3",
-     "nbAppl": "2"
-    },
-    {
-     "usage": "Vigne / Mildiou",
-     "culture": "Vigne",
-     "cible": "Mildiou",
-     "dose": "0,5 kg/hl",
-     "dar": "21",
-     "nbAppl": "1"
-    }
-   ]
-  },
-  {
    "id": "syngenta-maroc-ampligo-150-zc",
    "detenteur": "SYNGENTA MAROC",
    "detenteurId": "syngenta-maroc",
@@ -105815,48 +104342,6 @@
    ]
   },
   {
-   "id": "syngenta-maroc-navigator",
-   "detenteur": "SYNGENTA MAROC",
-   "detenteurId": "syngenta-maroc",
-   "nomCommercial": "NAVIGATOR",
-   "categorie": "Herbicide",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "F06-5-007",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Cloquintocet-méxyl (Safener)(11,25 g/l)",
-    "Florasulame(5 g/l)",
-    "Pinoxaden(45 g/l)"
-   ],
-   "matieresActivesIds": [
-    "cloquintocet-mexyl-safener-11-25-g-l",
-    "florasulame-5-g-l",
-    "pinoxaden-45-g-l"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    {
-     "usage": "Blés / Adventices Dicotylédones annuelles",
-     "culture": "Blés",
-     "cible": "Adventices Dicotylédones annuelles",
-     "dose": "1 l/ha",
-     "dar": null,
-     "nbAppl": "1"
-    },
-    {
-     "usage": "Blés / Adventices Graminées annuelles",
-     "culture": "Blés",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "1 l/ha",
-     "dar": null,
-     "nbAppl": "1"
-    }
-   ]
-  },
-  {
    "id": "syngenta-maroc-nemathorin-10-g",
    "detenteur": "SYNGENTA MAROC",
    "detenteurId": "syngenta-maroc",
@@ -107578,50 +106063,6 @@
      "cible": "Caries",
      "dose": "30 cc/ql",
      "dar": "NR",
-     "nbAppl": "1"
-    }
-   ]
-  },
-  {
-   "id": "syngenta-maroc-swipe",
-   "detenteur": "SYNGENTA MAROC",
-   "detenteurId": "syngenta-maroc",
-   "nomCommercial": "SWIPE",
-   "categorie": "Herbicide",
-   "formulation": "Concentré émulsionnable (EC)",
-   "tox": "C",
-   "amm": "F06-5-006",
-   "expiration": "2026-10-05",
-   "matieresActives": [
-    "Clodinafop-propargyl(30 g/l)",
-    "Cloquintocet-méxyl (Safener)(7,5 g/l)",
-    "Florasulame(7,5 g/l)",
-    "Pinoxaden(30 g/l)"
-   ],
-   "matieresActivesIds": [
-    "clodinafop-propargyl-30-g-l",
-    "cloquintocet-mexyl-safener-7-5-g-l",
-    "florasulame-7-5-g-l",
-    "pinoxaden-30-g-l"
-   ],
-   "fournisseurs": [
-    "SYNGENTA CROP PROTECTION AG"
-   ],
-   "usages": [
-    {
-     "usage": "Blés / Adventices Dicotylédones annuelles",
-     "culture": "Blés",
-     "cible": "Adventices Dicotylédones annuelles",
-     "dose": "1l/ha",
-     "dar": null,
-     "nbAppl": "1"
-    },
-    {
-     "usage": "Blés / Adventices Graminées annuelles",
-     "culture": "Blés",
-     "cible": "Adventices Graminées annuelles",
-     "dose": "1 l/ha",
-     "dar": null,
      "nbAppl": "1"
     }
    ]

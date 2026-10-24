@@ -1,10 +1,337 @@
 {
  "meta": {
   "role": "Changements de l'index ONSSA (IndPesticide.aspx) d'un relevé à l'autre.",
-  "dernierConstat": "2026-10-01",
-  "nbEvenements": 90
+  "dernierConstat": "2026-10-20",
+  "nbEvenements": 116
  },
  "evenements": [
+  {
+   "date": "2026-10-20",
+   "type": "usages",
+   "produit": "amaroc-allerte-10-ec",
+   "nomCommercial": "ALLERTE 10%EC",
+   "detenteurId": "amaroc",
+   "detenteur": "AMAROC",
+   "matieres": [
+    "Pyriproxyfène(100 g/l)"
+   ],
+   "detail": "2 → 4 usage(s)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "soprochiba-topenco-100-ec",
+   "nomCommercial": "TOPENCO 100 EC",
+   "detenteurId": "soprochiba",
+   "detenteur": "SOPROCHIBA",
+   "matieres": [
+    "Penconazole(100 g/l)"
+   ],
+   "detail": "AMM E05-6-014 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "syngenta-maroc-swipe",
+   "nomCommercial": "SWIPE",
+   "detenteurId": "syngenta-maroc",
+   "detenteur": "SYNGENTA MAROC",
+   "matieres": [
+    "Clodinafop-propargyl(30 g/l)",
+    "Cloquintocet-méxyl (Safener)(7,5 g/l)",
+    "Florasulame(7,5 g/l)",
+    "Pinoxaden(30 g/l)"
+   ],
+   "detail": "AMM F06-5-006 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "basf-maroc-prowl",
+   "nomCommercial": "PROWL",
+   "detenteurId": "basf-maroc",
+   "detenteur": "BASF MAROC",
+   "matieres": [
+    "Pendiméthaline(330 g/l)"
+   ],
+   "detail": "AMM B02-7-006 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "arzak-seeds-trade-protector-400-sc",
+   "nomCommercial": "PROTECTOR 400 SC",
+   "detenteurId": "arzak-seeds-trade",
+   "detenteur": "ARZAK SEEDS TRADE",
+   "matieres": [
+    "Pyriméthanil(400 g/l)"
+   ],
+   "detail": "AMM F05-5-016 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "protectagri-pilarsys",
+   "nomCommercial": "PILARSYS",
+   "detenteurId": "protectagri",
+   "detenteur": "PROTECTAGRI",
+   "matieres": [
+    "Myclobutanil(25%)"
+   ],
+   "detail": "AMM F11-1-009 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "basf-maroc-orvego",
+   "nomCommercial": "ORVEGO",
+   "detenteurId": "basf-maroc",
+   "detenteur": "BASF MAROC",
+   "matieres": [
+    "Amétoctradine(300 g/l)",
+    "Diméthomorphe(225 g/l)"
+   ],
+   "detail": "AMM F11-0-020 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "basf-maroc-nexter-10-sc",
+   "nomCommercial": "NEXTER 10 SC",
+   "detenteurId": "basf-maroc",
+   "detenteur": "BASF MAROC",
+   "matieres": [
+    "Pyridabène(100 g/l)"
+   ],
+   "detail": "AMM F03-1-005 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "syngenta-maroc-navigator",
+   "nomCommercial": "NAVIGATOR",
+   "detenteurId": "syngenta-maroc",
+   "detenteur": "SYNGENTA MAROC",
+   "matieres": [
+    "Cloquintocet-méxyl (Safener)(11,25 g/l)",
+    "Florasulame(5 g/l)",
+    "Pinoxaden(45 g/l)"
+   ],
+   "detail": "AMM F06-5-007 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "marbar-chimie-kacik",
+   "nomCommercial": "KACIK",
+   "detenteurId": "marbar-chimie",
+   "detenteur": "MARBAR-CHIMIE",
+   "matieres": [
+    "Cloquintocet-mexyl(100 g/kg)",
+    "Diflufenican(400 g/kg)",
+    "Florasulame(20 g/kg)",
+    "Iodosulfuron-méthyl-sodium(50 g/kg)"
+   ],
+   "detail": "AMM F02-9-002 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "agro-spray-technic-golazo-4-sc",
+   "nomCommercial": "GOLAZO 4 SC",
+   "detenteurId": "agro-spray-technic",
+   "detenteur": "AGRO SPRAY TECHNIC",
+   "matieres": [
+    "Oxyfluorfène(41%)"
+   ],
+   "detail": "AMM F03-6-007 (échéance connue : 2026-10-17)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "soprochiba-globarryll-100",
+   "nomCommercial": "GLOBARRYLL 100",
+   "detenteurId": "soprochiba",
+   "detenteur": "SOPROCHIBA",
+   "matieres": [
+    "6-benzyladénine(100 g/l)"
+   ],
+   "detail": "AMM F03-2-014 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "soprochiba-gibb3",
+   "nomCommercial": "GIBB3",
+   "detenteurId": "soprochiba",
+   "detenteur": "SOPROCHIBA",
+   "matieres": [
+    "Acide gibbérellique(10%)"
+   ],
+   "detail": "AMM E04-6-012 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "soprochiba-gibb-plus",
+   "nomCommercial": "GIBB PLUS",
+   "detenteurId": "soprochiba",
+   "detenteur": "SOPROCHIBA",
+   "matieres": [
+    "Gibbérellines A4-A7(10 g/l)"
+   ],
+   "detail": "AMM F03-2-012 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "aci-equipments-fluent-150-ec",
+   "nomCommercial": "FLUENT 150 EC",
+   "detenteurId": "aci-equipments",
+   "detenteur": "ACI EQUIPMENTS",
+   "matieres": [
+    "Fluazifop-P-butyl(150 g/l)"
+   ],
+   "detail": "AMM F11-4-002 (échéance connue : 2026-10-13)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "bayer-sa-flipper-ew-479-8",
+   "nomCommercial": "FLIPPER EW 479.8",
+   "detenteurId": "bayer-sa",
+   "detenteur": "BAYER SA",
+   "matieres": [
+    "Carboxylic acids potassium salts(479.8 g/l)"
+   ],
+   "detail": "AMM H10-0-001 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "bodor-cuprisoufre-afepasa",
+   "nomCommercial": "CUPRISOUFRE AFEPASA",
+   "detenteurId": "bodor",
+   "detenteur": "BODOR",
+   "matieres": [
+    "Cuivre - oxychlorure de cuivre(4%)",
+    "Soufre(60%)"
+   ],
+   "detail": "AMM E11-7-057 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "marphyt-concord-100-ec",
+   "nomCommercial": "CONCORD 100 EC",
+   "detenteurId": "marphyt",
+   "detenteur": "MARPHYT",
+   "matieres": [
+    "Alpha-cyperméthrine(100 g/l)"
+   ],
+   "detail": "AMM B07-5-004 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "bayer-sa-cayunis-ec-325",
+   "nomCommercial": "CAYUNIS EC 325",
+   "detenteurId": "bayer-sa",
+   "detenteur": "BAYER SA",
+   "matieres": [
+    "Bixafen(75g/l)",
+    "Spiroxamine(150g/l)",
+    "Trifloxystrobine(100g/l)"
+   ],
+   "detail": "AMM H12-0-009 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "proteco-azur-250-sc",
+   "nomCommercial": "AZUR 250 SC",
+   "detenteurId": "proteco",
+   "detenteur": "PROTECO",
+   "matieres": [
+    "Azoxystrobine(250 g/l)"
+   ],
+   "detail": "AMM F06-1-013 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "proteco-assama-250-sc",
+   "nomCommercial": "ASSAMA 250 SC",
+   "detenteurId": "proteco",
+   "detenteur": "PROTECO",
+   "matieres": [
+    "Azoxystrobine(250 g/l)"
+   ],
+   "detail": "AMM F09-7-004 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "sorti",
+   "produit": "syngenta-maroc-ampexio",
+   "nomCommercial": "AMPEXIO",
+   "detenteurId": "syngenta-maroc",
+   "detenteur": "SYNGENTA MAROC",
+   "matieres": [
+    "Mandipropamide(250 g/kg)",
+    "Zoxamide(240 g/kg)"
+   ],
+   "detail": "AMM H06-1-007 (échéance connue : 2026-10-05)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "nouveau",
+   "produit": "marbar-menno-florades",
+   "nomCommercial": "MENNO® FLORADES",
+   "detenteurId": "marbar",
+   "detenteur": "MARBAR",
+   "matieres": [
+    "Acide benzoïque(90 g/l)"
+   ],
+   "detail": "AMM H11-5-009 jusqu'au 2030-07-01, 3 usage(s)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "nouveau",
+   "produit": "bayer-sa-luna-max",
+   "nomCommercial": "LUNA MAX",
+   "detenteurId": "bayer-sa",
+   "detenteur": "BAYER SA",
+   "matieres": [
+    "Fluopyram(75 g/l)",
+    "Spiroxamine(200 g/l)"
+   ],
+   "detail": "AMM F11-9-023 jusqu'au 2035-05-19, 1 usage(s)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "nouveau",
+   "produit": "basf-maroc-gringo",
+   "nomCommercial": "GRINGO",
+   "detenteurId": "basf-maroc",
+   "detenteur": "BASF MAROC",
+   "matieres": [
+    "Boscalide(26, 7%)",
+    "Pyraclostrobine(6,7%)"
+   ],
+   "detail": "AMM H11-5-022 jusqu'au 2033-10-17, 16 usage(s)"
+  },
+  {
+   "date": "2026-10-20",
+   "type": "nouveau",
+   "produit": "agrimatco-cascadia",
+   "nomCommercial": "CASCADIA",
+   "detenteurId": "agrimatco",
+   "detenteur": "AGRIMATCO",
+   "matieres": [
+    "Bacillus subtilis (souche IAB/BS03)(10^8 CFU/mL)"
+   ],
+   "detail": "AMM H05-5-024 jusqu'au 2036-07-01, 6 usage(s)"
+  },
   {
    "date": "2026-10-01",
    "type": "échéance",

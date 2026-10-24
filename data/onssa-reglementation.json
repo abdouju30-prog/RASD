@@ -4,10 +4,10 @@
   "url": "https://eservice.onssa.gov.ma/Reglementation_N.aspx",
   "urlConsolidée": "https://www.onssa.gov.ma/reglementation/reglementation-sectorielle/intrants-agricoles/",
   "attribution": "ONSSA — textes réglementaires produits phytopharmaceutiques — relevé du 2026-10-24",
-  "genere": "2026-10-24T09:07:59",
+  "genere": "2026-10-24T09:13:54",
   "nbTextes": 33,
   "nbNouveaux": 0,
-  "nbMisAJour": 1,
+  "nbMisAJour": 0,
   "avertissement": "Textes publiés par l'ONSSA. Seuls les textes du Bulletin Officiel font foi. Cette liste a une valeur documentaire. Elle ne remplace pas l'index phytosanitaire (Excel) : aucune AMM n'y figure.",
   "majEservice": null,
   "majWww": null,
@@ -30,7 +30,7 @@
    "langue": "fr",
    "dateMiseEnLigne": "2026-10-13",
    "nouveau": false,
-   "misAJour": true,
+   "misAJour": false,
    "premiereVue": "2026-09-13"
   },
   {

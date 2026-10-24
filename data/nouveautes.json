@@ -2,7 +2,7 @@
   "meta": {
     "source": "ONSSA (eservice.onssa.gov.ma) & E-Phy",
     "urlIndex": "https://eservice.onssa.gov.ma/IndPesticide.aspx",
-    "dateGeneration": "2026-10-24T09:08:06",
+    "dateGeneration": "2026-10-24T09:35:29",
     "dateMajOnssa": "20/10/2026 10:49:00",
     "totalEvenements": 71,
     "emailDestinataire": "abdouju30@gmail.com",
@@ -21,8 +21,8 @@
       "id": "evt-1",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : أجروفيت 50 ويب بي",
-      "description": "Le produit أجروفيت 50 ويب بي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : سولفر تريتور سير 80 دي بي",
+      "description": "Le produit سولفر تريتور سير 80 دي بي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -30,7 +30,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "أجروفيت 50 ويب بي",
+        "nomCommercial": "سولفر تريتور سير 80 دي بي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -38,8 +38,8 @@
       "id": "evt-2",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : أزور توب 325 إس سي",
-      "description": "Le produit أزور توب 325 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : ويفوس 48",
+      "description": "Le produit ويفوس 48 est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -47,7 +47,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "أزور توب 325 إس سي",
+        "nomCommercial": "ويفوس 48",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -55,8 +55,8 @@
       "id": "evt-3",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : ألتو-دايكوت 860",
-      "description": "Le produit ألتو-دايكوت 860 est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : ألفا 10",
+      "description": "Le produit ألفا 10 est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -64,7 +64,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "ألتو-دايكوت 860",
+        "nomCommercial": "ألفا 10",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -72,8 +72,8 @@
       "id": "evt-4",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : أجريبورو 607",
-      "description": "Le produit أجريبورو 607 est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : جويل 240 إي سي",
+      "description": "Le produit جويل 240 إي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -81,7 +81,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "أجريبورو 607",
+        "nomCommercial": "جويل 240 إي سي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -89,8 +89,8 @@
       "id": "evt-5",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : قيصر 10 إس سي",
-      "description": "Le produit قيصر 10 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : ألمكتين™",
+      "description": "Le produit ألمكتين™ est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -98,7 +98,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "قيصر 10 إس سي",
+        "nomCommercial": "ألمكتين™",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -106,8 +106,8 @@
       "id": "evt-6",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : أفريسيكت 10",
-      "description": "Le produit أفريسيكت 10 est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : ميغا 2,4-دي",
+      "description": "Le produit ميغا 2,4-دي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -115,7 +115,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "أفريسيكت 10",
+        "nomCommercial": "ميغا 2,4-دي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -123,8 +123,8 @@
       "id": "evt-7",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : أورامي 25 إس سي",
-      "description": "Le produit أورامي 25 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : تويوتو أجرو 240 إي سي",
+      "description": "Le produit تويوتو أجرو 240 إي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -132,7 +132,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "أورامي 25 إس سي",
+        "nomCommercial": "تويوتو أجرو 240 إي سي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -140,8 +140,8 @@
       "id": "evt-8",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : سيثرين 10 إي سي",
-      "description": "Le produit سيثرين 10 إي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : تيوسول 800",
+      "description": "Le produit تيوسول 800 est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -149,7 +149,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "سيثرين 10 إي سي",
+        "nomCommercial": "تيوسول 800",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -157,8 +157,8 @@
       "id": "evt-9",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : تايفون 290 إس سي",
-      "description": "Le produit تايفون 290 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : كوريدا 75 دبليو جي",
+      "description": "Le produit كوريدا 75 دبليو جي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -166,7 +166,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "تايفون 290 إس سي",
+        "nomCommercial": "كوريدا 75 دبليو جي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -174,8 +174,8 @@
       "id": "evt-10",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : فينزار 500 إس سي",
-      "description": "Le produit فينزار 500 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : القاوقي 720 أملاح أمين",
+      "description": "Le produit القاوقي 720 أملاح أمين est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -183,7 +183,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "فينزار 500 إس سي",
+        "nomCommercial": "القاوقي 720 أملاح أمين",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -191,8 +191,8 @@
       "id": "evt-11",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : سوليجور 425",
-      "description": "Le produit سوليجور 425 est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : ريسول إم 80 دبليو بي",
+      "description": "Le produit ريسول إم 80 دبليو بي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -200,7 +200,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "سوليجور 425",
+        "nomCommercial": "ريسول إم 80 دبليو بي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -208,8 +208,8 @@
       "id": "evt-12",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : كاليس 18 إي سي",
-      "description": "Le produit كاليس 18 إي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : بريميوم 40 إس سي",
+      "description": "Le produit بريميوم 40 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -217,7 +217,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "كاليس 18 إي سي",
+        "nomCommercial": "بريميوم 40 إس سي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -225,8 +225,8 @@
       "id": "evt-13",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : كويك 112,5 إي سي",
-      "description": "Le produit كويك 112,5 إي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : بينتابروتيك 48 إس إل",
+      "description": "Le produit بينتابروتيك 48 إس إل est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -234,7 +234,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "كويك 112,5 إي سي",
+        "nomCommercial": "بينتابروتيك 48 إس إل",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -242,8 +242,8 @@
       "id": "evt-14",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : LUNA MAX",
-      "description": "Le produit LUNA MAX est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : لاماردور 170 إف إس",
+      "description": "Le produit لاماردور 170 إف إس est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -251,7 +251,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "LUNA MAX",
+        "nomCommercial": "لاماردور 170 إف إس",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -259,8 +259,8 @@
       "id": "evt-15",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : زيبرا 320 إس سي",
-      "description": "Le produit زيبرا 320 إس سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : القاوقي 480 إي دبليو",
+      "description": "Le produit القاوقي 480 إي دبليو est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -268,7 +268,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "زيبرا 320 إس سي",
+        "nomCommercial": "القاوقي 480 إي دبليو",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -276,8 +276,8 @@
       "id": "evt-16",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : سولف-ستار",
-      "description": "Le produit سولف-ستار est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : مبيد حشري 101 توب",
+      "description": "Le produit مبيد حشري 101 توب est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -285,7 +285,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "سولف-ستار",
+        "nomCommercial": "مبيد حشري 101 توب",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -293,8 +293,8 @@
       "id": "evt-17",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : ستاركلي 20 إس جي",
-      "description": "Le produit ستاركلي 20 إس جي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : باركلي غليفاست 450",
+      "description": "Le produit باركلي غليفاست 450 est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -302,7 +302,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "ستاركلي 20 إس جي",
+        "nomCommercial": "باركلي غليفاست 450",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -310,8 +310,8 @@
       "id": "evt-18",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : تاريك 25 إي سي",
-      "description": "Le produit تاريك 25 إي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : أجريفين 240 إي سي",
+      "description": "Le produit أجريفين 240 إي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -319,7 +319,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "تاريك 25 إي سي",
+        "nomCommercial": "أجريفين 240 إي سي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -327,8 +327,8 @@
       "id": "evt-19",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : أدينتيس 75 دبليو جي",
-      "description": "Le produit أدينتيس 75 دبليو جي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : نومار 1,8 إي سي",
+      "description": "Le produit نومار 1,8 إي سي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -336,7 +336,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "أدينتيس 75 دبليو جي",
+        "nomCommercial": "نومار 1,8 إي سي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },
@@ -344,8 +344,8 @@
       "id": "evt-20",
       "date": "2026-10-24",
       "categorie": "produit",
-      "titre": "Nouvelle homologation détectée : بريزيل 450 دبليو جي",
-      "description": "Le produit بريزيل 450 دبليو جي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
+      "titre": "Nouvelle homologation détectée : روديو 75 دبليو جي",
+      "description": "Le produit روديو 75 دبليو جي est listé dans le registre officiel en ligne de l'ONSSA (MAJ 20/10/2026 10:49:00).",
       "tags": [
         "Nouveau produit",
         "ONSSA e-service",
@@ -353,7 +353,7 @@
       ],
       "criticite": "attention",
       "details": {
-        "nomCommercial": "بريزيل 450 دبليو جي",
+        "nomCommercial": "روديو 75 دبليو جي",
         "source": "eservice.onssa.gov.ma/IndPesticide.aspx"
       }
     },

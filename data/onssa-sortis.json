@@ -1,10 +1,600 @@
 {
  "meta": {
   "role": "Produits présents dans un index ONSSA antérieur et absents du dernier relevé IndPesticide.aspx. L'e-service ne publie que les AMM en vigueur.",
-  "majConstat": "2026-10-09",
-  "nbProduits": 4
+  "majConstat": "2026-10-24",
+  "nbProduits": 25
  },
  "produits": [
+  {
+   "id": "aci-equipments-fluent-150-ec",
+   "detenteur": "ACI EQUIPMENTS",
+   "detenteurId": "aci-equipments",
+   "nomCommercial": "FLUENT 150 EC",
+   "categorie": "Herbicide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "F11-4-002",
+   "expiration": "2026-10-13",
+   "matieresActives": [
+    "Fluazifop-P-butyl(150 g/l)"
+   ],
+   "matieresActivesIds": [
+    "fluazifop-p-butyl-150-g-l"
+   ],
+   "fournisseurs": [
+    "SHARDA CROPCHEM LIMITED"
+   ],
+   "usages": [
+    {
+     "usage": "Fève / Adventices Graminées annuelles",
+     "culture": "Fève",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "0,75 l/ha",
+     "dar": "56",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "agro-spray-technic-golazo-4-sc",
+   "detenteur": "AGRO SPRAY TECHNIC",
+   "detenteurId": "agro-spray-technic",
+   "nomCommercial": "GOLAZO 4 SC",
+   "categorie": "Herbicide",
+   "formulation": "Suspension concentrée (SC)",
+   "tox": "C",
+   "amm": "F03-6-007",
+   "expiration": "2026-10-17",
+   "matieresActives": [
+    "Oxyfluorfène(41%)"
+   ],
+   "matieresActivesIds": [
+    "oxyfluorfene-41"
+   ],
+   "fournisseurs": [
+    "WILLOWOOD USA"
+   ],
+   "usages": [
+    {
+     "usage": "Canne à sucre / Adventices Dicotylédones annuelles",
+     "culture": "Canne à sucre",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "0,75 l/ha",
+     "dar": null,
+     "nbAppl": null
+    },
+    {
+     "usage": "Canne à sucre / Adventices Graminées annuelles",
+     "culture": "Canne à sucre",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "0,75 l/ha",
+     "dar": null,
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "arzak-seeds-trade-protector-400-sc",
+   "detenteur": "ARZAK SEEDS TRADE",
+   "detenteurId": "arzak-seeds-trade",
+   "nomCommercial": "PROTECTOR 400 SC",
+   "categorie": "Fongicide",
+   "formulation": "Suspension concentrée (SC)",
+   "tox": "C",
+   "amm": "F05-5-016",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Pyriméthanil(400 g/l)"
+   ],
+   "matieresActivesIds": [
+    "pyrimethanil-400-g-l"
+   ],
+   "fournisseurs": [
+    "ICA International Chemicals"
+   ],
+   "usages": [
+    {
+     "usage": "Agrumes: Fruits / Pourriture des fruits (Penicillium sp.)",
+     "culture": "Agrumes: Fruits",
+     "cible": "Pourriture des fruits (Penicillium sp.)",
+     "dose": "1000 cc/hl lustrage à la cire (enrobage)",
+     "dar": "NR",
+     "nbAppl": null
+    },
+    {
+     "usage": "Agrumes: Fruits / Pourriture des fruits (Penicillium sp.)",
+     "culture": "Agrumes: Fruits",
+     "cible": "Pourriture des fruits (Penicillium sp.)",
+     "dose": "250 cc/hl (drencher)",
+     "dar": "NR",
+     "nbAppl": null
+    },
+    {
+     "usage": "Vigne / Pourriture grise",
+     "culture": "Vigne",
+     "cible": "Pourriture grise",
+     "dose": "2 l/ha",
+     "dar": "21",
+     "nbAppl": "1"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "basf-maroc-nexter-10-sc",
+   "detenteur": "BASF MAROC",
+   "detenteurId": "basf-maroc",
+   "nomCommercial": "NEXTER 10 SC",
+   "categorie": "Insecticide-Acaricide",
+   "formulation": "Suspension concentrée (SC)",
+   "tox": "A",
+   "amm": "F03-1-005",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Pyridabène(100 g/l)"
+   ],
+   "matieresActivesIds": [
+    "pyridabene-100-g-l"
+   ],
+   "fournisseurs": [
+    "NISSAN Chemical Europe Sarl"
+   ],
+   "usages": [
+    {
+     "usage": "Agrumes / Acariens",
+     "culture": "Agrumes",
+     "cible": "Acariens",
+     "dose": "150 cc/hl",
+     "dar": "14",
+     "nbAppl": null
+    },
+    {
+     "usage": "Fraisier / Acariens",
+     "culture": "Fraisier",
+     "cible": "Acariens",
+     "dose": "150 cc/hl",
+     "dar": "3",
+     "nbAppl": null
+    },
+    {
+     "usage": "Pommier / Acariens",
+     "culture": "Pommier",
+     "cible": "Acariens",
+     "dose": "200 cc/hl",
+     "dar": "14",
+     "nbAppl": null
+    },
+    {
+     "usage": "Tomate / Mouche blanche",
+     "culture": "Tomate",
+     "cible": "Mouche blanche",
+     "dose": "150 cc/hl",
+     "dar": "3",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "basf-maroc-orvego",
+   "detenteur": "BASF MAROC",
+   "detenteurId": "basf-maroc",
+   "nomCommercial": "ORVEGO",
+   "categorie": "Fongicide",
+   "formulation": "Suspension concentrée (SC)",
+   "tox": "C",
+   "amm": "F11-0-020",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Amétoctradine(300 g/l)",
+    "Diméthomorphe(225 g/l)"
+   ],
+   "matieresActivesIds": [
+    "ametoctradine-300-g-l",
+    "dimethomorphe-225-g-l"
+   ],
+   "fournisseurs": [
+    "BASF SE"
+   ],
+   "usages": [
+    {
+     "usage": "Pomme de terre / Mildiou",
+     "culture": "Pomme de terre",
+     "cible": "Mildiou",
+     "dose": "0,8 l/ha",
+     "dar": "7",
+     "nbAppl": null
+    },
+    {
+     "usage": "Tomate / Mildiou",
+     "culture": "Tomate",
+     "cible": "Mildiou",
+     "dose": "0,8 l/ha",
+     "dar": "3",
+     "nbAppl": null
+    },
+    {
+     "usage": "Vigne / Mildiou",
+     "culture": "Vigne",
+     "cible": "Mildiou",
+     "dose": "0,8 l/ha",
+     "dar": "28",
+     "nbAppl": "3"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "basf-maroc-prowl",
+   "detenteur": "BASF MAROC",
+   "detenteurId": "basf-maroc",
+   "nomCommercial": "PROWL",
+   "categorie": "Herbicide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "B02-7-006",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Pendiméthaline(330 g/l)"
+   ],
+   "matieresActivesIds": [
+    "pendimethaline-330-g-l"
+   ],
+   "fournisseurs": [
+    "BASF SE"
+   ],
+   "usages": [
+    {
+     "usage": "Arachide / Adventices Dicotylédones annuelles",
+     "culture": "Arachide",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "4 l/ha",
+     "dar": "-",
+     "nbAppl": null
+    },
+    {
+     "usage": "Arachide / Adventices Graminées annuelles",
+     "culture": "Arachide",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "4 l/ha",
+     "dar": null,
+     "nbAppl": null
+    },
+    {
+     "usage": "Cotonnier / Adventices Dicotylédones annuelles",
+     "culture": "Cotonnier",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "4 l/ha",
+     "dar": "-",
+     "nbAppl": null
+    },
+    {
+     "usage": "Cotonnier / Adventices Graminées annuelles",
+     "culture": "Cotonnier",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "4 l/ha",
+     "dar": null,
+     "nbAppl": null
+    },
+    {
+     "usage": "Poivron / Adventices Dicotylédones annuelles",
+     "culture": "Poivron",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "4 l/ha",
+     "dar": "-",
+     "nbAppl": null
+    },
+    {
+     "usage": "Poivron / Adventices Graminées annuelles",
+     "culture": "Poivron",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "4 l/ha",
+     "dar": null,
+     "nbAppl": null
+    },
+    {
+     "usage": "Tomate / Adventices Dicotylédones annuelles",
+     "culture": "Tomate",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "4 l/ha",
+     "dar": "-",
+     "nbAppl": null
+    },
+    {
+     "usage": "Tomate / Adventices Graminées annuelles",
+     "culture": "Tomate",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "4 l/ha",
+     "dar": null,
+     "nbAppl": null
+    },
+    {
+     "usage": "Tournesol / Adventices Dicotylédones annuelles",
+     "culture": "Tournesol",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "4 l/ha",
+     "dar": "-",
+     "nbAppl": null
+    },
+    {
+     "usage": "Tournesol / Adventices Graminées annuelles",
+     "culture": "Tournesol",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "4 l/ha",
+     "dar": null,
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "bayer-sa-cayunis-ec-325",
+   "detenteur": "BAYER SA",
+   "detenteurId": "bayer-sa",
+   "nomCommercial": "CAYUNIS EC 325",
+   "categorie": "Fongicide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "H12-0-009",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Bixafen(75g/l)",
+    "Spiroxamine(150g/l)",
+    "Trifloxystrobine(100g/l)"
+   ],
+   "matieresActivesIds": [
+    "bixafen-75g-l",
+    "spiroxamine-150g-l",
+    "trifloxystrobine-100g-l"
+   ],
+   "fournisseurs": [
+    "BAYER AG"
+   ],
+   "usages": [
+    {
+     "usage": "Blés / Rouilles",
+     "culture": "Blés",
+     "cible": "Rouilles",
+     "dose": "0.8 l/ha",
+     "dar": "-",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Blés / Septoriose",
+     "culture": "Blés",
+     "cible": "Septoriose",
+     "dose": "0.8 l/ha",
+     "dar": "--",
+     "nbAppl": "2"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "bayer-sa-flipper-ew-479-8",
+   "detenteur": "BAYER SA",
+   "detenteurId": "bayer-sa",
+   "nomCommercial": "FLIPPER EW 479.8",
+   "categorie": "Insecticide-Acaricide",
+   "formulation": "Emulsion de type aqueux (EW)",
+   "tox": "C",
+   "amm": "H10-0-001",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Carboxylic acids potassium salts(479.8 g/l)"
+   ],
+   "matieresActivesIds": [
+    "carboxylic-acids-potassium-salts-479-8-g-l"
+   ],
+   "fournisseurs": [
+    "DE SANGOSSE"
+   ],
+   "usages": [
+    {
+     "usage": "Haricot vert / Acariens",
+     "culture": "Haricot vert",
+     "cible": "Acariens",
+     "dose": "10 l/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Poivron / Acariens",
+     "culture": "Poivron",
+     "cible": "Acariens",
+     "dose": "10 l/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Poivron / Mouche blanche",
+     "culture": "Poivron",
+     "cible": "Mouche blanche",
+     "dose": "10 l/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Poivron / Thrips",
+     "culture": "Poivron",
+     "cible": "Thrips",
+     "dose": "10l/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Tomate / Acariose bronzée",
+     "culture": "Tomate",
+     "cible": "Acariose bronzée",
+     "dose": "10 l/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Tomate / Mineuse (Tuta absoluta)",
+     "culture": "Tomate",
+     "cible": "Mineuse (Tuta absoluta)",
+     "dose": "10 l/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Tomate / Mouche blanche",
+     "culture": "Tomate",
+     "cible": "Mouche blanche",
+     "dose": "10 l/ha",
+     "dar": "Non requis",
+     "nbAppl": "3"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "bodor-cuprisoufre-afepasa",
+   "detenteur": "BODOR",
+   "detenteurId": "bodor",
+   "nomCommercial": "CUPRISOUFRE AFEPASA",
+   "categorie": "Fongicide",
+   "formulation": "Poudre pour poudrage (DP)",
+   "tox": "C",
+   "amm": "E11-7-057",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Cuivre - oxychlorure de cuivre(4%)",
+    "Soufre(60%)"
+   ],
+   "matieresActivesIds": [
+    "cuivre-oxychlorure-de-cuivre-4",
+    "soufre-60"
+   ],
+   "fournisseurs": [
+    "AFEPASA (AZUFRERA Y FERTILIZANTES PALLARES, SA)"
+   ],
+   "usages": [
+    {
+     "usage": "Vigne / Oïdium",
+     "culture": "Vigne",
+     "cible": "Oïdium",
+     "dose": "500 g/hl",
+     "dar": "15",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "marbar-chimie-kacik",
+   "detenteur": "MARBAR-CHIMIE",
+   "detenteurId": "marbar-chimie",
+   "nomCommercial": "KACIK",
+   "categorie": "Herbicide",
+   "formulation": "Granulé à disperser dans l'eau (WG)",
+   "tox": "C",
+   "amm": "F02-9-002",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Cloquintocet-mexyl(100 g/kg)",
+    "Diflufenican(400 g/kg)",
+    "Florasulame(20 g/kg)",
+    "Iodosulfuron-méthyl-sodium(50 g/kg)"
+   ],
+   "matieresActivesIds": [
+    "cloquintocet-mexyl-100-g-kg",
+    "diflufenican-400-g-kg",
+    "florasulame-20-g-kg",
+    "iodosulfuron-methyl-sodium-50-g-kg"
+   ],
+   "fournisseurs": [
+    "ASCENZA AGRO"
+   ],
+   "usages": [
+    {
+     "usage": "Blés / Adventices Dicotylédones et Graminées annuelles",
+     "culture": "Blés",
+     "cible": "Adventices Dicotylédones et Graminées annuelles",
+     "dose": "200 g/ha",
+     "dar": "---",
+     "nbAppl": "1"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "marphyt-concord-100-ec",
+   "detenteur": "MARPHYT",
+   "detenteurId": "marphyt",
+   "nomCommercial": "CONCORD 100 EC",
+   "categorie": "Insecticide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "B07-5-004",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Alpha-cyperméthrine(100 g/l)"
+   ],
+   "matieresActivesIds": [
+    "alpha-cypermethrine-100-g-l"
+   ],
+   "fournisseurs": [
+    "BASF AGRO BV"
+   ],
+   "usages": [
+    {
+     "usage": "Betterave à sucre / Casside",
+     "culture": "Betterave à sucre",
+     "cible": "Casside",
+     "dose": "100 cc/ha",
+     "dar": "21",
+     "nbAppl": null
+    },
+    {
+     "usage": "Betterave à sucre / Cléone mendiant",
+     "culture": "Betterave à sucre",
+     "cible": "Cléone mendiant",
+     "dose": "150 cc/ha",
+     "dar": "21",
+     "nbAppl": null
+    },
+    {
+     "usage": "Betterave à sucre / Prodenia",
+     "culture": "Betterave à sucre",
+     "cible": "Prodenia",
+     "dose": "150 cc/ha",
+     "dar": "21",
+     "nbAppl": null
+    },
+    {
+     "usage": "Betterave à sucre / Taupins",
+     "culture": "Betterave à sucre",
+     "cible": "Taupins",
+     "dose": "250 cc/ha (une application au stade cotylédone et la deuxième application deux semaines après la pre",
+     "dar": "21",
+     "nbAppl": null
+    },
+    {
+     "usage": "Tomate / Noctuelles",
+     "culture": "Tomate",
+     "cible": "Noctuelles",
+     "dose": "12,5 cc/hl",
+     "dar": "3",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
   {
    "id": "phyto-beht-al-katil",
    "detenteur": "PHYTO BEHT",
@@ -70,6 +660,254 @@
    "sourceSortie": "FICHIERS PHYTO.xlsx"
   },
   {
+   "id": "proteco-assama-250-sc",
+   "detenteur": "PROTECO",
+   "detenteurId": "proteco",
+   "nomCommercial": "ASSAMA 250 SC",
+   "categorie": "Fongicide",
+   "formulation": "Suspension concentrée (SC)",
+   "tox": "C",
+   "amm": "F09-7-004",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Azoxystrobine(250 g/l)"
+   ],
+   "matieresActivesIds": [
+    "azoxystrobine-250-g-l"
+   ],
+   "fournisseurs": [
+    "ALMANDINE CORPORATION SA"
+   ],
+   "usages": [
+    {
+     "usage": "Blés / Rouilles",
+     "culture": "Blés",
+     "cible": "Rouilles",
+     "dose": "0,8 l/ha",
+     "dar": "42",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Blés / Septoriose",
+     "culture": "Blés",
+     "cible": "Septoriose",
+     "dose": "0,8 l/ha",
+     "dar": "42",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Courgette / Oïdium",
+     "culture": "Courgette",
+     "cible": "Oïdium",
+     "dose": "0,6 l/ha",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Fraisier / Oïdium",
+     "culture": "Fraisier",
+     "cible": "Oïdium",
+     "dose": "0,8 l/ha",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Haricot vert / Anthracnose",
+     "culture": "Haricot vert",
+     "cible": "Anthracnose",
+     "dose": "1 l/ha",
+     "dar": "7",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Poivron / Oïdium",
+     "culture": "Poivron",
+     "cible": "Oïdium",
+     "dose": "50 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Pomme de terre / Mildiou",
+     "culture": "Pomme de terre",
+     "cible": "Mildiou",
+     "dose": "75 cc/hl",
+     "dar": "30",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Tomate / Mildiou",
+     "culture": "Tomate",
+     "cible": "Mildiou",
+     "dose": "50 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Tomate / Oïdium",
+     "culture": "Tomate",
+     "cible": "Oïdium",
+     "dose": "50 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Vigne / Mildiou",
+     "culture": "Vigne",
+     "cible": "Mildiou",
+     "dose": "75 cc/hl",
+     "dar": "30",
+     "nbAppl": "2"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "proteco-azur-250-sc",
+   "detenteur": "PROTECO",
+   "detenteurId": "proteco",
+   "nomCommercial": "AZUR 250 SC",
+   "categorie": "Fongicide",
+   "formulation": "Suspension concentrée (SC)",
+   "tox": "C",
+   "amm": "F06-1-013",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Azoxystrobine(250 g/l)"
+   ],
+   "matieresActivesIds": [
+    "azoxystrobine-250-g-l"
+   ],
+   "fournisseurs": [
+    "ALMANDINE CORPORATION SA"
+   ],
+   "usages": [
+    {
+     "usage": "Blés / Rouille",
+     "culture": "Blés",
+     "cible": "Rouille",
+     "dose": "0,8l/ha",
+     "dar": "42",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Blés / Septoriose",
+     "culture": "Blés",
+     "cible": "Septoriose",
+     "dose": "0,8l/ha",
+     "dar": "42",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Courgette / Oïdium",
+     "culture": "Courgette",
+     "cible": "Oïdium",
+     "dose": "0,6 l/ha",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Fraisier / Oïdium",
+     "culture": "Fraisier",
+     "cible": "Oïdium",
+     "dose": "0,8 l/ha",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Haricot vert / Anthracnose",
+     "culture": "Haricot vert",
+     "cible": "Anthracnose",
+     "dose": "1l/ha",
+     "dar": "7",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Poivron / Oïdium",
+     "culture": "Poivron",
+     "cible": "Oïdium",
+     "dose": "50 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Pomme de terre / Mildiou",
+     "culture": "Pomme de terre",
+     "cible": "Mildiou",
+     "dose": "75 cc/hl",
+     "dar": "30",
+     "nbAppl": "3"
+    },
+    {
+     "usage": "Tomate / Mildiou",
+     "culture": "Tomate",
+     "cible": "Mildiou",
+     "dose": "50 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Tomate / Oïdium",
+     "culture": "Tomate",
+     "cible": "Oïdium",
+     "dose": "50 cc/hl",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Vigne / Mildiou",
+     "culture": "Vigne",
+     "cible": "Mildiou",
+     "dose": "75 cc/hl",
+     "dar": "30",
+     "nbAppl": "2"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "protectagri-pilarsys",
+   "detenteur": "PROTECTAGRI",
+   "detenteurId": "protectagri",
+   "nomCommercial": "PILARSYS",
+   "categorie": "Fongicide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "F11-1-009",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Myclobutanil(25%)"
+   ],
+   "matieresActivesIds": [
+    "myclobutanil-25"
+   ],
+   "fournisseurs": [
+    "PILARQUIM (SHANGHAI) CO., LTD"
+   ],
+   "usages": [
+    {
+     "usage": "Tomate / Oïdium",
+     "culture": "Tomate",
+     "cible": "Oïdium",
+     "dose": "25 cc/hl",
+     "dar": "3",
+     "nbAppl": null
+    },
+    {
+     "usage": "Vigne / Oïdium",
+     "culture": "Vigne",
+     "cible": "Oïdium",
+     "dose": "120 cc/ha",
+     "dar": "14",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
    "id": "sharda-maroc-optizole",
    "detenteur": "SHARDA MAROC",
    "detenteurId": "sharda-maroc",
@@ -108,6 +946,174 @@
    ],
    "sortiLe": "2026-09-11",
    "sourceSortie": "FICHIERS PHYTO.xlsx"
+  },
+  {
+   "id": "soprochiba-gibb-plus",
+   "detenteur": "SOPROCHIBA",
+   "detenteurId": "soprochiba",
+   "nomCommercial": "GIBB PLUS",
+   "categorie": "Régulateur de croissance",
+   "formulation": "Concentré soluble (SL)",
+   "tox": "N",
+   "amm": "F03-2-012",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Gibbérellines A4-A7(10 g/l)"
+   ],
+   "matieresActivesIds": [
+    "gibberellines-a4-a7-10-g-l"
+   ],
+   "fournisseurs": [
+    "GLOBACHEM"
+   ],
+   "usages": [
+    {
+     "usage": "Poirier / Amélioration de rendement",
+     "culture": "Poirier",
+     "cible": "Amélioration de rendement",
+     "dose": "700 cc/ha de haie",
+     "dar": "NR",
+     "nbAppl": null
+    },
+    {
+     "usage": "Pommier / Rugosité de la pleure",
+     "culture": "Pommier",
+     "cible": "Rugosité de la pleure",
+     "dose": "30 cc/hl",
+     "dar": "NR",
+     "nbAppl": "1-4"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "soprochiba-gibb3",
+   "detenteur": "SOPROCHIBA",
+   "detenteurId": "soprochiba",
+   "nomCommercial": "GIBB3",
+   "categorie": "Régulateur de croissance",
+   "formulation": "Tablettes solubles dans l’eau (ST)",
+   "tox": "N",
+   "amm": "E04-6-012",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Acide gibbérellique(10%)"
+   ],
+   "matieresActivesIds": [
+    "acide-gibberellique-10"
+   ],
+   "fournisseurs": [
+    "GLOBACHEM"
+   ],
+   "usages": [
+    {
+     "usage": "Agrumes: Clémentinier / Action sur le grossissement des fruits",
+     "culture": "Agrumes: Clémentinier",
+     "cible": "Action sur le grossissement des fruits",
+     "dose": "1 tb/hl",
+     "dar": "-",
+     "nbAppl": null
+    },
+    {
+     "usage": "Agrumes: Clémentinier / Action sur le processus de la nouaison",
+     "culture": "Agrumes: Clémentinier",
+     "cible": "Action sur le processus de la nouaison",
+     "dose": "1 tb/hl",
+     "dar": "-",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "soprochiba-globarryll-100",
+   "detenteur": "SOPROCHIBA",
+   "detenteurId": "soprochiba",
+   "nomCommercial": "GLOBARRYLL 100",
+   "categorie": "Régulateur de croissance",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "F03-2-014",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "6-benzyladénine(100 g/l)"
+   ],
+   "matieresActivesIds": [
+    "6-benzyladenine-100-g-l"
+   ],
+   "fournisseurs": [
+    "GLOBACHEM"
+   ],
+   "usages": [
+    {
+     "usage": "Poirier / Régulation de la fructification",
+     "culture": "Poirier",
+     "cible": "Régulation de la fructification",
+     "dose": "1,34 l/ha de haie",
+     "dar": "NR",
+     "nbAppl": null
+    },
+    {
+     "usage": "Pommier / Régulation de la fructification",
+     "culture": "Pommier",
+     "cible": "Régulation de la fructification",
+     "dose": "1 l/ha de haie",
+     "dar": "NR",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "soprochiba-topenco-100-ec",
+   "detenteur": "SOPROCHIBA",
+   "detenteurId": "soprochiba",
+   "nomCommercial": "TOPENCO 100 EC",
+   "categorie": "Fongicide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "E05-6-014",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Penconazole(100 g/l)"
+   ],
+   "matieresActivesIds": [
+    "penconazole-100-g-l"
+   ],
+   "fournisseurs": [
+    "GLOBACHEM"
+   ],
+   "usages": [
+    {
+     "usage": "Melon / Oïdium",
+     "culture": "Melon",
+     "cible": "Oïdium",
+     "dose": "15 cc/hl",
+     "dar": "7",
+     "nbAppl": null
+    },
+    {
+     "usage": "Tomate / Oïdium",
+     "culture": "Tomate",
+     "cible": "Oïdium",
+     "dose": "25 cc/hl",
+     "dar": "7",
+     "nbAppl": null
+    },
+    {
+     "usage": "Vigne / Oïdium",
+     "culture": "Vigne",
+     "cible": "Oïdium",
+     "dose": "25 cc/hl",
+     "dar": "30",
+     "nbAppl": null
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
   },
   {
    "id": "spraykem-glyster-fort",
@@ -164,6 +1170,138 @@
    ],
    "sortiLe": "2026-09-11",
    "sourceSortie": "FICHIERS PHYTO.xlsx"
+  },
+  {
+   "id": "syngenta-maroc-ampexio",
+   "detenteur": "SYNGENTA MAROC",
+   "detenteurId": "syngenta-maroc",
+   "nomCommercial": "AMPEXIO",
+   "categorie": "Fongicide",
+   "formulation": "Granulé à disperser dans l'eau (WG)",
+   "tox": "C",
+   "amm": "H06-1-007",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Mandipropamide(250 g/kg)",
+    "Zoxamide(240 g/kg)"
+   ],
+   "matieresActivesIds": [
+    "mandipropamide-250-g-kg",
+    "zoxamide-240-g-kg"
+   ],
+   "fournisseurs": [
+    "SYNGENTA CROP PROTECTION AG"
+   ],
+   "usages": [
+    {
+     "usage": "Tomate / Mildiou",
+     "culture": "Tomate",
+     "cible": "Mildiou",
+     "dose": "0.5 kg/ha",
+     "dar": "3",
+     "nbAppl": "2"
+    },
+    {
+     "usage": "Vigne / Mildiou",
+     "culture": "Vigne",
+     "cible": "Mildiou",
+     "dose": "0,5 kg/hl",
+     "dar": "21",
+     "nbAppl": "1"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "syngenta-maroc-navigator",
+   "detenteur": "SYNGENTA MAROC",
+   "detenteurId": "syngenta-maroc",
+   "nomCommercial": "NAVIGATOR",
+   "categorie": "Herbicide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "F06-5-007",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Cloquintocet-méxyl (Safener)(11,25 g/l)",
+    "Florasulame(5 g/l)",
+    "Pinoxaden(45 g/l)"
+   ],
+   "matieresActivesIds": [
+    "cloquintocet-mexyl-safener-11-25-g-l",
+    "florasulame-5-g-l",
+    "pinoxaden-45-g-l"
+   ],
+   "fournisseurs": [
+    "SYNGENTA CROP PROTECTION AG"
+   ],
+   "usages": [
+    {
+     "usage": "Blés / Adventices Dicotylédones annuelles",
+     "culture": "Blés",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "1 l/ha",
+     "dar": null,
+     "nbAppl": "1"
+    },
+    {
+     "usage": "Blés / Adventices Graminées annuelles",
+     "culture": "Blés",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "1 l/ha",
+     "dar": null,
+     "nbAppl": "1"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
+  },
+  {
+   "id": "syngenta-maroc-swipe",
+   "detenteur": "SYNGENTA MAROC",
+   "detenteurId": "syngenta-maroc",
+   "nomCommercial": "SWIPE",
+   "categorie": "Herbicide",
+   "formulation": "Concentré émulsionnable (EC)",
+   "tox": "C",
+   "amm": "F06-5-006",
+   "expiration": "2026-10-05",
+   "matieresActives": [
+    "Clodinafop-propargyl(30 g/l)",
+    "Cloquintocet-méxyl (Safener)(7,5 g/l)",
+    "Florasulame(7,5 g/l)",
+    "Pinoxaden(30 g/l)"
+   ],
+   "matieresActivesIds": [
+    "clodinafop-propargyl-30-g-l",
+    "cloquintocet-mexyl-safener-7-5-g-l",
+    "florasulame-7-5-g-l",
+    "pinoxaden-30-g-l"
+   ],
+   "fournisseurs": [
+    "SYNGENTA CROP PROTECTION AG"
+   ],
+   "usages": [
+    {
+     "usage": "Blés / Adventices Dicotylédones annuelles",
+     "culture": "Blés",
+     "cible": "Adventices Dicotylédones annuelles",
+     "dose": "1l/ha",
+     "dar": null,
+     "nbAppl": "1"
+    },
+    {
+     "usage": "Blés / Adventices Graminées annuelles",
+     "culture": "Blés",
+     "cible": "Adventices Graminées annuelles",
+     "dose": "1 l/ha",
+     "dar": null,
+     "nbAppl": "1"
+    }
+   ],
+   "sortiLe": "2026-10-24",
+   "sourceSortie": "eservice.onssa.gov.ma/IndPesticide.aspx"
   }
  ]
 }
