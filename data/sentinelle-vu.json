@@ -1,6 +1,6 @@
 {
  "commentaire": "Date de première apparition de chaque candidate. Fichier tenu par scripts/sentinelle.py ; l'historique git est le journal des nouveautés.",
- "dernierReleve": "2026-10-23",
+ "dernierReleve": "2026-10-24",
  "premiereVue": {
   "0365bbacilussubtilis": "2026-09-07",
   "0423aisavaibacilusntsubspturiniensis": "2026-09-07",
@@ -410,6 +410,7 @@
   "piribensocsim": "2026-09-07",
   "piributicarb": "2026-09-07",
   "piridabem": "2026-09-07",
+  "piridaben": "2026-10-24",
   "piridaclometil": "2026-09-07",
   "piridalil": "2026-09-07",
   "piriflucinason": "2026-09-07",

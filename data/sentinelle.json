@@ -1,16 +1,16 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-23T10:56:44",
-  "dernierReleve": "2026-10-23",
+  "genere": "2026-10-24T10:11:53",
+  "dernierReleve": "2026-10-24",
   "premierReleve": false,
-  "nbCandidates": 472,
+  "nbCandidates": 473,
   "nbEcarteesIndexMaroc": 24,
-  "nbNouvelles": 0,
-  "nbAvecStatutFrancais": 196,
-  "nbAvecStatutAustralien": 168,
+  "nbNouvelles": 1,
+  "nbAvecStatutFrancais": 197,
+  "nbAvecStatutAustralien": 169,
   "nbVuesAuBresil": 218,
-  "nbVuesEnCoree": 336,
+  "nbVuesEnCoree": 337,
   "avertissement": "Matières actives homologuées au Brésil (produit technique) ou en Corée du Sud, et non appariées à l'index ONSSA. « Absente de l'index » signifie que la clé chimique n'a rien apparié : une graphie non réduite au nom marocain produirait un faux positif, à vérifier avant tout engagement. La date coréenne est celle de la première homologation en Corée, pas celle de l'invention de la molécule. Aucun registre ouvert ne publie l'état des brevets : la présence d'un fabricant autre que l'inventeur est le seul indice, par les faits, qu'une fabrication générique a lieu. Ni prix, ni capacité, ni qualité, ni liberté d'exploitation."
  },
  "candidates": [
@@ -5519,78 +5519,6 @@
    "nouvelle": false
   },
   {
-   "cle": "imasapir",
-   "nom": "imazapir",
-   "iso": "IMAZAPYR",
-   "nomPt": "imazapir",
-   "groupeChimique": "imidazolinona",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 11,
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Basf Corporation",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "Liaoning Cynda Chemical Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Weifang Cynda Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
-    "Brilliance Produtos Agrícolas Ltda",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "Zhongshan Química do Brasil - Sorocaba/SP"
-   ],
-   "coree": {
-    "nom": "Imazapyr",
-    "nbHomologations": 1,
-    "nbFabrique": 1,
-    "nbImporte": 0,
-    "premiere": "1993-06-08",
-    "derniere": "1993-06-08",
-    "nbSocietes": 1
-   },
-   "france": {
-    "nom": "Imazapyr",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 3,
-    "dernierRetrait": "2004-02-06"
-   },
-   "australie": {
-    "nom": "IMAZAPYR",
-    "statut": "autorisée",
-    "nbProduitsAgricoles": 22,
-    "matiereActiveApprouvee": true
-   },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
    "cle": "tidiasurom",
    "nom": "tidiazurom",
    "iso": null,
@@ -6028,6 +5956,73 @@
    "coree": null,
    "france": null,
    "australie": null,
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "imasapir",
+   "nom": "imazapir",
+   "iso": "IMAZAPYR",
+   "nomPt": "imazapir",
+   "groupeChimique": "imidazolinona",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 11,
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Basf Corporation",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "Liaoning Cynda Chemical Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Weifang Cynda Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "Brilliance Produtos Agrícolas Ltda",
+    "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "Zhongshan Química do Brasil - Sorocaba/SP"
+   ],
+   "coree": {
+    "nom": "Imazapyr",
+    "nbHomologations": 1,
+    "nbFabrique": 1,
+    "nbImporte": 0,
+    "premiere": "1993-06-08",
+    "derniere": "1993-06-08",
+    "nbSocietes": 1
+   },
+   "france": {
+    "nom": "Imazapyr",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 3,
+    "dernierRetrait": "2004-02-06"
+   },
+   "australie": {
+    "nom": "IMAZAPYR",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 22,
+    "matiereActiveApprouvee": true
+   },
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -16517,6 +16512,41 @@
    "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
+  },
+  {
+   "cle": "piridaben",
+   "nom": "Pyridaben",
+   "iso": "PYRIDABEN",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "Pyridaben",
+    "nbHomologations": 23,
+    "nbFabrique": 20,
+    "nbImporte": 3,
+    "premiere": "1992-04-01",
+    "derniere": "2026-08-24",
+    "nbSocietes": 15
+   },
+   "france": {
+    "nom": "Pyridaben",
+    "etat": "INSCRITE",
+    "nbProduitsAutorises": 1,
+    "nbProduitsRetires": 4,
+    "dernierRetrait": "2015-04-23"
+   },
+   "australie": {
+    "nom": "PYRIDABEN",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 1,
+    "matiereActiveApprouvee": true
+   },
+   "premiereVue": "2026-10-24",
+   "nouvelle": true
   },
   {
    "cle": "clorfluasuron",

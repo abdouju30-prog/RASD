@@ -2,12 +2,12 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-23",
-  "genere": "2026-10-23T10:55:38",
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-24",
+  "genere": "2026-10-24T10:10:34",
   "nbHomologations": 2990,
   "nbUsines": 542,
   "nbMatieres": 80,
-  "nbMatieresIndex": 192,
+  "nbMatieresIndex": 190,
   "nbHorsIndex": 229,
   "parPays": [
    [
@@ -5921,46 +5921,6 @@
    ]
   },
   {
-   "nomPt": "imazapir",
-   "groupeChimique": "imidazolinona",
-   "nbHomologations": 11,
-   "teneurMax": 980.0,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
-    "Brilliance Produtos Agrícolas Ltda",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "Zhongshan Química do Brasil - Sorocaba/SP"
-   ],
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël"
-    },
-    {
-     "nom": "Basf Corporation",
-     "pays": "États-Unis"
-    },
-    {
-     "nom": "Liaoning Cynda Chemical Co. Ltd.",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Weifang Cynda Chemical Co., Ltd.",
-     "pays": "Chine"
-    }
-   ]
-  },
-  {
    "nomPt": "tidiazurom",
    "groupeChimique": "uréia",
    "nbHomologations": 10,
@@ -6239,6 +6199,42 @@
     },
     {
      "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine"
+    }
+   ]
+  },
+  {
+   "nomPt": "imazapir",
+   "groupeChimique": "imidazolinona",
+   "nbHomologations": 11,
+   "teneurMax": 980.0,
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "Brilliance Produtos Agrícolas Ltda",
+    "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "Zhongshan Química do Brasil - Sorocaba/SP"
+   ],
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël"
+    },
+    {
+     "nom": "Basf Corporation",
+     "pays": "États-Unis"
+    },
+    {
+     "nom": "Liaoning Cynda Chemical Co. Ltd.",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Weifang Cynda Chemical Co., Ltd.",
      "pays": "Chine"
     }
    ]
@@ -9353,7 +9349,7 @@
     "fludioxonil",
     "fomesafem"
    ],
-   "nbHomologations": 121,
+   "nbHomologations": 120,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
