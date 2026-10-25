@@ -1,12 +1,12 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-24T10:11:53",
-  "dernierReleve": "2026-10-24",
+  "genere": "2026-10-25T10:38:13",
+  "dernierReleve": "2026-10-25",
   "premierReleve": false,
   "nbCandidates": 473,
   "nbEcarteesIndexMaroc": 24,
-  "nbNouvelles": 1,
+  "nbNouvelles": 0,
   "nbAvecStatutFrancais": 197,
   "nbAvecStatutAustralien": 169,
   "nbVuesAuBresil": 218,
@@ -16546,7 +16546,7 @@
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-10-24",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "clorfluasuron",
