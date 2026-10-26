@@ -2,11 +2,11 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-24",
-  "genere": "2026-10-24T10:11:47",
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-26",
+  "genere": "2026-10-26T12:10:11",
   "derniereHomologation": "2026-10-10",
-  "nbLignesUsage": 146579,
-  "nbHomologations": 3989,
+  "nbLignesUsage": 146507,
+  "nbHomologations": 3987,
   "nbSocietes": 98,
   "nbFiliales": 16,
   "nbMatieres": 475,
@@ -16,8 +16,8 @@
   "nbMelanges": 1052,
   "nbUsages": 30991,
   "partTraduite": 97,
-  "nbFabrique": 3260,
-  "nbImporte": 729,
+  "nbFabrique": 3259,
+  "nbImporte": 728,
   "avertissement": "Registre coréen des produits phytosanitaires. Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. « 제조 » signifie produit fabriqué en Corée, PAS matière active synthétisée sur place : ce registre nomme le titulaire de l'homologation, pas l'usine de synthèse. Les raisons sociales sont romanisées (romanisation révisée) : une poignée pour chercher, pas une identité contractuelle. Ni prix, ni capacité, ni qualité."
  },
  "matieres": [
@@ -2441,9 +2441,9 @@
    "nomsCoreens": [
     "Tebufenozide"
    ],
-   "nbHomologations": 20,
-   "nbFabrique": 19,
-   "nbImporte": 1,
+   "nbHomologations": 18,
+   "nbFabrique": 18,
+   "nbImporte": 0,
    "premiere": "1994-04-08",
    "derniere": "2025-10-17",
    "societes": [
@@ -29103,9 +29103,9 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 148,
-   "nbFabrique": 80,
-   "nbImporte": 68,
+   "nbHomologations": 146,
+   "nbFabrique": 79,
+   "nbImporte": 67,
    "nbMatieres": 66,
    "matieres": [
     "ABAMECTIN",
