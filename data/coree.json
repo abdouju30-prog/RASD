@@ -2,8 +2,8 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-26",
-  "genere": "2026-10-26T12:10:11",
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-10-27",
+  "genere": "2026-10-27T11:31:04",
   "derniereHomologation": "2026-10-10",
   "nbLignesUsage": 146507,
   "nbHomologations": 3987,
@@ -2576,6 +2576,7 @@
     "(주)팜한농",
     "(주)한얼싸이언스",
     "㈜이엑스아이디",
+    "디스커버리이에스코리아(주)",
     "바이엘크롭사이언스(주)",
     "아그리젠토(주)",
     "인바이오(주)",
@@ -6239,7 +6240,7 @@
    "nbSocietes": 2,
    "societes": [
     "(주)동방아그로",
-    "바이엘크롭사이언스(주)"
+    "디스커버리이에스코리아(주)"
    ],
    "nbFabrique": 1,
    "nbImporte": 1,
@@ -27632,8 +27633,8 @@
     "(주)케이씨생명과학",
     "(주)팜한농",
     "(주)한얼싸이언스",
+    "디스커버리이에스코리아(주)",
     "레인보우애그로사이언스(주)",
-    "바이엘크롭사이언스(주)",
     "선문그린사이언스(주)",
     "아그리젠토(주)",
     "에스비성보주식회사",
@@ -29784,10 +29785,10 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 56,
+   "nbHomologations": 55,
    "nbFabrique": 43,
-   "nbImporte": 13,
-   "nbMatieres": 37,
+   "nbImporte": 12,
+   "nbMatieres": 36,
    "matieres": [
     "ABAMECTIN",
     "BUPROFEZIN",
@@ -30425,6 +30426,28 @@
    "derniere": "2026-08-26"
   },
   {
+   "cle": "디스커버리이에스코리아(주)",
+   "nom": "디스커버리이에스코리아(주)",
+   "latin": "diseukeobeoriieseukoria",
+   "commercial": null,
+   "groupe": null,
+   "formes": [
+    "S.A."
+   ],
+   "nbHomologations": 8,
+   "nbFabrique": 0,
+   "nbImporte": 8,
+   "nbMatieres": 8,
+   "matieres": [
+    "ETHOFUMESATE",
+    "FORAMSULFURON",
+    "FOSETYL-ALUMINIUM",
+    "TRIFLOXYSTROBIN"
+   ],
+   "premiere": "2008-03-31",
+   "derniere": "2023-12-14"
+  },
+  {
    "cle": "티아그로",
    "nom": "티아그로",
    "latin": "tiageuro",
@@ -30463,27 +30486,6 @@
    ],
    "premiere": "2021-07-27",
    "derniere": "2024-12-11"
-  },
-  {
-   "cle": "디스커버리이에스코리아(주)",
-   "nom": "디스커버리이에스코리아(주)",
-   "latin": "diseukeobeoriieseukoria",
-   "commercial": null,
-   "groupe": null,
-   "formes": [
-    "S.A."
-   ],
-   "nbHomologations": 7,
-   "nbFabrique": 0,
-   "nbImporte": 7,
-   "nbMatieres": 6,
-   "matieres": [
-    "ETHOFUMESATE",
-    "FORAMSULFURON",
-    "FOSETYL-ALUMINIUM"
-   ],
-   "premiere": "2008-03-31",
-   "derniere": "2023-12-14"
   },
   {
    "cle": "상산아그로 주식회사",
