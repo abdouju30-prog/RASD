@@ -3,18 +3,27 @@
   "source": "Données E-Phy - Anses",
   "url": "https://www.data.gouv.fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges",
   "licence": "Licence Ouverte / Open Licence",
-  "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-20",
-  "majDonnees": "2026-10-20",
-  "genere": "2026-10-27T11:29:26",
+  "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-27",
+  "majDonnees": "2026-10-27",
+  "genere": "2026-10-28T11:59:53",
   "nbSubstances": 1337,
-  "nbProduitsPPP": 13572,
+  "nbProduitsPPP": 13576,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
   "premiereImport": false,
-  "nbChangements": 0,
+  "nbChangements": 1,
   "dateComparaison": "2026-10-20",
-  "changements": []
+  "changements": [
+   {
+    "id": "pelargonic-acid",
+    "nom": "Pelargonic Acid",
+    "type": "statut",
+    "avant": "indéterminée",
+    "apres": "autorisée",
+    "dernierRetrait": null
+   }
+  ]
  },
  "substances": [
   {
@@ -11616,7 +11625,7 @@
    "variantes": [
     "acide pélargonique"
    ],
-   "nbProduitsAutorises": 0,
+   "nbProduitsAutorises": 1,
    "nbProduitsRetires": 0,
    "dernierRetrait": null
   },
@@ -13011,7 +13020,7 @@
    "variantes": [
     "prothioconazole"
    ],
-   "nbProduitsAutorises": 78,
+   "nbProduitsAutorises": 80,
    "nbProduitsRetires": 2,
    "dernierRetrait": "2021-02-09"
   },
@@ -16425,7 +16434,7 @@
    "variantes": [
     "zoxamide"
    ],
-   "nbProduitsAutorises": 7,
+   "nbProduitsAutorises": 8,
    "nbProduitsRetires": 5,
    "dernierRetrait": "2024-11-20"
   },

@@ -3,11 +3,11 @@
   "source": "APVMA PUBCRIS",
   "url": "https://data.gov.au/data/dataset/apvma-pubcris-dataset-for-registered-agricultural-and-veterinary-chemical-products-and-approved-acti",
   "licence": "Creative Commons Attribution 3.0 Australia",
-  "attribution": "APVMA PUBCRIS — mise à jour du 2026-10-21",
-  "majDonnees": "2026-10-21",
-  "genere": "2026-10-27T11:30:07",
-  "nbConstituants": 2609,
-  "nbProduitsAgricoles": 9658,
+  "attribution": "APVMA PUBCRIS — mise à jour du 2026-10-28",
+  "majDonnees": "2026-10-28",
+  "genere": "2026-10-28T12:00:27",
+  "nbConstituants": 2608,
+  "nbProduitsAgricoles": 9715,
   "avertissement": "L'APVMA ne gouverne pas l'ONSSA : ce statut sert à recouper une décision européenne hors du référentiel européen, pas à prédire une décision marocaine. PUBCRIS ne conserve que l'état courant, sans historique de retrait : « absente » signifie « aucun produit agricole enregistré aujourd'hui », ce qui peut vouloir dire retirée AUSSI BIEN QUE jamais homologuée. Seul « autorisée » est une information solide."
  },
  "constituants": [
@@ -10633,7 +10633,7 @@
    "nom": "BIFENTHRIN",
    "famille": "Pyrethroids, Pyrethrins",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 264,
+   "nbProduitsAgricoles": 265,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -10645,7 +10645,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 29
+     "nbProduits": 30
     },
     {
      "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
@@ -12476,9 +12476,9 @@
    "famille": "Chromenones",
    "statut": "autorisée",
    "nbProduitsAgricoles": 29,
-   "nbProduitsEchus": 22,
+   "nbProduitsEchus": 23,
    "matiereActiveApprouvee": true,
-   "derniereExpiration": "2026-09-29",
+   "derniereExpiration": "2026-10-22",
    "societes": [
     {
      "nom": "PELGAR INTERNATIONAL (AUS) PTY LTD",
@@ -12615,7 +12615,7 @@
    "nom": "BROMACIL",
    "famille": "Acylureas",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 11,
+   "nbProduitsAgricoles": 12,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -12630,20 +12630,20 @@
      "nbProduits": 3
     },
     {
-     "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 1
-    },
-    {
      "nom": "ADAMA AUSTRALIA PTY LIMITED",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
+     "filialeLocale": true,
+     "nbProduits": 2
+    },
+    {
+     "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
      "filialeLocale": true,
      "nbProduits": 1
     },
@@ -15550,11 +15550,20 @@
    "nom": "CAPTAN",
    "famille": "Phthalic Acids",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 24,
+   "nbProduitsAgricoles": 26,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
    "societes": [
+    {
+     "nom": "CROPSURE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 3
+    },
     {
      "nom": "ADAMA AUSTRALIA PTY LIMITED",
      "pays": null,
@@ -15688,15 +15697,6 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 1
-    },
-    {
-     "nom": "CROPSURE PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
      "nbProduits": 1
     },
     {
@@ -16997,7 +16997,7 @@
    "nom": "CHLORANTRANILIPROLE",
    "famille": "Benzamides",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 51,
+   "nbProduitsAgricoles": 52,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -17247,6 +17247,15 @@
     },
     {
      "nom": "CROP CULTURE PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 1
+    },
+    {
+     "nom": "CROP SMART PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -18121,7 +18130,7 @@
    "nom": "CHLORINE PRESENT AS LITHIUM HYPOCHLORITE",
    "famille": "MINERAL-CHLORINE",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 6,
+   "nbProduitsAgricoles": 7,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -18136,6 +18145,15 @@
      "nbProduits": 3
     },
     {
+     "nom": "BOND CHEMICALS PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 2
+    },
+    {
      "nom": "OFP COMPANY PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -18146,15 +18164,6 @@
     },
     {
      "nom": "M I INTERNATIONAL PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "BOND CHEMICALS PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -21072,11 +21081,20 @@
    "nom": "CITRONELLA OIL",
    "famille": "OIL-PLANT EXTRACT",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 31,
+   "nbProduitsAgricoles": 41,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
    "societes": [
+    {
+     "nom": "3 P PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 11
+    },
     {
      "nom": "FRANBAR GLEN PTY LTD",
      "pays": null,
@@ -21160,15 +21178,6 @@
     },
     {
      "nom": "PERFECT POTION MANUFACTURING PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "3 P PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -21362,7 +21371,7 @@
    "nom": "CLETHODIM",
    "famille": "Cyclohexanedione Oximes",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 102,
+   "nbProduitsAgricoles": 104,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -21383,7 +21392,7 @@
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": true,
-     "nbProduits": 6
+     "nbProduits": 7
     },
     {
      "nom": "ARYSTA LIFESCIENCE NORTH AMERICA LLC",
@@ -21392,6 +21401,15 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
+     "nbProduits": 4
+    },
+    {
+     "nom": "ADAMA AUSTRALIA PTY LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": true,
+     "filialeLocale": true,
      "nbProduits": 4
     },
     {
@@ -21418,15 +21436,6 @@
      "paysFiable": true,
      "coutFaible": true,
      "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 3
-    },
-    {
-     "nom": "ADAMA AUSTRALIA PTY LIMITED",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": true,
      "filialeLocale": true,
      "nbProduits": 3
     },
@@ -22342,7 +22351,7 @@
    "nom": "CLOMAZONE",
    "famille": "Azoles, Oxazoles, Thiazoles",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 13,
+   "nbProduitsAgricoles": 14,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -22354,7 +22363,7 @@
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": true,
-     "nbProduits": 4
+     "nbProduits": 5
     },
     {
      "nom": "NUFARM AUSTRALIA LIMITED",
@@ -22794,7 +22803,7 @@
    "nom": "CLOPYRALID PRESENT AS THE POTASSIUM SALT",
    "famille": "PYRIDINE",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 50,
+   "nbProduitsAgricoles": 51,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -22855,6 +22864,15 @@
     },
     {
      "nom": "NOVAGUARD PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 2
+    },
+    {
+     "nom": "PCT HOLDINGS PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -23098,15 +23116,6 @@
     },
     {
      "nom": "FOUR SEASONS AGRIBUSINESS PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "PCT HOLDINGS PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -23472,7 +23481,7 @@
    "nom": "CLOQUINTOCET-MEXYL",
    "famille": "Phenoxy Acids",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 66,
+   "nbProduitsAgricoles": 67,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -23622,6 +23631,15 @@
      "nbProduits": 2
     },
     {
+     "nom": "ZHEJIANG XINAN CHEMICAL INDUSTRIAL GROUP CO., LTD",
+     "pays": "Chine",
+     "paysFiable": true,
+     "coutFaible": true,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 2
+    },
+    {
      "nom": "UPL AUSTRALIA PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -23754,15 +23772,6 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 1
-    },
-    {
-     "nom": "ZHEJIANG XINAN CHEMICAL INDUSTRIAL GROUP CO., LTD",
-     "pays": "Chine",
-     "paysFiable": true,
-     "coutFaible": true,
-     "multinationale": false,
-     "filialeLocale": false,
      "nbProduits": 1
     },
     {
@@ -26662,7 +26671,7 @@
    "nom": "COPPER PRESENT AS CUPROUS OXIDE",
    "famille": "MINERAL-COPPER",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 117,
+   "nbProduitsAgricoles": 130,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -26686,6 +26695,24 @@
      "nbProduits": 21
     },
     {
+     "nom": "RESENE PAINTS (AUSTRALIA) LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 15
+    },
+    {
+     "nom": "WAGON PAINTS AUSTRALIA PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 14
+    },
+    {
      "nom": "HEMPEL (WATTYL) AUSTRALIA PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -26695,30 +26722,21 @@
      "nbProduits": 12
     },
     {
-     "nom": "RESENE PAINTS (AUSTRALIA) LIMITED",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 11
-    },
-    {
-     "nom": "WAGON PAINTS AUSTRALIA PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 7
-    },
-    {
      "nom": "AMERICAN CHEMET CORPORATION",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
+     "nbProduits": 2
+    },
+    {
+     "nom": "PPG INDUSTRIES AUSTRALIA PTY LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
      "nbProduits": 2
     },
     {
@@ -26756,7 +26774,7 @@
    "nom": "COPPER PRESENT AS CUPROUS THIOCYANATE",
    "famille": "CYANIDE",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 23,
+   "nbProduitsAgricoles": 24,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -26786,7 +26804,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 5
+     "nbProduits": 6
     }
    ]
   },
@@ -27534,7 +27552,7 @@
    "nom": "CYAZOFAMID",
    "famille": "Urea Derivatives",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 5,
+   "nbProduitsAgricoles": 6,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -27546,7 +27564,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 3
+     "nbProduits": 4
     },
     {
      "nom": "COLIN CAMPBELL (CHEMICALS) PTY LTD",
@@ -28118,7 +28136,7 @@
    "nom": "CYPHENOTHRIN",
    "famille": "Pyrethroids, Pyrethrins",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 29,
+   "nbProduitsAgricoles": 30,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -28130,7 +28148,7 @@
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": true,
-     "nbProduits": 24
+     "nbProduits": 25
     },
     {
      "nom": "ANIMAL CONTROL TECHNOLOGIES (AUSTRALIA) PTY LTD",
@@ -28748,7 +28766,7 @@
    "nom": "D-TETRAMETHRIN",
    "famille": "PYRETHROID",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 20,
+   "nbProduitsAgricoles": 21,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -28760,7 +28778,7 @@
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": true,
-     "nbProduits": 18
+     "nbProduits": 19
     },
     {
      "nom": "DAMAR INDUSTRIES PTY LIMITED",
@@ -29806,7 +29824,7 @@
    "nom": "DICAMBA",
    "famille": "Benzoic Acid And Derivatives",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 10,
+   "nbProduitsAgricoles": 11,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -29889,6 +29907,15 @@
      "paysFiable": false,
      "coutFaible": false,
      "multinationale": true,
+     "filialeLocale": true,
+     "nbProduits": 1
+    },
+    {
+     "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
      "filialeLocale": true,
      "nbProduits": 1
     }
@@ -30219,7 +30246,7 @@
    "nom": "DICAMBA PRESENT AS THE DIMETHYLAMINE SALT",
    "famille": "BENZOIC ACID-ARYLALIPHATIC",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 132,
+   "nbProduitsAgricoles": 133,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -30252,6 +30279,15 @@
      "nbProduits": 12
     },
     {
+     "nom": "EVERGREEN GARDEN CARE AUSTRALIA PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 4
+    },
+    {
      "nom": "J C & A T SEARLE PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -30268,15 +30304,6 @@
      "multinationale": false,
      "filialeLocale": false,
      "nbProduits": 4
-    },
-    {
-     "nom": "EVERGREEN GARDEN CARE AUSTRALIA PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 3
     },
     {
      "nom": "ADAMA AUSTRALIA PTY LIMITED",
@@ -31812,7 +31839,7 @@
    "nom": "DIFLUFENICAN",
    "famille": "Anilides",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 135,
+   "nbProduitsAgricoles": 137,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -31836,6 +31863,15 @@
      "nbProduits": 7
     },
     {
+     "nom": "CONQUEST CROP PROTECTION PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 6
+    },
+    {
      "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -31843,15 +31879,6 @@
      "multinationale": false,
      "filialeLocale": true,
      "nbProduits": 6
-    },
-    {
-     "nom": "CONQUEST CROP PROTECTION PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 5
     },
     {
      "nom": "NUTRIEN AG SOLUTIONS LIMITED",
@@ -31980,6 +32007,15 @@
      "nbProduits": 3
     },
     {
+     "nom": "PCT HOLDINGS PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 3
+    },
+    {
      "nom": "QUANTUM AGROSCIENCES HOLDINGS PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -32058,15 +32094,6 @@
      "coutFaible": true,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 2
-    },
-    {
-     "nom": "PCT HOLDINGS PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
      "nbProduits": 2
     },
     {
@@ -32374,7 +32401,7 @@
    "nom": "DIMETHENAMID-P",
    "famille": "Anilides",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 4,
+   "nbProduitsAgricoles": 5,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -32387,6 +32414,15 @@
      "multinationale": true,
      "filialeLocale": true,
      "nbProduits": 4
+    },
+    {
+     "nom": "ANIMAL CONTROL TECHNOLOGIES (AUSTRALIA) PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 1
     }
    ]
   },
@@ -33742,11 +33778,20 @@
    "nom": "DIURON",
    "famille": "Urea Derivatives",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 87,
+   "nbProduitsAgricoles": 92,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
    "societes": [
+    {
+     "nom": "WAGON PAINTS AUSTRALIA PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 6
+    },
     {
      "nom": "NUTRIEN AG SOLUTIONS LIMITED",
      "pays": null,
@@ -33847,15 +33892,6 @@
      "nbProduits": 3
     },
     {
-     "nom": "WAGON PAINTS AUSTRALIA PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 3
-    },
-    {
      "nom": "TESSENDERLO KERLEY, INC",
      "pays": null,
      "paysFiable": false,
@@ -33943,6 +33979,15 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
+     "nbProduits": 2
+    },
+    {
+     "nom": "PPG INDUSTRIES AUSTRALIA PTY LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
      "nbProduits": 2
     },
     {
@@ -36023,7 +36068,7 @@
    "nom": "ESFENVALERATE",
    "famille": "Pyrethroids, Pyrethrins",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 23,
+   "nbProduitsAgricoles": 22,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -36035,7 +36080,7 @@
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": true,
-     "nbProduits": 9
+     "nbProduits": 8
     },
     {
      "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
@@ -39986,7 +40031,7 @@
    "nom": "FLUMIOXAZIN",
    "famille": "Anilides",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 34,
+   "nbProduitsAgricoles": 35,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -39998,7 +40043,7 @@
      "coutFaible": false,
      "multinationale": true,
      "filialeLocale": true,
-     "nbProduits": 10
+     "nbProduits": 11
     },
     {
      "nom": "TITAN AG PTY LTD",
@@ -40808,7 +40853,7 @@
    "nom": "FLUROXYPYR AS THE METHYL HEPTYL ESTER",
    "famille": "PYRIDINE-PYRIDINOXY",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 76,
+   "nbProduitsAgricoles": 77,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -40820,7 +40865,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 11
+     "nbProduits": 12
     },
     {
      "nom": "NUTRIEN AG SOLUTIONS LIMITED",
@@ -49229,7 +49274,7 @@
    "nom": "IMAZAPYR PRESENT AS ISOPROPYLAMINE SALT",
    "famille": "IMIDAZOLINONE",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 9,
+   "nbProduitsAgricoles": 10,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -49299,6 +49344,15 @@
     },
     {
      "nom": "ALBAUGH AUSTRALIA PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 1
+    },
+    {
+     "nom": "ANIMAL CONTROL TECHNOLOGIES (AUSTRALIA) PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -53641,7 +53695,7 @@
    "nom": "LAMBDA-CYHALOTHRIN",
    "famille": "Pyrethroids, Pyrethrins",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 43,
+   "nbProduitsAgricoles": 44,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -53922,6 +53976,15 @@
      "paysFiable": false,
      "coutFaible": false,
      "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 1
+    },
+    {
+     "nom": "NUTRIEN AG SOLUTIONS LIMITED",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": true,
      "filialeLocale": false,
      "nbProduits": 1
     }
@@ -56541,7 +56604,7 @@
    "nom": "MCPA PRESENT AS THE DIMETHYLAMINE SALT",
    "famille": "PHENOXY ACIDS-MCPA-AMINE",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 151,
+   "nbProduitsAgricoles": 152,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -56583,6 +56646,15 @@
      "nbProduits": 4
     },
     {
+     "nom": "EVERGREEN GARDEN CARE AUSTRALIA PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 4
+    },
+    {
      "nom": "J C & A T SEARLE PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -56608,15 +56680,6 @@
      "multinationale": false,
      "filialeLocale": false,
      "nbProduits": 4
-    },
-    {
-     "nom": "EVERGREEN GARDEN CARE AUSTRALIA PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 3
     },
     {
      "nom": "ADAMA AUSTRALIA PTY LIMITED",
@@ -57457,7 +57520,7 @@
    "nom": "MCPA PRESENT AS THE POTASSIUM SALT",
    "famille": "PHENOXY ACIDS-MCPA",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 75,
+   "nbProduitsAgricoles": 76,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -57625,6 +57688,15 @@
      "nbProduits": 2
     },
     {
+     "nom": "PCT HOLDINGS PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 2
+    },
+    {
      "nom": "THEYES MANAGEMENT PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -57770,15 +57842,6 @@
     },
     {
      "nom": "LAWNHUB PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "PCT HOLDINGS PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -57934,20 +57997,11 @@
    "nom": "MECOPROP PRESENT AS THE DIMETHYLAMINE SALT",
    "famille": "PHENOXY ACIDS-PROPIONICS",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 6,
+   "nbProduitsAgricoles": 7,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
    "societes": [
-    {
-     "nom": "COLIN CAMPBELL (CHEMICALS) PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 2
-    },
     {
      "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
      "pays": null,
@@ -57955,6 +58009,15 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
+     "nbProduits": 3
+    },
+    {
+     "nom": "COLIN CAMPBELL (CHEMICALS) PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
      "nbProduits": 2
     },
     {
@@ -61758,7 +61821,7 @@
    "code": "APMO1",
    "nom": "MONENSIN SODIUM",
    "famille": "Ionophores",
-   "statut": "vétérinaire seulement",
+   "statut": "absente",
    "nbProduitsAgricoles": 0,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
@@ -67124,7 +67187,7 @@
    "nom": "PARAQUAT PRESENT AS PARAQUAT DICHLORIDE",
    "famille": "PYRIDINE-BIPYRIDYL",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 122,
+   "nbProduitsAgricoles": 123,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
@@ -67148,6 +67211,15 @@
      "nbProduits": 6
     },
     {
+     "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 5
+    },
+    {
      "nom": "ADAMA AUSTRALIA PTY LIMITED",
      "pays": null,
      "paysFiable": false,
@@ -67164,15 +67236,6 @@
      "multinationale": false,
      "filialeLocale": false,
      "nbProduits": 5
-    },
-    {
-     "nom": "AUSTRALIAN AGRIBUSINESS (HOLDINGS) PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 4
     },
     {
      "nom": "IMTRADE AUSTRALIA PTY LTD",
@@ -67736,7 +67799,7 @@
    "nom": "PENDIMETHALIN",
    "famille": "Dinitrobenzenes",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 42,
+   "nbProduitsAgricoles": 43,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -67968,6 +68031,15 @@
     },
     {
      "nom": "ALBAUGH AUSTRALIA PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 1
+    },
+    {
+     "nom": "ANIMAL CONTROL TECHNOLOGIES (AUSTRALIA) PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -71797,7 +71869,7 @@
    "nom": "PINOXADEN",
    "famille": "Azoles, Oxazoles, Thiazoles",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 30,
+   "nbProduitsAgricoles": 31,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -71866,6 +71938,15 @@
      "nbProduits": 2
     },
     {
+     "nom": "ZHEJIANG XINAN CHEMICAL INDUSTRIAL GROUP CO., LTD",
+     "pays": "Chine",
+     "paysFiable": true,
+     "coutFaible": true,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 2
+    },
+    {
      "nom": "IMTRADE AUSTRALIA PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -71915,15 +71996,6 @@
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "ZHEJIANG XINAN CHEMICAL INDUSTRIAL GROUP CO., LTD",
-     "pays": "Chine",
-     "paysFiable": true,
-     "coutFaible": true,
      "multinationale": false,
      "filialeLocale": false,
      "nbProduits": 1
@@ -72050,7 +72122,7 @@
    "nom": "PIPERONYL BUTOXIDE",
    "famille": "Others",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 171,
+   "nbProduitsAgricoles": 172,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -72155,6 +72227,15 @@
      "nbProduits": 4
     },
     {
+     "nom": "SUNDEW SOLUTIONS PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 4
+    },
+    {
      "nom": "PASCOE'S PTY LTD",
      "pays": null,
      "paysFiable": false,
@@ -72174,15 +72255,6 @@
     },
     {
      "nom": "MMP INDUSTRIAL PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 3
-    },
-    {
-     "nom": "SUNDEW SOLUTIONS PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -74279,11 +74351,20 @@
    "nom": "POTASSIUM SALTS OF FATTY ACIDS",
    "famille": "ACID-FATTY",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 13,
+   "nbProduitsAgricoles": 17,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": false,
    "derniereExpiration": null,
    "societes": [
+    {
+     "nom": "AUSTRALIAN ADJUVANTS PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
+     "nbProduits": 6
+    },
     {
      "nom": "DULUXGROUP (AUSTRALIA) PTY LTD",
      "pays": null,
@@ -74318,15 +74399,6 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 2
-    },
-    {
-     "nom": "AUSTRALIAN ADJUVANTS PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
      "nbProduits": 2
     },
     {
@@ -75381,7 +75453,7 @@
    "nom": "PROPICONAZOLE",
    "famille": "Triazoles",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 100,
+   "nbProduitsAgricoles": 102,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -75433,6 +75505,15 @@
     },
     {
      "nom": "TITAN AG PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 3
+    },
+    {
+     "nom": "HYNE & SON PTY. LIMITED",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -75622,15 +75703,6 @@
     },
     {
      "nom": "KD PLANT CARE PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
-     "nbProduits": 1
-    },
-    {
-     "nom": "HYNE & SON PTY. LIMITED",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -76215,7 +76287,7 @@
    "nom": "PROPOXUR",
    "famille": "Carbamates",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 3,
+   "nbProduitsAgricoles": 4,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -76227,7 +76299,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 3
+     "nbProduits": 4
     }
    ]
   },
@@ -76261,20 +76333,11 @@
    "nom": "PROPYZAMIDE",
    "famille": "Benzamides",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 86,
+   "nbProduitsAgricoles": 87,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
    "societes": [
-    {
-     "nom": "IMTRADE AUSTRALIA PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 6
-    },
     {
      "nom": "TITAN AG PTY LTD",
      "pays": null,
@@ -76282,6 +76345,15 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
+     "nbProduits": 7
+    },
+    {
+     "nom": "IMTRADE AUSTRALIA PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": true,
      "nbProduits": 6
     },
     {
@@ -78543,7 +78615,7 @@
    "nom": "PYRIPROXYFEN",
    "famille": "Pyridines",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 45,
+   "nbProduitsAgricoles": 46,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -78763,6 +78835,15 @@
      "multinationale": false,
      "filialeLocale": false,
      "nbProduits": 1
+    },
+    {
+     "nom": "Shanghai Broco Chemicals Co., Ltd.",
+     "pays": "Chine",
+     "paysFiable": true,
+     "coutFaible": true,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 1
     }
    ]
   },
@@ -78796,7 +78877,7 @@
    "nom": "PYROXASULFONE",
    "famille": "Azoles, Oxazoles, Thiazoles",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 73,
+   "nbProduitsAgricoles": 74,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -79165,6 +79246,15 @@
      "nom": "QEMETICA AGRICULTURAL SOLUTIONS POLAND S.A.",
      "pays": "Espagne",
      "paysFiable": true,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 1
+    },
+    {
+     "nom": "PKB INTENSIVE ANIMAL SERVICES PTY LTD",
+     "pays": null,
+     "paysFiable": false,
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
@@ -82662,28 +82752,6 @@
     },
     {
      "nom": "KERSIA AUSTRALIA PTY LTD",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": true,
-     "nbProduits": 1
-    }
-   ]
-  },
-  {
-   "id": "sodium-chlorite",
-   "code": "MCLSC",
-   "nom": "SODIUM CHLORITE",
-   "famille": "MINERAL-CHLORINE",
-   "statut": "autorisée",
-   "nbProduitsAgricoles": 1,
-   "nbProduitsEchus": 0,
-   "matiereActiveApprouvee": false,
-   "derniereExpiration": null,
-   "societes": [
-    {
-     "nom": "ZYCHEM TECHNOLOGIES AUSTRALIA PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -86576,7 +86644,7 @@
    "nom": "TEBUCONAZOLE",
    "famille": "Triazoles",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 147,
+   "nbProduitsAgricoles": 149,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -86682,6 +86750,15 @@
     },
     {
      "nom": "CROP SMART PTY LTD",
+     "pays": null,
+     "paysFiable": false,
+     "coutFaible": false,
+     "multinationale": false,
+     "filialeLocale": false,
+     "nbProduits": 3
+    },
+    {
+     "nom": "HYNE & SON PTY. LIMITED",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -86912,15 +86989,6 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 1
-    },
-    {
-     "nom": "HYNE & SON PTY. LIMITED",
-     "pays": null,
-     "paysFiable": false,
-     "coutFaible": false,
-     "multinationale": false,
-     "filialeLocale": false,
      "nbProduits": 1
     },
     {
@@ -87227,7 +87295,7 @@
    "nom": "TEBUTHIURON",
    "famille": "Urea Derivatives",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 33,
+   "nbProduitsAgricoles": 34,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -87239,7 +87307,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 7
+     "nbProduits": 8
     },
     {
      "nom": "NUTRIEN AG SOLUTIONS LIMITED",
@@ -88208,7 +88276,7 @@
    "nom": "TETRAMETHRIN",
    "famille": "Pyrethroids, Pyrethrins",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 35,
+   "nbProduitsAgricoles": 36,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -88223,16 +88291,16 @@
      "nbProduits": 24
     },
     {
-     "nom": "AU PEST PTY LIMITED",
+     "nom": "SUNDEW SOLUTIONS PTY LTD",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": false,
-     "nbProduits": 3
+     "nbProduits": 4
     },
     {
-     "nom": "SUNDEW SOLUTIONS PTY LTD",
+     "nom": "AU PEST PTY LIMITED",
      "pays": null,
      "paysFiable": false,
      "coutFaible": false,
@@ -89243,7 +89311,7 @@
    "nom": "THIRAM",
    "famille": "Biscarbamates",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 36,
+   "nbProduitsAgricoles": 40,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -89255,7 +89323,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 10
+     "nbProduits": 14
     },
     {
      "nom": "ARYSTA LIFESCIENCE AUSTRALIA PTY LTD",
@@ -94885,7 +94953,7 @@
    "nom": "ZINC PYRITHIONE",
    "famille": "UNGROUPED",
    "statut": "autorisée",
-   "nbProduitsAgricoles": 39,
+   "nbProduitsAgricoles": 40,
    "nbProduitsEchus": 0,
    "matiereActiveApprouvee": true,
    "derniereExpiration": null,
@@ -94915,7 +94983,7 @@
      "coutFaible": false,
      "multinationale": false,
      "filialeLocale": true,
-     "nbProduits": 5
+     "nbProduits": 6
     },
     {
      "nom": "MARLIN S.R.L",

@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-27T11:31:10",
-  "dernierReleve": "2026-10-27",
+  "genere": "2026-10-28T12:01:51",
+  "dernierReleve": "2026-10-28",
   "premierReleve": false,
   "nbCandidates": 473,
   "nbEcarteesIndexMaroc": 24,
@@ -490,7 +490,7 @@
    "australie": {
     "nom": "BIFENTHRIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 264,
+    "nbProduitsAgricoles": 265,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3163,7 +3163,7 @@
    "australie": {
     "nom": "PROPICONAZOLE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 100,
+    "nbProduitsAgricoles": 102,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3656,7 +3656,7 @@
    "australie": {
     "nom": "FLUMIOXAZIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 34,
+    "nbProduitsAgricoles": 35,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6125,7 +6125,7 @@
    "australie": {
     "nom": "THIRAM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 36,
+    "nbProduitsAgricoles": 40,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6634,7 +6634,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 73,
+    "nbProduitsAgricoles": 74,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -8868,7 +8868,7 @@
    "australie": {
     "nom": "BROMACIL",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 11,
+    "nbProduitsAgricoles": 12,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11309,7 +11309,7 @@
    "australie": {
     "nom": "ESFENVALERATE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 23,
+    "nbProduitsAgricoles": 22,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -13896,7 +13896,7 @@
    "france": {
     "nom": "Pelargonic Acid",
     "etat": "INSCRITE",
-    "nbProduitsAutorises": 0,
+    "nbProduitsAutorises": 1,
     "nbProduitsRetires": 0,
     "dernierRetrait": null
    },
