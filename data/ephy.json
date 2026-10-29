@@ -5,25 +5,16 @@
   "licence": "Licence Ouverte / Open Licence",
   "attribution": "Données E-Phy - Anses — mise à jour du 2026-10-27",
   "majDonnees": "2026-10-27",
-  "genere": "2026-10-28T11:59:53",
+  "genere": "2026-10-29T12:10:02",
   "nbSubstances": 1337,
   "nbProduitsPPP": 13576,
   "avertissement": "Statut français. L'ONSSA s'alignant sur l'ANSES, il anticipe le statut marocain — il ne s'y substitue pas."
  },
  "diff": {
   "premiereImport": false,
-  "nbChangements": 1,
-  "dateComparaison": "2026-10-20",
-  "changements": [
-   {
-    "id": "pelargonic-acid",
-    "nom": "Pelargonic Acid",
-    "type": "statut",
-    "avant": "indéterminée",
-    "apres": "autorisée",
-    "dernierRetrait": null
-   }
-  ]
+  "nbChangements": 0,
+  "dateComparaison": "2026-10-27",
+  "changements": []
  },
  "substances": [
   {
