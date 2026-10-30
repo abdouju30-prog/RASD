@@ -2,9 +2,9 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-29",
-  "genere": "2026-10-29T12:10:44",
-  "nbHomologations": 2990,
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-30",
+  "genere": "2026-10-30T12:01:20",
+  "nbHomologations": 2993,
   "nbUsines": 542,
   "nbMatieres": 80,
   "nbMatieresIndex": 190,
@@ -745,7 +745,7 @@
    "nomsPt": [
     "flonicamida"
    ],
-   "nbHomologations": 12,
+   "nbHomologations": 13,
    "teneurMax": 980.0,
    "usines": [
     "FARMHANNONG CO. LTD.|CORÉIA (DO SUL), REPÚBLICA DA",
@@ -3600,7 +3600,7 @@
   {
    "nomPt": "diafentiurom",
    "groupeChimique": "feniltiouréia",
-   "nbHomologations": 25,
+   "nbHomologations": 26,
    "teneurMax": 980.0,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
@@ -4819,9 +4819,10 @@
   {
    "nomPt": "Etiprole",
    "groupeChimique": "Fenilpirazol",
-   "nbHomologations": 10,
+   "nbHomologations": 11,
    "teneurMax": 970.0,
    "titulaires": [
+    "AllierBrasil Agro Ltda.",
     "Bayer S.A. - São Paulo/ SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
@@ -11579,6 +11580,38 @@
    ]
   },
   {
+   "id": "JIANGSU CHANGQING AGROCHEMICAL NANTONG CO., LTD.|CHINA, REPUBLICA POPULAR",
+   "nom": "Jiangsu Changqing Agrochemical Nantong Co., Ltd.",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "ACETAMIPRID",
+    "DICAMBA",
+    "S-METOLACHLOR"
+   ],
+   "matieresPt": [
+    "Dicamba",
+    "S-metolacloro",
+    "acetamiprido",
+    "diafentiurom",
+    "epoxiconazol"
+   ],
+   "nbHomologations": 21,
+   "titulaires": [
+    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
+    "Adama Brasil S.A.- Londrina/PR",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "Changqing do Brasil Produtos Agrícolas Ltda",
+    "Cropchem Ltda - Porto Alegre",
+    "Helm do Brasil Mercantil - São Paulo/SP",
+    "Nortox S.A. - Arapongas",
+    "Perterra Insumos Agropecuários S.A.  São Paulo/SP",
+    "Pilarquim Br Comercial Ltda.- São Paulo"
+   ]
+  },
+  {
    "id": "ANHUI ZHONGSHAN CHEMICAL INDUSTRY CO. LTD.|CHINA, REPUBLICA POPULAR",
    "nom": "Anhui Zhongshan Chemical Industry Co. Ltd.",
    "pays": "Chine",
@@ -11609,38 +11642,6 @@
     "Oxon Brasil Defensivos Agrícolas Ltda.",
     "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP",
     "Zhongshan Química do Brasil - Sorocaba/SP"
-   ]
-  },
-  {
-   "id": "JIANGSU CHANGQING AGROCHEMICAL NANTONG CO., LTD.|CHINA, REPUBLICA POPULAR",
-   "nom": "Jiangsu Changqing Agrochemical Nantong Co., Ltd.",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "ACETAMIPRID",
-    "DICAMBA",
-    "S-METOLACHLOR"
-   ],
-   "matieresPt": [
-    "Dicamba",
-    "S-metolacloro",
-    "acetamiprido",
-    "diafentiurom",
-    "epoxiconazol"
-   ],
-   "nbHomologations": 20,
-   "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
-    "Adama Brasil S.A.- Londrina/PR",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Changqing do Brasil Produtos Agrícolas Ltda",
-    "Cropchem Ltda - Porto Alegre",
-    "Helm do Brasil Mercantil - São Paulo/SP",
-    "Nortox S.A. - Arapongas",
-    "Perterra Insumos Agropecuários S.A.  São Paulo/SP",
-    "Pilarquim Br Comercial Ltda.- São Paulo"
    ]
   },
   {
@@ -14282,6 +14283,27 @@
    ]
   },
   {
+   "id": "JIANGXI HUIHE CHEMICAL CO. LTD.|CHINA, REPUBLICA POPULAR",
+   "nom": "Jiangxi Huihe Chemical Co. Ltd.",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "FLONICAMID"
+   ],
+   "matieresPt": [
+    "flonicamida"
+   ],
+   "nbHomologations": 6,
+   "titulaires": [
+    "Brilliance Produtos Agrícolas Ltda",
+    "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas",
+    "Proregistros Registros de Produtos Ltda - EPP",
+    "Zhongshan Química do Brasil - Sorocaba/SP"
+   ]
+  },
+  {
    "id": "SYNGENTA LIMITED|REINO UNIDO",
    "nom": "Syngenta Limited",
    "pays": "Royaume-Uni",
@@ -14373,26 +14395,6 @@
     "Ouro Fino Química S.A. - Uberaba",
     "Sumitomo Corporation do Brasil S.A. - São Paulo/SP",
     "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP"
-   ]
-  },
-  {
-   "id": "JIANGXI HUIHE CHEMICAL CO. LTD.|CHINA, REPUBLICA POPULAR",
-   "nom": "Jiangxi Huihe Chemical Co. Ltd.",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "FLONICAMID"
-   ],
-   "matieresPt": [
-    "flonicamida"
-   ],
-   "nbHomologations": 5,
-   "titulaires": [
-    "Brilliance Produtos Agrícolas Ltda",
-    "Nortox S.A. - Arapongas",
-    "Proregistros Registros de Produtos Ltda - EPP",
-    "Zhongshan Química do Brasil - Sorocaba/SP"
    ]
   },
   {

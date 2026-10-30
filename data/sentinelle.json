@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-29T12:12:06",
-  "dernierReleve": "2026-10-29",
+  "genere": "2026-10-30T12:03:36",
+  "dernierReleve": "2026-10-30",
   "premierReleve": false,
   "nbCandidates": 473,
   "nbEcarteesIndexMaroc": 24,
@@ -2402,7 +2402,7 @@
    "nomPt": "diafentiurom",
    "groupeChimique": "feniltiouréia",
    "teneurMax": 980.0,
-   "nbHomologationsBr": 25,
+   "nbHomologationsBr": 26,
    "fabricants": [
     {
      "nom": "Bharat Rasayan Ltd.",
@@ -3913,7 +3913,7 @@
    "nomPt": "Etiprole",
    "groupeChimique": "Fenilpirazol",
    "teneurMax": 970.0,
-   "nbHomologationsBr": 10,
+   "nbHomologationsBr": 11,
    "fabricants": [
     {
      "nom": "Bayer Vapi Private Limited",
@@ -3962,6 +3962,7 @@
     }
    ],
    "titulaires": [
+    "AllierBrasil Agro Ltda.",
     "Bayer S.A. - São Paulo/ SP",
     "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
