@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-30T12:03:36",
-  "dernierReleve": "2026-10-30",
+  "genere": "2026-10-31T11:38:18",
+  "dernierReleve": "2026-10-31",
   "premierReleve": false,
   "nbCandidates": 473,
   "nbEcarteesIndexMaroc": 24,
@@ -1753,7 +1753,7 @@
    "nomPt": "tebutiurom",
    "groupeChimique": "uréia",
    "teneurMax": 982.3,
-   "nbHomologationsBr": 21,
+   "nbHomologationsBr": 22,
    "fabricants": [
     {
      "nom": "Adama Agricultural Solutions Ltd.",
@@ -1836,14 +1836,14 @@
     "Adama Brasil S.A.- Londrina/PR",
     "Agrogill Chemicals Ltda",
     "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ancom do Brasil Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "Foison do Brasil Defensivos Agrícolas e Comércio Ltda",
     "Nortox S.A. - Arapongas",
     "Ouro Fino Química S.A. - Uberaba",
     "Proregistros Registros de Produtos Ltda - EPP",
     "Proventis Lifescience Defensivos Agrícolas Ltda",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Sumitomo Chemical Brasil Indústria Química S.A. - Maracanaú/CE"
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS"
    ],
    "coree": null,
    "france": null,
@@ -5520,6 +5520,79 @@
    "nouvelle": false
   },
   {
+   "cle": "imasapir",
+   "nom": "imazapir",
+   "iso": "IMAZAPYR",
+   "nomPt": "imazapir",
+   "groupeChimique": "imidazolinona",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 12,
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël",
+     "coutFaible": false
+    },
+    {
+     "nom": "Basf Corporation",
+     "pays": "États-Unis",
+     "coutFaible": false
+    },
+    {
+     "nom": "Jiangsu Flag Chemical Industry Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Liaoning Cynda Chemical Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Weifang Cynda Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "Brilliance Produtos Agrícolas Ltda",
+    "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
+    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "Zhongshan Química do Brasil - Sorocaba/SP"
+   ],
+   "coree": {
+    "nom": "Imazapyr",
+    "nbHomologations": 1,
+    "nbFabrique": 1,
+    "nbImporte": 0,
+    "premiere": "1993-06-08",
+    "derniere": "1993-06-08",
+    "nbSocietes": 1
+   },
+   "france": {
+    "nom": "Imazapyr",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 3,
+    "dernierRetrait": "2004-02-06"
+   },
+   "australie": {
+    "nom": "IMAZAPYR",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 22,
+    "matiereActiveApprouvee": true
+   },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "tidiasurom",
    "nom": "tidiazurom",
    "iso": null,
@@ -5957,73 +6030,6 @@
    "coree": null,
    "france": null,
    "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "imasapir",
-   "nom": "imazapir",
-   "iso": "IMAZAPYR",
-   "nomPt": "imazapir",
-   "groupeChimique": "imidazolinona",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 11,
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël",
-     "coutFaible": false
-    },
-    {
-     "nom": "Basf Corporation",
-     "pays": "États-Unis",
-     "coutFaible": false
-    },
-    {
-     "nom": "Liaoning Cynda Chemical Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Weifang Cynda Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
-    "Brilliance Produtos Agrícolas Ltda",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "Zhongshan Química do Brasil - Sorocaba/SP"
-   ],
-   "coree": {
-    "nom": "Imazapyr",
-    "nbHomologations": 1,
-    "nbFabrique": 1,
-    "nbImporte": 0,
-    "premiere": "1993-06-08",
-    "derniere": "1993-06-08",
-    "nbSocietes": 1
-   },
-   "france": {
-    "nom": "Imazapyr",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 3,
-    "dernierRetrait": "2004-02-06"
-   },
-   "australie": {
-    "nom": "IMAZAPYR",
-    "statut": "autorisée",
-    "nbProduitsAgricoles": 22,
-    "matiereActiveApprouvee": true
-   },
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },

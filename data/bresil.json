@@ -2,9 +2,9 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-30",
-  "genere": "2026-10-30T12:01:20",
-  "nbHomologations": 2993,
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-31",
+  "genere": "2026-10-31T11:36:57",
+  "nbHomologations": 2999,
   "nbUsines": 542,
   "nbMatieres": 80,
   "nbMatieresIndex": 190,
@@ -424,7 +424,7 @@
    "nomsPt": [
     "cletodim"
    ],
-   "nbHomologations": 50,
+   "nbHomologations": 51,
    "teneurMax": 980.0,
    "usines": [
     "ADAMA AGRICULTURAL SOLUTIONS LTD.|ISRAEL",
@@ -468,7 +468,7 @@
    "nomsPt": [
     "clomazona"
    ],
-   "nbHomologations": 36,
+   "nbHomologations": 37,
    "teneurMax": 980.0,
    "usines": [
     "ADAMA AGRICULTURAL SOLUTIONS LTD.|ISRAEL",
@@ -478,6 +478,7 @@
     "JIANGSU BAOZONG & BAODA|CHINA, REPUBLICA POPULAR",
     "JIANGSU CHANGGING AGROCHEMICAL CO. LTD.- JIANGDU|CHINA, REPUBLICA POPULAR",
     "JIANGSU CHANGQING AGROCHEMICAL CO., LTD|CHINA, REPUBLICA POPULAR",
+    "JIANGSU CHANGQING AGROCHEMICAL NANTONG CO., LTD.|CHINA, REPUBLICA POPULAR",
     "JIANGSU LIANHE CHEMICAL TECHNOLOGY CO., LTD|CHINA, REPUBLICA POPULAR",
     "LIAONING CYNDA CHEMICAL CO. LTD.|CHINA, REPUBLICA POPULAR",
     "SHANDONG CYNDA CHEMICAL CO. LTD|CHINA, REPUBLICA POPULAR",
@@ -1185,7 +1186,7 @@
    "nomsPt": [
     "Mesotriona"
    ],
-   "nbHomologations": 47,
+   "nbHomologations": 48,
    "teneurMax": 980.0,
    "usines": [
     "ANHUI FENGLE AGROCHEMICAL CO. LTD|CHINA, REPUBLICA POPULAR",
@@ -1337,7 +1338,7 @@
    "nomsPt": [
     "Protioconazol"
    ],
-   "nbHomologations": 90,
+   "nbHomologations": 91,
    "teneurMax": 980.0,
    "usines": [
     "ADAMA AGRICULTURAL SOLUTIONS LTD.|ISRAEL",
@@ -3100,13 +3101,14 @@
   {
    "nomPt": "tebutiurom",
    "groupeChimique": "uréia",
-   "nbHomologations": 21,
+   "nbHomologations": 22,
    "teneurMax": 982.3,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
     "Agrogill Chemicals Ltda",
     "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ancom do Brasil Ltda.",
     "CCAB Agro S.A.   São Paulo",
     "Foison do Brasil Defensivos Agrícolas e Comércio Ltda",
     "Nortox S.A. - Arapongas",
@@ -5922,6 +5924,47 @@
    ]
   },
   {
+   "nomPt": "imazapir",
+   "groupeChimique": "imidazolinona",
+   "nbHomologations": 12,
+   "teneurMax": 980.0,
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "Brilliance Produtos Agrícolas Ltda",
+    "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
+    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "Zhongshan Química do Brasil - Sorocaba/SP"
+   ],
+   "fabricants": [
+    {
+     "nom": "Adama Agricultural Solutions Ltd.",
+     "pays": "Israël"
+    },
+    {
+     "nom": "Basf Corporation",
+     "pays": "États-Unis"
+    },
+    {
+     "nom": "Jiangsu Flag Chemical Industry Co., Ltd.",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Liaoning Cynda Chemical Co. Ltd.",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Weifang Cynda Chemical Co., Ltd.",
+     "pays": "Chine"
+    }
+   ]
+  },
+  {
    "nomPt": "tidiazurom",
    "groupeChimique": "uréia",
    "nbHomologations": 10,
@@ -6200,42 +6243,6 @@
     },
     {
      "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine"
-    }
-   ]
-  },
-  {
-   "nomPt": "imazapir",
-   "groupeChimique": "imidazolinona",
-   "nbHomologations": 11,
-   "teneurMax": 980.0,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
-    "Brilliance Produtos Agrícolas Ltda",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "Zhongshan Química do Brasil - Sorocaba/SP"
-   ],
-   "fabricants": [
-    {
-     "nom": "Adama Agricultural Solutions Ltd.",
-     "pays": "Israël"
-    },
-    {
-     "nom": "Basf Corporation",
-     "pays": "États-Unis"
-    },
-    {
-     "nom": "Liaoning Cynda Chemical Co. Ltd.",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Weifang Cynda Chemical Co., Ltd.",
      "pays": "Chine"
     }
    ]
@@ -9934,6 +9941,7 @@
     "haloxifope-P-metílico",
     "hexazinona",
     "imazapique",
+    "imazapir",
     "imazetapir",
     "isoxaflutol",
     "lufenurom",
@@ -9945,7 +9953,7 @@
     "trifloxistrobina",
     "triflumurom"
    ],
-   "nbHomologations": 50,
+   "nbHomologations": 51,
    "titulaires": [
     "Adama Brasil S.A.- Londrina/PR",
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
@@ -11075,6 +11083,40 @@
    ]
   },
   {
+   "id": "JIANGSU CHANGQING AGROCHEMICAL NANTONG CO., LTD.|CHINA, REPUBLICA POPULAR",
+   "nom": "Jiangsu Changqing Agrochemical Nantong Co., Ltd.",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "ACETAMIPRID",
+    "CLOMAZONE",
+    "DICAMBA",
+    "S-METOLACHLOR"
+   ],
+   "matieresPt": [
+    "Dicamba",
+    "S-metolacloro",
+    "acetamiprido",
+    "clomazona",
+    "diafentiurom",
+    "epoxiconazol"
+   ],
+   "nbHomologations": 22,
+   "titulaires": [
+    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
+    "Adama Brasil S.A.- Londrina/PR",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "Changqing do Brasil Produtos Agrícolas Ltda",
+    "Cropchem Ltda - Porto Alegre",
+    "Helm do Brasil Mercantil - São Paulo/SP",
+    "Nortox S.A. - Arapongas",
+    "Perterra Insumos Agropecuários S.A.  São Paulo/SP",
+    "Pilarquim Br Comercial Ltda.- São Paulo"
+   ]
+  },
+  {
    "id": "JINGBO AGROCHEMICALS TECHNOLOGY CO LTD|CHINA, REPUBLICA POPULAR",
    "nom": "Jingbo Agrochemicals Technology Co Ltd",
    "pays": "Chine",
@@ -11496,18 +11538,18 @@
     "Simazina",
     "terbutilazina"
    ],
-   "nbHomologations": 24,
+   "nbHomologations": 25,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
     "Albaugh Agro Brasil Ltda.- São Paulo",
     "Ameribrás Indústria e Comércio Ltda.",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
     "Cropchem Ltda - Porto Alegre",
     "Iharabras S.A. Indústria Químicas - Sorocaba",
     "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba",
-    "Oxon Brasil Defensivos Agrícolas Ltda."
+    "Ouro Fino Química S.A. - Uberaba"
    ]
   },
   {
@@ -11577,38 +11619,6 @@
     "SM Agrocare Brasil Importação Comércio e Serviços Agrícolas Ltda",
     "Sumitomo Chemical Brasil Indústria Química S.A. - Maracanaú/CE",
     "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
-   ]
-  },
-  {
-   "id": "JIANGSU CHANGQING AGROCHEMICAL NANTONG CO., LTD.|CHINA, REPUBLICA POPULAR",
-   "nom": "Jiangsu Changqing Agrochemical Nantong Co., Ltd.",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "ACETAMIPRID",
-    "DICAMBA",
-    "S-METOLACHLOR"
-   ],
-   "matieresPt": [
-    "Dicamba",
-    "S-metolacloro",
-    "acetamiprido",
-    "diafentiurom",
-    "epoxiconazol"
-   ],
-   "nbHomologations": 21,
-   "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
-    "Adama Brasil S.A.- Londrina/PR",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Changqing do Brasil Produtos Agrícolas Ltda",
-    "Cropchem Ltda - Porto Alegre",
-    "Helm do Brasil Mercantil - São Paulo/SP",
-    "Nortox S.A. - Arapongas",
-    "Perterra Insumos Agropecuários S.A.  São Paulo/SP",
-    "Pilarquim Br Comercial Ltda.- São Paulo"
    ]
   },
   {
@@ -12071,11 +12081,12 @@
     "tebuconazol",
     "trifloxistrobina"
    ],
-   "nbHomologations": 5,
+   "nbHomologations": 6,
    "titulaires": [
     "Adama Brasil S.A.- Londrina/PR",
     "Nortox S.A. - Arapongas",
-    "Prospecta Soluções Biológicas Ltda, - Porto Alegre/RS"
+    "Prospecta Soluções Biológicas Ltda, - Porto Alegre/RS",
+    "Syncrom Assessoria e Comércio de Produtos Agropecuários  Ltda."
    ]
   },
   {
@@ -12519,11 +12530,12 @@
     "paclobutrazol",
     "pimetrozina"
    ],
-   "nbHomologations": 13,
+   "nbHomologations": 14,
    "titulaires": [
     "Adama Brasil S.A.- Londrina/PR",
     "Agroallianz S.A",
     "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "CCAB Agro S.A.   São Paulo",
     "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
     "Cropchem Ltda - Porto Alegre",
     "Nortox S.A. - Arapongas",
@@ -12556,6 +12568,34 @@
     "Cropchem Ltda - Porto Alegre",
     "Nortox S.A. - Arapongas",
     "Solus do Brasil Ltda. - Apucarana/PR- Parque Industrial"
+   ]
+  },
+  {
+   "id": "LIAONING CYNDA CHEMICAL CO. LTD.|CHINA, REPUBLICA POPULAR",
+   "nom": "Liaoning Cynda Chemical Co. Ltd.",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "CLETHODIM",
+    "CLOMAZONE"
+   ],
+   "matieresPt": [
+    "cletodim",
+    "clomazona",
+    "imazapique",
+    "imazapir",
+    "imazetapir"
+   ],
+   "nbHomologations": 11,
+   "titulaires": [
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "Brilliance Produtos Agrícolas Ltda",
+    "CCAB Agro S.A.   São Paulo",
+    "Nortox S.A. - Arapongas",
+    "Ouro Fino Química S.A. - Uberaba",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
    ]
   },
   {
@@ -12663,33 +12703,6 @@
     "NGC Agrosciences Brasil Ltda - Botucatu/SP",
     "Nortox S.A. - Arapongas",
     "Perterra Insumos Agropecuários S.A.  São Paulo/SP"
-   ]
-  },
-  {
-   "id": "LIAONING CYNDA CHEMICAL CO. LTD.|CHINA, REPUBLICA POPULAR",
-   "nom": "Liaoning Cynda Chemical Co. Ltd.",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "CLETHODIM",
-    "CLOMAZONE"
-   ],
-   "matieresPt": [
-    "cletodim",
-    "clomazona",
-    "imazapique",
-    "imazapir",
-    "imazetapir"
-   ],
-   "nbHomologations": 10,
-   "titulaires": [
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Brilliance Produtos Agrícolas Ltda",
-    "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
    ]
   },
   {
@@ -14018,6 +14031,29 @@
    ]
   },
   {
+   "id": "HEBEI LANSHENG BIOTECH CO., LTD|CHINA, REPUBLICA POPULAR",
+   "nom": "Hebei Lansheng Biotech Co., Ltd",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "CLETHODIM"
+   ],
+   "matieresPt": [
+    "cletodim",
+    "metribuzim"
+   ],
+   "nbHomologations": 7,
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "CCAB Agro S.A.   São Paulo",
+    "NGC Agrosciences Brasil Ltda - Botucatu/SP",
+    "Nortox S.A. - Arapongas"
+   ]
+  },
+  {
    "id": "HUNAN BIDE BIOCHEMICAL TECHNOLOGY CO., LTD|CHINA, REPUBLICA POPULAR",
    "nom": "Hunan Bide Biochemical Technology Co., Ltd",
    "pays": "Chine",
@@ -14237,28 +14273,6 @@
    "titulaires": [
     "Adama Brasil S.A.- Londrina/PR",
     "Ameribrás Indústria e Comércio Ltda."
-   ]
-  },
-  {
-   "id": "HEBEI LANSHENG BIOTECH CO., LTD|CHINA, REPUBLICA POPULAR",
-   "nom": "Hebei Lansheng Biotech Co., Ltd",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "CLETHODIM"
-   ],
-   "matieresPt": [
-    "cletodim",
-    "metribuzim"
-   ],
-   "nbHomologations": 6,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "NGC Agrosciences Brasil Ltda - Botucatu/SP",
-    "Nortox S.A. - Arapongas"
    ]
   },
   {
@@ -17927,6 +17941,24 @@
    ]
   },
   {
+   "id": "ANCOM CROP CARE SDN. BHD.|MALÁSIA",
+   "nom": "Ancom Crop Care Sdn. Bhd.",
+   "pays": "Malaisie",
+   "paysBrut": "MALÁSIA",
+   "sites": [],
+   "matieres": [],
+   "matieresPt": [
+    "MSMA",
+    "tebutiurom"
+   ],
+   "nbHomologations": 4,
+   "titulaires": [
+    "Ancom do Brasil Ltda.",
+    "Nortox S.A. - Arapongas",
+    "Ouro Fino Química S.A. - Uberaba"
+   ]
+  },
+  {
    "id": "INDOFIL INDUSTRIES LIMITED  PLANTA AZAD NAGAR|ÍNDIA",
    "nom": "Indofil Industries Limited  Planta Azad Nagar",
    "pays": "Inde",
@@ -18078,24 +18110,6 @@
    "nbHomologations": 3,
    "titulaires": [
     "Proregistros Registros de Produtos Ltda - EPP"
-   ]
-  },
-  {
-   "id": "ANCOM CROP CARE SDN. BHD.|MALÁSIA",
-   "nom": "Ancom Crop Care Sdn. Bhd.",
-   "pays": "Malaisie",
-   "paysBrut": "MALÁSIA",
-   "sites": [],
-   "matieres": [],
-   "matieresPt": [
-    "MSMA",
-    "tebutiurom"
-   ],
-   "nbHomologations": 3,
-   "titulaires": [
-    "Ancom do Brasil Ltda.",
-    "Nortox S.A. - Arapongas",
-    "Ouro Fino Química S.A. - Uberaba"
    ]
   },
   {
