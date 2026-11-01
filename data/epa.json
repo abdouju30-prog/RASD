@@ -3,22 +3,22 @@
   "source": "US EPA — National List of Active Pesticide-Producing Establishments",
   "url": "https://www.epa.gov/compliance/national-list-active-epa-registered-foreign-and-domestic-pesticide-andor-device",
   "licence": "Domaine public (œuvre du gouvernement des États-Unis)",
-  "attribution": "US EPA — National List of Active Pesticide-Producing Establishments — relevé du 2026-10-16",
-  "genere": "2026-10-16T09:50:37",
-  "nbTotal": 19564,
-  "nbEtrangers": 7315,
-  "nbSourcing": 5279,
+  "attribution": "US EPA — National List of Active Pesticide-Producing Establishments — relevé du 2026-11-01",
+  "genere": "2026-11-01T12:34:31",
+  "nbTotal": 19582,
+  "nbEtrangers": 7323,
+  "nbSourcing": 5285,
   "nbPays": 85,
   "avertissement": "Liste des sites de production enregistrés auprès de l'EPA pour produire des pesticides destinés au marché américain. Elle dit QUI produit et OÙ, jamais QUOI : aucune matière active n'y figure. Aucune valeur réglementaire au Maroc, et un enregistrement d'établissement n'atteste d'aucune conformité — l'EPA précise qu'il identifie un lieu de production, rien de plus."
  },
  "parPays": [
   {
    "pays": "Chine",
-   "n": 4072
+   "n": 4077
   },
   {
    "pays": "Canada",
-   "n": 392
+   "n": 393
   },
   {
    "pays": "Inde",
@@ -82,7 +82,7 @@
   },
   {
    "pays": "Thaïlande",
-   "n": 59
+   "n": 60
   },
   {
    "pays": "Israël",
@@ -169,11 +169,11 @@
    "n": 13
   },
   {
-   "pays": "Guatemala",
-   "n": 11
+   "pays": "Finlande",
+   "n": 12
   },
   {
-   "pays": "Finlande",
+   "pays": "Guatemala",
    "n": 11
   },
   {
@@ -7612,6 +7612,18 @@
    "pays": "Canada",
    "paysConnu": true,
    "societe": "KOREX CANADA",
+   "sourcing": false
+  },
+  {
+   "numero": "84628-CAN-1",
+   "etablissement": "KUUS INC.",
+   "adresse": "450 TAPSCOTT ROAD UNIT 4-6",
+   "ville": "TORONTO",
+   "region": null,
+   "codePays": "CAN",
+   "pays": "Canada",
+   "paysConnu": true,
+   "societe": "KUUS, INC.",
    "sourcing": false
   },
   {
@@ -24031,6 +24043,18 @@
    "sourcing": true
   },
   {
+   "numero": "105641-CHN-1",
+   "etablissement": "HEBEI NIUBOSHI MECHANICAL EQUIPMENT CO .,LTD",
+   "adresse": "NO. 227, TUANCHENG VILLAGE, SUJIAYING TOWN, JULU COUNTY",
+   "ville": "XINGTAI",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Hebei Niuboshi mechanical Equipment Co .,LTD",
+   "sourcing": true
+  },
+  {
    "numero": "92401-CHN-1",
    "etablissement": "HEBEI SHANLI CHEMICAL CO. LTD.",
    "adresse": "EIGHTEENTH TEAM, ZHONGJIE FARM",
@@ -25240,6 +25264,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "Hubei Qianyi Chemical Products Co., Ltd",
+   "sourcing": true
+  },
+  {
+   "numero": "105487-CHN-1",
+   "etablissement": "HUBEI QINGDING ENERGY TECHNOLOGY CO.LTD",
+   "adresse": "ROOM 09, 9F, BUILDING B, CHINA MERCHANTS TIMES, NO.  977 HEPING AVENUE, QINGSHAN DISTRICT",
+   "ville": "WUHAN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Hubei Qingding Energy Technology Co.Ltd",
    "sourcing": true
   },
   {
@@ -36091,6 +36127,18 @@
    "sourcing": true
   },
   {
+   "numero": "101566-CHN-2",
+   "etablissement": "PURAIR TECHNOLOGY APPLIANCES",
+   "adresse": "HENGPING ROAD, YUANSHAN STREET, LONGGANG DISTRICT,",
+   "ville": "SHENZHEN",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Yalla Ventures, Inc.",
+   "sourcing": true
+  },
+  {
    "numero": "84157-CHN-1",
    "etablissement": "PURATECH COMPANY LTD.",
    "adresse": "MA LIANDIAN INDUSTRIAL ZONE, HUI LONG GUAN",
@@ -39375,7 +39423,7 @@
    "codePays": "CHN",
    "pays": "Chine",
    "paysConnu": true,
-   "societe": "SHANGHAI SHENGNONG PESTICIDE CO., LTD.",
+   "societe": "SHANGHAI SHENGNONG PESTICIDE CO., LTD",
    "sourcing": true
   },
   {
@@ -50107,6 +50155,18 @@
    "sourcing": true
   },
   {
+   "numero": "106053-CHN-1",
+   "etablissement": "TEPRO (CHINA) CO.,LTD",
+   "adresse": "No.13 XingJing Village,Nan Hai District",
+   "ville": "Foshan",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Sichuan Shuze E-Commerce Co., Ltd.",
+   "sourcing": true
+  },
+  {
    "numero": "96457-CHN-1",
    "etablissement": "TEPRO CHINA CO., LTD.",
    "adresse": "NO. 8 DONGYANG, 3 STREET",
@@ -53884,6 +53944,18 @@
    "pays": "Chine",
    "paysConnu": true,
    "societe": "Yiwu DANQ Household Products Co., Ltd",
+   "sourcing": true
+  },
+  {
+   "numero": "105538-CHN-1",
+   "etablissement": "YIWU GANGCHEN IMPORT & EXPORT CO., LTD.",
+   "adresse": "C617 ROOM C617, BLOCK C, WANGSHANG BUILDING, NO. 407, YONGJUN ROAD, BEIYUAN STREET, YIWU CITY",
+   "ville": "JINHUA",
+   "region": null,
+   "codePays": "CHN",
+   "pays": "Chine",
+   "paysConnu": true,
+   "societe": "Yiwu Gangchen Import & Export Co., Ltd.",
    "sourcing": true
   },
   {
@@ -63011,6 +63083,18 @@
    "etablissement": "KEMIRA CHEMICALS OY",
    "adresse": "TYPPITIE 1",
    "ville": "OULU",
+   "region": null,
+   "codePays": "FIN",
+   "pays": "Finlande",
+   "paysConnu": true,
+   "societe": "KEMIRA WATER SOLUTIONS, INC.",
+   "sourcing": false
+  },
+  {
+   "numero": "9386-FIN-2",
+   "etablissement": "KEMIRA OYJ",
+   "adresse": "MALLENIUKSENKATU 1",
+   "ville": "ESPOO",
    "region": null,
    "codePays": "FIN",
    "pays": "Finlande",
@@ -85192,6 +85276,18 @@
    "pays": "Thaïlande",
    "paysConnu": true,
    "societe": "Dayang Technology (Thailand) Co., Ltd",
+   "sourcing": true
+  },
+  {
+   "numero": "39921-THA-1",
+   "etablissement": "EARTH (THAILAND) CO.,LTD.",
+   "adresse": "6087 VILLAGE NUMBER 19, NAVANAKORN INDUSTRIAL ESTATE",
+   "ville": "KHLONG LUANG",
+   "region": null,
+   "codePays": "THA",
+   "pays": "Thaïlande",
+   "paysConnu": true,
+   "societe": "EARTH CORPORATION",
    "sourcing": true
   },
   {

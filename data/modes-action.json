@@ -1,6 +1,6 @@
 {
  "meta": {
-  "genere": "2026-10-16",
+  "genere": "2026-11-01",
   "sources": {
    "FRAC": "https://media.croplife.org.au/2026/07/CropLife_2026-FungicideActivityGroupTable.pdf",
    "IRAC": "https://media.croplife.org.au/2026/07/CropLife_2026_Insecticide_ActiveConList.pdf",
@@ -757,12 +757,6 @@
     "ancien": "E",
     "libelle": "Inhibition of Protoporphyrinogen Oxidase (PPO)",
     "famille": "Phenylpyrazoles"
-   }
-  },
-  "PYRIDABEN": {
-   "IRAC": {
-    "groupe": "21A",
-    "libelle": null
    }
   },
   "PYRIDATE": {

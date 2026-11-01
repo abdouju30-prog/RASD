@@ -5,15 +5,15 @@
   "miroir": "Ministère de l'agriculture de l'oblast d'Oulianovsk",
   "edition": "4 апреля 2022",
   "attribution": "Минсельхоз России — Государственный каталог пестицидов и агрохимикатов — édition au 4 апреля 2022",
-  "genere": "2026-10-16T09:50:47",
+  "genere": "2026-11-01T12:34:39",
   "nbPages": 852,
   "nbEntrees": 1479,
   "nbSocietes": 229,
   "nbRusses": 165,
   "nbEtrangeres": 50,
   "nbSansSociete": 113,
-  "nbMatieres": 119,
-  "nbMatieresIndex": 192,
+  "nbMatieres": 118,
+  "nbMatieresIndex": 190,
   "parPays": [
    [
     "Russie",
@@ -5352,28 +5352,6 @@
    ]
   },
   {
-   "cle": "НИССАН КЕМИКАЛ ИНДАСТРИЗ ЛТД",
-   "nom": "Ниссан Кемикал Индастриз, Лтд",
-   "latin": "Nissan Kemikal Indastriz, Ltd",
-   "identifie": false,
-   "formes": [
-    "ЛТД"
-   ],
-   "etrangere": true,
-   "pays": null,
-   "paysFiable": false,
-   "nbHomologations": 1,
-   "matieres": [
-    "PYRIDABEN"
-   ],
-   "matieresRusses": [
-    "Пиридабен"
-   ],
-   "produits": [
-    ")"
-   ]
-  },
-  {
    "cle": "НИХОН НОЯКУ КО ЛТД ЯПОНИЯ",
    "nom": "Нихон Нояку Ко., Лтд. (Япония)",
    "latin": "Nikhon Noyaku Ko., Ltd. (Yaponiya)",
@@ -7002,6 +6980,26 @@
    ],
    "produits": [
     "(480 г/л)"
+   ]
+  },
+  {
+   "cle": "НИССАН КЕМИКАЛ ИНДАСТРИЗ ЛТД",
+   "nom": "Ниссан Кемикал Индастриз, Лтд",
+   "latin": "Nissan Kemikal Indastriz, Ltd",
+   "identifie": false,
+   "formes": [
+    "ЛТД"
+   ],
+   "etrangere": true,
+   "pays": null,
+   "paysFiable": false,
+   "nbHomologations": 1,
+   "matieres": [],
+   "matieresRusses": [
+    "Пиридабен"
+   ],
+   "produits": [
+    ")"
    ]
   },
   {
@@ -9310,16 +9308,6 @@
    "nbHomologations": 1,
    "societes": [
     "РУССКИЙ ПИРЕТРУМ"
-   ]
-  },
-  {
-   "iso": "PYRIDABEN",
-   "nomsRusses": [
-    "Пиридабен"
-   ],
-   "nbHomologations": 1,
-   "societes": [
-    "Ниссан Кемикал Индастриз, Лтд"
    ]
   },
   {
@@ -13592,9 +13580,7 @@
    "expiration": "01.11.2025",
    "produit": ")",
    "matiereRusse": "Пиридабен",
-   "iso": [
-    "PYRIDABEN"
-   ],
+   "iso": [],
    "societes": [
     {
      "nom": "Ниссан Кемикал Индастриз, Лтд",

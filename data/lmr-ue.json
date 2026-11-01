@@ -2,9 +2,9 @@
  "meta": {
   "source": "EU Pesticides Database — DG SANTE",
   "url": "https://food.ec.europa.eu/plants/pesticides/eu-pesticides-database_en",
-  "genere": "2026-10-16",
+  "genere": "2026-11-01",
   "nbProduits": 52,
-  "nbResidus": 174,
+  "nbResidus": 173,
   "avertissement": "LMR en mg/kg. Une valeur suivie de « LQ » est fixée à la limite de quantification : aucune tolérance. Vérifier la définition du résidu et la LMR du pays de destination avant toute exportation."
  },
  "produits": {
@@ -2442,6 +2442,12 @@
    "residuUE": "Acequinocyl(F)",
    "lmr": {
     "0110020": {
+     "futur": {
+      "v": "0.6",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.6",
       "lq": false,
@@ -2450,6 +2456,12 @@
      }
     },
     "0110030": {
+     "futur": {
+      "v": "0.6",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.6",
       "lq": false,
@@ -2463,9 +2475,21 @@
       "lq": false,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.6",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130010": {
+     "futur": {
+      "v": "0.4",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.4",
       "lq": false,
@@ -2474,6 +2498,12 @@
      }
     },
     "0130020": {
+     "futur": {
+      "v": "0.4",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.4",
       "lq": false,
@@ -2482,6 +2512,12 @@
      }
     },
     "0130030": {
+     "futur": {
+      "v": "0.4",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.4",
       "lq": false,
@@ -2490,6 +2526,12 @@
      }
     },
     "0140010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2503,6 +2545,12 @@
       "lq": false,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0151010": {
@@ -2511,6 +2559,12 @@
       "lq": false,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.8",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0151020": {
@@ -2519,6 +2573,12 @@
       "lq": false,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.8",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0152000": {
@@ -2527,6 +2587,12 @@
       "lq": false,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.3",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0153010": {
@@ -2535,9 +2601,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0153030": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2546,6 +2624,12 @@
      }
     },
     "0154010": {
+     "futur": {
+      "v": "2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2554,6 +2638,12 @@
      }
     },
     "0161010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2562,6 +2652,12 @@
      }
     },
     "0161030": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2570,6 +2666,12 @@
      }
     },
     "0161060": {
+     "futur": {
+      "v": "0.05",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.05",
       "lq": false,
@@ -2583,6 +2685,12 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0163010": {
@@ -2591,9 +2699,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0163020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2602,6 +2722,12 @@
      }
     },
     "0163050": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2615,9 +2741,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0213020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2631,6 +2769,12 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0220020": {
@@ -2639,9 +2783,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0231010": {
+     "futur": {
+      "v": "0.3",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.3",
       "lq": false,
@@ -2655,9 +2811,21 @@
       "lq": false,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.3",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0231030": {
+     "futur": {
+      "v": "0.3",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.3",
       "lq": false,
@@ -2671,9 +2839,21 @@
       "lq": false,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.08",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0232030": {
+     "futur": {
+      "v": "0.08",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.08",
       "lq": false,
@@ -2682,6 +2862,12 @@
      }
     },
     "0233010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2695,9 +2881,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0234000": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2711,9 +2909,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0241020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2722,6 +2932,12 @@
      }
     },
     "0242010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2730,6 +2946,12 @@
      }
     },
     "0242020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2738,6 +2960,12 @@
      }
     },
     "0251020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2751,6 +2979,12 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0256080": {
@@ -2759,9 +2993,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.02",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0260010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2775,6 +3021,12 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270050": {
@@ -2783,9 +3035,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0401020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2799,9 +3063,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0401060": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2810,6 +3086,12 @@
      }
     },
     "0402010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2823,9 +3105,21 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0500030": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2834,6 +3128,12 @@
      }
     },
     "0500090": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2842,6 +3142,12 @@
      }
     },
     "0900010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -2855,6 +3161,12 @@
       "lq": true,
       "date": "2026-02-11",
       "reglement": "Commission Regulation (EU) 2026/140"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     }
    }
@@ -19173,6 +19485,12 @@
    "residuUE": "Deltamethrin (cis-deltamethrin)(F)",
    "lmr": {
     "0110020": {
+     "futur": {
+      "v": "0.02",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.02",
       "lq": false,
@@ -19186,6 +19504,12 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.02",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0110050": {
@@ -19194,6 +19518,12 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.02",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130010": {
@@ -19202,9 +19532,21 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130020": {
+     "futur": {
+      "v": "0.09",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.09",
       "lq": false,
@@ -19218,6 +19560,12 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0140010": {
@@ -19226,6 +19574,12 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.15",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0140030": {
@@ -19234,9 +19588,21 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.15",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0151010": {
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.2",
       "lq": false,
@@ -19250,6 +19616,12 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0152000": {
@@ -19258,9 +19630,21 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0153010": {
+     "futur": {
+      "v": "0.08",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.08",
       "lq": false,
@@ -19269,6 +19653,12 @@
      }
     },
     "0153030": {
+     "futur": {
+      "v": "0.08",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.08",
       "lq": false,
@@ -19277,6 +19667,12 @@
      }
     },
     "0154010": {
+     "futur": {
+      "v": "0.6",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.6",
       "lq": false,
@@ -19285,6 +19681,12 @@
      }
     },
     "0161010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19293,6 +19695,12 @@
      }
     },
     "0161030": {
+     "futur": {
+      "v": "1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "1",
       "lq": false,
@@ -19306,9 +19714,21 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0162040": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19317,6 +19737,12 @@
      }
     },
     "0163010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19330,9 +19756,21 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0163050": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19346,9 +19784,21 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0213020": {
+     "futur": {
+      "v": "0.02",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.02",
       "lq": false,
@@ -19362,6 +19812,12 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.02",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0220020": {
@@ -19370,6 +19826,12 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.06",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0231010": {
@@ -19378,9 +19840,21 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0231020": {
+     "futur": {
+      "v": "0.15",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.15",
       "lq": false,
@@ -19389,6 +19863,12 @@
      }
     },
     "0231030": {
+     "futur": {
+      "v": "0.4",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.4",
       "lq": false,
@@ -19402,9 +19882,21 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0232030": {
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.2",
       "lq": false,
@@ -19413,6 +19905,12 @@
      }
     },
     "0233010": {
+     "futur": {
+      "v": "0.03",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19421,6 +19919,12 @@
      }
     },
     "0233030": {
+     "futur": {
+      "v": "0.03",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19429,6 +19933,12 @@
      }
     },
     "0234000": {
+     "futur": {
+      "v": "0.02",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.02",
       "lq": false,
@@ -19442,9 +19952,21 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0241020": {
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.1",
       "lq": false,
@@ -19458,6 +19980,12 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0242020": {
@@ -19466,9 +19994,21 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0251020": {
+     "futur": {
+      "v": "0.4",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.4",
       "lq": false,
@@ -19482,9 +20022,21 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0256080": {
+     "futur": {
+      "v": "1.5",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "1.5",
       "lq": false,
@@ -19498,6 +20050,12 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270010": {
@@ -19506,9 +20064,21 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270050": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19517,6 +20087,12 @@
      }
     },
     "0401020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19525,6 +20101,12 @@
      }
     },
     "0401050": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -19533,6 +20115,12 @@
      }
     },
     "0401060": {
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.2",
       "lq": false,
@@ -19541,6 +20129,12 @@
      }
     },
     "0402010": {
+     "futur": {
+      "v": "0.6",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.6",
       "lq": false,
@@ -19549,6 +20143,12 @@
      }
     },
     "0500010": {
+     "futur": {
+      "v": "2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "2",
       "lq": false,
@@ -19562,9 +20162,21 @@
       "lq": false,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0500090": {
+     "futur": {
+      "v": "1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "1",
       "lq": false,
@@ -19578,6 +20190,12 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0900020": {
@@ -19586,6 +20204,12 @@
       "lq": true,
       "date": "2026-05-12",
       "reglement": "Regulation (EU) 2026/876"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     }
    }
@@ -23804,6 +24428,12 @@
    "residuUE": "Dodine",
    "lmr": {
     "0110020": {
+     "futur": {
+      "v": "1.5",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "1.5",
       "lq": false,
@@ -23817,6 +24447,12 @@
       "lq": false,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "1.5",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0110050": {
@@ -23825,9 +24461,21 @@
       "lq": false,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "1.5",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130010": {
+     "futur": {
+      "v": "0.9",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.9",
       "lq": false,
@@ -23836,6 +24484,12 @@
      }
     },
     "0130020": {
+     "futur": {
+      "v": "0.9",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.9",
       "lq": false,
@@ -23849,9 +24503,21 @@
       "lq": false,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "5",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0140010": {
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.1",
       "lq": false,
@@ -23860,6 +24526,12 @@
      }
     },
     "0140030": {
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.1",
       "lq": false,
@@ -23868,6 +24540,12 @@
      }
     },
     "0151010": {
+     "futur": {
+      "v": "2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23876,6 +24554,12 @@
      }
     },
     "0151020": {
+     "futur": {
+      "v": "2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23889,9 +24573,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0153010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23900,6 +24596,12 @@
      }
     },
     "0153030": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23908,6 +24610,12 @@
      }
     },
     "0154010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23916,6 +24624,12 @@
      }
     },
     "0161010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23929,9 +24643,21 @@
       "lq": false,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "20",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0161060": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23945,6 +24671,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0163010": {
@@ -23953,6 +24685,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0163020": {
@@ -23961,6 +24699,12 @@
       "lq": false,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.5",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0163050": {
@@ -23969,9 +24713,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0211000": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23980,6 +24736,12 @@
      }
     },
     "0213020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -23993,9 +24755,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0220020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24004,6 +24778,12 @@
      }
     },
     "0231010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24012,6 +24792,12 @@
      }
     },
     "0231020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24025,6 +24811,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0232010": {
@@ -24033,9 +24825,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0232030": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24044,6 +24848,12 @@
      }
     },
     "0233010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24052,6 +24862,12 @@
      }
     },
     "0233030": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24065,9 +24881,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0241010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24081,6 +24909,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0242010": {
@@ -24089,9 +24923,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0242020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24105,9 +24951,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0252010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24121,6 +24979,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.02",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0260010": {
@@ -24129,6 +24993,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270010": {
@@ -24137,6 +25007,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270050": {
@@ -24145,9 +25021,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0401020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24161,6 +25049,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0401060": {
@@ -24169,6 +25063,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0402010": {
@@ -24177,9 +25077,21 @@
       "lq": false,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "20",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0500010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24188,6 +25100,12 @@
      }
     },
     "0500030": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -24201,6 +25119,12 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0900010": {
@@ -24209,9 +25133,21 @@
       "lq": true,
       "date": "2022-08-14",
       "reglement": "Reg. (EU) 2022/1290"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0900020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -53586,6 +54522,12 @@
    "residuUE": "Sum of M4 and M6 (both free and conjugated), expressed as pinoxaden(R)(A)",
    "lmr": {
     "0110020": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53594,6 +54536,12 @@
      }
     },
     "0110030": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53607,6 +54555,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130010": {
@@ -53615,6 +54569,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130020": {
@@ -53623,9 +54583,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130030": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53639,6 +54611,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0140030": {
@@ -53647,6 +54625,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0151010": {
@@ -53655,9 +54639,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0151020": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53666,6 +54662,12 @@
      }
     },
     "0152000": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53674,6 +54676,12 @@
      }
     },
     "0153010": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53687,6 +54695,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0154010": {
@@ -53695,6 +54709,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0161010": {
@@ -53703,6 +54723,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0161030": {
@@ -53711,6 +54737,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0161060": {
@@ -53719,9 +54751,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0162040": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53730,6 +54774,12 @@
      }
     },
     "0163010": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53738,6 +54788,12 @@
      }
     },
     "0163020": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53751,9 +54807,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0211000": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53767,6 +54835,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0213080": {
@@ -53775,6 +54849,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0220020": {
@@ -53783,6 +54863,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0231010": {
@@ -53791,6 +54877,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0231020": {
@@ -53799,9 +54891,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0231030": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53815,9 +54919,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0232030": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53826,6 +54942,12 @@
      }
     },
     "0233010": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53834,6 +54956,12 @@
      }
     },
     "0233030": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53842,6 +54970,12 @@
      }
     },
     "0234000": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53855,9 +54989,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0241020": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53866,6 +55012,12 @@
      }
     },
     "0242010": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53874,6 +55026,12 @@
      }
     },
     "0242020": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53887,6 +55045,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0252010": {
@@ -53895,6 +55059,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0256080": {
@@ -53903,6 +55073,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.06",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0260010": {
@@ -53911,6 +55087,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270010": {
@@ -53919,9 +55101,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270050": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53935,9 +55129,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0401050": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53951,9 +55157,21 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0402010": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53962,6 +55180,12 @@
      }
     },
     "0500010": {
+     "futur": {
+      "v": "0.8",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.7",
       "lq": false,
@@ -53975,6 +55199,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0500090": {
@@ -53983,9 +55213,21 @@
       "lq": false,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.8",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0900010": {
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.03",
       "lq": true,
@@ -53999,6 +55241,12 @@
       "lq": true,
       "date": "2023-02-22",
       "reglement": "Reg. (EU) 2022/1346"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     }
    }
@@ -57375,6 +58623,12 @@
    "residuUE": "Prothioconazole: prothioconazole-desthio (sum of isomers)(F)",
    "lmr": {
     "0110020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57388,9 +58642,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0110050": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57404,6 +58670,12 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.05",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130020": {
@@ -57412,6 +58684,12 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.04",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0130030": {
@@ -57420,9 +58698,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.05",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0140010": {
+     "futur": {
+      "v": "0.3",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57431,6 +58721,12 @@
      }
     },
     "0140030": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57444,9 +58740,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0151020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57455,6 +58763,12 @@
      }
     },
     "0152000": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57463,6 +58777,12 @@
      }
     },
     "0153010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57476,9 +58796,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0154010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57492,6 +58824,12 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0161030": {
@@ -57500,9 +58838,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0161060": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57516,6 +58866,12 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0163010": {
@@ -57524,9 +58880,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0163020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57540,9 +58908,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0211000": {
+     "futur": {
+      "v": "0.02",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.02",
       "lq": true,
@@ -57551,6 +58931,12 @@
      }
     },
     "0213020": {
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.1",
       "lq": false,
@@ -57559,6 +58945,12 @@
      }
     },
     "0213080": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57572,9 +58964,21 @@
       "lq": false,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.05",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0231010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57583,6 +58987,12 @@
      }
     },
     "0231020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57596,6 +59006,12 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0232010": {
@@ -57604,9 +59020,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.08",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0232030": {
+     "futur": {
+      "v": "0.08",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57620,9 +59048,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.07",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0233030": {
+     "futur": {
+      "v": "0.07",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57636,9 +59076,21 @@
       "lq": false,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.02",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0241010": {
+     "futur": {
+      "v": "0.05",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.05",
       "lq": false,
@@ -57647,6 +59099,12 @@
      }
     },
     "0241020": {
+     "futur": {
+      "v": "0.05",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.05",
       "lq": false,
@@ -57660,6 +59118,12 @@
       "lq": false,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0242020": {
@@ -57668,9 +59132,21 @@
       "lq": false,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.09",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0251020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57679,6 +59155,12 @@
      }
     },
     "0252010": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -57687,6 +59169,12 @@
      }
     },
     "0256080": {
+     "futur": {
+      "v": "0.02",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.02",
       "lq": true,
@@ -57700,6 +59188,12 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270010": {
@@ -57708,6 +59202,12 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0270050": {
@@ -57716,6 +59216,12 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0401020": {
@@ -57724,9 +59230,21 @@
       "lq": true,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.02",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0401050": {
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.2",
       "lq": false,
@@ -57735,6 +59253,12 @@
      }
     },
     "0401060": {
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.15",
       "lq": false,
@@ -57743,6 +59267,12 @@
      }
     },
     "0402010": {
+     "futur": {
+      "v": "0.02",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.02",
       "lq": true,
@@ -57751,6 +59281,12 @@
      }
     },
     "0500010": {
+     "futur": {
+      "v": "0.2",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.2",
       "lq": false,
@@ -57759,6 +59295,12 @@
      }
     },
     "0500030": {
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.1",
       "lq": false,
@@ -57772,6 +59314,12 @@
       "lq": false,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.1",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0900010": {
@@ -57780,9 +59328,21 @@
       "lq": false,
       "date": "2024-06-05",
       "reglement": "2024/1318"
+     },
+     "futur": {
+      "v": "0.03",
+      "lq": false,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
      }
     },
     "0900020": {
+     "futur": {
+      "v": "0.01",
+      "lq": true,
+      "date": "2026-11-05",
+      "reglement": "Commission Regulation (EU) 2026/2289 "
+     },
      "actuel": {
       "v": "0.01",
       "lq": true,
@@ -59051,427 +60611,6 @@
       "lq": false,
       "date": "2008-09-01",
       "reglement": "Reg. (EC) No 149/2008"
-     }
-    }
-   }
-  },
-  "PYRIDABEN": {
-   "residuUE": "Pyridaben (F)",
-   "lmr": {
-    "0110020": {
-     "actuel": {
-      "v": "0.3",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0110030": {
-     "actuel": {
-      "v": "0.3",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0110050": {
-     "actuel": {
-      "v": "0.3",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0130010": {
-     "actuel": {
-      "v": "0.15",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0130020": {
-     "actuel": {
-      "v": "0.15",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0130030": {
-     "actuel": {
-      "v": "0.15",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0140010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0140030": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0151010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0151020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0152000": {
-     "actuel": {
-      "v": "0.9",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0153010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0153030": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0154010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0161010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0161030": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0161060": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0162040": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0163010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0163020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0163050": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0211000": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0213020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0213080": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0220020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0231010": {
-     "actuel": {
-      "v": "0.15",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0231020": {
-     "actuel": {
-      "v": "0.3",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0231030": {
-     "actuel": {
-      "v": "0.15",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0232010": {
-     "actuel": {
-      "v": "0.15",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0232030": {
-     "actuel": {
-      "v": "0.15",
-      "lq": false,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0233010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0233030": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0234000": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0241010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0241020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0242010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0242020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0251020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0252010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0256080": {
-     "actuel": {
-      "v": "0.02",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0260010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0270010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0270050": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0401020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0401050": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0401060": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0402010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0500010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0500030": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0500090": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0900010": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
-     }
-    },
-    "0900020": {
-     "actuel": {
-      "v": "0.01",
-      "lq": true,
-      "date": "2025-04-28",
-      "reglement": "Reg. (EU) 2024/2609"
      }
     }
    }
