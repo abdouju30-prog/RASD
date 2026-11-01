@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-10-31T11:38:18",
-  "dernierReleve": "2026-10-31",
+  "genere": "2026-11-01T12:35:21",
+  "dernierReleve": "2026-11-01",
   "premierReleve": false,
   "nbCandidates": 473,
   "nbEcarteesIndexMaroc": 24,
@@ -341,7 +341,7 @@
    "australie": {
     "nom": "FIPRONIL",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 114,
+    "nbProduitsAgricoles": 113,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -490,7 +490,7 @@
    "australie": {
     "nom": "BIFENTHRIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 265,
+    "nbProduitsAgricoles": 259,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -1635,7 +1635,7 @@
    "australie": {
     "nom": "ATRAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 77,
+    "nbProduitsAgricoles": 75,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -2863,7 +2863,7 @@
    "australie": {
     "nom": "MANCOZEB",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 72,
+    "nbProduitsAgricoles": 71,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3163,7 +3163,7 @@
    "australie": {
     "nom": "PROPICONAZOLE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 102,
+    "nbProduitsAgricoles": 100,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3656,7 +3656,7 @@
    "australie": {
     "nom": "FLUMIOXAZIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 35,
+    "nbProduitsAgricoles": 32,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4147,7 +4147,7 @@
    "australie": {
     "nom": "SIMAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 77,
+    "nbProduitsAgricoles": 74,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4230,7 +4230,7 @@
    "australie": {
     "nom": "CLOTHIANIDIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 16,
+    "nbProduitsAgricoles": 15,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5705,7 +5705,7 @@
    "australie": {
     "nom": "TRIFLURALIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 87,
+    "nbProduitsAgricoles": 79,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5866,7 +5866,7 @@
    "australie": {
     "nom": "IPRODIONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 44,
+    "nbProduitsAgricoles": 43,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6132,7 +6132,7 @@
    "australie": {
     "nom": "THIRAM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 40,
+    "nbProduitsAgricoles": 35,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6641,7 +6641,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 74,
+    "nbProduitsAgricoles": 68,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -8552,7 +8552,7 @@
    "australie": {
     "nom": "FENPROPIDIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 3,
+    "nbProduitsAgricoles": 2,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -8665,7 +8665,7 @@
    "australie": {
     "nom": "PYDIFLUMETOFEN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 7,
+    "nbProduitsAgricoles": 6,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -9439,6 +9439,31 @@
    "nouvelle": false
   },
   {
+   "cle": "espinosad",
+   "nom": "Espinosade",
+   "iso": null,
+   "nomPt": "Espinosade",
+   "groupeChimique": "espinosinas",
+   "teneurMax": 920.0,
+   "nbHomologationsBr": 2,
+   "fabricants": [
+    {
+     "nom": "Corteva Agriscience LLC",
+     "pays": "États-Unis",
+     "coutFaible": false
+    }
+   ],
+   "titulaires": [
+    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
+    "Qilu Pharmaceutical Latin America Comércio de Medicamentos Ltda"
+   ],
+   "coree": null,
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "fluindapir",
    "nom": "Fluindapyr",
    "iso": "Fluindapyr",
@@ -9781,30 +9806,6 @@
    "fabricants": [
     {
      "nom": "ChemDesign Products, Inc.,",
-     "pays": "États-Unis",
-     "coutFaible": false
-    }
-   ],
-   "titulaires": [
-    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)"
-   ],
-   "coree": null,
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "espinosad",
-   "nom": "Espinosade",
-   "iso": null,
-   "nomPt": "Espinosade",
-   "groupeChimique": "espinosinas",
-   "teneurMax": 850.0,
-   "nbHomologationsBr": 1,
-   "fabricants": [
-    {
-     "nom": "Corteva Agriscience LLC",
      "pays": "États-Unis",
      "coutFaible": false
     }
@@ -11067,7 +11068,7 @@
    "australie": {
     "nom": "PYRIOFENONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 2,
+    "nbProduitsAgricoles": 1,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11316,7 +11317,7 @@
    "australie": {
     "nom": "ESFENVALERATE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 22,
+    "nbProduitsAgricoles": 21,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -12553,7 +12554,7 @@
    "australie": {
     "nom": "PENFLUFEN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 6,
+    "nbProduitsAgricoles": 5,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -14084,7 +14085,7 @@
    "australie": {
     "nom": "CUPROUS OXIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 32,
+    "nbProduitsAgricoles": 20,
     "matiereActiveApprouvee": false
    },
    "premiereVue": "2026-09-07",
@@ -14767,7 +14768,7 @@
    "australie": {
     "nom": "NOVALURON",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 9,
+    "nbProduitsAgricoles": 8,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -14826,7 +14827,7 @@
    "australie": {
     "nom": "THIDIAZURON",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 29,
+    "nbProduitsAgricoles": 28,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -16009,7 +16010,7 @@
    "australie": {
     "nom": "ORYZALIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 16,
+    "nbProduitsAgricoles": 15,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -17299,7 +17300,7 @@
    "australie": {
     "nom": "MECOPROP",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 2,
+    "nbProduitsAgricoles": 1,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -17382,7 +17383,7 @@
    "australie": {
     "nom": "PROPAMOCARB HYDROCHLORIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 2,
+    "nbProduitsAgricoles": 1,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -18382,7 +18383,7 @@
    "australie": {
     "nom": "CARBENDAZIM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 27,
+    "nbProduitsAgricoles": 25,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",

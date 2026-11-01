@@ -2,9 +2,9 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-10-31",
-  "genere": "2026-10-31T11:36:57",
-  "nbHomologations": 2999,
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-11-01",
+  "genere": "2026-11-01T12:34:11",
+  "nbHomologations": 3002,
   "nbUsines": 542,
   "nbMatieres": 80,
   "nbMatieresIndex": 190,
@@ -942,8 +942,8 @@
    "nomsPt": [
     "ácido giberélico"
    ],
-   "nbHomologations": 3,
-   "teneurMax": 900.0,
+   "nbHomologations": 4,
+   "teneurMax": 920.0,
    "usines": [
     "ABBOTT LABORATORIES|ESTADOS UNIDOS",
     "FINE AGROCHEMICALS LIMITED|INGLATERRA",
@@ -1305,7 +1305,7 @@
    "nomsPt": [
     "picloram"
    ],
-   "nbHomologations": 34,
+   "nbHomologations": 35,
    "teneurMax": 980.0,
    "usines": [
     "ADAMA AGRICULTURAL SOLUTIONS LTD.|ISRAEL",
@@ -8298,6 +8298,22 @@
    ]
   },
   {
+   "nomPt": "Espinosade",
+   "groupeChimique": "espinosinas",
+   "nbHomologations": 2,
+   "teneurMax": 920.0,
+   "titulaires": [
+    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
+    "Qilu Pharmaceutical Latin America Comércio de Medicamentos Ltda"
+   ],
+   "fabricants": [
+    {
+     "nom": "Corteva Agriscience LLC",
+     "pays": "États-Unis"
+    }
+   ]
+  },
+  {
    "nomPt": "Fluindapyr",
    "groupeChimique": "pirazol carboxamida",
    "nbHomologations": 2,
@@ -8475,21 +8491,6 @@
    "fabricants": [
     {
      "nom": "ChemDesign Products, Inc.,",
-     "pays": "États-Unis"
-    }
-   ]
-  },
-  {
-   "nomPt": "Espinosade",
-   "groupeChimique": "espinosinas",
-   "nbHomologations": 1,
-   "teneurMax": 850.0,
-   "titulaires": [
-    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)"
-   ],
-   "fabricants": [
-    {
-     "nom": "Corteva Agriscience LLC",
      "pays": "États-Unis"
     }
    ]
@@ -9357,7 +9358,7 @@
     "fludioxonil",
     "fomesafem"
    ],
-   "nbHomologations": 120,
+   "nbHomologations": 121,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
