@@ -1,8 +1,8 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-11-01T12:35:21",
-  "dernierReleve": "2026-11-01",
+  "genere": "2026-11-02T14:39:01",
+  "dernierReleve": "2026-11-02",
   "premierReleve": false,
   "nbCandidates": 473,
   "nbEcarteesIndexMaroc": 24,
@@ -6721,11 +6721,11 @@
    ],
    "coree": {
     "nom": "Thifluzamide",
-    "nbHomologations": 40,
-    "nbFabrique": 33,
+    "nbHomologations": 41,
+    "nbFabrique": 34,
     "nbImporte": 7,
     "premiere": "2000-11-30",
-    "derniere": "2026-05-20",
+    "derniere": "2026-11-02",
     "nbSocietes": 16
    },
    "france": null,
@@ -18112,11 +18112,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Glyphosate-isopropylammonium",
-    "nbHomologations": 73,
+    "nbHomologations": 74,
     "nbFabrique": 56,
-    "nbImporte": 17,
+    "nbImporte": 18,
     "premiere": "1981-03-02",
-    "derniere": "2026-10-02",
+    "derniere": "2026-11-02",
     "nbSocietes": 29
    },
    "france": null,

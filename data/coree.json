@@ -2,11 +2,11 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-11-01",
-  "genere": "2026-11-01T12:35:16",
-  "derniereHomologation": "2026-10-10",
-  "nbLignesUsage": 146507,
-  "nbHomologations": 3987,
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-11-02",
+  "genere": "2026-11-02T14:38:55",
+  "derniereHomologation": "2026-11-02",
+  "nbLignesUsage": 146676,
+  "nbHomologations": 3991,
   "nbSocietes": 98,
   "nbFiliales": 16,
   "nbMatieres": 475,
@@ -14,10 +14,10 @@
   "nbNomsIso": 190,
   "nbHorsIndex": 353,
   "nbMelanges": 1052,
-  "nbUsages": 30991,
+  "nbUsages": 30994,
   "partTraduite": 97,
-  "nbFabrique": 3259,
-  "nbImporte": 728,
+  "nbFabrique": 3260,
+  "nbImporte": 731,
   "avertissement": "Registre coréen des produits phytosanitaires. Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. « 제조 » signifie produit fabriqué en Corée, PAS matière active synthétisée sur place : ce registre nomme le titulaire de l'homologation, pas l'usine de synthèse. Les raisons sociales sont romanisées (romanisation révisée) : une poignée pour chercher, pas une identité contractuelle. Ni prix, ni capacité, ni qualité."
  },
  "matieres": [
@@ -115,13 +115,14 @@
    "nomsCoreens": [
     "Acequinocyl"
    ],
-   "nbHomologations": 3,
+   "nbHomologations": 4,
    "nbFabrique": 1,
-   "nbImporte": 2,
+   "nbImporte": 3,
    "premiere": "2009-01-01",
-   "derniere": "2026-07-29",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
+    "아그리젠토(주)",
     "영농바이오(주)"
    ]
   },
@@ -535,15 +536,16 @@
    "nomsCoreens": [
     "Cyazofamid"
    ],
-   "nbHomologations": 21,
+   "nbHomologations": 22,
    "nbFabrique": 18,
-   "nbImporte": 3,
+   "nbImporte": 4,
    "premiere": "2001-04-04",
-   "derniere": "2025-01-17",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
     "(주)동방아그로",
+    "(주)성심바이오메딕",
     "(주)신농팜케미컬",
     "(주)천지인바이오텍",
     "(주)케이씨생명과학",
@@ -2390,11 +2392,11 @@
    "nomsCoreens": [
     "Tebuconazole"
    ],
-   "nbHomologations": 149,
-   "nbFabrique": 120,
+   "nbHomologations": 150,
+   "nbFabrique": 121,
    "nbImporte": 29,
    "premiere": "1990-10-08",
-   "derniere": "2026-09-14",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -2917,6 +2919,31 @@
    "derniere": "2023-12-14"
   },
   {
+   "cle": "Tebuconazole + Thifluzamide",
+   "composants": [
+    "Tebuconazole",
+    "Thifluzamide"
+   ],
+   "nbHomologations": 8,
+   "nbSocietes": 7,
+   "societes": [
+    "(주)경농",
+    "(주)위즈팜",
+    "(주)피에이치엘",
+    "(주)한얼싸이언스",
+    "㈜이엑스아이디",
+    "인바이오(주)",
+    "지넥스(주)"
+   ],
+   "nbFabrique": 6,
+   "nbImporte": 2,
+   "usages": [
+    "살균"
+   ],
+   "premiere": "2016-05-03",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "Polyoxyethylene alkylarylether + Sodium ligno sulfonate",
    "composants": [
     "Polyoxyethylene alkylarylether",
@@ -2940,30 +2967,6 @@
    ],
    "premiere": "1981-03-02",
    "derniere": "2004-07-12"
-  },
-  {
-   "cle": "Tebuconazole + Thifluzamide",
-   "composants": [
-    "Tebuconazole",
-    "Thifluzamide"
-   ],
-   "nbHomologations": 7,
-   "nbSocietes": 6,
-   "societes": [
-    "(주)경농",
-    "(주)위즈팜",
-    "(주)피에이치엘",
-    "(주)한얼싸이언스",
-    "인바이오(주)",
-    "지넥스(주)"
-   ],
-   "nbFabrique": 5,
-   "nbImporte": 2,
-   "usages": [
-    "살균"
-   ],
-   "premiere": "2016-05-03",
-   "derniere": "2026-05-20"
   },
   {
    "cle": "Azoxystrobin + Dimethomorph",
@@ -25805,11 +25808,11 @@
   {
    "nom": "Thifluzamide",
    "iso": null,
-   "nbHomologations": 40,
-   "nbFabrique": 33,
+   "nbHomologations": 41,
+   "nbFabrique": 34,
    "nbImporte": 7,
    "premiere": "2000-11-30",
-   "derniere": "2026-05-20",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -28149,11 +28152,11 @@
   {
    "nom": "Glyphosate-isopropylammonium",
    "iso": null,
-   "nbHomologations": 73,
+   "nbHomologations": 74,
    "nbFabrique": 56,
-   "nbImporte": 17,
+   "nbImporte": 18,
    "premiere": "1981-03-02",
-   "derniere": "2026-10-02",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -29096,6 +29099,64 @@
    "derniere": "2026-04-27"
   },
   {
+   "cle": "아그리젠토(주)",
+   "nom": "아그리젠토(주)",
+   "latin": "ageurijento",
+   "commercial": "Agrigento",
+   "groupe": null,
+   "formes": [
+    "S.A."
+   ],
+   "nbHomologations": 126,
+   "nbFabrique": 115,
+   "nbImporte": 11,
+   "nbMatieres": 76,
+   "matieres": [
+    "ABAMECTIN",
+    "ACEQUINOCYL",
+    "ACETAMIPRID",
+    "AZOXYSTROBIN",
+    "BENTAZONE",
+    "BIFENAZATE",
+    "BOSCALID",
+    "BUPROFEZIN",
+    "CHLORANTRANILIPROLE",
+    "CYAZOFAMID",
+    "CYHALOFOP-BUTYL",
+    "DAZOMET",
+    "DIFENOCONAZOLE",
+    "DIMETHOATE",
+    "DIMETHOMORPH",
+    "DINOTEFURAN",
+    "DITHIANON",
+    "EMAMECTIN BENZOATE",
+    "FLONICAMID",
+    "FLUAZIFOP-P-BUTYL",
+    "FLUAZINAM",
+    "FLUBENDIAMIDE",
+    "FLUDIOXONIL",
+    "FOSTHIAZATE",
+    "IMIDACLOPRID",
+    "INDOXACARB",
+    "KRESOXIM-METHYL",
+    "LAMBDA-CYHALOTHRIN",
+    "LUFENURON",
+    "MCPA",
+    "METALAXYL",
+    "OXYFLUORFEN",
+    "PENDIMETHALIN",
+    "PYRACLOSTROBIN",
+    "SPIROMESIFEN",
+    "SPIROTETRAMAT",
+    "TEBUCONAZOLE",
+    "TEBUFENOZIDE",
+    "TETRACONAZOLE",
+    "TRIFLOXYSTROBIN"
+   ],
+   "premiere": "1994-03-24",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "(주)케이씨생명과학",
    "nom": "(주)케이씨생명과학",
    "latin": "keissisaengmyeonggwahak",
@@ -29151,63 +29212,6 @@
    ],
    "premiere": "1981-03-02",
    "derniere": "2026-10-02"
-  },
-  {
-   "cle": "아그리젠토(주)",
-   "nom": "아그리젠토(주)",
-   "latin": "ageurijento",
-   "commercial": "Agrigento",
-   "groupe": null,
-   "formes": [
-    "S.A."
-   ],
-   "nbHomologations": 125,
-   "nbFabrique": 115,
-   "nbImporte": 10,
-   "nbMatieres": 75,
-   "matieres": [
-    "ABAMECTIN",
-    "ACETAMIPRID",
-    "AZOXYSTROBIN",
-    "BENTAZONE",
-    "BIFENAZATE",
-    "BOSCALID",
-    "BUPROFEZIN",
-    "CHLORANTRANILIPROLE",
-    "CYAZOFAMID",
-    "CYHALOFOP-BUTYL",
-    "DAZOMET",
-    "DIFENOCONAZOLE",
-    "DIMETHOATE",
-    "DIMETHOMORPH",
-    "DINOTEFURAN",
-    "DITHIANON",
-    "EMAMECTIN BENZOATE",
-    "FLONICAMID",
-    "FLUAZIFOP-P-BUTYL",
-    "FLUAZINAM",
-    "FLUBENDIAMIDE",
-    "FLUDIOXONIL",
-    "FOSTHIAZATE",
-    "IMIDACLOPRID",
-    "INDOXACARB",
-    "KRESOXIM-METHYL",
-    "LAMBDA-CYHALOTHRIN",
-    "LUFENURON",
-    "MCPA",
-    "METALAXYL",
-    "OXYFLUORFEN",
-    "PENDIMETHALIN",
-    "PYRACLOSTROBIN",
-    "SPIROMESIFEN",
-    "SPIROTETRAMAT",
-    "TEBUCONAZOLE",
-    "TEBUFENOZIDE",
-    "TETRACONAZOLE",
-    "TRIFLOXYSTROBIN"
-   ],
-   "premiere": "1994-03-24",
-   "derniere": "2026-07-29"
   },
   {
    "cle": "(주)신농팜케미컬",
@@ -29316,9 +29320,9 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 90,
+   "nbHomologations": 91,
    "nbFabrique": 86,
-   "nbImporte": 4,
+   "nbImporte": 5,
    "nbMatieres": 66,
    "matieres": [
     "ABAMECTIN",
@@ -29352,7 +29356,7 @@
     "TEBUCONAZOLE"
    ],
    "premiere": "1981-10-27",
-   "derniere": "2026-09-14"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "신젠타코리아(주)",
@@ -29577,8 +29581,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 38,
-   "nbFabrique": 38,
+   "nbHomologations": 39,
+   "nbFabrique": 39,
    "nbImporte": 0,
    "nbMatieres": 31,
    "matieres": [
@@ -29602,7 +29606,7 @@
     "TRIFLOXYSTROBIN"
    ],
    "premiere": "1999-01-27",
-   "derniere": "2026-08-26"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "미래아그로",
@@ -30010,14 +30014,15 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 17,
+   "nbHomologations": 18,
    "nbFabrique": 11,
-   "nbImporte": 6,
-   "nbMatieres": 14,
+   "nbImporte": 7,
+   "nbMatieres": 15,
    "matieres": [
     "ACETAMIPRID",
     "AZOXYSTROBIN",
     "BOSCALID",
+    "CYAZOFAMID",
     "DIMETHOMORPH",
     "DINOTEFURAN",
     "EMAMECTIN BENZOATE",
@@ -30028,7 +30033,7 @@
     "THIAMETHOXAM"
    ],
    "premiere": "2021-06-15",
-   "derniere": "2026-01-26"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "한국바스프(주)",
