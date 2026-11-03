@@ -1,16 +1,16 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-11-02T14:39:01",
-  "dernierReleve": "2026-11-02",
+  "genere": "2026-11-03T13:31:34",
+  "dernierReleve": "2026-11-03",
   "premierReleve": false,
-  "nbCandidates": 473,
+  "nbCandidates": 477,
   "nbEcarteesIndexMaroc": 24,
-  "nbNouvelles": 0,
+  "nbNouvelles": 4,
   "nbAvecStatutFrancais": 197,
   "nbAvecStatutAustralien": 169,
   "nbVuesAuBresil": 218,
-  "nbVuesEnCoree": 337,
+  "nbVuesEnCoree": 341,
   "avertissement": "Matières actives homologuées au Brésil (produit technique) ou en Corée du Sud, et non appariées à l'index ONSSA. « Absente de l'index » signifie que la clé chimique n'a rien apparié : une graphie non réduite au nom marocain produirait un faux positif, à vérifier avant tout engagement. La date coréenne est celle de la première homologation en Corée, pas celle de l'invention de la molécule. Aucun registre ouvert ne publie l'état des brevets : la présence d'un fabricant autre que l'inventeur est le seul indice, par les faits, qu'une fabrication générique a lieu. Ni prix, ni capacité, ni qualité, ni liberté d'exploitation."
  },
  "candidates": [
@@ -170,11 +170,11 @@
    ],
    "coree": {
     "nom": "Glufosinate-ammonium",
-    "nbHomologations": 76,
-    "nbFabrique": 49,
+    "nbHomologations": 77,
+    "nbFabrique": 50,
     "nbImporte": 27,
     "premiere": "1989-04-24",
-    "derniere": "2026-03-20",
+    "derniere": "2026-11-02",
     "nbSocietes": 45
    },
    "france": {
@@ -473,11 +473,11 @@
    ],
    "coree": {
     "nom": "Bifenthrin",
-    "nbHomologations": 74,
-    "nbFabrique": 66,
+    "nbHomologations": 75,
+    "nbFabrique": 67,
     "nbImporte": 8,
     "premiere": "1987-04-09",
-    "derniere": "2026-07-29",
+    "derniere": "2026-11-02",
     "nbSocietes": 22
    },
    "france": {
@@ -4885,12 +4885,12 @@
    ],
    "coree": {
     "nom": "Pymetrozine",
-    "nbHomologations": 20,
-    "nbFabrique": 19,
+    "nbHomologations": 21,
+    "nbFabrique": 20,
     "nbImporte": 1,
     "premiere": "2008-01-01",
-    "derniere": "2023-11-16",
-    "nbSocietes": 11
+    "derniere": "2026-11-02",
+    "nbSocietes": 12
    },
    "france": {
     "nom": "Pymetrozine",
@@ -7416,11 +7416,11 @@
    ],
    "coree": {
     "nom": "Dimpropyridaz",
-    "nbHomologations": 7,
-    "nbFabrique": 7,
+    "nbHomologations": 8,
+    "nbFabrique": 8,
     "nbImporte": 0,
     "premiere": "2023-12-14",
-    "derniere": "2025-11-10",
+    "derniere": "2026-11-02",
     "nbSocietes": 5
    },
    "france": null,
@@ -8583,11 +8583,11 @@
    ],
    "coree": {
     "nom": "Florylpicoxamid",
-    "nbHomologations": 5,
-    "nbFabrique": 5,
+    "nbHomologations": 6,
+    "nbFabrique": 6,
     "nbImporte": 0,
     "premiere": "2021-11-11",
-    "derniere": "2026-04-27",
+    "derniere": "2026-11-02",
     "nbSocietes": 3
    },
    "france": null,
@@ -9554,11 +9554,11 @@
    ],
    "coree": {
     "nom": "Afidopyropen",
-    "nbHomologations": 4,
-    "nbFabrique": 4,
+    "nbHomologations": 5,
+    "nbFabrique": 5,
     "nbImporte": 0,
     "premiere": "2020-12-14",
-    "derniere": "2025-02-06",
+    "derniere": "2026-11-02",
     "nbSocietes": 4
    },
    "france": null,
@@ -11426,6 +11426,102 @@
    "nouvelle": false
   },
   {
+   "cle": "04bacterioffifi",
+   "nom": "Bacteriophage Fifi 044",
+   "iso": "Bacteriophage Fifi 044",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "Bacteriophage Fifi 044",
+    "nbHomologations": 1,
+    "nbFabrique": 1,
+    "nbImporte": 0,
+    "premiere": "2026-11-02",
+    "derniere": "2026-11-02",
+    "nbSocietes": 1
+   },
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-11-03",
+   "nouvelle": true
+  },
+  {
+   "cle": "28bacilusvelesensis",
+   "nom": "Bacillus velezensis 8-2",
+   "iso": "Bacillus velezensis 8-2",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "Bacillus velezensis 8-2",
+    "nbHomologations": 1,
+    "nbFabrique": 1,
+    "nbImporte": 0,
+    "premiere": "2026-11-02",
+    "derniere": "2026-11-02",
+    "nbSocietes": 1
+   },
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-11-03",
+   "nouvelle": true
+  },
+  {
+   "cle": "318",
+   "nom": "318",
+   "iso": "318",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "318",
+    "nbHomologations": 1,
+    "nbFabrique": 1,
+    "nbImporte": 0,
+    "premiere": "2026-11-02",
+    "derniere": "2026-11-02",
+    "nbSocietes": 1
+   },
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-11-03",
+   "nouvelle": true
+  },
+  {
+   "cle": "287",
+   "nom": "287",
+   "iso": "287",
+   "nomPt": null,
+   "groupeChimique": null,
+   "teneurMax": null,
+   "nbHomologationsBr": 0,
+   "fabricants": [],
+   "titulaires": [],
+   "coree": {
+    "nom": "287",
+    "nbHomologations": 1,
+    "nbFabrique": 1,
+    "nbImporte": 0,
+    "premiere": "2026-11-02",
+    "derniere": "2026-11-02",
+    "nbSocietes": 1
+   },
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-11-03",
+   "nouvelle": true
+  },
+  {
    "cle": "1acetatnaftil",
    "nom": "Sodium 1-naphthyl acetate",
    "iso": "Sodium 1-naphthyl acetate",
@@ -11461,12 +11557,12 @@
    "titulaires": [],
    "coree": {
     "nom": "Dimesulfazet",
-    "nbHomologations": 6,
-    "nbFabrique": 6,
+    "nbHomologations": 10,
+    "nbFabrique": 10,
     "nbImporte": 0,
     "premiere": "2026-05-26",
-    "derniere": "2026-08-06",
-    "nbSocietes": 4
+    "derniere": "2026-11-02",
+    "nbSocietes": 5
    },
    "france": null,
    "australie": null,
@@ -11485,11 +11581,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Tetflupyrolimet",
-    "nbHomologations": 17,
-    "nbFabrique": 17,
+    "nbHomologations": 20,
+    "nbFabrique": 20,
     "nbImporte": 0,
     "premiere": "2026-03-20",
-    "derniere": "2026-08-06",
+    "derniere": "2026-11-02",
     "nbSocietes": 5
    },
    "france": null,
@@ -11664,11 +11760,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Pyridachlometyl",
-    "nbHomologations": 2,
-    "nbFabrique": 2,
+    "nbHomologations": 3,
+    "nbFabrique": 3,
     "nbImporte": 0,
     "premiere": "2025-08-14",
-    "derniere": "2026-03-20",
+    "derniere": "2026-11-02",
     "nbSocietes": 1
    },
    "france": null,
@@ -12875,11 +12971,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Pyraclonil",
-    "nbHomologations": 22,
-    "nbFabrique": 22,
+    "nbHomologations": 23,
+    "nbFabrique": 23,
     "nbImporte": 0,
     "premiere": "2014-04-16",
-    "derniere": "2026-08-06",
+    "derniere": "2026-11-02",
     "nbSocietes": 6
    },
    "france": null,
@@ -14810,11 +14906,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Thidiazuron",
-    "nbHomologations": 3,
-    "nbFabrique": 3,
+    "nbHomologations": 4,
+    "nbFabrique": 4,
     "nbImporte": 0,
     "premiere": "2004-01-16",
-    "derniere": "2025-09-04",
+    "derniere": "2026-11-02",
     "nbSocietes": 3
    },
    "france": {
@@ -14952,11 +15048,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Simetryn",
-    "nbHomologations": 14,
-    "nbFabrique": 14,
+    "nbHomologations": 15,
+    "nbFabrique": 15,
     "nbImporte": 0,
     "premiere": "2003-03-27",
-    "derniere": "2026-02-05",
+    "derniere": "2026-11-02",
     "nbSocietes": 7
    },
    "france": null,
@@ -15274,11 +15370,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Fentrazamide",
-    "nbHomologations": 53,
-    "nbFabrique": 51,
+    "nbHomologations": 54,
+    "nbFabrique": 52,
     "nbImporte": 2,
     "premiere": "2000-04-03",
-    "derniere": "2026-09-14",
+    "derniere": "2026-11-02",
     "nbSocietes": 7
    },
    "france": null,
@@ -16367,12 +16463,12 @@
    "titulaires": [],
    "coree": {
     "nom": "Fluroxypyr-meptyl",
-    "nbHomologations": 4,
-    "nbFabrique": 4,
+    "nbHomologations": 5,
+    "nbFabrique": 5,
     "nbImporte": 0,
     "premiere": "1993-04-23",
-    "derniere": "2025-11-10",
-    "nbSocietes": 3
+    "derniere": "2026-11-02",
+    "nbSocietes": 4
    },
    "france": null,
    "australie": {
@@ -16420,11 +16516,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Prochloraz-manganese",
-    "nbHomologations": 11,
-    "nbFabrique": 11,
+    "nbHomologations": 12,
+    "nbFabrique": 12,
     "nbImporte": 0,
     "premiere": "1992-07-08",
-    "derniere": "2023-07-19",
+    "derniere": "2026-11-02",
     "nbSocietes": 5
    },
    "france": null,
@@ -16721,11 +16817,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Pyrazosulfuron-ethyl",
-    "nbHomologations": 64,
-    "nbFabrique": 60,
+    "nbHomologations": 65,
+    "nbFabrique": 61,
     "nbImporte": 4,
     "premiere": "1990-05-17",
-    "derniere": "2026-03-20",
+    "derniere": "2026-11-02",
     "nbSocietes": 9
    },
    "france": null,
@@ -17465,11 +17561,11 @@
    "titulaires": [],
    "coree": {
     "nom": "Phoxim",
-    "nbHomologations": 8,
-    "nbFabrique": 8,
+    "nbHomologations": 9,
+    "nbFabrique": 9,
     "nbImporte": 0,
     "premiere": "1984-05-16",
-    "derniere": "2025-09-19",
+    "derniere": "2026-11-02",
     "nbSocietes": 5
    },
    "france": {

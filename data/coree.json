@@ -2,21 +2,21 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-11-02",
-  "genere": "2026-11-02T14:38:55",
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-11-03",
+  "genere": "2026-11-03T13:31:29",
   "derniereHomologation": "2026-11-02",
-  "nbLignesUsage": 146676,
-  "nbHomologations": 3991,
+  "nbLignesUsage": 146747,
+  "nbHomologations": 4010,
   "nbSocietes": 98,
   "nbFiliales": 16,
-  "nbMatieres": 475,
+  "nbMatieres": 480,
   "nbMatieresIndex": 116,
   "nbNomsIso": 190,
-  "nbHorsIndex": 353,
-  "nbMelanges": 1052,
-  "nbUsages": 30994,
+  "nbHorsIndex": 358,
+  "nbMelanges": 1068,
+  "nbUsages": 31034,
   "partTraduite": 97,
-  "nbFabrique": 3260,
+  "nbFabrique": 3279,
   "nbImporte": 731,
   "avertissement": "Registre coréen des produits phytosanitaires. Aucune valeur réglementaire au Maroc : ni voie me-too, ni étude en moins. « 제조 » signifie produit fabriqué en Corée, PAS matière active synthétisée sur place : ce registre nomme le titulaire de l'homologation, pas l'usine de synthèse. Les raisons sociales sont romanisées (romanisation révisée) : une poignée pour chercher, pas une identité contractuelle. Ni prix, ni capacité, ni qualité."
  },
@@ -59,11 +59,11 @@
    "nomsCoreens": [
     "Abamectin"
    ],
-   "nbHomologations": 118,
-   "nbFabrique": 77,
+   "nbHomologations": 120,
+   "nbFabrique": 79,
    "nbImporte": 41,
    "premiere": "1995-04-12",
-   "derniere": "2026-08-26",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -518,11 +518,11 @@
    "nomsCoreens": [
     "Cyantraniliprole"
    ],
-   "nbHomologations": 18,
-   "nbFabrique": 14,
+   "nbHomologations": 19,
+   "nbFabrique": 15,
    "nbImporte": 4,
    "premiere": "2012-10-31",
-   "derniere": "2026-08-06",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -1103,16 +1103,17 @@
    "nomsCoreens": [
     "Florpyrauxifen-benzyl"
    ],
-   "nbHomologations": 24,
-   "nbFabrique": 24,
+   "nbHomologations": 27,
+   "nbFabrique": 27,
    "nbImporte": 0,
    "premiere": "2017-08-25",
-   "derniere": "2026-08-06",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
     "(주)동방아그로",
     "(주)팜한농",
+    "에스비성보주식회사",
     "한국삼공(주)"
    ]
   },
@@ -1298,11 +1299,11 @@
    "nomsCoreens": [
     "Fluxapyroxad"
    ],
-   "nbHomologations": 24,
-   "nbFabrique": 24,
+   "nbHomologations": 25,
+   "nbFabrique": 25,
    "nbImporte": 0,
    "premiere": "2013-04-15",
-   "derniere": "2026-08-06",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -1403,11 +1404,11 @@
    "nomsCoreens": [
     "Gibberellic acid"
    ],
-   "nbHomologations": 21,
-   "nbFabrique": 16,
+   "nbHomologations": 22,
+   "nbFabrique": 17,
    "nbImporte": 5,
    "premiere": "1988-04-01",
-   "derniere": "2024-07-30",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -1428,13 +1429,14 @@
    "nomsCoreens": [
     "Glyphosate-potassium"
    ],
-   "nbHomologations": 12,
-   "nbFabrique": 7,
+   "nbHomologations": 13,
+   "nbFabrique": 8,
    "nbImporte": 5,
    "premiere": "2003-01-15",
-   "derniere": "2026-08-24",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)새한농",
+    "(주)팜한농",
     "신젠타코리아(주)",
     "아다마코리아(주)",
     "에이치바이오텍",
@@ -1500,11 +1502,11 @@
    "nomsCoreens": [
     "Indoxacarb"
    ],
-   "nbHomologations": 69,
-   "nbFabrique": 49,
+   "nbHomologations": 70,
+   "nbFabrique": 50,
    "nbImporte": 20,
    "premiere": "2000-03-13",
-   "derniere": "2026-01-26",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -1672,11 +1674,11 @@
    "nomsCoreens": [
     "MCPA"
    ],
-   "nbHomologations": 58,
-   "nbFabrique": 51,
+   "nbHomologations": 59,
+   "nbFabrique": 52,
    "nbImporte": 7,
    "premiere": "2004-04-03",
-   "derniere": "2026-09-14",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -7100,6 +7102,26 @@
    "derniere": "2021-08-17"
   },
   {
+   "cle": "Dimesulfazet + Florpyrauxifen-benzyl + Tetflupyrolimet",
+   "composants": [
+    "Dimesulfazet",
+    "Florpyrauxifen-benzyl",
+    "Tetflupyrolimet"
+   ],
+   "nbHomologations": 2,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)경농"
+   ],
+   "nbFabrique": 2,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "Dithiopyr + Penoxsulam",
    "composants": [
     "Dithiopyr",
@@ -7769,6 +7791,26 @@
    "derniere": "2026-08-06"
   },
   {
+   "cle": "287 + 318 + Bacteriophage Fifi 044",
+   "composants": [
+    "287",
+    "318",
+    "Bacteriophage Fifi 044"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)팜한농"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "살균"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "4-CPA + Gibberellic acid",
    "composants": [
     "4-CPA",
@@ -7786,6 +7828,25 @@
    ],
    "premiere": "2012-06-25",
    "derniere": "2012-06-25"
+  },
+  {
+   "cle": "Abamectin + Afidopyropen",
+   "composants": [
+    "Abamectin",
+    "Afidopyropen"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)농협케미컬"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "살충"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
   },
   {
    "cle": "Abamectin + Buprofezin",
@@ -7900,6 +7961,25 @@
    ],
    "premiere": "2020-02-10",
    "derniere": "2020-02-10"
+  },
+  {
+   "cle": "Abamectin + Phoxim",
+   "composants": [
+    "Abamectin",
+    "Phoxim"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)천지인바이오텍"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "살충"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
   },
   {
    "cle": "Abamectin + Pyflubumide",
@@ -11901,6 +11981,25 @@
    "derniere": "2018-02-28"
   },
   {
+   "cle": "Bifenthrin + Prochloraz-manganese",
+   "composants": [
+    "Bifenthrin",
+    "Prochloraz-manganese"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)농협케미컬"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "균충"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "Bifenthrin + Propiconazole",
    "composants": [
     "Bifenthrin",
@@ -15194,6 +15293,25 @@
    "derniere": "2007-12-11"
   },
   {
+   "cle": "Cyantraniliprole + Dimpropyridaz",
+   "composants": [
+    "Cyantraniliprole",
+    "Dimpropyridaz"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)경농"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "살충"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "Cyantraniliprole + Etofenprox",
    "composants": [
     "Cyantraniliprole",
@@ -16510,6 +16628,26 @@
    "derniere": "2015-07-23"
   },
   {
+   "cle": "Dimesulfazet + Fentrazamide + Pyrazosulfuron-ethyl",
+   "composants": [
+    "Dimesulfazet",
+    "Fentrazamide",
+    "Pyrazosulfuron-ethyl"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "에스비성보주식회사"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "Dimesulfazet + Florpyrauxifen-benzyl + Pyraclonil",
    "composants": [
     "Dimesulfazet",
@@ -16548,6 +16686,25 @@
    ],
    "premiere": "2026-05-26",
    "derniere": "2026-05-26"
+  },
+  {
+   "cle": "Dimesulfazet + Pyraclonil",
+   "composants": [
+    "Dimesulfazet",
+    "Pyraclonil"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "한국삼공(주)"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
   },
   {
    "cle": "Dimesulfazet + Pyraclonil + Tetflupyrolimet",
@@ -18822,6 +18979,25 @@
    "derniere": "2017-01-26"
   },
   {
+   "cle": "Florpyrauxifen-benzyl + Fluroxypyr-meptyl",
+   "composants": [
+    "Florpyrauxifen-benzyl",
+    "Fluroxypyr-meptyl"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "에스비성보주식회사"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "Florpyrauxifen-benzyl + MCPA",
    "composants": [
     "Florpyrauxifen-benzyl",
@@ -18936,6 +19112,25 @@
    ],
    "premiere": "2024-02-19",
    "derniere": "2024-02-19"
+  },
+  {
+   "cle": "Florylpicoxamid + Fluxapyroxad",
+   "composants": [
+    "Florylpicoxamid",
+    "Fluxapyroxad"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)동방아그로"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "살균"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
   },
   {
    "cle": "Fluazinam + Mefentrifluconazole",
@@ -19987,6 +20182,25 @@
    "derniere": "2004-10-18"
   },
   {
+   "cle": "Gibberellic acid + Thidiazuron",
+   "composants": [
+    "Gibberellic acid",
+    "Thidiazuron"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)장유산업"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "생조"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "Glufosinate-ammonium + Mecoprop-P",
    "composants": [
     "Glufosinate-ammonium",
@@ -20042,6 +20256,44 @@
    ],
    "premiere": "2018-12-18",
    "derniere": "2018-12-18"
+  },
+  {
+   "cle": "Glufosinate-ammonium + tiafenacil",
+   "composants": [
+    "Glufosinate-ammonium",
+    "tiafenacil"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)팜한농"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
+   "cle": "Glufosinate-p + MCPA",
+   "composants": [
+    "Glufosinate-p",
+    "MCPA"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)경농"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
   },
   {
    "cle": "Glyphosate-isopropylammonium + Indaziflam",
@@ -20194,6 +20446,25 @@
    ],
    "premiere": "2009-01-01",
    "derniere": "2009-01-01"
+  },
+  {
+   "cle": "Glyphosate-potassium + tiafenacil",
+   "composants": [
+    "Glyphosate-potassium",
+    "tiafenacil"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "(주)팜한농"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
   },
   {
    "cle": "Halosulfuron-methyl + MCPA + Pyriminobac-methyl",
@@ -20998,6 +21269,25 @@
    ],
    "premiere": "2016-11-07",
    "derniere": "2016-11-07"
+  },
+  {
+   "cle": "Indoxacarb + Pymetrozine",
+   "composants": [
+    "Indoxacarb",
+    "Pymetrozine"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "아그리젠토(주)"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "살충"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
   },
   {
    "cle": "Indoxacarb + Spinosad",
@@ -23004,6 +23294,25 @@
    "derniere": "2025-11-10"
   },
   {
+   "cle": "Simetryn + Tetflupyrolimet",
+   "composants": [
+    "Simetryn",
+    "Tetflupyrolimet"
+   ],
+   "nbHomologations": 1,
+   "nbSocietes": 1,
+   "societes": [
+    "한국삼공(주)"
+   ],
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "usages": [
+    "제초"
+   ],
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "Sodium 5-nitroguaiacolate + Sodium o-nitrophenolate + Sodium p-nitrophenolate",
    "composants": [
     "Sodium 5-nitroguaiacolate",
@@ -23178,6 +23487,66 @@
  ],
  "horsIndex": [
   {
+   "nom": "tiafenacil",
+   "iso": null,
+   "nbHomologations": 2,
+   "nbFabrique": 2,
+   "nbImporte": 0,
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02",
+   "societes": [
+    "(주)팜한농"
+   ]
+  },
+  {
+   "nom": "Bacteriophage Fifi 044",
+   "iso": null,
+   "nbHomologations": 1,
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02",
+   "societes": [
+    "(주)팜한농"
+   ]
+  },
+  {
+   "nom": "Bacillus velezensis 8-2",
+   "iso": null,
+   "nbHomologations": 1,
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02",
+   "societes": [
+    "(주)잰153바이오텍"
+   ]
+  },
+  {
+   "nom": "318",
+   "iso": null,
+   "nbHomologations": 1,
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02",
+   "societes": [
+    "(주)팜한농"
+   ]
+  },
+  {
+   "nom": "287",
+   "iso": null,
+   "nbHomologations": 1,
+   "nbFabrique": 1,
+   "nbImporte": 0,
+   "premiere": "2026-11-02",
+   "derniere": "2026-11-02",
+   "societes": [
+    "(주)팜한농"
+   ]
+  },
+  {
    "nom": "Sodium 1-naphthyl acetate",
    "iso": null,
    "nbHomologations": 1,
@@ -23192,26 +23561,27 @@
   {
    "nom": "Dimesulfazet",
    "iso": null,
-   "nbHomologations": 6,
-   "nbFabrique": 6,
+   "nbHomologations": 10,
+   "nbFabrique": 10,
    "nbImporte": 0,
    "premiere": "2026-05-26",
-   "derniere": "2026-08-06",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
     "(주)팜한농",
+    "에스비성보주식회사",
     "한국삼공(주)"
    ]
   },
   {
    "nom": "Tetflupyrolimet",
    "iso": null,
-   "nbHomologations": 17,
-   "nbFabrique": 17,
+   "nbHomologations": 20,
+   "nbFabrique": 20,
    "nbImporte": 0,
    "premiere": "2026-03-20",
-   "derniere": "2026-08-06",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -23274,12 +23644,13 @@
   {
    "nom": "Glufosinate-p",
    "iso": null,
-   "nbHomologations": 2,
-   "nbFabrique": 2,
+   "nbHomologations": 3,
+   "nbFabrique": 3,
    "nbImporte": 0,
    "premiere": "2025-11-10",
-   "derniere": "2026-08-06",
+   "derniere": "2026-11-02",
    "societes": [
+    "(주)경농",
     "(주)한얼싸이언스",
     "한국삼공(주)"
    ]
@@ -23299,11 +23670,11 @@
   {
    "nom": "Pyridachlometyl",
    "iso": null,
-   "nbHomologations": 2,
-   "nbFabrique": 2,
+   "nbHomologations": 3,
+   "nbFabrique": 3,
    "nbImporte": 0,
    "premiere": "2025-08-14",
-   "derniere": "2026-03-20",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농"
    ]
@@ -23412,11 +23783,11 @@
   {
    "nom": "Dimpropyridaz",
    "iso": null,
-   "nbHomologations": 7,
-   "nbFabrique": 7,
+   "nbHomologations": 8,
+   "nbFabrique": 8,
    "nbImporte": 0,
    "premiere": "2023-12-14",
-   "derniere": "2025-11-10",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -23607,11 +23978,11 @@
   {
    "nom": "Florylpicoxamid",
    "iso": null,
-   "nbHomologations": 5,
-   "nbFabrique": 5,
+   "nbHomologations": 6,
+   "nbFabrique": 6,
    "nbImporte": 0,
    "premiere": "2021-11-11",
-   "derniere": "2026-04-27",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)동방아그로",
     "(주)팜한농",
@@ -23681,11 +24052,11 @@
   {
    "nom": "Afidopyropen",
    "iso": null,
-   "nbHomologations": 4,
-   "nbFabrique": 4,
+   "nbHomologations": 5,
+   "nbFabrique": 5,
    "nbImporte": 0,
    "premiere": "2020-12-14",
-   "derniere": "2025-02-06",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)농협케미컬",
     "(주)동방아그로",
@@ -24227,11 +24598,11 @@
   {
    "nom": "Pyraclonil",
    "iso": null,
-   "nbHomologations": 22,
-   "nbFabrique": 22,
+   "nbHomologations": 23,
+   "nbFabrique": 23,
    "nbImporte": 0,
    "premiere": "2014-04-16",
-   "derniere": "2026-08-06",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -24950,11 +25321,11 @@
   {
    "nom": "Pymetrozine",
    "iso": null,
-   "nbHomologations": 20,
-   "nbFabrique": 19,
+   "nbHomologations": 21,
+   "nbFabrique": 20,
    "nbImporte": 1,
    "premiere": "2008-01-01",
-   "derniere": "2023-11-16",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)농협케미컬",
     "(주)신농팜케미컬",
@@ -24963,6 +25334,7 @@
     "(주)태준아그로텍",
     "(주)한얼싸이언스",
     "신젠타코리아(주)",
+    "아그리젠토(주)",
     "에스비성보주식회사",
     "인바이오(주)",
     "지넥스(주)",
@@ -25470,11 +25842,11 @@
   {
    "nom": "Thidiazuron",
    "iso": null,
-   "nbHomologations": 3,
-   "nbFabrique": 3,
+   "nbHomologations": 4,
+   "nbFabrique": 4,
    "nbImporte": 0,
    "premiere": "2004-01-16",
-   "derniere": "2025-09-04",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)대유",
     "(주)장유산업",
@@ -25562,11 +25934,11 @@
   {
    "nom": "Simetryn",
    "iso": null,
-   "nbHomologations": 14,
-   "nbFabrique": 14,
+   "nbHomologations": 15,
+   "nbFabrique": 15,
    "nbImporte": 0,
    "premiere": "2003-03-27",
-   "derniere": "2026-02-05",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -25875,11 +26247,11 @@
   {
    "nom": "Fentrazamide",
    "iso": null,
-   "nbHomologations": 53,
-   "nbFabrique": 51,
+   "nbHomologations": 54,
+   "nbFabrique": 52,
    "nbImporte": 2,
    "premiere": "2000-04-03",
-   "derniere": "2026-09-14",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -26686,15 +27058,16 @@
   {
    "nom": "Fluroxypyr-meptyl",
    "iso": null,
-   "nbHomologations": 4,
-   "nbFabrique": 4,
+   "nbHomologations": 5,
+   "nbFabrique": 5,
    "nbImporte": 0,
    "premiere": "1993-04-23",
-   "derniere": "2025-11-10",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)팜한농",
-    "(주)한얼싸이언스"
+    "(주)한얼싸이언스",
+    "에스비성보주식회사"
    ]
   },
   {
@@ -26801,11 +27174,11 @@
   {
    "nom": "Prochloraz-manganese",
    "iso": null,
-   "nbHomologations": 11,
-   "nbFabrique": 11,
+   "nbHomologations": 12,
+   "nbFabrique": 12,
    "nbImporte": 0,
    "premiere": "1992-07-08",
-   "derniere": "2023-07-19",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)농협케미컬",
     "(주)한얼싸이언스",
@@ -26971,11 +27344,11 @@
   {
    "nom": "Pyrazosulfuron-ethyl",
    "iso": null,
-   "nbHomologations": 64,
-   "nbFabrique": 60,
+   "nbHomologations": 65,
+   "nbFabrique": 61,
    "nbImporte": 4,
    "premiere": "1990-05-17",
-   "derniere": "2026-03-20",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)농협케미컬",
     "(주)동방아그로",
@@ -27078,11 +27451,11 @@
   {
    "nom": "Glufosinate-ammonium",
    "iso": null,
-   "nbHomologations": 76,
-   "nbFabrique": 49,
+   "nbHomologations": 77,
+   "nbFabrique": 50,
    "nbImporte": 27,
    "premiere": "1989-04-24",
-   "derniere": "2026-03-20",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)그린시티",
@@ -27326,11 +27699,11 @@
   {
    "nom": "Bifenthrin",
    "iso": null,
-   "nbHomologations": 74,
-   "nbFabrique": 66,
+   "nbHomologations": 75,
+   "nbFabrique": 67,
    "nbImporte": 8,
    "premiere": "1987-04-09",
-   "derniere": "2026-07-29",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)경농",
     "(주)농협케미컬",
@@ -27517,11 +27890,11 @@
   {
    "nom": "Phoxim",
    "iso": null,
-   "nbHomologations": 8,
-   "nbFabrique": 8,
+   "nbHomologations": 9,
+   "nbFabrique": 9,
    "nbImporte": 0,
    "premiere": "1984-05-16",
-   "derniere": "2025-09-19",
+   "derniere": "2026-11-02",
    "societes": [
     "(주)농협케미컬",
     "(주)천지인바이오텍",
@@ -28544,10 +28917,10 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 497,
-   "nbFabrique": 464,
+   "nbHomologations": 500,
+   "nbFabrique": 467,
    "nbImporte": 33,
-   "nbMatieres": 243,
+   "nbMatieres": 248,
    "matieres": [
     "1-METHYLCYCLOPROPENE",
     "ABAMECTIN",
@@ -28589,6 +28962,7 @@
     "FOSTHIAZATE",
     "GAMMA-CYHALOTHRIN",
     "GIBBERELLIC ACID",
+    "GLYPHOSATE",
     "IMIDACLOPRID",
     "INDOXACARB",
     "KRESOXIM-METHYL",
@@ -28623,7 +28997,7 @@
     "ZETA-CYPERMETHRIN"
    ],
    "premiere": "1981-03-02",
-   "derniere": "2026-08-06"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "(주)경농",
@@ -28634,10 +29008,10 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 414,
-   "nbFabrique": 394,
+   "nbHomologations": 419,
+   "nbFabrique": 399,
    "nbImporte": 20,
-   "nbMatieres": 208,
+   "nbMatieres": 209,
    "matieres": [
     "ABAMECTIN",
     "ACEQUINOCYL",
@@ -28703,7 +29077,7 @@
     "ZETA-CYPERMETHRIN"
    ],
    "premiere": "1981-03-02",
-   "derniere": "2026-08-06"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "(주)농협케미컬",
@@ -28714,8 +29088,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 280,
-   "nbFabrique": 254,
+   "nbHomologations": 282,
+   "nbFabrique": 256,
    "nbImporte": 26,
    "nbMatieres": 193,
    "matieres": [
@@ -28780,7 +29154,7 @@
     "TRIFLOXYSTROBIN"
    ],
    "premiere": "1981-03-02",
-   "derniere": "2026-08-06"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "(주)한얼싸이언스",
@@ -28858,8 +29232,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 232,
-   "nbFabrique": 215,
+   "nbHomologations": 234,
+   "nbFabrique": 217,
    "nbImporte": 17,
    "nbMatieres": 163,
    "matieres": [
@@ -28910,7 +29284,70 @@
     "TRIFLOXYSTROBIN"
    ],
    "premiere": "1981-03-02",
-   "derniere": "2026-08-06"
+   "derniere": "2026-11-02"
+  },
+  {
+   "cle": "에스비성보주식회사",
+   "nom": "에스비성보주식회사",
+   "latin": "eseubiseongbo",
+   "commercial": "SB Sungbo",
+   "groupe": null,
+   "formes": [
+    "S.A."
+   ],
+   "nbHomologations": 148,
+   "nbFabrique": 134,
+   "nbImporte": 14,
+   "nbMatieres": 128,
+   "matieres": [
+    "ABAMECTIN",
+    "ACETAMIPRID",
+    "ALPHA CYPERMETHRIN",
+    "AZOXYSTROBIN",
+    "BENTAZONE",
+    "BOSCALID",
+    "BUPROFEZIN",
+    "CARFENTRAZONE-ETHYL",
+    "CHLORANTRANILIPROLE",
+    "CYFLUMETOFEN",
+    "CYPERMETHRIN",
+    "DELTAMETHRIN",
+    "DICAMBA",
+    "DIFENOCONAZOLE",
+    "DIMETHENAMID-P",
+    "DIMETHOMORPH",
+    "DINOTEFURAN",
+    "DITHIANON",
+    "EMAMECTIN BENZOATE",
+    "ETOXAZOLE",
+    "FENOXAPROP-P-ETHYL",
+    "FLONICAMID",
+    "FLORPYRAUXIFEN-BENZYL",
+    "FLUDIOXONIL",
+    "FLUOPICOLIDE",
+    "FLUTRIAFOL",
+    "FLUXAPYROXAD",
+    "INDOXACARB",
+    "KRESOXIM-METHYL",
+    "LAMBDA-CYHALOTHRIN",
+    "LUFENURON",
+    "MANDIPROPAMID",
+    "MCPA",
+    "METALAXYL M",
+    "METHOXYFENOZIDE",
+    "MILBEMECTIN",
+    "PENDIMETHALIN",
+    "PYRACLOSTROBIN",
+    "PYRIMETHANIL",
+    "S-METOLACHLOR",
+    "SPINETORAM",
+    "SULFOXAFLOR",
+    "TEBUCONAZOLE",
+    "TETRACONAZOLE",
+    "THIAMETHOXAM"
+   ],
+   "premiere": "1981-03-02",
+   "derniere": "2026-11-02"
   },
   {
    "cle": "(주)동방아그로",
@@ -28921,8 +29358,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 290,
-   "nbFabrique": 283,
+   "nbHomologations": 291,
+   "nbFabrique": 284,
    "nbImporte": 7,
    "nbMatieres": 184,
    "matieres": [
@@ -28972,7 +29409,7 @@
     "TRIFLOXYSTROBIN"
    ],
    "premiere": "1981-03-02",
-   "derniere": "2026-08-06"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "인바이오(주)",
@@ -29037,68 +29474,6 @@
    "derniere": "2026-03-20"
   },
   {
-   "cle": "에스비성보주식회사",
-   "nom": "에스비성보주식회사",
-   "latin": "eseubiseongbo",
-   "commercial": "SB Sungbo",
-   "groupe": null,
-   "formes": [
-    "S.A."
-   ],
-   "nbHomologations": 146,
-   "nbFabrique": 132,
-   "nbImporte": 14,
-   "nbMatieres": 125,
-   "matieres": [
-    "ABAMECTIN",
-    "ACETAMIPRID",
-    "ALPHA CYPERMETHRIN",
-    "AZOXYSTROBIN",
-    "BENTAZONE",
-    "BOSCALID",
-    "BUPROFEZIN",
-    "CARFENTRAZONE-ETHYL",
-    "CHLORANTRANILIPROLE",
-    "CYFLUMETOFEN",
-    "CYPERMETHRIN",
-    "DELTAMETHRIN",
-    "DICAMBA",
-    "DIFENOCONAZOLE",
-    "DIMETHENAMID-P",
-    "DIMETHOMORPH",
-    "DINOTEFURAN",
-    "DITHIANON",
-    "EMAMECTIN BENZOATE",
-    "ETOXAZOLE",
-    "FENOXAPROP-P-ETHYL",
-    "FLONICAMID",
-    "FLUDIOXONIL",
-    "FLUOPICOLIDE",
-    "FLUTRIAFOL",
-    "FLUXAPYROXAD",
-    "INDOXACARB",
-    "KRESOXIM-METHYL",
-    "LAMBDA-CYHALOTHRIN",
-    "LUFENURON",
-    "MANDIPROPAMID",
-    "MCPA",
-    "METALAXYL M",
-    "METHOXYFENOZIDE",
-    "MILBEMECTIN",
-    "PENDIMETHALIN",
-    "PYRACLOSTROBIN",
-    "PYRIMETHANIL",
-    "S-METOLACHLOR",
-    "SPINETORAM",
-    "SULFOXAFLOR",
-    "TEBUCONAZOLE",
-    "TETRACONAZOLE",
-    "THIAMETHOXAM"
-   ],
-   "premiere": "1981-03-02",
-   "derniere": "2026-04-27"
-  },
-  {
    "cle": "아그리젠토(주)",
    "nom": "아그리젠토(주)",
    "latin": "ageurijento",
@@ -29107,10 +29482,10 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 126,
-   "nbFabrique": 115,
+   "nbHomologations": 127,
+   "nbFabrique": 116,
    "nbImporte": 11,
-   "nbMatieres": 76,
+   "nbMatieres": 77,
    "matieres": [
     "ABAMECTIN",
     "ACEQUINOCYL",
@@ -29413,8 +29788,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 69,
-   "nbFabrique": 61,
+   "nbHomologations": 70,
+   "nbFabrique": 62,
    "nbImporte": 8,
    "nbMatieres": 48,
    "matieres": [
@@ -29448,7 +29823,7 @@
     "TRIFLOXYSTROBIN"
    ],
    "premiere": "2013-02-21",
-   "derniere": "2026-08-26"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "아다마코리아(주)",
@@ -30073,8 +30448,8 @@
    "formes": [
     "S.A."
    ],
-   "nbHomologations": 20,
-   "nbFabrique": 18,
+   "nbHomologations": 21,
+   "nbFabrique": 19,
    "nbImporte": 2,
    "nbMatieres": 18,
    "matieres": [
@@ -30090,7 +30465,7 @@
     "TEBUCONAZOLE"
    ],
    "premiere": "1989-04-24",
-   "derniere": "2025-09-04"
+   "derniere": "2026-11-02"
   },
   {
    "cle": "(주)위즈팜",
@@ -31046,6 +31421,23 @@
    "derniere": "2021-07-29"
   },
   {
+   "cle": "(주)잰153바이오텍",
+   "nom": "(주)잰153바이오텍",
+   "latin": "jaen153baiotek",
+   "commercial": null,
+   "groupe": null,
+   "formes": [
+    "S.A."
+   ],
+   "nbHomologations": 3,
+   "nbFabrique": 3,
+   "nbImporte": 0,
+   "nbMatieres": 3,
+   "matieres": [],
+   "premiere": "2025-08-18",
+   "derniere": "2026-11-02"
+  },
+  {
    "cle": "(주)한국바이오케미칼",
    "nom": "(주)한국바이오케미칼",
    "latin": "hangukbaiokemikal",
@@ -31110,23 +31502,6 @@
    "matieres": [],
    "premiere": "2011-07-22",
    "derniere": "2025-11-10"
-  },
-  {
-   "cle": "(주)잰153바이오텍",
-   "nom": "(주)잰153바이오텍",
-   "latin": "jaen153baiotek",
-   "commercial": null,
-   "groupe": null,
-   "formes": [
-    "S.A."
-   ],
-   "nbHomologations": 2,
-   "nbFabrique": 2,
-   "nbImporte": 0,
-   "nbMatieres": 2,
-   "matieres": [],
-   "premiere": "2025-08-18",
-   "derniere": "2026-02-05"
   },
   {
    "cle": "린데코리아(주)",
