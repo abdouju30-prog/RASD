@@ -1,14 +1,14 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-11-03T13:31:34",
-  "dernierReleve": "2026-11-03",
+  "genere": "2026-11-04T13:43:05",
+  "dernierReleve": "2026-11-04",
   "premierReleve": false,
   "nbCandidates": 477,
   "nbEcarteesIndexMaroc": 24,
-  "nbNouvelles": 4,
+  "nbNouvelles": 0,
   "nbAvecStatutFrancais": 197,
-  "nbAvecStatutAustralien": 169,
+  "nbAvecStatutAustralien": 170,
   "nbVuesAuBresil": 218,
   "nbVuesEnCoree": 341,
   "avertissement": "Matières actives homologuées au Brésil (produit technique) ou en Corée du Sud, et non appariées à l'index ONSSA. « Absente de l'index » signifie que la clé chimique n'a rien apparié : une graphie non réduite au nom marocain produirait un faux positif, à vérifier avant tout engagement. La date coréenne est celle de la première homologation en Corée, pas celle de l'invention de la molécule. Aucun registre ouvert ne publie l'état des brevets : la présence d'un fabricant autre que l'inventeur est le seul indice, par les faits, qu'une fabrication générique a lieu. Ni prix, ni capacité, ni qualité, ni liberté d'exploitation."
@@ -341,7 +341,7 @@
    "australie": {
     "nom": "FIPRONIL",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 113,
+    "nbProduitsAgricoles": 114,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -490,7 +490,7 @@
    "australie": {
     "nom": "BIFENTHRIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 259,
+    "nbProduitsAgricoles": 265,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -1635,7 +1635,7 @@
    "australie": {
     "nom": "ATRAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 75,
+    "nbProduitsAgricoles": 77,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -1964,7 +1964,7 @@
    "nomPt": "clorfenapir",
    "groupeChimique": "análogo de pirazol",
    "teneurMax": 980.0,
-   "nbHomologationsBr": 36,
+   "nbHomologationsBr": 37,
    "fabricants": [
     {
      "nom": "Basf Corporation",
@@ -2681,6 +2681,110 @@
    "nouvelle": false
   },
   {
+   "cle": "flumiocsasin",
+   "nom": "flumioxazina",
+   "iso": "FLUMIOXAZIN",
+   "nomPt": "flumioxazina",
+   "groupeChimique": "ciclohexenodicarboximida",
+   "teneurMax": 990.0,
+   "nbHomologationsBr": 46,
+   "fabricants": [
+    {
+     "nom": "Changshu Pesticide Factory Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Guangan Lier Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Yunfan Chemicals Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Lianyungang Shijie Agrochemicals  Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Lier Chemical Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Ningxia Yifan Biotechnology Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Binnong Technology CO., LTD",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Jingbo Agrochemicals Technology Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shangyu Nutrichem Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shanxi Anrui Pharmaceuticals Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Yifan Biotechnology Group Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
+    "Agroallianz S.A",
+    "Agrogill Chemicals Ltda",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "CCAB Agro S.A.   São Paulo",
+    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
+    "Cropchem Ltda - Porto Alegre",
+    "Crotect Crop Science Ltda - São Paulo/SP"
+   ],
+   "coree": {
+    "nom": "Flumioxazin",
+    "nbHomologations": 3,
+    "nbFabrique": 3,
+    "nbImporte": 0,
+    "premiere": "2012-03-21",
+    "derniere": "2026-05-26",
+    "nbSocietes": 2
+   },
+   "france": {
+    "nom": "Flumioxazin",
+    "etat": "INSCRITE",
+    "nbProduitsAutorises": 1,
+    "nbProduitsRetires": 1,
+    "dernierRetrait": "2007-11-28"
+   },
+   "australie": {
+    "nom": "FLUMIOXAZIN",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 35,
+    "matiereActiveApprouvee": true
+   },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "piriprocsifem",
    "nom": "piriproxifem",
    "iso": null,
@@ -2863,7 +2967,7 @@
    "australie": {
     "nom": "MANCOZEB",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 71,
+    "nbProduitsAgricoles": 72,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3163,7 +3267,7 @@
    "australie": {
     "nom": "PROPICONAZOLE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 100,
+    "nbProduitsAgricoles": 102,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -3410,6 +3514,85 @@
    "nouvelle": false
   },
   {
+   "cle": "etiprol",
+   "nom": "Etiprole",
+   "iso": null,
+   "nomPt": "Etiprole",
+   "groupeChimique": "Fenilpirazol",
+   "teneurMax": 970.0,
+   "nbHomologationsBr": 12,
+   "fabricants": [
+    {
+     "nom": "Bayer Vapi Private Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Bharat Rasayan Ltd.",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "CABB Oy",
+     "pays": "Finlande",
+     "coutFaible": false
+    },
+    {
+     "nom": "Jiangsu Tuoqiu Agrochemicals Co. Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Meghmani Organics Ltd. Unit IV",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Ningxia Yifan Biotechnology Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shanghai High Victory Fine Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Superform Chemistries Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Yongnong Biosciences Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "AllierBrasil Agro Ltda.",
+    "Bayer S.A. - São Paulo/ SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
+    "Longwind Cropscience Brazil Ltda - Porto Alegre/RS",
+    "Meghmani Organics Biodefensivos e Agrícolas do Brasil Ltda - Campinas/SP",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
+    "Yonon Brasil Defensivos Agricolas Ltda"
+   ],
+   "coree": null,
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "permetrin",
    "nom": "permetrina",
    "iso": null,
@@ -3565,100 +3748,6 @@
     "dernierRetrait": null
    },
    "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "flumiocsasin",
-   "nom": "flumioxazina",
-   "iso": "FLUMIOXAZIN",
-   "nomPt": "flumioxazina",
-   "groupeChimique": "ciclohexenodicarboximida",
-   "teneurMax": 990.0,
-   "nbHomologationsBr": 44,
-   "fabricants": [
-    {
-     "nom": "Changshu Pesticide Factory Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Yunfan Chemicals Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Lianyungang Shijie Agrochemicals  Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Lier Chemical Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Binnong Technology CO., LTD",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Jingbo Agrochemicals Technology Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shangyu Nutrichem Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shanxi Anrui Pharmaceuticals Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Yifan Biotechnology Group Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
-    "Agroallianz S.A",
-    "Agrogill Chemicals Ltda",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Ascenza Brasil Ltda - Hortolândia/SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "CCAB Agro S.A.   São Paulo",
-    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
-    "Cropchem Ltda - Porto Alegre",
-    "Crotect Crop Science Ltda - São Paulo/SP"
-   ],
-   "coree": {
-    "nom": "Flumioxazin",
-    "nbHomologations": 3,
-    "nbFabrique": 3,
-    "nbImporte": 0,
-    "premiere": "2012-03-21",
-    "derniere": "2026-05-26",
-    "nbSocietes": 2
-   },
-   "france": {
-    "nom": "Flumioxazin",
-    "etat": "INSCRITE",
-    "nbProduitsAutorises": 1,
-    "nbProduitsRetires": 1,
-    "dernierRetrait": "2007-11-28"
-   },
-   "australie": {
-    "nom": "FLUMIOXAZIN",
-    "statut": "autorisée",
-    "nbProduitsAgricoles": 32,
-    "matiereActiveApprouvee": true
-   },
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -3907,79 +3996,6 @@
    "nouvelle": false
   },
   {
-   "cle": "etiprol",
-   "nom": "Etiprole",
-   "iso": null,
-   "nomPt": "Etiprole",
-   "groupeChimique": "Fenilpirazol",
-   "teneurMax": 970.0,
-   "nbHomologationsBr": 11,
-   "fabricants": [
-    {
-     "nom": "Bayer Vapi Private Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Bharat Rasayan Ltd.",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "CABB Oy",
-     "pays": "Finlande",
-     "coutFaible": false
-    },
-    {
-     "nom": "Jiangsu Tuoqiu Agrochemicals Co. Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Ningxia Yifan Biotechnology Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shanghai High Victory Fine Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Superform Chemistries Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Yongnong Biosciences Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "AllierBrasil Agro Ltda.",
-    "Bayer S.A. - São Paulo/ SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
-    "Longwind Cropscience Brazil Ltda - Porto Alegre/RS",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
-    "Yonon Brasil Defensivos Agricolas Ltda"
-   ],
-   "coree": null,
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
    "cle": "profenofos",
    "nom": "profenofós",
    "iso": "PROFENOFOS",
@@ -4147,7 +4163,7 @@
    "australie": {
     "nom": "SIMAZINE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 74,
+    "nbProduitsAgricoles": 76,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -4230,7 +4246,7 @@
    "australie": {
     "nom": "CLOTHIANIDIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 15,
+    "nbProduitsAgricoles": 16,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5705,7 +5721,7 @@
    "australie": {
     "nom": "TRIFLURALIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 79,
+    "nbProduitsAgricoles": 84,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -5866,7 +5882,7 @@
    "australie": {
     "nom": "IPRODIONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 43,
+    "nbProduitsAgricoles": 44,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6132,7 +6148,7 @@
    "australie": {
     "nom": "THIRAM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 35,
+    "nbProduitsAgricoles": 46,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -6641,7 +6657,7 @@
    "australie": {
     "nom": "PYROXASULFONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 68,
+    "nbProduitsAgricoles": 74,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -8552,7 +8568,7 @@
    "australie": {
     "nom": "FENPROPIDIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 2,
+    "nbProduitsAgricoles": 3,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -8665,7 +8681,7 @@
    "australie": {
     "nom": "PYDIFLUMETOFEN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 6,
+    "nbProduitsAgricoles": 7,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11068,7 +11084,7 @@
    "australie": {
     "nom": "PYRIOFENONE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 1,
+    "nbProduitsAgricoles": 2,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11227,7 +11243,7 @@
    "australie": {
     "nom": "TRITICONAZOLE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 4,
+    "nbProduitsAgricoles": 5,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11317,7 +11333,7 @@
    "australie": {
     "nom": "ESFENVALERATE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 21,
+    "nbProduitsAgricoles": 22,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -11447,7 +11463,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-11-03",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "28bacilusvelesensis",
@@ -11471,7 +11487,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-11-03",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "318",
@@ -11495,7 +11511,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-11-03",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "287",
@@ -11519,7 +11535,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-11-03",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "1acetatnaftil",
@@ -11976,7 +11992,7 @@
   {
    "cle": "etilen",
    "nom": "Ethylene",
-   "iso": "Ethylene",
+   "iso": "ETHYLENE",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -11999,7 +12015,12 @@
     "nbProduitsRetires": 0,
     "dernierRetrait": null
    },
-   "australie": null,
+   "australie": {
+    "nom": "ETHYLENE",
+    "statut": "autorisée",
+    "nbProduitsAgricoles": 1,
+    "matiereActiveApprouvee": false
+   },
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -14181,7 +14202,7 @@
    "australie": {
     "nom": "CUPROUS OXIDE",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 20,
+    "nbProduitsAgricoles": 33,
     "matiereActiveApprouvee": false
    },
    "premiereVue": "2026-09-07",
@@ -14864,7 +14885,7 @@
    "australie": {
     "nom": "NOVALURON",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 8,
+    "nbProduitsAgricoles": 9,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -16106,7 +16127,7 @@
    "australie": {
     "nom": "ORYZALIN",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 15,
+    "nbProduitsAgricoles": 16,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
@@ -18479,7 +18500,7 @@
    "australie": {
     "nom": "CARBENDAZIM",
     "statut": "autorisée",
-    "nbProduitsAgricoles": 25,
+    "nbProduitsAgricoles": 27,
     "matiereActiveApprouvee": true
    },
    "premiereVue": "2026-09-07",
