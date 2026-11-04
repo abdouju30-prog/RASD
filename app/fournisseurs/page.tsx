@@ -24,6 +24,7 @@ import { SOCIETES_COREE, STATS_COREE, etiquette } from "@/lib/coree";
 import { nbEtranger, resoudre } from "@/lib/requete";
 import { contactDe } from "@/lib/contact";
 import { ContactCell, ValiditeIcama } from "@/components/Contact";
+import { FournisseurAutomation } from "@/components/FournisseurAutomation";
 import { contactIcama } from "@/lib/contacts-icama";
 import type { Fournisseur } from "@/lib/types";
 import { REGISTRES_OUVERTS, societesDuRegistre } from "@/lib/registres-ouverts";
@@ -500,6 +501,7 @@ export default async function FournisseursPage({
                       </td>
                       <td>
                         <ContactCell c={contactDe(f.nom, f.id)} nom={f.nom} />
+                        <FournisseurAutomation nom={f.nom} matieres={mas.map((m) => m.nom)} />
                       </td>
                     </tr>
                   );
