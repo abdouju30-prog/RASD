@@ -19,6 +19,8 @@
   "moisApres": 24
  },
  "exclusiviteUnJourSur": 3,
+ "_exclus": "Sociétés à ne jamais proposer (un mot distinctif ou le nom complet suffit).",
+ "exclus": ["UPL", "United Phosphorus"],
  "majors": [
   "syngenta", "bayer", "basf", "corteva", "dow agro", "dupont", "du pont", "fmc", "sumitomo", "valent",
   "nissan chemical", "ishihara", "iskbc", "kumiai", "nihon nohyaku", "nichino", "mitsui chemicals",

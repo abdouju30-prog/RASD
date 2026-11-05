@@ -64,6 +64,8 @@ export interface ConfigProspection {
   fenetreExclusivite: { anneesAvant: number; moisApres: number };
   /** Un jour sur N, le fournisseur du jour est pris pour une molécule en sortie d'exclusivité. */
   exclusiviteUnJourSur: number;
+  /** Sociétés écartées une fois pour toutes par l'utilisateur. */
+  exclus: string[];
   majors: string[];
 }
 
@@ -432,6 +434,15 @@ function detenteurApparente(cle: string, detenteurNom: string): string | null {
   return null;
 }
 
+/** Écartée par l'utilisateur : « UPL » écarte UPL LIMITED, UPL EUROPE LTD… */
+function estExclu(cle: string): boolean {
+  const mots = cle.split(" ");
+  return (CONFIG.exclus ?? []).some((e) => {
+    const k = cleFabricant(e);
+    return !!k && (cle === k || (k.includes(" ") ? cle.includes(k) : mots.includes(k)));
+  });
+}
+
 /** Clés des sociétés qui fournissent déjà le détenteur : ce ne sont pas de NOUVEAUX fournisseurs. */
 function fournisseursActuels(detenteurId: string): Set<string> {
   return new Set(produitsDe(detenteurId).flatMap((p) => p.fournisseurs).map(cleFabricant));
@@ -447,7 +458,7 @@ export function fournisseursSuggeres(detenteurId: string, aujourdhui = new Date(
   const parFab = new Map<string, { f: Fabricant; mols: CibleMolecule[] }>();
   for (const c of cibles) {
     for (const f of generiquesDe(c.cles)) {
-      if (exclus.has(f.cle)) continue;
+      if (exclus.has(f.cle) || estExclu(f.cle)) continue;
       const e = parFab.get(f.cle) ?? { f, mols: [] };
       if (!e.mols.includes(c)) e.mols.push(c);
       parFab.set(f.cle, e);
