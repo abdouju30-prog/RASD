@@ -25,7 +25,9 @@
     "import:normes": "python scripts/import_normes.py",
     "import:moa": "python scripts/import_modes_action.py",
     "import:afrique": "python scripts/import_afrique.py",
-    "veille": "python scripts/import_ephy.py && python scripts/import_apvma.py && python scripts/import_agrofit.py --frais && python scripts/import_psis.py --frais && python scripts/sentinelle.py"
+    "veille": "python scripts/import_ephy.py && python scripts/import_apvma.py && python scripts/import_agrofit.py --frais && python scripts/import_psis.py --frais && python scripts/sentinelle.py",
+    "prospect": "tsx scripts/prospect-du-jour.ts",
+    "import:exclusivites": "python scripts/import_ue_exclusivites.py"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",

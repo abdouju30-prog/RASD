@@ -231,6 +231,10 @@ export default async function FournisseursPage({
         <strong>Annuaire mondial : {STATS_ANNUAIRE.nbFabricants.toLocaleString("fr")} fabricants dans {STATS_ANNUAIRE.nbPays} pays</strong>
         <span style={{ color: "var(--muted)", fontSize: 13 }}> — OCDE, Amérique latine, Chine, Inde, Russie… une ligne par société, tous registres réunis →</span>
       </Link>
+      <Link href="/prospection" className="card" style={{ display: "block", padding: "12px 16px", margin: "8px 0 0", fontSize: 14 }}>
+        <strong>Agent de prospection : un nouveau fournisseur par jour</strong>
+        <span style={{ color: "var(--muted)", fontSize: 13 }}> — molécules qui manquent au portefeuille, homologuées OCDE, sorties d&apos;exclusivité ; brouillon Gmail chaque matin et suivi des réponses →</span>
+      </Link>
       <NouvellesUsines detenteurId={d.id} />
 
       <form

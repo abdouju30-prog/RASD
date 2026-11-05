@@ -1,0 +1,7 @@
+{
+ "meta": {
+  "description": "Journal de l'agent de prospection : un fournisseur potentiel par jour, son message, son suivi. Tenu par la tâche planifiée quotidienne (commit sur master) ; les statuts se corrigent à la main au besoin.",
+  "statuts": ["à envoyer", "envoyé", "relancé", "réponse", "en discussion", "écarté"]
+ },
+ "prospects": []
+}

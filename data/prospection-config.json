@@ -1,0 +1,28 @@
+{
+ "_lisezMoi": "Réglages de l'agent de prospection (page /prospection, tâche planifiée quotidienne). Modifiable à la main : le détenteur se change ici, par son nom exact à l'index ONSSA.",
+ "detenteur": "PHYTO BEHT",
+ "societe": "Phyto Beht",
+ "paysSociete": "Morocco",
+ "langue": "en",
+ "signature": [
+  "[Nom Prénom]",
+  "[Fonction]",
+  "Phyto Beht — Morocco",
+  "[Téléphone]",
+  "[E-mail]"
+ ],
+ "parJour": 1,
+ "horaire": "tous les jours à 08:15 (Casablanca)",
+ "relanceApresJours": 7,
+ "fenetreExclusivite": {
+  "_regle": "Fin de protection des données UE estimée = approbation UE + 10 ans. Une molécule est « en sortie d'exclusivité » si cette date tombe entre il y a N années et dans M mois.",
+  "anneesAvant": 6,
+  "moisApres": 24
+ },
+ "exclusiviteUnJourSur": 3,
+ "majors": [
+  "syngenta", "bayer", "basf", "corteva", "dow agro", "dupont", "du pont", "fmc", "sumitomo", "valent",
+  "nissan chemical", "ishihara", "iskbc", "kumiai", "nihon nohyaku", "nichino", "mitsui chemicals",
+  "nippon soda", "monsanto", "hokko", "kyoyu"
+ ]
+}
