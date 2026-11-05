@@ -1,7 +1,54 @@
 {
  "meta": {
   "description": "Journal de l'agent de prospection : un fournisseur potentiel par jour, son message, son suivi. Tenu par la tâche planifiée quotidienne (commit sur master) ; les statuts se corrigent à la main au besoin.",
-  "statuts": ["à envoyer", "envoyé", "relancé", "réponse", "en discussion", "écarté"]
+  "statuts": [
+   "à envoyer",
+   "envoyé",
+   "relancé",
+   "réponse",
+   "en discussion",
+   "écarté"
+  ]
  },
- "prospects": []
+ "prospects": [
+  {
+   "id": "2026-11-05-hextarchemicals",
+   "date": "2026-11-05",
+   "fournisseur": "HEXTAR CHEMICALS SDN. BHD.",
+   "cle": "hextar chemicals",
+   "pays": "Malaisie",
+   "molecules": [
+    "Pyraclostrobin",
+    "Deltamethrin",
+    "Captan",
+    "Cymoxanil",
+    "Tebuconazole"
+   ],
+   "motifs": [
+    "trous de gamme PHYTO BEHT : 22 à 37 produits et 12 à 25 détenteurs au Maroc par molécule",
+    "homologuées OCDE (UE, France, Canada, Australie, Turquie…)",
+    "Hextar homologué en Malaisie et au Brésil, enregistré à l'EPA ; choisi par l'utilisateur (UPL écarté)"
+   ],
+   "email": "info@hextar.com",
+   "site": "https://hextargroup.com/",
+   "objet": "Sourcing enquiry from Morocco — Pyraclostrobin, Deltamethrin, Captan, Cymoxanil, Tebuconazole",
+   "message": "Dear Hextar Chemicals team,\n\nI am writing on behalf of Phyto Beht, a crop protection company registering and distributing plant protection products in Morocco.\n\nWe came across Hextar through your product registrations in Malaysia and Brazil, and we understand that your Port Klang site supplies customers in many export markets. We are expanding our portfolio and are looking for a reliable manufacturer of the following active ingredients, as technical grade and/or formulated products: Pyraclostrobin, Deltamethrin, Captan, Cymoxanil and Tebuconazole.\n\nCould you kindly share:\n- your product catalogue and the technical specifications (minimum purity, relevant impurities) for these molecules;\n- the manufacturing site(s) and your existing registrations, in particular in OECD countries;\n- for pyraclostrobin, the crystalline form of your technical material and your position regarding the remaining crystal-form patents;\n- the availability of a technical dossier (5-batch analysis, GLP studies, letter of access) to support a registration with ONSSA, the Moroccan authority;\n- indicative prices, MOQ, lead times and Incoterms;\n- COA, SDS and TDS samples.\n\nWe would be glad to schedule a short call to discuss a possible long-term cooperation.\n\nBest regards,\nAbderrahmane Chraibi\nAgricultural Engineer\nPhyto Beht — Morocco\nchraibi.agro@gmail.com",
+   "statut": "à envoyer",
+   "brouillonGmail": "r-5350528877775881135",
+   "envoyeLe": null,
+   "reponseLe": null,
+   "relances": [],
+   "verification": {
+    "exclusivite": "Pyraclostrobine : brevet de molécule UE expiré en 2015, SPC jusqu'en 2016 ; brevets BASF sur des formes cristallines encore opposés (plainte ITC contre Sharda, 2022). Deltaméthrine, captane, cymoxanil, tébuconazole : génériques anciens (44 à 154 génériqueurs dans les registres RASD).",
+    "sources": [
+     "https://news.agropages.com/News/print-14166.htm",
+     "https://news.bloomberglaw.com/ip-law/basf-bid-to-block-fungicide-to-be-considered-by-trade-agency",
+     "https://patents.google.com/patent/US8404734",
+     "https://stockanalysis.com/quote/klse/HEXTAR/company",
+     "https://www.massa.net.my/?p=5933"
+    ]
+   },
+   "notes": "Société cotée via Hextar Global Berhad (Klang) ; site de production à Pulau Indah, Port Klang ; exporte vers ~30 pays. Plutôt formulateur : demander l'origine du technique."
+  }
+ ]
 }
