@@ -1,6 +1,6 @@
 {
  "commentaire": "Date de première apparition de chaque texte ONSSA. Fichier tenu par scripts/import_onssa_reglementation.py ; l'historique git est le journal des nouveautés.",
- "dernierReleve": "2026-10-29",
+ "dernierReleve": "2026-11-05",
  "premiereVue": {
   "1809-89": {
    "date": "2026-09-13",
