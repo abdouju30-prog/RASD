@@ -161,6 +161,20 @@ export default async function ProspectionPage() {
                 <strong>{p.fournisseur}</strong> ({p.pays}) — {p.molecules.join(", ")} <Statut s={p.statut} />
               </div>
               <div style={{ fontSize: 12.5, color: "var(--muted)", margin: "4px 0" }}>{p.motifs.join(" ; ")}</div>
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", fontSize: 13, margin: "4px 0 6px" }}>
+                <a
+                  className="link-accent"
+                  href={lienGmail(p.email, p.objet, p.message)}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ display: "inline-flex", alignItems: "center", gap: 4 }}
+                >
+                  <Mail size={14} /> {p.brouillonGmail ? "Brouillon créé dans Gmail — ou l'ouvrir ici" : "Ouvrir dans Gmail"}
+                </a>
+                {p.verification?.exclusivite && (
+                  <span style={{ color: "var(--muted)" }}>Exclusivité : {p.verification.exclusivite}</span>
+                )}
+              </div>
               <details>
                 <summary style={{ cursor: "pointer", fontSize: 13 }}>Message — {p.objet}</summary>
                 <pre style={{ whiteSpace: "pre-wrap", fontSize: 12.5, lineHeight: 1.5 }}>{p.message}</pre>

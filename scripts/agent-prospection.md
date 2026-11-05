@@ -44,6 +44,10 @@ Règles absolues :
    vérifié (usine, homologations, gamme). Aucun chiffre promis.
 5. **Créer le brouillon Gmail** : destinataire = e-mail trouvé (vide sinon),
    objet `brouillon.objet` ajusté si besoin.
+   **Si les outils Gmail ne sont pas disponibles** dans la session, ne rien
+   simuler : inscrire le message au journal avec `brouillonGmail: null` (la
+   page `/prospection` l'ouvre dans Gmail, prérempli, en un clic), sauter le
+   suivi Gmail du §3, et le dire dans le résumé final.
 6. **Journal** — ajouter à `prospects` :
 
 ```json
