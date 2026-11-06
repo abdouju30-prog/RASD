@@ -2,19 +2,19 @@
  "meta": {
   "source": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록",
   "url": "https://psis.rda.go.kr/psis/agc/res/agchmRegistStusLst.ps?menuId=PS00263",
-  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-11-05",
-  "genere": "2026-11-05T13:55:25",
+  "attribution": "농촌진흥청 — 농약안전정보시스템 (PSIS), 농약제품 목록 — relevé du 2026-11-06",
+  "genere": "2026-11-06T13:41:06",
   "derniereHomologation": "2026-11-02",
   "nbLignesUsage": 146747,
   "nbHomologations": 4010,
   "nbSocietes": 98,
   "nbFiliales": 16,
-  "nbMatieres": 480,
+  "nbMatieres": 478,
   "nbMatieresIndex": 116,
   "nbNomsIso": 190,
-  "nbHorsIndex": 358,
-  "nbMelanges": 1068,
-  "nbUsages": 31034,
+  "nbHorsIndex": 356,
+  "nbMelanges": 1067,
+  "nbUsages": 31030,
   "partTraduite": 97,
   "nbFabrique": 3279,
   "nbImporte": 731,
@@ -7789,26 +7789,6 @@
    ],
    "premiere": "2026-08-06",
    "derniere": "2026-08-06"
-  },
-  {
-   "cle": "287 + 318 + Bacteriophage Fifi 044",
-   "composants": [
-    "287",
-    "318",
-    "Bacteriophage Fifi 044"
-   ],
-   "nbHomologations": 1,
-   "nbSocietes": 1,
-   "societes": [
-    "(주)팜한농"
-   ],
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "usages": [
-    "살균"
-   ],
-   "premiere": "2026-11-02",
-   "derniere": "2026-11-02"
   },
   {
    "cle": "4-CPA + Gibberellic acid",
@@ -23499,7 +23479,7 @@
    ]
   },
   {
-   "nom": "Bacteriophage Fifi 044",
+   "nom": "Bacteriophage Fifi",
    "iso": null,
    "nbHomologations": 1,
    "nbFabrique": 1,
@@ -23520,30 +23500,6 @@
    "derniere": "2026-11-02",
    "societes": [
     "(주)잰153바이오텍"
-   ]
-  },
-  {
-   "nom": "318",
-   "iso": null,
-   "nbHomologations": 1,
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "premiere": "2026-11-02",
-   "derniere": "2026-11-02",
-   "societes": [
-    "(주)팜한농"
-   ]
-  },
-  {
-   "nom": "287",
-   "iso": null,
-   "nbHomologations": 1,
-   "nbFabrique": 1,
-   "nbImporte": 0,
-   "premiere": "2026-11-02",
-   "derniere": "2026-11-02",
-   "societes": [
-    "(주)팜한농"
    ]
   },
   {
@@ -28920,7 +28876,7 @@
    "nbHomologations": 500,
    "nbFabrique": 467,
    "nbImporte": 33,
-   "nbMatieres": 248,
+   "nbMatieres": 246,
    "matieres": [
     "1-METHYLCYCLOPROPENE",
     "ABAMECTIN",

@@ -1,6 +1,6 @@
 {
  "commentaire": "Date de première apparition de chaque candidate. Fichier tenu par scripts/sentinelle.py ; l'historique git est le journal des nouveautés.",
- "dernierReleve": "2026-11-05",
+ "dernierReleve": "2026-11-06",
  "premiereVue": {
   "0365bbacilussubtilis": "2026-09-07",
   "0423aisavaibacilusntsubspturiniensis": "2026-09-07",
@@ -79,6 +79,7 @@
   "b9baciluscurstaciimblsubspturiniensis": "2026-09-07",
   "bacilusbs03iabstrainsubtilis": "2026-09-07",
   "baciluscurstacisubspturiniensis": "2026-09-07",
+  "bacterioffifi": "2026-11-06",
   "bcplamelicolsimplicilium": "2026-09-07",
   "beflubutamid": "2026-09-07",
   "benalacsil": "2026-09-07",

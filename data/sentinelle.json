@@ -1,16 +1,16 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-11-05T13:55:30",
-  "dernierReleve": "2026-11-05",
+  "genere": "2026-11-06T13:41:11",
+  "dernierReleve": "2026-11-06",
   "premierReleve": false,
-  "nbCandidates": 477,
+  "nbCandidates": 475,
   "nbEcarteesIndexMaroc": 24,
-  "nbNouvelles": 0,
+  "nbNouvelles": 1,
   "nbAvecStatutFrancais": 197,
   "nbAvecStatutAustralien": 170,
   "nbVuesAuBresil": 218,
-  "nbVuesEnCoree": 341,
+  "nbVuesEnCoree": 339,
   "avertissement": "Matières actives homologuées au Brésil (produit technique) ou en Corée du Sud, et non appariées à l'index ONSSA. « Absente de l'index » signifie que la clé chimique n'a rien apparié : une graphie non réduite au nom marocain produirait un faux positif, à vérifier avant tout engagement. La date coréenne est celle de la première homologation en Corée, pas celle de l'invention de la molécule. Aucun registre ouvert ne publie l'état des brevets : la présence d'un fabricant autre que l'inventeur est le seul indice, par les faits, qu'une fabrication générique a lieu. Ni prix, ni capacité, ni qualité, ni liberté d'exploitation."
  },
  "candidates": [
@@ -503,7 +503,7 @@
    "nomPt": "ciproconazol",
    "groupeChimique": "triazol",
    "teneurMax": 983.4,
-   "nbHomologationsBr": 51,
+   "nbHomologationsBr": 52,
    "fabricants": [
     {
      "nom": "Bayer CropScience Schweiz AG",
@@ -3173,13 +3173,98 @@
    "nouvelle": false
   },
   {
+   "cle": "etiprol",
+   "nom": "Etiprole",
+   "iso": null,
+   "nomPt": "Etiprole",
+   "groupeChimique": "Fenilpirazol",
+   "teneurMax": 970.0,
+   "nbHomologationsBr": 14,
+   "fabricants": [
+    {
+     "nom": "Bayer Vapi Private Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Bharat Rasayan Ltd.",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "CABB Oy",
+     "pays": "Finlande",
+     "coutFaible": false
+    },
+    {
+     "nom": "Hemani Industries Ltd.",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Tuoqiu Agrochemicals Co. Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Meghmani Organics Ltd. Unit IV",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Ningxia Yifan Biotechnology Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shanghai High Victory Fine Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Superform Chemistries Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Yongnong Biosciences Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "AllierBrasil Agro Ltda.",
+    "Bayer S.A. - São Paulo/ SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
+    "Cropchem Ltda - Porto Alegre",
+    "Longwind Cropscience Brazil Ltda - Porto Alegre/RS",
+    "Meghmani Organics Biodefensivos e Agrícolas do Brasil Ltda - Campinas/SP",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
+    "Yonon Brasil Defensivos Agricolas Ltda"
+   ],
+   "coree": null,
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "propiconasol",
    "nom": "propiconazol",
    "iso": "PROPICONAZOLE",
    "nomPt": "propiconazol",
    "groupeChimique": "triazol",
    "teneurMax": 980.0,
-   "nbHomologationsBr": 12,
+   "nbHomologationsBr": 13,
    "fabricants": [
     {
      "nom": "Adama Brasil S.A.",
@@ -3360,7 +3445,7 @@
    "nomPt": "nicossulfurom",
    "groupeChimique": "sulfoniluréia",
    "teneurMax": 980.0,
-   "nbHomologationsBr": 25,
+   "nbHomologationsBr": 26,
    "fabricants": [
     {
      "nom": "Anhui JiuYi Agriculture Co., Ltd.",
@@ -3506,85 +3591,6 @@
     "Meghmani Organics Biodefensivos e Agrícolas do Brasil Ltda - Campinas/SP",
     "Nortox S.A. - Arapongas",
     "Pilarquim Br Comercial Ltda.- São Paulo"
-   ],
-   "coree": null,
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "etiprol",
-   "nom": "Etiprole",
-   "iso": null,
-   "nomPt": "Etiprole",
-   "groupeChimique": "Fenilpirazol",
-   "teneurMax": 970.0,
-   "nbHomologationsBr": 12,
-   "fabricants": [
-    {
-     "nom": "Bayer Vapi Private Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Bharat Rasayan Ltd.",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "CABB Oy",
-     "pays": "Finlande",
-     "coutFaible": false
-    },
-    {
-     "nom": "Jiangsu Tuoqiu Agrochemicals Co. Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Meghmani Organics Ltd. Unit IV",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Ningxia Yifan Biotechnology Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Shanghai High Victory Fine Chemical Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Superform Chemistries Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Yongnong Biosciences Co., Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "AllierBrasil Agro Ltda.",
-    "Bayer S.A. - São Paulo/ SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
-    "Longwind Cropscience Brazil Ltda - Porto Alegre/RS",
-    "Meghmani Organics Biodefensivos e Agrícolas do Brasil Ltda - Campinas/SP",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
-    "Yonon Brasil Defensivos Agricolas Ltda"
    ],
    "coree": null,
    "france": null,
@@ -4495,7 +4501,8 @@
     "Nortox S.A. - Arapongas",
     "Proregistros Registros de Produtos Ltda - EPP",
     "Proventis Lifescience Defensivos Agrícolas Ltda",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS"
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Wynca do Brasil Ltda  São Paulo"
    ],
    "coree": null,
    "france": null,
@@ -6095,6 +6102,51 @@
    "nouvelle": false
   },
   {
+   "cle": "cisalofopetilicp",
+   "nom": "quizalofope-P-etílico",
+   "iso": null,
+   "nomPt": "quizalofope-P-etílico",
+   "groupeChimique": "ácido ariloxifenoxipropiônico",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 7,
+   "fabricants": [
+    {
+     "nom": "Changzhou August Agrochem Company Limited",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Hefei Xingyu Chemical Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Fengshang Group Co. Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "Avgust Crop Protection Importação e Exportação Ltda.",
+    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "Cropchem Ltda - Porto Alegre",
+    "Helm do Brasil Mercantil - São Paulo/SP",
+    "Iharabras S.A. Indústria Químicas - Sorocaba",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA"
+   ],
+   "coree": null,
+   "france": null,
+   "australie": null,
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
    "cle": "tiram",
    "nom": "tiram",
    "iso": "THIRAM",
@@ -6506,60 +6558,6 @@
    "nouvelle": false
   },
   {
-   "cle": "triciclasol",
-   "nom": "triciclazol",
-   "iso": "Tricyclazole",
-   "nomPt": "triciclazol",
-   "groupeChimique": "benzotiazol",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 2,
-   "fabricants": [
-    {
-     "nom": "Indofil Industries Limited  Planta Azad Nagar",
-     "pays": "Inde",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Changqing Agrochemical Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Kumiai Chemical Industry Co. Ltd.",
-     "pays": "Japon",
-     "coutFaible": false
-    },
-    {
-     "nom": "NACL Industries Limited",
-     "pays": "Inde",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
-    "Indofil Industries do Brasil Ltda."
-   ],
-   "coree": {
-    "nom": "Tricyclazole",
-    "nbHomologations": 35,
-    "nbFabrique": 33,
-    "nbImporte": 2,
-    "premiere": "1989-03-24",
-    "derniere": "2026-08-06",
-    "nbSocietes": 17
-   },
-   "france": {
-    "nom": "Tricyclazole",
-    "etat": "NON_INSCRITE",
-    "nbProduitsAutorises": 0,
-    "nbProduitsRetires": 0,
-    "dernierRetrait": null
-   },
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
    "cle": "fluasaindolisin",
    "nom": "Fluazaindolizine",
    "iso": "FLUAZAINDOLIZINE",
@@ -6756,7 +6754,7 @@
    "nomPt": "fenpropimorfe",
    "groupeChimique": "morfolina",
    "teneurMax": 970.0,
-   "nbHomologationsBr": 13,
+   "nbHomologationsBr": 14,
    "fabricants": [
     {
      "nom": "BASF SE",
@@ -6834,45 +6832,6 @@
     "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
     "Sumitomo Chemical Brasil Indústria Química S.A. - Maracanaú/CE",
     "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
-   ],
-   "coree": null,
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "cisalofopetilicp",
-   "nom": "quizalofope-P-etílico",
-   "iso": null,
-   "nomPt": "quizalofope-P-etílico",
-   "groupeChimique": "ácido ariloxifenoxipropiônico",
-   "teneurMax": 950.0,
-   "nbHomologationsBr": 6,
-   "fabricants": [
-    {
-     "nom": "Changzhou August Agrochem Company Limited",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Hefei Xingyu Chemical Co., Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    },
-    {
-     "nom": "Jiangsu Fengshang Group Co. Ltd",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "Avgust Crop Protection Importação e Exportação Ltda.",
-    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
-    "Cropchem Ltda - Porto Alegre",
-    "Helm do Brasil Mercantil - São Paulo/SP",
-    "Iharabras S.A. Indústria Químicas - Sorocaba",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA"
    ],
    "coree": null,
    "france": null,
@@ -6965,6 +6924,43 @@
     "nbProduitsAgricoles": 0,
     "matiereActiveApprouvee": true
    },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "diflufenicam",
+   "nom": "diflufenicam",
+   "iso": null,
+   "nomPt": "diflufenicam",
+   "groupeChimique": "anilida",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 4,
+   "fabricants": [
+    {
+     "nom": "Briar Chemicals Limited",
+     "pays": "Royaume-Uni",
+     "coutFaible": false
+    },
+    {
+     "nom": "Jiangsu Corechem Co. Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "Bayer S.A. - São Paulo/ SP",
+    "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS"
+   ],
+   "coree": null,
+   "france": null,
+   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -7307,6 +7303,55 @@
     "nbProduitsAgricoles": 31,
     "matiereActiveApprouvee": true
    },
+   "premiereVue": "2026-09-07",
+   "nouvelle": false
+  },
+  {
+   "cle": "triciclasol",
+   "nom": "triciclazol",
+   "iso": "Tricyclazole",
+   "nomPt": "triciclazol",
+   "groupeChimique": "benzotiazol",
+   "teneurMax": 980.0,
+   "nbHomologationsBr": 2,
+   "fabricants": [
+    {
+     "nom": "Indofil Industries Limited  Planta Azad Nagar",
+     "pays": "Inde",
+     "coutFaible": true
+    },
+    {
+     "nom": "Jiangsu Changqing Agrochemical Co., Ltd",
+     "pays": "Chine",
+     "coutFaible": true
+    },
+    {
+     "nom": "NACL Industries Limited",
+     "pays": "Inde",
+     "coutFaible": true
+    }
+   ],
+   "titulaires": [
+    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
+    "Indofil Industries do Brasil Ltda."
+   ],
+   "coree": {
+    "nom": "Tricyclazole",
+    "nbHomologations": 35,
+    "nbFabrique": 33,
+    "nbImporte": 2,
+    "premiere": "1989-03-24",
+    "derniere": "2026-08-06",
+    "nbSocietes": 17
+   },
+   "france": {
+    "nom": "Tricyclazole",
+    "etat": "NON_INSCRITE",
+    "nbProduitsAutorises": 0,
+    "nbProduitsRetires": 0,
+    "dernierRetrait": null
+   },
+   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -7940,7 +7985,7 @@
    "nomPt": "Espiromesifeno",
    "groupeChimique": "cetoenol",
    "teneurMax": 980.0,
-   "nbHomologationsBr": 5,
+   "nbHomologationsBr": 6,
    "fabricants": [
     {
      "nom": "Shandong Kangqiao Bio-technology Co. Ltd.",
@@ -7956,6 +8001,7 @@
    "titulaires": [
     "Agroallianz S.A",
     "Bayer S.A. - São Paulo/ SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "Cropchem Ltda - Porto Alegre",
     "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
     "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
@@ -8014,37 +8060,6 @@
     "nbProduitsAgricoles": 17,
     "matiereActiveApprouvee": true
    },
-   "premiereVue": "2026-09-07",
-   "nouvelle": false
-  },
-  {
-   "cle": "diflufenicam",
-   "nom": "diflufenicam",
-   "iso": null,
-   "nomPt": "diflufenicam",
-   "groupeChimique": "anilida",
-   "teneurMax": 980.0,
-   "nbHomologationsBr": 3,
-   "fabricants": [
-    {
-     "nom": "Briar Chemicals Limited",
-     "pays": "Royaume-Uni",
-     "coutFaible": false
-    },
-    {
-     "nom": "Jiangsu Corechem Co. Ltd.",
-     "pays": "Chine",
-     "coutFaible": true
-    }
-   ],
-   "titulaires": [
-    "Bayer S.A. - São Paulo/ SP",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas"
-   ],
-   "coree": null,
-   "france": null,
-   "australie": null,
    "premiereVue": "2026-09-07",
    "nouvelle": false
   },
@@ -9383,7 +9398,7 @@
    "titulaires": [
     "NGC Agrosciences Brasil Ltda - Botucatu/SP",
     "Nortox S.A. - Arapongas",
-    "Proregistros Registros de Produtos Ltda - EPP"
+    "Wynca do Brasil Ltda  São Paulo"
    ],
    "coree": null,
    "france": null,
@@ -11442,9 +11457,9 @@
    "nouvelle": false
   },
   {
-   "cle": "04bacterioffifi",
-   "nom": "Bacteriophage Fifi 044",
-   "iso": "Bacteriophage Fifi 044",
+   "cle": "bacterioffifi",
+   "nom": "Bacteriophage Fifi",
+   "iso": "Bacteriophage Fifi",
    "nomPt": null,
    "groupeChimique": null,
    "teneurMax": null,
@@ -11452,7 +11467,7 @@
    "fabricants": [],
    "titulaires": [],
    "coree": {
-    "nom": "Bacteriophage Fifi 044",
+    "nom": "Bacteriophage Fifi",
     "nbHomologations": 1,
     "nbFabrique": 1,
     "nbImporte": 0,
@@ -11462,8 +11477,8 @@
    },
    "france": null,
    "australie": null,
-   "premiereVue": "2026-11-03",
-   "nouvelle": false
+   "premiereVue": "2026-11-06",
+   "nouvelle": true
   },
   {
    "cle": "28bacilusvelesensis",
@@ -11477,54 +11492,6 @@
    "titulaires": [],
    "coree": {
     "nom": "Bacillus velezensis 8-2",
-    "nbHomologations": 1,
-    "nbFabrique": 1,
-    "nbImporte": 0,
-    "premiere": "2026-11-02",
-    "derniere": "2026-11-02",
-    "nbSocietes": 1
-   },
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-11-03",
-   "nouvelle": false
-  },
-  {
-   "cle": "318",
-   "nom": "318",
-   "iso": "318",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "318",
-    "nbHomologations": 1,
-    "nbFabrique": 1,
-    "nbImporte": 0,
-    "premiere": "2026-11-02",
-    "derniere": "2026-11-02",
-    "nbSocietes": 1
-   },
-   "france": null,
-   "australie": null,
-   "premiereVue": "2026-11-03",
-   "nouvelle": false
-  },
-  {
-   "cle": "287",
-   "nom": "287",
-   "iso": "287",
-   "nomPt": null,
-   "groupeChimique": null,
-   "teneurMax": null,
-   "nbHomologationsBr": 0,
-   "fabricants": [],
-   "titulaires": [],
-   "coree": {
-    "nom": "287",
     "nbHomologations": 1,
     "nbFabrique": 1,
     "nbImporte": 0,

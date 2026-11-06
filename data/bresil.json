@@ -2,9 +2,9 @@
  "meta": {
   "source": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques",
   "url": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
-  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-11-05",
-  "genere": "2026-11-05T13:54:12",
-  "nbHomologations": 3009,
+  "attribution": "Ministério da Agricultura e Pecuária — AGROFIT, produits techniques — relevé du 2026-11-06",
+  "genere": "2026-11-06T13:39:43",
+  "nbHomologations": 3022,
   "nbUsines": 542,
   "nbMatieres": 80,
   "nbMatieresIndex": 190,
@@ -1252,13 +1252,14 @@
    "nomsPt": [
     "metoxifenozida"
    ],
-   "nbHomologations": 15,
+   "nbHomologations": 16,
    "teneurMax": 980.0,
    "usines": [
     "JIANGSU HUIFENG BIO AGRICULTURE CO. LTD.|CHINA, REPUBLICA POPULAR",
     "JIANGSU WEUNITE FINE CHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
     "SHANDONG WEIFANG RAINBOW CHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
     "UPL LIMITED|ÍNDIA",
+    "XIANGSHUI ZHONGSHAN BIOSCIENCE CO. LTD|CHINA, REPUBLICA POPULAR",
     "YINGDE GREATCHEM CHEMICALS CO., LTD.|CHINA, REPUBLICA POPULAR",
     "YINGDE GREATCHEM CHEMICALS|CHINA, REPUBLICA POPULAR"
    ]
@@ -1338,7 +1339,7 @@
    "nomsPt": [
     "Protioconazol"
    ],
-   "nbHomologations": 92,
+   "nbHomologations": 93,
    "teneurMax": 980.0,
    "usines": [
     "ADAMA AGRICULTURAL SOLUTIONS LTD.|ISRAEL",
@@ -1379,7 +1380,7 @@
    "nomsPt": [
     "piraclostrobina"
    ],
-   "nbHomologations": 23,
+   "nbHomologations": 24,
    "teneurMax": 980.0,
    "usines": [
     "ANHUI GUANGXIN AGROCHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
@@ -1398,6 +1399,7 @@
     "SHANDONG WEIFANG RAINBOW CHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
     "SHIJIAZHUANG CITY SENTAY CHEMICAL CO., LTD|CHINA, REPUBLICA POPULAR",
     "SHIJIAZHUANG RICHEM CO., LTD|CHINA, REPUBLICA POPULAR",
+    "XIANGSHUI ZHONGSHAN BIOSCIENCE CO. LTD|CHINA, REPUBLICA POPULAR",
     "YONGNONG BIOSCIENCES CO., LTD.|CHINA, REPUBLICA POPULAR",
     "ZHEJIANG UDRAGON BIOSCIENCE CO. LTD|CHINA, REPUBLICA POPULAR"
    ]
@@ -1456,7 +1458,7 @@
    "nomsPt": [
     "saflufenacil"
    ],
-   "nbHomologations": 9,
+   "nbHomologations": 10,
    "teneurMax": 980.0,
    "usines": [
     "BASF CORPORATION|ESTADOS UNIDOS",
@@ -2057,7 +2059,7 @@
   {
    "nomPt": "ciproconazol",
    "groupeChimique": "triazol",
-   "nbHomologations": 51,
+   "nbHomologations": 52,
    "teneurMax": 983.4,
    "titulaires": [
     "Acrom Agroindustrial Ltda- Londrina/PR",
@@ -4254,9 +4256,75 @@
    ]
   },
   {
+   "nomPt": "Etiprole",
+   "groupeChimique": "Fenilpirazol",
+   "nbHomologations": 14,
+   "teneurMax": 970.0,
+   "titulaires": [
+    "AllierBrasil Agro Ltda.",
+    "Bayer S.A. - São Paulo/ SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
+    "Cropchem Ltda - Porto Alegre",
+    "Longwind Cropscience Brazil Ltda - Porto Alegre/RS",
+    "Meghmani Organics Biodefensivos e Agrícolas do Brasil Ltda - Campinas/SP",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
+    "Yonon Brasil Defensivos Agricolas Ltda"
+   ],
+   "fabricants": [
+    {
+     "nom": "Bayer Vapi Private Limited",
+     "pays": "Inde"
+    },
+    {
+     "nom": "Bharat Rasayan Ltd.",
+     "pays": "Inde"
+    },
+    {
+     "nom": "CABB Oy",
+     "pays": "Finlande"
+    },
+    {
+     "nom": "Hemani Industries Ltd.",
+     "pays": "Inde"
+    },
+    {
+     "nom": "Jiangsu Tuoqiu Agrochemicals Co. Ltd",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Meghmani Organics Ltd. Unit IV",
+     "pays": "Inde"
+    },
+    {
+     "nom": "Ningxia Yifan Biotechnology Co. Ltd.",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Shanghai High Victory Fine Chemical Co., Ltd.",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Superform Chemistries Limited",
+     "pays": "Inde"
+    },
+    {
+     "nom": "Yongnong Biosciences Co., Ltd.",
+     "pays": "Chine"
+    }
+   ]
+  },
+  {
    "nomPt": "propiconazol",
    "groupeChimique": "triazol",
-   "nbHomologations": 12,
+   "nbHomologations": 13,
    "teneurMax": 980.0,
    "titulaires": [
     "Adama Brasil S.A.- Londrina/PR",
@@ -4397,7 +4465,7 @@
   {
    "nomPt": "nicossulfurom",
    "groupeChimique": "sulfoniluréia",
-   "nbHomologations": 25,
+   "nbHomologations": 26,
    "teneurMax": 980.0,
    "titulaires": [
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
@@ -4418,7 +4486,8 @@
     "Trustchem Brazil Agroscience Sociedade Unipessoal Ltda - São Paulo/SP",
     "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
     "Wynca do Brasil Ltda  São Paulo",
-    "Xingfa Brasil Ltda"
+    "Xingfa Brasil Ltda",
+    "Zhongshan Química do Brasil - Sorocaba/SP"
    ],
    "fabricants": [
     {
@@ -4525,67 +4594,6 @@
     },
     {
      "nom": "Tai Cang Pesticide Factory Co. Ltd",
-     "pays": "Chine"
-    }
-   ]
-  },
-  {
-   "nomPt": "Etiprole",
-   "groupeChimique": "Fenilpirazol",
-   "nbHomologations": 12,
-   "teneurMax": 970.0,
-   "titulaires": [
-    "AllierBrasil Agro Ltda.",
-    "Bayer S.A. - São Paulo/ SP",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "CHDS do Brasil Comércio de Insumos Agrícolas Ltda - São Miguel do Iguaçu/PR",
-    "Longwind Cropscience Brazil Ltda - Porto Alegre/RS",
-    "Meghmani Organics Biodefensivos e Agrícolas do Brasil Ltda - Campinas/SP",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
-    "Solagro Soluções Agrícolas Ltda - São Paulo/SP",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
-    "Yonon Brasil Defensivos Agricolas Ltda"
-   ],
-   "fabricants": [
-    {
-     "nom": "Bayer Vapi Private Limited",
-     "pays": "Inde"
-    },
-    {
-     "nom": "Bharat Rasayan Ltd.",
-     "pays": "Inde"
-    },
-    {
-     "nom": "CABB Oy",
-     "pays": "Finlande"
-    },
-    {
-     "nom": "Jiangsu Tuoqiu Agrochemicals Co. Ltd",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Meghmani Organics Ltd. Unit IV",
-     "pays": "Inde"
-    },
-    {
-     "nom": "Ningxia Yifan Biotechnology Co. Ltd.",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Shanghai High Victory Fine Chemical Co., Ltd.",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Superform Chemistries Limited",
-     "pays": "Inde"
-    },
-    {
-     "nom": "Yongnong Biosciences Co., Ltd.",
      "pays": "Chine"
     }
    ]
@@ -5121,12 +5129,12 @@
     "Nortox S.A. - Arapongas",
     "Ouro Fino Química S.A. - Uberaba",
     "Perterra Insumos Agropecuários S.A.  São Paulo/SP",
-    "Proregistros Registros de Produtos Ltda - EPP",
     "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
     "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
     "Sumitomo Chemical Brasil Indústria Química S.A. - Maracanaú/CE",
     "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
+    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP",
+    "Wynca do Brasil Ltda  São Paulo"
    ],
    "fabricants": [
     {
@@ -5217,7 +5225,8 @@
     "Nortox S.A. - Arapongas",
     "Proregistros Registros de Produtos Ltda - EPP",
     "Proventis Lifescience Defensivos Agrícolas Ltda",
-    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS"
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Wynca do Brasil Ltda  São Paulo"
    ],
    "fabricants": [
     {
@@ -6294,6 +6303,39 @@
    ]
   },
   {
+   "nomPt": "quizalofope-P-etílico",
+   "groupeChimique": "ácido ariloxifenoxipropiônico",
+   "nbHomologations": 7,
+   "teneurMax": 980.0,
+   "titulaires": [
+    "Avgust Crop Protection Importação e Exportação Ltda.",
+    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
+    "Cropchem Ltda - Porto Alegre",
+    "Helm do Brasil Mercantil - São Paulo/SP",
+    "Iharabras S.A. Indústria Químicas - Sorocaba",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA"
+   ],
+   "fabricants": [
+    {
+     "nom": "Changzhou August Agrochem Company Limited",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Hefei Xingyu Chemical Co., Ltd",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Jiangsu Fengshang Group Co. Ltd",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
+     "pays": "Chine"
+    }
+   ]
+  },
+  {
    "nomPt": "tiram",
    "groupeChimique": "dimetilditiocarbamato",
    "nbHomologations": 5,
@@ -6582,34 +6624,6 @@
    ]
   },
   {
-   "nomPt": "triciclazol",
-   "groupeChimique": "benzotiazol",
-   "nbHomologations": 2,
-   "teneurMax": 980.0,
-   "titulaires": [
-    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
-    "Indofil Industries do Brasil Ltda."
-   ],
-   "fabricants": [
-    {
-     "nom": "Indofil Industries Limited  Planta Azad Nagar",
-     "pays": "Inde"
-    },
-    {
-     "nom": "Jiangsu Changqing Agrochemical Co., Ltd",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Kumiai Chemical Industry Co. Ltd.",
-     "pays": "Japon"
-    },
-    {
-     "nom": "NACL Industries Limited",
-     "pays": "Inde"
-    }
-   ]
-  },
-  {
    "nomPt": "Fluazaindolizine",
    "groupeChimique": "Sulfonamida",
    "nbHomologations": 1,
@@ -6720,7 +6734,7 @@
   {
    "nomPt": "fenpropimorfe",
    "groupeChimique": "morfolina",
-   "nbHomologations": 13,
+   "nbHomologations": 14,
    "teneurMax": 970.0,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
@@ -6782,34 +6796,6 @@
    ]
   },
   {
-   "nomPt": "quizalofope-P-etílico",
-   "groupeChimique": "ácido ariloxifenoxipropiônico",
-   "nbHomologations": 6,
-   "teneurMax": 950.0,
-   "titulaires": [
-    "Avgust Crop Protection Importação e Exportação Ltda.",
-    "Basf Agricultural Solutions Brasil Ltda  São Paulo/SP",
-    "Cropchem Ltda - Porto Alegre",
-    "Helm do Brasil Mercantil - São Paulo/SP",
-    "Iharabras S.A. Indústria Químicas - Sorocaba",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA"
-   ],
-   "fabricants": [
-    {
-     "nom": "Changzhou August Agrochem Company Limited",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Hefei Xingyu Chemical Co., Ltd",
-     "pays": "Chine"
-    },
-    {
-     "nom": "Jiangsu Fengshang Group Co. Ltd",
-     "pays": "Chine"
-    }
-   ]
-  },
-  {
    "nomPt": "sulfluramida",
    "groupeChimique": "sulfonamida fluoroalifática",
    "nbHomologations": 6,
@@ -6860,6 +6846,32 @@
     },
     {
      "nom": "Jiangxi Heyi Chemical Co., Ltd.",
+     "pays": "Chine"
+    }
+   ]
+  },
+  {
+   "nomPt": "diflufenicam",
+   "groupeChimique": "anilida",
+   "nbHomologations": 4,
+   "teneurMax": 980.0,
+   "titulaires": [
+    "Bayer S.A. - São Paulo/ SP",
+    "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas",
+    "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS"
+   ],
+   "fabricants": [
+    {
+     "nom": "Briar Chemicals Limited",
+     "pays": "Royaume-Uni"
+    },
+    {
+     "nom": "Jiangsu Corechem Co. Ltd.",
+     "pays": "Chine"
+    },
+    {
+     "nom": "Shandong Weifang Rainbow Chemical Co., Ltd.",
      "pays": "Chine"
     }
    ]
@@ -7126,6 +7138,30 @@
     {
      "nom": "Jiangsu Sword Agrochemicals Co. Ltd.",
      "pays": "Chine"
+    }
+   ]
+  },
+  {
+   "nomPt": "triciclazol",
+   "groupeChimique": "benzotiazol",
+   "nbHomologations": 2,
+   "teneurMax": 980.0,
+   "titulaires": [
+    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
+    "Indofil Industries do Brasil Ltda."
+   ],
+   "fabricants": [
+    {
+     "nom": "Indofil Industries Limited  Planta Azad Nagar",
+     "pays": "Inde"
+    },
+    {
+     "nom": "Jiangsu Changqing Agrochemical Co., Ltd",
+     "pays": "Chine"
+    },
+    {
+     "nom": "NACL Industries Limited",
+     "pays": "Inde"
     }
    ]
   },
@@ -7454,11 +7490,12 @@
   {
    "nomPt": "Espiromesifeno",
    "groupeChimique": "cetoenol",
-   "nbHomologations": 5,
+   "nbHomologations": 6,
    "teneurMax": 980.0,
    "titulaires": [
     "Agroallianz S.A",
     "Bayer S.A. - São Paulo/ SP",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
     "Cropchem Ltda - Porto Alegre",
     "Rainbow Defensivos Agrícolas Ltda.- Porto Alegre /RS",
     "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
@@ -7493,27 +7530,6 @@
     {
      "nom": "Sumitomo Chemical Company Ltd",
      "pays": "Japon"
-    }
-   ]
-  },
-  {
-   "nomPt": "diflufenicam",
-   "groupeChimique": "anilida",
-   "nbHomologations": 3,
-   "teneurMax": 980.0,
-   "titulaires": [
-    "Bayer S.A. - São Paulo/ SP",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas"
-   ],
-   "fabricants": [
-    {
-     "nom": "Briar Chemicals Limited",
-     "pays": "Royaume-Uni"
-    },
-    {
-     "nom": "Jiangsu Corechem Co. Ltd.",
-     "pays": "Chine"
     }
    ]
   },
@@ -8270,7 +8286,7 @@
    "titulaires": [
     "NGC Agrosciences Brasil Ltda - Botucatu/SP",
     "Nortox S.A. - Arapongas",
-    "Proregistros Registros de Produtos Ltda - EPP"
+    "Wynca do Brasil Ltda  São Paulo"
    ],
    "fabricants": [
     {
@@ -9365,13 +9381,13 @@
     "clorpirifós",
     "diclosulam",
     "difenoconazol",
+    "diflufenicam",
     "diurom",
     "epoxiconazol",
     "fluazinam",
-    "fludioxonil",
-    "fomesafem"
+    "fludioxonil"
    ],
-   "nbHomologations": 121,
+   "nbHomologations": 123,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
@@ -9454,7 +9470,7 @@
     "triadimenol",
     "trifluralina"
    ],
-   "nbHomologations": 53,
+   "nbHomologations": 52,
    "titulaires": [
     "AMVAC do Brasil Importação e Comércio de Insumos Agrícolas Ltda",
     "Adama Brasil S.A.- Londrina/PR",
@@ -9774,7 +9790,7 @@
     "piraclostrobina",
     "saflufenacil"
    ],
-   "nbHomologations": 39,
+   "nbHomologations": 40,
    "titulaires": [
     "ALTA - America Latina Tecnologia Agrícola Ltda.- Curitiba",
     "Adama Brasil S.A.- Londrina/PR",
@@ -9833,6 +9849,52 @@
     "Iharabras S.A. Indústria Químicas - Sorocaba",
     "Meghmani Organics Biodefensivos e Agrícolas do Brasil Ltda - Campinas/SP",
     "Solagro Soluções Agrícolas Ltda - São Paulo/SP"
+   ]
+  },
+  {
+   "id": "XIANGSHUI ZHONGSHAN BIOSCIENCE CO. LTD|CHINA, REPUBLICA POPULAR",
+   "nom": "Xiangshui Zhongshan Bioscience Co. Ltd",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "AZOXYSTROBIN",
+    "BOSCALID",
+    "CLOMAZONE",
+    "ISOXAFLUTOLE",
+    "METHOXYFENOZIDE",
+    "PROTHIOCONAZOLE",
+    "PYRACLOSTROBIN",
+    "S-METOLACHLOR"
+   ],
+   "matieresPt": [
+    "Ametrina",
+    "Atrazina",
+    "Azoxistrobina",
+    "Boscalida",
+    "Glufosinato - sal de amônio",
+    "Penoxsulam",
+    "Picoxistrobina",
+    "Protioconazol",
+    "S-metolacloro",
+    "amicarbazona",
+    "clomazona",
+    "diurom",
+    "fipronil",
+    "isoxaflutol",
+    "metoxifenozida",
+    "piraclostrobina"
+   ],
+   "nbHomologations": 25,
+   "titulaires": [
+    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
+    "Ameribrás Indústria e Comércio Ltda.",
+    "Brilliance Produtos Agrícolas Ltda",
+    "Gilmore Agro do Brasil Ltda - ME",
+    "Nortox S.A. - Arapongas",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "Yonon Brasil Defensivos Agricolas Ltda",
+    "Zhongshan Química do Brasil - Sorocaba/SP"
    ]
   },
   {
@@ -10277,48 +10339,6 @@
     "Ouro Fino Química S.A. - Uberaba",
     "Sumitomo Chemical Brasil Indústria Química S.A. - Maracanaú/CE",
     "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
-   ]
-  },
-  {
-   "id": "XIANGSHUI ZHONGSHAN BIOSCIENCE CO. LTD|CHINA, REPUBLICA POPULAR",
-   "nom": "Xiangshui Zhongshan Bioscience Co. Ltd",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "AZOXYSTROBIN",
-    "BOSCALID",
-    "CLOMAZONE",
-    "ISOXAFLUTOLE",
-    "PROTHIOCONAZOLE",
-    "S-METOLACHLOR"
-   ],
-   "matieresPt": [
-    "Ametrina",
-    "Atrazina",
-    "Azoxistrobina",
-    "Boscalida",
-    "Glufosinato - sal de amônio",
-    "Penoxsulam",
-    "Picoxistrobina",
-    "Protioconazol",
-    "S-metolacloro",
-    "amicarbazona",
-    "clomazona",
-    "diurom",
-    "fipronil",
-    "isoxaflutol"
-   ],
-   "nbHomologations": 23,
-   "titulaires": [
-    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
-    "Ameribrás Indústria e Comércio Ltda.",
-    "Brilliance Produtos Agrícolas Ltda",
-    "Gilmore Agro do Brasil Ltda - ME",
-    "Nortox S.A. - Arapongas",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
-    "Yonon Brasil Defensivos Agricolas Ltda",
-    "Zhongshan Química do Brasil - Sorocaba/SP"
    ]
   },
   {
@@ -11687,7 +11707,7 @@
     "flumioxazina",
     "oxifluorfem"
    ],
-   "nbHomologations": 17,
+   "nbHomologations": 18,
    "titulaires": [
     "Adama Brasil S.A.- Londrina/PR",
     "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
@@ -13870,6 +13890,31 @@
    ]
   },
   {
+   "id": "JIANGSU HEBEN BIOCHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
+   "nom": "Jiangsu Heben Biochemical Co., Ltd.",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [
+    "DIFENOCONAZOLE"
+   ],
+   "matieresPt": [
+    "difenoconazol",
+    "octanoato de ioxinila",
+    "propiconazol"
+   ],
+   "nbHomologations": 9,
+   "titulaires": [
+    "AllierBrasil Agro Ltda.",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "Cropchem Ltda - Porto Alegre",
+    "GreenUp Assessoria e Agricultura Sustentável Ltda",
+    "Nortox S.A. - Arapongas",
+    "Perterra Insumos Agropecuários S.A.  São Paulo/SP",
+    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
+   ]
+  },
+  {
    "id": "BAYER AG -INDUSTRIEPARK HÖCHST|ALEMANHA",
    "nom": "Bayer AG -Industriepark Höchst",
    "pays": "Allemagne",
@@ -13894,31 +13939,6 @@
    "titulaires": [
     "Bayer S.A. - São Paulo/ SP",
     "Monsanto do Brasil Ltda - São Paulo"
-   ]
-  },
-  {
-   "id": "JIANGSU HEBEN BIOCHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
-   "nom": "Jiangsu Heben Biochemical Co., Ltd.",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [
-    "DIFENOCONAZOLE"
-   ],
-   "matieresPt": [
-    "difenoconazol",
-    "octanoato de ioxinila",
-    "propiconazol"
-   ],
-   "nbHomologations": 8,
-   "titulaires": [
-    "AllierBrasil Agro Ltda.",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Cropchem Ltda - Porto Alegre",
-    "GreenUp Assessoria e Agricultura Sustentável Ltda",
-    "Nortox S.A. - Arapongas",
-    "Perterra Insumos Agropecuários S.A.  São Paulo/SP",
-    "UPL do Brasil Indústria e Comércio de Insumos Agropecuários S.A. - Matriz Ituverava/SP"
    ]
   },
   {
@@ -17302,6 +17322,34 @@
    ]
   },
   {
+   "id": "ZIBO NAB AGROCHEMICALS LIMITED|CHINA, REPUBLICA POPULAR",
+   "nom": "Zibo Nab Agrochemicals Limited",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [
+    "Zibo"
+   ],
+   "matieres": [],
+   "matieresPt": [
+    "Bispiribaque-sódico",
+    "imazetapir",
+    "nicossulfurom"
+   ],
+   "nbHomologations": 18,
+   "titulaires": [
+    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "Cropchem Ltda - Porto Alegre",
+    "Helm do Brasil Mercantil - São Paulo/SP",
+    "Lemma Agronegócios Importação e Exportação Ltda.",
+    "Nortox S.A. - Arapongas",
+    "Pilarquim Br Comercial Ltda.- São Paulo",
+    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
+    "Tide do Brasil Ltda - Porto Alegre/RS"
+   ]
+  },
+  {
    "id": "JIANGSU LANFENG BIOCHEMICAL CO., LTD.|CHINA, REPUBLICA POPULAR",
    "nom": "Jiangsu Lanfeng Biochemical Co., Ltd.",
    "pays": "Chine",
@@ -17327,34 +17375,6 @@
     "Nortox S.A. - Arapongas",
     "Ouro Fino Química S.A. - Uberaba",
     "Prentiss Química Ltda. - Campo Largo/PR"
-   ]
-  },
-  {
-   "id": "ZIBO NAB AGROCHEMICALS LIMITED|CHINA, REPUBLICA POPULAR",
-   "nom": "Zibo Nab Agrochemicals Limited",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [
-    "Zibo"
-   ],
-   "matieres": [],
-   "matieresPt": [
-    "Bispiribaque-sódico",
-    "imazetapir",
-    "nicossulfurom"
-   ],
-   "nbHomologations": 17,
-   "titulaires": [
-    "Agriconnection Importadora e Exportadora de Insumos Agrícolas - Barueri/SP",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Cropchem Ltda - Porto Alegre",
-    "Helm do Brasil Mercantil - São Paulo/SP",
-    "Lemma Agronegócios Importação e Exportação Ltda.",
-    "Nortox S.A. - Arapongas",
-    "Pilarquim Br Comercial Ltda.- São Paulo",
-    "Sharda do Brasil Comércio de Produtos Químicos e Agroquímicos LTDA",
-    "Tide do Brasil Ltda - Porto Alegre/RS"
    ]
   },
   {
@@ -17618,6 +17638,28 @@
    ]
   },
   {
+   "id": "SHANDONG KANGQIAO BIO-TECHNOLOGY CO. LTD.|CHINA, REPUBLICA POPULAR",
+   "nom": "Shandong Kangqiao Bio-technology Co. Ltd.",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [],
+   "matieresPt": [
+    "Espirodiclofeno",
+    "Espiromesifeno"
+   ],
+   "nbHomologations": 9,
+   "titulaires": [
+    "Adama Brasil S.A.- Londrina/PR",
+    "Agroallianz S.A",
+    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
+    "Cropchem Ltda - Porto Alegre",
+    "Iharabras S.A. Indústria Químicas - Sorocaba",
+    "Syncrom Assessoria e Comércio de Produtos Agropecuários  Ltda.",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
+   ]
+  },
+  {
    "id": "AIMCO PESTICIDES LTD.|ÍNDIA",
    "nom": "Aimco Pesticides Ltd.",
    "pays": "Inde",
@@ -17641,28 +17683,6 @@
    ]
   },
   {
-   "id": "SHANDONG KANGQIAO BIO-TECHNOLOGY CO. LTD.|CHINA, REPUBLICA POPULAR",
-   "nom": "Shandong Kangqiao Bio-technology Co. Ltd.",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [],
-   "matieresPt": [
-    "Espirodiclofeno",
-    "Espiromesifeno"
-   ],
-   "nbHomologations": 8,
-   "titulaires": [
-    "Adama Brasil S.A.- Londrina/PR",
-    "Agroallianz S.A",
-    "Biorisk - Assessoria e Comércio de Produtos Agrícolas Ltda.",
-    "Cropchem Ltda - Porto Alegre",
-    "Iharabras S.A. Indústria Químicas - Sorocaba",
-    "Syncrom Assessoria e Comércio de Produtos Agropecuários  Ltda.",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
-   ]
-  },
-  {
    "id": "HAILI GUIXI CHEMICAL INDUSTRY CO., LTD.|CHINA, REPUBLICA POPULAR",
    "nom": "Haili Guixi Chemical Industry Co., Ltd.",
    "pays": "Chine",
@@ -17680,6 +17700,27 @@
     "CCAB Agro S.A.   São Paulo",
     "Cropchem Ltda - Porto Alegre",
     "FMC Química do Brasil Ltda. - Campinas/SP",
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
+   ]
+  },
+  {
+   "id": "HENAN JINPENG CHEMICALS CO., LTD|CHINA, REPUBLICA POPULAR",
+   "nom": "Henan Jinpeng Chemicals Co., Ltd",
+   "pays": "Chine",
+   "paysBrut": "CHINA, REPUBLICA POPULAR",
+   "sites": [],
+   "matieres": [],
+   "matieresPt": [
+    "fenpropimorfe",
+    "metomil",
+    "tiodicarbe"
+   ],
+   "nbHomologations": 7,
+   "titulaires": [
+    "Agro-Lead Brasil Assessoria em Produtos Agrícolas Ltda - EPP",
+    "Albaugh Agro Brasil Ltda.- São Paulo",
+    "Cropchem Ltda - Porto Alegre",
+    "Nortox S.A. - Arapongas",
     "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
    ]
   },
@@ -17717,35 +17758,12 @@
     "Proexadiona cálcica",
     "bentiavalicarbe isopropílico",
     "piraflufem",
-    "tiobencarbe",
-    "triciclazol"
-   ],
-   "nbHomologations": 7,
-   "titulaires": [
-    "CTVA Proteção de Cultivos Ltda - Barueri (Tamboré)",
-    "Iharabras S.A. Indústria Químicas - Sorocaba",
-    "Nichino do Brasil Agroquimicos Ltda."
-   ]
-  },
-  {
-   "id": "HENAN JINPENG CHEMICALS CO., LTD|CHINA, REPUBLICA POPULAR",
-   "nom": "Henan Jinpeng Chemicals Co., Ltd",
-   "pays": "Chine",
-   "paysBrut": "CHINA, REPUBLICA POPULAR",
-   "sites": [],
-   "matieres": [],
-   "matieresPt": [
-    "fenpropimorfe",
-    "metomil",
-    "tiodicarbe"
+    "tiobencarbe"
    ],
    "nbHomologations": 6,
    "titulaires": [
-    "Agro-Lead Brasil Assessoria em Produtos Agrícolas Ltda - EPP",
-    "Albaugh Agro Brasil Ltda.- São Paulo",
-    "Cropchem Ltda - Porto Alegre",
-    "Nortox S.A. - Arapongas",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
+    "Iharabras S.A. Indústria Químicas - Sorocaba",
+    "Nichino do Brasil Agroquimicos Ltda."
    ]
   },
   {
@@ -17765,8 +17783,8 @@
     "Albaugh Agro Brasil Ltda.- São Paulo",
     "NGC Agrosciences Brasil Ltda - Botucatu/SP",
     "Nortox S.A. - Arapongas",
-    "Proregistros Registros de Produtos Ltda - EPP",
-    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu"
+    "Tecnomyl Brasil Distribuidora de Produtos Agrícolas Ltda - Foz do Iguaçu",
+    "Wynca do Brasil Ltda  São Paulo"
    ]
   },
   {
@@ -18590,6 +18608,23 @@
    "titulaires": [
     "Iharabras S.A. Indústria Químicas - Sorocaba",
     "Syngenta Proteção de Cultivos Ltda.  São Paulo/SP"
+   ]
+  },
+  {
+   "id": "HEMANI INDUSTRIES LTD.|ÍNDIA",
+   "nom": "Hemani Industries Ltd.",
+   "pays": "Inde",
+   "paysBrut": "ÍNDIA",
+   "sites": [],
+   "matieres": [],
+   "matieresPt": [
+    "Etiprole",
+    "piriproxifem"
+   ],
+   "nbHomologations": 2,
+   "titulaires": [
+    "Ascenza Brasil Ltda - Hortolândia/SP",
+    "Cropchem Ltda - Porto Alegre"
    ]
   },
   {
@@ -19718,21 +19753,6 @@
    ]
   },
   {
-   "id": "HEMANI INDUSTRIES LTD.|ÍNDIA",
-   "nom": "Hemani Industries Ltd.",
-   "pays": "Inde",
-   "paysBrut": "ÍNDIA",
-   "sites": [],
-   "matieres": [],
-   "matieresPt": [
-    "piriproxifem"
-   ],
-   "nbHomologations": 1,
-   "titulaires": [
-    "Ascenza Brasil Ltda - Hortolândia/SP"
-   ]
-  },
-  {
    "id": "HERGA INDÚSTRIAS QUÍMICAS LTDA.|BRASIL",
    "nom": "Herga Indústrias Químicas Ltda.",
    "pays": "Brésil",
@@ -20676,7 +20696,7 @@
    ],
    "nbHomologations": 1,
    "titulaires": [
-    "Proregistros Registros de Produtos Ltda - EPP"
+    "Wynca do Brasil Ltda  São Paulo"
    ]
   },
   {
