@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Bot, Mail, ArrowRight } from "lucide-react";
 import { detenteurActuel } from "@/lib/detenteur";
+import { NotificationsMatin } from "@/components/NotificationsMatin";
+import { VAPID_PUBLIC } from "@/lib/notifications";
 import {
   CONFIG,
   JOURNAL,
@@ -147,6 +149,8 @@ export default async function ProspectionPage() {
           </div>
         )}
       </div>
+
+      <NotificationsMatin clePublique={VAPID_PUBLIC} />
 
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
         {(Object.entries(st.parStatut) as [StatutProspect, number][]).map(([s, n]) => (
