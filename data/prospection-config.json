@@ -18,7 +18,9 @@
   "anneesAvant": 6,
   "moisApres": 24
  },
- "exclusiviteUnJourSur": 3,
+ "_rotation": "Thème de chaque jour, à tour de rôle : manques (molécules absentes du portefeuille), exclusivite (sorties d'exclusivité des majors), portefeuille (deuxième source pour une molécule déjà vendue).",
+ "rotation": ["manques", "exclusivite", "portefeuille"],
+ "emailEnvoi": "chraibi.agro@gmail.com",
  "_exclus": "Sociétés à ne jamais proposer (un mot distinctif ou le nom complet suffit).",
  "exclus": ["UPL", "United Phosphorus"],
  "majors": [

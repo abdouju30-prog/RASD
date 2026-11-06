@@ -49,6 +49,31 @@
     ]
    },
    "notes": "Société cotée via Hextar Global Berhad (Klang) ; site de production à Pulau Indah, Port Klang ; exporte vers ~30 pays. Plutôt formulateur : demander l'origine du technique."
+  },
+  {
+   "id": "2026-11-06-huaianguorui",
+   "date": "2026-11-06",
+   "fournisseur": "Huaian Guorui — chimie, SARL",
+   "cle": "huaian guorui chimie sarl",
+   "pays": "Chine",
+   "molecules": [
+    "Cyantraniliprole",
+    "Aminopyralid",
+    "Iodosulfuron-methyl-sodium"
+   ],
+   "motifs": [
+    "sortie d'exclusivité : majors seules au Maroc"
+   ],
+   "email": null,
+   "site": null,
+   "objet": "",
+   "message": "",
+   "statut": "écarté",
+   "brouillonGmail": null,
+   "envoyeLe": null,
+   "reponseLe": null,
+   "relances": [],
+   "notes": "Écarté par la tâche du 06/11 : ni raison sociale anglaise, ni site, ni e-mail, ni usine trouvés — fabrication non confirmée."
   }
  ]
 }

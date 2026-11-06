@@ -19,6 +19,8 @@ import {
   messageAnglais,
   moleculesCibles,
   relancesDues,
+  themeDuJour,
+  LIBELLE_THEME,
 } from "../lib/prospection";
 
 const args = process.argv.slice(2);
@@ -40,15 +42,21 @@ const aujourdhui = new Date(`${jour}T12:00:00Z`);
 
 const suggestions = fournisseursSuggeres(detenteur.id, aujourdhui, 10);
 const cibles = moleculesCibles(detenteur.id, aujourdhui);
-const dejaFait = JOURNAL.filter((p) => p.date === jour);
+// Un fournisseur écarté le jour même ne compte pas : on passe au suivant.
+const dejaFait = JOURNAL.filter((p) => p.date === jour && p.statut !== "écarté");
+const ecartesDuJour = JOURNAL.filter((p) => p.date === jour && p.statut === "écarté");
+const theme = themeDuJour(aujourdhui);
 
 const sortie = {
   jour,
   detenteur: detenteur.nom,
   config: CONFIG,
   baseUE: META_UE,
+  themeDuJour: { theme, libelle: LIBELLE_THEME[theme] },
   dejaPrepareAujourdhui: dejaFait.length >= CONFIG.parJour,
   prospectsDuJour: dejaFait,
+  ecartesDuJour: ecartesDuJour.map((p) => ({ fournisseur: p.fournisseur, notes: p.notes ?? null })),
+  pageApplication: "https://rasd-phyto.vercel.app/prospection",
   aPreparer: suggestions.slice(0, Math.max(0, CONFIG.parJour - dejaFait.length)).map((s) => ({
     ...s,
     brouillon: messageAnglais(s),
@@ -69,7 +77,7 @@ if (json) {
   console.log(JSON.stringify(sortie, null, 1));
 } else {
   console.log(`Prospect du jour — ${jour} — détenteur ${detenteur.nom}`);
-  console.log(`${cibles.length} molécules cibles · base UE du ${META_UE.genere}`);
+  console.log(`${cibles.length} molécules cibles · base UE du ${META_UE.genere} · thème du jour : ${LIBELLE_THEME[theme]}`);
   if (sortie.dejaPrepareAujourdhui) console.log("Déjà préparé aujourd'hui :", dejaFait.map((p) => p.fournisseur).join(", "));
   for (const s of sortie.aPreparer) {
     console.log(`\n→ ${s.nom} (${s.pays}) — score ${s.score}`);

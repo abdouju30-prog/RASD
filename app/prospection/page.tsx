@@ -11,6 +11,8 @@ import {
   moleculesCibles,
   relancesDues,
   statsJournal,
+  themeDuJour,
+  LIBELLE_THEME,
   type CibleMolecule,
   type Prospect,
   type StatutProspect,
@@ -54,7 +56,12 @@ function Motifs({ c }: { c: CibleMolecule }) {
           style={{
             fontSize: 10,
             whiteSpace: "nowrap",
-            color: m === "sortie d'exclusivité" || m === "majors seules au Maroc" ? "var(--accent)" : undefined,
+            color:
+              m === "sortie d'exclusivité" || m === "majors seules au Maroc"
+                ? "var(--accent)"
+                : m.startsWith("au portefeuille")
+                  ? "var(--low)"
+                  : undefined,
           }}
         >
           {m}
@@ -65,7 +72,7 @@ function Motifs({ c }: { c: CibleMolecule }) {
 }
 
 function lienGmail(to: string | null, objet: string, corps: string): string {
-  const p = new URLSearchParams({ view: "cm", fs: "1", su: objet, body: corps });
+  const p = new URLSearchParams({ authuser: CONFIG.emailEnvoi, view: "cm", fs: "1", su: objet, body: corps });
   if (to) p.set("to", to);
   return `https://mail.google.com/mail/?${p.toString()}`;
 }
@@ -123,11 +130,12 @@ export default async function ProspectionPage() {
         <Bot size={22} /> Agent de prospection
       </h1>
       <div style={{ fontSize: 13.5, color: "var(--muted)", margin: "4px 0 14px", maxWidth: 820 }}>
-        Un fabricant qui produit une molécule manquant au portefeuille de <strong>{agent.nom}</strong>,
-        homologuée dans un pays de l&apos;OCDE, reçoit chaque jour un brouillon de message en anglais dans Gmail —
-        à relire avant envoi. Tâche planifiée : {CONFIG.horaire} ; un jour sur {CONFIG.exclusiviteUnJourSur}, le
-        fournisseur est choisi pour une molécule en sortie d&apos;exclusivité. {cibles.length} molécules cibles · base
-        UE du {META_UE.genere} · {st.total} fournisseurs contactés.
+        Chaque matin ({CONFIG.horaire}), l&apos;agent choisit un nouveau fabricant pour <strong>{agent.nom}</strong> et
+        prépare son message en anglais : il arrive ici et dans la discussion Claude, prêt à partir avec Gmail
+        ({CONFIG.emailEnvoi}) après relecture. Les thèmes alternent : molécules qui manquent, sorties
+        d&apos;exclusivité des majors, deuxième source pour des molécules déjà vendues — toutes homologuées OCDE.
+        Thème du jour : <strong>{LIBELLE_THEME[themeDuJour()]}</strong>. {cibles.length} molécules cibles · base UE
+        du {META_UE.genere} · {st.total} fournisseurs dans le suivi.
         {agent.id !== d.id && (
           <div style={{ marginTop: 6, color: "var(--crit)" }}>
             Vous consultez {d.nom} ; la tâche quotidienne écrit pour {agent.nom} (data/prospection-config.json).
@@ -169,7 +177,7 @@ export default async function ProspectionPage() {
                   rel="noreferrer"
                   style={{ display: "inline-flex", alignItems: "center", gap: 4 }}
                 >
-                  <Mail size={14} /> {p.brouillonGmail ? "Brouillon créé dans Gmail — ou l'ouvrir ici" : "Ouvrir dans Gmail"}
+                  <Mail size={14} /> Envoyer avec Gmail
                 </a>
                 {p.verification?.exclusivite && (
                   <span style={{ color: "var(--muted)" }}>Exclusivité : {p.verification.exclusivite}</span>
@@ -208,7 +216,7 @@ export default async function ProspectionPage() {
                 rel="noreferrer"
                 style={{ display: "inline-flex", alignItems: "center", gap: 4 }}
               >
-                <Mail size={14} /> Ouvrir dans Gmail
+                <Mail size={14} /> Envoyer avec Gmail
               </a>
             </div>
             <details>
@@ -285,7 +293,7 @@ export default async function ProspectionPage() {
       </div>
 
       {/* ── Molécules ──────────────────────────────────────────────────── */}
-      <h2 style={{ fontSize: 17, margin: "22px 0 8px" }}>Molécules qui manquent — homologuées OCDE</h2>
+      <h2 style={{ fontSize: 17, margin: "22px 0 8px" }}>Molécules cibles — manques, sorties d&apos;exclusivité, deuxième source</h2>
       <div style={{ overflowX: "auto" }}>
         <table className="tbl">
           <thead>

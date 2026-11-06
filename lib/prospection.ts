@@ -2,6 +2,7 @@ import configFile from "../data/prospection-config.json";
 import journalFile from "../data/prospection.json";
 import ueFile from "../data/ue-exclusivites.json";
 import { DETENTEURS, MATIERES, detenteurParId, produitsDe } from "./data";
+import type { FicheAnses } from "./types";
 import { molecules } from "./formulation";
 import { gamme, type Manque } from "./gamme";
 import { ANNUAIRE, dansRegion, type Fabricant } from "./annuaire";
@@ -62,8 +63,10 @@ export interface ConfigProspection {
   horaire: string;
   relanceApresJours: number;
   fenetreExclusivite: { anneesAvant: number; moisApres: number };
-  /** Un jour sur N, le fournisseur du jour est pris pour une molécule en sortie d'exclusivité. */
-  exclusiviteUnJourSur: number;
+  /** Thème de chaque jour, à tour de rôle : la journée N prend rotation[N % longueur]. */
+  rotation: Theme[];
+  /** Adresse d'envoi : le bouton « Envoyer avec Gmail » ouvre ce compte-là. */
+  emailEnvoi: string;
   /** Sociétés écartées une fois pour toutes par l'utilisateur. */
   exclus: string[];
   majors: string[];
@@ -222,7 +225,27 @@ function generiquesDe(cles: string[]): Fabricant[] {
 
 // ── 1 et 2 : les molécules cibles ───────────────────────────────────────────
 
-export type Motif = "trou de gamme" | "absente du Maroc" | "sortie d'exclusivité" | "majors seules au Maroc";
+export type Motif =
+  | "trou de gamme"
+  | "absente du Maroc"
+  | "sortie d'exclusivité"
+  | "majors seules au Maroc"
+  | "au portefeuille : fournisseur unique"
+  | "au portefeuille : fourni par une major";
+
+/** Les trois familles que la rotation fait alterner. */
+export type Theme = "manques" | "exclusivite" | "portefeuille";
+export const LIBELLE_THEME: Record<Theme, string> = {
+  manques: "molécules qui manquent au portefeuille",
+  exclusivite: "molécules qui sortent de l'exclusivité des majors",
+  portefeuille: "deuxième source pour des molécules déjà au portefeuille",
+};
+
+function themeDe(m: CibleMolecule): Theme {
+  if (m.motifs.includes("sortie d'exclusivité")) return "exclusivite";
+  if (m.motifs.some((x) => x.startsWith("au portefeuille"))) return "portefeuille";
+  return "manques";
+}
 
 export interface CibleMolecule {
   molecule: string;
@@ -350,6 +373,95 @@ function titre(nom: string): string {
   return n === n.toUpperCase() ? n.charAt(0) + n.slice(1).toLowerCase() : n;
 }
 
+// ── Molécules DÉJÀ au portefeuille — lesquelles méritent une deuxième source ──
+//
+// Tout le portefeuille n'est pas à resourcer. On ne garde que deux cas, lus
+// dans l'index ONSSA, où un nouveau fournisseur change vraiment quelque chose :
+//   • FOURNISSEUR UNIQUE : tous les produits du détenteur qui portent la
+//     molécule viennent d'une seule société — rupture ou hausse de prix sans
+//     recours ;
+//   • FOURNIE PAR UNE MAJOR alors que des génériqueurs la fabriquent : c'est
+//     là que l'écart de prix est le plus grand.
+// Une molécule que l'ANSES retire n'est jamais resourcée : on n'investit pas
+// dans un dossier condamné. Le poids vient du nombre de produits du détenteur.
+
+const MA_PAR_ID = new Map(MATIERES.map((m) => [m.id, m]));
+const MARCHE_PAR_CLE = new Map<string, { produits: Set<string>; detenteurs: Set<string> }>();
+for (const ma of MATIERES) {
+  for (const m of molecules(ma.nom, ma.molecule)) {
+    const k = cleMolecule(m);
+    const e = MARCHE_PAR_CLE.get(k) ?? { produits: new Set<string>(), detenteurs: new Set<string>() };
+    ma.produits.forEach((x) => e.produits.add(x));
+    ma.detenteurs.forEach((x) => e.detenteurs.add(x));
+    MARCHE_PAR_CLE.set(k, e);
+  }
+}
+
+function depuisPortefeuille(detenteurId: string): CibleMolecule[] {
+  const parMol = new Map<string, { nom: string; categorie: string; anses: FicheAnses | null; produits: Set<string>; fournisseurs: Set<string> }>();
+  for (const p of produitsDe(detenteurId)) {
+    for (const id of p.matieresActivesIds) {
+      const ma = MA_PAR_ID.get(id);
+      if (!ma) continue;
+      for (const m of molecules(ma.nom, ma.molecule)) {
+        const k = cleMolecule(m);
+        if (!k) continue;
+        const e = parMol.get(k) ?? { nom: m, categorie: ma.categorie ?? "Autre", anses: ma.anses, produits: new Set<string>(), fournisseurs: new Set<string>() };
+        e.produits.add(p.nomCommercial);
+        p.fournisseurs.forEach((f) => e.fournisseurs.add(f));
+        parMol.set(k, e);
+      }
+    }
+  }
+
+  const out: CibleMolecule[] = [];
+  for (const [k, e] of parMol) {
+    const st = e.anses?.statut;
+    if (st === "retirée" || st === "en_retrait") continue;
+    const fournisseurs = [...e.fournisseurs].sort();
+    const unique = fournisseurs.length === 1;
+    const major = fournisseurs.length > 0 && fournisseurs.every(estMajor);
+    if (!unique && !major) continue;
+
+    const iso = isoDe(e.nom);
+    const cles = [...new Set([k, iso ? cleMolecule(iso) : ""].filter(Boolean))];
+    const actuels = new Set(fournisseurs.map(cleFabricant));
+    const generiques = generiquesDe(cles).filter((f) => !actuels.has(f.cle));
+    if (generiques.length < 2) continue;
+    const ocde = ocdeDe(cles, st === "autorisée");
+    if (!ocde.length) continue;
+    const ue = cles.map((x) => UE_PAR_CLE.get(x)).find(Boolean) ?? null;
+
+    const motifs: Motif[] = [];
+    if (unique) motifs.push("au portefeuille : fournisseur unique");
+    if (major) motifs.push("au portefeuille : fourni par une major");
+    let score = 25 + Math.min(e.produits.size, 5) * 10 + (major ? 30 : 0) + (unique ? 10 : 0);
+    score += ocde.length * 3 + Math.min(generiques.length, 10) * 2;
+    if (ue?.substitution) score -= 10;
+    const marche = MARCHE_PAR_CLE.get(k);
+
+    out.push({
+      molecule: e.nom,
+      nomAnglais: iso ? titre(iso) : e.nom,
+      cles,
+      categorie: e.categorie,
+      motifs,
+      nbProduitsMaroc: marche?.produits.size ?? 0,
+      nbDetenteursMaroc: marche?.detenteurs.size ?? 0,
+      fournisseursMaroc: fournisseurs,
+      ue: ue ? { statut: ue.statut, approbation: ue.approbation, finProtectionEstimee: ue.finProtectionEstimee, substitution: ue.substitution } : null,
+      ocde,
+      nbGeneriques: generiques.length,
+      score: Math.round(score),
+      pourquoi:
+        `Déjà au portefeuille (${e.produits.size} produit(s) : ${[...e.produits].slice(0, 3).join(", ")}) ; ` +
+        `fournie aujourd'hui par ${fournisseurs.join(", ")}${unique ? " seulement" : ""} ; ` +
+        `${generiques.length} autre(s) fabricant(s) pour une deuxième source.`,
+    });
+  }
+  return out;
+}
+
 const CACHE_CIBLES = new Map<string, CibleMolecule[]>();
 
 /** Molécules à chercher pour ce détenteur, les plus prometteuses d'abord. */
@@ -363,6 +475,11 @@ export function moleculesCibles(detenteurId: string, aujourdhui = new Date()): C
     if (x) out.push(x);
   }
   const vues = new Set(out.flatMap((x) => x.cles));
+  for (const x of depuisPortefeuille(detenteurId)) {
+    if (x.cles.some((k) => vues.has(k))) continue;
+    out.push(x);
+    x.cles.forEach((k) => vues.add(k));
+  }
   for (const s of UE.substances) {
     const x = depuisUE(s, aujourdhui);
     if (x && !x.cles.some((k) => vues.has(k))) {
@@ -452,7 +569,14 @@ const NB_CIBLES_PROSPECTEES = 40;
 
 /** Fournisseurs à contacter, dans l'ordre. Le premier est celui du jour. */
 export function fournisseursSuggeres(detenteurId: string, aujourdhui = new Date(), n = 10): FournisseurSuggere[] {
-  const cibles = moleculesCibles(detenteurId, aujourdhui).slice(0, NB_CIBLES_PROSPECTEES);
+  // Les 40 meilleures, plus les 15 meilleures de chaque thème : un jour
+  // « deuxième source » ne doit pas manquer de candidats parce que les trous de
+  // gamme, plus lourds, occupent la tête du classement.
+  const toutes = moleculesCibles(detenteurId, aujourdhui);
+  const cibles = [...new Set([
+    ...toutes.slice(0, NB_CIBLES_PROSPECTEES),
+    ...(["manques", "exclusivite", "portefeuille"] as Theme[]).flatMap((t) => toutes.filter((m) => themeDe(m) === t).slice(0, 15)),
+  ])];
   const exclus = new Set([...fournisseursActuels(detenteurId), ...JOURNAL.map((p) => p.cle)]);
 
   const parFab = new Map<string, { f: Fabricant; mols: CibleMolecule[] }>();
@@ -480,7 +604,11 @@ export function fournisseursSuggeres(detenteurId: string, aujourdhui = new Date(
     if (!f.paysFiable) score -= 5;
     const concurrent = detenteurApparente(f.cle, nomDetenteur);
     if (concurrent) score -= 40;
+    // « Huaian Guorui — chimie, SARL » : nom chinois glosé, introuvable tel quel.
+    const glose = f.nom.includes(" — ");
+    if (glose) score -= 30;
     const raisons = [
+      glose ? "nom chinois traduit par RASD : raison sociale anglaise à retrouver" : null,
       concurrent ? `apparenté au détenteur marocain ${concurrent} : concurrent direct, à confirmer` : null,
       `fabrique ${top.map((m) => m.molecule).join(", ")}`,
       `${f.registres.length} registre(s) : ${f.registres.join(", ")}`,
@@ -495,34 +623,33 @@ export function fournisseursSuggeres(detenteurId: string, aujourdhui = new Date(
   }
   out.sort((a, b) => b.score - a.score || a.nom.localeCompare(b.nom));
 
-  // Un jour sur N, le fournisseur du jour est le mieux classé de ceux qui
-  // fabriquent une molécule en sortie d'exclusivité — et le message s'ouvre
-  // sur ces molécules-là.
-  if (jourExclusivite(aujourdhui)) {
-    const scoreSortie = (s: FournisseurSuggere) =>
-      s.molecules.filter(sortie).reduce((t, m, i) => t + m.score / (i + 1), 0) +
-      (s.contact.emails.length ? 15 : 0) - (s.raisons.some((r) => r.startsWith("apparenté")) ? 40 : 0);
-    const meilleur = out.filter((s) => s.molecules.some(sortie)).sort((a, b) => scoreSortie(b) - scoreSortie(a))[0];
-    const i = meilleur ? out.indexOf(meilleur) : -1;
-    if (i > 0) {
-      out.splice(i, 1);
-      out.unshift(meilleur);
-    }
-    if (meilleur) {
-      out[0].molecules.sort((a, b) => Number(sortie(b)) - Number(sortie(a)) || b.score - a.score);
-      out[0].raisons.unshift("jour « sortie d'exclusivité »");
-    }
+  // Le thème du jour fait alterner manques, sorties d'exclusivité et deuxième
+  // source : le fournisseur du jour est le mieux classé SUR LES MOLÉCULES DU
+  // THÈME, de préférence joignable, et son message s'ouvre sur elles.
+  const theme = themeDuJour(aujourdhui);
+  const duTheme = (m: CibleMolecule) => themeDe(m) === theme;
+  const scoreTheme = (s: FournisseurSuggere) =>
+    s.molecules.filter(duTheme).reduce((t, m, i) => t + m.score / (i + 1), 0) +
+    (s.contact.emails.length ? 15 : s.contact.site ? 5 : 0) +
+    (s.raisons.some((r) => r.startsWith("apparenté")) ? -40 : 0) +
+    (s.raisons.some((r) => r.startsWith("nom chinois")) ? -30 : 0);
+  const candidats = out.filter((s) => s.molecules.some(duTheme));
+  const joignables = candidats.filter((s) => s.contact.emails.length || s.contact.site);
+  const meilleur = (joignables.length ? joignables : candidats).sort((a, b) => scoreTheme(b) - scoreTheme(a))[0];
+  if (meilleur) {
+    out.splice(out.indexOf(meilleur), 1);
+    out.unshift(meilleur);
+    meilleur.molecules.sort((a, b) => Number(duTheme(b)) - Number(duTheme(a)) || b.score - a.score);
+    meilleur.raisons.unshift(`thème du jour : ${LIBELLE_THEME[theme]}`);
   }
   return out.slice(0, n);
 }
 
-const sortie = (m: CibleMolecule) => m.motifs.includes("sortie d'exclusivité");
-
-/** Jours où la prospection vise les molécules qui sortent de l'exclusivité des majors. */
-export function jourExclusivite(aujourdhui = new Date()): boolean {
-  const n = Math.max(1, CONFIG.exclusiviteUnJourSur || 1);
+/** Thème du jour, à tour de rôle selon data/prospection-config.json. */
+export function themeDuJour(aujourdhui = new Date()): Theme {
+  const r: Theme[] = CONFIG.rotation?.length ? CONFIG.rotation : ["manques", "exclusivite", "portefeuille"];
   const jour = Math.floor(aujourdhui.getTime() / 86_400_000);
-  return jour % n === 0;
+  return r[jour % r.length];
 }
 
 // ── Le message, en anglais ──────────────────────────────────────────────────
