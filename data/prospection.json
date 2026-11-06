@@ -74,6 +74,44 @@
    "reponseLe": null,
    "relances": [],
    "notes": "Écarté par la tâche du 06/11 : ni raison sociale anglaise, ni site, ni e-mail, ni usine trouvés — fabrication non confirmée."
+  },
+  {
+   "id": "2026-11-06-nufarmsas",
+   "date": "2026-11-06",
+   "fournisseur": "NUFARM SAS",
+   "cle": "nufarm",
+   "pays": "Australie",
+   "molecules": [
+    "Prothioconazole",
+    "Tebuconazole",
+    "Fluazinam",
+    "Copper hydroxide",
+    "Copper sulphate"
+   ],
+   "motifs": [
+    "thème du jour : molécules qui manquent au portefeuille",
+    "trous de gamme PHYTO BEHT : 15 à 37 produits et 11 à 21 détenteurs au Maroc par molécule",
+    "homologuées OCDE ; Nufarm déjà référencé à l'ONSSA pour un autre détenteur"
+   ],
+   "email": null,
+   "site": "https://nufarm.com/africa/en/about-us/",
+   "objet": "Sourcing enquiry from Morocco — Prothioconazole, Tebuconazole, Fluazinam, copper fungicides",
+   "message": "Dear Nufarm team,\n\nI am writing on behalf of Phyto Beht, a crop protection company registering and distributing plant protection products in Morocco.\n\nWe understand that Nufarm covers North Africa from its office in Tunisia, and that your fluazinam source has already passed an equivalence assessment in France. We are expanding our fungicide range and are looking for a reliable supplier of the following active ingredients, as technical grade and/or formulated products: Prothioconazole, Tebuconazole, Fluazinam, Copper hydroxide and Copper sulphate.\n\nCould you kindly share:\n- your product catalogue and the technical specifications (minimum purity, relevant impurities) for these molecules;\n- the manufacturing site(s) and your existing registrations, in particular in OECD countries;\n- for prothioconazole, the solo and mixture products you can offer, given the mixture patents still in force in some markets;\n- the availability of a technical dossier (5-batch analysis, GLP studies, letter of access) to support a registration with ONSSA, the Moroccan authority;\n- indicative prices, MOQ, lead times and Incoterms;\n- COA, SDS and TDS samples.\n\nWe would be glad to schedule a short call, or to meet your North Africa team, to discuss a possible long-term cooperation.\n\nBest regards,\nAbderrahmane Chraibi\nAgricultural Engineer\nPhyto Beht — Morocco\nchraibi.agro@gmail.com",
+   "statut": "à envoyer",
+   "brouillonGmail": null,
+   "envoyeLe": null,
+   "reponseLe": null,
+   "relances": [],
+   "verification": {
+    "exclusivite": "Prothioconazole : brevet de base expiré en 2015, SPC jusqu'en 2018 ; brevets et SPC de mélanges jusqu'en 2026 selon les produits (analyse 2016, à revérifier). Tébuconazole, fluazinam, cuivre : génériques anciens ; source Nufarm de fluazinam jugée équivalente en France (Afssa, 2008).",
+    "sources": [
+     "https://www.agribusinessglobal.com/agrichemicals/post-patent-outlook",
+     "https://www.fwi.co.uk/arable/crop-management/disease-management/cost-savings-likely-as-top-cereal-fungicide-goes-off-patent",
+     "https://www.anses.fr/system/files/phyto/evaluations/DIVE2008ha0161-SPE.pdf",
+     "https://nufarm.com/africa/en/about-us/"
+    ]
+   },
+   "notes": "Pas d'e-mail Afrique trouvé : passer par la page Contacts de nufarm.com/africa (présence locale en Tunisie). E-mails Europe relevés par RASD : marketing.uk@nufarm.com, info.be@nufarm.com. Siège : Laverton North (Australie), +61 3 9282 1000."
   }
  ]
 }
