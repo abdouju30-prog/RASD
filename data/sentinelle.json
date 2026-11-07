@@ -1,12 +1,12 @@
 {
  "meta": {
   "source": "AGROFIT (Brésil) × PSIS (Corée du Sud) × index ONSSA × E-Phy (Anses) × PUBCRIS (Australie)",
-  "genere": "2026-11-06T13:41:11",
-  "dernierReleve": "2026-11-06",
+  "genere": "2026-11-07T12:21:33",
+  "dernierReleve": "2026-11-07",
   "premierReleve": false,
   "nbCandidates": 475,
   "nbEcarteesIndexMaroc": 24,
-  "nbNouvelles": 1,
+  "nbNouvelles": 0,
   "nbAvecStatutFrancais": 197,
   "nbAvecStatutAustralien": 170,
   "nbVuesAuBresil": 218,
@@ -11478,7 +11478,7 @@
    "france": null,
    "australie": null,
    "premiereVue": "2026-11-06",
-   "nouvelle": true
+   "nouvelle": false
   },
   {
    "cle": "28bacilusvelesensis",
