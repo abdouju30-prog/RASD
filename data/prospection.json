@@ -112,6 +112,46 @@
     ]
    },
    "notes": "Pas d'e-mail Afrique trouvé : passer par la page Contacts de nufarm.com/africa (présence locale en Tunisie). E-mails Europe relevés par RASD : marketing.uk@nufarm.com, info.be@nufarm.com. Siège : Laverton North (Australie), +61 3 9282 1000."
+  },
+  {
+   "id": "2026-11-07-jiangsufengshangroup",
+   "date": "2026-11-07",
+   "fournisseur": "JIANGSU FENGSHAN GROUP CO., LTD.",
+   "cle": "jiangsu fengshan group",
+   "pays": "Chine",
+   "molecules": [
+    "Cyantraniliprole",
+    "Fluopyram",
+    "Fluxapyroxad",
+    "Clodinafop-propargyl",
+    "Chlorantraniliprole"
+   ],
+   "motifs": [
+    "thème du jour : sorties d'exclusivité des majors",
+    "cyantraniliprole (FMC/Syngenta), fluopyram (Bayer), fluxapyroxad (BASF) : seules les majors les fournissent au Maroc ; absentes du portefeuille PHYTO BEHT",
+    "clodinafop-propargyl : deuxième source pour AXORIS ULTRA (Syngenta seul aujourd'hui)",
+    "homologations chinoises de matière technique (ICAMA) : cyantraniliprole 94 %, fluopyram 96 %, fluxapyroxad 95 %, chlorantraniliprole 96 %, clodinafop 95 % — licence de production 农药生许（苏）0204"
+   ],
+   "email": null,
+   "site": "https://www.fengshangroup.com/contact/",
+   "objet": "Sourcing enquiry from Morocco — Cyantraniliprole, Fluopyram, Fluxapyroxad",
+   "message": "Dear Fengshan Group team,\n\nI am writing on behalf of Phyto Beht, a crop protection company registering and distributing plant protection products in Morocco.\n\nWe noted that your subsidiary Jiangsu Fengshan Biochemical Technology holds Chinese technical registrations for cyantraniliprole, fluopyram and fluxapyroxad, and that your Dafeng sites are listed with the US EPA. We are looking for a reliable manufacturer of the following active ingredients, as technical grade and/or formulated products: Cyantraniliprole, Fluopyram, Fluxapyroxad, Clodinafop-propargyl and Chlorantraniliprole.\n\nCould you kindly share:\n- your product catalogue and the technical specifications (minimum purity, relevant impurities) for these molecules;\n- the manufacturing site(s) and your existing registrations, in particular in OECD countries;\n- your freedom-to-operate position for export to Morocco on cyantraniliprole, fluopyram and fluxapyroxad (remaining compound, process or mixture patents);\n- the availability of a technical dossier (5-batch analysis, GLP studies, letter of access) to support a registration with ONSSA, the Moroccan authority;\n- indicative prices, MOQ, lead times and Incoterms;\n- COA, SDS and TDS samples.\n\nWe would be glad to schedule a short call to discuss a possible long-term cooperation.\n\nBest regards,\nAbderrahmane Chraibi\nAgricultural Engineer\nPhyto Beht — Morocco\nchraibi.agro@gmail.com",
+   "statut": "à envoyer",
+   "brouillonGmail": null,
+   "envoyeLe": null,
+   "reponseLe": null,
+   "relances": [],
+   "verification": {
+    "exclusivite": "Cyantraniliprole : brevet de composition FMC tombé dans plusieurs pays depuis janvier 2024, autres protections jusqu'en 2027 (rapport annuel FMC 2023 ; S&P Global donne 2026). Fluopyram (Bayer) et fluxapyroxad (BASF) : fin d'exclusivité projetée entre 2019 et 2026 selon les mélanges et SPC (Enigma, projections 2019-2021) — à confirmer pays par pays.",
+    "sources": [
+     "https://www.sec.gov/Archives/edgar/data/37785/000130817924000163/lfmc2023_ars.pdf",
+     "https://www.spglobal.com/commodityinsights/en/ci/research-analysis/new-generics-update-2022-agribusiness-report.html",
+     "https://cdn.shopify.com/s/files/1/0239/1427/files/Brochure_New_Off_Patent_Generic_Agrochemicals_2021_to_2030.pdf",
+     "https://www.morningstar.com.au/investments/security/SHSE/603810",
+     "registre ICAMA (data/icama.json de RASD)"
+    ]
+   },
+   "notes": "Société cotée à Shanghai (603810), siège et usines à Dafeng, Yancheng (Jiangsu) ; fournit déjà en matière technique Adama, BASF, Albaugh… au Brésil (acétamipride, imidaclopride). E-mail export non trouvé : site injoignable depuis la session ; standard +86 515 8337 2088 ; fszq@fengshangroup.com relevé dans un annuaire, probablement le service des relations investisseurs — à confirmer."
   }
  ]
 }
