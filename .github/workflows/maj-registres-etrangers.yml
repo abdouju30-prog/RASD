@@ -90,6 +90,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 20
         run: python scripts/import_normes.py | tee -a sortie-etrangers.txt
+      - name: Substances UE complètes — dates d'approbation (agent de prospection)
+        id: exclusivites
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python scripts/import_ue_exclusivites.py | tee -a sortie-etrangers.txt
       - name: Groupes de mode d'action FRAC / IRAC / HRAC
         id: moa
         continue-on-error: true
@@ -111,6 +116,7 @@ jobs:
           OUVERTS: ${{ steps.ouverts.outcome }}
           LMR: ${{ steps.lmr.outcome }}
           NORMES: ${{ steps.normes.outcome }}
+          EXCLUSIVITES: ${{ steps.exclusivites.outcome }}
           MOA: ${{ steps.moa.outcome }}
           CONTACTS: ${{ steps.contacts.outcome }}
         run: |
@@ -131,7 +137,7 @@ jobs:
           # (ils lisent ICAMA, le Brésil, l'EPA, l'Australie et l'index ONSSA).
           NOUVELLES=$(python scripts/_icama_nouveautes.py | tee -a sortie-etrangers.txt | head -1)
           python scripts/_noms_anglais.py | tee -a sortie-etrangers.txt
-          DERIVES="data/icama-nouveautes.json data/icama-anglais.json data/lmr-ue.json data/normes.json data/substances-ue.json data/modes-action.json data/contacts-societes.json"
+          DERIVES="data/icama-nouveautes.json data/icama-anglais.json data/lmr-ue.json data/normes.json data/substances-ue.json data/modes-action.json data/contacts-societes.json data/ue-exclusivites.json"
           {
             echo "resume<<EOF"
             echo "Chine (ICAMA) : $ICAMA"
@@ -139,7 +145,7 @@ jobs:
             echo "États-Unis (EPA) : $EPA"
             echo "Russie : $RUSSIE"
             echo "Registres ouverts : $OUVERTS"
-            echo "LMR UE : $LMR · normes : $NORMES · modes d'action : $MOA"
+            echo "LMR UE : $LMR · normes : $NORMES · modes d'action : $MOA · exclusivités UE : $EXCLUSIVITES"
             echo "Coordonnées des fabricants : $CONTACTS"
             [ -n "$REJETS" ] && echo "Relevés rejetés (trop petits, ancien fichier conservé) :$REJETS"
             echo "$NOUVELLES"
@@ -158,7 +164,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json data/icama-nouveautes.json data/icama-anglais.json data/lmr-ue.json data/normes.json data/substances-ue.json data/modes-action.json data/contacts-societes.json
+          git add data/icama.json data/bku.json data/epa.json data/russie.json data/registres-ouverts.json data/icama-nouveautes.json data/icama-anglais.json data/lmr-ue.json data/normes.json data/substances-ue.json data/modes-action.json data/contacts-societes.json data/ue-exclusivites.json
           git commit -m "Veille — registres étrangers" -m "$RESUME"
           git pull --rebase --autostash origin master
           git push

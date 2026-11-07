@@ -1,0 +1,157 @@
+{
+ "meta": {
+  "description": "Journal de l'agent de prospection : un fournisseur potentiel par jour, son message, son suivi. Tenu par la tâche planifiée quotidienne (commit sur master) ; les statuts se corrigent à la main au besoin.",
+  "statuts": [
+   "à envoyer",
+   "envoyé",
+   "relancé",
+   "réponse",
+   "en discussion",
+   "écarté"
+  ]
+ },
+ "prospects": [
+  {
+   "id": "2026-11-05-hextarchemicals",
+   "date": "2026-11-05",
+   "fournisseur": "HEXTAR CHEMICALS SDN. BHD.",
+   "cle": "hextar chemicals",
+   "pays": "Malaisie",
+   "molecules": [
+    "Pyraclostrobin",
+    "Deltamethrin",
+    "Captan",
+    "Cymoxanil",
+    "Tebuconazole"
+   ],
+   "motifs": [
+    "trous de gamme PHYTO BEHT : 22 à 37 produits et 12 à 25 détenteurs au Maroc par molécule",
+    "homologuées OCDE (UE, France, Canada, Australie, Turquie…)",
+    "Hextar homologué en Malaisie et au Brésil, enregistré à l'EPA ; choisi par l'utilisateur (UPL écarté)"
+   ],
+   "email": "info@hextar.com",
+   "site": "https://hextargroup.com/",
+   "objet": "Sourcing enquiry from Morocco — Pyraclostrobin, Deltamethrin, Captan, Cymoxanil, Tebuconazole",
+   "message": "Dear Hextar Chemicals team,\n\nI am writing on behalf of Phyto Beht, a crop protection company registering and distributing plant protection products in Morocco.\n\nWe came across Hextar through your product registrations in Malaysia and Brazil, and we understand that your Port Klang site supplies customers in many export markets. We are expanding our portfolio and are looking for a reliable manufacturer of the following active ingredients, as technical grade and/or formulated products: Pyraclostrobin, Deltamethrin, Captan, Cymoxanil and Tebuconazole.\n\nCould you kindly share:\n- your product catalogue and the technical specifications (minimum purity, relevant impurities) for these molecules;\n- the manufacturing site(s) and your existing registrations, in particular in OECD countries;\n- for pyraclostrobin, the crystalline form of your technical material and your position regarding the remaining crystal-form patents;\n- the availability of a technical dossier (5-batch analysis, GLP studies, letter of access) to support a registration with ONSSA, the Moroccan authority;\n- indicative prices, MOQ, lead times and Incoterms;\n- COA, SDS and TDS samples.\n\nWe would be glad to schedule a short call to discuss a possible long-term cooperation.\n\nBest regards,\nAbderrahmane Chraibi\nAgricultural Engineer\nPhyto Beht — Morocco\nchraibi.agro@gmail.com",
+   "statut": "à envoyer",
+   "brouillonGmail": "r-5350528877775881135",
+   "envoyeLe": null,
+   "reponseLe": null,
+   "relances": [],
+   "verification": {
+    "exclusivite": "Pyraclostrobine : brevet de molécule UE expiré en 2015, SPC jusqu'en 2016 ; brevets BASF sur des formes cristallines encore opposés (plainte ITC contre Sharda, 2022). Deltaméthrine, captane, cymoxanil, tébuconazole : génériques anciens (44 à 154 génériqueurs dans les registres RASD).",
+    "sources": [
+     "https://news.agropages.com/News/print-14166.htm",
+     "https://news.bloomberglaw.com/ip-law/basf-bid-to-block-fungicide-to-be-considered-by-trade-agency",
+     "https://patents.google.com/patent/US8404734",
+     "https://stockanalysis.com/quote/klse/HEXTAR/company",
+     "https://www.massa.net.my/?p=5933"
+    ]
+   },
+   "notes": "Société cotée via Hextar Global Berhad (Klang) ; site de production à Pulau Indah, Port Klang ; exporte vers ~30 pays. Plutôt formulateur : demander l'origine du technique."
+  },
+  {
+   "id": "2026-11-06-huaianguorui",
+   "date": "2026-11-06",
+   "fournisseur": "Huaian Guorui — chimie, SARL",
+   "cle": "huaian guorui chimie sarl",
+   "pays": "Chine",
+   "molecules": [
+    "Cyantraniliprole",
+    "Aminopyralid",
+    "Iodosulfuron-methyl-sodium"
+   ],
+   "motifs": [
+    "sortie d'exclusivité : majors seules au Maroc"
+   ],
+   "email": null,
+   "site": null,
+   "objet": "",
+   "message": "",
+   "statut": "écarté",
+   "brouillonGmail": null,
+   "envoyeLe": null,
+   "reponseLe": null,
+   "relances": [],
+   "notes": "Écarté par la tâche du 06/11 : ni raison sociale anglaise, ni site, ni e-mail, ni usine trouvés — fabrication non confirmée."
+  },
+  {
+   "id": "2026-11-06-nufarmsas",
+   "date": "2026-11-06",
+   "fournisseur": "NUFARM SAS",
+   "cle": "nufarm",
+   "pays": "Australie",
+   "molecules": [
+    "Prothioconazole",
+    "Tebuconazole",
+    "Fluazinam",
+    "Copper hydroxide",
+    "Copper sulphate"
+   ],
+   "motifs": [
+    "thème du jour : molécules qui manquent au portefeuille",
+    "trous de gamme PHYTO BEHT : 15 à 37 produits et 11 à 21 détenteurs au Maroc par molécule",
+    "homologuées OCDE ; Nufarm déjà référencé à l'ONSSA pour un autre détenteur"
+   ],
+   "email": null,
+   "site": "https://nufarm.com/africa/en/about-us/",
+   "objet": "Sourcing enquiry from Morocco — Prothioconazole, Tebuconazole, Fluazinam, copper fungicides",
+   "message": "Dear Nufarm team,\n\nI am writing on behalf of Phyto Beht, a crop protection company registering and distributing plant protection products in Morocco.\n\nWe understand that Nufarm covers North Africa from its office in Tunisia, and that your fluazinam source has already passed an equivalence assessment in France. We are expanding our fungicide range and are looking for a reliable supplier of the following active ingredients, as technical grade and/or formulated products: Prothioconazole, Tebuconazole, Fluazinam, Copper hydroxide and Copper sulphate.\n\nCould you kindly share:\n- your product catalogue and the technical specifications (minimum purity, relevant impurities) for these molecules;\n- the manufacturing site(s) and your existing registrations, in particular in OECD countries;\n- for prothioconazole, the solo and mixture products you can offer, given the mixture patents still in force in some markets;\n- the availability of a technical dossier (5-batch analysis, GLP studies, letter of access) to support a registration with ONSSA, the Moroccan authority;\n- indicative prices, MOQ, lead times and Incoterms;\n- COA, SDS and TDS samples.\n\nWe would be glad to schedule a short call, or to meet your North Africa team, to discuss a possible long-term cooperation.\n\nBest regards,\nAbderrahmane Chraibi\nAgricultural Engineer\nPhyto Beht — Morocco\nchraibi.agro@gmail.com",
+   "statut": "à envoyer",
+   "brouillonGmail": null,
+   "envoyeLe": null,
+   "reponseLe": null,
+   "relances": [],
+   "verification": {
+    "exclusivite": "Prothioconazole : brevet de base expiré en 2015, SPC jusqu'en 2018 ; brevets et SPC de mélanges jusqu'en 2026 selon les produits (analyse 2016, à revérifier). Tébuconazole, fluazinam, cuivre : génériques anciens ; source Nufarm de fluazinam jugée équivalente en France (Afssa, 2008).",
+    "sources": [
+     "https://www.agribusinessglobal.com/agrichemicals/post-patent-outlook",
+     "https://www.fwi.co.uk/arable/crop-management/disease-management/cost-savings-likely-as-top-cereal-fungicide-goes-off-patent",
+     "https://www.anses.fr/system/files/phyto/evaluations/DIVE2008ha0161-SPE.pdf",
+     "https://nufarm.com/africa/en/about-us/"
+    ]
+   },
+   "notes": "Pas d'e-mail Afrique trouvé : passer par la page Contacts de nufarm.com/africa (présence locale en Tunisie). E-mails Europe relevés par RASD : marketing.uk@nufarm.com, info.be@nufarm.com. Siège : Laverton North (Australie), +61 3 9282 1000."
+  },
+  {
+   "id": "2026-11-07-jiangsufengshangroup",
+   "date": "2026-11-07",
+   "fournisseur": "JIANGSU FENGSHAN GROUP CO., LTD.",
+   "cle": "jiangsu fengshan group",
+   "pays": "Chine",
+   "molecules": [
+    "Cyantraniliprole",
+    "Fluopyram",
+    "Fluxapyroxad",
+    "Clodinafop-propargyl",
+    "Chlorantraniliprole"
+   ],
+   "motifs": [
+    "thème du jour : sorties d'exclusivité des majors",
+    "cyantraniliprole (FMC/Syngenta), fluopyram (Bayer), fluxapyroxad (BASF) : seules les majors les fournissent au Maroc ; absentes du portefeuille PHYTO BEHT",
+    "clodinafop-propargyl : deuxième source pour AXORIS ULTRA (Syngenta seul aujourd'hui)",
+    "homologations chinoises de matière technique (ICAMA) : cyantraniliprole 94 %, fluopyram 96 %, fluxapyroxad 95 %, chlorantraniliprole 96 %, clodinafop 95 % — licence de production 农药生许（苏）0204"
+   ],
+   "email": null,
+   "site": "https://www.fengshangroup.com/contact/",
+   "objet": "Sourcing enquiry from Morocco — Cyantraniliprole, Fluopyram, Fluxapyroxad",
+   "message": "Dear Fengshan Group team,\n\nI am writing on behalf of Phyto Beht, a crop protection company registering and distributing plant protection products in Morocco.\n\nWe noted that your subsidiary Jiangsu Fengshan Biochemical Technology holds Chinese technical registrations for cyantraniliprole, fluopyram and fluxapyroxad, and that your Dafeng sites are listed with the US EPA. We are looking for a reliable manufacturer of the following active ingredients, as technical grade and/or formulated products: Cyantraniliprole, Fluopyram, Fluxapyroxad, Clodinafop-propargyl and Chlorantraniliprole.\n\nCould you kindly share:\n- your product catalogue and the technical specifications (minimum purity, relevant impurities) for these molecules;\n- the manufacturing site(s) and your existing registrations, in particular in OECD countries;\n- your freedom-to-operate position for export to Morocco on cyantraniliprole, fluopyram and fluxapyroxad (remaining compound, process or mixture patents);\n- the availability of a technical dossier (5-batch analysis, GLP studies, letter of access) to support a registration with ONSSA, the Moroccan authority;\n- indicative prices, MOQ, lead times and Incoterms;\n- COA, SDS and TDS samples.\n\nWe would be glad to schedule a short call to discuss a possible long-term cooperation.\n\nBest regards,\nAbderrahmane Chraibi\nAgricultural Engineer\nPhyto Beht — Morocco\nchraibi.agro@gmail.com",
+   "statut": "à envoyer",
+   "brouillonGmail": null,
+   "envoyeLe": null,
+   "reponseLe": null,
+   "relances": [],
+   "verification": {
+    "exclusivite": "Cyantraniliprole : brevet de composition FMC tombé dans plusieurs pays depuis janvier 2024, autres protections jusqu'en 2027 (rapport annuel FMC 2023 ; S&P Global donne 2026). Fluopyram (Bayer) et fluxapyroxad (BASF) : fin d'exclusivité projetée entre 2019 et 2026 selon les mélanges et SPC (Enigma, projections 2019-2021) — à confirmer pays par pays.",
+    "sources": [
+     "https://www.sec.gov/Archives/edgar/data/37785/000130817924000163/lfmc2023_ars.pdf",
+     "https://www.spglobal.com/commodityinsights/en/ci/research-analysis/new-generics-update-2022-agribusiness-report.html",
+     "https://cdn.shopify.com/s/files/1/0239/1427/files/Brochure_New_Off_Patent_Generic_Agrochemicals_2021_to_2030.pdf",
+     "https://www.morningstar.com.au/investments/security/SHSE/603810",
+     "registre ICAMA (data/icama.json de RASD)"
+    ]
+   },
+   "notes": "Société cotée à Shanghai (603810), siège et usines à Dafeng, Yancheng (Jiangsu) ; fournit déjà en matière technique Adama, BASF, Albaugh… au Brésil (acétamipride, imidaclopride). E-mail export non trouvé : site injoignable depuis la session ; standard +86 515 8337 2088 ; fszq@fengshangroup.com relevé dans un annuaire, probablement le service des relations investisseurs — à confirmer."
+  }
+ ]
+}
